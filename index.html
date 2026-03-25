@@ -548,19 +548,21 @@
             }
         }
 
-        /* Scores This Week Table */
+        /* Scores This Week */
+        .scores-columns { display: flex; gap: 20px; flex-wrap: wrap; }
+        .scores-col { flex: 1; min-width: 250px; }
         .scores-table { width: 100%; border-collapse: collapse; }
         .scores-table tr { border-bottom: 1px solid #222; }
         .scores-table tr:last-child { border-bottom: none; }
-        .scores-table td { padding: 8px 0; vertical-align: middle; font-size: 14px; }
-        .scores-table .score-date { width: 55px; color: #888; font-size: 12px; white-space: nowrap; }
+        .scores-table td { padding: 7px 0; vertical-align: middle; font-size: 14px; }
+        .scores-table .score-date { width: 50px; color: #888; font-size: 12px; white-space: nowrap; padding-right: 8px; }
         .scores-table .score-matchup { color: #ccc; }
-        .scores-table .score-result { width: 36px; text-align: right; }
+        .scores-table .score-result { width: 32px; text-align: right; }
         .scores-table .df-row { background-color: rgba(43, 93, 170, 0.1); }
         .scores-table .df-row .score-matchup { color: #fff; }
         .scores-table .df-name { color: #10B981; font-weight: 700; }
         .scores-table .badge-w, .scores-table .badge-l {
-            display: inline-block; padding: 2px 8px; border-radius: 3px;
+            display: inline-block; padding: 2px 7px; border-radius: 3px;
             font-size: 11px; font-weight: 700; color: #fff;
         }
         .scores-table .badge-w { background-color: #10B981; }
@@ -682,11 +684,13 @@
             <div class="card">
                 <h2>Scores This Week</h2>
                 <p style="font-size: 12px; color: #888; margin-bottom: 12px;">Mar 23–Mar 29 — DF games and schedule opponents</p>
-<table class="scores-table"><tbody>
+                <div class="scores-columns">
+                    <div class="scores-col"><table class="scores-table"><tbody>
                         <tr class="df-row"><td class="score-date">Mar 24</td><td class="score-matchup"><span class="df-name">Dobbs Ferry 6</span>, Irvington 2</td><td class="score-result"><span class="badge-w">W</span></td></tr>
                         <tr><td class="score-date">Mar 24</td><td class="score-matchup">Hastings 5, Blind Brook 2</td><td class="score-result"></td></tr>
                         <tr><td class="score-date">Mar 24</td><td class="score-matchup">Pleasantville def. Ardsley</td><td class="score-result"></td></tr>
-                    </tbody></table>
+                    </tbody></table></div>
+                </div>
             </div>
 
             <!-- Standings -->
@@ -1671,7 +1675,7 @@
     </div>
 
     <footer>
-        <p>March 25, 2026 (Updated 6:11 PM) — Not An Official Dobbs Ferry School District Site</p>
+        <p>March 25, 2026 (Updated 6:15 PM) — Not An Official Dobbs Ferry School District Site</p>
         <p style="margin-top: 8px;">A Scott Lukas Experiment</p>
     </footer>
 

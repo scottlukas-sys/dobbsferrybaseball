@@ -401,16 +401,25 @@ function buildWeeklyScores() {
         return `<p style="color: #888; font-size: 14px;">No scores reported this week (${week.monDisplay}\u2013${week.sunDisplay}).</p>`;
     }
 
-    let out = '<table class="scores-table"><tbody>\n';
-    for (const g of allGames) {
-        const rowClass = g.isDF ? ' class="df-row"' : '';
-        const matchup = g.isDF ? g.line.replace(/color: #10B981; font-weight: 700;/, '').replace(/<span style="">/, '<span class="df-name">') : g.line;
-        const badgeHtml = g.badge
-            ? `<span class="badge-${g.badge.toLowerCase()}">${g.badge}</span>`
-            : '';
-        out += `                        <tr${rowClass}><td class="score-date">${g.dateDisplay}</td><td class="score-matchup">${g.line}</td><td class="score-result">${badgeHtml}</td></tr>\n`;
+    // Chunk into columns of 4
+    const chunks = [];
+    for (let i = 0; i < allGames.length; i += 4) {
+        chunks.push(allGames.slice(i, i + 4));
     }
-    out += '                    </tbody></table>';
+
+    let out = '                <div class="scores-columns">\n';
+    for (const chunk of chunks) {
+        out += '                    <div class="scores-col"><table class="scores-table"><tbody>\n';
+        for (const g of chunk) {
+            const rowClass = g.isDF ? ' class="df-row"' : '';
+            const badgeHtml = g.badge
+                ? `<span class="badge-${g.badge.toLowerCase()}">${g.badge}</span>`
+                : '';
+            out += `                        <tr${rowClass}><td class="score-date">${g.dateDisplay}</td><td class="score-matchup">${g.line}</td><td class="score-result">${badgeHtml}</td></tr>\n`;
+        }
+        out += '                    </tbody></table></div>\n';
+    }
+    out += '                </div>';
     return out;
 }
 
