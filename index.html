@@ -1471,114 +1471,20 @@
                 </table>
             </div>
 
-            <!-- Player Stats -->
-            <div class="card">
-                <h2>Player Stats</h2>
-                <p style="color: #888888; margin-bottom: 20px; font-size: 13px;">Stats sourced from GameChanger live scoring. Updated after each game.</p>
-
-                <!-- Team Stats Summary -->
-                <div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-                    <h3 style="margin-top: 0; margin-bottom: 12px; color: #2B5DAA;">Team Stats</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;">
-                        <div style="text-align: center; padding: 10px; background-color: #111111; border-radius: 4px;">
-                            <div style="font-size: 11px; color: #888888; text-transform: uppercase;">Record</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #2B5DAA;">0-0</div>
-                        </div>
-                        <div style="text-align: center; padding: 10px; background-color: #111111; border-radius: 4px;">
-                            <div style="font-size: 11px; color: #888888; text-transform: uppercase;">Runs Scored</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #2B5DAA;">—</div>
-                        </div>
-                        <div style="text-align: center; padding: 10px; background-color: #111111; border-radius: 4px;">
-                            <div style="font-size: 11px; color: #888888; text-transform: uppercase;">Runs Against</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #2B5DAA;">—</div>
-                        </div>
-                        <div style="text-align: center; padding: 10px; background-color: #111111; border-radius: 4px;">
-                            <div style="font-size: 11px; color: #888888; text-transform: uppercase;">Run Diff</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #2B5DAA;">—</div>
-                        </div>
-                        <div style="text-align: center; padding: 10px; background-color: #111111; border-radius: 4px;">
-                            <div style="font-size: 11px; color: #888888; text-transform: uppercase;">Team AVG</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #2B5DAA;">—</div>
-                        </div>
-                        <div style="text-align: center; padding: 10px; background-color: #111111; border-radius: 4px;">
-                            <div style="font-size: 11px; color: #888888; text-transform: uppercase;">Team ERA</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #2B5DAA;">—</div>
-                        </div>
-                        <div style="text-align: center; padding: 10px; background-color: #111111; border-radius: 4px;">
-                            <div style="font-size: 11px; color: #888888; text-transform: uppercase;">Total Hits</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #2B5DAA;">—</div>
-                        </div>
-                        <div style="text-align: center; padding: 10px; background-color: #111111; border-radius: 4px;">
-                            <div style="font-size: 11px; color: #888888; text-transform: uppercase;">Errors</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #2B5DAA;">—</div>
-                        </div>
+            <!-- Player Stats (Encrypted) -->
+            <div class="card" id="jv-stats-card">
+                <h2>Player Stats <span style="font-size: 12px; color: #F59E0B; font-weight: 400;">🔒 Protected</span></h2>
+                <div id="jv-stats-locked">
+                    <p style="color: #CCCCCC; margin-bottom: 15px; font-size: 14px;">Player stats are restricted to Eagles families and staff.</p>
+                    <div style="display: flex; gap: 10px; align-items: center; max-width: 400px;">
+                        <input type="password" id="jv-stats-password" placeholder="Enter access code" style="flex: 1; padding: 10px 14px; background-color: #1a1a1a; border: 1px solid #333; border-radius: 6px; color: #FFFFFF; font-size: 14px; outline: none;" onkeydown="if(event.key==='Enter')unlockJVStats()">
+                        <button onclick="unlockJVStats()" style="padding: 10px 20px; background-color: #2B5DAA; color: #FFFFFF; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Unlock</button>
                     </div>
+                    <p id="jv-stats-error" style="color: #EF4444; font-size: 13px; margin-top: 8px; display: none;">Incorrect access code.</p>
                 </div>
-
-                <!-- Batting Stats -->
-                <div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-                    <h3 style="margin-top: 0; margin-bottom: 12px; color: #2B5DAA;">Batting</h3>
-                    <div style="overflow-x: auto;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Player</th>
-                                    <th>GP</th>
-                                    <th>AB</th>
-                                    <th>R</th>
-                                    <th>H</th>
-                                    <th>2B</th>
-                                    <th>3B</th>
-                                    <th>HR</th>
-                                    <th>RBI</th>
-                                    <th>BB</th>
-                                    <th>SO</th>
-                                    <th>SB</th>
-                                    <th>AVG</th>
-                                    <th>OBP</th>
-                                    <th>SLG</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="15" style="text-align: center; color: #888888; padding: 20px;">No batting stats yet. Data will populate from GameChanger once games begin.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Pitching Stats -->
-                <div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px;">
-                    <h3 style="margin-top: 0; margin-bottom: 12px; color: #2B5DAA;">Pitching</h3>
-                    <div style="overflow-x: auto;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Player</th>
-                                    <th>GP</th>
-                                    <th>GS</th>
-                                    <th>W</th>
-                                    <th>L</th>
-                                    <th>SV</th>
-                                    <th>IP</th>
-                                    <th>H</th>
-                                    <th>R</th>
-                                    <th>ER</th>
-                                    <th>BB</th>
-                                    <th>SO</th>
-                                    <th>ERA</th>
-                                    <th>WHIP</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="14" style="text-align: center; color: #888888; padding: 20px;">No pitching stats yet. Data will populate from GameChanger once games begin.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <div id="jv-stats-unlocked" style="display: none;"></div>
+                <!-- Encrypted stats payload (AES-GCM) -->
+                <script id="jv-stats-data" type="application/json" data-encrypted="true">{"salt":"zW4/Vuotn0sVmkZufeXGnA==","iv":"kdRd+7mza05Gpy63","authTag":"BGPXU8JxeeHqqEQi2cLnGA==","data":"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"}</script>
             </div>
 
             <!-- JV Intel -->
@@ -1648,6 +1554,69 @@
 
             content.classList.toggle('collapsed');
             toggle.classList.toggle('collapsed');
+        }
+
+        // --- Encrypted Stats Decryption (AES-256-GCM via Web Crypto API) ---
+        async function deriveKey(password, salt) {
+            const enc = new TextEncoder();
+            const keyMaterial = await crypto.subtle.importKey(
+                'raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']
+            );
+            return crypto.subtle.deriveKey(
+                { name: 'PBKDF2', salt: salt, iterations: 100000, hash: 'SHA-256' },
+                keyMaterial,
+                { name: 'AES-GCM', length: 256 },
+                false,
+                ['decrypt']
+            );
+        }
+
+        function b64toArr(b64) {
+            const bin = atob(b64);
+            const arr = new Uint8Array(bin.length);
+            for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+            return arr;
+        }
+
+        async function decryptStats(password, payload) {
+            const salt = b64toArr(payload.salt);
+            const iv = b64toArr(payload.iv);
+            const authTag = b64toArr(payload.authTag);
+            const ciphertext = b64toArr(payload.data);
+
+            // AES-GCM expects ciphertext + authTag concatenated
+            const combined = new Uint8Array(ciphertext.length + authTag.length);
+            combined.set(ciphertext);
+            combined.set(authTag, ciphertext.length);
+
+            const key = await deriveKey(password, salt);
+            const decrypted = await crypto.subtle.decrypt(
+                { name: 'AES-GCM', iv: iv },
+                key,
+                combined
+            );
+            return new TextDecoder().decode(decrypted);
+        }
+
+        async function unlockJVStats() {
+            const pw = document.getElementById('jv-stats-password').value;
+            const errorEl = document.getElementById('jv-stats-error');
+            const payloadEl = document.getElementById('jv-stats-data');
+            const payload = JSON.parse(payloadEl.textContent);
+
+            try {
+                const html = await decryptStats(pw, payload);
+                document.getElementById('jv-stats-unlocked').innerHTML = html;
+                document.getElementById('jv-stats-unlocked').style.display = 'block';
+                document.getElementById('jv-stats-locked').style.display = 'none';
+                // Update header to show unlocked
+                document.querySelector('#jv-stats-card h2').innerHTML = 'Player Stats <span style="font-size: 12px; color: #10B981; font-weight: 400;">🔓 Unlocked</span>';
+                errorEl.style.display = 'none';
+            } catch (e) {
+                errorEl.style.display = 'block';
+                document.getElementById('jv-stats-password').value = '';
+                document.getElementById('jv-stats-password').focus();
+            }
         }
     </script>
 </body>
