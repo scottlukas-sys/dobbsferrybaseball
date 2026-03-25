@@ -615,9 +615,9 @@
                     <div class="stat-label">League</div>
                     <div class="stat-value">N/A</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Games This Week</div>
-                    <div class="stat-value">2</div>
+                <div class="stat-card roster-trigger" onclick="document.getElementById('varsityRosterModal').classList.add('active')">
+                    <div class="stat-label">Roster</div>
+                    <div class="stat-value">14</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Streak</div>
@@ -1749,6 +1749,33 @@
             }
         }
     </script>
+<!-- Varsity Roster Modal -->
+<div class="roster-modal-overlay" id="varsityRosterModal" onclick="if(event.target===this)this.classList.remove('active')">
+    <div class="roster-modal">
+        <span class="roster-close" onclick="document.getElementById('varsityRosterModal').classList.remove('active')">&times;</span>
+        <h3>Varsity Roster (Spring 2026)</h3>
+        <table>
+            <thead><tr><th>#</th><th>Player</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Brendan Marron</td></tr>
+                <tr><td>2</td><td>Don Anthony Dilorenzo-Troy</td></tr>
+                <tr><td>3</td><td>Brendan Molina</td></tr>
+                <tr><td>5</td><td>Ian Hwangbo</td></tr>
+                <tr><td>6</td><td>Jatin Costa</td></tr>
+                <tr><td>7</td><td>Henry Brewer</td></tr>
+                <tr><td>9</td><td>DJ Kollar</td></tr>
+                <tr><td>10</td><td>Ian Foley</td></tr>
+                <tr><td>11</td><td>Drew Kimmerling</td></tr>
+                <tr><td>12</td><td>Jake Evan</td></tr>
+                <tr><td>15</td><td>Andrew Zendel</td></tr>
+                <tr><td>17</td><td>Rommel Eusebio</td></tr>
+                <tr><td>22</td><td>Anthony Ficarrotta</td></tr>
+                <tr><td>25</td><td>Rodger Frisch</td></tr>
+            </tbody>
+        </table>
+        <div class="roster-source">Source: GameChanger</div>
+    </div>
+</div>
 <!-- JV Roster Modal -->
 <div class="roster-modal-overlay" id="jvRosterModal" onclick="if(event.target===this)this.classList.remove('active')">
     <div class="roster-modal">
