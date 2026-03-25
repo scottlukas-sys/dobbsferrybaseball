@@ -212,7 +212,7 @@ html = html.replace(
 );
 
 // ============================================================
-// 3. UPDATE NEXT GAME CALLOUT
+// 3. UPDATE NEXT GAME CALLOUT (the alert card at top of varsity tab)
 // ============================================================
 if (nextVarsityGame) {
     const nextDate = new Date(nextVarsityGame.date + 'T12:00:00');
@@ -221,14 +221,27 @@ if (nextVarsityGame) {
     const shortMonth = formatShortMonth(nextDate);
     const homeAway = nextVarsityGame.location === 'Home' ? 'vs' : '@';
     const venueName = nextVarsityGame.location === 'Home' ? 'Gould Park (Home)' : `${nextVarsityGame.venue} (Away)`;
-    const daysText = daysUntil === 0 ? 'TODAY' : daysUntil === 1 ? 'TOMORROW' : `in ${daysUntil} days.`;
+    const daysText = daysUntil === 0 ? 'TODAY' : daysUntil === 1 ? 'TOMORROW' : `${daysUntil} DAYS AWAY`;
 
-    const nextGameHtml = `<strong>Next Game:</strong> ${shortMonth} ${nextDate.getDate()} (${dayOfWeek}) ${homeAway} ${nextVarsityGame.opponent}, ${nextVarsityGame.time}, ${venueName}. <span style="color: #EF4444;">${daysText}</span>`;
+    // Get last result for context
+    const sortedScoreDates = Object.keys(scores.varsity).sort().reverse();
+    let lastResultText = '';
+    if (sortedScoreDates.length > 0) {
+        const lastDate = sortedScoreDates[0];
+        const lastScore = scores.varsity[lastDate];
+        const won = lastScore.df > lastScore.opp;
+        const ld = new Date(lastDate + 'T12:00:00');
+        const lm = formatShortMonth(ld);
+        lastResultText = ` | Last result: ${won ? 'W' : 'L'} ${lastScore.df}-${lastScore.opp} vs ${lastScore.opponent} (${lm} ${ld.getDate()})`;
+    }
 
-    html = html.replace(
-        /<strong>Next Game:<\/strong>[^<]*<span style="color: #EF4444;">[^<]*<\/span>/,
-        nextGameHtml
-    );
+    // Replace the entire varsity alert card
+    const alertRegex = /(<div id="varsity"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- Quick Stats -->)/;
+    html = html.replace(alertRegex, `$1<div class="card alert">
+                <div class="alert-title">NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextDate.getDate()})</div>
+                <div class="alert-game">${shortMonth} ${nextDate.getDate()} (${dayOfWeek}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextVarsityGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextVarsityGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${venueName}</div>
+                <div class="alert-details">Non-league${lastResultText}</div>
+            </div>$3`);
 }
 
 // ============================================================
@@ -238,84 +251,52 @@ function buildNextFourVarsity() {
     // Get all non-scrimmage games
     const realGames = varsitySchedule.filter(g => g.type !== 'Scrimmage');
 
-    // Find games: show the most recent completed game (if within last 3 days) + next upcoming
-    const completedGames = realGames.filter(g => playedVarsityDates.has(g.date)).sort((a, b) => b.date.localeCompare(a.date));
+    // Only show upcoming games — no completed games in this section
     const upcomingGames = realGames.filter(g => !playedVarsityDates.has(g.date) && g.date >= todayStr);
 
-    let displayGames = [];
-
-    // Show most recent completed game if within 3 days
-    if (completedGames.length > 0) {
-        const lastCompleted = completedGames[0];
-        const lastDate = new Date(lastCompleted.date + 'T12:00:00');
-        const daysAgo = daysBetween(lastDate, today);
-        if (daysAgo <= 3) {
-            displayGames.push({ ...lastCompleted, completed: true });
-        }
-    }
-
-    // Fill remaining slots with upcoming games
-    for (const g of upcomingGames) {
-        if (displayGames.length >= 4) break;
-        displayGames.push({ ...g, completed: false });
-    }
-
-    // If still not 4, just show upcoming
-    while (displayGames.length < 4 && displayGames.length < upcomingGames.length) {
-        // already added above
-        break;
-    }
+    const displayGames = upcomingGames.slice(0, 4);
 
     let cardsHtml = '';
-    let isFirstUpcoming = true;
 
-    for (const g of displayGames) {
+    for (let i = 0; i < displayGames.length; i++) {
+        const g = displayGames[i];
         const d = new Date(g.date + 'T12:00:00');
         const monthName = MONTHS[d.getMonth()].toUpperCase();
         const dayName = DAYS[d.getDay()].toUpperCase();
         const homeAway = g.location === 'Home' ? 'vs' : g.location === 'Away' ? 'at' : '@';
         const venueLine = g.location === 'Home' ? `Home (${g.venue || 'Gould Park'})` : `Away (${g.venue})`;
 
-        if (g.completed) {
-            const score = scores.varsity[g.date];
-            const won = score.df > score.opp;
-            const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-            const resultColor = won ? '#10B981' : '#EF4444';
-            const badgeColor = won ? '#10B981' : '#EF4444';
+        const badge = i === 0
+            ? '<span class="game-badge highlight">NEXT</span>'
+            : '';
+        const borderStyle = i === 0
+            ? ' style="border-left-color: #10B981;"'
+            : '';
 
-            cardsHtml += `
-                    <div class="game-card" style="opacity: 0.6; border-color: ${resultColor};">
-                        <div class="game-date">${monthName} ${d.getDate()} | ${dayName}</div>
-                        <div class="game-opponent">${homeAway} ${g.opponent}</div>
-                        <div class="game-details" style="color: ${resultColor}; font-weight: 700;">${resultText}</div>
-                        <div class="game-details">${score.location || venueLine}</div>
-                        <span class="game-badge" style="background-color: ${badgeColor};">FINAL</span>
-                    </div>`;
-        } else {
-            let badge = '';
-            if (isFirstUpcoming) {
-                badge = '<span class="game-badge highlight">NEXT</span>';
-                isFirstUpcoming = false;
-            }
-
-            cardsHtml += `
-                    <div class="game-card">
+        cardsHtml += `
+                    <div class="game-card"${borderStyle}>
                         <div class="game-date">${monthName} ${d.getDate()} | ${dayName}</div>
                         <div class="game-opponent">${homeAway} ${g.opponent}</div>
                         <div class="game-details">${g.time}</div>
                         <div class="game-details">${venueLine}</div>
                         ${badge}
                     </div>`;
-        }
     }
 
     return cardsHtml;
 }
 
-// Replace the Next Four Games content
-const nextFourRegex = /(<!-- Next Four Games -->\s*<div class="card">\s*<h2>Next Four Games<\/h2>\s*<div class="games-grid">)([\s\S]*?)(<\/div>\s*<\/div>)/;
+// Replace the entire Next Four Games card (from comment to next comment)
+const nextFourRegex = /(<!-- Next Four Games -->)[\s\S]*?(<!-- (?:Conference Scores|Recent Scores) -->)/;
 const newNextFour = buildNextFourVarsity();
-html = html.replace(nextFourRegex, `$1${newNextFour}\n                $3`);
+html = html.replace(nextFourRegex, `$1
+            <div class="card">
+                <h2>Next Four Games</h2>
+                <div class="games-grid">${newNextFour}
+                </div>
+            </div>
+
+            $2`);
 
 // ============================================================
 // 5. UPDATE RECENT SCORES (VARSITY)
@@ -508,8 +489,16 @@ function buildNextFourJV() {
     return cardsHtml;
 }
 
-const jvNextFourRegex = /(<!-- Next Four JV Games -->\s*<div class="card">\s*<h2>Next Four JV Games<\/h2>\s*<div class="games-grid">)([\s\S]*?)(<\/div>\s*<\/div>)/;
-html = html.replace(jvNextFourRegex, `$1${buildNextFourJV()}\n                $3`);
+// Replace the entire JV Next Four card (from comment to next comment)
+const jvNextFourRegex = /(<!-- Next Four JV Games -->)[\s\S]*?(<!-- (?:JV Scores|JV Schedule) -->)/;
+html = html.replace(jvNextFourRegex, `$1
+            <div class="card">
+                <h2>Next Four JV Games</h2>
+                <div class="games-grid">${buildNextFourJV()}
+                </div>
+            </div>
+
+            $2`);
 
 // Update JV Scores section
 function buildJvScores() {
