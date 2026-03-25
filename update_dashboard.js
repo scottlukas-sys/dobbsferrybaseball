@@ -400,8 +400,8 @@ if (nextJvGame) {
     );
 
     html = html.replace(
-        /(<div id="jv"[\s\S]*?<div class="alert-game">)[^<]*/,
-        `$1${shortMonth} ${nextJvDate.getDate()} (${dayName}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextJvGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.location}`
+        /(<div id="jv"[\s\S]*?<div class="alert-game">)[\s\S]*?(<\/div>\s*<div class="alert-details">)/,
+        `$1${shortMonth} ${nextJvDate.getDate()} (${dayName}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextJvGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.location}$2`
     );
 }
 
