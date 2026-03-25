@@ -192,13 +192,27 @@ html = html.replace(
     `$1${vLeague}`
 );
 
-// Update Next Game in stats
-if (nextVarsityGame) {
-    const d = new Date(nextVarsityGame.date + 'T12:00:00');
-    const shortMonth = formatShortMonth(d);
+// Update Games This Week in stats (Mon-Sun week containing today)
+{
+    const todayDate = new Date(todayStr + 'T12:00:00');
+    // getDay(): 0=Sun, 1=Mon ... 6=Sat. We want Mon=start, Sun=end.
+    const dayOfWeek = todayDate.getDay();
+    const diffToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // Sunday is end of week, so Monday was 6 days ago
+    const monday = new Date(todayDate);
+    monday.setDate(todayDate.getDate() - diffToMonday);
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+
+    const mondayStr = monday.toISOString().slice(0, 10);
+    const sundayStr = sunday.toISOString().slice(0, 10);
+
+    const varsityThisWeek = varsitySchedule.filter(g => g.date >= mondayStr && g.date <= sundayStr && g.type !== 'Scrimmage');
+    const jvThisWeek = jvSchedule.filter(g => g.date >= mondayStr && g.date <= sundayStr);
+    const gamesThisWeek = varsityThisWeek.length + jvThisWeek.length;
+
     html = html.replace(
-        /(<div class="stat-label">Next Game<\/div>\s*<div class="stat-detail">)[^<]*/,
-        `$1${shortMonth} ${d.getDate()} vs ${nextVarsityGame.opponent}`
+        /(<div class="stat-label">Games This Week<\/div>\s*<div class="stat-value">)[^<]*/,
+        `$1${gamesThisWeek}`
     );
 }
 
