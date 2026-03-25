@@ -334,8 +334,8 @@ function buildRecentScores() {
     return html;
 }
 
-const recentScoresRegex = /(<!-- Conference Scores -->\s*<div class="card">\s*<h2>Recent Scores<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- What's Happening))/;
-html = html.replace(recentScoresRegex, `$1\n${buildRecentScores()}\n            </div>\n\n            `);
+const recentScoresRegex = /(<!-- Conference Scores -->\s*<div class="card">\s*<h2>Conference 3 Division B Scores<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- Standings))/;
+html = html.replace(recentScoresRegex, `$1\n${buildRecentScores()}\n                <p style="color: #888; font-size: 13px; margin-top: 10px;">Conference play begins April 20.</p>\n            </div>\n\n            `);
 
 // ============================================================
 // 6. MARK COMPLETED GAMES IN VARSITY SCHEDULE TABLE
@@ -367,6 +367,131 @@ for (const [date, score] of Object.entries(scores.varsity)) {
 
     html = html.replace(badgePattern, `$1<span class="game-badge" style="background-color:${resultColor};">${resultText}</span>$3`);
 }
+
+// ============================================================
+// 6b. UPDATE DIVISION B STANDINGS
+// ============================================================
+// Division B teams and their league game data
+const divBTeams = [
+    'Ardsley Panthers',
+    'Blind Brook Trojans',
+    'Dobbs Ferry Eagles',
+    'Hastings Yellow Jackets',
+    'Rye Neck Panthers',
+    'Tuckahoe Tigers',
+    'Valhalla Vikings'
+];
+
+// Map team names to schedule opponent names
+const teamToOpponent = {
+    'Dobbs Ferry Eagles': 'Dobbs Ferry'
+};
+
+// Compute league records for DF from scores.json
+function computeDivBStandings() {
+    const standings = {};
+    for (const team of divBTeams) {
+        standings[team] = { w: 0, l: 0, streak: '—', lastResults: [] };
+    }
+
+    // DF league games from scores.json
+    const leagueGames = varsitySchedule.filter(g => g.type === 'League');
+    const leagueDates = new Set(leagueGames.map(g => g.date));
+
+    for (const [date, g] of Object.entries(scores.varsity)) {
+        if (!leagueDates.has(date)) continue;
+        const won = g.df > g.opp;
+        if (won) {
+            standings['Dobbs Ferry Eagles'].w++;
+            standings['Dobbs Ferry Eagles'].lastResults.push('W');
+        } else {
+            standings['Dobbs Ferry Eagles'].l++;
+            standings['Dobbs Ferry Eagles'].lastResults.push('L');
+        }
+    }
+
+    // Compute streak for each team
+    for (const team of divBTeams) {
+        const results = standings[team].lastResults;
+        if (results.length > 0) {
+            const last = results[results.length - 1];
+            let count = 0;
+            for (let i = results.length - 1; i >= 0; i--) {
+                if (results[i] === last) count++;
+                else break;
+            }
+            standings[team].streak = `${last}${count}`;
+        }
+    }
+
+    // Sort by win pct, then wins
+    const sorted = divBTeams.slice().sort((a, b) => {
+        const sa = standings[a], sb = standings[b];
+        const totalA = sa.w + sa.l, totalB = sb.w + sb.l;
+        const pctA = totalA > 0 ? sa.w / totalA : 0;
+        const pctB = totalB > 0 ? sb.w / totalB : 0;
+        if (pctB !== pctA) return pctB - pctA;
+        return sb.w - sa.w;
+    });
+
+    // Compute GB from leader
+    const leader = standings[sorted[0]];
+    const leaderTotal = leader.w + leader.l;
+
+    let rowsHtml = '';
+    for (const team of sorted) {
+        const s = standings[team];
+        const total = s.w + s.l;
+        const pct = total > 0 ? (s.w / total).toFixed(3).replace('0.', '.') : '.000';
+        let gb = '—';
+        if (leaderTotal > 0 && total > 0) {
+            const gbVal = ((leader.w - s.w) + (s.l - leader.l)) / 2;
+            gb = gbVal === 0 ? '—' : gbVal.toFixed(1).replace('.0', '');
+        }
+        const highlight = team === 'Dobbs Ferry Eagles' ? ' style="background-color: rgba(43, 93, 170, 0.15);"' : '';
+        rowsHtml += `
+                        <tr${highlight}>
+                            <td>${team}</td>
+                            <td>${s.w}</td>
+                            <td>${s.l}</td>
+                            <td>${pct}</td>
+                            <td>${gb}</td>
+                            <td>${s.streak}</td>
+                        </tr>`;
+    }
+
+    return rowsHtml;
+}
+
+// Check if any league games have been played
+const leagueGamesPlayed = Object.keys(scores.varsity).some(date => {
+    return varsitySchedule.some(g => g.date === date && g.type === 'League');
+});
+
+const standingsSubtitle = leagueGamesPlayed
+    ? `Updated ${formatLongDate(today)}.`
+    : 'League play begins April 20.';
+
+const standingsRegex = /(<!-- Standings -->\s*<div class="card">\s*<h2>Division B Standings<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- What's Happening))/;
+html = html.replace(standingsRegex, `$1
+                <p style="font-size: 12px; color: #888888; margin-bottom: 15px;">${standingsSubtitle}</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>W</th>
+                            <th>L</th>
+                            <th>PCT</th>
+                            <th>GB</th>
+                            <th>Streak</th>
+                        </tr>
+                    </thead>
+                    <tbody>${computeDivBStandings()}
+                    </tbody>
+                </table>
+            </div>
+
+            `);
 
 // ============================================================
 // 7. UPDATE JV SECTION
