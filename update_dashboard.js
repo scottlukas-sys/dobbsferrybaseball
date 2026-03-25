@@ -345,7 +345,7 @@ function buildWeeklyScores() {
                 date,
                 sortDate: date,
                 dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
-                line: `<span style="color: ${won ? '#10B981' : '#EF4444'}; font-weight: 700;">Dobbs Ferry ${g.df}</span>, ${g.opponent} ${g.opp}`,
+                line: `<span class="df-name">Dobbs Ferry ${g.df}</span>, ${g.opponent} ${g.opp}`,
                 isDF: true,
                 badge: won ? 'W' : 'L',
                 badgeColor: won ? '#10B981' : '#EF4444',
@@ -363,7 +363,7 @@ function buildWeeklyScores() {
                 date,
                 sortDate: date,
                 dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
-                line: `<span style="color: ${won ? '#10B981' : '#EF4444'}; font-weight: 700;">Dobbs Ferry JV ${g.df}</span>, ${g.opponent} JV ${g.opp}`,
+                line: `<span class="df-name">Dobbs Ferry JV ${g.df}</span>, ${g.opponent} JV ${g.opp}`,
                 isDF: true,
                 badge: won ? 'W' : 'L',
                 badgeColor: won ? '#10B981' : '#EF4444',
@@ -401,21 +401,16 @@ function buildWeeklyScores() {
         return `<p style="color: #888; font-size: 14px;">No scores reported this week (${week.monDisplay}\u2013${week.sunDisplay}).</p>`;
     }
 
-    let out = '';
+    let out = '<table class="scores-table"><tbody>\n';
     for (const g of allGames) {
-        const borderStyle = g.isDF ? ' border-left: 3px solid #2B5DAA;' : '';
+        const rowClass = g.isDF ? ' class="df-row"' : '';
+        const matchup = g.isDF ? g.line.replace(/color: #10B981; font-weight: 700;/, '').replace(/<span style="">/, '<span class="df-name">') : g.line;
         const badgeHtml = g.badge
-            ? `<span class="game-badge" style="background-color: ${g.badgeColor};">${g.badge}</span>`
+            ? `<span class="badge-${g.badge.toLowerCase()}">${g.badge}</span>`
             : '';
-        out += `
-                <div style="background-color: #1a1a1a; padding: 12px 15px; border-radius: 6px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;${borderStyle}">
-                    <div>
-                        <div style="font-size: 12px; color: #888; margin-bottom: 3px;">${g.dateDisplay}</div>
-                        <div style="font-size: 15px;">${g.line}</div>
-                    </div>
-                    ${badgeHtml}
-                </div>`;
+        out += `                        <tr${rowClass}><td class="score-date">${g.dateDisplay}</td><td class="score-matchup">${g.line}</td><td class="score-result">${badgeHtml}</td></tr>\n`;
     }
+    out += '                    </tbody></table>';
     return out;
 }
 
