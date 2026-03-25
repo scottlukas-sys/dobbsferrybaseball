@@ -5,7 +5,7 @@
  * Updates the static HTML dashboard with:
  * - Current date stamps
  * - Next Four Games (Varsity + JV) based on today's date
- * - Quick Stats (Record, Streak, Next Game)
+ * - Quick Stats (Record, Games This Week, Streak)
  * - Recent Scores from scores.json
  * - Completed game markers in schedule tables
  * - Next Game callout with days-until countdown
@@ -550,13 +550,31 @@ html = html.replace(
     `$1${jvRecord.record}`
 );
 
-// Update JV Next Game in stats
-if (nextJvGame) {
-    const d = new Date(nextJvGame.date + 'T12:00:00');
-    const shortMonth = formatShortMonth(d);
+// Update JV Games This Week
+{
+    const todayDate = new Date(todayStr + 'T12:00:00');
+    const dayOfWeek = todayDate.getDay();
+    const diffToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+    const monday = new Date(todayDate);
+    monday.setDate(todayDate.getDate() - diffToMonday);
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    const mondayStr = monday.toISOString().slice(0, 10);
+    const sundayStr = sunday.toISOString().slice(0, 10);
+    const jvThisWeek = jvSchedule.filter(g => g.date >= mondayStr && g.date <= sundayStr);
     html = html.replace(
-        /(<!-- JV Quick Stats -->[\s\S]*?<div class="stat-label">Next Game<\/div>\s*<div class="stat-detail">)[^<]*/,
-        `$1${shortMonth} ${d.getDate()} vs ${nextJvGame.opponent}`
+        /(<!-- JV Quick Stats -->[\s\S]*?<div class="stat-label">Games This Week<\/div>\s*<div class="stat-value">)[^<]*/,
+        `$1${jvThisWeek.length}`
+    );
+}
+
+// Update JV Streak
+{
+    const streakColor = jvRecord.streak.startsWith('W') ? '#10B981' : jvRecord.streak.startsWith('L') ? '#EF4444' : '#888';
+    const streakDisplay = jvRecord.streak || '--';
+    html = html.replace(
+        /(<!-- JV Quick Stats -->[\s\S]*?<div class="stat-label">Streak<\/div>\s*<div class="stat-value")(.*?)(>)[^<]*([\s\S]*?<\/div>)/,
+        `$1 style="color: ${streakColor};">${streakDisplay}</div>`
     );
 }
 

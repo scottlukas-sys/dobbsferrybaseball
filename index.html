@@ -547,6 +547,27 @@
                 font-size: 24px;
             }
         }
+
+        /* Roster Modal */
+        .roster-trigger { cursor: pointer; }
+        .roster-trigger:hover { opacity: 0.8; }
+        .roster-modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;
+        }
+        .roster-modal-overlay.active { display: flex; }
+        .roster-modal {
+            background: #1a1a2e; border: 1px solid #2B5DAA; border-radius: 12px;
+            padding: 24px; max-width: 400px; width: 90%; max-height: 80vh; overflow-y: auto;
+        }
+        .roster-modal h3 { color: #FFFFFF; margin: 0 0 16px 0; font-size: 18px; }
+        .roster-modal .roster-close { float: right; cursor: pointer; color: #888; font-size: 20px; }
+        .roster-modal .roster-close:hover { color: #fff; }
+        .roster-modal table { width: 100%; border-collapse: collapse; }
+        .roster-modal th { color: #888; font-size: 11px; text-transform: uppercase; text-align: left; padding: 6px 8px; border-bottom: 1px solid #333; }
+        .roster-modal td { color: #FFFFFF; font-size: 14px; padding: 8px; border-bottom: 1px solid #222; }
+        .roster-modal td:first-child { color: #2B5DAA; font-weight: 700; width: 40px; text-align: center; }
+        .roster-modal .roster-source { color: #666; font-size: 11px; margin-top: 12px; }
     </style>
 </head>
 <body>
@@ -1375,17 +1396,17 @@
                     <div class="stat-label">Record</div>
                     <div class="stat-value">0-0</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card roster-trigger" onclick="document.getElementById('jvRosterModal').classList.add('active')">
                     <div class="stat-label">Roster</div>
                     <div class="stat-value">14</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Games</div>
-                    <div class="stat-value">14</div>
+                    <div class="stat-label">Games This Week</div>
+                    <div class="stat-value">0</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Next Game</div>
-                    <div class="stat-detail">Apr 7 vs Edgemont JV</div>
+                    <div class="stat-label">Streak</div>
+                    <div class="stat-value" style="color: #888;">N/A</div>
                 </div>
             </div>
 
@@ -1626,7 +1647,7 @@
     </div>
 
     <footer>
-        <p>March 25, 2026 (Updated 4:41 PM) — Not An Official Dobbs Ferry School District Site</p>
+        <p>March 25, 2026 (Updated 4:54 PM) — Not An Official Dobbs Ferry School District Site</p>
         <p style="margin-top: 8px;">A Scott Lukas Experiment</p>
     </footer>
 
@@ -1718,5 +1739,32 @@
             }
         }
     </script>
+<!-- JV Roster Modal -->
+<div class="roster-modal-overlay" id="jvRosterModal" onclick="if(event.target===this)this.classList.remove('active')">
+    <div class="roster-modal">
+        <span class="roster-close" onclick="document.getElementById('jvRosterModal').classList.remove('active')">&times;</span>
+        <h3>JV Roster (Spring 2026)</h3>
+        <table>
+            <thead><tr><th>#</th><th>Player</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>James Gotcsik-Karpinos</td></tr>
+                <tr><td>2</td><td>Julian Graff</td></tr>
+                <tr><td>4</td><td>Sam Keltz</td></tr>
+                <tr><td>5</td><td>Matthew Moon</td></tr>
+                <tr><td>6</td><td>Winston Burgess</td></tr>
+                <tr><td>8</td><td>Declan Cho</td></tr>
+                <tr><td>9</td><td>Mina Hwangbo</td></tr>
+                <tr><td>11</td><td>Michael Kingston</td></tr>
+                <tr><td>12</td><td>Jude Zonana</td></tr>
+                <tr><td>16</td><td>Vaughn Lukas</td></tr>
+                <tr><td>20</td><td>Aaron Sellitti</td></tr>
+                <tr><td>34</td><td>Jack Rizzo</td></tr>
+                <tr><td>--</td><td>Eli Gallagher</td></tr>
+                <tr><td>--</td><td>Gianfranco Mangone</td></tr>
+            </tbody>
+        </table>
+        <div class="roster-source">Source: GameChanger / Team Roster Doc (Blue jerseys)</div>
+    </div>
+</div>
 </body>
 </html>
