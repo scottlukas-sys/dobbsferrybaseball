@@ -313,43 +313,118 @@ html = html.replace(nextFourRegex, `$1
             $2`);
 
 // ============================================================
-// 5. UPDATE RECENT SCORES (VARSITY)
+// 5. UPDATE SCORES THIS WEEK
 // ============================================================
-function buildRecentScores() {
-    const sortedDates = Object.keys(scores.varsity).sort().reverse();
-    if (sortedDates.length === 0) {
-        return '<div class="empty-state"><p>No games played yet.</p></div>';
-    }
 
-    let html = '';
-    for (const date of sortedDates) {
-        const g = scores.varsity[date];
-        const d = new Date(date + 'T12:00:00');
-        const shortMonth = formatShortMonth(d);
-        const won = g.df > g.opp;
-        const dfColor = won ? '#10B981' : '#EF4444';
-        const badgeColor = won ? '#10B981' : '#EF4444';
-        const badgeText = won ? 'W' : 'L';
-
-        // Determine league/non-league
-        const schedGame = varsitySchedule.find(sg => sg.date === date);
-        const gameType = schedGame && schedGame.type === 'League' ? 'League' : 'Non-League';
-
-        html += `
-                <div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <div style="font-size: 12px; color: #888; margin-bottom: 4px;">${shortMonth} ${d.getDate()} | ${gameType}</div>
-                        <div style="font-size: 16px; font-weight: 700;"><span style="color: ${dfColor};">Dobbs Ferry ${g.df}</span>, ${g.opponent} ${g.opp}</div>
-                        <div style="font-size: 12px; color: #888; margin-top: 4px;">@ ${g.location} | Source: ${g.source || 'Reported'}</div>
-                    </div>
-                    <span class="game-badge" style="background-color: ${badgeColor};">${badgeText}</span>
-                </div>`;
-    }
-    return html;
+// Get Monday-Sunday of the current week
+function getWeekBounds(d) {
+    const day = d.getDay(); // 0=Sun
+    const diffToMon = day === 0 ? -6 : 1 - day;
+    const mon = new Date(d);
+    mon.setDate(d.getDate() + diffToMon);
+    const sun = new Date(mon);
+    sun.setDate(mon.getDate() + 6);
+    return {
+        monStr: mon.toISOString().split('T')[0],
+        sunStr: sun.toISOString().split('T')[0],
+        monDisplay: `${formatShortMonth(mon)} ${mon.getDate()}`,
+        sunDisplay: `${formatShortMonth(sun)} ${sun.getDate()}`
+    };
 }
 
-const recentScoresRegex = /(<!-- Conference Scores -->\s*<div class="card">\s*<h2>Conference 3 Division B Scores<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- Standings))/;
-html = html.replace(recentScoresRegex, `$1\n${buildRecentScores()}\n                <p style="color: #888; font-size: 13px; margin-top: 10px;">Conference play begins April 20.</p>\n            </div>\n\n            `);
+function buildWeeklyScores() {
+    const week = getWeekBounds(today);
+    let allGames = [];
+
+    // DF varsity games this week
+    for (const [date, g] of Object.entries(scores.varsity)) {
+        if (date >= week.monStr && date <= week.sunStr) {
+            const d = new Date(date + 'T12:00:00');
+            const won = g.df > g.opp;
+            allGames.push({
+                date,
+                sortDate: date,
+                dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
+                line: `<span style="color: ${won ? '#10B981' : '#EF4444'}; font-weight: 700;">Dobbs Ferry ${g.df}</span>, ${g.opponent} ${g.opp}`,
+                isDF: true,
+                badge: won ? 'W' : 'L',
+                badgeColor: won ? '#10B981' : '#EF4444',
+                source: g.source || 'Reported'
+            });
+        }
+    }
+
+    // DF JV games this week
+    for (const [date, g] of Object.entries(scores.jv)) {
+        if (date >= week.monStr && date <= week.sunStr) {
+            const d = new Date(date + 'T12:00:00');
+            const won = g.df > g.opp;
+            allGames.push({
+                date,
+                sortDate: date,
+                dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
+                line: `<span style="color: ${won ? '#10B981' : '#EF4444'}; font-weight: 700;">Dobbs Ferry JV ${g.df}</span>, ${g.opponent} JV ${g.opp}`,
+                isDF: true,
+                badge: won ? 'W' : 'L',
+                badgeColor: won ? '#10B981' : '#EF4444',
+                source: g.source || 'Reported'
+            });
+        }
+    }
+
+    // Opponent results this week
+    const oppResults = scores.opponentResults || [];
+    for (const g of oppResults) {
+        if (g.date >= week.monStr && g.date <= week.sunStr) {
+            const d = new Date(g.date + 'T12:00:00');
+            const hasScore = g.winnerRuns > 0 || g.loserRuns > 0;
+            const scoreLine = hasScore
+                ? `${g.winner} ${g.winnerRuns}, ${g.loser} ${g.loserRuns}`
+                : `${g.winner} def. ${g.loser}`;
+            allGames.push({
+                date: g.date,
+                sortDate: g.date,
+                dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
+                line: scoreLine,
+                isDF: false,
+                badge: null,
+                badgeColor: null,
+                source: g.source || 'Reported'
+            });
+        }
+    }
+
+    // Sort by date
+    allGames.sort((a, b) => a.sortDate.localeCompare(b.sortDate));
+
+    if (allGames.length === 0) {
+        return `<p style="color: #888; font-size: 14px;">No scores reported this week (${week.monDisplay}\u2013${week.sunDisplay}).</p>`;
+    }
+
+    let out = '';
+    for (const g of allGames) {
+        const borderStyle = g.isDF ? ' border-left: 3px solid #2B5DAA;' : '';
+        const badgeHtml = g.badge
+            ? `<span class="game-badge" style="background-color: ${g.badgeColor};">${g.badge}</span>`
+            : '';
+        out += `
+                <div style="background-color: #1a1a1a; padding: 12px 15px; border-radius: 6px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;${borderStyle}">
+                    <div>
+                        <div style="font-size: 12px; color: #888; margin-bottom: 3px;">${g.dateDisplay}</div>
+                        <div style="font-size: 15px;">${g.line}</div>
+                    </div>
+                    ${badgeHtml}
+                </div>`;
+    }
+    return out;
+}
+
+// Build the week range for the heading subtitle
+const weekBounds = getWeekBounds(today);
+const weekRangeText = `${weekBounds.monDisplay}\u2013${weekBounds.sunDisplay}`;
+
+const recentScoresRegex = /(<!-- Conference Scores -->\s*<div class="card">\s*)<h2>(?:Conference 3 Division B Scores|Scores This Week)<\/h2>([\s\S]*?)(<\/div>\s*(?=\s*<!-- Standings))/;
+html = html.replace(recentScoresRegex, `$1<h2>Scores This Week</h2>\n                <p style="font-size: 12px; color: #888; margin-bottom: 12px;">${weekRangeText} \u2014 DF games and schedule opponents</p>\n${buildWeeklyScores()}\n            </div>\n\n            `);
 
 // ============================================================
 // 6. MARK COMPLETED GAMES IN VARSITY SCHEDULE TABLE

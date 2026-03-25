@@ -9,5 +9,9 @@
     }
   },
   "jv": {},
-  "divisionB": []
+  "divisionB": [],
+  "opponentResults": [
+    { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 5, "loser": "Blind Brook", "loserRuns": 2, "source": "@hastingsbase" },
+    { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" }
+  ]
 }
