@@ -401,51 +401,99 @@ const teamToOpponent = {
     'Dobbs Ferry Eagles': 'Dobbs Ferry'
 };
 
-// Compute league records for DF from scores.json
+// Compute league records for all Division B teams from scores.json
+// Sources: scores.varsity (DF league games) + scores.divisionB (all other league matchups)
 function computeDivBStandings() {
     const standings = {};
     for (const team of divBTeams) {
-        standings[team] = { w: 0, l: 0, streak: '—', lastResults: [] };
+        standings[team] = { w: 0, l: 0, rf: 0, ra: 0, results: [] };
     }
 
-    // DF league games from scores.json
+    // Map short names to full standings names
+    const nameMap = {
+        'Ardsley': 'Ardsley Panthers',
+        'Blind Brook': 'Blind Brook Trojans',
+        'Dobbs Ferry': 'Dobbs Ferry Eagles',
+        'Hastings': 'Hastings Yellow Jackets',
+        'Rye Neck': 'Rye Neck Panthers',
+        'Tuckahoe': 'Tuckahoe Tigers',
+        'Valhalla': 'Valhalla Vikings'
+    };
+
+    // DF league games from scores.varsity
     const leagueGames = varsitySchedule.filter(g => g.type === 'League');
     const leagueDates = new Set(leagueGames.map(g => g.date));
 
-    for (const [date, g] of Object.entries(scores.varsity)) {
-        if (!leagueDates.has(date)) continue;
-        const won = g.df > g.opp;
-        if (won) {
-            standings['Dobbs Ferry Eagles'].w++;
-            standings['Dobbs Ferry Eagles'].lastResults.push('W');
+    const dfEntries = Object.entries(scores.varsity)
+        .filter(([date]) => leagueDates.has(date))
+        .sort(([a], [b]) => a.localeCompare(b));
+
+    for (const [date, g] of dfEntries) {
+        const dfFull = 'Dobbs Ferry Eagles';
+        const oppFull = nameMap[g.opponent] || null;
+        standings[dfFull].rf += g.df;
+        standings[dfFull].ra += g.opp;
+        if (g.df > g.opp) {
+            standings[dfFull].w++;
+            standings[dfFull].results.push({ date, outcome: 'W' });
         } else {
-            standings['Dobbs Ferry Eagles'].l++;
-            standings['Dobbs Ferry Eagles'].lastResults.push('L');
+            standings[dfFull].l++;
+            standings[dfFull].results.push({ date, outcome: 'L' });
         }
-    }
-
-    // Compute streak for each team
-    for (const team of divBTeams) {
-        const results = standings[team].lastResults;
-        if (results.length > 0) {
-            const last = results[results.length - 1];
-            let count = 0;
-            for (let i = results.length - 1; i >= 0; i--) {
-                if (results[i] === last) count++;
-                else break;
+        // Also record opponent side if they're a Division B team
+        if (oppFull && standings[oppFull]) {
+            standings[oppFull].rf += g.opp;
+            standings[oppFull].ra += g.df;
+            if (g.opp > g.df) {
+                standings[oppFull].w++;
+                standings[oppFull].results.push({ date, outcome: 'W' });
+            } else {
+                standings[oppFull].l++;
+                standings[oppFull].results.push({ date, outcome: 'L' });
             }
-            standings[team].streak = `${last}${count}`;
         }
     }
 
-    // Sort by win pct, then wins
+    // Division B cross-division league games from scores.divisionB
+    // Format: { date, home, away, homeRuns, awayRuns, source }
+    const divBGames = (scores.divisionB || []).slice().sort((a, b) => a.date.localeCompare(b.date));
+    for (const g of divBGames) {
+        const homeFull = nameMap[g.home] || g.home;
+        const awayFull = nameMap[g.away] || g.away;
+
+        if (standings[homeFull]) {
+            standings[homeFull].rf += g.homeRuns;
+            standings[homeFull].ra += g.awayRuns;
+            if (g.homeRuns > g.awayRuns) {
+                standings[homeFull].w++;
+                standings[homeFull].results.push({ date: g.date, outcome: 'W' });
+            } else {
+                standings[homeFull].l++;
+                standings[homeFull].results.push({ date: g.date, outcome: 'L' });
+            }
+        }
+        if (standings[awayFull]) {
+            standings[awayFull].rf += g.awayRuns;
+            standings[awayFull].ra += g.homeRuns;
+            if (g.awayRuns > g.homeRuns) {
+                standings[awayFull].w++;
+                standings[awayFull].results.push({ date: g.date, outcome: 'W' });
+            } else {
+                standings[awayFull].l++;
+                standings[awayFull].results.push({ date: g.date, outcome: 'L' });
+            }
+        }
+    }
+
+    // Sort by win pct, then wins, then RF-RA differential
     const sorted = divBTeams.slice().sort((a, b) => {
         const sa = standings[a], sb = standings[b];
         const totalA = sa.w + sa.l, totalB = sb.w + sb.l;
         const pctA = totalA > 0 ? sa.w / totalA : 0;
         const pctB = totalB > 0 ? sb.w / totalB : 0;
         if (pctB !== pctA) return pctB - pctA;
-        return sb.w - sa.w;
+        if (sb.w !== sa.w) return sb.w - sa.w;
+        return (sb.rf - sb.ra) - (sa.rf - sa.ra);
     });
 
     // Compute GB from leader
@@ -470,17 +518,18 @@ function computeDivBStandings() {
                             <td>${s.l}</td>
                             <td>${pct}</td>
                             <td>${gb}</td>
-                            <td>${s.streak}</td>
+                            <td>${s.rf}</td>
+                            <td>${s.ra}</td>
                         </tr>`;
     }
 
     return rowsHtml;
 }
 
-// Check if any league games have been played
+// Check if any league games have been played (DF league games or any divisionB entries)
 const leagueGamesPlayed = Object.keys(scores.varsity).some(date => {
     return varsitySchedule.some(g => g.date === date && g.type === 'League');
-});
+}) || (scores.divisionB && scores.divisionB.length > 0);
 
 const standingsSubtitle = leagueGamesPlayed
     ? `Updated ${formatLongDate(today)}.`
@@ -497,7 +546,8 @@ html = html.replace(standingsRegex, `$1
                             <th>L</th>
                             <th>PCT</th>
                             <th>GB</th>
-                            <th>Streak</th>
+                            <th>RF</th>
+                            <th>RA</th>
                         </tr>
                     </thead>
                     <tbody>${computeDivBStandings()}
