@@ -181,7 +181,7 @@ const nextVarsityGame = nextVarsityGames[0];
 html = html.replace(
     /(<div class="stat-label">Record<\/div>\s*<div class="stat-value")(.*?)(>)[^<]*(.*?<\/div>)/,
     function(match, pre, attrs, gt, post) {
-        const color = vRecord.wins > vRecord.losses ? '#10B981' : vRecord.losses > vRecord.wins ? '#EF4444' : '#FFFFFF';
+        const color = vRecord.wins > vRecord.losses ? '#D4A017' : vRecord.losses > vRecord.wins ? '#EF4444' : '#FFFFFF';
         return `<div class="stat-label">Record</div>\n                    <div class="stat-value" style="color: ${color};">${vRecord.record}</div>`;
     }
 );
@@ -220,7 +220,7 @@ html = html.replace(
 html = html.replace(
     /(<div class="stat-label">Streak<\/div>\s*<div class="stat-value")(.*?)(>)[^<]*(.*?<\/div>)/,
     function(match) {
-        const color = vRecord.streak.startsWith('W') ? '#10B981' : vRecord.streak.startsWith('L') ? '#EF4444' : '#FFFFFF';
+        const color = vRecord.streak.startsWith('W') ? '#D4A017' : vRecord.streak.startsWith('L') ? '#EF4444' : '#FFFFFF';
         return `<div class="stat-label">Streak</div>\n                    <div class="stat-value" style="color: ${color};">${vRecord.streak}</div>`;
     }
 );
@@ -284,7 +284,7 @@ function buildNextFourVarsity() {
             ? '<span class="game-badge highlight">NEXT</span>'
             : '';
         const borderStyle = i === 0
-            ? ' style="border-left-color: #10B981;"'
+            ? ' style="border-left-color: #D4A017;"'
             : '';
 
         cardsHtml += `
@@ -348,7 +348,7 @@ function buildWeeklyScores() {
                 line: `<span class="df-name">Dobbs Ferry ${g.df}</span>, ${g.opponent} ${g.opp}`,
                 isDF: true,
                 badge: won ? 'W' : 'L',
-                badgeColor: won ? '#10B981' : '#EF4444',
+                badgeColor: won ? '#D4A017' : '#EF4444',
                 source: g.source || 'Reported'
             });
         }
@@ -366,7 +366,7 @@ function buildWeeklyScores() {
                 line: `<span class="df-name">Dobbs Ferry JV ${g.df}</span>, ${g.opponent} JV ${g.opp}`,
                 isDF: true,
                 badge: won ? 'W' : 'L',
-                badgeColor: won ? '#10B981' : '#EF4444',
+                badgeColor: won ? '#D4A017' : '#EF4444',
                 source: g.source || 'Reported'
             });
         }
@@ -439,7 +439,7 @@ for (const [date, score] of Object.entries(scores.varsity)) {
     const dayNum = d.getDate();
     const won = score.df > score.opp;
     const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-    const resultColor = won ? '#10B981' : '#EF4444';
+    const resultColor = won ? '#D4A017' : '#EF4444';
 
     // Match the schedule row for this date and mark as completed
     // Pattern: <tr> or <tr class="completed"> with the date cell
@@ -756,7 +756,7 @@ html = html.replace(
 
 // Update JV Streak
 {
-    const streakColor = jvRecord.streak.startsWith('W') ? '#10B981' : jvRecord.streak.startsWith('L') ? '#EF4444' : '#888';
+    const streakColor = jvRecord.streak.startsWith('W') ? '#D4A017' : jvRecord.streak.startsWith('L') ? '#EF4444' : '#888';
     const streakDisplay = jvRecord.streak || '--';
     html = html.replace(
         /(<!-- JV Quick Stats -->[\s\S]*?<div class="stat-label">Streak<\/div>\s*<div class="stat-value")(.*?)(>)[^<]*([\s\S]*?<\/div>)/,
@@ -799,7 +799,7 @@ function buildNextFourJV() {
             const score = scores.jv[g.date];
             const won = score.df > score.opp;
             const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-            const resultColor = won ? '#10B981' : '#EF4444';
+            const resultColor = won ? '#D4A017' : '#EF4444';
 
             cardsHtml += `
                     <div class="game-card" style="opacity: 0.6; border-color: ${resultColor};">
@@ -856,8 +856,8 @@ function buildJvScores() {
         const d = new Date(date + 'T12:00:00');
         const shortMonth = formatShortMonth(d);
         const won = g.df > g.opp;
-        const dfColor = won ? '#10B981' : '#EF4444';
-        const badgeColor = won ? '#10B981' : '#EF4444';
+        const dfColor = won ? '#D4A017' : '#EF4444';
+        const badgeColor = won ? '#D4A017' : '#EF4444';
         const badgeText = won ? 'W' : 'L';
 
         html += `
