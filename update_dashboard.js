@@ -514,10 +514,10 @@ function computeDivBStandings() {
         standings[dfFull].ra += g.opp;
         if (g.df > g.opp) {
             standings[dfFull].w++;
-            standings[dfFull].results.push({ date, outcome: 'W' });
+            standings[dfFull].results.push({ date, outcome: 'W', opponent: oppFull });
         } else {
             standings[dfFull].l++;
-            standings[dfFull].results.push({ date, outcome: 'L' });
+            standings[dfFull].results.push({ date, outcome: 'L', opponent: oppFull });
         }
         // Also record opponent side if they're a Division B team
         if (oppFull && standings[oppFull]) {
@@ -525,10 +525,10 @@ function computeDivBStandings() {
             standings[oppFull].ra += g.df;
             if (g.opp > g.df) {
                 standings[oppFull].w++;
-                standings[oppFull].results.push({ date, outcome: 'W' });
+                standings[oppFull].results.push({ date, outcome: 'W', opponent: dfFull });
             } else {
                 standings[oppFull].l++;
-                standings[oppFull].results.push({ date, outcome: 'L' });
+                standings[oppFull].results.push({ date, outcome: 'L', opponent: dfFull });
             }
         }
     }
@@ -545,10 +545,10 @@ function computeDivBStandings() {
             standings[homeFull].ra += g.awayRuns;
             if (g.homeRuns > g.awayRuns) {
                 standings[homeFull].w++;
-                standings[homeFull].results.push({ date: g.date, outcome: 'W' });
+                standings[homeFull].results.push({ date: g.date, outcome: 'W', opponent: awayFull });
             } else {
                 standings[homeFull].l++;
-                standings[homeFull].results.push({ date: g.date, outcome: 'L' });
+                standings[homeFull].results.push({ date: g.date, outcome: 'L', opponent: awayFull });
             }
         }
         if (standings[awayFull]) {
@@ -556,24 +556,78 @@ function computeDivBStandings() {
             standings[awayFull].ra += g.homeRuns;
             if (g.awayRuns > g.homeRuns) {
                 standings[awayFull].w++;
-                standings[awayFull].results.push({ date: g.date, outcome: 'W' });
+                standings[awayFull].results.push({ date: g.date, outcome: 'W', opponent: homeFull });
             } else {
                 standings[awayFull].l++;
-                standings[awayFull].results.push({ date: g.date, outcome: 'L' });
+                standings[awayFull].results.push({ date: g.date, outcome: 'L', opponent: homeFull });
             }
         }
     }
 
-    // Sort by win pct, then wins, then RF-RA differential
+    // Pythagorean Win% (exponent 1.83 for baseball)
+    const PYTH_EXP = 1.83;
+    function pythWinPct(rf, ra) {
+        if (rf === 0 && ra === 0) return 0.500;
+        if (ra === 0) return 1.000;
+        if (rf === 0) return 0.000;
+        const rfExp = Math.pow(rf, PYTH_EXP);
+        return rfExp / (rfExp + Math.pow(ra, PYTH_EXP));
+    }
+
+    // Compute base Pythagorean rating for each team
+    for (const team of divBTeams) {
+        const s = standings[team];
+        s.pythWinPct = pythWinPct(s.rf, s.ra);
+    }
+
+    // Check if we're in Phase 2 (avg 4+ league games per team)
+    const totalLeagueGames = divBTeams.reduce((sum, t) => sum + standings[t].w + standings[t].l, 0);
+    const avgGamesPerTeam = totalLeagueGames / divBTeams.length;
+    const useSOS = avgGamesPerTeam >= 4;
+
+    // Compute Strength of Schedule (average opponent Pythagorean Win%)
+    // For each team, SOS = avg pythWinPct of all opponents they played (excluding self)
+    if (useSOS) {
+        for (const team of divBTeams) {
+            const s = standings[team];
+            // Gather opponents from results
+            const oppRatings = [];
+            for (const r of (s.results || [])) {
+                if (r.opponent && standings[r.opponent]) {
+                    oppRatings.push(standings[r.opponent].pythWinPct);
+                }
+            }
+            s.sos = oppRatings.length > 0
+                ? oppRatings.reduce((a, b) => a + b, 0) / oppRatings.length
+                : 0.500;
+        }
+    }
+
+    // Compute Power Rating
+    for (const team of divBTeams) {
+        const s = standings[team];
+        if (useSOS) {
+            // Phase 2: PythWin% weighted by SOS (70/30 split)
+            s.powerRating = s.pythWinPct * (0.7 + 0.3 * s.sos);
+        } else {
+            // Phase 1: Pure Pythagorean Win%
+            s.powerRating = s.pythWinPct;
+        }
+    }
+
+    // Sort by power rating (descending), then win pct, then run diff
     const sorted = divBTeams.slice().sort((a, b) => {
         const sa = standings[a], sb = standings[b];
+        if (sb.powerRating !== sa.powerRating) return sb.powerRating - sa.powerRating;
         const totalA = sa.w + sa.l, totalB = sb.w + sb.l;
         const pctA = totalA > 0 ? sa.w / totalA : 0;
         const pctB = totalB > 0 ? sb.w / totalB : 0;
         if (pctB !== pctA) return pctB - pctA;
-        if (sb.w !== sa.w) return sb.w - sa.w;
         return (sb.rf - sb.ra) - (sa.rf - sa.ra);
     });
+
+    // Assign power ranks 1-7
+    sorted.forEach((team, i) => { standings[team].powerRank = i + 1; });
 
     // Compute GB from leader
     const leader = standings[sorted[0]];
@@ -590,6 +644,7 @@ function computeDivBStandings() {
             gb = gbVal === 0 ? '—' : gbVal.toFixed(1).replace('.0', '');
         }
         const highlight = team === 'Dobbs Ferry Eagles' ? ' style="background-color: rgba(43, 93, 170, 0.15);"' : '';
+        const prDisplay = s.powerRating.toFixed(3).replace('0.', '.');
         rowsHtml += `
                         <tr${highlight}>
                             <td>${team}</td>
@@ -599,6 +654,7 @@ function computeDivBStandings() {
                             <td>${gb}</td>
                             <td>${s.rf}</td>
                             <td>${s.ra}</td>
+                            <td title="Power Rating: ${prDisplay}${useSOS ? ' (SOS-adjusted)' : ''}">${s.powerRank}</td>
                         </tr>`;
     }
 
@@ -627,6 +683,7 @@ html = html.replace(standingsRegex, `$1
                             <th>GB</th>
                             <th>RF</th>
                             <th>RA</th>
+                            <th>PWR</th>
                         </tr>
                     </thead>
                     <tbody>${computeDivBStandings()}
