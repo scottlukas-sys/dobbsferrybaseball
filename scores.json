@@ -12,6 +12,8 @@
   "divisionB": [],
   "opponentResults": [
     { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 5, "loser": "Blind Brook", "loserRuns": 2, "source": "@hastingsbase" },
-    { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" }
+    { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" },
+    { "date": "2026-03-26", "winner": "Irvington", "winnerRuns": 0, "loser": "Unknown", "loserRuns": 0, "note": "Irvington comeback win; John Salvatore and Justin Corniel highlighted. Score/opponent not confirmed.", "source": "@dawgs_bsbl" },
+    { "date": "2026-03-26", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game", "source": "Pawling HS website" }
   ]
 }
