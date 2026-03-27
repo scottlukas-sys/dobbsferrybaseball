@@ -36,6 +36,32 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.04);
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -80px;
+            width: 560px;
+            height: 560px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.04);
+            pointer-events: none;
         }
 
         .logo {
