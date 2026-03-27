@@ -14,6 +14,8 @@
     { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 5, "loser": "Blind Brook", "loserRuns": 2, "source": "@hastingsbase" },
     { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" },
     { "date": "2026-03-26", "winner": "Irvington", "winnerRuns": 0, "loser": "Unknown", "loserRuns": 0, "note": "Irvington comeback win; John Salvatore and Justin Corniel highlighted. Score/opponent not confirmed.", "source": "@dawgs_bsbl" },
-    { "date": "2026-03-26", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game", "source": "Pawling HS website" }
+    { "date": "2026-03-26", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game", "source": "Pawling HS website" },
+    { "date": "2026-03-26", "winner": "Irvington JV", "winnerRuns": 18, "loser": "Saunders", "loserRuns": 1, "note": "JV game. Saunders gave up 18 runs to Irvington JV.", "source": "Irvington HS digitalsports" },
+    { "date": "2026-03-26", "winner": "Westlake", "winnerRuns": 0, "loser": "Walter Panas", "loserRuns": 0, "note": "Westlake 2026 opener at Panas (after two rain outs). Score not confirmed.", "source": "@westlakewildcatsbaseball" }
   ]
 }
