@@ -100,10 +100,14 @@
             margin-bottom: 3px;
         }
 
-        /* Tab Bar */
-        .tab-bar {
+        /* Tab Bar Wrapper */
+        .tab-bar-wrapper {
             background-color: #0a0a0a;
             border-bottom: 2px solid #2B5DAA;
+        }
+
+        /* Tab Bar */
+        .tab-bar {
             display: flex;
             max-width: 1400px;
             margin: 0 auto;
@@ -618,9 +622,11 @@
         </div>
     </header>
 
+    <div class="tab-bar-wrapper">
     <div class="tab-bar">
         <div class="tab active" onclick="switchTab('varsity')">VARSITY</div>
         <div class="tab" onclick="switchTab('jv')">JV</div>
+    </div>
     </div>
 
     <div class="content">
