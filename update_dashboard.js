@@ -273,12 +273,8 @@ function buildNextFourVarsity() {
         const homeAway = g.location === 'Home' ? 'vs' : g.location === 'Away' ? 'at' : '@';
         const venueLine = g.location === 'Home' ? `Home (${g.venue || 'Gould Park'})` : `Away (${g.venue})`;
 
-        const badge = i === 0
-            ? '<span class="game-badge highlight">NEXT</span>'
-            : '';
-        const borderStyle = i === 0
-            ? ' style="border-left-color: #D4A017;"'
-            : '';
+        const badge = '';
+        const borderStyle = '';
 
         cardsHtml += `
                     <div class="game-card"${borderStyle}>
