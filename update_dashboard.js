@@ -920,67 +920,77 @@ function computePIS(playerStats) {
         return pts;
     }
 
+    function buildGameLine(game) {
+        const parts = [];
+        const h = game.hitting;
+        const p = game.pitching;
+        if (h && (h.h > 0 || h.bb > 0 || h.rbi > 0 || h.r > 0)) {
+            let line = '';
+            if (h.ab > 0) line += `${h.h}-${h.ab}`;
+            else if (h.h > 0) line += `${h.h}H`;
+            const extras = [];
+            if (h['2b'] > 0) extras.push(`${h['2b']} 2B`);
+            if (h['3b'] > 0) extras.push(`${h['3b']} 3B`);
+            if (h.hr > 0) extras.push(`${h.hr} HR`);
+            if (h.rbi > 0) extras.push(`${h.rbi} RBI`);
+            if (h.r > 0) extras.push(`${h.r}R`);
+            if (h.bb > 0) extras.push(`${h.bb} BB`);
+            if (extras.length > 0) line += `, ${extras.join(', ')}`;
+            parts.push(line);
+        }
+        if (p && p.ip > 0) {
+            let line = `${p.ip}IP`;
+            const pExtras = [];
+            if (p.so > 0) pExtras.push(`${p.so}K`);
+            if (p.er > 0) pExtras.push(`${p.er}ER`);
+            else pExtras.push('0ER');
+            if (p.w) pExtras.push('W');
+            if (p.sv) pExtras.push('SV');
+            line += `, ${pExtras.join(', ')}`;
+            parts.push(line);
+        }
+        if (parts.length > 0) {
+            const d = new Date(game.date + 'T12:00:00');
+            return { date: `${formatShortMonth(d)} ${d.getDate()}`, opp: game.opp, line: parts.join(' | ') };
+        }
+        return null;
+    }
+
     function processPool(pool, poolLabel) {
         for (const [name, data] of Object.entries(pool)) {
             const games = data.games || [];
-            if (games.length === 0) continue;
+            const tags = data.tags || [];
 
             let totalWeighted = 0;
             let gamesWithStats = 0;
+            const gameLines = [];
 
             for (const game of games) {
-                // Skip games with no actual stats (just notes)
                 const hasHitting = game.hitting && (game.hitting.h > 0 || game.hitting.bb > 0 || game.hitting.r > 0 || game.hitting.rbi > 0);
                 const hasPitching = game.pitching && (game.pitching.ip > 0 || game.pitching.w > 0 || game.pitching.sv > 0);
-                if (!hasHitting && !hasPitching) continue;
+                if (!hasHitting && !hasPitching) {
+                    // No scoreable stats, but still build display line if there's a save
+                    if (game.pitching && game.pitching.sv > 0) {
+                        const gl = buildGameLine(game);
+                        if (gl) gameLines.push(gl);
+                    }
+                    continue;
+                }
 
                 gamesWithStats++;
                 const gamePts = scoreGame(game);
                 const recencyMultiplier = game.date >= sevenDaysAgoStr ? 1.5 : 1.0;
                 totalWeighted += gamePts * recencyMultiplier;
+
+                const gl = buildGameLine(game);
+                if (gl) gameLines.push(gl);
             }
 
-            if (gamesWithStats === 0) continue;
+            const pis = gamesWithStats > 0 ? totalWeighted / gamesWithStats : 0;
+            const tier = gamesWithStats >= 3 ? 'confirmed' : gamesWithStats >= 2 ? 'trending' : gamesWithStats >= 1 ? 'emerging' : 'roster';
 
-            const pis = totalWeighted / gamesWithStats;
-            const tier = gamesWithStats >= 3 ? 'confirmed' : gamesWithStats >= 2 ? 'trending' : 'emerging';
-
-            // Collect per-game details for display
-            const gameLines = [];
-            for (const game of games) {
-                const parts = [];
-                const h = game.hitting;
-                const p = game.pitching;
-                if (h && (h.h > 0 || h.bb > 0 || h.rbi > 0 || h.r > 0)) {
-                    let line = '';
-                    if (h.ab > 0) line += `${h.h}-${h.ab}`;
-                    else if (h.h > 0) line += `${h.h}H`;
-                    const extras = [];
-                    if (h['2b'] > 0) extras.push(`${h['2b']} 2B`);
-                    if (h['3b'] > 0) extras.push(`${h['3b']} 3B`);
-                    if (h.hr > 0) extras.push(`${h.hr} HR`);
-                    if (h.rbi > 0) extras.push(`${h.rbi} RBI`);
-                    if (h.r > 0) extras.push(`${h.r}R`);
-                    if (h.bb > 0) extras.push(`${h.bb} BB`);
-                    if (extras.length > 0) line += `, ${extras.join(', ')}`;
-                    parts.push(line);
-                }
-                if (p && p.ip > 0) {
-                    let line = `${p.ip}IP`;
-                    const pExtras = [];
-                    if (p.so > 0) pExtras.push(`${p.so}K`);
-                    if (p.er > 0) pExtras.push(`${p.er}ER`);
-                    else pExtras.push('0ER');
-                    if (p.w) pExtras.push('W');
-                    if (p.sv) pExtras.push('SV');
-                    line += `, ${pExtras.join(', ')}`;
-                    parts.push(line);
-                }
-                if (parts.length > 0) {
-                    const d = new Date(game.date + 'T12:00:00');
-                    gameLines.push({ date: `${formatShortMonth(d)} ${d.getDate()}`, opp: game.opp, line: parts.join(' | ') });
-                }
-            }
+            // Include player if they have stats OR tags/notes (roster intel)
+            if (gamesWithStats === 0 && tags.length === 0 && !data.note) continue;
 
             results.push({
                 name,
@@ -990,6 +1000,7 @@ function computePIS(playerStats) {
                 gamesWithStats,
                 tier,
                 gameLines,
+                tags,
                 note: data.note || null
             });
         }
@@ -1000,62 +1011,67 @@ function computePIS(playerStats) {
         if (scores.playerStats.opponents) processPool(scores.playerStats.opponents, 'opponent');
     }
 
-    // Sort by PIS descending
-    results.sort((a, b) => b.pis - a.pis);
+    // Sort: players with stats first (by PIS desc), then roster-only players alphabetically
+    results.sort((a, b) => {
+        if (a.gamesWithStats > 0 && b.gamesWithStats === 0) return -1;
+        if (a.gamesWithStats === 0 && b.gamesWithStats > 0) return 1;
+        if (a.gamesWithStats > 0 && b.gamesWithStats > 0) return b.pis - a.pis;
+        return a.name.localeCompare(b.name);
+    });
     return results;
 }
 
 function buildPlayersToWatch(pisData) {
-    // Separate DF and opponents
     const dfPlayers = pisData.filter(p => p.pool === 'df');
     const oppPlayers = pisData.filter(p => p.pool === 'opponent');
-
-    // For display: top 8 DF players, top 5 per opponent team (max 3 teams shown)
     const dfDisplay = dfPlayers.slice(0, 8);
 
-    // Group opponents by team, take top performers
+    // Group opponents by team
     const oppByTeam = {};
     for (const p of oppPlayers) {
         if (!oppByTeam[p.team]) oppByTeam[p.team] = [];
         oppByTeam[p.team].push(p);
     }
 
-    // Tier badge colors
-    const tierColors = { confirmed: '#D4A017', trending: '#F59E0B', emerging: '#888' };
-    const tierLabels = { confirmed: 'CONFIRMED', trending: 'TRENDING', emerging: 'EMERGING' };
+    const tierColors = { confirmed: '#D4A017', trending: '#F59E0B', emerging: '#888', roster: '#555' };
+    const tierLabels = { confirmed: 'CONFIRMED', trending: 'TRENDING', emerging: 'EMERGING', roster: 'ROSTER' };
 
-    function renderPlayer(p) {
+    // --- DF Players: 2-column tile grid ---
+    function renderDFTile(p) {
         const tierColor = tierColors[p.tier] || '#888';
         const tierLabel = tierLabels[p.tier] || p.tier.toUpperCase();
-        let html = '';
-        html += `<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">`;
-        html += `<div><strong style="color: #fff;">${p.name}</strong>`;
-        html += ` <span style="font-size: 11px; color: ${tierColor}; margin-left: 6px;">${tierLabel}</span>`;
-        html += `</div>`;
-        html += `<div style="font-size: 13px; font-weight: 700; color: ${tierColor};">PIS ${p.pis}</div>`;
-        html += `</div>`;
-
-        for (const gl of p.gameLines) {
-            html += `<p style="color: #aaa; font-size: 12px; margin: 2px 0 2px 8px;">vs ${gl.opp} (${gl.date}): ${gl.line}</p>`;
+        let html = `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
+        // Name row with PIS badge
+        html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
+        html += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
+        if (p.pis > 0) {
+            html += `<span style="background: ${tierColor}22; color: ${tierColor}; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">PIS ${p.pis}</span>`;
         }
-        if (p.note) {
-            html += `<p style="color: #666; font-size: 11px; margin: 2px 0 2px 8px; font-style: italic;">${p.note}</p>`;
+        html += `</div>`;
+        // Tier tag
+        html += `<span style="font-size: 10px; color: ${tierColor}; text-transform: uppercase; letter-spacing: 0.5px;">${tierLabel}</span>`;
+        // One-line stat summary (latest game)
+        if (p.gameLines.length > 0) {
+            const latest = p.gameLines[p.gameLines.length - 1];
+            html += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">vs ${latest.opp}: ${latest.line}</p>`;
         }
+        html += `</div>`;
         return html;
     }
 
     let sectionHtml = '';
 
-    // DF section
+    // DF Section
     sectionHtml += `<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px; border-left: 3px solid #2B5DAA;">`;
-    sectionHtml += `<h3 style="margin-top: 0; margin-bottom: 12px; color: #2B5DAA;">Dobbs Ferry Eagles</h3>`;
+    sectionHtml += `<h3 style="margin-top: 0; margin-bottom: 10px; color: #2B5DAA;">Dobbs Ferry Eagles</h3>`;
     if (dfDisplay.length === 0) {
         sectionHtml += `<p style="color: #888; font-size: 13px;">No player stats recorded yet.</p>`;
     } else {
+        sectionHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
         for (const p of dfDisplay) {
-            sectionHtml += renderPlayer(p);
-            sectionHtml += `<div style="border-bottom: 1px solid #333; margin: 8px 0;"></div>`;
+            sectionHtml += renderDFTile(p);
         }
+        sectionHtml += `</div>`;
         // DF record summary
         const vRec = computeRecord(scores.varsity);
         const scoreDates = Object.keys(scores.varsity).sort();
@@ -1065,38 +1081,66 @@ function buildPlayersToWatch(pisData) {
             const won = g.df > g.opp;
             return `${won ? 'W' : 'L'} ${g.df}-${g.opp} vs ${g.opponent} ${formatShortMonth(dt)} ${dt.getDate()}`;
         }).join(', ');
-        sectionHtml += `<p style="color: #888; font-size: 12px; margin-top: 4px;">Record: ${vRec.record} (${gameSummaries}).</p>`;
+        sectionHtml += `<p style="color: #888; font-size: 11px; margin-top: 8px; margin-bottom: 0;">Record: ${vRec.record} (${gameSummaries})</p>`;
     }
     sectionHtml += `</div>`;
 
-    // Opponent sections — sorted by team with highest-PIS player first
+    // --- Opponent Sections: compact roster tables per team ---
     const teamOrder = Object.keys(oppByTeam).sort((a, b) => {
-        const maxA = oppByTeam[a][0]?.pis || 0;
-        const maxB = oppByTeam[b][0]?.pis || 0;
-        return maxB - maxA;
+        const maxA = Math.max(...oppByTeam[a].map(p => p.pis), 0);
+        const maxB = Math.max(...oppByTeam[b].map(p => p.pis), 0);
+        if (maxB !== maxA) return maxB - maxA;
+        return a.localeCompare(b);
     });
 
     for (const team of teamOrder) {
-        const players = oppByTeam[team].slice(0, 5);
-        sectionHtml += `<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">`;
-        sectionHtml += `<h3 style="margin-top: 0; margin-bottom: 12px; color: #CCCCCC;">${team}</h3>`;
+        const players = oppByTeam[team].slice(0, 8);
+        sectionHtml += `<div style="background-color: #1a1a1a; padding: 12px 15px; border-radius: 6px; margin-bottom: 10px;">`;
+        sectionHtml += `<h4 style="margin: 0 0 8px 0; color: #ccc; font-size: 14px;">${team}</h4>`;
+        // Compact table rows
         for (const p of players) {
-            sectionHtml += renderPlayer(p);
-            sectionHtml += `<div style="border-bottom: 1px solid #333; margin: 8px 0;"></div>`;
+            const tierColor = tierColors[p.tier] || '#555';
+            // Strip team name from display (e.g., "Curt (Hastings)" -> "Curt")
+            const displayName = p.name.replace(/\s*\(.*?\)\s*$/, '');
+            sectionHtml += `<div style="display: flex; align-items: center; padding: 3px 0; border-bottom: 1px solid #2a2a2a;">`;
+            // Name
+            sectionHtml += `<span style="color: #ddd; font-size: 12px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${displayName}</span>`;
+            // Tags as badges
+            if (p.tags && p.tags.length > 0) {
+                for (const tag of p.tags) {
+                    let tagColor = '#555';
+                    let tagBg = '#2a2a2a';
+                    if (tag.includes('Captain')) { tagColor = '#F59E0B'; tagBg = '#F59E0B22'; }
+                    else if (tag.includes('All-League') || tag.includes('Award')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
+                    else if (tag.includes('D1')) { tagColor = '#22C55E'; tagBg = '#22C55E22'; }
+                    else if (tag.includes('Returning')) { tagColor = '#6B7280'; tagBg = '#6B728022'; }
+                    sectionHtml += `<span style="font-size: 9px; color: ${tagColor}; background: ${tagBg}; padding: 1px 5px; border-radius: 3px; margin-left: 4px; white-space: nowrap;">${tag}</span>`;
+                }
+            }
+            // PIS badge if they have stats
+            if (p.pis > 0) {
+                sectionHtml += `<span style="font-size: 10px; color: ${tierColor}; font-weight: 700; margin-left: 6px; white-space: nowrap;">PIS ${p.pis}</span>`;
+            }
+            sectionHtml += `</div>`;
+            // One-line stat if available
+            if (p.gameLines.length > 0) {
+                const latest = p.gameLines[p.gameLines.length - 1];
+                sectionHtml += `<div style="padding: 1px 0 3px 12px;"><span style="color: #777; font-size: 10px;">vs ${latest.opp}: ${latest.line}</span></div>`;
+            }
         }
         sectionHtml += `</div>`;
     }
 
-    // Teams with no tracked players yet — list them as monitoring
+    // Monitoring: teams with zero tracked players
     const scheduleTeams = [...new Set(varsitySchedule.filter(g => g.type !== 'Scrimmage').map(g => g.opponent))];
     const trackedTeams = new Set(teamOrder);
     trackedTeams.add('Dobbs Ferry');
     const untrackedTeams = scheduleTeams.filter(t => !trackedTeams.has(t));
 
     if (untrackedTeams.length > 0) {
-        sectionHtml += `<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">`;
-        sectionHtml += `<h3 style="margin-top: 0; margin-bottom: 8px; color: #555;">Monitoring</h3>`;
-        sectionHtml += `<p style="color: #666; font-size: 13px;">${untrackedTeams.join(', ')} — no player stats recorded yet.</p>`;
+        sectionHtml += `<div style="background-color: #1a1a1a; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px;">`;
+        sectionHtml += `<h4 style="margin: 0 0 4px 0; color: #555; font-size: 13px;">Monitoring</h4>`;
+        sectionHtml += `<p style="color: #666; font-size: 12px; margin: 0;">${untrackedTeams.join(', ')}</p>`;
         sectionHtml += `</div>`;
     }
 
