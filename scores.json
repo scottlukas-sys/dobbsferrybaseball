@@ -6,6 +6,13 @@
       "opp": 2,
       "location": "Memorial Park (Dow's Lane)",
       "source": "GameChanger"
+    },
+    "2026-03-27": {
+      "opponent": "Saunders",
+      "df": 8,
+      "opp": 3,
+      "location": "Gould Park (Home)",
+      "source": "@dfeaglesbaseball, @dfvarsity_baseball"
     }
   },
   "jv": {},
@@ -13,9 +20,11 @@
   "opponentResults": [
     { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 5, "loser": "Blind Brook", "loserRuns": 2, "source": "@hastingsbase" },
     { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" },
-    { "date": "2026-03-26", "winner": "Irvington", "winnerRuns": 0, "loser": "Unknown", "loserRuns": 0, "note": "Irvington comeback win; John Salvatore and Justin Corniel highlighted. Score/opponent not confirmed.", "source": "@dawgs_bsbl" },
+    { "date": "2026-03-26", "winner": "Irvington", "winnerRuns": 10, "loser": "Unknown", "loserRuns": 1, "note": "Irvington 10-1 win. Opponent not confirmed. John Salvatore and Justin Corniel highlighted.", "source": "@dawgs_bsbl" },
     { "date": "2026-03-26", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game", "source": "Pawling HS website" },
     { "date": "2026-03-26", "winner": "Irvington JV", "winnerRuns": 18, "loser": "Saunders", "loserRuns": 1, "note": "JV game. Saunders gave up 18 runs to Irvington JV.", "source": "Irvington HS digitalsports" },
-    { "date": "2026-03-26", "winner": "Westlake", "winnerRuns": 0, "loser": "Walter Panas", "loserRuns": 0, "note": "Westlake 2026 opener at Panas (after two rain outs). Score not confirmed.", "source": "@westlakewildcatsbaseball" }
+    { "date": "2026-03-26", "winner": "Westlake", "winnerRuns": 0, "loser": "Walter Panas", "loserRuns": 0, "note": "Westlake 2026 opener at Panas (after two rain outs). Score not confirmed.", "source": "@westlakewildcatsbaseball" },
+    { "date": "2026-03-27", "winner": "Dobbs Ferry", "winnerRuns": 8, "loser": "Saunders", "loserRuns": 3, "note": "DF home opener at Gould Park. Molina (W): 3.1IP, 3H, 2ER, 2BB. Jake Evan: 2-3, 2RBI, 2R. Marron: 2-4, 2 2B, RBI.", "source": "@dfeaglesbaseball" },
+    { "date": "2026-03-27", "winner": "Tuckahoe JV", "winnerRuns": 5, "loser": "Putnam Valley JV", "loserRuns": 5, "note": "JV game, ended in 5-5 tie.", "source": "Putnam Valley Athletics digitalsports" }
   ]
 }
