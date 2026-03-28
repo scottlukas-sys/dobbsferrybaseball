@@ -215,7 +215,7 @@
 
         /* Alert Card */
         .card.alert {
-            border-left-color: #2B5DAA;
+            border-left-color: #D4A017;
             background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
         }
 
@@ -257,6 +257,20 @@
             border-radius: 6px;
             border-left: 3px solid #2B5DAA;
             text-align: center;
+            transition: background-color 0.2s ease, border-left-color 0.2s ease;
+        }
+
+        .stat-card:hover {
+            background-color: #222;
+            border-left-color: #4A7FD4;
+        }
+
+        .stat-card.roster-trigger {
+            cursor: pointer;
+        }
+
+        .stat-card.roster-trigger:hover {
+            border-left-color: #D4A017;
         }
 
         .stat-label {
@@ -627,7 +641,7 @@
     <div class="tab-bar">
         <div class="tab active" onclick="switchTab('varsity')">VARSITY</div>
         <div class="tab" onclick="switchTab('jv')">JV</div>
-        <div style="flex: 1; text-align: right; padding: 14px 0; font-size: 12px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Support Eagles Baseball & Softball Next: <a href="https://www.instagram.com/df_diamond_club/" target="_blank" style="color: #D4A017; text-decoration: none;"><strong style="color: #D4A017;">Easter Egg Hunt (Apr 4)</strong></a></div>
+        <div style="flex: 1; text-align: right; padding: 12px 0; font-size: 13px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 22" width="16" height="18" style="vertical-align: middle; margin-right: 5px;"><polygon points="2,0 18,0 20,8 10,22 0,8" fill="#2B5DAA" stroke="#fff" stroke-width="1"/><text x="10" y="12" text-anchor="middle" font-size="8" font-weight="bold" fill="#fff" font-family="sans-serif">DC</text></svg>Support Eagles Baseball & Softball Next: <a href="https://www.instagram.com/df_diamond_club/" target="_blank" style="color: #D4A017; text-decoration: none;"><strong style="color: #D4A017; font-size: 14px;">Easter Egg Hunt (Apr 4)</strong></a></div>
     </div>
     </div>
 
@@ -960,7 +974,7 @@
                             <td>Memorial Park (Dow's Lane)</td>
                             <td><span class="game-badge" style="background-color:#D4A017;">W 6-2</span></td>
                         </tr>
-                        <tr class="completed completed completed completed completed completed completed completed completed completed completed completed completed">
+                        <tr class="completed completed completed completed completed completed completed completed completed completed completed completed completed completed completed">
                             <td>Mar 27</td>
                             <td>Fri</td>
                             <td>4:30 PM</td>
@@ -1589,7 +1603,7 @@
     </div>
 
     <footer>
-        <p>March 28, 2026 (Updated 12:44 PM) — Not An Official Dobbs Ferry School District Site</p>
+        <p>March 28, 2026 (Updated 12:51 PM) — Not An Official Dobbs Ferry School District Site</p>
         <p style="margin-top: 8px;">A Scott Lukas Experiment</p>
     </footer>
 
