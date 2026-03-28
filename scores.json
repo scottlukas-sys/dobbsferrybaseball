@@ -73,21 +73,21 @@
     "opponents": {
       "Curt (Hastings)": {
         "team": "Hastings",
-        "tags": ["2H + SV vs BB"],
+        "tags": ["2025 Class B Finalist", "2H + SV vs BB"],
         "games": [
           { "date": "2026-03-24", "opp": "Blind Brook", "hitting": { "ab": 0, "h": 2, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 0, "bb": 0, "sb": 0 }, "pitching": { "ip": 0, "h": 0, "er": 0, "so": 0, "bb": 0, "w": 0, "sv": 1 } }
         ]
       },
       "Drew (Hastings)": {
         "team": "Hastings",
-        "tags": ["Pitcher"],
-        "note": "Pitched in 2026 opener vs Blind Brook.",
+        "tags": ["2025 Class B Finalist", "Pitcher"],
+        "note": "Pitched in 2026 opener vs Blind Brook. Part of 2025 Section 1 Class B finalist team.",
         "games": []
       },
       "Dileo (Hastings)": {
         "team": "Hastings",
-        "tags": ["Pitcher"],
-        "note": "Pitched in 2026 opener vs Blind Brook.",
+        "tags": ["2025 Class B Finalist", "Pitcher"],
+        "note": "Pitched in 2026 opener vs Blind Brook. Part of 2025 Section 1 Class B finalist team.",
         "games": []
       },
       "Sawyer Chalsen (Irvington)": {
@@ -146,24 +146,24 @@
       },
       "Ryan Gentry (Tuckahoe)": {
         "team": "Tuckahoe",
-        "tags": ["2026 Captain"],
-        "note": "Announced Mar 22 via @tuckahoevarsitybaseball.",
+        "tags": ["2026 Captain", "2025 Section 1 Champ"],
+        "note": "Announced Mar 22 via @tuckahoevarsitybaseball. Part of 3x Section 1 Class C championship team.",
         "games": []
       },
       "Jay Romeo (Tuckahoe)": {
         "team": "Tuckahoe",
-        "tags": ["2026 Captain"],
+        "tags": ["2026 Captain", "2025 Section 1 Champ"],
         "games": []
       },
       "Connor Brice (Tuckahoe)": {
         "team": "Tuckahoe",
-        "tags": ["2026 Captain", "D1 Villanova"],
-        "note": "Signed D1 with Villanova for baseball. Two-sport athlete.",
+        "tags": ["2026 Captain", "D1 Villanova", "2025 Section 1 Champ", "2025 Class C Final: 14K, 2H allowed"],
+        "note": "Signed D1 with Villanova for baseball. Two-sport athlete. Struck out 14 in 2025 Section 1 Class C championship Game 1 vs Haldane.",
         "games": []
       },
       "Rocco Briante (Tuckahoe)": {
         "team": "Tuckahoe",
-        "tags": ["2026 Captain"],
+        "tags": ["2026 Captain", "2025 Section 1 Champ"],
         "games": []
       },
       "Patrick Shields (Haldane)": {

@@ -1088,7 +1088,7 @@ function buildPlayersToWatch(pisData) {
     // --- Visual separator between DF and opponents ---
     sectionHtml += `<div style="border-top: 1px solid #333; margin: 8px 0 15px 0;"></div>`;
 
-    // --- Opponent teams: 2-column grid of compact team cards ---
+    // --- Opponent teams: 3-column grid of compact team cards ---
     const teamOrder = Object.keys(oppByTeam).sort((a, b) => {
         const maxA = Math.max(...oppByTeam[a].map(p => p.pis), 0);
         const maxB = Math.max(...oppByTeam[b].map(p => p.pis), 0);
@@ -1096,7 +1096,7 @@ function buildPlayersToWatch(pisData) {
         return a.localeCompare(b);
     });
 
-    sectionHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
+    sectionHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">`;
 
     for (const team of teamOrder) {
         const players = oppByTeam[team].slice(0, 8);
@@ -1112,7 +1112,10 @@ function buildPlayersToWatch(pisData) {
                 for (const tag of p.tags) {
                     let tagColor = '#888';
                     let tagBg = '#2a2a2a';
-                    if (tag.includes('Captain')) { tagColor = '#F59E0B'; tagBg = '#F59E0B22'; }
+                    if (tag.includes('Champ')) { tagColor = '#FFD700'; tagBg = '#FFD70022'; }
+                    else if (tag.includes('Finalist')) { tagColor = '#C0C0C0'; tagBg = '#C0C0C022'; }
+                    else if (tag.includes('All-Section') || tag.includes('All-State')) { tagColor = '#E84393'; tagBg = '#E8439322'; }
+                    else if (tag.includes('Captain')) { tagColor = '#F59E0B'; tagBg = '#F59E0B22'; }
                     else if (tag.includes('All-League') || tag.includes('Award')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
                     else if (tag.includes('D1')) { tagColor = '#22C55E'; tagBg = '#22C55E22'; }
                     else if (tag.includes('Returning')) { tagColor = '#8B8B8B'; tagBg = '#8B8B8B22'; }
