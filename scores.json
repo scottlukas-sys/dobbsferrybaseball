@@ -17,6 +17,85 @@
   },
   "jv": {},
   "divisionB": [],
+  "playerStats": {
+    "df": {
+      "Andrew Zendel": {
+        "team": "Dobbs Ferry",
+        "games": [
+          { "date": "2026-03-24", "opp": "Irvington", "hitting": { "ab": 4, "h": 4, "2b": 1, "3b": 0, "hr": 0, "rbi": 2, "r": 2, "bb": 0, "sb": 0 }, "pitching": { "ip": 4, "h": 2, "er": 2, "so": 0, "bb": 0, "w": 1, "sv": 0 } }
+        ]
+      },
+      "Anthony Ficarrotta": {
+        "team": "Dobbs Ferry",
+        "games": [
+          { "date": "2026-03-24", "opp": "Irvington", "hitting": null, "pitching": { "ip": 3, "h": 0, "er": 0, "so": 0, "bb": 0, "w": 0, "sv": 0 } }
+        ]
+      },
+      "Ian Hwangbo": {
+        "team": "Dobbs Ferry",
+        "games": [
+          { "date": "2026-03-24", "opp": "Irvington", "hitting": { "ab": 0, "h": 1, "2b": 0, "3b": 0, "hr": 0, "rbi": 1, "r": 0, "bb": 0, "sb": 0 }, "pitching": null },
+          { "date": "2026-03-27", "opp": "Saunders", "hitting": { "ab": 2, "h": 1, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 1, "bb": 0, "sb": 0 }, "pitching": null }
+        ]
+      },
+      "Drew Kimerling": {
+        "team": "Dobbs Ferry",
+        "games": [
+          { "date": "2026-03-24", "opp": "Irvington", "hitting": { "ab": 0, "h": 1, "2b": 0, "3b": 0, "hr": 0, "rbi": 1, "r": 0, "bb": 0, "sb": 0 }, "pitching": null },
+          { "date": "2026-03-27", "opp": "Saunders", "hitting": null, "pitching": { "ip": 1, "h": 2, "er": 1, "so": 1, "bb": 0, "w": 0, "sv": 0 } }
+        ]
+      },
+      "Brendan Molina": {
+        "team": "Dobbs Ferry",
+        "games": [
+          { "date": "2026-03-27", "opp": "Saunders", "hitting": null, "pitching": { "ip": 3.1, "h": 3, "er": 2, "so": 3, "bb": 2, "w": 1, "sv": 0 } }
+        ]
+      },
+      "Jake Evan": {
+        "team": "Dobbs Ferry",
+        "games": [
+          { "date": "2026-03-27", "opp": "Saunders", "hitting": { "ab": 3, "h": 2, "2b": 0, "3b": 0, "hr": 0, "rbi": 2, "r": 2, "bb": 1, "sb": 0 }, "pitching": null }
+        ]
+      },
+      "Brendan Marron": {
+        "team": "Dobbs Ferry",
+        "games": [
+          { "date": "2026-03-27", "opp": "Saunders", "hitting": { "ab": 4, "h": 2, "2b": 2, "3b": 0, "hr": 0, "rbi": 1, "r": 1, "bb": 0, "sb": 0 }, "pitching": null }
+        ]
+      },
+      "DJ Kollar": {
+        "team": "Dobbs Ferry",
+        "games": [
+          { "date": "2026-03-27", "opp": "Saunders", "hitting": { "ab": 3, "h": 1, "2b": 0, "3b": 0, "hr": 0, "rbi": 1, "r": 0, "bb": 0, "sb": 0 }, "pitching": null }
+        ]
+      }
+    },
+    "opponents": {
+      "Curt (Hastings)": {
+        "team": "Hastings",
+        "games": [
+          { "date": "2026-03-24", "opp": "Blind Brook", "hitting": { "ab": 0, "h": 2, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 0, "bb": 0, "sb": 0 }, "pitching": { "ip": 0, "h": 0, "er": 0, "so": 0, "bb": 0, "w": 0, "sv": 1 } }
+        ]
+      },
+      "John Salvatore (Irvington)": {
+        "team": "Irvington",
+        "games": [
+          { "date": "2026-03-26", "opp": "Unknown", "hitting": { "ab": 0, "h": 0, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 0, "bb": 0, "sb": 0 }, "pitching": null, "note": "Highlighted in 10-1 win, no box score stats available" }
+        ]
+      },
+      "Justin Corniel (Irvington)": {
+        "team": "Irvington",
+        "games": [
+          { "date": "2026-03-26", "opp": "Unknown", "hitting": { "ab": 0, "h": 0, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 0, "bb": 0, "sb": 0 }, "pitching": null, "note": "Highlighted in 10-1 win, no box score stats available" }
+        ]
+      },
+      "Connor Brice (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "note": "2026 Captain. Signed D1 with Villanova. No game stats yet.",
+        "games": []
+      }
+    }
+  },
   "opponentResults": [
     { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 5, "loser": "Blind Brook", "loserRuns": 2, "source": "@hastingsbase" },
     { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" },
