@@ -151,11 +151,7 @@ function computeLeagueRecord(teamScores, schedule) {
 // ============================================================
 const longDate = formatLongDate(today);
 // Title tag is now static "The Dobbs Ferry Eagles Baseball Club" — do not overwrite
-// Update subtitle "The Latest — March 25, 2026"
-html = html.replace(
-    /The Latest — [A-Z][a-z]+ \d{1,2}, \d{4}/,
-    `The Latest — ${longDate}`
-);
+// Subtitle is now static "Section 1 | Conference 3 | Division B" — do not overwrite
 
 // ============================================================
 // 2. UPDATE VARSITY QUICK STATS
