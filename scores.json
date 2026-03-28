@@ -180,6 +180,27 @@
       }
     }
   },
+  "newsLog": [
+    { "date": "2026-03-27", "type": "score", "text": "EAGLES WIN 8-3: DF defeats Saunders at Gould Park. Record: 2-0.", "source": "@dfeaglesbaseball, @dfvarsity_baseball", "highlight": true },
+    { "date": "2026-03-27", "type": "intel", "text": "Tuckahoe JV tied Putnam Valley JV 5-5.", "source": "Putnam Valley Athletics digitalsports" },
+    { "date": "2026-03-26", "type": "intel", "text": "Irvington 10-1 win. John Salvatore and Justin Corniel highlighted.", "source": "@dawgs_bsbl" },
+    { "date": "2026-03-26", "type": "intel", "text": "Rye Neck 8, Pawling 2 (non-league).", "source": "Pawling HS website" },
+    { "date": "2026-03-26", "type": "intel", "text": "Irvington JV 18, Saunders 1. Saunders JV program struggling early.", "source": "Irvington HS digitalsports" },
+    { "date": "2026-03-26", "type": "intel", "text": "Westlake opened at Panas after two rainouts. Score not confirmed.", "source": "@westlakewildcatsbaseball" },
+    { "date": "2026-03-24", "type": "score", "text": "EAGLES WIN 6-2: DF defeats Irvington in season opener at Memorial Park.", "source": "GameChanger (LIVE)", "highlight": true },
+    { "date": "2026-03-24", "type": "venue", "text": "Game moved from Gould Park to Memorial Park (Dow's Lane) in Irvington.", "source": "@dfeaglesbaseball" },
+    { "date": "2026-03-24", "type": "intel", "text": "Hastings 5, Blind Brook 2. Hastings wins opener. Coach Stampfl's 100th career win.", "source": "@hastingsbase" },
+    { "date": "2026-03-24", "type": "intel", "text": "Ardsley lost 2026 opener to Pleasantville.", "source": "Web search" },
+    { "date": "2026-03-24", "type": "source", "text": "GameChanger: Varsity now has 4 games loaded. Live-scored Irvington game.", "source": "GameChanger" },
+    { "date": "2026-03-24", "type": "source", "text": "Instagram @dfeaglesbaseball: Season opener post, venue change to Memorial Park. 18 likes.", "source": "@dfeaglesbaseball" },
+    { "date": "2026-03-24", "type": "source", "text": "Instagram @dfvarsity_baseball: Bio updated to '0-0 | Burma counter: 1'. 284 followers.", "source": "@dfvarsity_baseball" },
+    { "date": "2026-03-23", "type": "source", "text": "DFSD DigitalSports: Full varsity schedule published — 21 games.", "source": "DigitalSports" },
+    { "date": "2026-03-23", "type": "source", "text": "GameChanger: JV fully loaded (14 games, 14 players).", "source": "GameChanger" },
+    { "date": "2026-03-23", "type": "source", "text": "Instagram @dfvarsity_baseball: Game-day hype post — 'Tip plays baseball today. Game location tbd.' 36 likes.", "source": "@dfvarsity_baseball" },
+    { "date": "2026-03-19", "type": "source", "text": "Instagram @df_diamond_club: BINGO fundraiser recap at Doubledays.", "source": "@df_diamond_club" },
+    { "date": "2026-03-18", "type": "source", "text": "Instagram @dfvarsity_baseball: Scrimmage post — Jack Rizzo and team vs Ardsley, first scrim of the year. 39 likes.", "source": "@dfvarsity_baseball" },
+    { "date": "2026-03-14", "type": "source", "text": "Instagram @dfeaglesbaseball: 2026 schedule posted (pinned).", "source": "@dfeaglesbaseball" }
+  ],
   "opponentResults": [
     { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 5, "loser": "Blind Brook", "loserRuns": 2, "source": "@hastingsbase" },
     { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" },

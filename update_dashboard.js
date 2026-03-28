@@ -1170,7 +1170,64 @@ if (pisData.length > 0) {
 }
 
 // ============================================================
-// 9. UPDATE FOOTER TIMESTAMP
+// 9. AUTO-GENERATE NEWS & UPDATES
+// ============================================================
+function buildNewsLog(newsLog) {
+    if (!newsLog || newsLog.length === 0) return '<p style="color: #888; font-size: 13px;">No updates yet.</p>';
+
+    // Sort by date descending, then by array order within same date
+    const sorted = [...newsLog].sort((a, b) => b.date.localeCompare(a.date));
+
+    // Group by date
+    const byDate = {};
+    for (const entry of sorted) {
+        if (!byDate[entry.date]) byDate[entry.date] = [];
+        byDate[entry.date].push(entry);
+    }
+
+    let newsHtml = '';
+    const dates = Object.keys(byDate).sort().reverse();
+
+    for (const date of dates) {
+        const entries = byDate[date];
+        const dt = new Date(date + 'T12:00:00');
+        const dateLabel = `${formatShortMonth(dt)} ${dt.getDate()}`;
+
+        newsHtml += `<div style="margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #222;">`;
+        newsHtml += `<div style="font-size: 11px; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">${dateLabel}</div>`;
+
+        for (const entry of entries) {
+            let color = '#ccc';
+            let prefix = '';
+            if (entry.highlight) { color = '#D4A017'; }
+            else if (entry.type === 'score') { color = '#F59E0B'; prefix = '⚾ '; }
+            else if (entry.type === 'venue') { color = '#F59E0B'; }
+            else if (entry.type === 'intel') { color = '#aaa'; }
+            else if (entry.type === 'source') { color = '#777'; }
+
+            newsHtml += `<p style="margin: 0 0 4px 0; font-size: 12px; color: ${color};">`;
+            newsHtml += `${prefix}${entry.text}`;
+            if (entry.source) {
+                newsHtml += ` <span style="color: #555; font-size: 10px;">[${entry.source}]</span>`;
+            }
+            newsHtml += `</p>`;
+        }
+        newsHtml += `</div>`;
+    }
+    return newsHtml;
+}
+
+const newsHtml = buildNewsLog(scores.newsLog);
+
+// Replace News & Updates content and set collapsed by default
+const newsRegex = /(<!-- News & Updates[\s\S]*?<button class="collapsible-header" onclick="toggleCollapsible\(this\)">)\s*<span class="collapsible-toggle[^"]*">▶<\/span>\s*<span>News & Updates<\/span>\s*<\/button>\s*<div class="collapsible-content[^"]*">([\s\S]*?)(<\/div>\s*<\/div>\s*(?=\s*<!-- Social Media))/;
+
+html = html.replace(newsRegex, (match, before, content, after) => {
+    return `${before}\n                    <span class="collapsible-toggle collapsed">▶</span>\n                    <span>News & Updates</span>\n                </button>\n                <div class="collapsible-content collapsed">\n                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #1a1a1a;">\n${newsHtml}\n                    </div>\n                ${after}`;
+});
+
+// ============================================================
+// 10. UPDATE FOOTER TIMESTAMP
 // ============================================================
 // Footer format: "March 25, 2026 (Updated 7:06 AM)"
 const timeStr = today.toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', hour12: true });
