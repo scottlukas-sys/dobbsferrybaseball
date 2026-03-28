@@ -683,6 +683,64 @@ html = html.replace(standingsRegex, `$1
             `);
 
 // ============================================================
+// 6c. UPDATE WHAT'S HAPPENING ELSEWHERE
+// ============================================================
+function buildElsewhere() {
+    const teamIntel = scores.teamIntel || {};
+    const teams = Object.keys(teamIntel);
+
+    // For each team, find the earliest upcoming DF game date
+    function getNextDFDate(teamName) {
+        const upcoming = varsitySchedule.filter(g =>
+            g.type !== 'Scrimmage' &&
+            g.opponent === teamName &&
+            g.date >= todayStr
+        );
+        return upcoming.length > 0 ? upcoming[0].date : '9999-12-31';
+    }
+
+    // Sort: most recently updated first, then by next DF game date (sooner = higher)
+    teams.sort((a, b) => {
+        const aUpdated = teamIntel[a].lastUpdated || '2000-01-01';
+        const bUpdated = teamIntel[b].lastUpdated || '2000-01-01';
+        // Primary: most recently updated first (descending)
+        if (bUpdated !== aUpdated) return bUpdated.localeCompare(aUpdated);
+        // Secondary: earliest upcoming DF game first (ascending)
+        return getNextDFDate(a).localeCompare(getNextDFDate(b));
+    });
+
+    let cardsHtml = '';
+    for (const team of teams) {
+        const t = teamIntel[team];
+        const threat = t.threat || 'UNKNOWN';
+        let borderStyle = '';
+        let badgeStyle = '';
+        if (threat === 'THREAT') {
+            borderStyle = ' style="border-left-color: #EF4444;"';
+            badgeStyle = ' style="background-color: #EF4444;"';
+        } else if (threat === 'WATCH') {
+            borderStyle = ' style="border-left-color: #F59E0B;"';
+            badgeStyle = ' style="background-color: #F59E0B;"';
+        }
+
+        cardsHtml += `
+                <div class="team-card"${borderStyle}>
+                    <div class="team-name">${t.fullName}</div>
+                    <span class="threat-badge"${badgeStyle}>${threat}</span>
+                    <div class="team-intel">${t.intel}</div>
+                    <div class="team-next">Next vs DF: ${t.nextVsDF}</div>
+                </div>`;
+    }
+
+    return cardsHtml;
+}
+
+// Replace the What's Happening Elsewhere section
+const elsewhereRegex = /(<!-- What's Happening Elsewhere -->\s*<div class="card">\s*<h2>WHAT'S HAPPENING ELSEWHERE<\/h2>\s*<div class="team-grid">)([\s\S]*?)(<\/div>\s*<\/div>\s*(?=\s*<!-- Key Varsity))/;
+html = html.replace(elsewhereRegex, `$1${buildElsewhere()}
+                $3`);
+
+// ============================================================
 // 7. UPDATE JV SECTION
 // ============================================================
 const jvRecord = computeRecord(scores.jv);

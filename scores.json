@@ -215,5 +215,105 @@
     { "date": "2026-03-26", "winner": "Irvington JV", "winnerRuns": 18, "loser": "Saunders", "loserRuns": 1, "note": "JV game. Saunders gave up 18 runs to Irvington JV.", "source": "Irvington HS digitalsports" },
     { "date": "2026-03-26", "winner": "Westlake", "winnerRuns": 0, "loser": "Walter Panas", "loserRuns": 0, "note": "Westlake 2026 opener at Panas (after two rain outs). Score not confirmed.", "source": "@westlakewildcatsbaseball" },
     { "date": "2026-03-27", "winner": "Tuckahoe JV", "winnerRuns": 5, "loser": "Putnam Valley JV", "loserRuns": 5, "note": "JV game, ended in 5-5 tie.", "source": "Putnam Valley Athletics digitalsports" }
-  ]
+  ],
+  "teamIntel": {
+    "Ardsley": {
+      "fullName": "Ardsley Panthers",
+      "threat": "UNKNOWN",
+      "intel": "Scrimmaged DF on Mar 19. Lost 2026 opener to Pleasantville on Mar 24. New captains Carter Bucci and Nate Cal announced.",
+      "nextVsDF": "Apr 14 (H)",
+      "lastUpdated": "2026-03-24"
+    },
+    "Blind Brook": {
+      "fullName": "Blind Brook Trojans",
+      "threat": "UNKNOWN",
+      "intel": "Captains Robbie Cuesta and Elliot Zwicker return as seniors. 2026 record: 0-1. Lost league opener to Hastings at home. (Source: @hastingsbase)",
+      "nextVsDF": "Apr 20 (H), Apr 22 (A) League",
+      "lastUpdated": "2026-03-24"
+    },
+    "Edgemont": {
+      "fullName": "Edgemont Panthers",
+      "threat": "UNKNOWN",
+      "intel": "Small program with limited public presence. First game on the DF schedule (Apr 7). No 2026 intel yet. Stay tuned.",
+      "nextVsDF": "Apr 7 (A)",
+      "lastUpdated": "2026-03-14"
+    },
+    "Haldane": {
+      "fullName": "Haldane Blue Devils",
+      "threat": "UNKNOWN",
+      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. No 2026 intel yet. Stay tuned.",
+      "nextVsDF": "Apr 18 (A)",
+      "lastUpdated": "2026-03-14"
+    },
+    "Hastings": {
+      "fullName": "Hastings Yellow Jackets",
+      "threat": "WATCH",
+      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-0. Beat Blind Brook in league opener. Drew, Dileo, and Curt pitched; Curt had 2 hits and the save. Coach Stampfl's 100th career win. Next game: Pelham in Florida (spring trip). (Source: @hastingsbase)",
+      "nextVsDF": "Apr 24 (H), Apr 28 (A) League",
+      "lastUpdated": "2026-03-27"
+    },
+    "Irvington": {
+      "fullName": "Irvington Bulldogs",
+      "threat": "UNKNOWN",
+      "intel": "DF beat them 6-2 on Mar 24 in the season opener. Irvington won 10-1 on Mar 26 (opponent unconfirmed). John Salvatore and Justin Corniel highlighted. 2026 record: 1-1. (Source: @dawgs_bsbl)",
+      "nextVsDF": "Apr 13 (A)",
+      "lastUpdated": "2026-03-26"
+    },
+    "Leffell School": {
+      "fullName": "Leffell School Lions",
+      "threat": "UNKNOWN",
+      "intel": "Small private school in Hartsdale. Class C program. No 2026 intel yet. Stay tuned.",
+      "nextVsDF": "May 7 (A), May 12 (H) League",
+      "lastUpdated": "2026-03-14"
+    },
+    "Pearl River": {
+      "fullName": "Pearl River Pirates",
+      "threat": "UNKNOWN",
+      "intel": "Bigger school from Rockland County. Non-league game. No 2026 intel yet. Stay tuned.",
+      "nextVsDF": "Apr 11 (A)",
+      "lastUpdated": "2026-03-14"
+    },
+    "Rye Neck": {
+      "fullName": "Rye Neck Panthers",
+      "threat": "UNKNOWN",
+      "intel": "2026 record: 1-0. Beat Pawling 8-2 on Mar 26 (non-league). (Source: Pawling HS website)",
+      "nextVsDF": "Apr 30 (A), May 1 (H) League",
+      "lastUpdated": "2026-03-26"
+    },
+    "Saunders": {
+      "fullName": "Saunders Trades",
+      "threat": "UNKNOWN",
+      "intel": "Yonkers vocational school. DF beat Saunders 8-3 on Mar 27 (home opener, Gould Park). Irvington JV beat Saunders 18-1 on Mar 26. 2026 record: 0-2. (Source: @dfeaglesbaseball, Irvington HS digitalsports)",
+      "nextVsDF": "None remaining",
+      "lastUpdated": "2026-03-27"
+    },
+    "Sleepy Hollow": {
+      "fullName": "Sleepy Hollow Horsemen",
+      "threat": "WATCH",
+      "intel": "Head Coach Hunter Glashoff. Non-league game. No 2026 intel yet. Stay tuned.",
+      "nextVsDF": "Apr 8 (H)",
+      "lastUpdated": "2026-03-14"
+    },
+    "Tuckahoe": {
+      "fullName": "Tuckahoe Tigers",
+      "threat": "THREAT",
+      "intel": "Defending Section 1 Class C Champions. 14x Section 1 Champs, 7x Regional, 3x State. Four named 2026 captains (Gentry, Romeo, Brice, Briante). Connor Brice signed D1 with Villanova for baseball. Running spring break clinics, active preseason. JV tied Putnam Valley 5-5 on Mar 27. (Source: @tuckahoe_athletics, Putnam Valley digitalsports)",
+      "nextVsDF": "May 4 (H), May 6 (A) League",
+      "lastUpdated": "2026-03-27"
+    },
+    "Valhalla": {
+      "fullName": "Valhalla Vikings",
+      "threat": "UNKNOWN",
+      "intel": "League game at Kensico Field. No 2026 intel yet. Stay tuned.",
+      "nextVsDF": "Apr 27 (A) 5:00 PM League",
+      "lastUpdated": "2026-03-14"
+    },
+    "Westlake": {
+      "fullName": "Westlake Wildcats",
+      "threat": "WATCH",
+      "intel": "Program from Thornwood. Had two consecutive rain outs to start 2026. Traveled to Walter Panas on Mar 26 for their opener (score not confirmed). Currently at ESPN Wide World of Sports (Disney) tournament — Day 1 was Mar 27. (Source: @westlakewildcatsbaseball)",
+      "nextVsDF": "May 11 (H)",
+      "lastUpdated": "2026-03-27"
+    }
+  }
 }
