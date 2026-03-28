@@ -1285,13 +1285,13 @@ if (scores.diamondClub && scores.diamondClub.nextEvent) {
         const dcDate = new Date(dc.date + 'T12:00:00');
         dateStr = ` (${formatShortMonth(dcDate)} ${dcDate.getDate()})`;
     }
-    const dcNotice = `<div class="dc-notice" style="text-align: center; padding: 8px 30px; font-size: 13px; color: #999; border-top: 1px solid #222;">Support Eagles Baseball & Softball Next: ${dcLink}<strong style="color: #fff; font-size: 14px;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
+    const dcNotice = `<div class="meta-info dc-notice" style="margin-top: 4px;">Support Eagles Baseball & Softball Next: ${dcLink}<strong style="color: #fff;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
 
-    // Inject as its own row below the tab bar (remove existing notice first if present)
-    html = html.replace(/\s*<div class="dc-notice"[^>]*>.*?Support Eagles.*?<\/div>/s, '');
+    // Inject into header-center, below the disclaimer line (remove existing notice first if present)
+    html = html.replace(/\s*<div class="[^"]*dc-notice"[^>]*>.*?Support Eagles.*?<\/div>/s, '');
     html = html.replace(
-        /(<div class="tab" onclick="switchTab\('jv'\)">JV<\/div>\s*<\/div>)\s*(<\/div>)/,
-        `$1\n    ${dcNotice}\n    $2`
+        /(<div class="meta-info">Independent fan site\.[^<]*<\/div>)/,
+        `$1\n            ${dcNotice}`
     );
 }
 
