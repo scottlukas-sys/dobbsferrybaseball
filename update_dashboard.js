@@ -1235,9 +1235,7 @@ if (scores.diamondClub && scores.diamondClub.nextEvent) {
         const dcDate = new Date(dc.date + 'T12:00:00');
         dateStr = ` (${formatShortMonth(dcDate)} ${dcDate.getDate()})`;
     }
-    // Small home plate SVG in team blue
-    const homePlateSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 22" width="16" height="18" style="vertical-align: middle; margin-right: 5px;"><polygon points="2,0 18,0 20,8 10,22 0,8" fill="#2B5DAA" stroke="#fff" stroke-width="1"/><text x="10" y="12" text-anchor="middle" font-size="8" font-weight="bold" fill="#fff" font-family="sans-serif">DC</text></svg>`;
-    const dcNotice = `<div style="flex: 1; text-align: right; padding: 12px 0; font-size: 13px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${homePlateSvg}Support Eagles Baseball & Softball Next: ${dcLink}<strong style="color: #D4A017; font-size: 14px;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
+    const dcNotice = `<div style="flex: 1; text-align: right; padding: 12px 0; font-size: 13px; color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Support Eagles Baseball & Softball Next: ${dcLink}<strong style="color: #fff; font-size: 14px;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
 
     // Inject into tab-bar div, after the JV tab (remove existing notice first if present)
     html = html.replace(/\s*<div style="flex: 1;[^>]*>.*?Support Eagles.*?<\/div>/s, '');
