@@ -1085,7 +1085,10 @@ function buildPlayersToWatch(pisData) {
     }
     sectionHtml += `</div>`;
 
-    // --- Opponent Sections: compact roster tables per team ---
+    // --- Visual separator between DF and opponents ---
+    sectionHtml += `<div style="border-top: 1px solid #333; margin: 8px 0 15px 0;"></div>`;
+
+    // --- Opponent teams: 2-column grid of compact team cards ---
     const teamOrder = Object.keys(oppByTeam).sort((a, b) => {
         const maxA = Math.max(...oppByTeam[a].map(p => p.pis), 0);
         const maxB = Math.max(...oppByTeam[b].map(p => p.pis), 0);
@@ -1093,56 +1096,56 @@ function buildPlayersToWatch(pisData) {
         return a.localeCompare(b);
     });
 
+    sectionHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
+
     for (const team of teamOrder) {
         const players = oppByTeam[team].slice(0, 8);
-        sectionHtml += `<div style="background-color: #1a1a1a; padding: 12px 15px; border-radius: 6px; margin-bottom: 10px;">`;
-        sectionHtml += `<h4 style="margin: 0 0 8px 0; color: #ccc; font-size: 14px;">${team}</h4>`;
-        // Compact table rows
-        for (const p of players) {
+        sectionHtml += `<div style="background-color: #161616; padding: 10px 12px; border-radius: 5px;">`;
+        sectionHtml += `<div style="font-size: 13px; font-weight: 600; color: #b0b0b0; margin-bottom: 6px;">${team}</div>`;
+        for (let i = 0; i < players.length; i++) {
+            const p = players[i];
             const tierColor = tierColors[p.tier] || '#555';
-            // Strip team name from display (e.g., "Curt (Hastings)" -> "Curt")
             const displayName = p.name.replace(/\s*\(.*?\)\s*$/, '');
-            sectionHtml += `<div style="display: flex; align-items: center; padding: 3px 0; border-bottom: 1px solid #2a2a2a;">`;
-            // Name
-            sectionHtml += `<span style="color: #ddd; font-size: 12px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${displayName}</span>`;
-            // Tags as badges
+            sectionHtml += `<div style="display: flex; align-items: center; flex-wrap: wrap; padding: 2px 0;${i < players.length - 1 ? ' border-bottom: 1px solid #222;' : ''}">`;
+            sectionHtml += `<span style="color: #ccc; font-size: 11px; margin-right: 6px;">${displayName}</span>`;
             if (p.tags && p.tags.length > 0) {
                 for (const tag of p.tags) {
-                    let tagColor = '#555';
+                    let tagColor = '#888';
                     let tagBg = '#2a2a2a';
                     if (tag.includes('Captain')) { tagColor = '#F59E0B'; tagBg = '#F59E0B22'; }
                     else if (tag.includes('All-League') || tag.includes('Award')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
                     else if (tag.includes('D1')) { tagColor = '#22C55E'; tagBg = '#22C55E22'; }
-                    else if (tag.includes('Returning')) { tagColor = '#6B7280'; tagBg = '#6B728022'; }
-                    sectionHtml += `<span style="font-size: 9px; color: ${tagColor}; background: ${tagBg}; padding: 1px 5px; border-radius: 3px; margin-left: 4px; white-space: nowrap;">${tag}</span>`;
+                    else if (tag.includes('Returning')) { tagColor = '#8B8B8B'; tagBg = '#8B8B8B22'; }
+                    else if (tag.includes('Pitcher') || tag.includes('Senior')) { tagColor = '#7BA3CC'; tagBg = '#7BA3CC22'; }
+                    sectionHtml += `<span style="font-size: 9px; color: ${tagColor}; background: ${tagBg}; padding: 1px 4px; border-radius: 2px; margin-right: 3px; white-space: nowrap;">${tag}</span>`;
                 }
             }
-            // PIS badge if they have stats
             if (p.pis > 0) {
-                sectionHtml += `<span style="font-size: 10px; color: ${tierColor}; font-weight: 700; margin-left: 6px; white-space: nowrap;">PIS ${p.pis}</span>`;
+                sectionHtml += `<span style="font-size: 9px; color: ${tierColor}; font-weight: 700; margin-left: auto; white-space: nowrap;">PIS ${p.pis}</span>`;
             }
             sectionHtml += `</div>`;
-            // One-line stat if available
             if (p.gameLines.length > 0) {
                 const latest = p.gameLines[p.gameLines.length - 1];
-                sectionHtml += `<div style="padding: 1px 0 3px 12px;"><span style="color: #777; font-size: 10px;">vs ${latest.opp}: ${latest.line}</span></div>`;
+                sectionHtml += `<div style="padding: 0 0 2px 8px;"><span style="color: #888; font-size: 9px;">vs ${latest.opp}: ${latest.line}</span></div>`;
             }
         }
         sectionHtml += `</div>`;
     }
 
-    // Monitoring: teams with zero tracked players
+    // Monitoring: untracked teams as small muted cards in the same grid
     const scheduleTeams = [...new Set(varsitySchedule.filter(g => g.type !== 'Scrimmage').map(g => g.opponent))];
     const trackedTeams = new Set(teamOrder);
     trackedTeams.add('Dobbs Ferry');
     const untrackedTeams = scheduleTeams.filter(t => !trackedTeams.has(t));
 
-    if (untrackedTeams.length > 0) {
-        sectionHtml += `<div style="background-color: #1a1a1a; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px;">`;
-        sectionHtml += `<h4 style="margin: 0 0 4px 0; color: #555; font-size: 13px;">Monitoring</h4>`;
-        sectionHtml += `<p style="color: #666; font-size: 12px; margin: 0;">${untrackedTeams.join(', ')}</p>`;
+    for (const team of untrackedTeams) {
+        sectionHtml += `<div style="background-color: #161616; padding: 10px 12px; border-radius: 5px;">`;
+        sectionHtml += `<div style="font-size: 13px; font-weight: 600; color: #b0b0b0; margin-bottom: 4px;">${team}</div>`;
+        sectionHtml += `<span style="color: #888; font-size: 10px;">No intel yet</span>`;
         sectionHtml += `</div>`;
     }
+
+    sectionHtml += `</div>`; // close grid
 
     return sectionHtml;
 }
