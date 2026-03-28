@@ -1224,7 +1224,28 @@ html = html.replace(newsRegex, (match, before, content, after) => {
 });
 
 // ============================================================
-// 10. UPDATE FOOTER TIMESTAMP
+// 10. DIAMOND CLUB BOOSTER NOTICE
+// ============================================================
+if (scores.diamondClub && scores.diamondClub.nextEvent) {
+    const dc = scores.diamondClub;
+    const dcLink = dc.link ? `<a href="${dc.link}" target="_blank" style="color: #D4A017; text-decoration: none;">` : '';
+    const dcLinkClose = dc.link ? '</a>' : '';
+    let dateStr = '';
+    if (dc.date) {
+        const dcDate = new Date(dc.date + 'T12:00:00');
+        dateStr = ` (${formatShortMonth(dcDate)} ${dcDate.getDate()})`;
+    }
+    const dcNotice = `<div style="flex: 1; text-align: right; padding: 14px 0; font-size: 12px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Support Eagles Baseball & Softball Next: ${dcLink}<strong style="color: #D4A017;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
+
+    // Inject into tab-bar div, after the JV tab
+    html = html.replace(
+        /(<div class="tab" onclick="switchTab\('jv'\)">JV<\/div>)\s*(<\/div>)\s*(<\/div>)/,
+        `$1\n        ${dcNotice}\n    $2\n    $3`
+    );
+}
+
+// ============================================================
+// 11. UPDATE FOOTER TIMESTAMP
 // ============================================================
 // Footer format: "March 25, 2026 (Updated 7:06 AM)"
 const timeStr = today.toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', hour12: true });
