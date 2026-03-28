@@ -150,10 +150,7 @@ function computeLeagueRecord(teamScores, schedule) {
 // 1. UPDATE TITLE DATE
 // ============================================================
 const longDate = formatLongDate(today);
-html = html.replace(
-    /Eagles Baseball Daily Intelligence - [A-Z][a-z]+ \d{1,2}, \d{4}/,
-    `Eagles Baseball Daily Intelligence - ${longDate}`
-);
+// Title tag is now static "The Dobbs Ferry Eagles Baseball Club" — do not overwrite
 // Update subtitle "The Latest — March 25, 2026"
 html = html.replace(
     /The Latest — [A-Z][a-z]+ \d{1,2}, \d{4}/,
