@@ -1285,7 +1285,7 @@ if (scores.diamondClub && scores.diamondClub.nextEvent) {
         const dcDate = new Date(dc.date + 'T12:00:00');
         dateStr = ` (${formatShortMonth(dcDate)} ${dcDate.getDate()})`;
     }
-    const dcNotice = `<div class="meta-info dc-notice" style="margin-top: 4px;">Support Eagles Baseball & Softball Next: ${dcLink}<strong style="color: #fff;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
+    const dcNotice = `<div class="meta-info dc-notice" style="margin-top: 4px;">Support Eagles Baseball & Softball. Next: ${dcLink}<strong style="color: #fff;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
 
     // Inject into header-center, below the disclaimer line (remove existing notice first if present)
     html = html.replace(/\s*<div class="[^"]*dc-notice"[^>]*>.*?Support Eagles.*?<\/div>/s, '');
