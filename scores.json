@@ -187,6 +187,9 @@
     }
   },
   "newsLog": [
+    { "date": "2026-03-30", "type": "intel", "text": "Hastings vs Westlake at Disney Wide World of Sports scheduled for Mar 31 at 6:00 PM. Two DF schedule opponents face off.", "source": "Hastings HS DigitalSports" },
+    { "date": "2026-03-30", "type": "correction", "text": "Hastings-Blind Brook score corrected to 6-2 (was 5-2 per Instagram). Source: Hastings HS DigitalSports official schedule.", "source": "Hastings HS DigitalSports" },
+    { "date": "2026-03-30", "type": "source", "text": "Added DigitalSports (Section 1 school athletics sites) as a regular source. Provides official schedules, scores, and venue data.", "source": "DigitalSports" },
     { "date": "2026-03-30", "type": "intel", "text": "Westlake vs Valhalla at Disney ESPN Wide World of Sports today at 3:30pm. Both Division B teams at same spring break tournament.", "source": "@westlakewildcatsbaseball" },
     { "date": "2026-03-30", "type": "intel", "text": "Haldane hosts Peekskill today at 5:00 PM per GameDay One.", "source": "GameDay One" },
     { "date": "2026-03-29", "type": "intel", "text": "Hastings at Disney World spring trip. Played Pelham at Disney Stadium (non-league). Score not yet posted.", "source": "@hastingsbase" },
@@ -212,7 +215,7 @@
     { "date": "2026-03-14", "type": "source", "text": "Instagram @dfeaglesbaseball: 2026 schedule posted (pinned).", "source": "@dfeaglesbaseball" }
   ],
   "opponentResults": [
-    { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 5, "loser": "Blind Brook", "loserRuns": 2, "source": "@hastingsbase" },
+    { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 6, "loser": "Blind Brook", "loserRuns": 2, "source": "Hastings HS DigitalSports (corrected from 5-2 per @hastingsbase)" },
     { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" },
     { "date": "2026-03-26", "winner": "Irvington", "winnerRuns": 10, "loser": "Unknown", "loserRuns": 1, "note": "Irvington 10-1 win. Opponent not confirmed. John Salvatore and Justin Corniel highlighted.", "source": "@dawgs_bsbl" },
     { "date": "2026-03-26", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game", "source": "Pawling HS website" },
@@ -232,9 +235,9 @@
     "Blind Brook": {
       "fullName": "Blind Brook Trojans",
       "threat": "UNKNOWN",
-      "intel": "Captains Robbie Cuesta and Elliot Zwicker return as seniors. 2026 record: 0-1. Lost league opener to Hastings at home. (Source: @hastingsbase)",
+      "intel": "Captains Robbie Cuesta and Elliot Zwicker return as seniors. 2026 record: 0-1. Lost league opener to Hastings 2-6 at home. (Source: Hastings HS DigitalSports)",
       "nextVsDF": "Apr 20 (H), Apr 22 (A) League",
-      "lastUpdated": "2026-03-24"
+      "lastUpdated": "2026-03-30"
     },
     "Edgemont": {
       "fullName": "Edgemont Panthers",
@@ -253,7 +256,7 @@
     "Hastings": {
       "fullName": "Hastings Yellow Jackets",
       "threat": "WATCH",
-      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-0. Beat Blind Brook in league opener. Coach Stampfl's 100th career win. Currently on Disney World spring trip. Played Pelham at Disney Stadium on Mar 29 (non-league, score not yet posted). (Source: @hastingsbase)",
+      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-0. Beat Blind Brook 6-2 in league opener (corrected from 5-2). Coach Stampfl's 100th career win. Disney World spring trip: vs Pelham Mar 30 at ESPN WWOS Stadium, at Westlake Mar 31 at Disney. Then at Eastchester Apr 4. (Source: Hastings HS DigitalSports, @hastingsbase)",
       "nextVsDF": "Apr 24 (H), Apr 28 (A) League",
       "lastUpdated": "2026-03-30"
     },
