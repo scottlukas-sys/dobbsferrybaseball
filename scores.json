@@ -112,14 +112,14 @@
         "team": "Irvington",
         "tags": ["Highlighted Mar 26"],
         "games": [
-          { "date": "2026-03-26", "opp": "Unknown", "hitting": { "ab": 0, "h": 0, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 0, "bb": 0, "sb": 0 }, "pitching": null, "note": "Highlighted in 10-1 win, no box score stats available" }
+          { "date": "2026-03-26", "opp": "Sleepy Hollow", "hitting": { "ab": 0, "h": 0, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 0, "bb": 0, "sb": 0 }, "pitching": null, "note": "Highlighted in @dawgs_bsbl post. Irvington lost 8-9 to Sleepy Hollow (League). No box score stats available." }
         ]
       },
       "Justin Corniel (Irvington)": {
         "team": "Irvington",
         "tags": ["Highlighted Mar 26"],
         "games": [
-          { "date": "2026-03-26", "opp": "Unknown", "hitting": { "ab": 0, "h": 0, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 0, "bb": 0, "sb": 0 }, "pitching": null, "note": "Highlighted in 10-1 win, no box score stats available" }
+          { "date": "2026-03-26", "opp": "Sleepy Hollow", "hitting": { "ab": 0, "h": 0, "2b": 0, "3b": 0, "hr": 0, "rbi": 0, "r": 0, "bb": 0, "sb": 0 }, "pitching": null, "note": "Highlighted in @dawgs_bsbl post. Irvington lost 8-9 to Sleepy Hollow (League). No box score stats available." }
         ]
       },
       "Carter Bucci (Ardsley)": {
@@ -196,8 +196,14 @@
     { "date": "2026-03-29", "type": "intel", "text": "Westlake 4, Bronxville 3. Westlake gets first W of 2026 at ESPN Wide World of Sports (Disney).", "source": "@westlakewildcatsbaseball" },
     { "date": "2026-03-27", "type": "score", "text": "EAGLES WIN 8-3: DF defeats Saunders at Gould Park. Record: 2-0.", "source": "@dfeaglesbaseball, @dfvarsity_baseball", "highlight": true },
     { "date": "2026-03-27", "type": "intel", "text": "Tuckahoe JV tied Putnam Valley JV 5-5.", "source": "Putnam Valley Athletics digitalsports" },
-    { "date": "2026-03-26", "type": "intel", "text": "Irvington 10-1 win. John Salvatore and Justin Corniel highlighted.", "source": "@dawgs_bsbl" },
-    { "date": "2026-03-26", "type": "intel", "text": "Rye Neck 8, Pawling 2 (non-league).", "source": "Pawling HS website" },
+    { "date": "2026-03-30", "type": "correction", "text": "MAJOR CORRECTION: Irvington Mar 26 game was NOT a 10-1 win. DigitalSports for both Irvington and Sleepy Hollow confirm Sleepy Hollow beat Irvington 9-8 (League). @dawgs_bsbl post was misidentified. Irvington is 0-2, not 1-1.", "source": "Irvington HS DigitalSports, Sleepy Hollow HS DigitalSports" },
+    { "date": "2026-03-30", "type": "correction", "text": "Rye Neck vs Pawling date corrected from Mar 26 to Mar 25 per Rye Neck HS DigitalSports.", "source": "Rye Neck HS DigitalSports" },
+    { "date": "2026-03-30", "type": "intel", "text": "Ardsley lost to Hendrick Hudson 1-5 on Mar 28 at Sunset Field. Ardsley now 0-2+ in 2026.", "source": "Ardsley HS DigitalSports" },
+    { "date": "2026-03-30", "type": "intel", "text": "Sleepy Hollow 1-0 in league play after beating Irvington 9-8 on Mar 26. Next: at Briarcliff Mar 31, vs Rye Neck Apr 2, at DF Apr 8.", "source": "Sleepy Hollow HS DigitalSports" },
+    { "date": "2026-03-30", "type": "intel", "text": "Hastings vs Westlake at Disney on Mar 31 is a LEAGUE game per both schools' DigitalSports. First Division B matchup of 2026.", "source": "Hastings HS DigitalSports, Westlake HS DigitalSports" },
+    { "date": "2026-03-30", "type": "intel", "text": "Westlake vs Valhalla at Disney today is also a LEAGUE game per Westlake DigitalSports.", "source": "Westlake HS DigitalSports" },
+    { "date": "2026-03-26", "type": "intel", "text": "Sleepy Hollow 9, Irvington 8 (League). Corrected from earlier @dawgs_bsbl report.", "source": "Irvington HS DigitalSports, Sleepy Hollow HS DigitalSports" },
+    { "date": "2026-03-25", "type": "intel", "text": "Rye Neck 8, Pawling 2 (non-league). Date corrected to Mar 25.", "source": "Rye Neck HS DigitalSports" },
     { "date": "2026-03-26", "type": "intel", "text": "Irvington JV 18, Saunders 1. Saunders JV program struggling early.", "source": "Irvington HS digitalsports" },
     { "date": "2026-03-26", "type": "intel", "text": "Westlake opened at Panas after two rainouts. Score not confirmed.", "source": "@westlakewildcatsbaseball" },
     { "date": "2026-03-24", "type": "score", "text": "EAGLES WIN 6-2: DF defeats Irvington in season opener at Memorial Park.", "source": "GameChanger (LIVE)", "highlight": true },
@@ -217,25 +223,26 @@
   "opponentResults": [
     { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 6, "loser": "Blind Brook", "loserRuns": 2, "source": "Hastings HS DigitalSports (corrected from 5-2 per @hastingsbase)" },
     { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" },
-    { "date": "2026-03-26", "winner": "Irvington", "winnerRuns": 10, "loser": "Unknown", "loserRuns": 1, "note": "Irvington 10-1 win. Opponent not confirmed. John Salvatore and Justin Corniel highlighted.", "source": "@dawgs_bsbl" },
-    { "date": "2026-03-26", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game", "source": "Pawling HS website" },
+    { "date": "2026-03-26", "winner": "Sleepy Hollow", "winnerRuns": 9, "loser": "Irvington", "loserRuns": 8, "note": "League game. Corrected from earlier @dawgs_bsbl report of Irvington 10-1 win. Both Irvington and Sleepy Hollow DigitalSports confirm Sleepy Hollow W 9-8.", "source": "Irvington HS DigitalSports, Sleepy Hollow HS DigitalSports" },
+    { "date": "2026-03-25", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game. Date corrected from Mar 26 to Mar 25 per Rye Neck HS DigitalSports.", "source": "Rye Neck HS DigitalSports" },
     { "date": "2026-03-26", "winner": "Irvington JV", "winnerRuns": 18, "loser": "Saunders", "loserRuns": 1, "note": "JV game. Saunders gave up 18 runs to Irvington JV.", "source": "Irvington HS digitalsports" },
     { "date": "2026-03-26", "winner": "Westlake", "winnerRuns": 0, "loser": "Walter Panas", "loserRuns": 0, "note": "Westlake 2026 opener at Panas (after two rain outs). Score not confirmed.", "source": "@westlakewildcatsbaseball" },
     { "date": "2026-03-27", "winner": "Tuckahoe JV", "winnerRuns": 5, "loser": "Putnam Valley JV", "loserRuns": 5, "note": "JV game, ended in 5-5 tie.", "source": "Putnam Valley Athletics digitalsports" },
-    { "date": "2026-03-29", "winner": "Westlake", "winnerRuns": 4, "loser": "Bronxville", "loserRuns": 3, "note": "Westlake first W of 2026. ESPN Wide World of Sports (Disney) tournament.", "source": "@westlakewildcatsbaseball" }
+    { "date": "2026-03-29", "winner": "Westlake", "winnerRuns": 4, "loser": "Bronxville", "loserRuns": 3, "note": "Westlake first W of 2026. ESPN Wide World of Sports (Disney) tournament.", "source": "@westlakewildcatsbaseball, Westlake HS DigitalSports" },
+    { "date": "2026-03-28", "winner": "Hendrick Hudson", "winnerRuns": 5, "loser": "Ardsley", "loserRuns": 1, "note": "Non-league game at Sunset Field, Montrose. Ardsley now 0-2+.", "source": "Ardsley HS DigitalSports" }
   ],
   "teamIntel": {
     "Ardsley": {
       "fullName": "Ardsley Panthers",
       "threat": "UNKNOWN",
-      "intel": "Scrimmaged DF on Mar 19. Lost 2026 opener to Pleasantville on Mar 24. New captains Carter Bucci and Nate Cal announced.",
+      "intel": "Scrimmaged DF on Mar 19. 2026 record: 0-2+. Lost opener to Pleasantville Mar 24. Lost to Hendrick Hudson 1-5 on Mar 28 at Sunset Field. New captains Carter Bucci and Nate Cal. Up next: at John Jay Cross River Apr 2, vs Pearl River Apr 7.",
       "nextVsDF": "Apr 14 (H)",
-      "lastUpdated": "2026-03-24"
+      "lastUpdated": "2026-03-30"
     },
     "Blind Brook": {
       "fullName": "Blind Brook Trojans",
       "threat": "UNKNOWN",
-      "intel": "Captains Robbie Cuesta and Elliot Zwicker return as seniors. 2026 record: 0-1. Lost league opener to Hastings 2-6 at home. (Source: Hastings HS DigitalSports)",
+      "intel": "Captains Robbie Cuesta and Elliot Zwicker return as seniors. 2026 record: 0-1. Lost league opener to Hastings 2-6 at home. Up next: at Irvington Apr 11, vs Haldane Apr 10 (at Haldane).",
       "nextVsDF": "Apr 20 (H), Apr 22 (A) League",
       "lastUpdated": "2026-03-30"
     },
@@ -249,23 +256,23 @@
     "Haldane": {
       "fullName": "Haldane Blue Devils",
       "threat": "UNKNOWN",
-      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. No 2026 intel yet. Stay tuned.",
-      "nextVsDF": "Apr 18 (A)",
-      "lastUpdated": "2026-03-14"
+      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. Hosting Peekskill today (Mar 30) at 5:00 PM for first 2026 game. Up next: at Rye Neck Apr 1, at Sleepy Hollow Apr 6, vs Irvington Apr 8.",
+      "nextVsDF": "Apr 18 (A) 11:00 AM",
+      "lastUpdated": "2026-03-30"
     },
     "Hastings": {
       "fullName": "Hastings Yellow Jackets",
       "threat": "WATCH",
-      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-0. Beat Blind Brook 6-2 in league opener (corrected from 5-2). Coach Stampfl's 100th career win. Disney World spring trip: vs Pelham Mar 30 at ESPN WWOS Stadium, at Westlake Mar 31 at Disney. Then at Eastchester Apr 4. (Source: Hastings HS DigitalSports, @hastingsbase)",
+      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-0 (league). Beat Blind Brook 6-2 in league opener. Coach Stampfl's 100th career win. Disney spring trip: vs Pelham tonight Mar 30, at Westlake Mar 31 (LEAGUE). Up next: at Eastchester Apr 4, vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
       "nextVsDF": "Apr 24 (H), Apr 28 (A) League",
       "lastUpdated": "2026-03-30"
     },
     "Irvington": {
       "fullName": "Irvington Bulldogs",
       "threat": "UNKNOWN",
-      "intel": "DF beat them 6-2 on Mar 24 in the season opener. Irvington won 10-1 on Mar 26 (opponent unconfirmed). John Salvatore and Justin Corniel highlighted. 2026 record: 1-1. (Source: @dawgs_bsbl)",
+      "intel": "2026 record: 0-2. Lost to DF 2-6 on Mar 24. Lost to Sleepy Hollow 8-9 in league play on Mar 26 (corrected from earlier report of 10-1 Irvington win). Up next: at Haldane Apr 8, at DF Apr 13.",
       "nextVsDF": "Apr 13 (A)",
-      "lastUpdated": "2026-03-26"
+      "lastUpdated": "2026-03-30"
     },
     "Leffell School": {
       "fullName": "Leffell School Lions",
@@ -284,42 +291,42 @@
     "Rye Neck": {
       "fullName": "Rye Neck Panthers",
       "threat": "UNKNOWN",
-      "intel": "2026 record: 1-0. Beat Pawling 8-2 on Mar 26 (non-league). (Source: Pawling HS website)",
+      "intel": "2026 record: 1-0. Beat Pawling 8-2 on Mar 25 (non-league). Up next: vs Haldane Apr 1, at Sleepy Hollow Apr 2, at Pawling Apr 8.",
       "nextVsDF": "Apr 30 (A), May 1 (H) League",
-      "lastUpdated": "2026-03-26"
+      "lastUpdated": "2026-03-30"
     },
     "Saunders": {
       "fullName": "Saunders Trades",
       "threat": "UNKNOWN",
-      "intel": "Yonkers vocational school. DF beat Saunders 8-3 on Mar 27 (home opener, Gould Park). Irvington JV beat Saunders 18-1 on Mar 26. 2026 record: 0-2. (Source: @dfeaglesbaseball, Irvington HS digitalsports)",
+      "intel": "Yonkers vocational school. DF beat Saunders 8-3 on Mar 27 (home opener, Gould Park). Irvington JV beat Saunders 18-1 on Mar 26. 2026 record: 0-2.",
       "nextVsDF": "None remaining",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-03-30"
     },
     "Sleepy Hollow": {
       "fullName": "Sleepy Hollow Horsemen",
       "threat": "WATCH",
-      "intel": "Head Coach Hunter Glashoff. Non-league game. No 2026 intel yet. Stay tuned.",
+      "intel": "Head Coach Hunter Glashoff. 2026 record: 1-0 (league). Beat Irvington 9-8 on Mar 26 in a high-scoring league opener. Won scrimmage vs Croton 5-4. Up next: at Briarcliff Mar 31, vs Rye Neck Apr 2, vs Haldane Apr 6, at DF Apr 8.",
       "nextVsDF": "Apr 8 (H)",
-      "lastUpdated": "2026-03-14"
+      "lastUpdated": "2026-03-30"
     },
     "Tuckahoe": {
       "fullName": "Tuckahoe Tigers",
       "threat": "THREAT",
-      "intel": "Defending Section 1 Class C Champions. 14x Section 1 Champs, 7x Regional, 3x State. Four named 2026 captains (Gentry, Romeo, Brice, Briante). Connor Brice signed D1 with Villanova for baseball. Running spring break clinics, active preseason. JV tied Putnam Valley 5-5 on Mar 27. (Source: @tuckahoe_athletics, Putnam Valley digitalsports)",
+      "intel": "Defending Section 1 Class C Champions. 14x Section 1 Champs, 7x Regional, 3x State. Four named 2026 captains (Gentry, Romeo, Brice, Briante). Connor Brice signed D1 with Villanova for baseball. No varsity games played yet. JV tied Putnam Valley 5-5 on Mar 27. Up next: at Somers Apr 7, at Mount Vernon Apr 9, at New Rochelle Apr 10.",
       "nextVsDF": "May 4 (H), May 6 (A) League",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-03-30"
     },
     "Valhalla": {
       "fullName": "Valhalla Vikings",
       "threat": "UNKNOWN",
-      "intel": "At Disney ESPN Wide World of Sports tournament for spring break. Playing Westlake on Mar 30 at 3:30pm. First 2026 game activity confirmed. (Source: @westlakewildcatsbaseball)",
+      "intel": "At Disney ESPN Wide World of Sports tournament. Playing Westlake today Mar 30 at 3:30pm (LEAGUE game). No DigitalSports schedule data available. Up next: vs Rye Neck Apr 16 (non-league), at Hastings Apr 18 (non-league).",
       "nextVsDF": "Apr 27 (A) 5:00 PM League",
       "lastUpdated": "2026-03-30"
     },
     "Westlake": {
       "fullName": "Westlake Wildcats",
       "threat": "WATCH",
-      "intel": "At Disney ESPN Wide World of Sports tournament. Beat Bronxville 4-3 on Mar 29 for first W of 2026. Playing Valhalla on Mar 30 at 3:30pm (both Division B teams at same tournament). (Source: @westlakewildcatsbaseball)",
+      "intel": "At Disney ESPN Wide World of Sports tournament. 2026 record: 1-0 (non-league). Beat Bronxville 4-3 on Mar 29. Playing Valhalla today Mar 30 (LEAGUE). Playing Hastings Mar 31 (LEAGUE). Two Division B league games in Florida. Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9.",
       "nextVsDF": "May 11 (H)",
       "lastUpdated": "2026-03-30"
     }
