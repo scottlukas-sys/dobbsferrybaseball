@@ -187,6 +187,7 @@
     }
   },
   "newsLog": [
+    { "date": "2026-03-29", "type": "intel", "text": "Westlake 4, Bronxville 3. Westlake gets first W of 2026 at ESPN Wide World of Sports (Disney).", "source": "@westlakewildcatsbaseball" },
     { "date": "2026-03-27", "type": "score", "text": "EAGLES WIN 8-3: DF defeats Saunders at Gould Park. Record: 2-0.", "source": "@dfeaglesbaseball, @dfvarsity_baseball", "highlight": true },
     { "date": "2026-03-27", "type": "intel", "text": "Tuckahoe JV tied Putnam Valley JV 5-5.", "source": "Putnam Valley Athletics digitalsports" },
     { "date": "2026-03-26", "type": "intel", "text": "Irvington 10-1 win. John Salvatore and Justin Corniel highlighted.", "source": "@dawgs_bsbl" },
@@ -214,7 +215,8 @@
     { "date": "2026-03-26", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game", "source": "Pawling HS website" },
     { "date": "2026-03-26", "winner": "Irvington JV", "winnerRuns": 18, "loser": "Saunders", "loserRuns": 1, "note": "JV game. Saunders gave up 18 runs to Irvington JV.", "source": "Irvington HS digitalsports" },
     { "date": "2026-03-26", "winner": "Westlake", "winnerRuns": 0, "loser": "Walter Panas", "loserRuns": 0, "note": "Westlake 2026 opener at Panas (after two rain outs). Score not confirmed.", "source": "@westlakewildcatsbaseball" },
-    { "date": "2026-03-27", "winner": "Tuckahoe JV", "winnerRuns": 5, "loser": "Putnam Valley JV", "loserRuns": 5, "note": "JV game, ended in 5-5 tie.", "source": "Putnam Valley Athletics digitalsports" }
+    { "date": "2026-03-27", "winner": "Tuckahoe JV", "winnerRuns": 5, "loser": "Putnam Valley JV", "loserRuns": 5, "note": "JV game, ended in 5-5 tie.", "source": "Putnam Valley Athletics digitalsports" },
+    { "date": "2026-03-29", "winner": "Westlake", "winnerRuns": 4, "loser": "Bronxville", "loserRuns": 3, "note": "Westlake first W of 2026. ESPN Wide World of Sports (Disney) tournament.", "source": "@westlakewildcatsbaseball" }
   ],
   "teamIntel": {
     "Ardsley": {
@@ -311,9 +313,9 @@
     "Westlake": {
       "fullName": "Westlake Wildcats",
       "threat": "WATCH",
-      "intel": "Program from Thornwood. Had two consecutive rain outs to start 2026. Traveled to Walter Panas on Mar 26 for their opener (score not confirmed). Currently at ESPN Wide World of Sports (Disney) tournament — Day 1 was Mar 27. (Source: @westlakewildcatsbaseball)",
+      "intel": "Program from Thornwood. Had two consecutive rain outs to start 2026. Traveled to Walter Panas on Mar 26 (score not confirmed). Beat Bronxville 4-3 on Mar 29 at ESPN Wide World of Sports (Disney) for first W of 2026. (Source: @westlakewildcatsbaseball)",
       "nextVsDF": "May 11 (H)",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-03-29"
     }
   }
 }
