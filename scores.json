@@ -187,6 +187,11 @@
     }
   },
   "newsLog": [
+    { "date": "2026-03-31", "type": "score", "text": "Haldane 10, Peekskill 0. Haldane opens 2026 with dominant shutout at Mayors Park, Cold Spring.", "source": "Haldane HS DigitalSports" },
+    { "date": "2026-03-31", "type": "correction", "text": "Pleasantville-Ardsley Mar 24 score confirmed: Pleasantville 7, Ardsley 1. Previously had no exact score.", "source": "Ardsley HS DigitalSports" },
+    { "date": "2026-03-31", "type": "intel", "text": "Sleepy Hollow DigitalSports shows 2-0 record (was 1-0). Second win opponent unconfirmed. Only verified win: Irvington 9-8 (Mar 26).", "source": "Sleepy Hollow HS DigitalSports" },
+    { "date": "2026-03-31", "type": "intel", "text": "Westlake DigitalSports shows 1-0 conf, 1-0 overall. Valhalla league game (Mar 30) result not yet posted with score. Bronxville 4-3 win (Mar 29) may not be entered.", "source": "Westlake HS DigitalSports" },
+    { "date": "2026-03-31", "type": "intel", "text": "Hastings still 1-0 per DigitalSports. Pelham game (Mar 30) no score posted. Westlake league game today (Mar 31) at 6 PM.", "source": "Hastings HS DigitalSports" },
     { "date": "2026-03-30", "type": "intel", "text": "Hastings vs Westlake at Disney Wide World of Sports scheduled for Mar 31 at 6:00 PM. Two DF schedule opponents face off.", "source": "Hastings HS DigitalSports" },
     { "date": "2026-03-30", "type": "correction", "text": "Hastings-Blind Brook score corrected to 6-2 (was 5-2 per Instagram). Source: Hastings HS DigitalSports official schedule.", "source": "Hastings HS DigitalSports" },
     { "date": "2026-03-30", "type": "source", "text": "Added DigitalSports (Section 1 school athletics sites) as a regular source. Provides official schedules, scores, and venue data.", "source": "DigitalSports" },
@@ -222,22 +227,23 @@
   ],
   "opponentResults": [
     { "date": "2026-03-24", "winner": "Hastings", "winnerRuns": 6, "loser": "Blind Brook", "loserRuns": 2, "source": "Hastings HS DigitalSports (corrected from 5-2 per @hastingsbase)" },
-    { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 0, "loser": "Ardsley", "loserRuns": 0, "note": "Ardsley lost 2026 opener", "source": "Web search" },
+    { "date": "2026-03-24", "winner": "Pleasantville", "winnerRuns": 7, "loser": "Ardsley", "loserRuns": 1, "note": "Ardsley lost 2026 opener 1-7 at home", "source": "Ardsley HS DigitalSports" },
     { "date": "2026-03-26", "winner": "Sleepy Hollow", "winnerRuns": 9, "loser": "Irvington", "loserRuns": 8, "note": "League game. Corrected from earlier @dawgs_bsbl report of Irvington 10-1 win. Both Irvington and Sleepy Hollow DigitalSports confirm Sleepy Hollow W 9-8.", "source": "Irvington HS DigitalSports, Sleepy Hollow HS DigitalSports" },
     { "date": "2026-03-25", "winner": "Rye Neck", "winnerRuns": 8, "loser": "Pawling", "loserRuns": 2, "note": "Non-league game. Date corrected from Mar 26 to Mar 25 per Rye Neck HS DigitalSports.", "source": "Rye Neck HS DigitalSports" },
     { "date": "2026-03-26", "winner": "Irvington JV", "winnerRuns": 18, "loser": "Saunders", "loserRuns": 1, "note": "JV game. Saunders gave up 18 runs to Irvington JV.", "source": "Irvington HS digitalsports" },
     { "date": "2026-03-26", "winner": "Westlake", "winnerRuns": 0, "loser": "Walter Panas", "loserRuns": 0, "note": "Westlake 2026 opener at Panas (after two rain outs). Score not confirmed.", "source": "@westlakewildcatsbaseball" },
     { "date": "2026-03-27", "winner": "Tuckahoe JV", "winnerRuns": 5, "loser": "Putnam Valley JV", "loserRuns": 5, "note": "JV game, ended in 5-5 tie.", "source": "Putnam Valley Athletics digitalsports" },
     { "date": "2026-03-29", "winner": "Westlake", "winnerRuns": 4, "loser": "Bronxville", "loserRuns": 3, "note": "Westlake first W of 2026. ESPN Wide World of Sports (Disney) tournament.", "source": "@westlakewildcatsbaseball, Westlake HS DigitalSports" },
-    { "date": "2026-03-28", "winner": "Hendrick Hudson", "winnerRuns": 5, "loser": "Ardsley", "loserRuns": 1, "note": "Non-league game at Sunset Field, Montrose. Ardsley now 0-2+.", "source": "Ardsley HS DigitalSports" }
+    { "date": "2026-03-28", "winner": "Hendrick Hudson", "winnerRuns": 5, "loser": "Ardsley", "loserRuns": 1, "note": "Non-league game at Sunset Field, Montrose. Ardsley now 0-2+.", "source": "Ardsley HS DigitalSports" },
+    { "date": "2026-03-30", "winner": "Haldane", "winnerRuns": 10, "loser": "Peekskill", "loserRuns": 0, "note": "Haldane 2026 opener. Win at Mayors Park, Cold Spring. Non-league.", "source": "Haldane HS DigitalSports" }
   ],
   "teamIntel": {
     "Ardsley": {
       "fullName": "Ardsley Panthers",
       "threat": "UNKNOWN",
-      "intel": "Scrimmaged DF on Mar 19. 2026 record: 0-2+. Lost opener to Pleasantville Mar 24. Lost to Hendrick Hudson 1-5 on Mar 28 at Sunset Field. New captains Carter Bucci and Nate Cal. Up next: at John Jay Cross River Apr 2, vs Pearl River Apr 7.",
+      "intel": "Scrimmaged DF on Mar 19. 2026 record: 0-2. Lost opener to Pleasantville 1-7 on Mar 24. Lost to Hendrick Hudson 1-5 on Mar 28. New captains Carter Bucci and Nate Cal. Up next: at John Jay Cross River Apr 2, vs Pearl River Apr 7.",
       "nextVsDF": "Apr 14 (H)",
-      "lastUpdated": "2026-03-30"
+      "lastUpdated": "2026-03-31"
     },
     "Blind Brook": {
       "fullName": "Blind Brook Trojans",
@@ -256,16 +262,16 @@
     "Haldane": {
       "fullName": "Haldane Blue Devils",
       "threat": "UNKNOWN",
-      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. Hosting Peekskill today (Mar 30) at 5:00 PM for first 2026 game. Up next: at Rye Neck Apr 1, at Sleepy Hollow Apr 6, vs Irvington Apr 8.",
+      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. 2026 record: 1-0. Beat Peekskill 10-0 at Mayors Park on Mar 30 in dominant opener. Up next: at Rye Neck Apr 1, at Sleepy Hollow Apr 6, vs Irvington Apr 8.",
       "nextVsDF": "Apr 18 (A) 11:00 AM",
-      "lastUpdated": "2026-03-30"
+      "lastUpdated": "2026-03-31"
     },
     "Hastings": {
       "fullName": "Hastings Yellow Jackets",
       "threat": "WATCH",
-      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-0 (league). Beat Blind Brook 6-2 in league opener. Coach Stampfl's 100th career win. Disney spring trip: vs Pelham tonight Mar 30, at Westlake Mar 31 (LEAGUE). Up next: at Eastchester Apr 4, vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
+      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-0 (league) per DigitalSports. Beat Blind Brook 6-2 in league opener. Coach Stampfl's 100th career win. Disney spring trip: played Pelham Mar 30 (non-league, score pending), at Westlake Mar 31 (LEAGUE). Up next: at Eastchester Apr 4, vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
       "nextVsDF": "Apr 24 (H), Apr 28 (A) League",
-      "lastUpdated": "2026-03-30"
+      "lastUpdated": "2026-03-31"
     },
     "Irvington": {
       "fullName": "Irvington Bulldogs",
@@ -305,9 +311,9 @@
     "Sleepy Hollow": {
       "fullName": "Sleepy Hollow Horsemen",
       "threat": "WATCH",
-      "intel": "Head Coach Hunter Glashoff. 2026 record: 1-0 (league). Beat Irvington 9-8 on Mar 26 in a high-scoring league opener. Won scrimmage vs Croton 5-4. Up next: at Briarcliff Mar 31, vs Rye Neck Apr 2, vs Haldane Apr 6, at DF Apr 8.",
+      "intel": "Head Coach Hunter Glashoff. 2026 record: 2-0 per DigitalSports. Beat Irvington 9-8 on Mar 26 in a high-scoring league opener. Second win unconfirmed (opponent TBD). Up next: at Briarcliff Mar 31, vs Rye Neck Apr 2, vs Haldane Apr 6, at DF Apr 8.",
       "nextVsDF": "Apr 8 (H)",
-      "lastUpdated": "2026-03-30"
+      "lastUpdated": "2026-03-31"
     },
     "Tuckahoe": {
       "fullName": "Tuckahoe Tigers",
@@ -319,16 +325,16 @@
     "Valhalla": {
       "fullName": "Valhalla Vikings",
       "threat": "UNKNOWN",
-      "intel": "At Disney ESPN Wide World of Sports tournament. Playing Westlake today Mar 30 at 3:30pm (LEAGUE game). No DigitalSports schedule data available. Up next: vs Rye Neck Apr 16 (non-league), at Hastings Apr 18 (non-league).",
+      "intel": "At Disney ESPN Wide World of Sports tournament. Played Westlake Mar 30 (LEAGUE, result pending confirmation). No DigitalSports schedule data available. Up next: vs Rye Neck Apr 16 (non-league), at Hastings Apr 18 (non-league), vs Haldane Apr 30.",
       "nextVsDF": "Apr 27 (A) 5:00 PM League",
-      "lastUpdated": "2026-03-30"
+      "lastUpdated": "2026-03-31"
     },
     "Westlake": {
       "fullName": "Westlake Wildcats",
       "threat": "WATCH",
-      "intel": "At Disney ESPN Wide World of Sports tournament. 2026 record: 1-0 (non-league). Beat Bronxville 4-3 on Mar 29. Playing Valhalla today Mar 30 (LEAGUE). Playing Hastings Mar 31 (LEAGUE). Two Division B league games in Florida. Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9.",
+      "intel": "At Disney ESPN Wide World of Sports tournament. DigitalSports shows 1-0 overall, 1-0 conference. Beat Bronxville 4-3 on Mar 29 (non-league). Played Valhalla Mar 30 (LEAGUE, result pending confirmation). Playing Hastings Mar 31 (LEAGUE). Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9.",
       "nextVsDF": "May 11 (H)",
-      "lastUpdated": "2026-03-30"
+      "lastUpdated": "2026-03-31"
     }
   }
 }
