@@ -15,14 +15,17 @@
     },
     "2026-03-27": {
       "opponent": "Saunders",
-      "df": 8,
+      "df": 7,
       "opp": 3,
       "location": "Gould Park (Home)",
-      "source": "@dfeaglesbaseball, @dfvarsity_baseball"
+      "source": "Dobbs Ferry HS DigitalSports (corrected from 8-3 per @dfeaglesbaseball)"
     }
   },
   "jv": {},
-  "divisionB": [],
+  "divisionB": [
+    { "date": "2026-03-24", "home": "Blind Brook", "away": "Hastings", "homeRuns": 2, "awayRuns": 6, "source": "Hastings HS DigitalSports" },
+    { "date": "2026-04-01", "home": "Westlake", "away": "Hastings", "homeRuns": 11, "awayRuns": 2, "source": "GameDay One" }
+  ],
   "playerStats": {
     "df": {
       "Andrew Zendel": {
@@ -187,6 +190,11 @@
     }
   },
   "newsLog": [
+    { "date": "2026-04-01", "type": "score", "text": "Westlake 11, Hastings 2. Division B LEAGUE game at Disney Wide World of Sports. Westlake dominates.", "source": "GameDay One" },
+    { "date": "2026-04-01", "type": "correction", "text": "DF vs Saunders (Mar 27) score corrected to 7-3 (was 8-3 per Instagram). Source: Dobbs Ferry HS DigitalSports official schedule.", "source": "Dobbs Ferry HS DigitalSports" },
+    { "date": "2026-04-01", "type": "intel", "text": "Division B league games added to standings tracker: Hastings 6-2 over Blind Brook (Mar 24), Westlake 11-2 over Hastings (Apr 1).", "source": "DigitalSports, GameDay One" },
+    { "date": "2026-04-01", "type": "intel", "text": "Haldane at Rye Neck today at 12:00 PM (non-league). Two DF schedule opponents face off.", "source": "Haldane HS DigitalSports, Rye Neck HS DigitalSports" },
+    { "date": "2026-04-01", "type": "intel", "text": "Games to Watch Apr 2: Ardsley at John Jay-CR 11AM, Rye Neck at Sleepy Hollow 12PM.", "source": "GameDay One" },
     { "date": "2026-03-31", "type": "score", "text": "Haldane 10, Peekskill 0. Haldane opens 2026 with dominant shutout at Mayors Park, Cold Spring.", "source": "Haldane HS DigitalSports" },
     { "date": "2026-03-31", "type": "correction", "text": "Pleasantville-Ardsley Mar 24 score confirmed: Pleasantville 7, Ardsley 1. Previously had no exact score.", "source": "Ardsley HS DigitalSports" },
     { "date": "2026-03-31", "type": "intel", "text": "Sleepy Hollow DigitalSports shows 2-0 record (was 1-0). Second win opponent unconfirmed. Only verified win: Irvington 9-8 (Mar 26).", "source": "Sleepy Hollow HS DigitalSports" },
@@ -235,7 +243,8 @@
     { "date": "2026-03-27", "winner": "Tuckahoe JV", "winnerRuns": 5, "loser": "Putnam Valley JV", "loserRuns": 5, "note": "JV game, ended in 5-5 tie.", "source": "Putnam Valley Athletics digitalsports" },
     { "date": "2026-03-29", "winner": "Westlake", "winnerRuns": 4, "loser": "Bronxville", "loserRuns": 3, "note": "Westlake first W of 2026. ESPN Wide World of Sports (Disney) tournament.", "source": "@westlakewildcatsbaseball, Westlake HS DigitalSports" },
     { "date": "2026-03-28", "winner": "Hendrick Hudson", "winnerRuns": 5, "loser": "Ardsley", "loserRuns": 1, "note": "Non-league game at Sunset Field, Montrose. Ardsley now 0-2+.", "source": "Ardsley HS DigitalSports" },
-    { "date": "2026-03-30", "winner": "Haldane", "winnerRuns": 10, "loser": "Peekskill", "loserRuns": 0, "note": "Haldane 2026 opener. Win at Mayors Park, Cold Spring. Non-league.", "source": "Haldane HS DigitalSports" }
+    { "date": "2026-03-30", "winner": "Haldane", "winnerRuns": 10, "loser": "Peekskill", "loserRuns": 0, "note": "Haldane 2026 opener. Win at Mayors Park, Cold Spring. Non-league.", "source": "Haldane HS DigitalSports" },
+    { "date": "2026-04-01", "winner": "Westlake", "winnerRuns": 11, "loser": "Hastings", "loserRuns": 2, "note": "Division B LEAGUE game at Disney Wide World of Sports. Westlake dominant.", "source": "GameDay One" }
   ],
   "teamIntel": {
     "Ardsley": {
@@ -262,16 +271,16 @@
     "Haldane": {
       "fullName": "Haldane Blue Devils",
       "threat": "UNKNOWN",
-      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. 2026 record: 1-0. Beat Peekskill 10-0 at Mayors Park on Mar 30 in dominant opener. Up next: at Rye Neck Apr 1, at Sleepy Hollow Apr 6, vs Irvington Apr 8.",
+      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. 2026 record: 1-0. Beat Peekskill 10-0 at Mayors Park on Mar 30 in dominant opener. At Rye Neck today (Apr 1) at 12:00 PM. Up next: at Sleepy Hollow Apr 6, vs Irvington Apr 8, at Blind Brook Apr 10.",
       "nextVsDF": "Apr 18 (A) 11:00 AM",
-      "lastUpdated": "2026-03-31"
+      "lastUpdated": "2026-04-01"
     },
     "Hastings": {
       "fullName": "Hastings Yellow Jackets",
       "threat": "WATCH",
-      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-0 (league) per DigitalSports. Beat Blind Brook 6-2 in league opener. Coach Stampfl's 100th career win. Disney spring trip: played Pelham Mar 30 (non-league, score pending), at Westlake Mar 31 (LEAGUE). Up next: at Eastchester Apr 4, vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
+      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-1 (1-1 league). Beat Blind Brook 6-2 in league opener (Coach Stampfl's 100th career win). Lost to Westlake 2-11 at Disney Wide World of Sports on Apr 1 (LEAGUE). Pelham result (Mar 30, non-league) still pending. Up next: at Eastchester Apr 4, vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
       "nextVsDF": "Apr 24 (H), Apr 28 (A) League",
-      "lastUpdated": "2026-03-31"
+      "lastUpdated": "2026-04-01"
     },
     "Irvington": {
       "fullName": "Irvington Bulldogs",
@@ -297,23 +306,23 @@
     "Rye Neck": {
       "fullName": "Rye Neck Panthers",
       "threat": "UNKNOWN",
-      "intel": "2026 record: 1-0. Beat Pawling 8-2 on Mar 25 (non-league). Up next: vs Haldane Apr 1, at Sleepy Hollow Apr 2, at Pawling Apr 8.",
+      "intel": "2026 record: 1-0. Beat Pawling 8-2 on Mar 25 (non-league). Hosting Haldane today (Apr 1) at 12:00 PM. Up next: at Sleepy Hollow Apr 2, at Pawling Apr 8.",
       "nextVsDF": "Apr 30 (A), May 1 (H) League",
-      "lastUpdated": "2026-03-30"
+      "lastUpdated": "2026-04-01"
     },
     "Saunders": {
       "fullName": "Saunders Trades",
       "threat": "UNKNOWN",
-      "intel": "Yonkers vocational school. DF beat Saunders 8-3 on Mar 27 (home opener, Gould Park). Irvington JV beat Saunders 18-1 on Mar 26. 2026 record: 0-2.",
+      "intel": "Yonkers vocational school. DF beat Saunders 7-3 on Mar 27 (home opener, Gould Park). Irvington JV beat Saunders 18-1 on Mar 26. 2026 record: 0-2.",
       "nextVsDF": "None remaining",
       "lastUpdated": "2026-03-30"
     },
     "Sleepy Hollow": {
       "fullName": "Sleepy Hollow Horsemen",
       "threat": "WATCH",
-      "intel": "Head Coach Hunter Glashoff. 2026 record: 2-0 per DigitalSports. Beat Irvington 9-8 on Mar 26 in a high-scoring league opener. Second win unconfirmed (opponent TBD). Up next: at Briarcliff Mar 31, vs Rye Neck Apr 2, vs Haldane Apr 6, at DF Apr 8.",
+      "intel": "Head Coach Hunter Glashoff. 2026 record: 2-0 per DigitalSports. Beat Irvington 9-8 on Mar 26 in a high-scoring league opener. Briarcliff result (Mar 31, non-league) not yet posted. Second win opponent still unconfirmed. Up next: vs Rye Neck Apr 2, vs Haldane Apr 6, at DF Apr 8.",
       "nextVsDF": "Apr 8 (H)",
-      "lastUpdated": "2026-03-31"
+      "lastUpdated": "2026-04-01"
     },
     "Tuckahoe": {
       "fullName": "Tuckahoe Tigers",
@@ -331,10 +340,10 @@
     },
     "Westlake": {
       "fullName": "Westlake Wildcats",
-      "threat": "WATCH",
-      "intel": "At Disney ESPN Wide World of Sports tournament. DigitalSports shows 1-0 overall, 1-0 conference. Beat Bronxville 4-3 on Mar 29 (non-league). Played Valhalla Mar 30 (LEAGUE, result pending confirmation). Playing Hastings Mar 31 (LEAGUE). Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9.",
+      "threat": "THREAT",
+      "intel": "Disney spring trip dominant. Beat Bronxville 4-3 on Mar 29 (non-league). Beat Hastings 11-2 on Apr 1 (LEAGUE) at Disney Wide World of Sports. Valhalla result (Mar 30, LEAGUE) still pending. DigitalSports showed 1-0 conf before Hastings game. Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9, at Pelham Apr 11.",
       "nextVsDF": "May 11 (H)",
-      "lastUpdated": "2026-03-31"
+      "lastUpdated": "2026-04-01"
     }
   }
 }
