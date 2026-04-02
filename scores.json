@@ -190,6 +190,7 @@
     }
   },
   "newsLog": [
+    { "date": "2026-04-02", "type": "intel", "text": "Games today: Rye Neck at Sleepy Hollow 12PM, Ardsley at John Jay-CR 11AM. Haldane at Rye Neck (Apr 1) result not yet confirmed. No new DF scores. DF next game: Apr 7 at Edgemont.", "source": "Schedule review" },
     { "date": "2026-04-01", "type": "score", "text": "Westlake 11, Hastings 2. Division B LEAGUE game at Disney Wide World of Sports. Westlake dominates.", "source": "GameDay One" },
     { "date": "2026-04-01", "type": "correction", "text": "DF vs Saunders (Mar 27) score corrected to 7-3 (was 8-3 per Instagram). Source: Dobbs Ferry HS DigitalSports official schedule.", "source": "Dobbs Ferry HS DigitalSports" },
     { "date": "2026-04-01", "type": "intel", "text": "Division B league games added to standings tracker: Hastings 6-2 over Blind Brook (Mar 24), Westlake 11-2 over Hastings (Apr 1).", "source": "DigitalSports, GameDay One" },
@@ -250,9 +251,9 @@
     "Ardsley": {
       "fullName": "Ardsley Panthers",
       "threat": "UNKNOWN",
-      "intel": "Scrimmaged DF on Mar 19. 2026 record: 0-2. Lost opener to Pleasantville 1-7 on Mar 24. Lost to Hendrick Hudson 1-5 on Mar 28. New captains Carter Bucci and Nate Cal. Up next: at John Jay Cross River Apr 2, vs Pearl River Apr 7.",
+      "intel": "Scrimmaged DF on Mar 19. 2026 record: 0-2. Lost opener to Pleasantville 1-7 on Mar 24. Lost to Hendrick Hudson 1-5 on Mar 28. New captains Carter Bucci and Nate Cal. Up next: at John Jay Cross River today Apr 2, vs Pearl River Apr 7.",
       "nextVsDF": "Apr 14 (H)",
-      "lastUpdated": "2026-03-31"
+      "lastUpdated": "2026-04-02"
     },
     "Blind Brook": {
       "fullName": "Blind Brook Trojans",
@@ -271,9 +272,9 @@
     "Haldane": {
       "fullName": "Haldane Blue Devils",
       "threat": "UNKNOWN",
-      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. 2026 record: 1-0. Beat Peekskill 10-0 at Mayors Park on Mar 30 in dominant opener. At Rye Neck today (Apr 1) at 12:00 PM. Up next: at Sleepy Hollow Apr 6, vs Irvington Apr 8, at Blind Brook Apr 10.",
+      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. 2026 record: 1-0. Beat Peekskill 10-0 at Mayors Park on Mar 30 in dominant opener. Played at Rye Neck Apr 1 (result not confirmed). Up next: at Sleepy Hollow Apr 6, vs Irvington Apr 8, at Blind Brook Apr 10.",
       "nextVsDF": "Apr 18 (A) 11:00 AM",
-      "lastUpdated": "2026-04-01"
+      "lastUpdated": "2026-04-02"
     },
     "Hastings": {
       "fullName": "Hastings Yellow Jackets",
@@ -306,9 +307,9 @@
     "Rye Neck": {
       "fullName": "Rye Neck Panthers",
       "threat": "UNKNOWN",
-      "intel": "2026 record: 1-0. Beat Pawling 8-2 on Mar 25 (non-league). Hosting Haldane today (Apr 1) at 12:00 PM. Up next: at Sleepy Hollow Apr 2, at Pawling Apr 8.",
+      "intel": "2026 record: 1-0. Beat Pawling 8-2 on Mar 25 (non-league). Hosted Haldane Apr 1 (result not confirmed). Up next: at Sleepy Hollow today Apr 2, at Pawling Apr 8.",
       "nextVsDF": "Apr 30 (A), May 1 (H) League",
-      "lastUpdated": "2026-04-01"
+      "lastUpdated": "2026-04-02"
     },
     "Saunders": {
       "fullName": "Saunders Trades",
@@ -320,9 +321,9 @@
     "Sleepy Hollow": {
       "fullName": "Sleepy Hollow Horsemen",
       "threat": "WATCH",
-      "intel": "Head Coach Hunter Glashoff. 2026 record: 2-0 per DigitalSports. Beat Irvington 9-8 on Mar 26 in a high-scoring league opener. Briarcliff result (Mar 31, non-league) not yet posted. Second win opponent still unconfirmed. Up next: vs Rye Neck Apr 2, vs Haldane Apr 6, at DF Apr 8.",
+      "intel": "Head Coach Hunter Glashoff. 2026 record: 2-0 per DigitalSports. Beat Irvington 9-8 on Mar 26 in a high-scoring league opener. Briarcliff result (Mar 31, non-league) not yet confirmed. Up next: vs Rye Neck today Apr 2, vs Haldane Apr 6, at DF Apr 8.",
       "nextVsDF": "Apr 8 (H)",
-      "lastUpdated": "2026-04-01"
+      "lastUpdated": "2026-04-02"
     },
     "Tuckahoe": {
       "fullName": "Tuckahoe Tigers",
