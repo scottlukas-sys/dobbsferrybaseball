@@ -68,7 +68,7 @@ const varsitySchedule = [
     { date: '2026-03-24', display: 'Mar 24', day: 'Tue', time: '4:30 PM', opponent: 'Irvington', location: 'Away', venue: 'Memorial Park (Dow\'s Lane)', type: 'Game' },
     { date: '2026-03-27', display: 'Mar 27', day: 'Fri', time: '4:30 PM', opponent: 'Saunders', location: 'Home', venue: 'Gould Park', type: 'Game' },
     { date: '2026-04-07', display: 'Apr 7', day: 'Tue', time: '4:30 PM', opponent: 'Edgemont', location: 'Away', venue: 'Edgemont HS', type: 'Game' },
-    { date: '2026-04-08', display: 'Apr 8', day: 'Wed', time: '4:45 PM', opponent: 'Sleepy Hollow', location: 'Home', venue: 'Gould Park', type: 'Game (time per SG)' },
+    { date: '2026-04-08', display: 'Apr 8', day: 'Wed', time: '4:30 PM', opponent: 'Sleepy Hollow', location: 'Home', venue: 'Gould Park', type: 'Game' },
     { date: '2026-04-11', display: 'Apr 11', day: 'Sat', time: '3:00 PM', opponent: 'Pearl River', location: 'Away', venue: 'Pearl River HS', type: 'Game' },
     { date: '2026-04-13', display: 'Apr 13', day: 'Mon', time: '4:30 PM', opponent: 'Irvington', location: 'Away', venue: 'Memorial Field', type: 'Game' },
     { date: '2026-04-14', display: 'Apr 14', day: 'Tue', time: '4:30 PM', opponent: 'Ardsley', location: 'Home', venue: 'Gould Park', type: 'Game' },

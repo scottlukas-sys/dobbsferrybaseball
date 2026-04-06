@@ -190,6 +190,7 @@
     }
   },
   "newsLog": [
+    { "date": "2026-04-06", "type": "intel", "text": "No new DF games. Hastings lost to Eastchester 0-1 on Apr 4 (non-league). Edgemont Mar 31 loss confirmed vs John Jay Cross River 1-11. Hastings now 1-2. Sleepy Hollow 2-2 (L2 streak), plays Haldane today. Ardsley still 0-2, at John Jay-CR today. DF next: Apr 7 at Edgemont.", "source": "DigitalSports multi-team check" },
     { "date": "2026-04-03", "type": "intel", "text": "New scores found: Rye Neck 13-1 over Haldane (Apr 1), Rye Neck 15-5 over Sleepy Hollow (Apr 2), Briarcliff 14-0 over Sleepy Hollow (Mar 31), Blind Brook 8-7 over Edgemont (Mar 26). Sleepy Hollow now 2-2, Haldane 1-1, Rye Neck 3-0, Blind Brook 1-2, Edgemont 0-2. No new DF games. DF next: Apr 7 at Edgemont.", "source": "DigitalSports multi-team check" },
     { "date": "2026-04-02", "type": "intel", "text": "Games today: Rye Neck at Sleepy Hollow 12PM, Ardsley at John Jay-CR 11AM. Haldane at Rye Neck (Apr 1) result not yet confirmed. No new DF scores. DF next game: Apr 7 at Edgemont.", "source": "Schedule review" },
     { "date": "2026-04-01", "type": "score", "text": "Westlake 11, Hastings 2. Division B LEAGUE game at Disney Wide World of Sports. Westlake dominates.", "source": "GameDay One" },
@@ -250,50 +251,52 @@
     { "date": "2026-03-26", "winner": "Blind Brook", "winnerRuns": 8, "loser": "Edgemont", "loserRuns": 7, "note": "Non-league game. Blind Brook edges Edgemont in close one.", "source": "Blind Brook HS DigitalSports, Edgemont HS DigitalSports" },
     { "date": "2026-03-31", "winner": "Briarcliff", "winnerRuns": 14, "loser": "Sleepy Hollow", "loserRuns": 0, "note": "Non-league game. Briarcliff dominant shutout.", "source": "Sleepy Hollow HS DigitalSports" },
     { "date": "2026-04-01", "winner": "Rye Neck", "winnerRuns": 13, "loser": "Haldane", "loserRuns": 1, "note": "Non-league game at Rye Neck. Rye Neck dominant.", "source": "Haldane HS DigitalSports, Rye Neck HS DigitalSports" },
-    { "date": "2026-04-02", "winner": "Rye Neck", "winnerRuns": 15, "loser": "Sleepy Hollow", "loserRuns": 5, "note": "Non-league game at Sleepy Hollow. Rye Neck offense explodes.", "source": "Sleepy Hollow HS DigitalSports, Rye Neck HS DigitalSports" }
+    { "date": "2026-04-02", "winner": "Rye Neck", "winnerRuns": 15, "loser": "Sleepy Hollow", "loserRuns": 5, "note": "Non-league game at Sleepy Hollow. Rye Neck offense explodes.", "source": "Sleepy Hollow HS DigitalSports, Rye Neck HS DigitalSports" },
+    { "date": "2026-03-31", "winner": "John Jay Cross River", "winnerRuns": 11, "loser": "Edgemont", "loserRuns": 1, "note": "Non-league game. Edgemont's second loss of 2026. Previously had opponent TBD.", "source": "Edgemont HS DigitalSports" },
+    { "date": "2026-04-04", "winner": "Eastchester", "winnerRuns": 1, "loser": "Hastings", "loserRuns": 0, "note": "Non-league game. Hastings shut out 0-1 by Eastchester. Hastings now 1-2.", "source": "Hastings HS DigitalSports" }
   ],
   "teamIntel": {
     "Ardsley": {
       "fullName": "Ardsley Panthers",
       "threat": "UNKNOWN",
-      "intel": "Scrimmaged DF on Mar 19. 2026 record: 0-2. Lost opener to Pleasantville 1-7 on Mar 24. Lost to Hendrick Hudson 1-5 on Mar 28. New captains Carter Bucci and Nate Cal. Apr 2 at John Jay-CR result not yet posted. Up next: Apr 6, Apr 7, Apr 9, Apr 11 games upcoming.",
+      "intel": "Scrimmaged DF on Mar 19. 2026 record: 0-2. Lost opener to Pleasantville 1-7 on Mar 24. Lost to Hendrick Hudson 1-5 on Mar 28. New captains Carter Bucci and Nate Cal. Mar 26 vs Albertus Magnus result not posted. Up next: at John Jay-CR Apr 6, vs Pearl River Apr 7.",
       "nextVsDF": "Apr 14 (H)",
-      "lastUpdated": "2026-04-03"
+      "lastUpdated": "2026-04-06"
     },
     "Blind Brook": {
       "fullName": "Blind Brook Trojans",
       "threat": "UNKNOWN",
-      "intel": "Captains Robbie Cuesta and Elliot Zwicker return as seniors. 2026 record: 1-2. Lost league opener to Hastings 2-6 (Mar 24). Beat Edgemont 8-7 (Mar 26). Lost 5-15 on Mar 23 (opponent TBD). Up next: at Irvington Apr 11, vs Haldane Apr 10 (at Haldane), vs Edgemont Apr 8.",
+      "intel": "Captains Robbie Cuesta and Elliot Zwicker return as seniors. 2026 record: 1-2. Lost league opener to Hastings 2-6 (Mar 24). Beat Edgemont 8-7 (Mar 26). Lost 5-15 on Mar 23 (opponent TBD). Up next: vs Edgemont Apr 8, at Haldane Apr 10, at Irvington Apr 11.",
       "nextVsDF": "Apr 20 (H), Apr 22 (A) League",
-      "lastUpdated": "2026-04-03"
+      "lastUpdated": "2026-04-06"
     },
     "Edgemont": {
       "fullName": "Edgemont Panthers",
       "threat": "UNKNOWN",
-      "intel": "2026 record: 0-2. Lost to Blind Brook 7-8 on Mar 26. Lost 1-11 on Mar 30 (opponent TBD). DF plays Edgemont Apr 7. Up next: vs DF Apr 7, at Pearl River Apr 9, vs Haldane Apr 10.",
+      "intel": "2026 record: 0-2. Lost to Blind Brook 7-8 on Mar 26. Lost to John Jay Cross River 1-11 on Mar 31. DF plays Edgemont Apr 7. Up next: vs DF Apr 7, at Pearl River Apr 9.",
       "nextVsDF": "Apr 7 (A)",
-      "lastUpdated": "2026-04-03"
+      "lastUpdated": "2026-04-06"
     },
     "Haldane": {
       "fullName": "Haldane Blue Devils",
       "threat": "UNKNOWN",
-      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. 2026 record: 1-1. Beat Peekskill 10-0 on Mar 30. Lost to Rye Neck 1-13 on Apr 1. Up next: at Sleepy Hollow Apr 6, vs Irvington Apr 8, at Blind Brook Apr 10.",
+      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. 2026 record: 1-1. Beat Peekskill 10-0 on Mar 30. Lost to Rye Neck 1-13 on Apr 1. Up next: at Sleepy Hollow Apr 6, vs Irvington Apr 8.",
       "nextVsDF": "Apr 18 (A) 11:00 AM",
-      "lastUpdated": "2026-04-03"
+      "lastUpdated": "2026-04-06"
     },
     "Hastings": {
       "fullName": "Hastings Yellow Jackets",
       "threat": "WATCH",
-      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-1 (1-1 league). Beat Blind Brook 6-2 in league opener (Coach Stampfl's 100th career win). Lost to Westlake 2-11 at Disney Wide World of Sports on Apr 1 (LEAGUE). Pelham result (Mar 30, non-league) still pending. Up next: at Eastchester Apr 4, vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
+      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-2 (1-1 league). Beat Blind Brook 6-2 in league opener (Coach Stampfl's 100th career win). Lost to Westlake 2-11 at Disney on Apr 1 (LEAGUE). Lost to Eastchester 0-1 on Apr 4 (non-league). Pelham result (Mar 30) still pending. Up next: vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
       "nextVsDF": "Apr 24 (H), Apr 28 (A) League",
-      "lastUpdated": "2026-04-01"
+      "lastUpdated": "2026-04-06"
     },
     "Irvington": {
       "fullName": "Irvington Bulldogs",
       "threat": "UNKNOWN",
-      "intel": "2026 record: 0-2. Lost to DF 2-6 on Mar 24. Lost to Sleepy Hollow 8-9 in league play on Mar 26 (corrected from earlier report of 10-1 Irvington win). Up next: at Haldane Apr 8, at DF Apr 13.",
+      "intel": "2026 record: 0-2. Lost to DF 2-6 on Mar 24. Lost to Sleepy Hollow 8-9 in league play on Mar 26. Up next: at Haldane Apr 8, at DF Apr 13.",
       "nextVsDF": "Apr 13 (A)",
-      "lastUpdated": "2026-03-30"
+      "lastUpdated": "2026-04-06"
     },
     "Leffell School": {
       "fullName": "Leffell School Lions",
@@ -312,9 +315,9 @@
     "Rye Neck": {
       "fullName": "Rye Neck Panthers",
       "threat": "UNKNOWN",
-      "intel": "2026 record: 3-0. Beat Pawling 8-2 (Mar 25), beat Haldane 13-1 (Apr 1), beat Sleepy Hollow 15-5 (Apr 2). Offense is rolling. Up next: at Pawling Apr 8, vs Valhalla Apr 16, at Haldane Apr 18.",
+      "intel": "2026 record: 3-0. Beat Pawling 8-2 (Mar 25), beat Haldane 13-1 (Apr 1), beat Sleepy Hollow 15-5 (Apr 2). Offense is rolling. Up next: at Pawling Apr 8, vs Valhalla Apr 16.",
       "nextVsDF": "Apr 30 (A), May 1 (H) League",
-      "lastUpdated": "2026-04-03"
+      "lastUpdated": "2026-04-06"
     },
     "Saunders": {
       "fullName": "Saunders Trades",
@@ -326,9 +329,9 @@
     "Sleepy Hollow": {
       "fullName": "Sleepy Hollow Horsemen",
       "threat": "WATCH",
-      "intel": "Head Coach Hunter Glashoff. 2026 record: 2-2. Beat Irvington 9-8 (Mar 26, league). Lost to Briarcliff 0-14 (Mar 31). Lost to Rye Neck 5-15 (Apr 2). On a 2-game losing streak with offense going cold. Up next: vs Haldane Apr 6, at DF Apr 8, vs Pleasantville Apr 10.",
+      "intel": "Head Coach Hunter Glashoff. 2026 record: 2-2 (L2 streak). Beat Irvington 9-8 (Mar 26, league). Lost to Briarcliff 0-14 (Mar 31). Lost to Rye Neck 5-15 (Apr 2). Offense has gone cold. Up next: vs Haldane Apr 6, at DF Apr 8.",
       "nextVsDF": "Apr 8 (H)",
-      "lastUpdated": "2026-04-03"
+      "lastUpdated": "2026-04-06"
     },
     "Tuckahoe": {
       "fullName": "Tuckahoe Tigers",
