@@ -76,7 +76,7 @@ const varsitySchedule = [
     { date: '2026-04-20', display: 'Apr 20', day: 'Mon', time: '4:30 PM', opponent: 'Blind Brook', location: 'Home', venue: 'Gould Park', type: 'League' },
     { date: '2026-04-22', display: 'Apr 22', day: 'Wed', time: '4:30 PM', opponent: 'Blind Brook', location: 'Away', venue: 'Blind Brook HS', type: 'League' },
     { date: '2026-04-24', display: 'Apr 24', day: 'Fri', time: '4:30 PM', opponent: 'Hastings', location: 'Home', venue: 'Gould Park', type: 'League' },
-    { date: '2026-04-27', display: 'Apr 27', day: 'Mon', time: '5:00 PM', opponent: 'Valhalla', location: 'Away', venue: 'Kensico Field', type: 'League' },
+    { date: '2026-04-27', display: 'Apr 27', day: 'Mon', time: '5:00 PM', opponent: 'Valhalla', location: 'Away', venue: 'Kensico Field', type: 'Game' },
     { date: '2026-04-28', display: 'Apr 28', day: 'Tue', time: '4:30 PM', opponent: 'Hastings', location: 'Away', venue: 'Hastings HS', type: 'League' },
     { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck', location: 'Away', venue: 'Rye Neck HS', type: 'League' },
     { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck', location: 'Home', venue: 'Gould Park', type: 'League' },
@@ -455,13 +455,12 @@ for (const [date, score] of Object.entries(scores.varsity)) {
 // ============================================================
 // Division B teams and their league game data
 const divBTeams = [
-    'Ardsley Panthers',
     'Blind Brook Trojans',
     'Dobbs Ferry Eagles',
     'Hastings Yellow Jackets',
+    'Leffell School Lions',
     'Rye Neck Panthers',
-    'Tuckahoe Tigers',
-    'Valhalla Vikings'
+    'Tuckahoe Tigers'
 ];
 
 // Map team names to schedule opponent names
@@ -479,13 +478,13 @@ function computeDivBStandings() {
 
     // Map short names to full standings names
     const nameMap = {
-        'Ardsley': 'Ardsley Panthers',
         'Blind Brook': 'Blind Brook Trojans',
         'Dobbs Ferry': 'Dobbs Ferry Eagles',
         'Hastings': 'Hastings Yellow Jackets',
+        'Leffell School': 'Leffell School Lions',
+        'Leffell': 'Leffell School Lions',
         'Rye Neck': 'Rye Neck Panthers',
-        'Tuckahoe': 'Tuckahoe Tigers',
-        'Valhalla': 'Valhalla Vikings'
+        'Tuckahoe': 'Tuckahoe Tigers'
     };
 
     // DF league games from scores.varsity

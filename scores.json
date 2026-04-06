@@ -23,8 +23,7 @@
   },
   "jv": {},
   "divisionB": [
-    { "date": "2026-03-24", "home": "Blind Brook", "away": "Hastings", "homeRuns": 2, "awayRuns": 6, "source": "Hastings HS DigitalSports" },
-    { "date": "2026-04-01", "home": "Westlake", "away": "Hastings", "homeRuns": 11, "awayRuns": 2, "source": "GameDay One" }
+    { "date": "2026-03-24", "home": "Blind Brook", "away": "Hastings", "homeRuns": 2, "awayRuns": 6, "source": "Hastings HS DigitalSports" }
   ],
   "playerStats": {
     "df": {
@@ -190,10 +189,11 @@
     }
   },
   "newsLog": [
+    { "date": "2026-04-06", "type": "correction", "text": "MAJOR CORRECTION: Division B league corrected to 6 teams per MaxPreps: Dobbs Ferry, Blind Brook, Hastings, Rye Neck, Leffell School, Tuckahoe. Removed Ardsley (their league is Edgemont/Pelham/Bronxville) and Valhalla (not in Division B). Removed Westlake-Hastings from divisionB array (Westlake not in Div B). Reclassified DF vs Valhalla Apr 27 as non-league.", "source": "MaxPreps Division B standings, DF schedule analysis, Ardsley DigitalSports schedule" },
     { "date": "2026-04-06", "type": "intel", "text": "No new DF games (still 2-0). No new opponent results since Apr 4. DF DigitalSports confirms 2-0 overall, 2-0 conf. Sleepy Hollow confirmed 2-2 (L2). Ardsley confirmed 0-2 at JJCR today. Hastings still 1-2. No Gmail schedule alerts. Instagram text extraction limited. All existing scores cross-referenced and confirmed. DF next: Apr 7 at Edgemont.", "source": "DigitalSports multi-team check, Gmail, web search" },
     { "date": "2026-04-03", "type": "intel", "text": "New scores found: Rye Neck 13-1 over Haldane (Apr 1), Rye Neck 15-5 over Sleepy Hollow (Apr 2), Briarcliff 14-0 over Sleepy Hollow (Mar 31), Blind Brook 8-7 over Edgemont (Mar 26). Sleepy Hollow now 2-2, Haldane 1-1, Rye Neck 3-0, Blind Brook 1-2, Edgemont 0-2. No new DF games. DF next: Apr 7 at Edgemont.", "source": "DigitalSports multi-team check" },
     { "date": "2026-04-02", "type": "intel", "text": "Games today: Rye Neck at Sleepy Hollow 12PM, Ardsley at John Jay-CR 11AM. Haldane at Rye Neck (Apr 1) result not yet confirmed. No new DF scores. DF next game: Apr 7 at Edgemont.", "source": "Schedule review" },
-    { "date": "2026-04-01", "type": "score", "text": "Westlake 11, Hastings 2. Division B LEAGUE game at Disney Wide World of Sports. Westlake dominates.", "source": "GameDay One" },
+    { "date": "2026-04-01", "type": "score", "text": "Westlake 11, Hastings 2. Non-league game at Disney Wide World of Sports (originally mislabeled as Division B league — Westlake is not in Division B).", "source": "GameDay One" },
     { "date": "2026-04-01", "type": "correction", "text": "DF vs Saunders (Mar 27) score corrected to 7-3 (was 8-3 per Instagram). Source: Dobbs Ferry HS DigitalSports official schedule.", "source": "Dobbs Ferry HS DigitalSports" },
     { "date": "2026-04-01", "type": "intel", "text": "Division B league games added to standings tracker: Hastings 6-2 over Blind Brook (Mar 24), Westlake 11-2 over Hastings (Apr 1).", "source": "DigitalSports, GameDay One" },
     { "date": "2026-04-01", "type": "intel", "text": "Haldane at Rye Neck today at 12:00 PM (non-league). Two DF schedule opponents face off.", "source": "Haldane HS DigitalSports, Rye Neck HS DigitalSports" },
@@ -247,7 +247,7 @@
     { "date": "2026-03-29", "winner": "Westlake", "winnerRuns": 4, "loser": "Bronxville", "loserRuns": 3, "note": "Westlake first W of 2026. ESPN Wide World of Sports (Disney) tournament.", "source": "@westlakewildcatsbaseball, Westlake HS DigitalSports" },
     { "date": "2026-03-28", "winner": "Hendrick Hudson", "winnerRuns": 5, "loser": "Ardsley", "loserRuns": 1, "note": "Non-league game at Sunset Field, Montrose. Ardsley now 0-2+.", "source": "Ardsley HS DigitalSports" },
     { "date": "2026-03-30", "winner": "Haldane", "winnerRuns": 10, "loser": "Peekskill", "loserRuns": 0, "note": "Haldane 2026 opener. Win at Mayors Park, Cold Spring. Non-league.", "source": "Haldane HS DigitalSports" },
-    { "date": "2026-04-01", "winner": "Westlake", "winnerRuns": 11, "loser": "Hastings", "loserRuns": 2, "note": "Division B LEAGUE game at Disney Wide World of Sports. Westlake dominant.", "source": "GameDay One" },
+    { "date": "2026-04-01", "winner": "Westlake", "winnerRuns": 11, "loser": "Hastings", "loserRuns": 2, "note": "Non-league game at Disney Wide World of Sports (Westlake not in Division B, corrected Apr 6).", "source": "GameDay One" },
     { "date": "2026-03-26", "winner": "Blind Brook", "winnerRuns": 8, "loser": "Edgemont", "loserRuns": 7, "note": "Non-league game. Blind Brook edges Edgemont in close one.", "source": "Blind Brook HS DigitalSports, Edgemont HS DigitalSports" },
     { "date": "2026-03-31", "winner": "Briarcliff", "winnerRuns": 14, "loser": "Sleepy Hollow", "loserRuns": 0, "note": "Non-league game. Briarcliff dominant shutout.", "source": "Sleepy Hollow HS DigitalSports" },
     { "date": "2026-04-01", "winner": "Rye Neck", "winnerRuns": 13, "loser": "Haldane", "loserRuns": 1, "note": "Non-league game at Rye Neck. Rye Neck dominant.", "source": "Haldane HS DigitalSports, Rye Neck HS DigitalSports" },
@@ -287,7 +287,7 @@
     "Hastings": {
       "fullName": "Hastings Yellow Jackets",
       "threat": "WATCH",
-      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-2 (1-1 league). Beat Blind Brook 6-2 in league opener (Coach Stampfl's 100th career win). Lost to Westlake 2-11 at Disney on Apr 1 (LEAGUE). Lost to Eastchester 0-1 on Apr 4 (non-league). Pelham result (Mar 30) still unconfirmed. Up next: vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
+      "intel": "2025 Section 1 Class B Finalists. 2026 record: 1-2 (1-0 league). Beat Blind Brook 6-2 in league opener (Coach Stampfl's 100th career win). Lost to Westlake 2-11 at Disney on Apr 1 (non-league, corrected). Lost to Eastchester 0-1 on Apr 4 (non-league). Pelham result (Mar 30) still unconfirmed. Up next: vs Putnam Valley Apr 10, vs Scarsdale Apr 11.",
       "nextVsDF": "Apr 24 (H), Apr 28 (A) League",
       "lastUpdated": "2026-04-06"
     },
@@ -301,9 +301,9 @@
     "Leffell School": {
       "fullName": "Leffell School Lions",
       "threat": "UNKNOWN",
-      "intel": "Small private school in Hartsdale. Class C program. No 2026 intel yet. Stay tuned.",
+      "intel": "Small private school in Hartsdale. Division B league opponent. Class C program. 2024 Section 1 Class C #2 seed (8-5). No 2026 game results yet. Up next: schedule TBD.",
       "nextVsDF": "May 7 (A), May 12 (H) League",
-      "lastUpdated": "2026-03-14"
+      "lastUpdated": "2026-04-06"
     },
     "Pearl River": {
       "fullName": "Pearl River Pirates",
@@ -343,14 +343,14 @@
     "Valhalla": {
       "fullName": "Valhalla Vikings",
       "threat": "UNKNOWN",
-      "intel": "At Disney ESPN Wide World of Sports tournament. Played Westlake Mar 30 (LEAGUE, result pending confirmation). No DigitalSports schedule data available. Up next: vs Rye Neck Apr 16 (non-league), at Hastings Apr 18 (non-league), vs Haldane Apr 30.",
-      "nextVsDF": "Apr 27 (A) 5:00 PM League",
-      "lastUpdated": "2026-03-31"
+      "intel": "At Disney ESPN Wide World of Sports tournament. Played Westlake Mar 30 (result pending confirmation). Not in Division B — not a DF league opponent. Up next: vs Rye Neck Apr 16, at Hastings Apr 18, vs Haldane Apr 30.",
+      "nextVsDF": "Apr 27 (A) 5:00 PM",
+      "lastUpdated": "2026-04-06"
     },
     "Westlake": {
       "fullName": "Westlake Wildcats",
       "threat": "THREAT",
-      "intel": "Disney spring trip dominant. Beat Bronxville 4-3 on Mar 29 (non-league). Beat Hastings 11-2 on Apr 1 (LEAGUE) at Disney Wide World of Sports. Valhalla result (Mar 30, LEAGUE) still pending. Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9, at Pelham Apr 11.",
+      "intel": "Disney spring trip dominant. Beat Bronxville 4-3 on Mar 29. Beat Hastings 11-2 on Apr 1 at Disney Wide World of Sports. Valhalla result (Mar 30) still pending. Not in Division B — not a DF league opponent. Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9, at Pelham Apr 11.",
       "nextVsDF": "May 11 (H)",
       "lastUpdated": "2026-04-06"
     }
