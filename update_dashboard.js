@@ -416,8 +416,11 @@ for (const [date, score] of Object.entries(scores.varsity)) {
 
     // Match the schedule row for this date and mark as completed
     // Pattern: <tr> or <tr class="completed"> with the date cell
+    // VARSITY ONLY: must have 7 columns (date, day, time, opp, location, venue, type)
+    // This pattern specifically matches a row with 6 <td> elements BEFORE the badge/type column,
+    // and includes the venue column to ensure it's a varsity row (not JV which has only 6 columns)
     const datePattern = new RegExp(
-        `(<tr(?:\\s+class="[^"]*")?>\\s*<td>${shortMonth} ${dayNum}<\\/td>)`,
+        `(<tr(?:\\s+class="[^"]*")?>\\s*<td>${shortMonth} ${dayNum}<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>)`,
         'g'
     );
 
@@ -437,6 +440,9 @@ for (const [date, score] of Object.entries(scores.varsity)) {
 // ============================================================
 // 6a2. MARK COMPLETED GAMES IN JV SCHEDULE TABLE (6 columns: date, day, time, opp, location, type)
 // ============================================================
+// JV ONLY: Iterate scores.jv and mark completed JV games
+// Pattern: Row with exactly 5 <td> elements BEFORE the type column (date, day, time, opp, location)
+// This ensures we only match JV rows (6 columns total), never varsity rows (7 columns)
 for (const [date, score] of Object.entries(scores.jv || {})) {
     const d = new Date(date + 'T12:00:00');
     const shortMonth = formatShortMonth(d);
@@ -445,14 +451,16 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
     const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
     const resultColor = won ? '#D4A017' : '#EF4444';
 
-    // Mark the matching JV row as completed (6 td columns — distinguishes from varsity which has 7)
+    // Mark the matching JV row as completed (exactly 6 td columns — NOT 7 which would be varsity)
+    // The 6th column (type/badge) should only contain text or spans, not another <td>
+    // The content pattern [^<]*(?:<[^/td][^<]*)*  matches text that may contain non-closing tags (like <span>)
+    // but stops before any closing tag or new <td> opening
     const jvRowPattern = new RegExp(
-        `(<tr(?:\\s+class="[^"]*")?>\\s*<td>${shortMonth} ${dayNum}<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>)([\\s\\S]*?)(<\\/td>\\s*<\\/tr>)`,
+        `(<tr(?:\\s+class="[^"]*")?>\\s*<td>${shortMonth} ${dayNum}<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>)([^<]*(?:<(?!td)[^<]*)*?)(<\\/td>\\s*<\\/tr>)`,
         'g'
     );
     html = html.replace(jvRowPattern, (match, p1, p2, p3) => {
-        // Skip if this row is varsity (7 columns) — varsity rows won't match the 6-column pattern anyway,
-        // but double-check by looking back for an extra <td>. The 6-column pattern naturally excludes varsity.
+        // Mark row as completed and add score badge
         const opened = p1.replace(/<tr(?:\s+class="[^"]*")?>/, m => {
             if (m.includes('completed')) return m;
             return m.includes('class=') ? m.replace(/class="([^"]*)"/, 'class="completed $1"') : '<tr class="completed">';
