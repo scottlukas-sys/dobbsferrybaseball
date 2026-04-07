@@ -1282,11 +1282,16 @@ if (scores.diamondClub && scores.diamondClub.nextEvent) {
     const dcLink = dc.link ? `<a href="${dc.link}" target="_blank" style="color: #D4A017; text-decoration: none;">` : '';
     const dcLinkClose = dc.link ? '</a>' : '';
     let dateStr = '';
+    let isPast = false;
     if (dc.date) {
         const dcDate = new Date(dc.date + 'T12:00:00');
         dateStr = ` (${formatShortMonth(dcDate)} ${dcDate.getDate()})`;
+        const todayYMD = today.toISOString().slice(0, 10);
+        if (dc.date < todayYMD) isPast = true;
     }
-    const dcNotice = `<div class="meta-info dc-notice" style="margin-top: 4px;">Support Eagles Baseball & Softball. Next: ${dcLink}<strong style="color: #fff;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
+    const dcNotice = isPast
+        ? `<div class="meta-info dc-notice" style="margin-top: 4px;">Support Eagles Baseball & Softball. Contact <a href="https://www.instagram.com/df_diamond_club/" target="_blank" style="color: #D4A017; text-decoration: none;"><strong style="color: #fff;">Dobbs Ferry Diamond Club</strong></a></div>`
+        : `<div class="meta-info dc-notice" style="margin-top: 4px;">Support Eagles Baseball & Softball. Next: ${dcLink}<strong style="color: #fff;">${dc.nextEvent}${dateStr}</strong>${dcLinkClose}</div>`;
 
     // Inject into header-center, below the disclaimer line (remove existing notice first if present)
     html = html.replace(/\s*<div class="[^"]*dc-notice"[^>]*>.*?Support Eagles.*?<\/div>/s, '');
