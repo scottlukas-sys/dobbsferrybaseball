@@ -1027,8 +1027,7 @@ function computePIS(playerStats) {
 
                 gamesWithStats++;
                 const gamePts = scoreGame(game);
-                const recencyMultiplier = game.date >= sevenDaysAgoStr ? 1.5 : 1.0;
-                totalWeighted += gamePts * recencyMultiplier;
+                totalWeighted += gamePts;
 
                 const gl = buildGameLine(game);
                 if (gl) gameLines.push(gl);
@@ -1204,7 +1203,7 @@ function buildPlayersToWatch(pisData) {
 // Compute PIS and rebuild Players to Watch
 const pisData = computePIS(scores.playerStats || {});
 
-const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Hitting: H + XBH bonus + RBI(1.5x) + R + BB(0.5x) + multi-hit(+2). Pitching: W(3) + SV(2) + IP + SO - ER(1.5x). Last 7 days: 1.5x weight. Tiers: Confirmed (3+ games) > Trending (2 games) > Emerging (1 game).</p>`;
+const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Hitting: H + XBH bonus + RBI(1.5x) + R + BB(0.5x) + multi-hit(+2). Pitching: W(3) + SV(2) + IP + SO - ER(1.5x). Season to date (no recency weighting). Tiers: Confirmed (3+ games) > Trending (2 games) > Emerging (1 game).</p>`;
 
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
 html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n            </div>\n\n            `);
