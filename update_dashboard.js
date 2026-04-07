@@ -327,7 +327,7 @@ function buildWeeklyScores() {
     const week = getWeekBounds(today);
     let allGames = [];
 
-    // DF varsity games this week
+    // DF varsity games this week ONLY (no JV in Varsity tab)
     for (const [date, g] of Object.entries(scores.varsity)) {
         if (date >= week.monStr && date <= week.sunStr) {
             const d = new Date(date + 'T12:00:00');
@@ -337,24 +337,6 @@ function buildWeeklyScores() {
                 sortDate: date,
                 dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
                 line: `<span class="df-name">Dobbs Ferry ${g.df}</span>, ${g.opponent} ${g.opp}`,
-                isDF: true,
-                badge: won ? 'W' : 'L',
-                badgeColor: won ? '#D4A017' : '#EF4444',
-                source: g.source || 'Reported'
-            });
-        }
-    }
-
-    // DF JV games this week
-    for (const [date, g] of Object.entries(scores.jv)) {
-        if (date >= week.monStr && date <= week.sunStr) {
-            const d = new Date(date + 'T12:00:00');
-            const won = g.df > g.opp;
-            allGames.push({
-                date,
-                sortDate: date,
-                dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
-                line: `<span class="df-name">Dobbs Ferry JV ${g.df}</span>, ${g.opponent} JV ${g.opp}`,
                 isDF: true,
                 badge: won ? 'W' : 'L',
                 badgeColor: won ? '#D4A017' : '#EF4444',
@@ -1355,6 +1337,218 @@ if (scores.diamondClub && scores.diamondClub.nextEvent) {
         `$1\n            ${dcNotice}`
     );
 }
+
+// ============================================================
+// 10A. GENERATE & ENCRYPT JV PLAYER STATS
+// ============================================================
+const crypto = require('crypto');
+
+function generateJVStatsHTML(playerStats, gameResults) {
+    // Compute aggregates from playerStats.jv and scores.jv
+    const jvPlayers = playerStats.jv || {};
+    const jvGames = gameResults.jv || {};
+
+    const players = Object.entries(jvPlayers).map(([name, data]) => {
+        const games = data.games || [];
+        let batting = { pa: 0, ab: 0, h: 0, r: 0, rbi: 0, bb: 0, so: 0, sac: 0, sb: 0 };
+        let pitching = { gp: 0, gs: 0, w: 0, l: 0, sv: 0, ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0 };
+
+        for (const game of games) {
+            if (game.hitting) {
+                const h = game.hitting;
+                batting.ab += h.ab || 0;
+                batting.h += h.h || 0;
+                batting.r += h.r || 0;
+                batting.rbi += h.rbi || 0;
+                batting.bb += h.bb || 0;
+                batting.so += h.so || 0;
+                batting.sac += h.sac || 0;
+                batting.sb += h.sb || 0;
+                batting.pa += (h.ab || 0) + (h.bb || 0) + (h.sac || 0);
+            }
+            if (game.pitching) {
+                const p = game.pitching;
+                if (p.ip > 0 || p.w || p.sv) pitching.gp++;
+                if (p.ip > 0) pitching.gs++;
+                pitching.w += p.w || 0;
+                pitching.l += p.l || 0;
+                pitching.sv += p.sv || 0;
+                pitching.ip += p.ip || 0;
+                pitching.h += p.h || 0;
+                pitching.r += p.r || 0;
+                pitching.er += p.er || 0;
+                pitching.bb += p.bb || 0;
+                pitching.so += p.so || 0;
+            }
+        }
+
+        return { name, batting, pitching };
+    });
+
+    // Team stats
+    let teamStats = {
+        w: 0, l: 0,
+        runsFor: 0, runsAgainst: 0,
+        hits: 0, ab: 0,
+        ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0,
+        games: Object.keys(jvGames).length
+    };
+
+    for (const [date, game] of Object.entries(jvGames)) {
+        if (game.df <= game.opp) teamStats.l++;
+        else teamStats.w++;
+        teamStats.runsFor += game.df || 0;
+        teamStats.runsAgainst += game.opp || 0;
+    }
+
+    for (const player of players) {
+        teamStats.hits += player.batting.h;
+        teamStats.ab += player.batting.ab;
+        teamStats.ip += player.pitching.ip;
+        teamStats.h += player.pitching.h;
+        teamStats.r += player.pitching.r;
+        teamStats.er += player.pitching.er;
+        teamStats.bb += player.pitching.bb;
+        teamStats.so += player.pitching.so;
+    }
+
+    const teamAvg = teamStats.ab > 0 ? (teamStats.hits / teamStats.ab).toFixed(3) : '.000';
+    const teamERA = teamStats.ip > 0 ? ((teamStats.er * 7) / teamStats.ip).toFixed(2) : '—';
+    const runDiff = teamStats.runsFor - teamStats.runsAgainst;
+
+    // Team Leaders
+    const leaders = {
+        avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—',
+        wins: '—', era: '—'
+    };
+
+    if (teamStats.ab > 0) {
+        const byAvg = players.filter(p => p.batting.ab > 0).sort((a, b) => (b.batting.h / b.batting.ab) - (a.batting.h / a.batting.ab));
+        if (byAvg.length > 0) leaders.avg = byAvg[0].name;
+    }
+
+    const byHits = players.filter(p => p.batting.h > 0).sort((a, b) => b.batting.h - a.batting.h);
+    if (byHits.length > 0) leaders.hits = byHits[0].name;
+
+    const byRBI = players.filter(p => p.batting.rbi > 0).sort((a, b) => b.batting.rbi - a.batting.rbi);
+    if (byRBI.length > 0) leaders.rbi = byRBI[0].name;
+
+    const bySB = players.filter(p => p.batting.sb > 0).sort((a, b) => b.batting.sb - a.batting.sb);
+    if (bySB.length > 0) leaders.sb = bySB[0].name;
+
+    const byWins = players.filter(p => p.pitching.w > 0).sort((a, b) => b.pitching.w - a.pitching.w);
+    if (byWins.length > 0) leaders.wins = byWins[0].name;
+
+    // Build HTML
+    let html = '';
+
+    // Team Stats Section
+    html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
+    html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Team Stats</h3>';
+    html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">';
+    html += `<div><strong>Record</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.w}-${teamStats.l}</span></div>`;
+    html += `<div><strong>Runs Scored</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.runsFor}</span></div>`;
+    html += `<div><strong>Runs Against</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.runsAgainst}</span></div>`;
+    html += `<div><strong>Run Diff</strong><br><span style="font-size: 18px; color: ${runDiff < 0 ? '#EF4444' : '#10B981'}; font-weight: 700;">${runDiff > 0 ? '+' : ''}${runDiff}</span></div>`;
+    html += `<div><strong>Team AVG</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamAvg}</span></div>`;
+    html += `<div><strong>Team ERA</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamERA}</span></div>`;
+    html += `<div><strong>Total Hits</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.hits}</span></div>`;
+    html += `<div><strong>Errors</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">—</span></div>`;
+    html += '</div></div>';
+
+    // Team Leaders
+    html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
+    html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Team Leaders</h3>';
+    html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">';
+    html += `<div><strong>AVG:</strong> ${leaders.avg}</div>`;
+    html += `<div><strong>OBP:</strong> ${leaders.obp}</div>`;
+    html += `<div><strong>OPS:</strong> ${leaders.ops}</div>`;
+    html += `<div><strong>HITS:</strong> ${leaders.hits}</div>`;
+    html += `<div><strong>RBI:</strong> ${leaders.rbi}</div>`;
+    html += `<div><strong>SB:</strong> ${leaders.sb}</div>`;
+    html += `<div><strong>WINS:</strong> ${leaders.wins}</div>`;
+    html += `<div><strong>ERA:</strong> ${leaders.era}</div>`;
+    html += '</div></div>';
+
+    // Batting Table
+    html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
+    html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Batting</h3>';
+    html += '<table style="width: 100%; font-size: 12px; border-collapse: collapse;">';
+    html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">PA</th><th style="text-align: center; padding: 8px;">AB</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">AVG</th><th style="text-align: center; padding: 8px;">OPS</th><th style="text-align: center; padding: 8px;">R</th><th style="text-align: center; padding: 8px;">RBI</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">SAC</th><th style="text-align: center; padding: 8px;">SB</th></tr></thead>';
+    html += '<tbody>';
+    for (const player of players.filter(p => p.batting.ab > 0)) {
+        const avg = (player.batting.h / player.batting.ab).toFixed(3);
+        html += `<tr style="border-bottom: 1px solid #222;"><td style="padding: 8px;">${player.name}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.pa}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.ab}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.h}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${avg}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">—</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.r}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.rbi}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.bb}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.so}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.sac}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.sb}</td></tr>`;
+    }
+    html += '</tbody></table></div>';
+
+    // Pitching Table
+    html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px;">';
+    html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Pitching</h3>';
+    html += '<table style="width: 100%; font-size: 12px; border-collapse: collapse;">';
+    html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">GP</th><th style="text-align: center; padding: 8px;">GS</th><th style="text-align: center; padding: 8px;">W</th><th style="text-align: center; padding: 8px;">L</th><th style="text-align: center; padding: 8px;">SV</th><th style="text-align: center; padding: 8px;">IP</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">R</th><th style="text-align: center; padding: 8px;">ER</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">ERA</th><th style="text-align: center; padding: 8px;">WHIP</th></tr></thead>';
+    html += '<tbody>';
+    for (const player of players.filter(p => p.pitching.ip > 0)) {
+        const era = ((player.pitching.er * 7) / player.pitching.ip).toFixed(2);
+        const whip = (((player.pitching.bb + player.pitching.h) / player.pitching.ip) || 0).toFixed(2);
+        html += `<tr style="border-bottom: 1px solid #222;"><td style="padding: 8px;">${player.name}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.gp}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.gs}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.w}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.l}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.sv}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.ip}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.h}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.r}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.er}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.bb}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.pitching.so}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${era}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${whip}</td></tr>`;
+    }
+    html += '</tbody></table></div>';
+
+    return html;
+}
+
+function encryptJVStats(htmlString, password = 'baseball26eagles') {
+    const salt = crypto.randomBytes(16);
+    const iv = crypto.randomBytes(12);
+    const key = crypto.pbkdf2Sync(password, salt, 100000, 32, 'sha256');
+
+    const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
+    const encrypted = Buffer.concat([cipher.update(htmlString, 'utf8'), cipher.final()]);
+    const authTag = cipher.getAuthTag();
+
+    return {
+        salt: salt.toString('base64'),
+        iv: iv.toString('base64'),
+        authTag: authTag.toString('base64'),
+        data: encrypted.toString('base64')
+    };
+}
+
+// Generate JV stats and encrypt
+const jvStatsHtml = generateJVStatsHTML(scores.playerStats, scores);
+const encryptedPayload = encryptJVStats(jvStatsHtml);
+const jvStatsDataScript = JSON.stringify(encryptedPayload);
+
+// Replace encrypted payload in HTML
+html = html.replace(
+    /<script id="jv-stats-data" type="application\/json" data-encrypted="true">\{[\s\S]*?\}<\/script>/,
+    `<script id="jv-stats-data" type="application/json" data-encrypted="true">${jvStatsDataScript}</script>`
+);
 
 // ============================================================
 // 11. UPDATE FOOTER TIMESTAMP
