@@ -1227,7 +1227,7 @@ html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildP
 // JV Players to Watch (top 6 by PIS)
 function buildJVPlayersToWatch(pisData) {
     const jvPlayers = pisData.filter(p => p.pool === 'jv').slice(0, 6);
-    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Same formula as Varsity. Season to date. Top 6 JV players shown. Data from GameChanger.</p>`;
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Hitting: H + XBH bonus + RBI(1.5x) + R + BB(0.5x) + multi-hit(+2). Pitching: W(3) + SV(2) + IP + SO - ER(1.5x). Season to date (no recency weighting). Top 6 JV players shown.</p>`;
     if (jvPlayers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
     }
@@ -1251,7 +1251,7 @@ function buildJVPlayersToWatch(pisData) {
     html += `</div></div>`;
     return html;
 }
-const jvPlayersRegex = /(<!-- JV Players to Watch[\s\S]*?<div class="card">\s*<h2>JV PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>)/;
+const jvPlayersRegex = /(<!-- JV Players to Watch[\s\S]*?<div class="card">\s*<h2>JV PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- JV Intel))/;
 html = html.replace(jvPlayersRegex, `$1\n                ${buildJVPlayersToWatch(pisData)}\n            $3`);
 
 // Console output for PIS rankings
