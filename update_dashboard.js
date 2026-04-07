@@ -453,6 +453,33 @@ for (const [date, score] of Object.entries(scores.varsity)) {
 }
 
 // ============================================================
+// 6a2. MARK COMPLETED GAMES IN JV SCHEDULE TABLE (6 columns: date, day, time, opp, location, type)
+// ============================================================
+for (const [date, score] of Object.entries(scores.jv || {})) {
+    const d = new Date(date + 'T12:00:00');
+    const shortMonth = formatShortMonth(d);
+    const dayNum = d.getDate();
+    const won = score.df > score.opp;
+    const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
+    const resultColor = won ? '#D4A017' : '#EF4444';
+
+    // Mark the matching JV row as completed (6 td columns — distinguishes from varsity which has 7)
+    const jvRowPattern = new RegExp(
+        `(<tr(?:\\s+class="[^"]*")?>\\s*<td>${shortMonth} ${dayNum}<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>)([\\s\\S]*?)(<\\/td>\\s*<\\/tr>)`,
+        'g'
+    );
+    html = html.replace(jvRowPattern, (match, p1, p2, p3) => {
+        // Skip if this row is varsity (7 columns) — varsity rows won't match the 6-column pattern anyway,
+        // but double-check by looking back for an extra <td>. The 6-column pattern naturally excludes varsity.
+        const opened = p1.replace(/<tr(?:\s+class="[^"]*")?>/, m => {
+            if (m.includes('completed')) return m;
+            return m.includes('class=') ? m.replace(/class="([^"]*)"/, 'class="completed $1"') : '<tr class="completed">';
+        });
+        return `${opened}<span class="game-badge" style="background-color:${resultColor};">${resultText}</span>${p3}`;
+    });
+}
+
+// ============================================================
 // 6b. UPDATE DIVISION B STANDINGS
 // ============================================================
 // Division B teams and their league game data

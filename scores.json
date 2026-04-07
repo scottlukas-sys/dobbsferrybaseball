@@ -243,7 +243,221 @@
             "pitching": null
           }
         ]
+      }
+    },
+    "opponents": {
+      "Curt (Hastings)": {
+        "team": "Hastings",
+        "tags": [
+          "2025 Class B Finalist",
+          "2H + SV vs BB"
+        ],
+        "games": [
+          {
+            "date": "2026-03-24",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 0,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 0,
+              "h": 0,
+              "er": 0,
+              "so": 0,
+              "bb": 0,
+              "w": 0,
+              "sv": 1
+            }
+          }
+        ]
       },
+      "Drew (Hastings)": {
+        "team": "Hastings",
+        "tags": [
+          "2025 Class B Finalist",
+          "Pitcher"
+        ],
+        "note": "Pitched in 2026 opener vs Blind Brook. Part of 2025 Section 1 Class B finalist team.",
+        "games": []
+      },
+      "Dileo (Hastings)": {
+        "team": "Hastings",
+        "tags": [
+          "2025 Class B Finalist",
+          "Pitcher"
+        ],
+        "note": "Pitched in 2026 opener vs Blind Brook. Part of 2025 Section 1 Class B finalist team.",
+        "games": []
+      },
+      "Sawyer Chalsen (Irvington)": {
+        "team": "Irvington",
+        "tags": [
+          "2025 All-League HM",
+          "Returning"
+        ],
+        "note": "Hit first HS HR in May 2025. Likely returning.",
+        "games": []
+      },
+      "Lucas Constantine (Irvington)": {
+        "team": "Irvington",
+        "tags": [
+          "Returning"
+        ],
+        "note": "First varsity hit May 2025. Likely returning underclassman.",
+        "games": []
+      },
+      "John Salvatore (Irvington)": {
+        "team": "Irvington",
+        "tags": [
+          "Highlighted Mar 26"
+        ],
+        "games": [
+          {
+            "date": "2026-03-26",
+            "opp": "Sleepy Hollow",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null,
+            "note": "Highlighted in @dawgs_bsbl post. Irvington lost 8-9 to Sleepy Hollow (League). No box score stats available."
+          }
+        ]
+      },
+      "Justin Corniel (Irvington)": {
+        "team": "Irvington",
+        "tags": [
+          "Highlighted Mar 26"
+        ],
+        "games": [
+          {
+            "date": "2026-03-26",
+            "opp": "Sleepy Hollow",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null,
+            "note": "Highlighted in @dawgs_bsbl post. Irvington lost 8-9 to Sleepy Hollow (League). No box score stats available."
+          }
+        ]
+      },
+      "Carter Bucci (Ardsley)": {
+        "team": "Ardsley",
+        "tags": [
+          "2026 Captain"
+        ],
+        "note": "Announced Mar 9 via @ardsleybaseball.",
+        "games": []
+      },
+      "Nate Cal (Ardsley)": {
+        "team": "Ardsley",
+        "tags": [
+          "2026 Captain"
+        ],
+        "note": "Co-announced with Bucci.",
+        "games": []
+      },
+      "Ryan Lockwood (Ardsley)": {
+        "team": "Ardsley",
+        "tags": [
+          "Returning"
+        ],
+        "note": "Featured in scrimmage post vs DF (Mar 19).",
+        "games": []
+      },
+      "Robbie Cuesta (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [
+          "2026 Captain",
+          "Senior"
+        ],
+        "games": []
+      },
+      "Elliot Zwicker (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [
+          "2026 Captain",
+          "Senior"
+        ],
+        "games": []
+      },
+      "Ryan Gentry (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "tags": [
+          "2026 Captain",
+          "2025 Section 1 Champ"
+        ],
+        "note": "Announced Mar 22 via @tuckahoevarsitybaseball. Part of 3x Section 1 Class C championship team.",
+        "games": []
+      },
+      "Jay Romeo (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "tags": [
+          "2026 Captain",
+          "2025 Section 1 Champ"
+        ],
+        "games": []
+      },
+      "Connor Brice (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "tags": [
+          "2026 Captain",
+          "D1 Villanova",
+          "2025 Section 1 Champ",
+          "2025 Class C Final: 14K, 2H allowed"
+        ],
+        "note": "Signed D1 with Villanova for baseball. Two-sport athlete. Struck out 14 in 2025 Section 1 Class C championship Game 1 vs Haldane.",
+        "games": []
+      },
+      "Rocco Briante (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "tags": [
+          "2026 Captain",
+          "2025 Section 1 Champ"
+        ],
+        "games": []
+      },
+      "Patrick Shields (Haldane)": {
+        "team": "Haldane",
+        "tags": [
+          "Returning"
+        ],
+        "note": "Tagged in 2025 sectional playoff post vs Tuckahoe.",
+        "games": []
+      },
+      "Mike Trainor (Haldane)": {
+        "team": "Haldane",
+        "tags": [
+          "Returning"
+        ],
+        "note": "Tagged in 2025 sectional playoff post.",
+        "games": []
+      }
+    },
+    "jv": {
       "Aaron Sellitti": {
         "team": "Dobbs Ferry JV",
         "games": [
@@ -510,220 +724,7 @@
           }
         ]
       }
-    },
-    "opponents": {
-      "Curt (Hastings)": {
-        "team": "Hastings",
-        "tags": [
-          "2025 Class B Finalist",
-          "2H + SV vs BB"
-        ],
-        "games": [
-          {
-            "date": "2026-03-24",
-            "opp": "Blind Brook",
-            "hitting": {
-              "ab": 0,
-              "h": 2,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
-            },
-            "pitching": {
-              "ip": 0,
-              "h": 0,
-              "er": 0,
-              "so": 0,
-              "bb": 0,
-              "w": 0,
-              "sv": 1
-            }
-          }
-        ]
-      },
-      "Drew (Hastings)": {
-        "team": "Hastings",
-        "tags": [
-          "2025 Class B Finalist",
-          "Pitcher"
-        ],
-        "note": "Pitched in 2026 opener vs Blind Brook. Part of 2025 Section 1 Class B finalist team.",
-        "games": []
-      },
-      "Dileo (Hastings)": {
-        "team": "Hastings",
-        "tags": [
-          "2025 Class B Finalist",
-          "Pitcher"
-        ],
-        "note": "Pitched in 2026 opener vs Blind Brook. Part of 2025 Section 1 Class B finalist team.",
-        "games": []
-      },
-      "Sawyer Chalsen (Irvington)": {
-        "team": "Irvington",
-        "tags": [
-          "2025 All-League HM",
-          "Returning"
-        ],
-        "note": "Hit first HS HR in May 2025. Likely returning.",
-        "games": []
-      },
-      "Lucas Constantine (Irvington)": {
-        "team": "Irvington",
-        "tags": [
-          "Returning"
-        ],
-        "note": "First varsity hit May 2025. Likely returning underclassman.",
-        "games": []
-      },
-      "John Salvatore (Irvington)": {
-        "team": "Irvington",
-        "tags": [
-          "Highlighted Mar 26"
-        ],
-        "games": [
-          {
-            "date": "2026-03-26",
-            "opp": "Sleepy Hollow",
-            "hitting": {
-              "ab": 0,
-              "h": 0,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
-            },
-            "pitching": null,
-            "note": "Highlighted in @dawgs_bsbl post. Irvington lost 8-9 to Sleepy Hollow (League). No box score stats available."
-          }
-        ]
-      },
-      "Justin Corniel (Irvington)": {
-        "team": "Irvington",
-        "tags": [
-          "Highlighted Mar 26"
-        ],
-        "games": [
-          {
-            "date": "2026-03-26",
-            "opp": "Sleepy Hollow",
-            "hitting": {
-              "ab": 0,
-              "h": 0,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
-            },
-            "pitching": null,
-            "note": "Highlighted in @dawgs_bsbl post. Irvington lost 8-9 to Sleepy Hollow (League). No box score stats available."
-          }
-        ]
-      },
-      "Carter Bucci (Ardsley)": {
-        "team": "Ardsley",
-        "tags": [
-          "2026 Captain"
-        ],
-        "note": "Announced Mar 9 via @ardsleybaseball.",
-        "games": []
-      },
-      "Nate Cal (Ardsley)": {
-        "team": "Ardsley",
-        "tags": [
-          "2026 Captain"
-        ],
-        "note": "Co-announced with Bucci.",
-        "games": []
-      },
-      "Ryan Lockwood (Ardsley)": {
-        "team": "Ardsley",
-        "tags": [
-          "Returning"
-        ],
-        "note": "Featured in scrimmage post vs DF (Mar 19).",
-        "games": []
-      },
-      "Robbie Cuesta (Blind Brook)": {
-        "team": "Blind Brook",
-        "tags": [
-          "2026 Captain",
-          "Senior"
-        ],
-        "games": []
-      },
-      "Elliot Zwicker (Blind Brook)": {
-        "team": "Blind Brook",
-        "tags": [
-          "2026 Captain",
-          "Senior"
-        ],
-        "games": []
-      },
-      "Ryan Gentry (Tuckahoe)": {
-        "team": "Tuckahoe",
-        "tags": [
-          "2026 Captain",
-          "2025 Section 1 Champ"
-        ],
-        "note": "Announced Mar 22 via @tuckahoevarsitybaseball. Part of 3x Section 1 Class C championship team.",
-        "games": []
-      },
-      "Jay Romeo (Tuckahoe)": {
-        "team": "Tuckahoe",
-        "tags": [
-          "2026 Captain",
-          "2025 Section 1 Champ"
-        ],
-        "games": []
-      },
-      "Connor Brice (Tuckahoe)": {
-        "team": "Tuckahoe",
-        "tags": [
-          "2026 Captain",
-          "D1 Villanova",
-          "2025 Section 1 Champ",
-          "2025 Class C Final: 14K, 2H allowed"
-        ],
-        "note": "Signed D1 with Villanova for baseball. Two-sport athlete. Struck out 14 in 2025 Section 1 Class C championship Game 1 vs Haldane.",
-        "games": []
-      },
-      "Rocco Briante (Tuckahoe)": {
-        "team": "Tuckahoe",
-        "tags": [
-          "2026 Captain",
-          "2025 Section 1 Champ"
-        ],
-        "games": []
-      },
-      "Patrick Shields (Haldane)": {
-        "team": "Haldane",
-        "tags": [
-          "Returning"
-        ],
-        "note": "Tagged in 2025 sectional playoff post vs Tuckahoe.",
-        "games": []
-      },
-      "Mike Trainor (Haldane)": {
-        "team": "Haldane",
-        "tags": [
-          "Returning"
-        ],
-        "note": "Tagged in 2025 sectional playoff post.",
-        "games": []
-      }
-    },
-    "jv": {}
+    }
   },
   "newsLog": [
     {
