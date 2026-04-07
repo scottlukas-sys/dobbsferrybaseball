@@ -1055,6 +1055,7 @@ function computePIS(playerStats) {
 
     if (scores.playerStats) {
         if (scores.playerStats.df) processPool(scores.playerStats.df, 'df');
+        if (scores.playerStats.jv) processPool(scores.playerStats.jv, 'jv');
         if (scores.playerStats.opponents) processPool(scores.playerStats.opponents, 'opponent');
     }
 
@@ -1205,6 +1206,36 @@ const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 
 
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
 html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n            </div>\n\n            `);
+
+// JV Players to Watch (top 6 by PIS)
+function buildJVPlayersToWatch(pisData) {
+    const jvPlayers = pisData.filter(p => p.pool === 'jv').slice(0, 6);
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Same formula as Varsity. Season to date. Top 6 JV players shown. Data from GameChanger.</p>`;
+    if (jvPlayers.length === 0) {
+        return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
+    }
+    let html = jvExplainer;
+    html += `<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; border-left: 3px solid #2B5DAA;">`;
+    html += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
+    for (const p of jvPlayers) {
+        html += `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
+        html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
+        html += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
+        if (p.pis > 0) {
+            html += `<span style="background: #88882; color: #888; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">PIS ${p.pis}</span>`;
+        }
+        html += `</div>`;
+        if (p.gameLines.length > 0) {
+            const latest = p.gameLines[p.gameLines.length - 1];
+            html += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">vs ${latest.opp}: ${latest.line}</p>`;
+        }
+        html += `</div>`;
+    }
+    html += `</div></div>`;
+    return html;
+}
+const jvPlayersRegex = /(<!-- JV Players to Watch[\s\S]*?<div class="card">\s*<h2>JV PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>)/;
+html = html.replace(jvPlayersRegex, `$1\n                ${buildJVPlayersToWatch(pisData)}\n            $3`);
 
 // Console output for PIS rankings
 if (pisData.length > 0) {
