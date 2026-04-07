@@ -449,11 +449,6 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
     const dayNum = d.getDate();
     const won = score.df > score.opp;
     let resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-    // Add mercy game annotation if applicable
-    const innings = score.innings || 7;
-    if (score.mercy || innings < 7) {
-        resultText += ` (${innings} inn${score.mercy ? ', mercy' : ''})`;
-    }
     const resultColor = won ? '#D4A017' : '#EF4444';
 
     // Mark the matching JV row as completed (exactly 6 td columns — NOT 7 which would be varsity)
@@ -869,11 +864,6 @@ function buildNextFourJV() {
             const score = scores.jv[g.date];
             const won = score.df > score.opp;
             let resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-            // Add mercy game annotation if applicable
-            const innings = score.innings || 7;
-            if (score.mercy || innings < 7) {
-                resultText += ` (${innings} inn${score.mercy ? ', mercy' : ''})`;
-            }
             const resultColor = won ? '#D4A017' : '#EF4444';
 
             cardsHtml += `
@@ -1439,6 +1429,22 @@ function generateJVStatsHTML(playerStats, gameResults) {
     const runDiff = teamStats.runsFor - teamStats.runsAgainst;
     const freeBasesAllowed = teamStats.pitchingBB + teamStats.errors;
 
+    // Calculate total innings batted and pitched
+    let totalInningsBatted = 0;
+    let totalInningsPitched = 0;
+    for (const [date, game] of Object.entries(jvGames)) {
+        const innings = game.innings || 7;
+        totalInningsBatted += innings;
+        totalInningsPitched += innings; // Use game innings as default for pitching IP if not separately tracked
+    }
+    // Override with sum of pitcher IP if we have more granular data
+    if (teamStats.ip > 0) {
+        totalInningsPitched = teamStats.ip;
+    }
+
+    const runsPerInningOff = totalInningsBatted > 0 ? (teamStats.runsFor / totalInningsBatted).toFixed(2) : '—';
+    const runsPerInningDef = totalInningsPitched > 0 ? (teamStats.runsAgainst / totalInningsPitched).toFixed(2) : '—';
+
     // Team Leaders
     const leaders = {
         avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—',
@@ -1480,8 +1486,10 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += `<div><strong>BB Drawn</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.bbDrawn}</span></div>`;
     html += `<div><strong>BB Allowed</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.pitchingBB}</span></div>`;
     html += `<div><strong>Free Bases Allowed</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${freeBasesAllowed}</span></div>`;
+    html += `<div><strong>Runs/Inning (Off)</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${runsPerInningOff}</span></div>`;
+    html += `<div><strong>Runs/Inning (Def)</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${runsPerInningDef}</span></div>`;
     html += '</div>';
-    html += '<p style="margin: 12px 0 0 0; padding-top: 12px; border-top: 1px solid #333; font-style: italic; color: #888; font-size: 11px;">Errors are scored conservatively; some defensive miscues are recorded as opponent hits.</p>';
+    html += '<p style="margin: 12px 0 0 0; padding-top: 12px; border-top: 1px solid #333; font-style: italic; color: #888; font-size: 11px;">Free Bases Allowed = walks issued + errors. Tracks how often we give the other team 90 feet for free.</p>';
     html += '</div>';
 
     // Team Leaders
