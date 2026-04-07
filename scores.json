@@ -27,7 +27,10 @@
       "df": 2,
       "opp": 18,
       "location": "Home",
-      "source": "GameChanger"
+      "source": "GameChanger",
+      "errors": 7,
+      "innings": 4,
+      "mercy": true
     }
   },
   "divisionB": [

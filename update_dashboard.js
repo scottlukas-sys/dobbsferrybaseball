@@ -448,7 +448,12 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
     const shortMonth = formatShortMonth(d);
     const dayNum = d.getDate();
     const won = score.df > score.opp;
-    const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
+    let resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
+    // Add mercy game annotation if applicable
+    const innings = score.innings || 7;
+    if (score.mercy || innings < 7) {
+        resultText += ` (${innings} inn${score.mercy ? ', mercy' : ''})`;
+    }
     const resultColor = won ? '#D4A017' : '#EF4444';
 
     // Mark the matching JV row as completed (exactly 6 td columns — NOT 7 which would be varsity)
@@ -863,7 +868,12 @@ function buildNextFourJV() {
         if (g.completed) {
             const score = scores.jv[g.date];
             const won = score.df > score.opp;
-            const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
+            let resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
+            // Add mercy game annotation if applicable
+            const innings = score.innings || 7;
+            if (score.mercy || innings < 7) {
+                resultText += ` (${innings} inn${score.mercy ? ', mercy' : ''})`;
+            }
             const resultColor = won ? '#D4A017' : '#EF4444';
 
             cardsHtml += `
@@ -1399,6 +1409,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
         runsFor: 0, runsAgainst: 0,
         hits: 0, ab: 0,
         ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0,
+        errors: 0, bbDrawn: 0, pitchingBB: 0,
         games: Object.keys(jvGames).length
     };
 
@@ -1407,22 +1418,26 @@ function generateJVStatsHTML(playerStats, gameResults) {
         else teamStats.w++;
         teamStats.runsFor += game.df || 0;
         teamStats.runsAgainst += game.opp || 0;
+        teamStats.errors += game.errors || 0;
     }
 
     for (const player of players) {
         teamStats.hits += player.batting.h;
         teamStats.ab += player.batting.ab;
+        teamStats.bbDrawn += player.batting.bb || 0;
         teamStats.ip += player.pitching.ip;
         teamStats.h += player.pitching.h;
         teamStats.r += player.pitching.r;
         teamStats.er += player.pitching.er;
         teamStats.bb += player.pitching.bb;
+        teamStats.pitchingBB += player.pitching.bb || 0;
         teamStats.so += player.pitching.so;
     }
 
     const teamAvg = teamStats.ab > 0 ? (teamStats.hits / teamStats.ab).toFixed(3) : '.000';
     const teamERA = teamStats.ip > 0 ? ((teamStats.er * 7) / teamStats.ip).toFixed(2) : '—';
     const runDiff = teamStats.runsFor - teamStats.runsAgainst;
+    const freeBasesAllowed = teamStats.pitchingBB + teamStats.errors;
 
     // Team Leaders
     const leaders = {
@@ -1461,8 +1476,13 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += `<div><strong>Team AVG</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamAvg}</span></div>`;
     html += `<div><strong>Team ERA</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamERA}</span></div>`;
     html += `<div><strong>Total Hits</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.hits}</span></div>`;
-    html += `<div><strong>Errors</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">—</span></div>`;
-    html += '</div></div>';
+    html += `<div><strong>Errors</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.errors}</span></div>`;
+    html += `<div><strong>BB Drawn</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.bbDrawn}</span></div>`;
+    html += `<div><strong>BB Allowed</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.pitchingBB}</span></div>`;
+    html += `<div><strong>Free Bases Allowed</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${freeBasesAllowed}</span></div>`;
+    html += '</div>';
+    html += '<p style="margin: 12px 0 0 0; padding-top: 12px; border-top: 1px solid #333; font-style: italic; color: #888; font-size: 11px;">Errors are scored conservatively; some defensive miscues are recorded as opponent hits.</p>';
+    html += '</div>';
 
     // Team Leaders
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
