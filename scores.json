@@ -21,7 +21,15 @@
       "source": "Dobbs Ferry HS DigitalSports (corrected from 8-3 per @dfeaglesbaseball)"
     }
   },
-  "jv": {},
+  "jv": {
+    "2026-04-07": {
+      "opponent": "Edgemont JV",
+      "df": 2,
+      "opp": 18,
+      "location": "Home",
+      "source": "GameChanger"
+    }
+  },
   "divisionB": [
     {
       "date": "2026-03-24",
@@ -228,6 +236,272 @@
               "3b": 0,
               "hr": 0,
               "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Aaron Sellitti": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Sam Keltz": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Jack Rizzo": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 2.2,
+              "h": 5,
+              "er": 1,
+              "so": 4,
+              "bb": 5,
+              "w": 0,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Matthew Moon": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 0.1,
+              "h": 2,
+              "er": 2,
+              "so": 0,
+              "bb": 2,
+              "w": 0,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Jude Zonana": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": null,
+            "pitching": {
+              "ip": 1.0,
+              "h": 3,
+              "er": 0,
+              "so": 1,
+              "bb": 3,
+              "w": 0,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Vaughn Lukas": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Winston Burgess": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Eli Gallagher": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Michael Kingston": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Mina Hwangbo": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Declan Cho": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Julian Graff": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
               "r": 0,
               "bb": 0,
               "sb": 0
@@ -962,7 +1236,7 @@
     "Pearl River": {
       "fullName": "Pearl River Pirates",
       "threat": "UNKNOWN",
-      "intel": "Bigger school from Rockland County. Non-league game. Apr 11 game POSTPONED — no makeup date posted. No 2026 intel yet.",
+      "intel": "Bigger school from Rockland County. Non-league game. Apr 11 game POSTPONED \u2014 no makeup date posted. No 2026 intel yet.",
       "nextVsDF": "TBD (postponed)",
       "lastUpdated": "2026-04-07"
     },
