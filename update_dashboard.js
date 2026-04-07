@@ -1071,7 +1071,7 @@ function computePIS(playerStats) {
 function buildPlayersToWatch(pisData) {
     const dfPlayers = pisData.filter(p => p.pool === 'df');
     const oppPlayers = pisData.filter(p => p.pool === 'opponent');
-    const dfDisplay = dfPlayers.slice(0, 8);
+    const dfDisplay = dfPlayers.slice(0, 6);
 
     // Group opponents by team
     const oppByTeam = {};
@@ -1095,8 +1095,6 @@ function buildPlayersToWatch(pisData) {
             html += `<span style="background: ${tierColor}22; color: ${tierColor}; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">PIS ${p.pis}</span>`;
         }
         html += `</div>`;
-        // Tier tag
-        html += `<span style="font-size: 10px; color: ${tierColor}; text-transform: uppercase; letter-spacing: 0.5px;">${tierLabel}</span>`;
         // One-line stat summary (latest game)
         if (p.gameLines.length > 0) {
             const latest = p.gameLines[p.gameLines.length - 1];
@@ -1203,7 +1201,7 @@ function buildPlayersToWatch(pisData) {
 // Compute PIS and rebuild Players to Watch
 const pisData = computePIS(scores.playerStats || {});
 
-const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Hitting: H + XBH bonus + RBI(1.5x) + R + BB(0.5x) + multi-hit(+2). Pitching: W(3) + SV(2) + IP + SO - ER(1.5x). Season to date (no recency weighting). Tiers: Confirmed (3+ games) > Trending (2 games) > Emerging (1 game).</p>`;
+const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Hitting: H + XBH bonus + RBI(1.5x) + R + BB(0.5x) + multi-hit(+2). Pitching: W(3) + SV(2) + IP + SO - ER(1.5x). Season to date (no recency weighting). Top 6 Dobbs Ferry players shown.</p>`;
 
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
 html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n            </div>\n\n            `);
