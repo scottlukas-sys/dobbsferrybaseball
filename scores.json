@@ -189,6 +189,7 @@
     }
   },
   "newsLog": [
+    { "date": "2026-04-07", "type": "schedule", "text": "Apr 11 (Sat) Pearl River games POSTPONED — both Varsity (away at Pearl River HS) and JV (home vs Pearl River JV) removed from DFSD athletic calendar. No makeup date posted yet.", "source": "DFSD athletic calendar (dfsd.org)" },
     { "date": "2026-04-06", "type": "schedule", "text": "Apr 13 Irvington game corrected: changed from Away at Memorial Field to Home at Gould Park per DigitalSports official schedule.", "source": "DigitalSports (72456.digitalsports.com)" },
     { "date": "2026-04-06", "type": "intel", "text": "Second daily run. No new games since earlier update. All records confirmed: DF 2-0, Edgemont 0-2, Hastings 1-2, Sleepy Hollow 2-2, Haldane 1-1, Rye Neck 3-0, Ardsley 0-2+, Tuckahoe 0-0, Leffell 0-0. Game today: Sleepy Hollow vs Haldane at 4:30 PM (two DF opponents face off). DF next: Apr 7 at Edgemont 4:30 PM.", "source": "DigitalSports multi-team check, Gmail, web search" },
     { "date": "2026-04-06", "type": "correction", "text": "MAJOR CORRECTION: Division B league corrected to 6 teams per MaxPreps: Dobbs Ferry, Blind Brook, Hastings, Rye Neck, Leffell School, Tuckahoe. Removed Ardsley (their league is Edgemont/Pelham/Bronxville) and Valhalla (not in Division B). Removed Westlake-Hastings from divisionB array (Westlake not in Div B). Reclassified DF vs Valhalla Apr 27 as non-league.", "source": "MaxPreps Division B standings, DF schedule analysis, Ardsley DigitalSports schedule" },
