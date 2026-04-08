@@ -1363,8 +1363,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
 
     const players = Object.entries(jvPlayers).map(([name, data]) => {
         const games = data.games || [];
-        let batting = { pa: 0, ab: 0, h: 0, r: 0, rbi: 0, bb: 0, so: 0, sac: 0, sb: 0, hbp: 0 };
-        let pitching = { gp: 0, gs: 0, w: 0, l: 0, sv: 0, ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0 };
+        let batting = { pa: 0, ab: 0, h: 0, r: 0, rbi: 0, bb: 0, so: 0, sac: 0, sb: 0, hbp: 0, '2b': 0, '3b': 0, hr: 0 };
+        let pitching = { gp: 0, gs: 0, w: 0, l: 0, sv: 0, ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0, pitches: 0, strikes: 0, bf: 0 };
 
         for (const game of games) {
             if (game.hitting) {
@@ -1378,6 +1378,9 @@ function generateJVStatsHTML(playerStats, gameResults) {
                 batting.sac += h.sac || 0;
                 batting.sb += h.sb || 0;
                 batting.hbp += h.hbp || 0;
+                batting['2b'] += h['2b'] || 0;
+                batting['3b'] += h['3b'] || 0;
+                batting.hr += h.hr || 0;
                 batting.pa += (h.ab || 0) + (h.bb || 0) + (h.sac || 0) + (h.hbp || 0);
             }
             if (game.pitching) {
@@ -1393,6 +1396,9 @@ function generateJVStatsHTML(playerStats, gameResults) {
                 pitching.er += p.er || 0;
                 pitching.bb += p.bb || 0;
                 pitching.so += p.so || 0;
+                pitching.pitches += p.pitches || 0;
+                pitching.strikes += p.strikes || 0;
+                pitching.bf += p.bf || 0;
             }
         }
 
@@ -1406,7 +1412,10 @@ function generateJVStatsHTML(playerStats, gameResults) {
         hits: 0, ab: 0,
         ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0,
         errors: 0, bbDrawn: 0, pitchingBB: 0,
-        batSO: 0, batPA: 0, batHBP: 0,
+        batSO: 0, batPA: 0, batHBP: 0, batSAC: 0,
+        xbh: 0,
+        pitches: 0, strikes: 0, bf: 0,
+        cleanInnings: 0, defInningsLogged: 0, cleanTracked: false,
         games: Object.keys(jvGames).length,
         mercied: 0
     };
@@ -1418,6 +1427,11 @@ function generateJVStatsHTML(playerStats, gameResults) {
         teamStats.runsAgainst += game.opp || 0;
         teamStats.errors += game.errors || 0;
         if (game.mercy) teamStats.mercied++;
+        if (game.cleanInnings != null && game.defInnings != null) {
+            teamStats.cleanInnings += game.cleanInnings;
+            teamStats.defInningsLogged += game.defInnings;
+            teamStats.cleanTracked = true;
+        }
     }
 
     for (const player of players) {
@@ -1434,6 +1448,11 @@ function generateJVStatsHTML(playerStats, gameResults) {
         teamStats.batSO += player.batting.so || 0;
         teamStats.batPA += player.batting.pa || 0;
         teamStats.batHBP += player.batting.hbp || 0;
+        teamStats.batSAC += player.batting.sac || 0;
+        teamStats.xbh += (player.batting['2b'] || 0) + (player.batting['3b'] || 0) + (player.batting.hr || 0);
+        teamStats.pitches += player.pitching.pitches || 0;
+        teamStats.strikes += player.pitching.strikes || 0;
+        teamStats.bf += player.pitching.bf || 0;
     }
 
     const teamAvg = teamStats.ab > 0 ? fmtAvg(teamStats.hits / teamStats.ab) : '.000';
@@ -1594,31 +1613,45 @@ function generateJVStatsHTML(playerStats, gameResults) {
     const runDiffPG = G > 0 ? (runDiff / G).toFixed(1) : '—';
     const runDiffPGStr = (runDiff >= 0 ? '+' : '') + runDiffPG;
     const runDiffColor = runDiff < 0 ? '#c44' : '#2B5DAA';
+    // OBP = (H + BB + HBP) / (AB + BB + HBP + SAC)
+    const obpDen = teamStats.ab + teamStats.bbDrawn + teamStats.batHBP + teamStats.batSAC;
+    const teamOBP = obpDen > 0 ? fmtAvg((teamStats.hits + teamStats.bbDrawn + teamStats.batHBP) / obpDen) : '—';
+    const strikePct = teamStats.pitches > 0 ? Math.round((teamStats.strikes / teamStats.pitches) * 100) + '%' : '—';
+    const pitchesPerBF = teamStats.bf > 0 ? (teamStats.pitches / teamStats.bf).toFixed(1) : '—';
+    const cleanPct = teamStats.cleanTracked && teamStats.defInningsLogged > 0
+        ? Math.round((teamStats.cleanInnings / teamStats.defInningsLogged) * 100) + '%'
+        : '—';
 
     const totalInningsPlayedForHeader = Math.round(totalInningsBatted * 10) / 10;
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
     html += `<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Team Stats — Through ${G} game${G===1?'':'s'} (${totalInningsPlayedForHeader} inning${totalInningsPlayedForHeader===1?'':'s'} played)</h3>`;
     html += '<div style="font-size: 13px; line-height: 1.9; color: #ddd;">';
     html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Record:</strong> ${teamStats.w}-${teamStats.l}</div>`;
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Hitting:</strong> AVG ${teamAvg} &nbsp;|&nbsp; ${rPG} Runs/Game &nbsp;|&nbsp; ${bbPG} Walks/Game &nbsp;|&nbsp; ${kRate} K rate</div>`;
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Pitching:</strong> ERA ${teamERA} &nbsp;|&nbsp; WHIP ${whip} &nbsp;|&nbsp; K/7 ${k7} &nbsp;|&nbsp; K/BB ${kbb} &nbsp;|&nbsp; ${raPG} Runs Allowed/Game &nbsp;|&nbsp; ${bbAllowedPG} Walks Allowed/Game</div>`;
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Defense:</strong> ${ePG} Errors/Game &nbsp;|&nbsp; ${fbPG} Free Bases Allowed/Game</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Hitting:</strong> AVG ${teamAvg} &nbsp;|&nbsp; OBP ${teamOBP} &nbsp;|&nbsp; ${teamStats.xbh} XBH &nbsp;|&nbsp; ${rPG} Runs/Game &nbsp;|&nbsp; ${bbPG} Walks/Game &nbsp;|&nbsp; ${kRate} K rate</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Pitching:</strong> ERA ${teamERA} &nbsp;|&nbsp; WHIP ${whip} &nbsp;|&nbsp; Strike% ${strikePct} &nbsp;|&nbsp; ${pitchesPerBF} Pitches/BF &nbsp;|&nbsp; K/7 ${k7} &nbsp;|&nbsp; K/BB ${kbb} &nbsp;|&nbsp; ${raPG} Runs Allowed/Game &nbsp;|&nbsp; ${bbAllowedPG} Walks Allowed/Game</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Defense:</strong> ${ePG} Errors/Game &nbsp;|&nbsp; ${fbPG} Free Bases Allowed/Game &nbsp;|&nbsp; Clean Innings ${cleanPct}</div>`;
     html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Run Diff/Game:</strong> <span style="color:${runDiffColor}; font-weight:700;">${runDiffPGStr}</span></div>`;
     html += '</div>';
     // Glossary
     html += '<div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #333; font-size: 11px; color: #999; line-height: 1.6;">';
     html += '<strong style="color:#bbb;">What the stats mean:</strong><br>';
+    html += '<strong>AVG (batting average):</strong> hits ÷ at-bats.<br>';
+    html += '<strong>OBP (On-Base Percentage):</strong> how often a batter reaches base. (Hits + Walks + Hit-by-pitch) ÷ (At-bats + Walks + HBP + Sacrifices). More complete than AVG because it rewards walks. .350+ is strong.<br>';
+    html += '<strong>XBH (Extra-Base Hits):</strong> total doubles + triples + home runs. Power indicator.<br>';
     html += '<strong>Runs/Game:</strong> average runs we score per game.<br>';
     html += '<strong>Walks/Game:</strong> average walks we draw per game.<br>';
     html += '<strong>K rate:</strong> share of our plate appearances that end in a strikeout.<br>';
     html += '<strong>ERA:</strong> earned runs allowed per 7 innings pitched.<br>';
     html += '<strong>WHIP:</strong> Walks + Hits allowed, divided by innings pitched. How many baserunners our pitchers give up each inning. Under 1.30 is good, over 1.50 is trouble.<br>';
+    html += '<strong>Strike%:</strong> share of total pitches that are strikes (called, swinging, foul, or put in play — any batted ball counts as a strike). 60%+ = throwing strikes, 65%+ = dealing. Best single measure of pitching command.<br>';
+    html += '<strong>Pitches/BF:</strong> pitches thrown per batter faced. Under 3.8 = efficient, over 4.3 = laboring.<br>';
     html += '<strong>K/7:</strong> strikeouts per 7 innings pitched.<br>';
     html += '<strong>K/BB:</strong> strikeouts per walk issued. Higher = better command.<br>';
     html += '<strong>Runs Allowed/Game:</strong> average runs the other team scores against us per game.<br>';
     html += '<strong>Walks Allowed/Game:</strong> average walks our pitchers issue per game.<br>';
     html += '<strong>Errors/Game:</strong> average fielding errors per game.<br>';
     html += '<strong>Free Bases Allowed/Game:</strong> walks issued + errors, per game. How often we hand the other team 90 feet for free.<br>';
+    html += '<strong>Clean Innings:</strong> share of defensive innings with 0 runs allowed and 0 errors. Requires per-inning logging; shows "—" until tracked.<br>';
     html += '<strong>Run Diff/Game:</strong> (runs scored − runs allowed) ÷ games.';
     html += '</div>';
     html += '</div>';
@@ -1646,7 +1679,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
     html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Batting</h3>';
     html += '<table style="width: 100%; font-size: 12px; border-collapse: collapse;">';
-    html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">PA</th><th style="text-align: center; padding: 8px;">AB</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">AVG</th><th style="text-align: center; padding: 8px;">OPS</th><th style="text-align: center; padding: 8px;">R</th><th style="text-align: center; padding: 8px;">RBI</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">SAC</th><th style="text-align: center; padding: 8px;">SB</th></tr></thead>';
+    html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">PA</th><th style="text-align: center; padding: 8px;">AB</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">AVG</th><th style="text-align: center; padding: 8px;">OBP</th><th style="text-align: center; padding: 8px;">OPS</th><th style="text-align: center; padding: 8px;">XBH</th><th style="text-align: center; padding: 8px;">R</th><th style="text-align: center; padding: 8px;">RBI</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">SAC</th><th style="text-align: center; padding: 8px;">SB</th></tr></thead>';
     html += '<tbody>';
     for (const player of players.filter(p => p.batting.pa > 0)) {
         const b = player.batting;
@@ -1660,8 +1693,12 @@ function generateJVStatsHTML(playerStats, gameResults) {
         html += `<td style="text-align: center; padding: 8px;">${b.pa}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${b.ab}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${b.h}</td>`;
+        const obpStr = obpDen > 0 ? fmtAvg(obpVal) : '—';
+        const xbhVal = (b['2b'] || 0) + (b['3b'] || 0) + (b.hr || 0);
         html += `<td style="text-align: center; padding: 8px;">${avg}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${obpStr}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${opsStr}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${xbhVal}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.r}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.rbi}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.bb}</td>`;
@@ -1675,7 +1712,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px;">';
     html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Pitching</h3>';
     html += '<table style="width: 100%; font-size: 12px; border-collapse: collapse;">';
-    html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">GP</th><th style="text-align: center; padding: 8px;">GS</th><th style="text-align: center; padding: 8px;">W</th><th style="text-align: center; padding: 8px;">L</th><th style="text-align: center; padding: 8px;">SV</th><th style="text-align: center; padding: 8px;">IP</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">ER</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">ERA</th><th style="text-align: center; padding: 8px;">WHIP</th></tr></thead>';
+    html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">GP</th><th style="text-align: center; padding: 8px;">GS</th><th style="text-align: center; padding: 8px;">W</th><th style="text-align: center; padding: 8px;">L</th><th style="text-align: center; padding: 8px;">SV</th><th style="text-align: center; padding: 8px;">IP</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">ER</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">ERA</th><th style="text-align: center; padding: 8px;">WHIP</th><th style="text-align: center; padding: 8px;">Strike%</th><th style="text-align: center; padding: 8px;">P/BF</th></tr></thead>';
     html += '<tbody>';
     for (const player of players.filter(p => p.pitching.ip > 0)) {
         const era = ((player.pitching.er * 7) / player.pitching.ip).toFixed(2);
@@ -1691,8 +1728,12 @@ function generateJVStatsHTML(playerStats, gameResults) {
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.er}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.bb}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.so}</td>`;
+        const sPct = player.pitching.pitches > 0 ? Math.round((player.pitching.strikes / player.pitching.pitches) * 100) + '%' : '—';
+        const pbf = player.pitching.bf > 0 ? (player.pitching.pitches / player.pitching.bf).toFixed(1) : '—';
         html += `<td style="text-align: center; padding: 8px;">${era}</td>`;
-        html += `<td style="text-align: center; padding: 8px;">${whip}</td></tr>`;
+        html += `<td style="text-align: center; padding: 8px;">${whip}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${sPct}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${pbf}</td></tr>`;
     }
     html += '</tbody></table></div>';
 
