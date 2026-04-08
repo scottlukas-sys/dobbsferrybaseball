@@ -477,14 +477,21 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
 // ============================================================
 // 6b. UPDATE DIVISION B STANDINGS
 // ============================================================
-// Division B teams and their league game data
+// ============================================================
+// CLASS B LEAGUE — LOCKED ROSTER (do not modify without authoritative source)
+// Per Section 1 Class B standings (screenshot 2026-04-08, docs/class-b-lock.md).
+// Canonical 8 teams. This list is the SINGLE SOURCE OF TRUTH for league standings.
+// If any future source shows different teams, DO NOT silently edit this list.
+// Verify against Section 1 Class B standings page first and update docs/class-b-lock.md.
+// ============================================================
 const divBTeams = [
-    'Ardsley Panthers',
     'Blind Brook Trojans',
+    'Briarcliff Bears',
     'Dobbs Ferry Eagles',
     'Hastings Yellow Jackets',
+    'Pawling Tigers',
+    'Putnam Valley Tigers',
     'Rye Neck Panthers',
-    'Tuckahoe Tigers',
     'Valhalla Vikings'
 ];
 
@@ -503,12 +510,13 @@ function computeDivBStandings() {
 
     // Map short names to full standings names
     const nameMap = {
-        'Ardsley': 'Ardsley Panthers',
         'Blind Brook': 'Blind Brook Trojans',
+        'Briarcliff': 'Briarcliff Bears',
         'Dobbs Ferry': 'Dobbs Ferry Eagles',
         'Hastings': 'Hastings Yellow Jackets',
+        'Pawling': 'Pawling Tigers',
+        'Putnam Valley': 'Putnam Valley Tigers',
         'Rye Neck': 'Rye Neck Panthers',
-        'Tuckahoe': 'Tuckahoe Tigers',
         'Valhalla': 'Valhalla Vikings'
     };
 
@@ -683,7 +691,7 @@ const standingsSubtitle = leagueGamesPlayed
     ? `Updated ${formatLongDate(today)}.`
     : 'League play begins April 20.';
 
-const standingsRegex = /(<!-- Standings -->\s*<div class="card">\s*<h2>Division B Standings<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- What's Happening))/;
+const standingsRegex = /(<!-- Standings -->\s*<div class="card">\s*<h2>(?:Class B|Division B) Standings<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- What's Happening))/;
 html = html.replace(standingsRegex, `$1
                 <p style="font-size: 12px; color: #888888; margin-bottom: 15px;">${standingsSubtitle}</p>
                 <table>
