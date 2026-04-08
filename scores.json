@@ -1209,6 +1209,30 @@
       },
       "partial": true,
       "text": "Daily sweep partial \u2014 Instagram required login, Section One Athletics scores portal not located, remaining DigitalSports opponents not reached due to run constraints. No new scores found from reachable sources; MaxPreps confirms DF Varsity 1-0 but lags scores.json entries for Irvington and Saunders. Coach Turenchalk noted upcoming extra JV game with Irvington (date TBD)."
+    },
+    {
+      "date": "2026-04-08",
+      "type": "daily-sweep",
+      "sourcesChecked": {
+        "section_one_varsity": "unreachable:chrome-mcp-not-connected",
+        "section_one_jv": "unreachable:chrome-mcp-not-connected",
+        "gamedayone": "pre-league-empty",
+        "digitalsports_df": "unreachable:chrome-mcp-not-connected",
+        "digitalsports_next3": "unreachable:chrome-mcp-not-connected",
+        "digitalsports_classb": "unreachable:chrome-mcp-not-connected",
+        "digitalsports_other_opponents": "unreachable:chrome-mcp-not-connected",
+        "ig_dfeaglesbaseball": "unreachable:chrome-mcp-not-connected",
+        "ig_dfvarsity_baseball": "unreachable:chrome-mcp-not-connected",
+        "ig_dobbsferryjvboys": "unreachable:chrome-mcp-not-connected",
+        "ig_df_diamond_club": "unreachable:chrome-mcp-not-connected",
+        "ig_opponent_next3": "unreachable:chrome-mcp-not-connected",
+        "gmail_schedule": "empty",
+        "gmail_diamond_club": "ok",
+        "dfsd_athletics": "unreachable:chrome-mcp-not-connected",
+        "maxpreps_df": "ok"
+      },
+      "partial": true,
+      "text": "Daily sweep PARTIAL \u2014 Chrome MCP not connected; MaxPreps + Gmail reached. MaxPreps confirms 4/7 Edgemont W 5-1 (already recorded). No new scores, no schedule changes found. Next game 4/8 vs Sleepy Hollow 4:30."
     }
   ],
   "opponentResults": [
