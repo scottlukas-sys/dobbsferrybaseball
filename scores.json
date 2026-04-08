@@ -37,7 +37,9 @@
       "source": "GameChanger",
       "errors": 7,
       "innings": 4,
-      "mercy": true
+      "mercy": true,
+      "cleanInnings": 0,
+      "defInnings": 4
     }
   },
   "divisionB": [
