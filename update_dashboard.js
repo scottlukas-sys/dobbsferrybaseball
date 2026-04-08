@@ -1146,7 +1146,7 @@ function buildPlayersToWatch(pisData) {
         const tierLabel = tierLabels[p.tier] || p.tier.toUpperCase();
         // Show role-specific cumulative score on the badge
         const badgeVal = p.role === 'pitcher' ? (p.pitPts || p.pis) : (p.hitPts || p.pis);
-        const badgeLabel = p.role === 'pitcher' ? 'PIT' : 'HIT';
+        const badgeLabel = p.role === 'pitcher' ? 'Pitching PIS' : 'Hitting PIS';
         let html = `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
         // Name row with PIS badge
         html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
@@ -1292,7 +1292,7 @@ function buildJVPlayersToWatch(pisData) {
     }
     function tile(p) {
         const badgeVal = p.role === 'pitcher' ? (p.pitPts || p.pis) : (p.hitPts || p.pis);
-        const badgeLabel = p.role === 'pitcher' ? 'PIT' : 'HIT';
+        const badgeLabel = p.role === 'pitcher' ? 'Pitching PIS' : 'Hitting PIS';
         let t = `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
         t += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
         t += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
