@@ -1157,6 +1157,12 @@
       "type": "source",
       "text": "Instagram @dfeaglesbaseball: 2026 schedule posted (pinned).",
       "source": "@dfeaglesbaseball"
+    },
+    {
+      "date": "2026-04-08",
+      "type": "source",
+      "text": "Daily sweep: added Ardsley L to JJCR 4/7 (2-8), Valhalla L to Westlake 3/30 (5-17). Instagram scrapes blocked; DigitalSports per-team pages returned navigation only; MaxPreps per-team schedules used as fallback.",
+      "source": "daily updater"
     }
   ],
   "opponentResults": [
@@ -1327,6 +1333,24 @@
       "winnerRuns": 5,
       "loserRuns": 3,
       "source": "@tuckahoevarsitybaseball Instagram (RHE approx)"
+    },
+    {
+      "date": "2026-04-07",
+      "winner": "John Jay Cross River",
+      "winnerRuns": 8,
+      "loser": "Ardsley",
+      "loserRuns": 2,
+      "note": "Non-league game. Ardsley drops another non-league contest.",
+      "source": "John Jay Cross River HS DigitalSports"
+    },
+    {
+      "date": "2026-03-30",
+      "winner": "Westlake",
+      "winnerRuns": 17,
+      "loser": "Valhalla",
+      "loserRuns": 5,
+      "note": "Non-league season opener for Valhalla. Valhalla now 0-1.",
+      "source": "MaxPreps Valhalla schedule"
     }
   ],
   "teamIntel": {
