@@ -1116,13 +1116,17 @@ function computePIS(playerStats) {
 function buildPlayersToWatch(pisData) {
     const dfPlayers = pisData.filter(p => p.pool === 'df');
     const oppPlayers = pisData.filter(p => p.pool === 'opponent');
-    // Split DF into hitters and pitchers, each ranked by their role-specific cumulative points
+    // Two-way players appear on BOTH lists. A player qualifies for hitters if they
+    // have any hitting points, and for pitchers if they have any pitching points.
+    // Force a role override on the rendered copy so the tile badge matches the panel.
     const dfHitters = dfPlayers
-        .filter(p => p.role === 'hitter' && p.gamesWithStats > 0)
+        .filter(p => (p.hitPts || 0) > 0)
+        .map(p => Object.assign({}, p, { role: 'hitter' }))
         .sort((a, b) => (b.hitPts || 0) - (a.hitPts || 0))
         .slice(0, 6);
     const dfPitchers = dfPlayers
-        .filter(p => p.role === 'pitcher' && p.gamesWithStats > 0)
+        .filter(p => (p.pitPts || 0) > 0)
+        .map(p => Object.assign({}, p, { role: 'pitcher' }))
         .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
         .slice(0, 6);
 
@@ -1272,8 +1276,16 @@ html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildP
 // JV Players to Watch (top 6 by PIS)
 function buildJVPlayersToWatch(pisData) {
     const jvAll = pisData.filter(p => p.pool === 'jv' && p.gamesWithStats > 0);
-    const jvHitters = jvAll.filter(p => p.role === 'hitter').sort((a, b) => (b.hitPts || 0) - (a.hitPts || 0)).slice(0, 6);
-    const jvPitchers = jvAll.filter(p => p.role === 'pitcher').sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0)).slice(0, 6);
+    const jvHitters = jvAll
+        .filter(p => (p.hitPts || 0) > 0)
+        .map(p => Object.assign({}, p, { role: 'hitter' }))
+        .sort((a, b) => (b.hitPts || 0) - (a.hitPts || 0))
+        .slice(0, 6);
+    const jvPitchers = jvAll
+        .filter(p => (p.pitPts || 0) > 0)
+        .map(p => Object.assign({}, p, { role: 'pitcher' }))
+        .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
+        .slice(0, 6);
     const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters and pitchers are scored on separate leaderboards.</p>`;
     if (jvHitters.length === 0 && jvPitchers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
