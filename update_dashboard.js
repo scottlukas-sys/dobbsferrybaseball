@@ -17,6 +17,101 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
+
+// ============================================================
+// WEATHER — Open-Meteo forecast (no API key, 16-day window)
+// ============================================================
+// Dobbs Ferry, NY — used as the regional reference point for all games.
+// Most opponents are within 20 miles; forecast differences are negligible.
+const DFB_LAT = 41.0137;
+const DFB_LON = -73.8718;
+
+// WMO weather interpretation codes → short human text + emoji
+function wmoToText(code) {
+    const map = {
+        0: ['Clear', '☀️'],
+        1: ['Mainly clear', '🌤️'],
+        2: ['Partly cloudy', '⛅'],
+        3: ['Overcast', '☁️'],
+        45: ['Fog', '🌫️'], 48: ['Fog', '🌫️'],
+        51: ['Light drizzle', '🌦️'], 53: ['Drizzle', '🌦️'], 55: ['Heavy drizzle', '🌧️'],
+        56: ['Freezing drizzle', '🌧️'], 57: ['Freezing drizzle', '🌧️'],
+        61: ['Light rain', '🌦️'], 63: ['Rain', '🌧️'], 65: ['Heavy rain', '🌧️'],
+        66: ['Freezing rain', '🌧️'], 67: ['Freezing rain', '🌧️'],
+        71: ['Light snow', '🌨️'], 73: ['Snow', '🌨️'], 75: ['Heavy snow', '❄️'],
+        77: ['Snow grains', '🌨️'],
+        80: ['Rain showers', '🌦️'], 81: ['Rain showers', '🌧️'], 82: ['Heavy showers', '⛈️'],
+        85: ['Snow showers', '🌨️'], 86: ['Snow showers', '❄️'],
+        95: ['Thunderstorm', '⛈️'], 96: ['Thunderstorm + hail', '⛈️'], 99: ['Thunderstorm + hail', '⛈️'],
+    };
+    return map[code] || ['', ''];
+}
+
+// Parse "4:30 PM" → 16 (24h hour)
+function parseTimeTo24h(timeStr) {
+    if (!timeStr) return 16;
+    const m = timeStr.match(/(\d+):?(\d+)?\s*(AM|PM)/i);
+    if (!m) return 16;
+    let h = parseInt(m[1], 10);
+    const ampm = m[3].toUpperCase();
+    if (ampm === 'PM' && h !== 12) h += 12;
+    if (ampm === 'AM' && h === 12) h = 0;
+    return h;
+}
+
+// Returns a formatted weather string for a given game date + time, or null on failure.
+// Uses open-meteo.com (free, no key, 16-day forecast window).
+function fetchGameWeather(gameDate, gameTime) {
+    try {
+        // Open-Meteo only forecasts 16 days out; anything beyond returns no data for that date.
+        const today = new Date();
+        const target = new Date(gameDate + 'T12:00:00');
+        const daysOut = Math.round((target - today) / 86400000);
+        if (daysOut < 0) return null; // past game
+        if (daysOut > 15) return 'Forecast available ~14 days before game';
+
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${DFB_LAT}&longitude=${DFB_LON}&hourly=temperature_2m,precipitation_probability,wind_speed_10m,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York&forecast_days=16`;
+        const raw = execSync(`curl -sSL --max-time 10 "${url}"`, { encoding: 'utf8' });
+        const data = JSON.parse(raw);
+        if (!data.hourly || !data.hourly.time) return null;
+
+        // Build the target timestamp string: YYYY-MM-DDTHH:00
+        const h24 = parseTimeTo24h(gameTime);
+        const hh = String(h24).padStart(2, '0');
+        const targetStamp = `${gameDate}T${hh}:00`;
+
+        // Find exact match or nearest hour
+        const times = data.hourly.time;
+        let idx = times.indexOf(targetStamp);
+        if (idx === -1) {
+            // Fall back to nearest hour on that date
+            const sameDay = times
+                .map((t, i) => ({ t, i }))
+                .filter(x => x.t.startsWith(gameDate));
+            if (sameDay.length === 0) return null;
+            // pick 4pm-ish default if can't find exact
+            const prefer = sameDay.find(x => x.t.endsWith('T16:00')) || sameDay[Math.floor(sameDay.length / 2)];
+            idx = prefer.i;
+        }
+
+        const temp = Math.round(data.hourly.temperature_2m[idx]);
+        const pop = data.hourly.precipitation_probability[idx];
+        const wind = Math.round(data.hourly.wind_speed_10m[idx]);
+        const code = data.hourly.weather_code[idx];
+        const [desc, emoji] = wmoToText(code);
+
+        const parts = [];
+        if (desc) parts.push(`${emoji} ${desc}`);
+        parts.push(`${temp}°F`);
+        if (pop != null) parts.push(`${pop}% precip`);
+        if (wind != null) parts.push(`${wind} mph wind`);
+        return parts.join(' • ');
+    } catch (e) {
+        return null;
+    }
+}
+
 
 const htmlPath = process.argv[2];
 const scoresPath = process.argv[3] || path.join(path.dirname(htmlPath), 'scores.json');
@@ -249,12 +344,18 @@ if (nextVarsityGame) {
         lastResultText = ` | Last result: ${won ? 'W' : 'L'} ${lastScore.df}-${lastScore.opp} vs ${lastScore.opponent} (${lm} ${ld.getDate()})`;
     }
 
+    // Weather for next varsity game (Dobbs Ferry area forecast)
+    const vWeather = fetchGameWeather(nextVarsityGame.date, nextVarsityGame.time);
+    const vWeatherRow = vWeather
+        ? `\n                <div class="weather"><strong>Weather:</strong> ${vWeather} <span style="color:#666;font-size:11px;">(Dobbs Ferry area)</span></div>`
+        : `\n                <div class="weather"><strong>Weather:</strong> Forecast unavailable</div>`;
+
     // Replace the entire varsity alert card
     const alertRegex = /(<div id="varsity"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- Quick Stats -->)/;
     html = html.replace(alertRegex, `$1<div class="card alert">
                 <div class="alert-title">NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextDate.getDate()})</div>
                 <div class="alert-game">${shortMonth} ${nextDate.getDate()} (${dayOfWeek}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextVarsityGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextVarsityGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${venueName}</div>
-                <div class="alert-details">Non-league${lastResultText}</div>
+                <div class="alert-details">Non-league${lastResultText}</div>${vWeatherRow}
             </div>$3`);
 }
 
@@ -806,6 +907,16 @@ if (nextJvGame) {
     html = html.replace(
         /(<div id="jv"[\s\S]*?<div class="alert-game">)[\s\S]*?(<\/div>\s*<div class="alert-details">)/,
         `$1${shortMonth} ${nextJvDate.getDate()} (${dayName}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextJvGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.location}$2`
+    );
+
+    // JV weather row — live Open-Meteo forecast
+    const jvWeather = fetchGameWeather(nextJvGame.date, nextJvGame.time);
+    const jvWeatherText = jvWeather
+        ? `${jvWeather} <span style="color:#666;font-size:11px;">(Dobbs Ferry area)</span>`
+        : 'Forecast unavailable';
+    html = html.replace(
+        /(<div id="jv"[\s\S]*?<div class="weather">\s*<strong>Weather:<\/strong>)[^<]*(<\/div>)/,
+        `$1 ${jvWeatherText}$2`
     );
 }
 
