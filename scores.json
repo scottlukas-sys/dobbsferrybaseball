@@ -1163,6 +1163,29 @@
       "type": "source",
       "text": "Daily sweep: added Ardsley L to JJCR 4/7 (2-8), Valhalla L to Westlake 3/30 (5-17). Instagram scrapes blocked; DigitalSports per-team pages returned navigation only; MaxPreps per-team schedules used as fallback.",
       "source": "daily updater"
+    },
+    {
+      "date": "2026-04-08",
+      "type": "daily-sweep",
+      "sourcesChecked": {
+        "maxpreps_df": "unreachable:not-queried-time-budget",
+        "section_one_varsity": "unreachable:site-navigation-dead-end",
+        "section_one_jv": "unreachable:site-navigation-dead-end",
+        "gamedayone": "unreachable:not-queried-time-budget",
+        "digitalsports_df_varsity": "ok",
+        "digitalsports_df_jv": "ok",
+        "digitalsports_opponents": "unreachable:not-queried-time-budget",
+        "digitalsports_divb": "empty-league-play-not-started",
+        "ig_dfeaglesbaseball": "ok",
+        "ig_dfvarsity_baseball": "ok",
+        "ig_dobbsferryjvboys": "unreachable:not-queried-time-budget",
+        "ig_df_diamond_club": "unreachable:not-queried-time-budget",
+        "ig_opponents": "unreachable:not-queried-time-budget",
+        "gmail_schedule": "empty",
+        "dfsd_athletics": "unreachable:not-queried-time-budget"
+      },
+      "partial": true,
+      "text": "Daily sweep PARTIAL. DF DigitalSports (V+JV) and IG @dfeaglesbaseball/@dfvarsity_baseball confirmed no new data since 4/7 Edgemont W 5-1. Sleepy Hollow game scheduled today 4/8 4:30 PM at Gould Park \u2014 not yet played. No schedule changes in Gmail. Opponent and Section One sweep deferred."
     }
   ],
   "opponentResults": [
