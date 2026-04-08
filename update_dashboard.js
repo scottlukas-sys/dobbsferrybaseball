@@ -1599,11 +1599,11 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
     html += `<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Team Stats — Through ${G} game${G===1?'':'s'} (${totalInningsPlayedForHeader} inning${totalInningsPlayedForHeader===1?'':'s'} played)</h3>`;
     html += '<div style="font-size: 13px; line-height: 1.9; color: #ddd;">';
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Record:</strong> ${teamStats.w}-${teamStats.l}</div>`;
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Hitting:</strong> AVG ${teamAvg} &nbsp;|&nbsp; ${rPG} Runs/Game &nbsp;|&nbsp; ${bbPG} Walks/Game &nbsp;|&nbsp; ${kRate} K rate</div>`;
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Pitching:</strong> ERA ${teamERA} &nbsp;|&nbsp; WHIP ${whip} &nbsp;|&nbsp; K/7 ${k7} &nbsp;|&nbsp; K/BB ${kbb} &nbsp;|&nbsp; ${raPG} Runs Allowed/Game &nbsp;|&nbsp; ${bbAllowedPG} Walks Allowed/Game</div>`;
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Defense:</strong> ${ePG} Errors/Game &nbsp;|&nbsp; ${fbPG} Free Bases Allowed/Game</div>`;
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Run Diff/Game:</strong> <span style="color:${runDiffColor}; font-weight:700;">${runDiffPGStr}</span></div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Record:</strong> ${teamStats.w}-${teamStats.l}</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Hitting:</strong> AVG ${teamAvg} &nbsp;|&nbsp; ${rPG} Runs/Game &nbsp;|&nbsp; ${bbPG} Walks/Game &nbsp;|&nbsp; ${kRate} K rate</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Pitching:</strong> ERA ${teamERA} &nbsp;|&nbsp; WHIP ${whip} &nbsp;|&nbsp; K/7 ${k7} &nbsp;|&nbsp; K/BB ${kbb} &nbsp;|&nbsp; ${raPG} Runs Allowed/Game &nbsp;|&nbsp; ${bbAllowedPG} Walks Allowed/Game</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Defense:</strong> ${ePG} Errors/Game &nbsp;|&nbsp; ${fbPG} Free Bases Allowed/Game</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Run Diff/Game:</strong> <span style="color:${runDiffColor}; font-weight:700;">${runDiffPGStr}</span></div>`;
     html += '</div>';
     // Glossary
     html += '<div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #333; font-size: 11px; color: #999; line-height: 1.6;">';
