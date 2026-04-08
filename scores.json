@@ -1255,18 +1255,18 @@
     },
     {
       "date": "2026-04-06",
-      "team": "Sleepy Hollow",
-      "opponent": "Haldane",
-      "teamRuns": 12,
-      "oppRuns": 10,
+      "winner": "Sleepy Hollow",
+      "loser": "Haldane",
+      "winnerRuns": 12,
+      "loserRuns": 10,
       "source": "@haldanebaseball Instagram"
     },
     {
       "date": "2026-04-07",
-      "team": "Somers",
-      "opponent": "Tuckahoe",
-      "teamRuns": 5,
-      "oppRuns": 3,
+      "winner": "Somers",
+      "loser": "Tuckahoe",
+      "winnerRuns": 5,
+      "loserRuns": 3,
       "source": "@tuckahoevarsitybaseball Instagram (RHE approx)"
     }
   ],
