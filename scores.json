@@ -19,6 +19,13 @@
       "opp": 3,
       "location": "Gould Park (Home)",
       "source": "Dobbs Ferry HS DigitalSports (corrected from 8-3 per @dfeaglesbaseball)"
+    },
+    "2026-04-07": {
+      "opponent": "Edgemont",
+      "df": 5,
+      "opp": 1,
+      "location": "Edgemont HS",
+      "source": "@dfeaglesbaseball Instagram"
     }
   },
   "jv": {
@@ -71,6 +78,20 @@
               "w": 1,
               "sv": 0
             }
+          },
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont",
+            "hitting": null,
+            "pitching": {
+              "ip": 3.1,
+              "h": 2,
+              "er": 0,
+              "so": 2,
+              "bb": 3,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -88,6 +109,20 @@
               "so": 0,
               "bb": 0,
               "w": 0,
+              "sv": 0
+            }
+          },
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont",
+            "hitting": null,
+            "pitching": {
+              "ip": 3.2,
+              "h": 2,
+              "er": 1,
+              "so": 8,
+              "bb": 2,
+              "w": 1,
               "sv": 0
             }
           }
@@ -162,6 +197,22 @@
               "w": 0,
               "sv": 0
             }
+          },
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -241,6 +292,22 @@
               "rbi": 1,
               "r": 0,
               "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 2,
+              "r": 1,
+              "bb": 2,
               "sb": 0
             },
             "pitching": null
