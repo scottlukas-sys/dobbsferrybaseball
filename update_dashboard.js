@@ -1445,51 +1445,178 @@ function generateJVStatsHTML(playerStats, gameResults) {
     const runsPerInningOff = totalInningsBatted > 0 ? (teamStats.runsFor / totalInningsBatted).toFixed(2) : '—';
     const runsPerInningDef = totalInningsPitched > 0 ? (teamStats.runsAgainst / totalInningsPitched).toFixed(2) : '—';
 
-    // Team Leaders
+    // Calculate Errors/Inning
+    const totalInningsPlayed = totalInningsBatted > 0 ? totalInningsBatted : 0;
+    const errorsPerInning = totalInningsPlayed > 0 ? (teamStats.errors / totalInningsPlayed).toFixed(2) : '—';
+
+    // Team Leaders - Helper to format leader output
+    function formatLeaderValue(players, filter, sort) {
+        const filtered = players.filter(filter).sort(sort);
+        if (filtered.length === 0) return '—';
+        if (filtered.length === 1) return filtered[0].name;
+        // Check for ties
+        const firstVal = sort(filtered[0], filtered[1]) === 0 ? filter(filtered[0]) : null;
+        if (firstVal !== null) {
+            const tied = [];
+            for (let i = 0; i < filtered.length && sort(filtered[i], filtered[i+1]) === 0; i++) {
+                tied.push(filtered[i].name);
+            }
+            if (tied.length > 0) return tied.join(', ');
+        }
+        return filtered[0].name;
+    }
+
     const leaders = {
         avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—',
         wins: '—', era: '—'
     };
 
+    // AVG = H/AB (min 1 AB)
     if (teamStats.ab > 0) {
-        const byAvg = players.filter(p => p.batting.ab > 0).sort((a, b) => (b.batting.h / b.batting.ab) - (a.batting.h / a.batting.ab));
-        if (byAvg.length > 0) leaders.avg = byAvg[0].name;
+        const byAvg = players.filter(p => p.batting.ab >= 1).sort((a, b) => (b.batting.h / b.batting.ab) - (a.batting.h / a.batting.ab));
+        if (byAvg.length > 0) {
+            const topAvg = (byAvg[0].batting.h / byAvg[0].batting.ab);
+            const tied = byAvg.filter(p => Math.abs((p.batting.h / p.batting.ab) - topAvg) < 0.0001);
+            leaders.avg = tied.map(p => p.name).join(', ');
+        }
     }
 
+    // OBP = (H+BB+HBP)/(AB+BB+HBP+SF), or (H+BB)/(AB+BB) if HBP/SF not tracked
+    const byOBP = players.filter(p => (p.batting.ab + p.batting.bb) > 0).sort((a, b) => {
+        const obpA = (a.batting.h + a.batting.bb) / (a.batting.ab + a.batting.bb);
+        const obpB = (b.batting.h + b.batting.bb) / (b.batting.ab + b.batting.bb);
+        return obpB - obpA;
+    });
+    if (byOBP.length > 0) {
+        const topOBP = (byOBP[0].batting.h + byOBP[0].batting.bb) / (byOBP[0].batting.ab + byOBP[0].batting.bb);
+        const tied = byOBP.filter(p => {
+            const obp = (p.batting.h + p.batting.bb) / (p.batting.ab + p.batting.bb);
+            return Math.abs(obp - topOBP) < 0.0001;
+        });
+        leaders.obp = tied.map(p => p.name).join(', ');
+    }
+
+    // OPS = OBP + SLG. SLG = TB/AB where TB = 1B + 2*2B + 3*3B + 4*HR. If only H tracked, SLG = H/AB
+    const byOPS = players.filter(p => p.batting.ab > 0).sort((a, b) => {
+        // Calculate TB (total bases)
+        const tbA = (a.batting.h || 0) + (a.batting['2b'] || 0) + 2 * (a.batting['3b'] || 0) + 3 * (a.batting.hr || 0);
+        const tbB = (b.batting.h || 0) + (b.batting['2b'] || 0) + 2 * (b.batting['3b'] || 0) + 3 * (b.batting.hr || 0);
+        const slgA = tbA / a.batting.ab;
+        const slgB = tbB / b.batting.ab;
+        const obpA = (a.batting.h + a.batting.bb) / (a.batting.ab + a.batting.bb);
+        const obpB = (b.batting.h + b.batting.bb) / (b.batting.ab + b.batting.bb);
+        return (obpB + slgB) - (obpA + slgA);
+    });
+    if (byOPS.length > 0) {
+        const p0 = byOPS[0];
+        const tb0 = (p0.batting.h || 0) + (p0.batting['2b'] || 0) + 2 * (p0.batting['3b'] || 0) + 3 * (p0.batting.hr || 0);
+        const topOPS = (p0.batting.h + p0.batting.bb) / (p0.batting.ab + p0.batting.bb) + tb0 / p0.batting.ab;
+        const tied = byOPS.filter(p => {
+            const tb = (p.batting.h || 0) + (p.batting['2b'] || 0) + 2 * (p.batting['3b'] || 0) + 3 * (p.batting.hr || 0);
+            const ops = (p.batting.h + p.batting.bb) / (p.batting.ab + p.batting.bb) + tb / p.batting.ab;
+            return Math.abs(ops - topOPS) < 0.0001;
+        });
+        leaders.ops = tied.map(p => p.name).join(', ');
+    }
+
+    // HITS = max H
     const byHits = players.filter(p => p.batting.h > 0).sort((a, b) => b.batting.h - a.batting.h);
-    if (byHits.length > 0) leaders.hits = byHits[0].name;
+    if (byHits.length > 0) {
+        const topHits = byHits[0].batting.h;
+        const tied = byHits.filter(p => p.batting.h === topHits);
+        leaders.hits = tied.map(p => p.name).join(', ');
+    }
 
+    // RBI = max RBI
     const byRBI = players.filter(p => p.batting.rbi > 0).sort((a, b) => b.batting.rbi - a.batting.rbi);
-    if (byRBI.length > 0) leaders.rbi = byRBI[0].name;
+    if (byRBI.length > 0) {
+        const topRBI = byRBI[0].batting.rbi;
+        const tied = byRBI.filter(p => p.batting.rbi === topRBI);
+        leaders.rbi = tied.map(p => p.name).join(', ');
+    }
 
+    // SB = max SB
     const bySB = players.filter(p => p.batting.sb > 0).sort((a, b) => b.batting.sb - a.batting.sb);
-    if (bySB.length > 0) leaders.sb = bySB[0].name;
+    if (bySB.length > 0) {
+        const topSB = bySB[0].batting.sb;
+        const tied = bySB.filter(p => p.batting.sb === topSB);
+        leaders.sb = tied.map(p => p.name).join(', ');
+    }
 
-    const byWins = players.filter(p => p.pitching.w > 0).sort((a, b) => b.pitching.w - a.pitching.w);
-    if (byWins.length > 0) leaders.wins = byWins[0].name;
+    // WINS = leave blank (no wins yet)
+    // leaders.wins stays as '—'
+
+    // ERA = min ERA among pitchers with IP > 0, formula (ER*7)/IP
+    const byERA = players.filter(p => p.pitching.ip > 0).sort((a, b) => {
+        const eraA = (a.pitching.er * 7) / a.pitching.ip;
+        const eraB = (b.pitching.er * 7) / b.pitching.ip;
+        return eraA - eraB;
+    });
+    if (byERA.length > 0) {
+        const topERA = (byERA[0].pitching.er * 7) / byERA[0].pitching.ip;
+        const tied = byERA.filter(p => {
+            const era = (p.pitching.er * 7) / p.pitching.ip;
+            return Math.abs(era - topERA) < 0.0001;
+        });
+        leaders.era = tied.map(p => p.name).join(', ');
+    }
 
     // Build HTML
     let html = '';
 
-    // Team Stats Section
+    // Team Stats Section - Tile Grid Layout
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
-    html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Team Stats</h3>';
-    html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">';
-    html += `<div><strong>Record</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.w}-${teamStats.l}</span></div>`;
-    html += `<div><strong>Runs Scored</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.runsFor}</span></div>`;
-    html += `<div><strong>Runs Against</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.runsAgainst}</span></div>`;
-    html += `<div><strong>Run Diff</strong><br><span style="font-size: 18px; color: ${runDiff < 0 ? '#EF4444' : '#10B981'}; font-weight: 700;">${runDiff > 0 ? '+' : ''}${runDiff}</span></div>`;
-    html += `<div><strong>Team AVG</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamAvg}</span></div>`;
-    html += `<div><strong>Team ERA</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamERA}</span></div>`;
-    html += `<div><strong>Total Hits</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.hits}</span></div>`;
-    html += `<div><strong>Errors</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.errors}</span></div>`;
-    html += `<div><strong>BB Drawn</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.bbDrawn}</span></div>`;
-    html += `<div><strong>BB Allowed</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${teamStats.pitchingBB}</span></div>`;
-    html += `<div><strong>Free Bases Allowed</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${freeBasesAllowed}</span></div>`;
-    html += `<div><strong>Runs/Inning (Off)</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${runsPerInningOff}</span></div>`;
-    html += `<div><strong>Runs/Inning (Def)</strong><br><span style="font-size: 18px; color: #D4A017; font-weight: 700;">${runsPerInningDef}</span></div>`;
+    html += '<h3 style="margin-top: 0; margin-bottom: 15px; color: #D4A017;">Team Stats</h3>';
+    html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-bottom: 15px;">';
+
+    // Tile helper function
+    const makeTile = (label, value, accent = '#D4A017') => {
+        return `<div style="background-color: #222; border: 1px solid #333; border-left: 3px solid ${accent}; padding: 12px; border-radius: 4px; text-align: center;">
+            <div style="font-size: 11px; color: #999; font-weight: 600; margin-bottom: 8px; text-transform: uppercase;">${label}</div>
+            <div style="font-size: 20px; color: ${accent}; font-weight: 700;">${value}</div>
+        </div>`;
+    };
+
+    // Record tile
+    html += makeTile('Record', `${teamStats.w}-${teamStats.l}`);
+
+    // Run Differential combined tile
+    const runDiffColor = runDiff < 0 ? '#EF4444' : '#10B981';
+    html += `<div style="background-color: #222; border: 1px solid #333; border-left: 3px solid ${runDiffColor}; padding: 12px; border-radius: 4px;">
+        <div style="font-size: 11px; color: #999; font-weight: 600; margin-bottom: 8px; text-transform: uppercase;">Run Diff</div>
+        <div style="font-size: 16px; color: #D4A017; font-weight: 700; margin-bottom: 8px;">${teamStats.runsFor} / ${teamStats.runsAgainst}</div>
+        <div style="font-size: 12px; color: ${runDiffColor}; font-weight: 600;">+/-: ${runDiff > 0 ? '+' : ''}${runDiff}</div>
+    </div>`;
+
+    // Team AVG tile
+    html += makeTile('Team AVG', teamAvg);
+
+    // Team ERA tile
+    html += makeTile('Team ERA', teamERA);
+
+    // Total Hits tile
+    html += makeTile('Total Hits', teamStats.hits);
+
+    // Errors/Inning tile
+    html += makeTile('Errors/Inning', errorsPerInning, '#F59E0B');
+
+    // BB Drawn tile
+    html += makeTile('BB Drawn', teamStats.bbDrawn);
+
+    // BB Allowed tile
+    html += makeTile('BB Allowed', teamStats.pitchingBB);
+
+    // Free Bases Allowed tile
+    html += makeTile('Free Bases', freeBasesAllowed, '#EF4444');
+
+    // Runs/Inning (Off) tile
+    html += makeTile('Runs/Inn (Off)', runsPerInningOff, '#2B5DAA');
+
+    // Runs/Inning (Def) tile
+    html += makeTile('Runs/Inn (Def)', runsPerInningDef, '#2B5DAA');
+
     html += '</div>';
-    html += '<p style="margin: 12px 0 0 0; padding-top: 12px; border-top: 1px solid #333; font-style: italic; color: #888; font-size: 11px;">Free Bases Allowed = walks issued + errors. Tracks how often we give the other team 90 feet for free.</p>';
+    html += '<p style="margin: 0; padding-top: 12px; border-top: 1px solid #333; font-style: italic; color: #888; font-size: 11px;">Free Bases Allowed = walks issued + errors. Tracks how often we give the other team 90 feet for free.</p>';
     html += '</div>';
 
     // Team Leaders
