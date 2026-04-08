@@ -845,21 +845,18 @@ function buildElsewhere() {
     let cardsHtml = '';
     for (const team of teams) {
         const t = teamIntel[team];
-        const threat = t.threat || 'UNKNOWN';
+        const threat = t.threat || '';
         let borderStyle = '';
-        let badgeStyle = '';
+        let badgeHtml = '';
         if (threat === 'THREAT') {
             borderStyle = ' style="border-left-color: #888;"';
-            badgeStyle = ' style="background-color: #888;"';
-        } else if (threat === 'WATCH') {
-            borderStyle = ' style="border-left-color: #D4A017;"';
-            badgeStyle = ' style="background-color: #D4A017;"';
+            badgeHtml = `<span class="threat-badge" style="background-color: #888;">THREAT</span>`;
         }
 
         cardsHtml += `
                 <div class="team-card"${borderStyle}>
                     <div class="team-name">${t.fullName}</div>
-                    <span class="threat-badge"${badgeStyle}>${threat}</span>
+                    ${badgeHtml}
                     <div class="team-intel">${t.intel}</div>
                     <div class="team-next">Next vs DF: ${t.nextVsDF}</div>
                 </div>`;
