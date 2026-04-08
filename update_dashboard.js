@@ -1076,6 +1076,15 @@ html = html.replace(jvScoresRegex, `$1\n                ${buildJvScores()}\n    
 //   Threshold: min 2 games with stats for "confirmed" status; 1 game = "emerging"
 //   PIS = weighted total / games with data
 
+function latestLineForRole(gameLines, role) {
+    for (let i = gameLines.length - 1; i >= 0; i--) {
+        const gl = gameLines[i];
+        const line = role === 'pitcher' ? gl.pitLine : gl.hitLine;
+        if (line) return { date: gl.date, opp: gl.opp, line };
+    }
+    return null;
+}
+
 function computePIS(playerStats) {
     const results = [];
     const sevenDaysAgo = new Date(today);
@@ -1111,13 +1120,13 @@ function computePIS(playerStats) {
     }
 
     function buildGameLine(game) {
-        const parts = [];
         const h = game.hitting;
         const p = game.pitching;
+        let hitLine = '';
+        let pitLine = '';
         if (h && (h.h > 0 || h.bb > 0 || h.rbi > 0 || h.r > 0)) {
-            let line = '';
-            if (h.ab > 0) line += `${h.h}-${h.ab}`;
-            else if (h.h > 0) line += `${h.h}H`;
+            if (h.ab > 0) hitLine += `${h.h}-${h.ab}`;
+            else if (h.h > 0) hitLine += `${h.h}H`;
             const extras = [];
             if (h['2b'] > 0) extras.push(`${h['2b']} 2B`);
             if (h['3b'] > 0) extras.push(`${h['3b']} 3B`);
@@ -1125,26 +1134,25 @@ function computePIS(playerStats) {
             if (h.rbi > 0) extras.push(`${h.rbi} RBI`);
             if (h.r > 0) extras.push(`${h.r}R`);
             if (h.bb > 0) extras.push(`${h.bb} BB`);
-            if (extras.length > 0) line += `, ${extras.join(', ')}`;
-            parts.push(line);
+            if (extras.length > 0) hitLine += `, ${extras.join(', ')}`;
         }
         if (p && p.ip > 0) {
-            let line = `${p.ip}IP`;
+            pitLine = `${p.ip}IP`;
             const pExtras = [];
             if (p.so > 0) pExtras.push(`${p.so}K`);
             if (p.er > 0) pExtras.push(`${p.er}ER`);
             else pExtras.push('0ER');
             if (p.w) pExtras.push('W');
             if (p.sv) pExtras.push('SV');
-            line += `, ${pExtras.join(', ')}`;
-            parts.push(line);
+            pitLine += `, ${pExtras.join(', ')}`;
         }
-        if (parts.length > 0) {
+        if (hitLine || pitLine) {
             const d = new Date(game.date + 'T12:00:00');
-            return { date: `${formatShortMonth(d)} ${d.getDate()}`, opp: game.opp, line: parts.join(' | ') };
+            return { date: `${formatShortMonth(d)} ${d.getDate()}`, opp: game.opp, hitLine, pitLine };
         }
         return null;
     }
+
 
     function processPool(pool, poolLabel) {
         for (const [name, data] of Object.entries(pool)) {
@@ -1267,8 +1275,8 @@ function buildPlayersToWatch(pisData) {
         }
         html += `</div>`;
         // One-line stat summary (latest game)
-        if (p.gameLines.length > 0) {
-            const latest = p.gameLines[p.gameLines.length - 1];
+        const latest = latestLineForRole(p.gameLines, p.role);
+        if (latest) {
             html += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">vs ${latest.opp}: ${latest.line}</p>`;
         }
         html += `</div>`;
@@ -1352,7 +1360,8 @@ function buildPlayersToWatch(pisData) {
             sectionHtml += `</div>`;
             if (p.gameLines.length > 0) {
                 const latest = p.gameLines[p.gameLines.length - 1];
-                sectionHtml += `<div style="padding: 0 0 2px 8px;"><span style="color: #888; font-size: 9px;">vs ${latest.opp}: ${latest.line}</span></div>`;
+                const combined = [latest.hitLine, latest.pitLine].filter(Boolean).join(' | ');
+                if (combined) sectionHtml += `<div style="padding: 0 0 2px 8px;"><span style="color: #888; font-size: 9px;">vs ${latest.opp}: ${combined}</span></div>`;
             }
         }
         sectionHtml += `</div>`;
@@ -1411,8 +1420,8 @@ function buildJVPlayersToWatch(pisData) {
             t += `<span style="background: #33333322; color: #b0b0b0; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${badgeLabel} ${badgeVal}</span>`;
         }
         t += `</div>`;
-        if (p.gameLines.length > 0) {
-            const latest = p.gameLines[p.gameLines.length - 1];
+        const latest = latestLineForRole(p.gameLines, p.role);
+        if (latest) {
             t += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">vs ${latest.opp}: ${latest.line}</p>`;
         }
         t += `</div>`;
