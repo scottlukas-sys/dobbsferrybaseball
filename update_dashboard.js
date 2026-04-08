@@ -853,31 +853,12 @@ function buildElsewhere() {
             badgeHtml = `<span class="threat-badge" style="background-color: #888;">THREAT</span>`;
         }
 
-        // Freshness + source count footer
-        const sources = Array.isArray(t.sources) ? t.sources : [];
-        const srcCount = sources.length;
-        const lastDeep = t.lastDeepSweep || t.lastUpdated || null;
-        let ageStr = 'never';
-        let stale = true;
-        if (lastDeep) {
-            const d = new Date(lastDeep + 'T12:00:00');
-            const days = Math.floor((Date.now() - d.getTime()) / 86400000);
-            stale = days > 7;
-            ageStr = days <= 0 ? 'today' : days === 1 ? '1d ago' : `${days}d ago`;
-        }
-        const thin = srcCount < 2;
-        const needsEnrichment = stale || thin;
-        const metaColor = needsEnrichment ? '#D4A017' : '#888';
-        const enrichFlag = needsEnrichment ? ' · needs enrichment' : '';
-        const metaLine = `<div class="team-meta" style="color:${metaColor};font-size:10px;margin-top:4px;opacity:0.85;">updated ${ageStr} · ${srcCount} source${srcCount === 1 ? '' : 's'}${enrichFlag}</div>`;
-
         cardsHtml += `
                 <div class="team-card"${borderStyle}>
                     <div class="team-name">${t.fullName}</div>
                     ${badgeHtml}
                     <div class="team-intel">${t.intel}</div>
                     <div class="team-next">Next vs DF: ${t.nextVsDF}</div>
-                    ${metaLine}
                 </div>`;
     }
 
