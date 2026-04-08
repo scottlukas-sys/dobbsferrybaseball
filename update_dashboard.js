@@ -479,12 +479,13 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
 // ============================================================
 // Division B teams and their league game data
 const divBTeams = [
+    'Ardsley Panthers',
     'Blind Brook Trojans',
     'Dobbs Ferry Eagles',
-    'Hastings #D4A017 Jackets',
-    'Leffell School Lions',
+    'Hastings Yellow Jackets',
     'Rye Neck Panthers',
-    'Tuckahoe Tigers'
+    'Tuckahoe Tigers',
+    'Valhalla Vikings'
 ];
 
 // Map team names to schedule opponent names
@@ -502,13 +503,13 @@ function computeDivBStandings() {
 
     // Map short names to full standings names
     const nameMap = {
+        'Ardsley': 'Ardsley Panthers',
         'Blind Brook': 'Blind Brook Trojans',
         'Dobbs Ferry': 'Dobbs Ferry Eagles',
-        'Hastings': 'Hastings #D4A017 Jackets',
-        'Leffell School': 'Leffell School Lions',
-        'Leffell': 'Leffell School Lions',
+        'Hastings': 'Hastings Yellow Jackets',
         'Rye Neck': 'Rye Neck Panthers',
-        'Tuckahoe': 'Tuckahoe Tigers'
+        'Tuckahoe': 'Tuckahoe Tigers',
+        'Valhalla': 'Valhalla Vikings'
     };
 
     // DF league games from scores.varsity
