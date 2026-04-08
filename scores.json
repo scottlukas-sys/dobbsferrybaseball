@@ -1252,6 +1252,22 @@
       "loserRuns": 0,
       "note": "Non-league game. Hastings shut out 0-1 by Eastchester. Hastings now 1-2.",
       "source": "Hastings HS DigitalSports"
+    },
+    {
+      "date": "2026-04-06",
+      "team": "Sleepy Hollow",
+      "opponent": "Haldane",
+      "teamRuns": 12,
+      "oppRuns": 10,
+      "source": "@haldanebaseball Instagram"
+    },
+    {
+      "date": "2026-04-07",
+      "team": "Somers",
+      "opponent": "Tuckahoe",
+      "teamRuns": 5,
+      "oppRuns": 3,
+      "source": "@tuckahoevarsitybaseball Instagram (RHE approx)"
     }
   ],
   "teamIntel": {
