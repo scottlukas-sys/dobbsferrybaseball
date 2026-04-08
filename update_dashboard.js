@@ -176,7 +176,7 @@ const nextVarsityGame = nextVarsityGames[0];
 html = html.replace(
     /(<div class="stat-label">Record<\/div>\s*<div class="stat-value")(.*?)(>)[^<]*(.*?<\/div>)/,
     function(match, pre, attrs, gt, post) {
-        const color = vRecord.wins > vRecord.losses ? '#D4A017' : vRecord.losses > vRecord.wins ? '#EF4444' : '#FFFFFF';
+        const color = vRecord.wins > vRecord.losses ? '#D4A017' : vRecord.losses > vRecord.wins ? '#888' : '#FFFFFF';
         return `<div class="stat-label">Record</div>\n                    <div class="stat-value" style="color: ${color};">${vRecord.record}</div>`;
     }
 );
@@ -215,7 +215,7 @@ html = html.replace(
 html = html.replace(
     /(<div class="stat-label">Streak<\/div>\s*<div class="stat-value")(.*?)(>)[^<]*(.*?<\/div>)/,
     function(match) {
-        const color = vRecord.streak.startsWith('W') ? '#D4A017' : vRecord.streak.startsWith('L') ? '#EF4444' : '#FFFFFF';
+        const color = vRecord.streak.startsWith('W') ? '#D4A017' : vRecord.streak.startsWith('L') ? '#888' : '#FFFFFF';
         return `<div class="stat-label">Streak</div>\n                    <div class="stat-value" style="color: ${color};">${vRecord.streak}</div>`;
     }
 );
@@ -339,7 +339,7 @@ function buildWeeklyScores() {
                 line: `<span class="df-name">Dobbs Ferry ${g.df}</span>, ${g.opponent} ${g.opp}`,
                 isDF: true,
                 badge: won ? 'W' : 'L',
-                badgeColor: won ? '#D4A017' : '#EF4444',
+                badgeColor: won ? '#D4A017' : '#888',
                 source: g.source || 'Reported'
             });
         }
@@ -412,7 +412,7 @@ for (const [date, score] of Object.entries(scores.varsity)) {
     const dayNum = d.getDate();
     const won = score.df > score.opp;
     const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-    const resultColor = won ? '#D4A017' : '#EF4444';
+    const resultColor = won ? '#D4A017' : '#888';
 
     // Match the schedule row for this date and mark as completed
     // Pattern: <tr> or <tr class="completed"> with the date cell
@@ -449,7 +449,7 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
     const dayNum = d.getDate();
     const won = score.df > score.opp;
     let resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-    const resultColor = won ? '#D4A017' : '#EF4444';
+    const resultColor = won ? '#D4A017' : '#888';
 
     // Mark the matching JV row as completed (exactly 6 td columns — NOT 7 which would be varsity)
     // The 6th column (type/badge) should only contain text or spans, not another <td>
@@ -476,7 +476,7 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
 const divBTeams = [
     'Blind Brook Trojans',
     'Dobbs Ferry Eagles',
-    'Hastings Yellow Jackets',
+    'Hastings #D4A017 Jackets',
     'Leffell School Lions',
     'Rye Neck Panthers',
     'Tuckahoe Tigers'
@@ -499,7 +499,7 @@ function computeDivBStandings() {
     const nameMap = {
         'Blind Brook': 'Blind Brook Trojans',
         'Dobbs Ferry': 'Dobbs Ferry Eagles',
-        'Hastings': 'Hastings Yellow Jackets',
+        'Hastings': 'Hastings #D4A017 Jackets',
         'Leffell School': 'Leffell School Lions',
         'Leffell': 'Leffell School Lions',
         'Rye Neck': 'Rye Neck Panthers',
@@ -734,11 +734,11 @@ function buildElsewhere() {
         let borderStyle = '';
         let badgeStyle = '';
         if (threat === 'THREAT') {
-            borderStyle = ' style="border-left-color: #EF4444;"';
-            badgeStyle = ' style="background-color: #EF4444;"';
+            borderStyle = ' style="border-left-color: #888;"';
+            badgeStyle = ' style="background-color: #888;"';
         } else if (threat === 'WATCH') {
-            borderStyle = ' style="border-left-color: #F59E0B;"';
-            badgeStyle = ' style="background-color: #F59E0B;"';
+            borderStyle = ' style="border-left-color: #D4A017;"';
+            badgeStyle = ' style="background-color: #D4A017;"';
         }
 
         cardsHtml += `
@@ -821,7 +821,7 @@ html = html.replace(
 
 // Update JV Streak
 {
-    const streakColor = jvRecord.streak.startsWith('W') ? '#D4A017' : jvRecord.streak.startsWith('L') ? '#EF4444' : '#888';
+    const streakColor = jvRecord.streak.startsWith('W') ? '#D4A017' : jvRecord.streak.startsWith('L') ? '#888' : '#888';
     const streakDisplay = jvRecord.streak || '--';
     html = html.replace(
         /(<!-- JV Quick Stats -->[\s\S]*?<div class="stat-label">Streak<\/div>\s*<div class="stat-value")(.*?)(>)[^<]*([\s\S]*?<\/div>)/,
@@ -864,7 +864,7 @@ function buildNextFourJV() {
             const score = scores.jv[g.date];
             const won = score.df > score.opp;
             let resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-            const resultColor = won ? '#D4A017' : '#EF4444';
+            const resultColor = won ? '#D4A017' : '#888';
 
             cardsHtml += `
                     <div class="game-card" style="opacity: 0.6; border-color: ${resultColor};">
@@ -921,8 +921,8 @@ function buildJvScores() {
         const d = new Date(date + 'T12:00:00');
         const shortMonth = formatShortMonth(d);
         const won = g.df > g.opp;
-        const dfColor = won ? '#D4A017' : '#EF4444';
-        const badgeColor = won ? '#D4A017' : '#EF4444';
+        const dfColor = won ? '#D4A017' : '#888';
+        const badgeColor = won ? '#D4A017' : '#888';
         const badgeText = won ? 'W' : 'L';
 
         html += `
@@ -1098,7 +1098,7 @@ function buildPlayersToWatch(pisData) {
         oppByTeam[p.team].push(p);
     }
 
-    const tierColors = { confirmed: '#D4A017', trending: '#F59E0B', emerging: '#888', roster: '#555' };
+    const tierColors = { confirmed: '#D4A017', trending: '#D4A017', emerging: '#888', roster: '#555' };
     const tierLabels = { confirmed: 'CONFIRMED', trending: 'TRENDING', emerging: 'EMERGING', roster: 'ROSTER' };
 
     // --- DF Players: 2-column tile grid ---
@@ -1175,12 +1175,12 @@ function buildPlayersToWatch(pisData) {
                 for (const tag of p.tags) {
                     let tagColor = '#888';
                     let tagBg = '#2a2a2a';
-                    if (tag.includes('Champ')) { tagColor = '#FFD700'; tagBg = '#FFD70022'; }
+                    if (tag.includes('Champ')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
                     else if (tag.includes('Finalist')) { tagColor = '#C0C0C0'; tagBg = '#C0C0C022'; }
-                    else if (tag.includes('All-Section') || tag.includes('All-State')) { tagColor = '#E84393'; tagBg = '#E8439322'; }
-                    else if (tag.includes('Captain')) { tagColor = '#F59E0B'; tagBg = '#F59E0B22'; }
+                    else if (tag.includes('All-Section') || tag.includes('All-State')) { tagColor = '#888'; tagBg = '#88822'; }
+                    else if (tag.includes('Captain')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
                     else if (tag.includes('All-League') || tag.includes('Award')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
-                    else if (tag.includes('D1')) { tagColor = '#22C55E'; tagBg = '#22C55E22'; }
+                    else if (tag.includes('D1')) { tagColor = '#2B5DAA'; tagBg = '#2B5DAA22'; }
                     else if (tag.includes('Returning')) { tagColor = '#8B8B8B'; tagBg = '#8B8B8B22'; }
                     else if (tag.includes('Pitcher') || tag.includes('Senior')) { tagColor = '#7BA3CC'; tagBg = '#7BA3CC22'; }
                     sectionHtml += `<span style="font-size: 9px; color: ${tagColor}; background: ${tagBg}; padding: 1px 4px; border-radius: 2px; margin-right: 3px; white-space: nowrap;">${tag}</span>`;
@@ -1293,8 +1293,8 @@ function buildNewsLog(newsLog) {
             let color = '#ccc';
             let prefix = '';
             if (entry.highlight) { color = '#D4A017'; }
-            else if (entry.type === 'score') { color = '#F59E0B'; prefix = '⚾ '; }
-            else if (entry.type === 'venue') { color = '#F59E0B'; }
+            else if (entry.type === 'score') { color = '#D4A017'; prefix = '⚾ '; }
+            else if (entry.type === 'venue') { color = '#D4A017'; }
             else if (entry.type === 'intel') { color = '#aaa'; }
             else if (entry.type === 'source') { color = '#777'; }
 
@@ -1581,7 +1581,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += makeTile('Record', `${teamStats.w}-${teamStats.l}`);
 
     // Run Differential combined tile
-    const runDiffColor = runDiff < 0 ? '#EF4444' : '#10B981';
+    const runDiffColor = runDiff < 0 ? '#888' : '#2B5DAA';
     html += `<div style="background-color: #222; border: 1px solid #333; border-left: 3px solid ${runDiffColor}; padding: 12px; border-radius: 4px;">
         <div style="font-size: 11px; color: #999; font-weight: 600; margin-bottom: 8px; text-transform: uppercase;">Run Diff</div>
         <div style="font-size: 16px; color: #D4A017; font-weight: 700; margin-bottom: 8px;">${teamStats.runsFor} / ${teamStats.runsAgainst}</div>
@@ -1598,7 +1598,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += makeTile('Total Hits', teamStats.hits);
 
     // Errors/Inning tile
-    html += makeTile('Errors/Inning', errorsPerInning, '#F59E0B');
+    html += makeTile('Errors/Inning', errorsPerInning, '#D4A017');
 
     // BB Drawn tile
     html += makeTile('BB Drawn', teamStats.bbDrawn);
@@ -1607,7 +1607,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += makeTile('BB Allowed', teamStats.pitchingBB);
 
     // Free Bases Allowed tile
-    html += makeTile('Free Bases', freeBasesAllowed, '#EF4444');
+    html += makeTile('Free Bases', freeBasesAllowed, '#888');
 
     // Runs/Inning (Off) tile
     html += makeTile('Runs/Inn (Off)', runsPerInningOff, '#2B5DAA');
