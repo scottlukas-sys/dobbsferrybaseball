@@ -1363,7 +1363,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
 
     const players = Object.entries(jvPlayers).map(([name, data]) => {
         const games = data.games || [];
-        let batting = { pa: 0, ab: 0, h: 0, r: 0, rbi: 0, bb: 0, so: 0, sac: 0, sb: 0 };
+        let batting = { pa: 0, ab: 0, h: 0, r: 0, rbi: 0, bb: 0, so: 0, sac: 0, sb: 0, hbp: 0 };
         let pitching = { gp: 0, gs: 0, w: 0, l: 0, sv: 0, ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0 };
 
         for (const game of games) {
@@ -1377,7 +1377,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
                 batting.so += h.so || 0;
                 batting.sac += h.sac || 0;
                 batting.sb += h.sb || 0;
-                batting.pa += (h.ab || 0) + (h.bb || 0) + (h.sac || 0);
+                batting.hbp += h.hbp || 0;
+                batting.pa += (h.ab || 0) + (h.bb || 0) + (h.sac || 0) + (h.hbp || 0);
             }
             if (game.pitching) {
                 const p = game.pitching;
@@ -1405,7 +1406,9 @@ function generateJVStatsHTML(playerStats, gameResults) {
         hits: 0, ab: 0,
         ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0,
         errors: 0, bbDrawn: 0, pitchingBB: 0,
-        games: Object.keys(jvGames).length
+        batSO: 0, batPA: 0, batHBP: 0,
+        games: Object.keys(jvGames).length,
+        mercied: 0
     };
 
     for (const [date, game] of Object.entries(jvGames)) {
@@ -1414,6 +1417,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
         teamStats.runsFor += game.df || 0;
         teamStats.runsAgainst += game.opp || 0;
         teamStats.errors += game.errors || 0;
+        if (game.mercy) teamStats.mercied++;
     }
 
     for (const player of players) {
@@ -1427,6 +1431,9 @@ function generateJVStatsHTML(playerStats, gameResults) {
         teamStats.bb += player.pitching.bb;
         teamStats.pitchingBB += player.pitching.bb || 0;
         teamStats.so += player.pitching.so;
+        teamStats.batSO += player.batting.so || 0;
+        teamStats.batPA += player.batting.pa || 0;
+        teamStats.batHBP += player.batting.hbp || 0;
     }
 
     const teamAvg = teamStats.ab > 0 ? fmtAvg(teamStats.hits / teamStats.ab) : '.000';
@@ -1569,59 +1576,34 @@ function generateJVStatsHTML(playerStats, gameResults) {
     // Build HTML
     let html = '';
 
-    // Team Stats Section - Tile Grid Layout
+    // Team Stats Section - 6-line layout
+    const G = teamStats.games || 0;
+    const mercied = teamStats.mercied || 0;
+    const fullG = G - mercied;
+    const per = (n) => G > 0 ? (n / G).toFixed(1) : '—';
+    const rPG = per(teamStats.runsFor);
+    const bbPG = per(teamStats.bbDrawn);
+    const kRate = teamStats.batPA > 0 ? Math.round((teamStats.batSO / teamStats.batPA) * 100) + '%' : '—';
+    const whip = teamStats.ip > 0 ? ((teamStats.pitchingBB + teamStats.h) / teamStats.ip).toFixed(2) : '—';
+    const k7 = teamStats.ip > 0 ? ((teamStats.so * 7) / teamStats.ip).toFixed(1) : '—';
+    const kbb = teamStats.pitchingBB > 0 ? (teamStats.so / teamStats.pitchingBB).toFixed(1) : (teamStats.so > 0 ? '∞' : '—');
+    const raPG = per(teamStats.runsAgainst);
+    const bbAllowedPG = per(teamStats.pitchingBB);
+    const ePG = per(teamStats.errors);
+    const fbPG = per(freeBasesAllowed);
+    const runDiffPG = G > 0 ? (runDiff / G).toFixed(1) : '—';
+    const runDiffPGStr = (runDiff >= 0 ? '+' : '') + runDiffPG;
+    const runDiffColor = runDiff < 0 ? '#c44' : '#2B5DAA';
+
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
-    html += '<h3 style="margin-top: 0; margin-bottom: 15px; color: #D4A017;">Team Stats</h3>';
-    html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-bottom: 15px;">';
-
-    // Tile helper function
-    const makeTile = (label, value, accent = '#D4A017') => {
-        return `<div style="background-color: #222; border: 1px solid #333; border-left: 3px solid ${accent}; padding: 12px; border-radius: 4px; text-align: center;">
-            <div style="font-size: 11px; color: #999; font-weight: 600; margin-bottom: 8px; text-transform: uppercase;">${label}</div>
-            <div style="font-size: 20px; color: ${accent}; font-weight: 700;">${value}</div>
-        </div>`;
-    };
-
-    // Record tile
-    html += makeTile('Record', `${teamStats.w}-${teamStats.l}`);
-
-    // Run Differential combined tile
-    const runDiffColor = runDiff < 0 ? '#888' : '#2B5DAA';
-    html += `<div style="background-color: #222; border: 1px solid #333; border-left: 3px solid ${runDiffColor}; padding: 12px; border-radius: 4px;">
-        <div style="font-size: 11px; color: #999; font-weight: 600; margin-bottom: 8px; text-transform: uppercase;">Run Diff</div>
-        <div style="font-size: 16px; color: #D4A017; font-weight: 700; margin-bottom: 8px;">${teamStats.runsFor} / ${teamStats.runsAgainst}</div>
-        <div style="font-size: 12px; color: ${runDiffColor}; font-weight: 600;">+/-: ${runDiff > 0 ? '+' : ''}${runDiff}</div>
-    </div>`;
-
-    // Team AVG tile
-    html += makeTile('Team AVG', teamAvg);
-
-    // Team ERA tile
-    html += makeTile('Team ERA', teamERA);
-
-    // Total Hits tile
-    html += makeTile('Total Hits', teamStats.hits);
-
-    // Errors/Inning tile
-    html += makeTile('Errors/Inning', errorsPerInning, '#D4A017');
-
-    // BB Drawn tile
-    html += makeTile('BB Drawn', teamStats.bbDrawn);
-
-    // BB Allowed tile
-    html += makeTile('BB Allowed', teamStats.pitchingBB);
-
-    // Free Bases Allowed tile
-    html += makeTile('Free Bases', freeBasesAllowed, '#888');
-
-    // Runs/Inning (Off) tile
-    html += makeTile('Runs/Inn (Off)', runsPerInningOff, '#2B5DAA');
-
-    // Runs/Inning (Def) tile
-    html += makeTile('Runs/Inn (Def)', runsPerInningDef, '#2B5DAA');
-
+    html += `<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">JV Eagles 2026 — Through ${G} game${G===1?'':'s'} (${fullG} full, ${mercied} mercied)</h3>`;
+    html += '<div style="font-size: 13px; line-height: 1.9; color: #ddd;">';
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Record:</strong> ${teamStats.w}-${teamStats.l}</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Hitting:</strong> AVG ${teamAvg} &nbsp;|&nbsp; ${rPG} R/G &nbsp;|&nbsp; ${bbPG} BB/G &nbsp;|&nbsp; ${kRate} K rate</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Pitching:</strong> ERA ${teamERA} &nbsp;|&nbsp; WHIP ${whip} &nbsp;|&nbsp; K/7 ${k7} &nbsp;|&nbsp; K/BB ${kbb} &nbsp;|&nbsp; RA/G ${raPG} &nbsp;|&nbsp; BB/G ${bbAllowedPG}</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Defense:</strong> ${ePG} E/G &nbsp;|&nbsp; Free bases allowed/G: ${fbPG}</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:90px;">Run diff/G:</strong> <span style="color:${runDiffColor}; font-weight:700;">${runDiffPGStr}</span></div>`;
     html += '</div>';
-    html += '<p style="margin: 0; padding-top: 12px; border-top: 1px solid #333; font-style: italic; color: #888; font-size: 11px;">Free Bases Allowed = walks issued + errors. Tracks how often we give the other team 90 feet for free.</p>';
     html += '</div>';
 
     // Team Leaders
