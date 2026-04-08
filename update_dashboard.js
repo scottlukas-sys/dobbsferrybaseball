@@ -86,11 +86,11 @@ const varsitySchedule = [
     { date: '2026-04-28', display: 'Apr 28', day: 'Tue', time: '4:30 PM', opponent: 'Hastings', location: 'Away', venue: 'Hastings HS', type: 'League' },
     { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck', location: 'Away', venue: 'Rye Neck HS', type: 'League' },
     { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck', location: 'Home', venue: 'Gould Park', type: 'League' },
-    { date: '2026-05-04', display: 'May 4', day: 'Mon', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Home', venue: 'Gould Park', type: 'Non-league' },
-    { date: '2026-05-06', display: 'May 6', day: 'Wed', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Away', venue: 'Parkway Oval', type: 'Non-league' },
-    { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell School', location: 'Away', venue: 'Leffell School', type: 'Non-league' },
+    { date: '2026-05-04', display: 'May 4', day: 'Mon', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Home', venue: 'Gould Park', type: 'League' },
+    { date: '2026-05-06', display: 'May 6', day: 'Wed', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Away', venue: 'Parkway Oval', type: 'League' },
+    { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell School', location: 'Away', venue: 'Leffell School', type: 'League' },
     { date: '2026-05-11', display: 'May 11', day: 'Mon', time: '4:30 PM', opponent: 'Westlake', location: 'Home', venue: 'Gould Park', type: 'Game' },
-    { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell School', location: 'Home', venue: 'Gould Park', type: 'Non-league' },
+    { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell School', location: 'Home', venue: 'Gould Park', type: 'League' },
 ];
 
 const jvSchedule = [
@@ -478,21 +478,21 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
 // 6b. UPDATE DIVISION B STANDINGS
 // ============================================================
 // ============================================================
-// CLASS B LEAGUE — LOCKED ROSTER (do not modify without authoritative source)
-// Per Section 1 Class B standings (screenshot 2026-04-08, docs/class-b-lock.md).
-// Canonical 8 teams. This list is the SINGLE SOURCE OF TRUTH for league standings.
-// If any future source shows different teams, DO NOT silently edit this list.
-// Verify against Section 1 Class B standings page first and update docs/class-b-lock.md.
+// CONFERENCE 3-D LEAGUE — LOCKED ROSTER (do not modify without authoritative source)
+// Dobbs Ferry's actual regular-season league is Section 1 Conference 3, Division D —
+// a 6-team sub-division within the Class B playoff bracket. Confirmed via MaxPreps live
+// standings and individual game-page "conference" labels (2026-04-08).
+// Class B is the NYSPHSAA playoff enrollment class (multiple sub-divisions pooled for
+// sectional championship), NOT the regular-season league. Do not conflate the two.
+// Single source of truth: docs/conference-3d-lock.md
 // ============================================================
 const divBTeams = [
-    'Blind Brook Trojans',
-    'Briarcliff Bears',
     'Dobbs Ferry Eagles',
+    'Blind Brook Trojans',
     'Hastings Yellow Jackets',
-    'Pawling Tigers',
-    'Putnam Valley Tigers',
     'Rye Neck Panthers',
-    'Valhalla Vikings'
+    'The Leffell School Lions',
+    'Tuckahoe Tigers'
 ];
 
 // Map team names to schedule opponent names
@@ -508,16 +508,16 @@ function computeDivBStandings() {
         standings[team] = { w: 0, l: 0, rf: 0, ra: 0, results: [] };
     }
 
-    // Map short names to full standings names
+    // Map short names to full standings names (Conference 3-D only)
     const nameMap = {
-        'Blind Brook': 'Blind Brook Trojans',
-        'Briarcliff': 'Briarcliff Bears',
         'Dobbs Ferry': 'Dobbs Ferry Eagles',
+        'Blind Brook': 'Blind Brook Trojans',
         'Hastings': 'Hastings Yellow Jackets',
-        'Pawling': 'Pawling Tigers',
-        'Putnam Valley': 'Putnam Valley Tigers',
         'Rye Neck': 'Rye Neck Panthers',
-        'Valhalla': 'Valhalla Vikings'
+        'Leffell School': 'The Leffell School Lions',
+        'Leffell': 'The Leffell School Lions',
+        'The Leffell School': 'The Leffell School Lions',
+        'Tuckahoe': 'Tuckahoe Tigers'
     };
 
     // DF league games from scores.varsity
@@ -691,7 +691,7 @@ const standingsSubtitle = leagueGamesPlayed
     ? `Updated ${formatLongDate(today)}.`
     : 'League play begins April 20.';
 
-const standingsRegex = /(<!-- Standings -->\s*<div class="card">\s*<h2>(?:Class B|Division B) Standings<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- What's Happening))/;
+const standingsRegex = /(<!-- Standings -->\s*<div class="card">\s*<h2>(?:Class B|Division B|Conference 3-D) Standings<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- What's Happening))/;
 html = html.replace(standingsRegex, `$1
                 <p style="font-size: 12px; color: #888888; margin-bottom: 15px;">${standingsSubtitle}</p>
                 <table>
@@ -972,31 +972,31 @@ function computePIS(playerStats) {
     const sevenDaysAgoStr = sevenDaysAgo.toISOString().split('T')[0];
 
     function scoreGame(game) {
-        let pts = 0;
+        let hitPts = 0, pitPts = 0;
         const h = game.hitting;
         const p = game.pitching;
 
         if (h) {
             const hits = h.h || 0;
-            pts += hits * 1;                              // hits
-            pts += (h['2b'] || 0) * 1;                    // 2B bonus
-            pts += (h['3b'] || 0) * 1;                    // 3B bonus
-            pts += (h.hr || 0) * 2;                       // HR bonus
-            pts += (h.rbi || 0) * 1.5;                    // RBI
-            pts += (h.r || 0) * 1;                        // runs scored
-            pts += (h.bb || 0) * 0.5;                     // walks
-            if (hits >= 2) pts += 2;                      // multi-hit bonus
+            hitPts += hits * 1;
+            hitPts += (h['2b'] || 0) * 1;
+            hitPts += (h['3b'] || 0) * 1;
+            hitPts += (h.hr || 0) * 2;
+            hitPts += (h.rbi || 0) * 1.5;
+            hitPts += (h.r || 0) * 1;
+            hitPts += (h.bb || 0) * 0.5;
+            if (hits >= 2) hitPts += 2;
         }
 
         if (p) {
-            pts += (p.w || 0) * 3;                        // win
-            pts += (p.sv || 0) * 2;                       // save
-            pts += (p.ip || 0) * 1;                       // innings pitched
-            pts += (p.so || 0) * 1;                       // strikeouts
-            pts -= (p.er || 0) * 1.5;                     // earned runs against
+            pitPts += (p.w || 0) * 3;
+            pitPts += (p.sv || 0) * 2;
+            pitPts += (p.ip || 0) * 1;
+            pitPts += (p.so || 0) * 1;
+            pitPts -= (p.er || 0) * 1.5;
         }
 
-        return pts;
+        return { total: hitPts + pitPts, hit: hitPts, pit: pitPts };
     }
 
     function buildGameLine(game) {
@@ -1041,6 +1041,8 @@ function computePIS(playerStats) {
             const tags = data.tags || [];
 
             let totalWeighted = 0;
+            let hitTotal = 0;
+            let pitTotal = 0;
             let gamesWithStats = 0;
             const gameLines = [];
 
@@ -1058,23 +1060,34 @@ function computePIS(playerStats) {
 
                 gamesWithStats++;
                 const gamePts = scoreGame(game);
-                totalWeighted += gamePts;
+                totalWeighted += gamePts.total;
+                hitTotal += gamePts.hit;
+                pitTotal += gamePts.pit;
 
                 const gl = buildGameLine(game);
                 if (gl) gameLines.push(gl);
             }
 
-            const pis = gamesWithStats > 0 ? totalWeighted / gamesWithStats : 0;
+            // PIS is now CUMULATIVE (season total), not averaged.
+            // Hitters and pitchers are split into separate leaderboards downstream
+            // so cumulative totals don't inflate pitchers relative to position players.
+            const pis = totalWeighted;
             const tier = gamesWithStats >= 3 ? 'confirmed' : gamesWithStats >= 2 ? 'trending' : gamesWithStats >= 1 ? 'emerging' : 'roster';
 
             // Include player if they have stats OR tags/notes (roster intel)
             if (gamesWithStats === 0 && tags.length === 0 && !data.note) continue;
 
+            // Role classification: pitcher if pitching points dominate, else hitter.
+            // Two-way players go where their larger contribution is.
+            const role = pitTotal > hitTotal ? 'pitcher' : 'hitter';
             results.push({
                 name,
                 team: data.team,
                 pool: poolLabel,
                 pis: Math.round(pis * 10) / 10,
+                hitPts: Math.round(hitTotal * 10) / 10,
+                pitPts: Math.round(pitTotal * 10) / 10,
+                role,
                 gamesWithStats,
                 tier,
                 gameLines,
@@ -1103,7 +1116,15 @@ function computePIS(playerStats) {
 function buildPlayersToWatch(pisData) {
     const dfPlayers = pisData.filter(p => p.pool === 'df');
     const oppPlayers = pisData.filter(p => p.pool === 'opponent');
-    const dfDisplay = dfPlayers.slice(0, 6);
+    // Split DF into hitters and pitchers, each ranked by their role-specific cumulative points
+    const dfHitters = dfPlayers
+        .filter(p => p.role === 'hitter' && p.gamesWithStats > 0)
+        .sort((a, b) => (b.hitPts || 0) - (a.hitPts || 0))
+        .slice(0, 6);
+    const dfPitchers = dfPlayers
+        .filter(p => p.role === 'pitcher' && p.gamesWithStats > 0)
+        .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
+        .slice(0, 6);
 
     // Group opponents by team
     const oppByTeam = {};
@@ -1119,12 +1140,15 @@ function buildPlayersToWatch(pisData) {
     function renderDFTile(p) {
         const tierColor = tierColors[p.tier] || '#888';
         const tierLabel = tierLabels[p.tier] || p.tier.toUpperCase();
+        // Show role-specific cumulative score on the badge
+        const badgeVal = p.role === 'pitcher' ? (p.pitPts || p.pis) : (p.hitPts || p.pis);
+        const badgeLabel = p.role === 'pitcher' ? 'PIT' : 'HIT';
         let html = `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
         // Name row with PIS badge
         html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
         html += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
-        if (p.pis > 0) {
-            html += `<span style="background: ${tierColor}22; color: ${tierColor}; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">PIS ${p.pis}</span>`;
+        if (badgeVal > 0) {
+            html += `<span style="background: ${tierColor}22; color: ${tierColor}; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${badgeLabel} ${badgeVal}</span>`;
         }
         html += `</div>`;
         // One-line stat summary (latest game)
@@ -1138,17 +1162,24 @@ function buildPlayersToWatch(pisData) {
 
     let sectionHtml = '';
 
-    // DF Section
+    // DF Section — split into Top Hitters and Top Pitchers
     sectionHtml += `<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px; border-left: 3px solid #2B5DAA;">`;
     sectionHtml += `<h3 style="margin-top: 0; margin-bottom: 10px; color: #2B5DAA;">Dobbs Ferry Eagles</h3>`;
-    if (dfDisplay.length === 0) {
+    if (dfHitters.length === 0 && dfPitchers.length === 0) {
         sectionHtml += `<p style="color: #888; font-size: 13px;">No player stats recorded yet.</p>`;
     } else {
-        sectionHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
-        for (const p of dfDisplay) {
-            sectionHtml += renderDFTile(p);
+        if (dfHitters.length > 0) {
+            sectionHtml += `<h4 style="margin: 0 0 6px 0; color: #b0b0b0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Top Hitters</h4>`;
+            sectionHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">`;
+            for (const p of dfHitters) sectionHtml += renderDFTile(p);
+            sectionHtml += `</div>`;
         }
-        sectionHtml += `</div>`;
+        if (dfPitchers.length > 0) {
+            sectionHtml += `<h4 style="margin: 0 0 6px 0; color: #b0b0b0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Top Pitchers</h4>`;
+            sectionHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
+            for (const p of dfPitchers) sectionHtml += renderDFTile(p);
+            sectionHtml += `</div>`;
+        }
         // DF record summary
         const vRec = computeRecord(scores.varsity);
         const scoreDates = Object.keys(scores.varsity).sort();
@@ -1233,36 +1264,52 @@ function buildPlayersToWatch(pisData) {
 // Compute PIS and rebuild Players to Watch
 const pisData = computePIS(scores.playerStats || {});
 
-const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Hitting: H + XBH bonus + RBI(1.5x) + R + BB(0.5x) + multi-hit(+2). Pitching: W(3) + SV(2) + IP + SO - ER(1.5x). Season to date (no recency weighting). Top 6 Dobbs Ferry players shown.</p>`;
+const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters ranked by: H + XBH bonus + RBI(1.5) + R + BB(0.5) + multi-hit bonus. Pitchers ranked by: W(3) + SV(2) + IP + SO − ER(1.5). Hitters and pitchers are scored on separate leaderboards so volume-rich roles don't crowd out position players.</p>`;
 
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
 html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n            </div>\n\n            `);
 
 // JV Players to Watch (top 6 by PIS)
 function buildJVPlayersToWatch(pisData) {
-    const jvPlayers = pisData.filter(p => p.pool === 'jv').slice(0, 6);
-    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Ranked by PIS (Player Impact Score). Hitting: H + XBH bonus + RBI(1.5x) + R + BB(0.5x) + multi-hit(+2). Pitching: W(3) + SV(2) + IP + SO - ER(1.5x). Season to date (no recency weighting). Top 6 JV players shown.</p>`;
-    if (jvPlayers.length === 0) {
+    const jvAll = pisData.filter(p => p.pool === 'jv' && p.gamesWithStats > 0);
+    const jvHitters = jvAll.filter(p => p.role === 'hitter').sort((a, b) => (b.hitPts || 0) - (a.hitPts || 0)).slice(0, 6);
+    const jvPitchers = jvAll.filter(p => p.role === 'pitcher').sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0)).slice(0, 6);
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters and pitchers are scored on separate leaderboards.</p>`;
+    if (jvHitters.length === 0 && jvPitchers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
+    }
+    function tile(p) {
+        const badgeVal = p.role === 'pitcher' ? (p.pitPts || p.pis) : (p.hitPts || p.pis);
+        const badgeLabel = p.role === 'pitcher' ? 'PIT' : 'HIT';
+        let t = `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
+        t += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
+        t += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
+        if (badgeVal > 0) {
+            t += `<span style="background: #33333322; color: #b0b0b0; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${badgeLabel} ${badgeVal}</span>`;
+        }
+        t += `</div>`;
+        if (p.gameLines.length > 0) {
+            const latest = p.gameLines[p.gameLines.length - 1];
+            t += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">vs ${latest.opp}: ${latest.line}</p>`;
+        }
+        t += `</div>`;
+        return t;
     }
     let html = jvExplainer;
     html += `<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; border-left: 3px solid #2B5DAA;">`;
-    html += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
-    for (const p of jvPlayers) {
-        html += `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
-        html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
-        html += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
-        if (p.pis > 0) {
-            html += `<span style="background: #88882; color: #888; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">PIS ${p.pis}</span>`;
-        }
-        html += `</div>`;
-        if (p.gameLines.length > 0) {
-            const latest = p.gameLines[p.gameLines.length - 1];
-            html += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">vs ${latest.opp}: ${latest.line}</p>`;
-        }
+    if (jvHitters.length > 0) {
+        html += `<h4 style="margin: 0 0 6px 0; color: #b0b0b0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Top Hitters</h4>`;
+        html += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">`;
+        for (const p of jvHitters) html += tile(p);
         html += `</div>`;
     }
-    html += `</div></div>`;
+    if (jvPitchers.length > 0) {
+        html += `<h4 style="margin: 0 0 6px 0; color: #b0b0b0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Top Pitchers</h4>`;
+        html += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
+        for (const p of jvPitchers) html += tile(p);
+        html += `</div>`;
+    }
+    html += `</div>`;
     return html;
 }
 const jvPlayersRegex = /(<!-- JV Players to Watch[\s\S]*?<div class="card">\s*<h2>JV PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- JV Intel))/;
