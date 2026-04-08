@@ -60,6 +60,11 @@ function parseGameDate(dateStr) {
     return new Date(2026, month, day);
 }
 
+// Format averages in TV style: no leading zero. ".333" not "0.333", "1.000" stays "1.000"
+function fmtAvg(n) {
+    return n.toFixed(3).replace(/^0\./, '.');
+}
+
 // ============================================================
 // VARSITY SCHEDULE (hardcoded from the HTML)
 // ============================================================
@@ -1424,7 +1429,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
         teamStats.so += player.pitching.so;
     }
 
-    const teamAvg = teamStats.ab > 0 ? (teamStats.hits / teamStats.ab).toFixed(3) : '.000';
+    const teamAvg = teamStats.ab > 0 ? fmtAvg(teamStats.hits / teamStats.ab) : '.000';
     const teamERA = teamStats.ip > 0 ? ((teamStats.er * 7) / teamStats.ip).toFixed(2) : '—';
     const runDiff = teamStats.runsFor - teamStats.runsAgainst;
     const freeBasesAllowed = teamStats.pitchingBB + teamStats.errors;
@@ -1639,8 +1644,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += '<table style="width: 100%; font-size: 12px; border-collapse: collapse;">';
     html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">PA</th><th style="text-align: center; padding: 8px;">AB</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">AVG</th><th style="text-align: center; padding: 8px;">OPS</th><th style="text-align: center; padding: 8px;">R</th><th style="text-align: center; padding: 8px;">RBI</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">SAC</th><th style="text-align: center; padding: 8px;">SB</th></tr></thead>';
     html += '<tbody>';
-    for (const player of players.filter(p => p.batting.ab > 0)) {
-        const avg = (player.batting.h / player.batting.ab).toFixed(3);
+    for (const player of players.filter(p => p.batting.pa > 0)) {
+        const avg = player.batting.ab > 0 ? fmtAvg(player.batting.h / player.batting.ab) : '.000';
         html += `<tr style="border-bottom: 1px solid #222;"><td style="padding: 8px;">${player.name}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.pa}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.ab}</td>`;
