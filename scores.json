@@ -1186,6 +1186,29 @@
       },
       "partial": true,
       "text": "Daily sweep PARTIAL. DF DigitalSports (V+JV) and IG @dfeaglesbaseball/@dfvarsity_baseball confirmed no new data since 4/7 Edgemont W 5-1. Sleepy Hollow game scheduled today 4/8 4:30 PM at Gould Park \u2014 not yet played. No schedule changes in Gmail. Opponent and Section One sweep deferred."
+    },
+    {
+      "date": "2026-04-08",
+      "type": "daily-sweep",
+      "sourcesChecked": {
+        "maxpreps_df_varsity": "ok",
+        "maxpreps_df_jv": "empty",
+        "section_one_athletics_varsity": "unreachable:no_scores_portal_found",
+        "section_one_athletics_jv": "unreachable:no_scores_portal_found",
+        "gamedayone": "unreachable:not_checked",
+        "digitalsports_df": "ok_ajax_partial",
+        "digitalsports_opponents": "unreachable:time",
+        "digitalsports_divb": "unreachable:time",
+        "ig_dfeaglesbaseball": "unreachable:login_required",
+        "ig_dfvarsity_baseball": "unreachable:login_required",
+        "ig_dobbsferryjvboys": "unreachable:login_required",
+        "ig_df_diamond_club": "unreachable:login_required",
+        "ig_opponents": "unreachable:login_required",
+        "gmail_schedule": "ok",
+        "dfsd_athletics": "unreachable:not_checked"
+      },
+      "partial": true,
+      "text": "Daily sweep partial \u2014 Instagram required login, Section One Athletics scores portal not located, remaining DigitalSports opponents not reached due to run constraints. No new scores found from reachable sources; MaxPreps confirms DF Varsity 1-0 but lags scores.json entries for Irvington and Saunders. Coach Turenchalk noted upcoming extra JV game with Irvington (date TBD)."
     }
   ],
   "opponentResults": [
