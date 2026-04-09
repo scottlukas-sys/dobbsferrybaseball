@@ -1830,146 +1830,58 @@
     },
     {
       "date": "2026-03-23",
-      "team": "Blind Brook",
-      "opponent": "Pawling",
-      "teamScore": 5,
-      "oppScore": 15,
-      "source": "digitalsports:blindbrook"
-    },
-    {
-      "date": "2026-03-26",
-      "team": "Blind Brook",
-      "opponent": "Edgemont",
-      "teamScore": 8,
-      "oppScore": 7,
+      "winner": "Pawling",
+      "winnerRuns": 15,
+      "loser": "Blind Brook",
+      "loserRuns": 5,
       "source": "digitalsports:blindbrook"
     },
     {
       "date": "2026-03-30",
-      "team": "Hastings",
-      "opponent": "Pelham",
-      "teamScore": 0,
-      "oppScore": 2,
+      "winner": "Pelham",
+      "winnerRuns": 2,
+      "loser": "Hastings",
+      "loserRuns": 0,
       "source": "digitalsports:hastings"
     },
     {
-      "date": "2026-03-31",
-      "team": "Hastings",
-      "opponent": "Westlake",
-      "teamScore": 2,
-      "oppScore": 11,
-      "source": "digitalsports:hastings"
-    },
-    {
-      "date": "2026-04-04",
-      "team": "Hastings",
-      "opponent": "Eastchester",
-      "teamScore": 0,
-      "oppScore": 1,
-      "source": "digitalsports:hastings"
-    },
-    {
-      "date": "2026-03-26",
-      "team": "Sleepy Hollow",
-      "opponent": "Irvington",
-      "teamScore": 8,
-      "oppScore": 9,
-      "source": "digitalsports:sleepyhollow"
-    },
-    {
-      "date": "2026-03-31",
-      "team": "Sleepy Hollow",
-      "opponent": "Briarcliff",
-      "teamScore": 0,
-      "oppScore": 14,
-      "source": "digitalsports:sleepyhollow"
-    },
-    {
-      "date": "2026-04-02",
-      "team": "Sleepy Hollow",
-      "opponent": "Rye Neck",
-      "teamScore": 5,
-      "oppScore": 15,
-      "source": "digitalsports:sleepyhollow"
-    },
-    {
-      "date": "2026-04-06",
-      "team": "Sleepy Hollow",
-      "opponent": "Haldane",
-      "teamScore": 12,
-      "oppScore": 10,
-      "source": "digitalsports:sleepyhollow"
-    },
-    {
-      "date": "2026-03-25",
-      "team": "Rye Neck",
-      "opponent": "Pawling",
-      "teamScore": 8,
-      "oppScore": 2,
-      "source": "digitalsports:ryeneck"
-    },
-    {
-      "date": "2026-04-01",
-      "team": "Rye Neck",
-      "opponent": "Haldane",
-      "teamScore": 13,
-      "oppScore": 1,
+      "date": "2026-04-08",
+      "winner": "Pawling",
+      "winnerRuns": 6,
+      "loser": "Rye Neck",
+      "loserRuns": 0,
       "source": "digitalsports:ryeneck"
     },
     {
       "date": "2026-04-08",
-      "team": "Rye Neck",
-      "opponent": "Pawling",
-      "teamScore": 0,
-      "oppScore": 6,
-      "source": "digitalsports:ryeneck"
-    },
-    {
-      "date": "2026-04-08",
-      "team": "Tuckahoe",
-      "opponent": "Somers",
-      "teamScore": 6,
-      "oppScore": 5,
+      "winner": "Tuckahoe",
+      "winnerRuns": 6,
+      "loser": "Somers",
+      "loserRuns": 5,
       "source": "digitalsports:tuckahoe"
     },
     {
-      "date": "2026-03-29",
-      "team": "Westlake",
-      "opponent": "Bronxville",
-      "teamScore": 4,
-      "oppScore": 3,
-      "source": "digitalsports:westlake"
-    },
-    {
-      "date": "2026-03-31",
-      "team": "Westlake",
-      "opponent": "Hastings",
-      "teamScore": 11,
-      "oppScore": 2,
-      "source": "digitalsports:westlake"
-    },
-    {
       "date": "2026-04-07",
-      "team": "Westlake",
-      "opponent": "John Jay CR",
-      "teamScore": 14,
-      "oppScore": 12,
+      "winner": "Westlake",
+      "winnerRuns": 14,
+      "loser": "John Jay CR",
+      "loserRuns": 12,
       "source": "digitalsports:westlake"
     },
     {
       "date": "2026-03-23",
-      "team": "Pearl River",
-      "opponent": "Nyack",
-      "teamScore": 7,
-      "oppScore": 8,
+      "winner": "Nyack",
+      "winnerRuns": 8,
+      "loser": "Pearl River",
+      "loserRuns": 7,
       "source": "digitalsports:pearlriver"
     },
     {
       "date": "2026-04-08",
-      "team": "Haldane",
-      "opponent": "Irvington",
-      "teamScore": 0,
-      "oppScore": 13,
+      "winner": "Irvington",
+      "winnerRuns": 13,
+      "loser": "Haldane",
+      "loserRuns": 0,
       "source": "digitalsports:haldane"
     }
   ],
