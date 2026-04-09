@@ -1639,6 +1639,38 @@
       },
       "partial": true,
       "text": "Daily sweep PARTIAL \u2014 DigitalSports all 15 teams swept, Instagram DF primary + varsity checked, Gmail clean. NEW: Varsity 4/8 L 1-18 vs Sleepy Hollow added (was missing). Player stats added for Marron/Hwangbo. All 14 teamIntel cards enriched with sources, recentResults, and lastDeepSweep. Skipped: Section One Athletics, DFSD Athletics, IG JV/Diamond Club/opponent handles."
+    },
+    {
+      "date": "2026-04-09",
+      "type": "schedule-change",
+      "text": "JV game at Irvington on Sat Apr 18 at 11:00 AM has been CANCELLED per DigitalSports email alert (change made by Kim Carrafiello).",
+      "source": "Gmail DS Alert"
+    },
+    {
+      "date": "2026-04-09",
+      "type": "daily-sweep",
+      "sourcesChecked": {
+        "section_one_varsity": "\u26a0\ufe0f unreachable:site-error-page",
+        "section_one_jv": "\u26a0\ufe0f unreachable:site-error-page",
+        "gamedayone": "pre-league-empty",
+        "digitalsports_df_varsity": "\u2705 ok \u2014 3-1, no new games since 4/8",
+        "digitalsports_df_jv": "\u2705 ok \u2014 confirmed via Gmail: 4/18 @Irvington JV cancelled",
+        "digitalsports_hastings": "\u2705 ok \u2014 1-3, no new games since 4/4",
+        "digitalsports_tuckahoe": "\u2705 ok \u2014 1-0, game today 4/9 at Mt Vernon not yet posted",
+        "digitalsports_westlake": "\u2705 ok \u2014 3-0, game today 4/9 at Tappan Zee not yet posted",
+        "ig_dfeaglesbaseball": "\u2705 ok \u2014 no new posts since 4/8",
+        "ig_dfvarsity_baseball": "\u2705 ok \u2014 no new posts since 4/8",
+        "ig_dobbsferryjvboys": "\u2705 ok \u2014 no baseball content (basketball only)",
+        "ig_df_diamond_club": "\u2705 ok \u2014 Zendel Player of Week vote (4/6), no schedule changes",
+        "ig_hastingsbase": "\u2705 ok \u2014 game day posts through 4/3, confirms Stampfl 100th win",
+        "ig_irvingtonbulldogs": "\u2705 ok \u2014 no baseball content (general athletics)",
+        "ig_opponent_remaining": "\u26a0\ufe0f not-checked-this-run",
+        "gmail_schedule": "\u2705 ok \u2014 JV @ Irvington 4/18 CANCELLED (DS Alert)",
+        "gmail_diamond_club": "\u2705 ok \u2014 budget tracker, no schedule impact",
+        "dfsd_athletics": "\u26a0\ufe0f unreachable:site-error-page"
+      },
+      "partial": true,
+      "text": "Daily sweep PARTIAL \u2014 No new game results since last sweep. KEY FINDING: JV game at Irvington 4/18 CANCELLED per Gmail DS alert. DigitalSports confirmed: DF 3-1 V, Hastings 1-3, Tuckahoe 1-0, Westlake 3-0. Instagram DF accounts + Hastings + Irvington swept, no new data. Section One Athletics and DFSD Athletics unreachable (error pages). Tuckahoe and Westlake have games today (4/9) \u2014 results pending."
     }
   ],
   "opponentResults": [
@@ -1957,12 +1989,13 @@
     "Hastings": {
       "fullName": "Hastings Yellow Jackets",
       "threat": "WATCH",
-      "intel": "Hastings is 1-3 overall, on a 3-game losing streak. Beat Blind Brook 6-2 in league opener but lost to Pelham 0-2, Westlake 2-11, and Eastchester 0-1. Offense struggling with three shutout or near-shutout losses. Up next: vs Putnam Valley Apr 10 5:00 PM.",
+      "intel": "Hastings is 1-3 overall, on a 3-game losing streak. Beat Blind Brook 6-2 in league opener (Coach Stampfl's 100th career win) but lost to Pelham 0-2, Westlake 2-11, and Eastchester 0-1. Offense struggling with three shutout or near-shutout losses. Up next: vs Putnam Valley Apr 10 5:00 PM, vs Scarsdale Apr 11 3:00 PM.",
       "nextVsDF": "Apr 24 (H), Apr 28 (A) League",
       "lastUpdated": "2026-04-09",
       "sources": [
         "digitalsports:hastings",
-        "digitalsports:blindbrook"
+        "digitalsports:blindbrook",
+        "ig:@hastingsbase"
       ],
       "recentResults": [
         "W 6-2 at Blind Brook (3/24)",
@@ -1976,7 +2009,7 @@
     "Irvington": {
       "fullName": "Irvington Bulldogs",
       "threat": "UNKNOWN",
-      "intel": "Irvington beat Sleepy Hollow 9-8 in a close league game and crushed Haldane 13-0 on Apr 8. Lost to Dobbs Ferry 2-6 in the season opener. Up next: vs Blind Brook Apr 11 (Sat) 4:00 PM.",
+      "intel": "Irvington beat Sleepy Hollow 9-8 in a close league game and crushed Haldane 13-0 on Apr 8. Lost to Dobbs Ferry 2-6 in the season opener. Up next: vs Blind Brook Apr 11 (Sat) 4:00 PM, at Dobbs Ferry Apr 13 4:30 PM.",
       "nextVsDF": "Apr 13 (A)",
       "lastUpdated": "2026-04-09",
       "sources": [
@@ -2061,7 +2094,7 @@
       "fullName": "Sleepy Hollow Horsemen",
       "threat": "WATCH",
       "intel": "Sleepy Hollow is 3-3 overall, on a 2-game win streak. Beat Haldane 12-10 and crushed Dobbs Ferry 18-1. Lost to Irvington 8-9, Briarcliff 0-14, and Rye Neck 5-15. High-variance team with blowout wins and losses. Up next: at Yonkers Montessori Apr 10 4:30 PM.",
-      "nextVsDF": "Apr 8 (H)",
+      "nextVsDF": "Already played (4/8)",
       "lastUpdated": "2026-04-09",
       "sources": [
         "digitalsports:sleepyhollow",
@@ -2080,7 +2113,7 @@
     "Tuckahoe": {
       "fullName": "Tuckahoe Tigers",
       "threat": "THREAT",
-      "intel": "Tuckahoe is 1-0, winning their opener 6-5 over Somers on Apr 8. Up next: at Mount Vernon Apr 9 4:30 PM.",
+      "intel": "Tuckahoe is 1-0, winning their opener 6-5 over Somers on Apr 8. Playing at Mount Vernon today Apr 9 4:30 PM. Up next: at New Rochelle Apr 10 4:30 PM, vs Pawling Apr 13 4:45 PM.",
       "nextVsDF": "May 4 (H), May 6 (A) League",
       "lastUpdated": "2026-04-09",
       "sources": [
@@ -2110,7 +2143,7 @@
     "Westlake": {
       "fullName": "Westlake Wildcats",
       "threat": "THREAT",
-      "intel": "Westlake is 3-0 with a 3-game win streak. Beat Bronxville 4-3, Hastings 11-2, and John Jay CR 14-12 in a wild comeback. Potent offense averaging 9.7 runs/game. Up next: at Tappan Zee Apr 9 4:30 PM.",
+      "intel": "Westlake is 3-0 with a 3-game win streak. Beat Bronxville 4-3, Hastings 11-2, and John Jay CR 14-12 in a wild comeback. Potent offense averaging 9.7 runs/game. Playing at Tappan Zee today Apr 9 4:30 PM. Up next: vs Pleasantville Apr 10 4:30 PM.",
       "nextVsDF": "May 11 (H)",
       "lastUpdated": "2026-04-09",
       "sources": [
