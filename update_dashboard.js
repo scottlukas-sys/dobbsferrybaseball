@@ -1698,7 +1698,9 @@ function generateJVStatsHTML(playerStats, gameResults) {
     }
 
     // OBP = (H+BB+HBP)/(AB+BB+HBP+SF), or (H+BB)/(AB+BB) if HBP/SF not tracked
-    const byOBP = players.filter(p => (p.batting.ab + p.batting.bb) > 0).sort((a, b) => {
+    // Minimum 5 PA to qualify so a single walk by a pitcher doesn't lead the board
+    const MIN_PA = 5;
+    const byOBP = players.filter(p => (p.batting.ab + p.batting.bb) >= MIN_PA).sort((a, b) => {
         const obpA = (a.batting.h + a.batting.bb) / (a.batting.ab + a.batting.bb);
         const obpB = (b.batting.h + b.batting.bb) / (b.batting.ab + b.batting.bb);
         return obpB - obpA;
@@ -1713,7 +1715,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     }
 
     // OPS = OBP + SLG. SLG = TB/AB where TB = 1B + 2*2B + 3*3B + 4*HR. If only H tracked, SLG = H/AB
-    const byOPS = players.filter(p => p.batting.ab > 0).sort((a, b) => {
+    const byOPS = players.filter(p => p.batting.ab > 0 && (p.batting.ab + p.batting.bb) >= MIN_PA).sort((a, b) => {
         // Calculate TB (total bases)
         const tbA = (a.batting.h || 0) + (a.batting['2b'] || 0) + 2 * (a.batting['3b'] || 0) + 3 * (a.batting.hr || 0);
         const tbB = (b.batting.h || 0) + (b.batting['2b'] || 0) + 2 * (b.batting['3b'] || 0) + 3 * (b.batting.hr || 0);
@@ -1759,8 +1761,13 @@ function generateJVStatsHTML(playerStats, gameResults) {
         leaders.sb = tied.map(p => p.name).join(', ');
     }
 
-    // WINS = leave blank (no wins yet)
-    // leaders.wins stays as '—'
+    // WINS = max W among pitchers
+    const byWins = players.filter(p => (p.pitching.w || 0) > 0).sort((a, b) => (b.pitching.w || 0) - (a.pitching.w || 0));
+    if (byWins.length > 0) {
+        const topWins = byWins[0].pitching.w;
+        const tied = byWins.filter(p => p.pitching.w === topWins);
+        leaders.wins = tied.map(p => p.name).join(', ');
+    }
 
     // ERA = min ERA among pitchers with IP > 0, formula (ER*7)/IP
     const byERA = players.filter(p => p.pitching.ip > 0).sort((a, b) => {
