@@ -655,6 +655,153 @@
             }
           }
         ]
+      },
+      "Lughan McIlwaine (Haldane)": {
+        "team": "Haldane",
+        "tags": [
+          "Freshman",
+          "Pitcher",
+          "Key Arm"
+        ],
+        "note": "4.1 IP, 0 R, 2 H, 6 K in 2026 opener vs Peekskill (W 10-0). Also pitched in relief. Freshman starter \u2014 rare for Class B.",
+        "games": [
+          {
+            "date": "2026-03-30",
+            "opp": "Peekskill",
+            "hitting": null,
+            "pitching": {
+              "ip": 4.1,
+              "h": 2,
+              "er": 0,
+              "so": 6,
+              "bb": 0,
+              "w": 1,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Theo Swan (Haldane)": {
+        "team": "Haldane",
+        "tags": [
+          "Freshman",
+          "Hitter",
+          "Run Producer"
+        ],
+        "note": "5 RBIs including bases-clearing double vs Peekskill in 2026 opener. Ninth grader making immediate varsity impact.",
+        "games": [
+          {
+            "date": "2026-03-30",
+            "opp": "Peekskill",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 5,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
+          }
+        ]
+      },
+      "Oliver Herman (Haldane)": {
+        "team": "Haldane",
+        "tags": [
+          "Freshman",
+          "Pitcher"
+        ],
+        "note": "Relief appearance in 2026 opener vs Peekskill. Part of young pitching staff.",
+        "games": []
+      },
+      "Lincoln McCarthy (Haldane)": {
+        "team": "Haldane",
+        "tags": [
+          "Senior",
+          "Leadership"
+        ],
+        "note": "Only senior on Haldane's 2026 roster. Key leadership presence on very young team.",
+        "games": []
+      },
+      "Jack Pastor (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [
+          "Junior",
+          "Hitter",
+          "Key Bat"
+        ],
+        "note": "Double with 2 RBIs in 14-2 W vs Saunders (2024-25). Went 2-2 with 2 SB vs Pleasantville. Returning impact bat.",
+        "games": []
+      },
+      "Nico Palacios (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [
+          "Senior"
+        ],
+        "note": "Senior on 2026 Blind Brook roster per MaxPreps.",
+        "games": []
+      },
+      "Elliott Zwicker (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [
+          "Senior"
+        ],
+        "note": "Senior on 2026 Blind Brook roster per MaxPreps.",
+        "games": []
+      },
+      "Colin Kelley (Rye Neck)": {
+        "team": "Rye Neck",
+        "tags": [
+          "Senior",
+          "Pitcher",
+          "Captain",
+          "All-Section"
+        ],
+        "note": "Senior captain, pitcher/CF. Named to Section 1 All-Section team. Multi-sport varsity athlete. Key arm on 3-1 Rye Neck squad.",
+        "games": []
+      },
+      "Eddie Major (Edgemont)": {
+        "team": "Edgemont",
+        "tags": [
+          "Roster 2026"
+        ],
+        "note": "On 2026 Edgemont varsity roster per MaxPreps. Lost 1-5 to DF on Apr 7.",
+        "games": []
+      },
+      "Ari Malz (Edgemont)": {
+        "team": "Edgemont",
+        "tags": [
+          "Roster 2026"
+        ],
+        "note": "On 2026 Edgemont varsity roster per MaxPreps.",
+        "games": []
+      },
+      "Seth Waxler (Edgemont)": {
+        "team": "Edgemont",
+        "tags": [
+          "Roster 2026"
+        ],
+        "note": "On 2026 Edgemont varsity roster per MaxPreps.",
+        "games": []
+      },
+      "Charlie Farbman (Sleepy Hollow)": {
+        "team": "Sleepy Hollow",
+        "tags": [
+          "Roster 2026"
+        ],
+        "note": "On Sleepy Hollow roster per MaxPreps. Team beat DF 18-1 on Apr 8.",
+        "games": []
+      },
+      "Fernando Lemus (Sleepy Hollow)": {
+        "team": "Sleepy Hollow",
+        "tags": [
+          "Roster 2026"
+        ],
+        "note": "On Sleepy Hollow roster per MaxPreps.",
+        "games": []
       }
     },
     "jv": {
@@ -1671,6 +1818,12 @@
       },
       "partial": true,
       "text": "Daily sweep PARTIAL \u2014 No new game results since last sweep. KEY FINDING: JV game at Irvington 4/18 CANCELLED per Gmail DS alert. DigitalSports confirmed: DF 3-1 V, Hastings 1-3, Tuckahoe 1-0, Westlake 3-0. Instagram DF accounts + Hastings + Irvington swept, no new data. Section One Athletics and DFSD Athletics unreachable (error pages). Tuckahoe and Westlake have games today (4/9) \u2014 results pending."
+    },
+    {
+      "date": "2026-04-09",
+      "type": "source",
+      "text": "Opponent player intel enrichment: Added 13 new player entries across Haldane (4), Blind Brook (3), Rye Neck (1), Edgemont (3), Sleepy Hollow (2). Sources: Highlands Current, MaxPreps rosters, Rye Record, @hastingsbase IG. Stars arrays populated for 7 teams.",
+      "source": "web research, MaxPreps, Highlands Current, Rye Record"
     }
   ],
   "opponentResults": [
@@ -1947,7 +2100,11 @@
         "L 2-6 vs Hastings (3/24)",
         "W 8-7 vs Edgemont (3/26)"
       ],
-      "stars": [],
+      "stars": [
+        "Jack Pastor (Jr) \u2014 2B + 2 RBI vs Saunders, 2-2 + 2 SB vs Pleasantville",
+        "Nico Palacios (Sr) \u2014 returning senior",
+        "Elliott Zwicker (Sr) \u2014 returning senior"
+      ],
       "lastDeepSweep": "2026-04-09"
     },
     "Edgemont": {
@@ -1964,7 +2121,10 @@
         "L 7-8 vs Blind Brook (3/26)",
         "L 1-5 vs Dobbs Ferry (4/7)"
       ],
-      "stars": [],
+      "stars": [
+        "Eddie Major \u2014 2026 roster",
+        "Ari Malz \u2014 2026 roster"
+      ],
       "lastDeepSweep": "2026-04-09"
     },
     "Haldane": {
@@ -1983,7 +2143,11 @@
         "L 10-12 vs Sleepy Hollow (4/6)",
         "L 0-13 vs Irvington (4/8)"
       ],
-      "stars": [],
+      "stars": [
+        "Lughan McIlwaine (Fr) \u2014 4.1 IP, 6 K, 0 ER vs Peekskill",
+        "Theo Swan (Fr) \u2014 5 RBIs, bases-clearing 2B vs Peekskill",
+        "Lincoln McCarthy (Sr) \u2014 only senior, team leader"
+      ],
       "lastDeepSweep": "2026-04-09"
     },
     "Hastings": {
@@ -2003,7 +2167,11 @@
         "L 2-11 at Westlake (3/31)",
         "L 0-1 at Eastchester (4/4)"
       ],
-      "stars": [],
+      "stars": [
+        "Curt \u2014 2H + SV in 6-2 W vs Blind Brook (Coach Stampfl's 100th W)",
+        "Drew \u2014 pitched in 2026 opener vs Blind Brook",
+        "Dileo \u2014 pitched in 2026 opener vs Blind Brook"
+      ],
       "lastDeepSweep": "2026-04-09"
     },
     "Irvington": {
@@ -2022,7 +2190,10 @@
         "W 9-8 vs Sleepy Hollow (3/26)",
         "W 13-0 vs Haldane (4/8)"
       ],
-      "stars": [],
+      "stars": [
+        "Sawyer Chalsen \u2014 2025 All-League HM, HR hitter, returning",
+        "John Salvatore \u2014 highlighted Mar 26 game"
+      ],
       "lastDeepSweep": "2026-04-09"
     },
     "Leffell School": {
@@ -2071,7 +2242,9 @@
         "W 15-5 at Sleepy Hollow (4/2)",
         "L 0-6 at Pawling (4/8)"
       ],
-      "stars": [],
+      "stars": [
+        "Colin Kelley (Sr) \u2014 Captain, P/CF, Section 1 All-Section selection"
+      ],
       "lastDeepSweep": "2026-04-09"
     },
     "Saunders": {
@@ -2107,7 +2280,10 @@
         "W 12-10 vs Haldane (4/6)",
         "W 18-1 at Dobbs Ferry (4/8)"
       ],
-      "stars": [],
+      "stars": [
+        "Charlie Farbman \u2014 2026 roster, part of 18-1 W vs DF",
+        "Fernando Lemus \u2014 2026 roster"
+      ],
       "lastDeepSweep": "2026-04-09"
     },
     "Tuckahoe": {
