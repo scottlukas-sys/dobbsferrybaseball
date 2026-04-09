@@ -40,6 +40,13 @@
       "mercy": true,
       "cleanInnings": 0,
       "defInnings": 4
+    },
+    "2026-04-08": {
+      "opponent": "Sleepy Hollow",
+      "df": 11,
+      "opp": 7,
+      "location": "Sleepy Hollow",
+      "source": "GameChanger"
     }
   },
   "divisionB": [
@@ -315,6 +322,284 @@
             "pitching": null
           }
         ]
+      },
+      "Jack Rizzo": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 4,
+              "h": 2,
+              "2b": 1,
+              "3b": 1,
+              "hr": 0,
+              "rbi": 3,
+              "r": 1,
+              "bb": 1,
+              "so": 1,
+              "sb": 1
+            }
+          }
+        ]
+      },
+      "Sam Keltz": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 2,
+              "r": 1,
+              "bb": 0,
+              "so": 1
+            },
+            "pitching": {
+              "ip": 1.2,
+              "h": 2,
+              "er": 1,
+              "so": 3,
+              "bb": 3,
+              "w": 0,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Aaron Sellitti": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 2,
+              "bb": 3,
+              "so": 1,
+              "sb": 1
+            }
+          }
+        ]
+      },
+      "Declan Cho": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "h": 1,
+              "rbi": 1,
+              "r": 1,
+              "bb": 0,
+              "so": 0,
+              "hbp": 1
+            }
+          }
+        ]
+      },
+      "Mina Hwangbo": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 2,
+              "so": 0,
+              "sb": 1
+            }
+          }
+        ]
+      },
+      "Vaughn Lukas": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 5,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "so": 2
+            }
+          }
+        ]
+      },
+      "Mike Kingston": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "pitching": {
+              "ip": 2,
+              "h": 4,
+              "er": 5,
+              "so": 3,
+              "bb": 3,
+              "w": 0,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Winston Burgess": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "pitching": {
+              "ip": 1.2,
+              "h": 0,
+              "er": 0,
+              "so": 4,
+              "bb": 0,
+              "w": 1,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Eli Gallagher": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 1
+            },
+            "pitching": {
+              "ip": 1.2,
+              "h": 0,
+              "er": 1,
+              "so": 4,
+              "bb": 2,
+              "w": 0,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Jude Zonana": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 2,
+              "so": 1,
+              "sb": 1
+            }
+          }
+        ]
+      },
+      "Julian Graf": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "so": 0
+            }
+          }
+        ]
+      },
+      "Matthew Moon": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 2,
+              "bb": 1,
+              "so": 2
+            }
+          }
+        ]
+      },
+      "James Gotcsik Karpinos": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "rbi": 0,
+              "r": 2,
+              "bb": 2,
+              "so": 1
+            }
+          }
+        ]
+      },
+      "Gianfranco Mangone": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 2
+            }
+          }
+        ]
       }
     },
     "opponents": {
@@ -527,6 +812,84 @@
         ],
         "note": "Tagged in 2025 sectional playoff post.",
         "games": []
+      },
+      "Cabrer (Sleepy Hollow JV)": {
+        "team": "Sleepy Hollow JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Dobbs Ferry JV",
+            "hitting": {
+              "ab": 3,
+              "h": 3,
+              "2b": 2,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 4,
+              "r": 0,
+              "bb": 0
+            },
+            "pitching": {
+              "ip": 3,
+              "h": 1,
+              "er": 3,
+              "so": 6,
+              "bb": 4,
+              "w": 0,
+              "sv": 0
+            }
+          }
+        ]
+      },
+      "Maz (Sleepy Hollow JV)": {
+        "team": "Sleepy Hollow JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Dobbs Ferry JV",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 3,
+              "sb": 2
+            }
+          }
+        ]
+      },
+      "Moffett (Sleepy Hollow JV)": {
+        "team": "Sleepy Hollow JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Dobbs Ferry JV",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 2
+            }
+          }
+        ]
+      },
+      "Rod (Sleepy Hollow JV)": {
+        "team": "Sleepy Hollow JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Dobbs Ferry JV",
+            "hitting": {
+              "ab": 0,
+              "h": 1,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0
+            }
+          }
+        ]
       }
     },
     "jv": {
@@ -669,7 +1032,7 @@
               "hbp": 0
             },
             "pitching": {
-              "ip": 1.0,
+              "ip": 1,
               "h": 3,
               "er": 0,
               "so": 1,
@@ -865,7 +1228,7 @@
     {
       "date": "2026-04-07",
       "type": "schedule",
-      "text": "Apr 11 (Sat) Pearl River games POSTPONED \u2014 both Varsity (away at Pearl River HS) and JV (home vs Pearl River JV) removed from DFSD athletic calendar. No makeup date posted yet.",
+      "text": "Apr 11 (Sat) Pearl River games POSTPONED — both Varsity (away at Pearl River HS) and JV (home vs Pearl River JV) removed from DFSD athletic calendar. No makeup date posted yet.",
       "source": "DFSD athletic calendar (dfsd.org)"
     },
     {
@@ -907,7 +1270,7 @@
     {
       "date": "2026-04-01",
       "type": "score",
-      "text": "Westlake 11, Hastings 2. Non-league game at Disney Wide World of Sports (originally mislabeled as Division B league \u2014 Westlake is not in Division B).",
+      "text": "Westlake 11, Hastings 2. Non-league game at Disney Wide World of Sports (originally mislabeled as Division B league — Westlake is not in Division B).",
       "source": "GameDay One"
     },
     {
@@ -1125,7 +1488,7 @@
     {
       "date": "2026-03-23",
       "type": "source",
-      "text": "DFSD DigitalSports: Full varsity schedule published \u2014 21 games.",
+      "text": "DFSD DigitalSports: Full varsity schedule published — 21 games.",
       "source": "DigitalSports"
     },
     {
@@ -1137,7 +1500,7 @@
     {
       "date": "2026-03-23",
       "type": "source",
-      "text": "Instagram @dfvarsity_baseball: Game-day hype post \u2014 'Tip plays baseball today. Game location tbd.' 36 likes.",
+      "text": "Instagram @dfvarsity_baseball: Game-day hype post — 'Tip plays baseball today. Game location tbd.' 36 likes.",
       "source": "@dfvarsity_baseball"
     },
     {
@@ -1149,7 +1512,7 @@
     {
       "date": "2026-03-18",
       "type": "source",
-      "text": "Instagram @dfvarsity_baseball: Scrimmage post \u2014 Jack Rizzo and team vs Ardsley, first scrim of the year. 39 likes.",
+      "text": "Instagram @dfvarsity_baseball: Scrimmage post — Jack Rizzo and team vs Ardsley, first scrim of the year. 39 likes.",
       "source": "@dfvarsity_baseball"
     },
     {
@@ -1185,7 +1548,7 @@
         "dfsd_athletics": "unreachable:not-queried-time-budget"
       },
       "partial": true,
-      "text": "Daily sweep PARTIAL. DF DigitalSports (V+JV) and IG @dfeaglesbaseball/@dfvarsity_baseball confirmed no new data since 4/7 Edgemont W 5-1. Sleepy Hollow game scheduled today 4/8 4:30 PM at Gould Park \u2014 not yet played. No schedule changes in Gmail. Opponent and Section One sweep deferred."
+      "text": "Daily sweep PARTIAL. DF DigitalSports (V+JV) and IG @dfeaglesbaseball/@dfvarsity_baseball confirmed no new data since 4/7 Edgemont W 5-1. Sleepy Hollow game scheduled today 4/8 4:30 PM at Gould Park — not yet played. No schedule changes in Gmail. Opponent and Section One sweep deferred."
     },
     {
       "date": "2026-04-08",
@@ -1208,7 +1571,7 @@
         "dfsd_athletics": "unreachable:not_checked"
       },
       "partial": true,
-      "text": "Daily sweep partial \u2014 Instagram required login, Section One Athletics scores portal not located, remaining DigitalSports opponents not reached due to run constraints. No new scores found from reachable sources; MaxPreps confirms DF Varsity 1-0 but lags scores.json entries for Irvington and Saunders. Coach Turenchalk noted upcoming extra JV game with Irvington (date TBD)."
+      "text": "Daily sweep partial — Instagram required login, Section One Athletics scores portal not located, remaining DigitalSports opponents not reached due to run constraints. No new scores found from reachable sources; MaxPreps confirms DF Varsity 1-0 but lags scores.json entries for Irvington and Saunders. Coach Turenchalk noted upcoming extra JV game with Irvington (date TBD)."
     },
     {
       "date": "2026-04-08",
@@ -1232,7 +1595,7 @@
         "maxpreps_df": "ok"
       },
       "partial": true,
-      "text": "Daily sweep PARTIAL \u2014 Chrome MCP not connected; MaxPreps + Gmail reached. MaxPreps confirms 4/7 Edgemont W 5-1 (already recorded). No new scores, no schedule changes found. Next game 4/8 vs Sleepy Hollow 4:30."
+      "text": "Daily sweep PARTIAL — Chrome MCP not connected; MaxPreps + Gmail reached. MaxPreps confirms 4/7 Edgemont W 5-1 (already recorded). No new scores, no schedule changes found. Next game 4/8 vs Sleepy Hollow 4:30."
     }
   ],
   "opponentResults": [
@@ -1448,7 +1811,7 @@
     "Haldane": {
       "fullName": "Haldane Blue Devils",
       "threat": "UNKNOWN",
-      "intel": "Historic pedigree \u2014 8x Sectional, 5x Regional Champs. 2026 record: 1-1. Beat Peekskill 10-0 on Mar 30. Lost to Rye Neck 1-13 on Apr 1. At Sleepy Hollow today Apr 6. Up next: at Sleepy Hollow Apr 6, at Irvington Apr 8.",
+      "intel": "Historic pedigree — 8x Sectional, 5x Regional Champs. 2026 record: 1-1. Beat Peekskill 10-0 on Mar 30. Lost to Rye Neck 1-13 on Apr 1. At Sleepy Hollow today Apr 6. Up next: at Sleepy Hollow Apr 6, at Irvington Apr 8.",
       "nextVsDF": "Apr 18 (A) 11:00 AM",
       "lastUpdated": "2026-04-06"
     },
@@ -1476,7 +1839,7 @@
     "Pearl River": {
       "fullName": "Pearl River Pirates",
       "threat": "UNKNOWN",
-      "intel": "Bigger school from Rockland County. Non-league game. Apr 11 game POSTPONED \u2014 no makeup date posted. No 2026 intel yet.",
+      "intel": "Bigger school from Rockland County. Non-league game. Apr 11 game POSTPONED — no makeup date posted. No 2026 intel yet.",
       "nextVsDF": "TBD (postponed)",
       "lastUpdated": "2026-04-07"
     },
@@ -1511,14 +1874,14 @@
     "Valhalla": {
       "fullName": "Valhalla Vikings",
       "threat": "UNKNOWN",
-      "intel": "At Disney ESPN Wide World of Sports tournament. Played Westlake Mar 30 (result pending confirmation). Not in Division B \u2014 not a DF league opponent. Up next: vs Rye Neck Apr 16, at Hastings Apr 18, vs Haldane Apr 30.",
+      "intel": "At Disney ESPN Wide World of Sports tournament. Played Westlake Mar 30 (result pending confirmation). Not in Division B — not a DF league opponent. Up next: vs Rye Neck Apr 16, at Hastings Apr 18, vs Haldane Apr 30.",
       "nextVsDF": "Apr 27 (A) 5:00 PM",
       "lastUpdated": "2026-04-06"
     },
     "Westlake": {
       "fullName": "Westlake Wildcats",
       "threat": "THREAT",
-      "intel": "Disney spring trip dominant. Beat Bronxville 4-3 on Mar 29. Beat Hastings 11-2 on Apr 1 at Disney Wide World of Sports. Valhalla result (Mar 30) still pending. Not in Division B \u2014 not a DF league opponent. Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9, at Pelham Apr 11.",
+      "intel": "Disney spring trip dominant. Beat Bronxville 4-3 on Mar 29. Beat Hastings 11-2 on Apr 1 at Disney Wide World of Sports. Valhalla result (Mar 30) still pending. Not in Division B — not a DF league opponent. Up next: at John Jay CR Apr 7, at Tappan Zee Apr 9, at Pelham Apr 11.",
       "nextVsDF": "May 11 (H)",
       "lastUpdated": "2026-04-06"
     }
