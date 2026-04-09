@@ -322,284 +322,6 @@
             "pitching": null
           }
         ]
-      },
-      "Jack Rizzo": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 4,
-              "h": 2,
-              "2b": 1,
-              "3b": 1,
-              "hr": 0,
-              "rbi": 3,
-              "r": 1,
-              "bb": 1,
-              "so": 1,
-              "sb": 1
-            }
-          }
-        ]
-      },
-      "Sam Keltz": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 2,
-              "h": 1,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 2,
-              "r": 1,
-              "bb": 0,
-              "so": 1
-            },
-            "pitching": {
-              "ip": 1.2,
-              "h": 2,
-              "er": 1,
-              "so": 3,
-              "bb": 3,
-              "w": 0,
-              "sv": 0
-            }
-          }
-        ]
-      },
-      "Aaron Sellitti": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 2,
-              "h": 0,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 1,
-              "r": 2,
-              "bb": 3,
-              "so": 1,
-              "sb": 1
-            }
-          }
-        ]
-      },
-      "Declan Cho": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 1,
-              "h": 1,
-              "rbi": 1,
-              "r": 1,
-              "bb": 0,
-              "so": 0,
-              "hbp": 1
-            }
-          }
-        ]
-      },
-      "Mina Hwangbo": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 1,
-              "h": 0,
-              "rbi": 1,
-              "r": 0,
-              "bb": 2,
-              "so": 0,
-              "sb": 1
-            }
-          }
-        ]
-      },
-      "Vaughn Lukas": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 5,
-              "h": 0,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 1,
-              "r": 0,
-              "bb": 0,
-              "so": 2
-            }
-          }
-        ]
-      },
-      "Mike Kingston": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "pitching": {
-              "ip": 2,
-              "h": 4,
-              "er": 5,
-              "so": 3,
-              "bb": 3,
-              "w": 0,
-              "sv": 0
-            }
-          }
-        ]
-      },
-      "Winston Burgess": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "pitching": {
-              "ip": 1.2,
-              "h": 0,
-              "er": 0,
-              "so": 4,
-              "bb": 0,
-              "w": 1,
-              "sv": 0
-            }
-          }
-        ]
-      },
-      "Eli Gallagher": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 1,
-              "h": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "so": 1
-            },
-            "pitching": {
-              "ip": 1.2,
-              "h": 0,
-              "er": 1,
-              "so": 4,
-              "bb": 2,
-              "w": 0,
-              "sv": 0
-            }
-          }
-        ]
-      },
-      "Jude Zonana": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 1,
-              "h": 0,
-              "rbi": 0,
-              "r": 1,
-              "bb": 2,
-              "so": 1,
-              "sb": 1
-            }
-          }
-        ]
-      },
-      "Julian Graf": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 3,
-              "h": 0,
-              "rbi": 0,
-              "r": 1,
-              "bb": 0,
-              "so": 0
-            }
-          }
-        ]
-      },
-      "Matthew Moon": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 3,
-              "h": 1,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 2,
-              "bb": 1,
-              "so": 2
-            }
-          }
-        ]
-      },
-      "James Gotcsik Karpinos": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 2,
-              "h": 1,
-              "rbi": 0,
-              "r": 2,
-              "bb": 2,
-              "so": 1
-            }
-          }
-        ]
-      },
-      "Gianfranco Mangone": {
-        "team": "Dobbs Ferry JV",
-        "games": [
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow JV",
-            "hitting": {
-              "ab": 2,
-              "h": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "so": 2
-            }
-          }
-        ]
       }
     },
     "opponents": {
@@ -914,6 +636,22 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 2,
+              "bb": 3,
+              "so": 1,
+              "sb": 1
+            }
           }
         ]
       },
@@ -938,6 +676,30 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 2,
+              "r": 1,
+              "bb": 0,
+              "so": 1
+            },
+            "pitching": {
+              "ip": 1.2,
+              "h": 2,
+              "er": 1,
+              "so": 3,
+              "bb": 3,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -972,6 +734,22 @@
               "pitches": 69,
               "strikes": 34,
               "bf": 21
+            }
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 4,
+              "h": 2,
+              "2b": 1,
+              "3b": 1,
+              "hr": 0,
+              "rbi": 3,
+              "r": 1,
+              "bb": 1,
+              "so": 1,
+              "sb": 1
             }
           }
         ]
@@ -1008,6 +786,21 @@
               "strikes": 12,
               "bf": 8
             }
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 2,
+              "bb": 1,
+              "so": 2
+            }
           }
         ]
       },
@@ -1043,6 +836,19 @@
               "strikes": 21,
               "bf": 10
             }
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 2,
+              "so": 1,
+              "sb": 1
+            }
           }
         ]
       },
@@ -1069,6 +875,21 @@
               "tb": 1
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 5,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "so": 2
+            }
           }
         ]
       },
@@ -1093,6 +914,19 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "pitching": {
+              "ip": 1.2,
+              "h": 0,
+              "er": 0,
+              "so": 4,
+              "bb": 0,
+              "w": 1,
+              "sv": 0
+            }
           }
         ]
       },
@@ -1117,6 +951,27 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 1
+            },
+            "pitching": {
+              "ip": 1.2,
+              "h": 0,
+              "er": 1,
+              "so": 4,
+              "bb": 2,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -1141,6 +996,19 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "pitching": {
+              "ip": 2,
+              "h": 4,
+              "er": 5,
+              "so": 3,
+              "bb": 3,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -1165,6 +1033,19 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 2,
+              "so": 0,
+              "sb": 1
+            }
           }
         ]
       },
@@ -1189,6 +1070,19 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "h": 1,
+              "rbi": 1,
+              "r": 1,
+              "bb": 0,
+              "so": 0,
+              "hbp": 1
+            }
           }
         ]
       },
@@ -1213,6 +1107,52 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "so": 0
+            }
+          }
+        ]
+      },
+      "James Gotcsik Karpinos": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "rbi": 0,
+              "r": 2,
+              "bb": 2,
+              "so": 1
+            }
+          }
+        ]
+      },
+      "Gianfranco Mangone": {
+        "team": "Dobbs Ferry JV",
+        "games": [
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 2
+            }
           }
         ]
       }
