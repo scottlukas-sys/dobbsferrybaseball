@@ -309,6 +309,32 @@
               "w": 1,
               "sv": 0
             }
+          },
+          {
+            "date": "2026-04-11",
+            "opp": "Pearl River",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 0,
+              "sb": 0,
+              "hbp": 0
+            },
+            "pitching": {
+              "ip": 2.0,
+              "h": 0,
+              "er": 0,
+              "so": 1,
+              "bb": 1,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -441,7 +467,15 @@
               "sb": 0,
               "hbp": 0
             },
-            "pitching": null
+            "pitching": {
+              "ip": 1.2,
+              "h": 2,
+              "er": 0,
+              "so": 3,
+              "bb": 1,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -2017,6 +2051,23 @@
       "newOpponentResults": 7,
       "teamIntelUpdated": 14,
       "notes": "No new DF games since Apr 8. DF next plays at Pearl River Apr 11 3:00 PM. Cross-referenced Irvington-Haldane (13-0), Sleepy Hollow-Haldane (12-10), Westlake-Valhalla (17-5) and others from DS and IG. Updated all 14 teamIntel cards with fresh DS records."
+    },
+    {
+      "date": "2026-04-13",
+      "type": "daily-sweep",
+      "sourcesChecked": {
+        "section_one_varsity": "⚠️ not-checked-this-run",
+        "section_one_jv": "⚠️ not-checked-this-run",
+        "gamedayone": "pre-league-empty",
+        "digitalsports_df_varsity": "✅ ok — DS shows 3-1 (Pearl River 4/11 loss not yet posted to DS; our 3-2 is correct via IG)",
+        "digitalsports_df_jv": "⚠️ not-rechecked-this-run (no new games since 4/8)",
+        "instagram_dfeaglesbaseball": "✅ ok — latest post 4/12 (Pearl River final)",
+        "instagram_dfvarsity_baseball": "✅ ok — no new posts since 4/8",
+        "instagram_dobbsferryjvboys": "⚠️ basketball-account-no-baseball-content",
+        "gmail_schedule_changes": "✅ ok — no rainout/reschedule emails after 4/10",
+        "dfsd_athletics": "⚠️ not-checked-this-run"
+      },
+      "text": "Re-run sweep on 2026-04-13. No new games since Apr 11 Pearl River L. Added DJ Kollar and Brendan Molina pitching lines for 4/11 Pearl River from @dfeaglesbaseball IG. Next game: Apr 13 (today) vs Irvington (home). Section One Athletics, DFSD weekly calendar, and deep opponent sweep not re-run — prior run today already completed those."
     }
   ],
   "opponentResults": [
