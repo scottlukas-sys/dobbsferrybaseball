@@ -2068,6 +2068,12 @@
         "dfsd_athletics": "⚠️ not-checked-this-run"
       },
       "text": "Re-run sweep on 2026-04-13. No new games since Apr 11 Pearl River L. Added DJ Kollar and Brendan Molina pitching lines for 4/11 Pearl River from @dfeaglesbaseball IG. Next game: Apr 13 (today) vs Irvington (home). Section One Athletics, DFSD weekly calendar, and deep opponent sweep not re-run — prior run today already completed those."
+    },
+    {
+      "date": "2026-04-13",
+      "type": "correction",
+      "text": "Valhalla intel rewrite: removed contradictory 'DS still 0-0 ... Record likely 0-2+' phrasing. Valhalla DS has no events posted at all; known 2026 losses are 0-2 in documented games only. Cross-checked IG @thedawgsofvalhalla (Apr 6 and Apr 11 posts contained no scoreboard text).",
+      "source": "digitalsports:valhalla, ig:@thedawgsofvalhalla"
     }
   ],
   "opponentResults": [
@@ -2665,12 +2671,14 @@
     "Valhalla": {
       "fullName": "Valhalla Vikings",
       "threat": "UNKNOWN",
-      "intel": "Valhalla DS still 0-0. Known results: L 5-17 vs Westlake (Mar 30), L 2-3 vs Blind Brook (Apr 8). Record likely 0-2+. Up next: at Hastings Apr 18.",
+      "intel": "Valhalla DS page has no events posted yet. Documented 2026 results: L 5-17 vs Westlake (Mar 30), L 2-3 vs Blind Brook (Apr 8) — 0-2 in known games, record otherwise unverified. IG @thedawgsofvalhalla posts on Apr 6 and Apr 11 contained no scoreboard text. Up next: at Hastings Apr 18.",
       "nextVsDF": "Apr 27 (A) League",
       "lastUpdated": "2026-04-13",
       "sources": [
-        "digitalsports:valhalla",
-        "digitalsports:blindbrook"
+        "digitalsports:valhalla (empty)",
+        "digitalsports:blindbrook",
+        "digitalsports:westlake",
+        "ig:@thedawgsofvalhalla"
       ],
       "recentResults": [
         "L 5-17 vs Westlake (Mar 30)",
