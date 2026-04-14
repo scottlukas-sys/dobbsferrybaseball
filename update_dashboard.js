@@ -353,7 +353,7 @@ if (nextVarsityGame) {
 
     // Address row for away games
     const vAddressRow = (nextVarsityGame.location !== 'Home' && nextVarsityGame.address)
-        ? `\n                <div style="color:#aaa;font-size:12px;margin-top:4px;"><strong>Address:</strong> <a href="https://maps.google.com/?q=${encodeURIComponent(nextVarsityGame.address)}" target="_blank" style="color:#6b9fd4;text-decoration:none;">${nextVarsityGame.address}</a></div>`
+        ? `\n                <div style="color:#aaa;font-size:15px;margin-top:6px;"><strong>Address:</strong> <a href="https://maps.google.com/?q=${encodeURIComponent(nextVarsityGame.address)}" target="_blank" style="color:#6b9fd4;text-decoration:none;">${nextVarsityGame.address}</a></div>`
         : '';
 
     // Replace the entire varsity alert card
@@ -361,7 +361,7 @@ if (nextVarsityGame) {
     html = html.replace(alertRegex, `$1<div class="card alert">
                 <div class="alert-title">NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextDate.getDate()})</div>
                 <div class="alert-game">${shortMonth} ${nextDate.getDate()} (${dayOfWeek}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextVarsityGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextVarsityGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${venueName}</div>
-                <div class="alert-details">Non-league${lastResultText}</div>${vAddressRow}${vWeatherRow}
+                <div class="alert-details">Non-league</div>${vAddressRow}${vWeatherRow}
             </div>$3`);
 }
 
@@ -955,7 +955,7 @@ if (nextJvGame) {
 
     // Address row for away games
     const jvAddressRow = (nextJvGame.location !== 'Home' && nextJvGame.address)
-        ? `\n                <div style="color:#aaa;font-size:12px;margin-top:4px;"><strong>Address:</strong> <a href="https://maps.google.com/?q=${encodeURIComponent(nextJvGame.address)}" target="_blank" style="color:#6b9fd4;text-decoration:none;">${nextJvGame.address}</a></div>`
+        ? `\n                <div style="color:#aaa;font-size:15px;margin-top:6px;"><strong>Address:</strong> <a href="https://maps.google.com/?q=${encodeURIComponent(nextJvGame.address)}" target="_blank" style="color:#6b9fd4;text-decoration:none;">${nextJvGame.address}</a></div>`
         : '';
 
     // JV weather row
@@ -969,7 +969,7 @@ if (nextJvGame) {
     html = html.replace(jvAlertRegex, `$1<div class="card alert">
                 <div class="alert-title">JV NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextJvDate.getDate()})</div>
                 <div class="alert-game">${shortMonth} ${nextJvDate.getDate()} (${dayName}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextJvGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${jvVenueName}</div>
-                <div class="alert-details">Non-league${lastJvResultText}</div>${jvAddressRow}${jvWeatherRow}
+                <div class="alert-details">Non-league</div>${jvAddressRow}${jvWeatherRow}
             </div>$3`);
 }
 
