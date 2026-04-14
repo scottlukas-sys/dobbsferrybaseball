@@ -2073,6 +2073,14 @@ html = html.replace(
 );
 
 // ============================================================
+// ANALYTICS (GoatCounter — free, privacy-friendly, no cookies)
+// ============================================================
+const goatScript = `<script data-goatcounter="https://dobbsferrybaseball.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`;
+if (!html.includes('goatcounter')) {
+    html = html.replace('</body>', `${goatScript}\n</body>`);
+}
+
+// ============================================================
 // WRITE OUTPUT
 // ============================================================
 fs.writeFileSync(htmlPath, html);
