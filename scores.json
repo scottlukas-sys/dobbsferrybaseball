@@ -75,6 +75,13 @@
       "opp": 7,
       "location": "Sleepy Hollow",
       "source": "GameChanger"
+    },
+    "2026-04-14": {
+      "opponent": "Ardsley JV",
+      "df": 3,
+      "opp": 7,
+      "location": "Away",
+      "source": "GameChanger"
     }
   },
   "divisionB": [
@@ -1910,6 +1917,22 @@
               "so": 1,
               "sb": 1
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -1961,6 +1984,22 @@
               "strikes": 21,
               "bf": 10
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 4,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 1,
+              "bb": 0,
+              "sb": 1
+            },
+            "pitching": null
           }
         ]
       },
@@ -2012,6 +2051,30 @@
               "so": 1,
               "sb": 1
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 2,
+              "h": 2,
+              "er": 2,
+              "so": 1,
+              "bb": 3,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -2062,6 +2125,22 @@
               "bb": 1,
               "so": 2
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -2110,6 +2189,30 @@
               "so": 1,
               "sb": 1
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 2,
+              "h": 3,
+              "er": 1,
+              "so": 3,
+              "bb": 1,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -2151,6 +2254,22 @@
               "bb": 0,
               "so": 2
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 4,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -2191,6 +2310,22 @@
               "strikes": 13,
               "bf": 5
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -2293,6 +2428,22 @@
               "strikes": 25,
               "bf": 13
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -2329,6 +2480,30 @@
               "bb": 2,
               "so": 0,
               "sb": 1
+            }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 2,
+              "h": 2,
+              "er": 2,
+              "so": 0,
+              "bb": 2,
+              "w": 0,
+              "sv": 0
             }
           }
         ]
@@ -2367,6 +2542,22 @@
               "so": 0,
               "hbp": 1
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "sb": 1
+            },
+            "pitching": null
           }
         ]
       },
@@ -2403,6 +2594,22 @@
               "bb": 0,
               "so": 0
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -2420,6 +2627,22 @@
               "bb": 2,
               "so": 1
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -2437,6 +2660,22 @@
               "bb": 0,
               "so": 2
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       }
