@@ -47,6 +47,13 @@
       "opp": 7,
       "location": "Gould Park (Home)",
       "source": "DF DigitalSports (L 1-7) + @dfeaglesbaseball Instagram (Apr 13 post) + Irvington DigitalSports (W 7-1)"
+    },
+    "2026-04-14": {
+      "opponent": "Ardsley",
+      "df": 6,
+      "opp": 3,
+      "location": "Home",
+      "source": "GameChanger"
     }
   },
   "jv": {
@@ -241,6 +248,30 @@
               "w": 1,
               "sv": 0
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 2,
+              "h": 1,
+              "er": 0,
+              "so": 2,
+              "bb": 2,
+              "w": 0,
+              "sv": 0
+            }
           }
         ]
       },
@@ -419,6 +450,22 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 3,
+              "h": 2,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "sb": 1
+            },
+            "pitching": null
           }
         ]
       },
@@ -518,6 +565,22 @@
               "r": 0,
               "bb": 0,
               "sb": 0
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 4,
+              "h": 3,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 1,
+              "bb": 0,
+              "sb": 1
             },
             "pitching": null
           }
@@ -626,6 +689,30 @@
               "er": 1,
               "so": 14,
               "bb": 2,
+              "w": 1,
+              "sv": 0
+            }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 1,
+              "rbi": 1,
+              "r": 1,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 5,
+              "h": 6,
+              "er": 2,
+              "so": 7,
+              "bb": 0,
               "w": 1,
               "sv": 0
             }
@@ -738,6 +825,22 @@
               "w": 0,
               "sv": 0
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 4,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -847,6 +950,22 @@
               "w": 0,
               "sv": 0
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 3,
+              "h": 2,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -948,6 +1067,22 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -1025,6 +1160,22 @@
               "w": 0,
               "sv": 1
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -1102,6 +1253,22 @@
               "w": 0,
               "sv": 0
             }
+          },
+          {
+            "date": "2026-04-14",
+            "opp": "Ardsley",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
