@@ -1243,6 +1243,50 @@ function computePIS(playerStats) {
             // Role classification: pitcher if pitching points dominate, else hitter.
             // Two-way players go where their larger contribution is.
             const role = pitTotal > hitTotal ? 'pitcher' : 'hitter';
+            // Accumulate season totals for subtitle display
+            let sH = 0, s2b = 0, s3b = 0, sHR = 0, sRBI = 0, sR = 0, sBB = 0, sGP = 0;
+            let sIP = 0, sSO = 0, sER = 0, sW = 0, sSV = 0, sPitGP = 0;
+            for (const game of games) {
+                if (game.hitting && (game.hitting.h > 0 || game.hitting.bb > 0 || game.hitting.r > 0 || game.hitting.rbi > 0 || game.hitting.ab > 0)) {
+                    sGP++;
+                    sH += game.hitting.h || 0;
+                    s2b += game.hitting['2b'] || 0;
+                    s3b += game.hitting['3b'] || 0;
+                    sHR += game.hitting.hr || 0;
+                    sRBI += game.hitting.rbi || 0;
+                    sR += game.hitting.r || 0;
+                    sBB += game.hitting.bb || 0;
+                }
+                if (game.pitching && (game.pitching.ip > 0 || game.pitching.w > 0 || game.pitching.sv > 0)) {
+                    sPitGP++;
+                    sIP += game.pitching.ip || 0;
+                    sSO += game.pitching.so || 0;
+                    sER += game.pitching.er || 0;
+                    sW += game.pitching.w || 0;
+                    sSV += game.pitching.sv || 0;
+                }
+            }
+            // Build season summary lines
+            let seasonHitLine = '';
+            if (sGP > 0) {
+                const parts = [`${sGP}GP: ${sH}H`];
+                if (s2b > 0) parts.push(`${s2b} 2B`);
+                if (s3b > 0) parts.push(`${s3b} 3B`);
+                if (sHR > 0) parts.push(`${sHR} HR`);
+                if (sRBI > 0) parts.push(`${sRBI} RBI`);
+                if (sR > 0) parts.push(`${sR}R`);
+                if (sBB > 0) parts.push(`${sBB} BB`);
+                seasonHitLine = parts.join(', ');
+            }
+            let seasonPitLine = '';
+            if (sPitGP > 0) {
+                const parts = [`${sIP}IP`, `${sSO}K`];
+                if (sER > 0) parts.push(`${sER}ER`);
+                if (sW > 0) parts.push(`${sW}W`);
+                if (sSV > 0) parts.push(`${sSV}SV`);
+                seasonPitLine = parts.join(', ');
+            }
+
             results.push({
                 name,
                 team: data.team,
@@ -1255,7 +1299,9 @@ function computePIS(playerStats) {
                 tier,
                 gameLines,
                 tags,
-                note: data.note || null
+                note: data.note || null,
+                seasonHitLine,
+                seasonPitLine
             });
         }
     }
@@ -1318,10 +1364,10 @@ function buildPlayersToWatch(pisData) {
             html += `<span style="background: ${tierColor}22; color: ${tierColor}; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${badgeLabel} ${badgeVal}</span>`;
         }
         html += `</div>`;
-        // One-line stat summary (latest game)
-        const latest = latestLineForRole(p.gameLines, p.role);
-        if (latest) {
-            html += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">vs ${latest.opp}: ${latest.line}</p>`;
+        // One-line season totals summary
+        const seasonLine = p.role === 'pitcher' ? p.seasonPitLine : p.seasonHitLine;
+        if (seasonLine) {
+            html += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${seasonLine}</p>`;
         }
         html += `</div>`;
         return html;
