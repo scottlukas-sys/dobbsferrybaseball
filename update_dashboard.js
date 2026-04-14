@@ -164,47 +164,47 @@ function fmtAvg(n) {
 // VARSITY SCHEDULE (hardcoded from the HTML)
 // ============================================================
 const varsitySchedule = [
-    { date: '2026-03-19', display: 'Mar 19', day: 'Thu', time: '4:15 PM', opponent: 'Ardsley', location: 'Away', venue: 'Ardsley High School', type: 'Scrimmage' },
-    { date: '2026-03-24', display: 'Mar 24', day: 'Tue', time: '4:30 PM', opponent: 'Irvington', location: 'Away', venue: 'Memorial Park (Dow\'s Lane)', type: 'Game' },
-    { date: '2026-03-27', display: 'Mar 27', day: 'Fri', time: '4:30 PM', opponent: 'Saunders', location: 'Home', venue: 'Gould Park', type: 'Game' },
-    { date: '2026-04-07', display: 'Apr 7', day: 'Tue', time: '4:30 PM', opponent: 'Edgemont', location: 'Away', venue: 'Edgemont HS', type: 'Game' },
-    { date: '2026-04-08', display: 'Apr 8', day: 'Wed', time: '4:30 PM', opponent: 'Sleepy Hollow', location: 'Home', venue: 'Gould Park', type: 'Game' },
+    { date: '2026-03-19', display: 'Mar 19', day: 'Thu', time: '4:15 PM', opponent: 'Ardsley', location: 'Away', venue: 'Ardsley High School', address: '300 Farm Rd, Ardsley, NY 10502', type: 'Scrimmage' },
+    { date: '2026-03-24', display: 'Mar 24', day: 'Tue', time: '4:30 PM', opponent: 'Irvington', location: 'Away', venue: 'Memorial Park (Dow\'s Lane)', address: '11 Dows Ln, Irvington, NY 10533', type: 'Game' },
+    { date: '2026-03-27', display: 'Mar 27', day: 'Fri', time: '4:30 PM', opponent: 'Saunders', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
+    { date: '2026-04-07', display: 'Apr 7', day: 'Tue', time: '4:30 PM', opponent: 'Edgemont', location: 'Away', venue: 'Edgemont HS', address: '300 White Oak Ln, Scarsdale, NY 10583', type: 'Game' },
+    { date: '2026-04-08', display: 'Apr 8', day: 'Wed', time: '4:30 PM', opponent: 'Sleepy Hollow', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
     // Apr 11 Pearl River game WAS played despite earlier postponement report — confirmed by @dfeaglesbaseball IG 4/12 post (DF L 10-11)
-    { date: '2026-04-11', display: 'Apr 11', day: 'Sat', time: '3:00 PM', opponent: 'Pearl River', location: 'Away', venue: 'Pearl River HS', type: 'Game' },
-    { date: '2026-04-13', display: 'Apr 13', day: 'Mon', time: '4:30 PM', opponent: 'Irvington', location: 'Home', venue: 'Gould Park', type: 'Game' },
-    { date: '2026-04-14', display: 'Apr 14', day: 'Tue', time: '4:30 PM', opponent: 'Ardsley', location: 'Home', venue: 'Gould Park', type: 'Game' },
-    { date: '2026-04-18', display: 'Apr 18', day: 'Sat', time: '11:00 AM', opponent: 'Haldane', location: 'Away', venue: 'Haldane HS', type: 'Game' },
-    { date: '2026-04-20', display: 'Apr 20', day: 'Mon', time: '4:30 PM', opponent: 'Blind Brook', location: 'Home', venue: 'Gould Park', type: 'League' },
-    { date: '2026-04-22', display: 'Apr 22', day: 'Wed', time: '4:30 PM', opponent: 'Blind Brook', location: 'Away', venue: 'Blind Brook HS', type: 'League' },
-    { date: '2026-04-24', display: 'Apr 24', day: 'Fri', time: '4:30 PM', opponent: 'Hastings', location: 'Home', venue: 'Gould Park', type: 'League' },
-    { date: '2026-04-27', display: 'Apr 27', day: 'Mon', time: '5:00 PM', opponent: 'Valhalla', location: 'Away', venue: 'Kensico Field', type: 'Game' },
-    { date: '2026-04-28', display: 'Apr 28', day: 'Tue', time: '4:30 PM', opponent: 'Hastings', location: 'Away', venue: 'Hastings HS', type: 'League' },
-    { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck', location: 'Away', venue: 'Rye Neck HS', type: 'League' },
-    { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck', location: 'Home', venue: 'Gould Park', type: 'League' },
-    { date: '2026-05-04', display: 'May 4', day: 'Mon', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Home', venue: 'Gould Park', type: 'League' },
-    { date: '2026-05-06', display: 'May 6', day: 'Wed', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Away', venue: 'Parkway Oval', type: 'League' },
-    { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell School', location: 'Away', venue: 'Leffell School', type: 'League' },
-    { date: '2026-05-11', display: 'May 11', day: 'Mon', time: '4:30 PM', opponent: 'Westlake', location: 'Home', venue: 'Gould Park', type: 'Game' },
-    { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell School', location: 'Home', venue: 'Gould Park', type: 'League' },
+    { date: '2026-04-11', display: 'Apr 11', day: 'Sat', time: '3:00 PM', opponent: 'Pearl River', location: 'Away', venue: 'Pearl River HS', address: '275 E Central Ave, Pearl River, NY 10965', type: 'Game' },
+    { date: '2026-04-13', display: 'Apr 13', day: 'Mon', time: '4:30 PM', opponent: 'Irvington', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
+    { date: '2026-04-14', display: 'Apr 14', day: 'Tue', time: '4:30 PM', opponent: 'Ardsley', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
+    { date: '2026-04-18', display: 'Apr 18', day: 'Sat', time: '11:00 AM', opponent: 'Haldane', location: 'Away', venue: 'Haldane HS', address: '15 Craigside Dr, Cold Spring, NY 10516', type: 'Game' },
+    { date: '2026-04-20', display: 'Apr 20', day: 'Mon', time: '4:30 PM', opponent: 'Blind Brook', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
+    { date: '2026-04-22', display: 'Apr 22', day: 'Wed', time: '4:30 PM', opponent: 'Blind Brook', location: 'Away', venue: 'Blind Brook HS', address: '840 King St, Rye Brook, NY 10573', type: 'League' },
+    { date: '2026-04-24', display: 'Apr 24', day: 'Fri', time: '4:30 PM', opponent: 'Hastings', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
+    { date: '2026-04-27', display: 'Apr 27', day: 'Mon', time: '5:00 PM', opponent: 'Valhalla', location: 'Away', venue: 'Kensico Field', address: '316 Columbus Ave, Valhalla, NY 10595', type: 'Game' },
+    { date: '2026-04-28', display: 'Apr 28', day: 'Tue', time: '4:30 PM', opponent: 'Hastings', location: 'Away', venue: 'Hastings HS', address: '27 Farragut Ave, Hastings-on-Hudson, NY 10706', type: 'League' },
+    { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck', location: 'Away', venue: 'Rye Neck HS', address: '310 Palmer Rd, Mamaroneck, NY 10543', type: 'League' },
+    { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
+    { date: '2026-05-04', display: 'May 4', day: 'Mon', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
+    { date: '2026-05-06', display: 'May 6', day: 'Wed', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Away', venue: 'Parkway Oval', address: '65 Elm St, Tuckahoe, NY 10707', type: 'League' },
+    { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell School', location: 'Away', venue: 'Leffell School', address: '40 Woods Rd, Hartsdale, NY 10530', type: 'League' },
+    { date: '2026-05-11', display: 'May 11', day: 'Mon', time: '4:30 PM', opponent: 'Westlake', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
+    { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell School', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
 ];
 
 const jvSchedule = [
-    { date: '2026-04-07', display: 'Apr 7', day: 'Tue', time: '4:30 PM', opponent: 'Edgemont JV', location: 'Home' },
-    { date: '2026-04-08', display: 'Apr 8', day: 'Wed', time: '4:30 PM', opponent: 'Sleepy Hollow JV', location: 'Away' },
+    { date: '2026-04-07', display: 'Apr 7', day: 'Tue', time: '4:30 PM', opponent: 'Edgemont JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    { date: '2026-04-08', display: 'Apr 8', day: 'Wed', time: '4:30 PM', opponent: 'Sleepy Hollow JV', location: 'Away', venue: 'Sleepy Hollow HS', address: '210 N Broadway, Sleepy Hollow, NY 10591' },
     // POSTPONED — removed from DFSD athletic calendar as of 2026-04-07; no makeup date posted
     // { date: '2026-04-11', display: 'Apr 11', day: 'Sat', time: '3:00 PM', opponent: 'Pearl River JV', location: 'Home' },
-    { date: '2026-04-14', display: 'Apr 14', day: 'Tue', time: '4:30 PM', opponent: 'Ardsley JV', location: 'Away' },
-    { date: '2026-04-16', display: 'Apr 16', day: 'Thu', time: '4:30 PM', opponent: 'Hastings JV', location: 'Away' },
-    { date: '2026-04-18', display: 'Apr 18', day: 'Sat', time: '11:00 AM', opponent: 'Irvington JV', location: 'Away' },
-    { date: '2026-04-20', display: 'Apr 20', day: 'Mon', time: '4:30 PM', opponent: 'Blind Brook JV', location: 'Away' },
-    { date: '2026-04-22', display: 'Apr 22', day: 'Wed', time: '4:30 PM', opponent: 'Blind Brook JV', location: 'Home' },
-    { date: '2026-04-28', display: 'Apr 28', day: 'Tue', time: '4:30 PM', opponent: 'Hastings JV', location: 'Home' },
-    { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Home' },
-    { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Away' },
-    { date: '2026-05-04', display: 'May 4', day: 'Mon', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Away' },
-    { date: '2026-05-06', display: 'May 6', day: 'Wed', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Home' },
-    { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell JV', location: 'Home' },
-    { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell JV', location: 'Away' },
+    { date: '2026-04-14', display: 'Apr 14', day: 'Tue', time: '4:30 PM', opponent: 'Ardsley JV', location: 'Away', venue: 'Ardsley HS', address: '300 Farm Rd, Ardsley, NY 10502' },
+    { date: '2026-04-16', display: 'Apr 16', day: 'Thu', time: '4:30 PM', opponent: 'Hastings JV', location: 'Away', venue: 'Hastings HS', address: '27 Farragut Ave, Hastings-on-Hudson, NY 10706' },
+    { date: '2026-04-18', display: 'Apr 18', day: 'Sat', time: '11:00 AM', opponent: 'Irvington JV', location: 'Away', venue: 'Memorial Park', address: '11 Dows Ln, Irvington, NY 10533' },
+    { date: '2026-04-20', display: 'Apr 20', day: 'Mon', time: '4:30 PM', opponent: 'Blind Brook JV', location: 'Away', venue: 'Blind Brook HS', address: '840 King St, Rye Brook, NY 10573' },
+    { date: '2026-04-22', display: 'Apr 22', day: 'Wed', time: '4:30 PM', opponent: 'Blind Brook JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    { date: '2026-04-28', display: 'Apr 28', day: 'Tue', time: '4:30 PM', opponent: 'Hastings JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Away', venue: 'Rye Neck HS', address: '310 Palmer Rd, Mamaroneck, NY 10543' },
+    { date: '2026-05-04', display: 'May 4', day: 'Mon', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Away', venue: 'Parkway Oval', address: '65 Elm St, Tuckahoe, NY 10707' },
+    { date: '2026-05-06', display: 'May 6', day: 'Wed', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell JV', location: 'Away', venue: 'Leffell School', address: '40 Woods Rd, Hartsdale, NY 10530' },
 ];
 
 // ============================================================
@@ -351,12 +351,17 @@ if (nextVarsityGame) {
         ? `\n                <div class="weather"><strong>Weather:</strong> ${vWeather} <span style="color:#666;font-size:11px;">(Dobbs Ferry area)</span></div>`
         : `\n                <div class="weather"><strong>Weather:</strong> Forecast unavailable</div>`;
 
+    // Address row for away games
+    const vAddressRow = (nextVarsityGame.location !== 'Home' && nextVarsityGame.address)
+        ? `\n                <div style="color:#aaa;font-size:12px;margin-top:4px;"><strong>Address:</strong> <a href="https://maps.google.com/?q=${encodeURIComponent(nextVarsityGame.address)}" target="_blank" style="color:#6b9fd4;text-decoration:none;">${nextVarsityGame.address}</a></div>`
+        : '';
+
     // Replace the entire varsity alert card
     const alertRegex = /(<div id="varsity"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- Quick Stats -->)/;
     html = html.replace(alertRegex, `$1<div class="card alert">
                 <div class="alert-title">NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextDate.getDate()})</div>
                 <div class="alert-game">${shortMonth} ${nextDate.getDate()} (${dayOfWeek}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextVarsityGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextVarsityGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${venueName}</div>
-                <div class="alert-details">Non-league${lastResultText}</div>${vWeatherRow}
+                <div class="alert-details">Non-league${lastResultText}</div>${vAddressRow}${vWeatherRow}
             </div>$3`);
 }
 
@@ -926,43 +931,46 @@ const playedJvDates = new Set(Object.keys(scores.jv));
 const nextJvGames = jvSchedule.filter(g => !playedJvDates.has(g.date) && g.date >= todayStr);
 const nextJvGame = nextJvGames[0];
 
-// Update JV Status Alert
+// Update JV Status Alert — match varsity formatting
 if (nextJvGame) {
     const nextJvDate = new Date(nextJvGame.date + 'T12:00:00');
     const daysUntil = daysBetween(today, nextJvDate);
     const dayName = SHORT_DAYS[nextJvDate.getDay()];
     const shortMonth = formatShortMonth(nextJvDate);
-    const homeAway = nextJvGame.location === 'Home' ? 'vs' : 'at';
+    const homeAway = nextJvGame.location === 'Home' ? 'vs' : '@';
+    const jvVenueName = nextJvGame.location === 'Home' ? 'Gould Park (Home)' : `${nextJvGame.venue || nextJvGame.opponent} (Away)`;
+    const daysText = daysUntil === 0 ? 'TODAY' : daysUntil === 1 ? 'TOMORROW' : `${daysUntil} DAYS AWAY`;
 
-    // Check if JV has played any games
-    const jvHasPlayed = Object.keys(scores.jv).length > 0;
-
-    let alertTitle, alertClass;
-    if (!jvHasPlayed) {
-        alertTitle = `JV SEASON OPENER — ${daysUntil} DAYS AWAY (${shortMonth.toUpperCase()} ${nextJvDate.getDate()})`;
-    } else {
-        alertTitle = `JV NEXT GAME — ${shortMonth} ${nextJvDate.getDate()} ${homeAway} ${nextJvGame.opponent}`;
+    // Get last JV result for context
+    const sortedJvDates = Object.keys(scores.jv).sort().reverse();
+    let lastJvResultText = '';
+    if (sortedJvDates.length > 0) {
+        const lastDate = sortedJvDates[0];
+        const lastScore = scores.jv[lastDate];
+        const won = lastScore.df > lastScore.opp;
+        const ld = new Date(lastDate + 'T12:00:00');
+        const lm = formatShortMonth(ld);
+        lastJvResultText = ` | Last result: ${won ? 'W' : 'L'} ${lastScore.df}-${lastScore.opp} vs ${lastScore.opponent} (${lm} ${ld.getDate()})`;
     }
 
-    html = html.replace(
-        /<div class="alert-title">JV [^<]*/,
-        `<div class="alert-title">${alertTitle}`
-    );
+    // Address row for away games
+    const jvAddressRow = (nextJvGame.location !== 'Home' && nextJvGame.address)
+        ? `\n                <div style="color:#aaa;font-size:12px;margin-top:4px;"><strong>Address:</strong> <a href="https://maps.google.com/?q=${encodeURIComponent(nextJvGame.address)}" target="_blank" style="color:#6b9fd4;text-decoration:none;">${nextJvGame.address}</a></div>`
+        : '';
 
-    html = html.replace(
-        /(<div id="jv"[\s\S]*?<div class="alert-game">)[\s\S]*?(<\/div>\s*<div class="alert-details">)/,
-        `$1${shortMonth} ${nextJvDate.getDate()} (${dayName}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextJvGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.location}$2`
-    );
-
-    // JV weather row — live Open-Meteo forecast
+    // JV weather row
     const jvWeather = fetchGameWeather(nextJvGame.date, nextJvGame.time);
-    const jvWeatherText = jvWeather
-        ? `${jvWeather} <span style="color:#666;font-size:11px;">(Dobbs Ferry area)</span>`
-        : 'Forecast unavailable';
-    html = html.replace(
-        /(<div id="jv"[\s\S]*?<div class="weather">\s*<strong>Weather:<\/strong>)[^<]*(<\/div>)/,
-        `$1 ${jvWeatherText}$2`
-    );
+    const jvWeatherRow = jvWeather
+        ? `\n                <div class="weather"><strong>Weather:</strong> ${jvWeather} <span style="color:#666;font-size:11px;">(Dobbs Ferry area)</span></div>`
+        : `\n                <div class="weather"><strong>Weather:</strong> Forecast unavailable</div>`;
+
+    // Replace the entire JV alert card to match varsity style
+    const jvAlertRegex = /(<div id="jv"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- JV Quick Stats -->)/;
+    html = html.replace(jvAlertRegex, `$1<div class="card alert">
+                <div class="alert-title">JV NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextJvDate.getDate()})</div>
+                <div class="alert-game">${shortMonth} ${nextJvDate.getDate()} (${dayName}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextJvGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${jvVenueName}</div>
+                <div class="alert-details">Non-league${lastJvResultText}</div>${jvAddressRow}${jvWeatherRow}
+            </div>$3`);
 }
 
 // Update JV Quick Stats - Record
