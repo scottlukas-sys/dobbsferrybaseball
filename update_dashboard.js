@@ -576,6 +576,53 @@ for (const [date, score] of Object.entries(scores.jv || {})) {
 }
 
 // ============================================================
+// 6a3. UPDATE KEY DATES SECTIONS WITH COMPLETED SCORES
+// ============================================================
+// Key Dates tables have 5 columns: Date, Opponent, Time, Location, Notes
+// For completed games, replace the Notes cell with the score badge and add "completed" class
+
+function updateKeyDatesSection(htmlStr, scoresMap, sectionComment) {
+    // Build a lookup: "Mon DD" → { df, opp, opponent }
+    const dateLookup = {};
+    for (const [dateStr, score] of Object.entries(scoresMap)) {
+        const d = new Date(dateStr + 'T12:00:00');
+        const shortMonth = formatShortMonth(d);
+        const dayNum = d.getDate();
+        const key = `${shortMonth} ${dayNum}`;
+        dateLookup[key] = score;
+    }
+
+    // Find all rows in the Key Dates section
+    // Pattern: rows with 5 <td> cells inside the section between the comment and the closing </table>
+    const sectionPattern = new RegExp(
+        `(${sectionComment}[\\s\\S]*?<tbody>)([\\s\\S]*?)(</tbody>)`,
+        ''
+    );
+
+    return htmlStr.replace(sectionPattern, (match, before, tbody, after) => {
+        // Process each <tr> in the tbody
+        const updatedTbody = tbody.replace(
+            /<tr([^>]*)>(\s*<td>([^<]*)<\/td>\s*<td>([^<]*)<\/td>\s*<td>([^<]*)<\/td>\s*<td>([^<]*)<\/td>\s*<td>)([\s\S]*?)(<\/td>\s*<\/tr>)/g,
+            (rowMatch, trAttrs, prefix, dateCell, oppCell, timeCell, locCell, notesContent, suffix) => {
+                const score = dateLookup[dateCell.trim()];
+                if (score) {
+                    const won = score.df > score.opp;
+                    const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
+                    const resultColor = won ? '#D4A017' : '#888';
+                    const completedClass = trAttrs.includes('completed') ? trAttrs : (trAttrs.includes('class=') ? trAttrs.replace(/class="([^"]*)"/, 'class="completed $1"') : ` class="completed"`);
+                    return `<tr${completedClass}>${prefix}<span class="game-badge" style="background-color:${resultColor};">${resultText}</span>${suffix}`;
+                }
+                return rowMatch;
+            }
+        );
+        return before + updatedTbody + after;
+    });
+}
+
+html = updateKeyDatesSection(html, scores.varsity || {}, '<!-- Key Varsity Dates -->');
+html = updateKeyDatesSection(html, scores.jv || {}, '<!-- Key JV Dates -->');
+
+// ============================================================
 // 6b. UPDATE DIVISION B STANDINGS
 // ============================================================
 // ============================================================
