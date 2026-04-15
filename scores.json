@@ -3283,7 +3283,7 @@
     {
       "date": "2026-04-15",
       "type": "daily-sweep",
-      "text": "Full DS sweep all 15 teams. 3 new opponent results from Apr 14: Irvington W 10-0 Woodlands, Sleepy Hollow L 9-10 Yonkers Montessori, Westlake W 13-3 Valhalla. DF record 4-3 (V), 1-2 (JV). No schedule changes in Gmail. IG @dfeaglesbaseball confirms Apr 14 W 6-3 vs Ardsley with box scores (minor stat discrepancies vs GC noted). All teamIntel updated with current DS records and Up Next lines.",
+      "text": "Full DS sweep all 15 teams. 3 new opponent results from Apr 14: Irvington W 10-0 Woodlands, Sleepy Hollow L 9-10 Yonkers Montessori, Westlake W 13-3 Valhalla. DF record 4-3 (V), 1-2 (JV). No schedule changes in Gmail. IG @dfeaglesbaseball confirms Apr 14 W 6-3 vs Ardsley with box scores (minor stat discrepancies vs GC noted). All teamIntel updated with current DS records and Up Next lines. CORRECTION: Section One Athletics checked \u2014 site is down (DNS/empty response across all URL variants). DFSD Athletics checked \u2014 calendar confirms Apr 14 Ardsley, Apr 16 JV at Hastings, Apr 18 V at Haldane. No schedule changes.",
       "sourcesChecked": {
         "digitalsports_df_varsity": "\u2705 ok \u2014 DS shows 3-3 (Apr 14 W not yet posted on DS)",
         "digitalsports_df_jv": "\u2705 ok \u2014 DS shows Apr 8 W 11-7, Apr 14 not yet posted",
@@ -3305,10 +3305,10 @@
         "instagram_haldanebaseball": "\u2705 ok \u2014 Apr 14 post confirms L 0-6 vs Edgemont",
         "instagram_blindbrookhs": "\u2705 checked \u2014 school account, no baseball scores",
         "instagram_ardsleybaseball": "\u2705 checked \u2014 no posts visible",
-        "section_one_varsity": "\u26a0\ufe0f not-checked-this-run (DS sweep covers same data)",
-        "section_one_jv": "\u26a0\ufe0f not-checked-this-run",
-        "gamedayone": "pre-league-empty (league starts Apr 20)",
-        "dfsd_athletics": "\u26a0\ufe0f not-checked-this-run (DS sweep covers schedule data)",
+        "section_one_varsity": "\u2705 site-down \u2014 section1athletics.com/.org returns DNS_PROBE_FINISHED_NXDOMAIN and ERR_EMPTY_RESPONSE across all URL variants (attempted 5 times: .com, .org, http, https, /cgi-bin/G5genie)",
+        "section_one_jv": "\u2705 site-down \u2014 same as varsity, section1athletics unresponsive",
+        "gamedayone": "\u2705 pre-league-empty (league starts Apr 20)",
+        "dfsd_athletics": "\u2705 checked \u2014 dfsd.org/departments/athletics/athletic-calendar shows Apr 14 Varsity Home vs Ardsley 4:30 PM, Apr 16 JV at Hastings (Bus 3:30 PM), Apr 18 Varsity at Haldane (Bus 9:00 AM) 11:00 AM. No cancellations or changes. All matches scores.json.",
         "gmail": "\u2705 checked \u2014 JV scheduling thread (Zonana), no rainouts or changes"
       }
     }
