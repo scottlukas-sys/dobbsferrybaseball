@@ -1027,59 +1027,28 @@ html = html.replace(
 
 // Update Next Four JV Games
 function buildNextFourJV() {
+    // Only show upcoming games — no completed games in this section
     const upcoming = jvSchedule.filter(g => !playedJvDates.has(g.date) && g.date >= todayStr);
-    const completedJv = jvSchedule.filter(g => playedJvDates.has(g.date)).sort((a, b) => b.date.localeCompare(a.date));
-
-    let displayGames = [];
-
-    // Show most recent completed JV game if within 3 days
-    if (completedJv.length > 0) {
-        const last = completedJv[0];
-        const lastDate = new Date(last.date + 'T12:00:00');
-        if (daysBetween(lastDate, today) <= 3) {
-            displayGames.push({ ...last, completed: true });
-        }
-    }
-
-    for (const g of upcoming) {
-        if (displayGames.length >= 4) break;
-        displayGames.push({ ...g, completed: false });
-    }
+    const displayGames = upcoming.slice(0, 4);
 
     let cardsHtml = '';
-    let isFirstUpcoming = true;
     const jvHasPlayed = Object.keys(scores.jv).length > 0;
 
-    for (const g of displayGames) {
+    for (let i = 0; i < displayGames.length; i++) {
+        const g = displayGames[i];
         const d = new Date(g.date + 'T12:00:00');
         const monthName = MONTHS[d.getMonth()].toUpperCase();
         const dayName = DAYS[d.getDay()].toUpperCase();
         const homeAway = g.location === 'Home' ? 'vs' : 'at';
 
-        if (g.completed) {
-            const score = scores.jv[g.date];
-            const won = score.df > score.opp;
-            let resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-            const resultColor = won ? '#D4A017' : '#888';
+        let badge = '';
+        if (i === 0) {
+            badge = !jvHasPlayed
+                ? '<span class="game-badge highlight">OPENER</span>'
+                : '<span class="game-badge highlight">NEXT</span>';
+        }
 
-            cardsHtml += `
-                    <div class="game-card" style="opacity: 0.6; border-color: ${resultColor};">
-                        <div class="game-date">${monthName} ${d.getDate()} | ${dayName}</div>
-                        <div class="game-opponent">${homeAway} ${g.opponent}</div>
-                        <div class="game-details" style="color: ${resultColor}; font-weight: 700;">${resultText}</div>
-                        <div class="game-details">${g.location}</div>
-                        <span class="game-badge" style="background-color: ${resultColor};">FINAL</span>
-                    </div>`;
-        } else {
-            let badge = '';
-            if (isFirstUpcoming) {
-                badge = !jvHasPlayed && displayGames.indexOf(g) === 0
-                    ? '<span class="game-badge highlight">OPENER</span>'
-                    : '<span class="game-badge highlight">NEXT</span>';
-                isFirstUpcoming = false;
-            }
-
-            cardsHtml += `
+        cardsHtml += `
                     <div class="game-card">
                         <div class="game-date">${monthName} ${d.getDate()} | ${dayName}</div>
                         <div class="game-opponent">${homeAway} ${g.opponent}</div>
@@ -1087,7 +1056,6 @@ function buildNextFourJV() {
                         <div class="game-details">${g.location}</div>
                         ${badge}
                     </div>`;
-        }
     }
 
     return cardsHtml;
