@@ -550,36 +550,40 @@ for (const [date, score] of Object.entries(scores.varsity)) {
 }
 
 // ============================================================
-// 6a2. MARK COMPLETED GAMES IN JV SCHEDULE TABLE (6 columns: date, day, time, opp, location, type)
+// 6a2. REGENERATE FULL JV SCHEDULE TABLE from jvSchedule array
 // ============================================================
-// JV ONLY: Iterate scores.jv and mark completed JV games
-// Pattern: Row with exactly 5 <td> elements BEFORE the type column (date, day, time, opp, location)
-// This ensures we only match JV rows (6 columns total), never varsity rows (7 columns)
-for (const [date, score] of Object.entries(scores.jv || {})) {
-    const d = new Date(date + 'T12:00:00');
-    const shortMonth = formatShortMonth(d);
-    const dayNum = d.getDate();
-    const won = score.df > score.opp;
-    let resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-    const resultColor = won ? '#D4A017' : '#888';
-
-    // Mark the matching JV row as completed (exactly 6 td columns — NOT 7 which would be varsity)
-    // The 6th column (type/badge) should only contain text or spans, not another <td>
-    // The content pattern [^<]*(?:<[^/td][^<]*)*  matches text that may contain non-closing tags (like <span>)
-    // but stops before any closing tag or new <td> opening
-    const jvRowPattern = new RegExp(
-        `(<tr(?:\\s+class="[^"]*")?>\\s*<td>${shortMonth} ${dayNum}<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>)([^<]*(?:<(?!td)[^<]*)*?)(<\\/td>\\s*<\\/tr>)`,
-        'g'
-    );
-    html = html.replace(jvRowPattern, (match, p1, p2, p3) => {
-        // Mark row as completed and add score badge
-        const opened = p1.replace(/<tr(?:\s+class="[^"]*")?>/, m => {
-            if (m.includes('completed')) return m;
-            return m.includes('class=') ? m.replace(/class="([^"]*)"/, 'class="completed $1"') : '<tr class="completed">';
-        });
-        return `${opened}<span class="game-badge" style="background-color:${resultColor};">${resultText}</span>${p3}`;
-    });
+// Fully rebuild the JV schedule table so it's always in sync with the code.
+// Previously this was a static HTML table that could go stale (e.g. missing games).
+function buildFullJvScheduleRows() {
+    let rows = '';
+    for (const g of jvSchedule) {
+        const score = scores.jv[g.date];
+        const isCompleted = !!score;
+        const trClass = isCompleted ? ' class="completed"' : '';
+        let typeCell = '<span class="game-badge league">League</span>';
+        if (isCompleted) {
+            const won = score.df > score.opp;
+            const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
+            const resultColor = won ? '#D4A017' : '#888';
+            typeCell = `<span class="game-badge" style="background-color:${resultColor};">${resultText}</span>`;
+        }
+        rows += `
+                        <tr${trClass}>
+                            <td>${g.display}</td>
+                            <td>${g.day}</td>
+                            <td>${g.time}</td>
+                            <td>${g.opponent}</td>
+                            <td>${g.location}</td>
+                            <td>${typeCell}</td>
+                        </tr>`;
+    }
+    return rows;
 }
+
+// Replace the Full JV Schedule table body
+const jvFullSchedRegex = /(<!-- Full JV Schedule -->\s*<div class="card">\s*<h2>)[^<]*(Full JV Schedule[^<]*<\/h2>\s*<table>\s*<thead>[\s\S]*?<\/thead>\s*<tbody>)([\s\S]*?)(<\/tbody>\s*<\/table>\s*<\/div>)/;
+html = html.replace(jvFullSchedRegex, `$1Full JV Schedule (${jvSchedule.length} Games)</$2${buildFullJvScheduleRows()}
+                    $4`);
 
 // ============================================================
 // 6a3. UPDATE KEY DATES SECTIONS WITH COMPLETED SCORES
@@ -906,12 +910,26 @@ function buildElsewhere() {
             badgeHtml = `<span class="threat-badge" style="background-color: #888;">THREAT</span>`;
         }
 
+        // Compute next DF matchup from varsity + JV schedules
+        const nextDFDate = getNextDFDate(team);
+        let nextVsDFText = 'No game scheduled';
+        if (nextDFDate !== '9999-12-31') {
+            const matchV = varsitySchedule.find(g => g.opponent === team && g.date === nextDFDate);
+            const matchJ = jvSchedule.find(g => g.opponent.replace(/ JV$/, '') === team && g.date >= todayStr);
+            const match = matchV || matchJ;
+            if (match) {
+                const md = new Date(match.date + 'T12:00:00');
+                const ha = match.location === 'Home' ? 'vs' : '@';
+                nextVsDFText = `${formatShortMonth(md)} ${md.getDate()} ${ha} ${match.opponent}`;
+            }
+        }
+
         cardsHtml += `
                 <div class="team-card"${borderStyle}>
-                    <div class="team-name">${t.fullName}</div>
+                    <div class="team-name">${team}</div>
                     ${badgeHtml}
                     <div class="team-intel">${t.intel}</div>
-                    <div class="team-next">Next vs DF: ${t.nextVsDF}</div>
+                    <div class="team-next">Next vs DF: ${nextVsDFText}</div>
                 </div>`;
     }
 
