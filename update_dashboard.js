@@ -195,7 +195,7 @@ const jvSchedule = [
     // { date: '2026-04-11', display: 'Apr 11', day: 'Sat', time: '3:00 PM', opponent: 'Pearl River JV', location: 'Home' },
     { date: '2026-04-14', display: 'Apr 14', day: 'Tue', time: '4:30 PM', opponent: 'Ardsley JV', location: 'Away', venue: 'Ardsley HS', address: '300 Farm Rd, Ardsley, NY 10502' },
     { date: '2026-04-16', display: 'Apr 16', day: 'Thu', time: '4:30 PM', opponent: 'Hastings JV', location: 'Away', venue: 'Hastings HS', address: '27 Farragut Ave, Hastings-on-Hudson, NY 10706' },
-    { date: '2026-04-18', display: 'Apr 18', day: 'Sat', time: '11:00 AM', opponent: 'Irvington JV', location: 'Away', venue: 'Memorial Park', address: '11 Dows Ln, Irvington, NY 10533' },
+    { date: '2026-04-18', display: 'Apr 18', day: 'Sat', time: '2:30 PM', opponent: 'Irvington JV', location: 'Away', venue: 'Memorial Park', address: '11 Dows Ln, Irvington, NY 10533' },
     { date: '2026-04-20', display: 'Apr 20', day: 'Mon', time: '4:30 PM', opponent: 'Blind Brook JV', location: 'Away', venue: 'Blind Brook HS', address: '840 King St, Rye Brook, NY 10573' },
     { date: '2026-04-22', display: 'Apr 22', day: 'Wed', time: '4:30 PM', opponent: 'Blind Brook JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-04-28', display: 'Apr 28', day: 'Tue', time: '4:30 PM', opponent: 'Hastings JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
@@ -1510,18 +1510,21 @@ function buildJVPlayersToWatch(pisData) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
     }
     function tile(p) {
+        const tierColors = { confirmed: '#D4A017', trending: '#D4A017', emerging: '#888', roster: '#555' };
+        const tierColor = tierColors[p.tier] || '#888';
         const badgeVal = p.role === 'pitcher' ? (p.pitPts || p.pis) : (p.hitPts || p.pis);
         const badgeLabel = p.role === 'pitcher' ? 'Pitching PIS' : 'Hitting PIS';
         let t = `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
         t += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
         t += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
         if (badgeVal > 0) {
-            t += `<span style="background: #33333322; color: #b0b0b0; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${badgeLabel} ${badgeVal}</span>`;
+            t += `<span style="background: ${tierColor}22; color: ${tierColor}; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${badgeLabel} ${badgeVal}</span>`;
         }
         t += `</div>`;
-        const latest = latestLineForRole(p.gameLines, p.role);
-        if (latest) {
-            t += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">vs ${latest.opp}: ${latest.line}</p>`;
+        // Show cumulative season stats (matching varsity tile format)
+        const seasonLine = p.role === 'pitcher' ? p.seasonPitLine : p.seasonHitLine;
+        if (seasonLine) {
+            t += `<p style="color: #aaa; font-size: 11px; margin: 4px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${seasonLine}</p>`;
         }
         t += `</div>`;
         return t;
