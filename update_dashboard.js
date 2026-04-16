@@ -1433,73 +1433,127 @@ function buildPlayersToWatch(pisData) {
     }
     sectionHtml += `</div>`;
 
-    // --- Visual separator between DF and opponents ---
-    sectionHtml += `<div style="border-top: 1px solid #333; margin: 8px 0 15px 0;"></div>`;
-
-    // --- Opponent teams: 3-column grid of compact team cards ---
-    const teamOrder = Object.keys(oppByTeam).sort((a, b) => {
-        const maxA = Math.max(...oppByTeam[a].map(p => p.pis), 0);
-        const maxB = Math.max(...oppByTeam[b].map(p => p.pis), 0);
-        if (maxB !== maxA) return maxB - maxA;
-        return a.localeCompare(b);
-    });
-
-    sectionHtml += `<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">`;
-
-    for (const team of teamOrder) {
-        const players = oppByTeam[team].slice(0, 8);
-        sectionHtml += `<div style="background-color: #161616; padding: 10px 12px; border-radius: 5px;">`;
-        sectionHtml += `<div style="font-size: 13px; font-weight: 600; color: #b0b0b0; margin-bottom: 6px;">${team}</div>`;
-        for (let i = 0; i < players.length; i++) {
-            const p = players[i];
-            const tierColor = tierColors[p.tier] || '#555';
-            const displayName = p.name.replace(/\s*\(.*?\)\s*$/, '');
-            sectionHtml += `<div style="display: flex; align-items: center; flex-wrap: wrap; padding: 2px 0;${i < players.length - 1 ? ' border-bottom: 1px solid #222;' : ''}">`;
-            sectionHtml += `<span style="color: #ccc; font-size: 11px; margin-right: 6px;">${displayName}</span>`;
-            if (p.tags && p.tags.length > 0) {
-                for (const tag of p.tags) {
-                    let tagColor = '#888';
-                    let tagBg = '#2a2a2a';
-                    if (tag.includes('Champ')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
-                    else if (tag.includes('Finalist')) { tagColor = '#C0C0C0'; tagBg = '#C0C0C022'; }
-                    else if (tag.includes('All-Section') || tag.includes('All-State')) { tagColor = '#888'; tagBg = '#88822'; }
-                    else if (tag.includes('Captain')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
-                    else if (tag.includes('All-League') || tag.includes('Award')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
-                    else if (tag.includes('D1')) { tagColor = '#2B5DAA'; tagBg = '#2B5DAA22'; }
-                    else if (tag.includes('Returning')) { tagColor = '#8B8B8B'; tagBg = '#8B8B8B22'; }
-                    else if (tag.includes('Pitcher') || tag.includes('Senior')) { tagColor = '#7BA3CC'; tagBg = '#7BA3CC22'; }
-                    sectionHtml += `<span style="font-size: 9px; color: ${tagColor}; background: ${tagBg}; padding: 1px 4px; border-radius: 2px; margin-right: 3px; white-space: nowrap;">${tag}</span>`;
-                }
-            }
-            if (p.pis > 0) {
-                sectionHtml += `<span style="font-size: 9px; color: ${tierColor}; font-weight: 700; margin-left: auto; white-space: nowrap;">PIS ${p.pis}</span>`;
-            }
-            sectionHtml += `</div>`;
-            if (p.gameLines.length > 0) {
-                const latest = p.gameLines[p.gameLines.length - 1];
-                const combined = [latest.hitLine, latest.pitLine].filter(Boolean).join(' | ');
-                if (combined) sectionHtml += `<div style="padding: 0 0 2px 8px;"><span style="color: #888; font-size: 9px;">vs ${latest.opp}: ${combined}</span></div>`;
-            }
-        }
-        sectionHtml += `</div>`;
-    }
-
-    // Monitoring: untracked teams as small muted cards in the same grid
-    const scheduleTeams = [...new Set(varsitySchedule.filter(g => g.type !== 'Scrimmage').map(g => g.opponent))];
-    const trackedTeams = new Set(teamOrder);
-    trackedTeams.add('Dobbs Ferry');
-    const untrackedTeams = scheduleTeams.filter(t => !trackedTeams.has(t));
-
-    for (const team of untrackedTeams) {
-        sectionHtml += `<div style="background-color: #161616; padding: 10px 12px; border-radius: 5px;">`;
-        sectionHtml += `<div style="font-size: 13px; font-weight: 600; color: #b0b0b0; margin-bottom: 4px;">${team}</div>`;
-        sectionHtml += `<span style="color: #888; font-size: 10px;">No intel yet</span>`;
-        sectionHtml += `</div>`;
-    }
-
-    sectionHtml += `</div>`; // close grid
-
     return sectionHtml;
+}
+
+// ============================================================
+// OPPONENT SCOUTING REPORT — replaces old opponent Players to Watch
+// ============================================================
+// Ranking logic:
+//   1. If box score data exists: PIS (hidden from display)
+//   2. If tags only: tag quality weighting
+//        All-State 10, All-Section 7, All-League 4, Captain 2
+//        +3 bonus for postseason tags (Champ, Finalist)
+//        +1 for D1 commit
+//   3. Combined score = PIS + tagScore. Show up to 4 per team.
+//   4. If a team has zero players with any score > 0: show no players.
+
+function buildOpponentScoutingReport(pisData) {
+    const oppPlayers = pisData.filter(p => p.pool === 'opponent');
+
+    // Tag quality scoring (hidden, used only for ranking)
+    function tagScore(tags) {
+        if (!tags || tags.length === 0) return 0;
+        let score = 0;
+        for (const tag of tags) {
+            const t = tag.toLowerCase();
+            if (t.includes('all-state') || t.includes('all state')) score += 10;
+            else if (t.includes('all-section') || t.includes('all section')) score += 7;
+            else if (t.includes('all-league') || t.includes('all league')) score += 4;
+            else if (t.includes('captain')) score += 2;
+            // Postseason bonus (stacks)
+            if (t.includes('champ')) score += 3;
+            else if (t.includes('finalist')) score += 3;
+            // D1 bonus
+            if (t.includes('d1')) score += 1;
+        }
+        return score;
+    }
+
+    // Group by team, compute composite score per player
+    const oppByTeam = {};
+    for (const p of oppPlayers) {
+        if (!oppByTeam[p.team]) oppByTeam[p.team] = [];
+        const composite = (p.pis || 0) + tagScore(p.tags);
+        oppByTeam[p.team].push({ ...p, composite });
+    }
+
+    // All schedule opponents (varsity, non-scrimmage)
+    const scheduleTeams = [...new Set(varsitySchedule.filter(g => g.type !== 'Scrimmage').map(g => g.opponent))];
+
+    // Tag color map for rendering
+    function renderTag(tag) {
+        let tagColor = '#888';
+        let tagBg = '#2a2a2a';
+        if (tag.includes('Champ')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
+        else if (tag.includes('Finalist')) { tagColor = '#C0C0C0'; tagBg = '#C0C0C022'; }
+        else if (tag.includes('All-Section') || tag.includes('All-State')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
+        else if (tag.includes('All-League') || tag.includes('Award')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
+        else if (tag.includes('Captain')) { tagColor = '#D4A017'; tagBg = '#D4A01722'; }
+        else if (tag.includes('D1')) { tagColor = '#2B5DAA'; tagBg = '#2B5DAA22'; }
+        else if (tag.includes('Returning')) { tagColor = '#8B8B8B'; tagBg = '#8B8B8B22'; }
+        else if (tag.includes('Pitcher') || tag.includes('Senior') || tag.includes('Freshman') || tag.includes('Junior')) { tagColor = '#7BA3CC'; tagBg = '#7BA3CC22'; }
+        // Filter out low-value display tags: Roster 2026, Returning (keep only meaningful ones)
+        if (tag === 'Returning' || tag.startsWith('Roster')) return '';
+        return `<span style="font-size: 9px; color: ${tagColor}; background: ${tagBg}; padding: 1px 4px; border-radius: 2px; margin-right: 3px; white-space: nowrap;">${tag}</span>`;
+    }
+
+    let html = '';
+    html += `<div style="border-top: 1px solid #333; margin: 8px 0 15px 0;"></div>`;
+    html += `<h3 style="margin: 0 0 12px 0; color: #b0b0b0; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Opponent Scouting Report</h3>`;
+    html += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">`;
+
+    for (const team of scheduleTeams) {
+        const ti = scores.teamIntel ? scores.teamIntel[team] : null;
+        const record = ti ? (ti.intel || '').match(/\d+-\d+/) : null;
+        const recordText = record ? record[0] : '';
+
+        // Get top 4 players by composite score (must have score > 0)
+        const players = (oppByTeam[team] || [])
+            .filter(p => p.composite > 0)
+            .sort((a, b) => b.composite - a.composite)
+            .slice(0, 4);
+
+        // Conference badge
+        const confTeams = ['Blind Brook', 'Hastings', 'Rye Neck', 'Leffell School', 'Tuckahoe'];
+        const isConf = confTeams.includes(team);
+
+        html += `<div style="background-color: #161616; padding: 12px 14px; border-radius: 6px;">`;
+
+        // Team header with record
+        html += `<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">`;
+        html += `<div style="display: flex; align-items: center; gap: 6px;">`;
+        html += `<span style="font-size: 14px; font-weight: 600; color: #ddd;">${team}</span>`;
+        if (isConf) {
+            html += `<span style="font-size: 9px; color: #D4A017; background: #D4A01722; padding: 1px 5px; border-radius: 2px; font-weight: 600;">CONF</span>`;
+        }
+        html += `</div>`;
+        if (recordText) {
+            html += `<span style="font-size: 12px; color: #888; font-weight: 500;">${recordText}</span>`;
+        }
+        html += `</div>`;
+
+        // Players (up to 4)
+        if (players.length > 0) {
+            for (let i = 0; i < players.length; i++) {
+                const p = players[i];
+                const displayName = p.name.replace(/\s*\(.*?\)\s*$/, '');
+                html += `<div style="display: flex; align-items: center; flex-wrap: wrap; padding: 3px 0;${i < players.length - 1 ? ' border-bottom: 1px solid #222;' : ''}">`;
+                html += `<span style="color: #ccc; font-size: 11px; margin-right: 6px;">${displayName}</span>`;
+                if (p.tags && p.tags.length > 0) {
+                    for (const tag of p.tags) html += renderTag(tag);
+                }
+                html += `</div>`;
+            }
+        } else {
+            html += `<div style="padding: 2px 0;"><span style="color: #555; font-size: 11px; font-style: italic;">No player intel</span></div>`;
+        }
+
+        html += `</div>`;
+    }
+
+    html += `</div>`; // close grid
+    return html;
 }
 
 // Compute PIS and rebuild Players to Watch
@@ -1508,7 +1562,7 @@ const pisData = computePIS(scores.playerStats || {});
 const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters ranked by: H + XBH bonus + RBI(1.5) + R + BB(0.5) + multi-hit bonus. Pitchers ranked by: W(3) + SV(2) + IP + SO − ER(1.5). Hitters and pitchers are scored on separate leaderboards so volume-rich roles don't crowd out position players.</p>`;
 
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
-html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n            </div>\n\n            `);
+html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n${buildOpponentScoutingReport(pisData)}\n            </div>\n\n            `);
 
 // JV Players to Watch (top 6 by PIS)
 function buildJVPlayersToWatch(pisData) {
