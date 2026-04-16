@@ -1236,6 +1236,19 @@ function computePIS(playerStats) {
             let gamesWithStats = 0;
             const gameLines = [];
 
+            // --- MaxPreps season totals support ---
+            // If player has seasonStats (from MaxPreps scrape), compute PIS from those.
+            // seasonStats = { source, gp, batting: {ab,h,2b,3b,hr,rbi,r,bb,...}, pitching: {ip,h,er,so,bb,w,sv,...} }
+            const ss = data.seasonStats;
+            if (ss && (ss.batting || ss.pitching)) {
+                const fakeGame = { hitting: ss.batting || null, pitching: ss.pitching || null };
+                const pts = scoreGame(fakeGame);
+                totalWeighted += pts.total;
+                hitTotal += pts.hit;
+                pitTotal += pts.pit;
+                gamesWithStats = ss.gp || ss.batting?.gp || ss.pitching?.app || 1;
+            }
+
             for (const game of games) {
                 const hasHitting = game.hitting && (game.hitting.h > 0 || game.hitting.bb > 0 || game.hitting.r > 0 || game.hitting.rbi > 0);
                 const hasPitching = game.pitching && (game.pitching.ip > 0 || game.pitching.w > 0 || game.pitching.sv > 0);
@@ -1265,7 +1278,7 @@ function computePIS(playerStats) {
             const tier = gamesWithStats >= 3 ? 'confirmed' : gamesWithStats >= 2 ? 'trending' : gamesWithStats >= 1 ? 'emerging' : 'roster';
 
             // Include player if they have stats OR tags/notes (roster intel)
-            if (gamesWithStats === 0 && tags.length === 0 && !data.note) continue;
+            if (gamesWithStats === 0 && tags.length === 0 && !data.note && !ss) continue;
 
             // Role classification: pitcher if pitching points dominate, else hitter.
             // Two-way players go where their larger contribution is.
@@ -1273,6 +1286,19 @@ function computePIS(playerStats) {
             // Accumulate season totals for subtitle display
             let sH = 0, s2b = 0, s3b = 0, sHR = 0, sRBI = 0, sR = 0, sBB = 0, sGP = 0;
             let sIP = 0, sSO = 0, sER = 0, sW = 0, sSV = 0, sPitGP = 0;
+            // If seasonStats available (MaxPreps), use those directly
+            if (ss && ss.batting) {
+                const b = ss.batting;
+                sGP = b.gp || 0; sH = b.h || 0; s2b = b['2b'] || 0; s3b = b['3b'] || 0;
+                sHR = b.hr || 0; sRBI = b.rbi || 0; sR = b.r || 0; sBB = b.bb || 0;
+            }
+            if (ss && ss.pitching) {
+                const p = ss.pitching;
+                sPitGP = p.app || p.gp || 0; sIP = p.ip || 0; sSO = p.so || 0;
+                sER = p.er || 0; sW = p.w || 0; sSV = p.sv || 0;
+            }
+            // Accumulate from per-game data (additive — if seasonStats also present,
+            // these add on top, but typically a player has one or the other)
             for (const game of games) {
                 if (game.hitting && (game.hitting.h > 0 || game.hitting.bb > 0 || game.hitting.r > 0 || game.hitting.rbi > 0 || game.hitting.ab > 0)) {
                     sGP++;
