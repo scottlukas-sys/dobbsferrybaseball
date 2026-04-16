@@ -3311,6 +3311,34 @@
         "dfsd_athletics": "\u2705 checked \u2014 dfsd.org/departments/athletics/athletic-calendar shows Apr 14 Varsity Home vs Ardsley 4:30 PM, Apr 16 JV at Hastings (Bus 3:30 PM), Apr 18 Varsity at Haldane (Bus 9:00 AM) 11:00 AM. No cancellations or changes. All matches scores.json.",
         "gmail": "\u2705 checked \u2014 JV scheduling thread (Zonana), no rainouts or changes"
       }
+    },
+    {
+      "date": "2026-04-16",
+      "type": "daily-sweep",
+      "text": "Full DS sweep all 15 teams. 1 new opponent result: Leffell W 5-1 vs Edgemont (Apr 15). Edgemont corrected to 1-7 (was misreported as ~2-4 due to misdated opponentResults entries). Sleepy Hollow corrected to 4-4 (was 4-3). Hastings won comeback walkoff Apr 15 per IG @hastingsbase (now 3-5). DF record unchanged at 4-3 (V), 1-2 (JV). No DF games Apr 15-16. No schedule changes in Gmail. Section One Athletics unreachable (SSL error). IG @dfeaglesbaseball last post Apr 14 (Ardsley W 6-3 box scores).",
+      "sourcesChecked": {
+        "digitalsports:df": "\u2705 3-3 on DS (Apr 14 Ardsley not entered), actual 4-3",
+        "digitalsports:blind_brook": "\u2705 4-2, no new results",
+        "digitalsports:hastings": "\u2705 2-5 on DS (Apr 15 win not entered yet), actual 3-5 per IG",
+        "digitalsports:irvington": "\u2705 5-2, no new results",
+        "digitalsports:rye_neck": "\u2705 3-2, no new results",
+        "digitalsports:ardsley": "\u2705 0-7 on DS (Apr 14 DF loss not entered), actual 0-8",
+        "digitalsports:edgemont": "\u2705 1-7, new L 1-5 Apr 15 (Leffell)",
+        "digitalsports:haldane": "\u2705 1-5, no new results",
+        "digitalsports:leffell": "\u2705 2-0, new W 5-1 Apr 15 (Edgemont)",
+        "digitalsports:pearl_river": "\u2705 3-1, no new results",
+        "digitalsports:saunders": "\u2705 empty, no events",
+        "digitalsports:sleepy_hollow": "\u2705 4-4 (corrected from 4-3)",
+        "digitalsports:tuckahoe": "\u2705 1-3, no new results",
+        "digitalsports:valhalla": "\u2705 empty, no events",
+        "digitalsports:westlake": "\u2705 5-3, no new results",
+        "ig:@dfeaglesbaseball": "\u2705 last post Apr 14 Ardsley box scores",
+        "ig:@hastingsbase": "\u2705 Apr 15 walkoff win post",
+        "ig:@irvingtonbulldogs": "\u2705 no new baseball scores",
+        "section1athletics": "\u26a0\ufe0f unreachable (SSL/privacy error)",
+        "gmail": "\u2705 no schedule changes (only Bulldogs Academy summer tournaments)",
+        "gamechanger": "not queried this run (no new DF games)"
+      }
     }
   ],
   "opponentResults": [
@@ -3700,14 +3728,6 @@
     },
     {
       "date": "2026-04-10",
-      "winner": "Edgemont",
-      "winnerRuns": 6,
-      "loser": "Haldane",
-      "loserRuns": 0,
-      "source": "digitalsports:haldane"
-    },
-    {
-      "date": "2026-04-10",
       "winner": "Pawling",
       "winnerRuns": 13,
       "loser": "Tuckahoe",
@@ -3721,14 +3741,6 @@
       "loser": "Ardsley",
       "loserRuns": 3,
       "source": "digitalsports:hastings"
-    },
-    {
-      "date": "2026-04-11",
-      "winner": "Edgemont",
-      "winnerRuns": 6,
-      "loser": "Haldane",
-      "loserRuns": 0,
-      "source": "digitalsports:edgemont"
     },
     {
       "date": "2026-04-13",
@@ -3761,14 +3773,31 @@
       "loser": "Valhalla",
       "loserRuns": 3,
       "source": "digitalsports:westlake"
+    },
+    {
+      "date": "2026-04-15",
+      "winner": "Leffell School",
+      "winnerRuns": 5,
+      "loser": "Edgemont",
+      "loserRuns": 1,
+      "source": "digitalsports:leffell + digitalsports:edgemont"
+    },
+    {
+      "date": "2026-04-13",
+      "winner": "Edgemont",
+      "winnerRuns": 6,
+      "loser": "Haldane",
+      "loserRuns": 0,
+      "source": "digitalsports:edgemont + digitalsports:haldane"
     }
   ],
   "teamIntel": {
     "Ardsley": {
-      "intel": "Ardsley is 0-7+ in 2026, struggling against a tough non-league schedule. Losses include 1-7 vs Pleasantville, 1-5 at Hendrick Hudson, 2-8 at John Jay CR, 1-10 vs Pearl River, 5-15 at Somers, and 6-16 at Byram Hills. Lost to DF 3-6 on Apr 14. Up next: Apr 18 at Putnam Valley.",
+      "intel": "Ardsley is 0-8 in 2026 (0-7 on DS, plus L 3-6 vs DF Apr 14 not yet entered). Losses include 1-7 vs Pleasantville, 1-5 at Hendrick Hudson, 2-8 at John Jay CR, 1-10 vs Pearl River, 5-15 at Somers, 6-16 at Byram Hills, 3-4 vs Hastings (Apr 13), and 3-6 vs DF (Apr 14). Up next: Apr 18 at Putnam Valley.",
       "sources": [
         "digitalsports:ardsley",
-        "ig:@dfeaglesbaseball"
+        "ig:@dfeaglesbaseball",
+        "digitalsports:hastings"
       ],
       "recentResults": [
         "L 3-6 vs Dobbs Ferry (Apr 14)",
@@ -3776,11 +3805,11 @@
         "L 5-15 at Somers (Apr 9)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Blind Brook": {
-      "intel": "Blind Brook is 4-2 in 2026. Won four straight: W 8-7, W 3-2, W 8-2, and W 12-8 vs Irvington (Apr 11). Lost early to Pawling (5-15) and Hastings (2-6). Up next: Apr 20 vs Dobbs Ferry (League).",
+      "intel": "Blind Brook is 4-2 in 2026. Won four straight: W 8-7 vs Edgemont, W 3-2 vs Valhalla, W 8-2 at Haldane, and W 12-8 vs Irvington (Apr 11). Lost early to Pawling (5-15) and Hastings (2-6). Apr 14 vs North Salem no score. Up next: Apr 17 vs Westlake, Apr 18 at Briarcliff, Apr 20 at Dobbs Ferry (League).",
       "sources": [
         "digitalsports:blind_brook",
         "ig:@blindbrookhs"
@@ -3791,26 +3820,27 @@
         "W 3-2 vs Valhalla (Apr 8)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Edgemont": {
-      "intel": "Edgemont has mixed results in 2026. Lost early to Blind Brook (7-8), John Jay CR (1-11), DF (1-5), and Pearl River (0-10). Won 6-0 vs Valhalla (Apr 10) and 6-0 vs Haldane (Apr 13). Record approximately 2-4. Up next: Apr 15 at Leffell (TODAY), Apr 18 at North Salem.",
+      "intel": "Edgemont is 1-7 in 2026. Only win was 6-0 vs Haldane (Apr 13). Lost to Blind Brook (7-8), John Jay CR (1-11), DF (1-5), Pearl River (0-10), unknown opponents (6-9 Apr 10, 6-12 Apr 11), and Leffell (1-5 Apr 15). Up next: Apr 18 at North Salem, Apr 20 at Pawling.",
       "sources": [
         "digitalsports:edgemont",
-        "digitalsports:haldane"
+        "digitalsports:leffell",
+        "ig:@dfeaglesbaseball"
       ],
       "recentResults": [
+        "L 1-5 vs Leffell (Apr 15)",
         "W 6-0 vs Haldane (Apr 13)",
-        "W 6-0 vs Valhalla (Apr 10)",
-        "L 0-10 vs Pearl River (Apr 9)"
+        "L 6-12 (Apr 11)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Haldane": {
-      "intel": "Haldane is 1-5 in 2026. Only win was 10-0 vs Peekskill (Mar 30). Losses to Rye Neck (1-13), Sleepy Hollow (10-12), Irvington (0-13), Blind Brook (2-8), and Edgemont (0-6). Up next: Apr 18 vs Dobbs Ferry (11:00 AM), Apr 19 vs Pawling.",
+      "intel": "Haldane is 1-5 in 2026. Only win was 10-0 vs Peekskill (Mar 30). Losses to Rye Neck (1-13), Sleepy Hollow (10-12), Irvington (0-13), Blind Brook (2-8), and Edgemont (0-6). Up next: Apr 18 vs Dobbs Ferry (11:00 AM), then Apr 20 and beyond.",
       "sources": [
         "digitalsports:haldane",
         "ig:@haldanebaseball"
@@ -3821,26 +3851,26 @@
         "L 0-13 vs Irvington (Apr 8)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Hastings": {
-      "intel": "Hastings is 2-5 in 2026. Beat Blind Brook 6-2 early and won 4-3 on Apr 13. Lost to Pelham (0-2), Westlake (2-11), Eastchester (0-1), Putnam Valley (8-12), and dropped one 5-8. Up next: Apr 15 (TODAY), then Apr 18 and Apr 20 vs Dobbs Ferry area opponents.",
+      "intel": "Hastings is 3-5 in 2026. Beat Blind Brook 6-2 early, won 4-3 on Apr 13 (Ardsley), and won a comeback walkoff game Apr 15 at home (Burke Estate). Lost to Pelham (0-2), Westlake (2-11), Eastchester (0-1), Putnam Valley (8-12), and one 5-8 loss. Up next: Apr 18, then Apr 20 and beyond.",
       "sources": [
         "digitalsports:hastings",
         "ig:@hastingsbase"
       ],
       "recentResults": [
-        "W 4-3 (Apr 13)",
-        "L 5-8 (Apr 11)",
-        "L 8-12 vs Putnam Valley (Apr 10)"
+        "W walkoff (Apr 15, Burke Estate)",
+        "W 4-3 vs Ardsley (Apr 13)",
+        "L 5-8 (Apr 11)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Irvington": {
-      "intel": "Irvington is 5-2 in 2026 and looking strong. Beat DF 7-1 (Apr 13) and Woodlands 10-0 (Apr 14). Also beat Sleepy Hollow 9-8, Haldane 13-0, Woodlands 20-6. Losses to DF (2-6) and Blind Brook (8-12). Up next: Apr 18 at Dobbs Ferry (JV), May 4 vs Sleepy Hollow.",
+      "intel": "Irvington is 5-2 in 2026 and looking strong. Beat DF 7-1 (Apr 13) and Woodlands 10-0 (Apr 14). Also beat Sleepy Hollow 9-8, Haldane 13-0, Woodlands 20-6. Losses to DF (2-6 Mar 24) and Blind Brook (8-12). Up next: Apr 18 at Woodlands, then Apr 22 at Sleepy Hollow.",
       "sources": [
         "digitalsports:irvington",
         "ig:@dfeaglesbaseball"
@@ -3851,24 +3881,25 @@
         "L 8-12 vs Blind Brook (Apr 11)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Leffell School": {
-      "intel": "Leffell has limited 2026 results on DS. Won 21-1 vs Alexander Hamilton (Apr 13). North Salem game postponed. Up next: Apr 15 vs Edgemont (TODAY), Apr 16 at Putnam Valley, Apr 20 vs Rye Neck (League).",
+      "intel": "Leffell is 2-0 in 2026 with dominant wins: 21-1 vs Alexander Hamilton (Apr 13) and 5-1 vs Edgemont (Apr 15). Has a game today Apr 16 at Putnam Valley, then Apr 20 vs Rye Neck (League). Up next: Apr 16 at Putnam Valley.",
       "sources": [
-        "digitalsports:leffell"
+        "digitalsports:leffell",
+        "digitalsports:edgemont"
       ],
-      "singleSource": true,
       "recentResults": [
+        "W 5-1 vs Edgemont (Apr 15)",
         "W 21-1 vs Alexander Hamilton (Apr 13)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Pearl River": {
-      "intel": "Pearl River is approximately 2-1 in 2026. Lost opener 7-8 at Nyack, then beat Ardsley 10-1 and Edgemont 10-0. Beat DF 11-10 in a close one (Apr 11). Up next: Apr 25 tournament at Ossining, Apr 28 vs North Rockland.",
+      "intel": "Pearl River is 3-1 in 2026. Lost opener 7-8 at Nyack, then beat Ardsley 10-1, Edgemont 10-0, and DF 11-10 (Apr 11). Up next: Apr 25 tournament, Apr 28 vs North Rockland.",
       "sources": [
         "digitalsports:pearl_river",
         "ig:@dfeaglesbaseball"
@@ -3879,11 +3910,11 @@
         "W 10-1 vs Ardsley (Apr 7)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Rye Neck": {
-      "intel": "Rye Neck is 3-2 in 2026. Strong early wins: 8-2 vs Pawling, 13-1 vs Haldane, 15-5 at Sleepy Hollow. Lost 0-6 at Pawling and 0-8 vs Bronxville. Apr 14 at Byram Hills pending. Up next: Apr 16 vs Valhalla, Apr 18 at Pleasantville, Apr 20 at Leffell (League).",
+      "intel": "Rye Neck is 3-2 in 2026. Strong early wins: 8-2 vs Pawling, 13-1 vs Haldane, 15-5 at Sleepy Hollow. Lost 0-6 at Pawling and 0-8 vs Bronxville. Up next: Apr 16 vs Valhalla (TODAY), Apr 18 at Pleasantville, Apr 20 at Leffell (League).",
       "sources": [
         "digitalsports:rye_neck",
         "digitalsports:haldane"
@@ -3894,8 +3925,8 @@
         "W 15-5 at Sleepy Hollow (Apr 2)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Saunders": {
       "intel": "Saunders has no events posted on DigitalSports for 2026. Lost 3-7 to DF (Mar 27) per DF DS. Up next: unknown (DS empty).",
@@ -3907,11 +3938,11 @@
         "L 3-7 vs Dobbs Ferry (Mar 27)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Sleepy Hollow": {
-      "intel": "Sleepy Hollow is 4-3 in 2026. Beat DF 18-1 (Apr 8), Haldane 12-10, Yonkers Montessori 10-4. Lost 9-10 to Yonkers Montessori on Apr 14, plus losses to Irvington (8-9), Briarcliff (0-14), Rye Neck (5-15). Up next: Apr 16 vs Woodlands, Apr 18 at Woodlands.",
+      "intel": "Sleepy Hollow is 4-4 in 2026. Beat DF 18-1 (Apr 8), Haldane 12-10, Yonkers Montessori 10-4, and won 5-4 early (Mar 19). Lost 9-10 to Yonkers Montessori (Apr 14), plus losses to Irvington (8-9), Briarcliff (0-14), Rye Neck (5-15). Up next: Apr 16 vs Woodlands, Apr 18 at Woodlands.",
       "sources": [
         "digitalsports:sleepy_hollow",
         "digitalsports:df"
@@ -3922,11 +3953,11 @@
         "W 18-1 vs Dobbs Ferry (Apr 8)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Tuckahoe": {
-      "intel": "Tuckahoe is 1-3 in 2026. Beat Somers 6-5 (Apr 7) but lost to Mount Vernon (6-7), New Rochelle (2-11), and Pawling (5-13). Apr 14 vs Briarcliff result pending. Up next: Apr 16 at North Salem, Apr 18 at Yorktown.",
+      "intel": "Tuckahoe is 1-3 in 2026. Beat Somers 6-5 (Apr 7) but lost to Mount Vernon (6-7), New Rochelle (2-11), and Pawling (5-13). Apr 14 vs Briarcliff result pending. Up next: Apr 16 at North Salem (TODAY), Apr 17 at Yorktown.",
       "sources": [
         "digitalsports:tuckahoe",
         "digitalsports:df"
@@ -3937,11 +3968,11 @@
         "L 6-7 at Mount Vernon (Apr 9)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Valhalla": {
-      "intel": "Valhalla DS has no events posted for 2026. Known losses: 5-17 at Westlake (Mar 30), 3-2 loss to Blind Brook (Apr 8 per BB DS), 3-13 at Westlake (Apr 14). Up next: Apr 16 at Rye Neck.",
+      "intel": "Valhalla DS has no events posted for 2026. Known losses: 5-17 at Westlake (Mar 30), 2-3 vs Blind Brook (Apr 8), 3-13 at Westlake (Apr 14). Up next: Apr 16 at Rye Neck (TODAY).",
       "sources": [
         "digitalsports:valhalla_empty",
         "digitalsports:westlake"
@@ -3952,8 +3983,8 @@
         "L 5-17 at Westlake (Mar 30)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     },
     "Westlake": {
       "intel": "Westlake is 5-3 in 2026 with a strong offense. Beat Valhalla twice (17-5 and 13-3), Bronxville 4-3, Hastings 11-2, John Jay CR 14-12. Lost to Walter Panas (1-4), Tappan Zee (1-12), Pelham (3-8). Up next: Apr 16 or 17, then May 11 vs Dobbs Ferry.",
@@ -3967,8 +3998,8 @@
         "L 1-12 at Tappan Zee (Apr 9)"
       ],
       "stars": [],
-      "lastDeepSweep": "2026-04-15",
-      "lastUpdated": "2026-04-15"
+      "lastDeepSweep": "2026-04-16",
+      "lastUpdated": "2026-04-16"
     }
   }
 }
