@@ -581,8 +581,8 @@ function buildFullJvScheduleRows() {
 }
 
 // Replace the Full JV Schedule table body
-const jvFullSchedRegex = /(<!-- Full JV Schedule -->\s*<div class="card">\s*<h2>)[^<]*(Full JV Schedule[^<]*<\/h2>\s*<table>\s*<thead>[\s\S]*?<\/thead>\s*<tbody>)([\s\S]*?)(<\/tbody>\s*<\/table>\s*<\/div>)/;
-html = html.replace(jvFullSchedRegex, `$1Full JV Schedule (${jvSchedule.length} Games)</$2${buildFullJvScheduleRows()}
+const jvFullSchedRegex = /(<!-- Full JV Schedule -->\s*<div class="card">\s*<h2>)[\s\S]*?(<\/h2>\s*<table>\s*<thead>[\s\S]*?<\/thead>\s*<tbody>)([\s\S]*?)(<\/tbody>\s*<\/table>\s*<\/div>)/;
+html = html.replace(jvFullSchedRegex, `$1Full JV Schedule (${jvSchedule.length} Games)$2${buildFullJvScheduleRows()}
                     $4`);
 
 // ============================================================
