@@ -1124,6 +1124,11 @@ function latestLineForRole(gameLines, role) {
     return null;
 }
 
+// Baseball IP math helpers: IP notation uses .1 = 1/3 inning, .2 = 2/3 inning
+function ipToOuts(ip) { return Math.floor(ip) * 3 + Math.round((ip % 1) * 10); }
+function outsToIp(outs) { return Math.floor(outs / 3) + (outs % 3) * 0.1; }
+function ipToInnings(ip) { return Math.floor(ip) + Math.round((ip % 1) * 10) / 3; }
+
 function computePIS(playerStats) {
     const results = [];
     const sevenDaysAgo = new Date(today);
@@ -1150,7 +1155,7 @@ function computePIS(playerStats) {
         if (p) {
             pitPts += (p.w || 0) * 3;
             pitPts += (p.sv || 0) * 2;
-            pitPts += (p.ip || 0) * 1;
+            pitPts += ipToInnings(p.ip || 0) * 1;
             pitPts += (p.so || 0) * 1;
             pitPts -= (p.er || 0) * 1.5;
         }
@@ -1280,7 +1285,7 @@ function computePIS(playerStats) {
                 }
                 if (game.pitching && (game.pitching.ip > 0 || game.pitching.w > 0 || game.pitching.sv > 0)) {
                     sPitGP++;
-                    sIP += game.pitching.ip || 0;
+                    sIP = outsToIp(ipToOuts(sIP) + ipToOuts(game.pitching.ip || 0));
                     sSO += game.pitching.so || 0;
                     sER += game.pitching.er || 0;
                     sW += game.pitching.w || 0;
@@ -1720,7 +1725,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     const players = Object.entries(jvPlayers).map(([name, data]) => {
         const games = data.games || [];
         let batting = { pa: 0, ab: 0, h: 0, r: 0, rbi: 0, bb: 0, so: 0, sac: 0, sb: 0, hbp: 0, '2b': 0, '3b': 0, hr: 0 };
-        let pitching = { gp: 0, gs: 0, w: 0, l: 0, sv: 0, ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0, pitches: 0, strikes: 0, bf: 0 };
+        let pitching = { gp: 0, gs: 0, w: 0, l: 0, sv: 0, ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0, pitches: 0, strikes: 0, bf: 0, pitchBFGames: 0, strikeGames: 0 };
 
         for (const game of games) {
             if (game.hitting) {
@@ -1743,10 +1748,12 @@ function generateJVStatsHTML(playerStats, gameResults) {
                 const p = game.pitching;
                 if (p.ip > 0 || p.w || p.sv) pitching.gp++;
                 if (p.ip > 0) pitching.gs++;
+                if (p.pitches > 0 && p.bf > 0) pitching.pitchBFGames++;
+                if (p.strikes > 0) pitching.strikeGames++;
                 pitching.w += p.w || 0;
                 pitching.l += p.l || 0;
                 pitching.sv += p.sv || 0;
-                pitching.ip += p.ip || 0;
+                pitching.ip = outsToIp(ipToOuts(pitching.ip) + ipToOuts(p.ip || 0));
                 pitching.h += p.h || 0;
                 pitching.r += p.r || 0;
                 pitching.er += p.er || 0;
@@ -1770,7 +1777,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
         errors: 0, bbDrawn: 0, pitchingBB: 0,
         batSO: 0, batPA: 0, batHBP: 0, batSAC: 0,
         xbh: 0,
-        pitches: 0, strikes: 0, bf: 0,
+        pitches: 0, strikes: 0, bf: 0, pitchBFGames: 0, strikeGames: 0, totalPitchingGP: 0,
         cleanInnings: 0, defInningsLogged: 0, cleanTracked: false,
         games: Object.keys(jvGames).length,
         mercied: 0
@@ -1794,7 +1801,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
         teamStats.hits += player.batting.h;
         teamStats.ab += player.batting.ab;
         teamStats.bbDrawn += player.batting.bb || 0;
-        teamStats.ip += player.pitching.ip;
+        teamStats.ip = outsToIp(ipToOuts(teamStats.ip) + ipToOuts(player.pitching.ip));
         teamStats.h += player.pitching.h;
         teamStats.r += player.pitching.r;
         teamStats.er += player.pitching.er;
@@ -1809,10 +1816,13 @@ function generateJVStatsHTML(playerStats, gameResults) {
         teamStats.pitches += player.pitching.pitches || 0;
         teamStats.strikes += player.pitching.strikes || 0;
         teamStats.bf += player.pitching.bf || 0;
+        teamStats.pitchBFGames += player.pitching.pitchBFGames || 0;
+        teamStats.strikeGames += player.pitching.strikeGames || 0;
+        teamStats.totalPitchingGP += player.pitching.gp || 0;
     }
 
     const teamAvg = teamStats.ab > 0 ? fmtAvg(teamStats.hits / teamStats.ab) : '.000';
-    const teamERA = teamStats.ip > 0 ? ((teamStats.er * 7) / teamStats.ip).toFixed(2) : '—';
+    const teamERA = teamStats.ip > 0 ? ((teamStats.er * 7) / ipToInnings(teamStats.ip)).toFixed(2) : '—';
     const runDiff = teamStats.runsFor - teamStats.runsAgainst;
     const freeBasesAllowed = teamStats.pitchingBB + teamStats.errors;
 
@@ -1940,16 +1950,16 @@ function generateJVStatsHTML(playerStats, gameResults) {
         leaders.wins = tied.map(p => p.name).join(', ');
     }
 
-    // ERA = min ERA among pitchers with IP > 0, formula (ER*7)/IP
+    // ERA = min ERA among pitchers with IP > 0, formula (ER*7)/IP (using actual innings)
     const byERA = players.filter(p => p.pitching.ip > 0).sort((a, b) => {
-        const eraA = (a.pitching.er * 7) / a.pitching.ip;
-        const eraB = (b.pitching.er * 7) / b.pitching.ip;
+        const eraA = (a.pitching.er * 7) / ipToInnings(a.pitching.ip);
+        const eraB = (b.pitching.er * 7) / ipToInnings(b.pitching.ip);
         return eraA - eraB;
     });
     if (byERA.length > 0) {
-        const topERA = (byERA[0].pitching.er * 7) / byERA[0].pitching.ip;
+        const topERA = (byERA[0].pitching.er * 7) / ipToInnings(byERA[0].pitching.ip);
         const tied = byERA.filter(p => {
-            const era = (p.pitching.er * 7) / p.pitching.ip;
+            const era = (p.pitching.er * 7) / ipToInnings(p.pitching.ip);
             return Math.abs(era - topERA) < 0.0001;
         });
         leaders.era = tied.map(p => p.name).join(', ');
@@ -1966,8 +1976,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
     const rPG = per(teamStats.runsFor);
     const bbPG = per(teamStats.bbDrawn);
     const kRate = teamStats.batPA > 0 ? Math.round((teamStats.batSO / teamStats.batPA) * 100) + '%' : '—';
-    const whip = teamStats.ip > 0 ? ((teamStats.pitchingBB + teamStats.h) / teamStats.ip).toFixed(2) : '—';
-    const k7 = teamStats.ip > 0 ? ((teamStats.so * 7) / teamStats.ip).toFixed(1) : '—';
+    const whip = teamStats.ip > 0 ? ((teamStats.pitchingBB + teamStats.h) / ipToInnings(teamStats.ip)).toFixed(2) : '—';
+    const k7 = teamStats.ip > 0 ? ((teamStats.so * 7) / ipToInnings(teamStats.ip)).toFixed(1) : '—';
     const kbb = teamStats.pitchingBB > 0 ? (teamStats.so / teamStats.pitchingBB).toFixed(1) : (teamStats.so > 0 ? '∞' : '—');
     const raPG = per(teamStats.runsAgainst);
     const bbAllowedPG = per(teamStats.pitchingBB);
@@ -1979,8 +1989,10 @@ function generateJVStatsHTML(playerStats, gameResults) {
     // OBP = (H + BB + HBP) / (AB + BB + HBP + SAC)
     const obpDen = teamStats.ab + teamStats.bbDrawn + teamStats.batHBP + teamStats.batSAC;
     const teamOBP = obpDen > 0 ? fmtAvg((teamStats.hits + teamStats.bbDrawn + teamStats.batHBP) / obpDen) : '—';
-    const strikePct = teamStats.pitches > 0 ? Math.round((teamStats.strikes / teamStats.pitches) * 100) + '%' : '—';
-    const pitchesPerBF = teamStats.bf > 0 ? (teamStats.pitches / teamStats.bf).toFixed(1) : '—';
+    const teamHasAllPitchBF = teamStats.pitchBFGames > 0 && teamStats.pitchBFGames === teamStats.totalPitchingGP;
+    const teamHasAllStrikes = teamStats.strikeGames > 0 && teamStats.strikeGames === teamStats.totalPitchingGP;
+    const strikePct = teamHasAllStrikes && teamStats.pitches > 0 ? Math.round((teamStats.strikes / teamStats.pitches) * 100) + '%' : '—';
+    const pitchesPerBF = teamHasAllPitchBF && teamStats.bf > 0 ? (teamStats.pitches / teamStats.bf).toFixed(1) : '—';
     const cleanPct = teamStats.cleanTracked && teamStats.defInningsLogged > 0
         ? Math.round((teamStats.cleanInnings / teamStats.defInningsLogged) * 100) + '%'
         : '—';
@@ -2078,8 +2090,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">GP</th><th style="text-align: center; padding: 8px;">GS</th><th style="text-align: center; padding: 8px;">W</th><th style="text-align: center; padding: 8px;">L</th><th style="text-align: center; padding: 8px;">SV</th><th style="text-align: center; padding: 8px;">IP</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">ER</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">ERA</th><th style="text-align: center; padding: 8px;">WHIP</th><th style="text-align: center; padding: 8px;">Strike%</th><th style="text-align: center; padding: 8px;">P/BF</th></tr></thead>';
     html += '<tbody>';
     for (const player of players.filter(p => p.pitching.ip > 0)) {
-        const era = ((player.pitching.er * 7) / player.pitching.ip).toFixed(2);
-        const whip = (((player.pitching.bb + player.pitching.h) / player.pitching.ip) || 0).toFixed(2);
+        const era = ((player.pitching.er * 7) / ipToInnings(player.pitching.ip)).toFixed(2);
+        const whip = (((player.pitching.bb + player.pitching.h) / ipToInnings(player.pitching.ip)) || 0).toFixed(2);
         html += `<tr style="border-bottom: 1px solid #222;"><td style="padding: 8px;">${player.name}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.gp}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.gs}</td>`;
@@ -2091,8 +2103,10 @@ function generateJVStatsHTML(playerStats, gameResults) {
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.er}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.bb}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.so}</td>`;
-        const sPct = player.pitching.pitches > 0 ? Math.round((player.pitching.strikes / player.pitching.pitches) * 100) + '%' : '—';
-        const pbf = player.pitching.bf > 0 ? (player.pitching.pitches / player.pitching.bf).toFixed(1) : '—';
+        const hasAllPitchBF = player.pitching.pitchBFGames > 0 && player.pitching.pitchBFGames === player.pitching.gp;
+        const hasAllStrikes = player.pitching.strikeGames > 0 && player.pitching.strikeGames === player.pitching.gp;
+        const sPct = hasAllStrikes && player.pitching.pitches > 0 ? Math.round((player.pitching.strikes / player.pitching.pitches) * 100) + '%' : '—';
+        const pbf = hasAllPitchBF && player.pitching.bf > 0 ? (player.pitching.pitches / player.pitching.bf).toFixed(1) : '—';
         html += `<td style="text-align: center; padding: 8px;">${era}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${whip}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${sPct}</td>`;
