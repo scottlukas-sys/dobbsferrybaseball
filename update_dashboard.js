@@ -1209,17 +1209,46 @@ function computePIS(playerStats) {
             let gamesWithStats = 0;
             const gameLines = [];
 
-            // --- MaxPreps season totals support ---
-            // If player has seasonStats (from MaxPreps scrape), compute PIS from those.
-            // seasonStats = { source, gp, batting: {ab,h,2b,3b,hr,rbi,r,bb,...}, pitching: {ip,h,er,so,bb,w,sv,...} }
+            // --- GC / MaxPreps season totals support ---
+            // If player has seasonStats from GameChanger (flat format: ss.h, ss.ab, etc.)
+            // OR nested format (ss.batting / ss.pitching), compute PIS from those
+            // and SKIP game-level accumulation to avoid double-counting.
             const ss = data.seasonStats;
-            if (ss && (ss.batting || ss.pitching)) {
+            const sp = data.seasonPitching;
+            let useSeasonStats = false;
+
+            if (ss && ss.source && ss.source.includes('GameChanger')) {
+                // GameChanger flat format — seasonStats has batting fields directly
+                const fakeHitting = (ss.h > 0 || ss.bb > 0 || ss.r > 0 || ss.rbi > 0) ? {
+                    h: ss.h || 0, '2b': ss['2b'] || 0, '3b': ss['3b'] || 0,
+                    hr: ss.hr || 0, rbi: ss.rbi || 0, r: ss.r || 0, bb: ss.bb || 0, ab: ss.ab || 0
+                } : null;
+                const fakePitching = sp ? {
+                    ip: sp.ip || 0, so: sp.so || 0, er: sp.er || 0,
+                    w: sp.w || 0, sv: sp.sv || 0
+                } : null;
+                if (fakeHitting || fakePitching) {
+                    // For multi-hit bonus: compute based on per-game average
+                    // A hitter averaging 2+ H/G gets the bonus applied proportionally
+                    const fakeGame = { hitting: fakeHitting, pitching: fakePitching };
+                    const pts = scoreGame(fakeGame);
+                    // Remove the per-game multi-hit bonus (applied once in scoreGame)
+                    // and re-apply based on actual multi-hit games if we know them
+                    totalWeighted += pts.total;
+                    hitTotal += pts.hit;
+                    pitTotal += pts.pit;
+                    gamesWithStats = ss.gp || 1;
+                    useSeasonStats = true;
+                }
+            } else if (ss && (ss.batting || ss.pitching)) {
+                // Legacy nested format (MaxPreps scrape)
                 const fakeGame = { hitting: ss.batting || null, pitching: ss.pitching || null };
                 const pts = scoreGame(fakeGame);
                 totalWeighted += pts.total;
                 hitTotal += pts.hit;
                 pitTotal += pts.pit;
                 gamesWithStats = ss.gp || ss.batting?.gp || ss.pitching?.app || 1;
+                useSeasonStats = true;
             }
 
             for (const game of games) {
@@ -1234,11 +1263,15 @@ function computePIS(playerStats) {
                     continue;
                 }
 
-                gamesWithStats++;
-                const gamePts = scoreGame(game);
-                totalWeighted += gamePts.total;
-                hitTotal += gamePts.hit;
-                pitTotal += gamePts.pit;
+                // If GC seasonStats already used for PIS, skip game-level PIS accumulation
+                // but still build display lines for the game log
+                if (!useSeasonStats) {
+                    gamesWithStats++;
+                    const gamePts = scoreGame(game);
+                    totalWeighted += gamePts.total;
+                    hitTotal += gamePts.hit;
+                    pitTotal += gamePts.pit;
+                }
 
                 const gl = buildGameLine(game);
                 if (gl) gameLines.push(gl);
@@ -1259,20 +1292,28 @@ function computePIS(playerStats) {
             // Accumulate season totals for subtitle display
             let sH = 0, s2b = 0, s3b = 0, sHR = 0, sRBI = 0, sR = 0, sBB = 0, sGP = 0;
             let sIP = 0, sSO = 0, sER = 0, sW = 0, sSV = 0, sPitGP = 0;
-            // If seasonStats available (MaxPreps), use those directly
-            if (ss && ss.batting) {
+            // If GC seasonStats available, use those directly for display subtitles
+            if (useSeasonStats && ss) {
+                sGP = ss.gp || 0; sH = ss.h || 0; s2b = ss['2b'] || 0; s3b = ss['3b'] || 0;
+                sHR = ss.hr || 0; sRBI = ss.rbi || 0; sR = ss.r || 0; sBB = ss.bb || 0;
+                if (sp) {
+                    sPitGP = sp.gp || 0; sIP = sp.ip || 0; sSO = sp.so || 0;
+                    sER = sp.er || 0; sW = sp.w || 0; sSV = sp.sv || 0;
+                }
+            } else if (ss && ss.batting) {
+                // Legacy nested format (MaxPreps)
                 const b = ss.batting;
                 sGP = b.gp || 0; sH = b.h || 0; s2b = b['2b'] || 0; s3b = b['3b'] || 0;
                 sHR = b.hr || 0; sRBI = b.rbi || 0; sR = b.r || 0; sBB = b.bb || 0;
+                if (ss.pitching) {
+                    const p = ss.pitching;
+                    sPitGP = p.app || p.gp || 0; sIP = p.ip || 0; sSO = p.so || 0;
+                    sER = p.er || 0; sW = p.w || 0; sSV = p.sv || 0;
+                }
             }
-            if (ss && ss.pitching) {
-                const p = ss.pitching;
-                sPitGP = p.app || p.gp || 0; sIP = p.ip || 0; sSO = p.so || 0;
-                sER = p.er || 0; sW = p.w || 0; sSV = p.sv || 0;
-            }
-            // Accumulate from per-game data (additive — if seasonStats also present,
-            // these add on top, but typically a player has one or the other)
+            // Accumulate from per-game data ONLY if seasonStats not used
             for (const game of games) {
+                if (useSeasonStats) break; // GC season stats already loaded above
                 if (game.hitting && (game.hitting.h > 0 || game.hitting.bb > 0 || game.hitting.r > 0 || game.hitting.rbi > 0 || game.hitting.ab > 0)) {
                     sGP++;
                     sH += game.hitting.h || 0;

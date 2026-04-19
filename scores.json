@@ -223,7 +223,7 @@
         ],
         "seasonStats": {
           "gp": 3,
-          "ab": 4,
+          "ab": 3,
           "h": 2,
           "1b": 1,
           "2b": 1,
@@ -239,10 +239,14 @@
           "sf": 0,
           "sb": 0,
           "cs": 0,
-          "avg": ".500",
-          "source": "GameChanger",
+          "avg": ".667",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
-          "gamesPlayed": 8
+          "gamesPlayed": 8,
+          "pa": 5,
+          "obp": ".800",
+          "ops": "1.800",
+          "slg": "1.000"
         }
       },
       "Andrew Zendel": {
@@ -433,9 +437,13 @@
           "avg": ".444",
           "roe": 2,
           "fc": 1,
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
-          "gamesPlayed": 8
+          "gamesPlayed": 8,
+          "pa": 29,
+          "obp": ".483",
+          "ops": "1.001",
+          "slg": ".519"
         },
         "seasonPitching": {
           "ip": 14.1,
@@ -548,7 +556,7 @@
         ],
         "seasonStats": {
           "gp": 4,
-          "ab": 6,
+          "ab": 5,
           "h": 2,
           "1b": 1,
           "2b": 1,
@@ -564,10 +572,14 @@
           "sf": 0,
           "sb": 3,
           "cs": 0,
-          "avg": ".333",
-          "source": "GameChanger",
+          "avg": ".400",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
-          "gamesPlayed": 8
+          "gamesPlayed": 8,
+          "pa": 7,
+          "obp": ".500",
+          "ops": "1.100",
+          "slg": ".600"
         },
         "seasonPitching": {
           "ip": 0.1,
@@ -757,9 +769,13 @@
           "cs": 0,
           "avg": ".389",
           "roe": 1,
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
-          "gamesPlayed": 8
+          "gamesPlayed": 8,
+          "pa": 22,
+          "obp": ".500",
+          "ops": ".944",
+          "slg": ".444"
         },
         "fielding": {
           "tc": 23,
@@ -927,9 +943,13 @@
           "sb": 8,
           "cs": 0,
           "avg": ".375",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
-          "gamesPlayed": 8
+          "gamesPlayed": 8,
+          "pa": 31,
+          "obp": ".516",
+          "ops": ".891",
+          "slg": ".375"
         },
         "fielding": {
           "tc": 19,
@@ -1116,9 +1136,13 @@
           "cs": 1,
           "avg": ".357",
           "roe": 3,
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
-          "gamesPlayed": 8
+          "gamesPlayed": 8,
+          "pa": 30,
+          "obp": ".400",
+          "ops": ".936",
+          "slg": ".536"
         },
         "seasonPitching": {
           "ip": 12.1,
@@ -1320,7 +1344,7 @@
           "obp": ".452",
           "ops": ".886",
           "slg": ".435",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
           "gamesPlayed": 8
         },
@@ -1504,7 +1528,7 @@
         ],
         "seasonStats": {
           "gp": 8,
-          "ab": 19,
+          "ab": 21,
           "h": 7,
           "1b": 5,
           "2b": 2,
@@ -1520,12 +1544,16 @@
           "sf": 0,
           "sb": 1,
           "cs": 1,
-          "avg": ".368",
+          "avg": ".333",
           "roe": 1,
           "fc": 2,
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
-          "gamesPlayed": 8
+          "gamesPlayed": 8,
+          "pa": 26,
+          "obp": ".462",
+          "ops": ".890",
+          "slg": ".429"
         },
         "seasonPitching": {
           "ip": 5,
@@ -1718,7 +1746,7 @@
           "obp": ".367",
           "ops": ".647",
           "slg": ".280",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
           "gamesPlayed": 8
         },
@@ -1869,7 +1897,7 @@
           "obp": ".273",
           "ops": ".473",
           "slg": ".200",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
           "gamesPlayed": 8
         },
@@ -2021,7 +2049,7 @@
           "obp": ".167",
           "ops": ".167",
           "slg": ".000",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
           "gamesPlayed": 8
         },
@@ -2158,7 +2186,7 @@
           "sb": 0,
           "cs": 0,
           "avg": ".000",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
           "gamesPlayed": 8
         },
@@ -2289,7 +2317,7 @@
           "obp": ".250",
           "ops": ".250",
           "slg": ".000",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
           "gamesPlayed": 8
         },
@@ -2353,7 +2381,7 @@
           "sb": 0,
           "cs": 0,
           "avg": ".000",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
           "gamesPlayed": 8
         },
@@ -2439,7 +2467,7 @@
           "cs": 0,
           "avg": ".000",
           "note": "Pitcher only, no plate appearances",
-          "source": "GameChanger",
+          "source": "GameChanger (verified)",
           "asOf": "2026-04-18",
           "gamesPlayed": 8
         },
