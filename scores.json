@@ -60,7 +60,31 @@
       "df": 16,
       "opp": 2,
       "location": "Haldane HS (Cold Spring)",
-      "source": "MaxPreps (DF schedule + Haldane schedule)"
+      "source": "GameChanger box score",
+      "linescore": {
+        "df": [
+          3,
+          0,
+          0,
+          1,
+          5,
+          2,
+          5
+        ],
+        "hldn": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      "dfHits": 16,
+      "oppHits": 3,
+      "dfErrors": 1,
+      "oppErrors": 1
     }
   },
   "jv": {
@@ -196,7 +220,30 @@
             },
             "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 3,
+          "ab": 4,
+          "h": 2,
+          "1b": 1,
+          "2b": 1,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 2,
+          "r": 2,
+          "bb": 1,
+          "so": 1,
+          "kl": 1,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "avg": ".500",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        }
       },
       "Andrew Zendel": {
         "team": "Dobbs Ferry",
@@ -337,26 +384,90 @@
             "hitting": {
               "ab": 5,
               "h": 3,
+              "1b": 3,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 3,
               "r": 3,
               "bb": 0,
+              "so": 0,
+              "hbp": 0,
               "sb": 0
             },
             "pitching": {
               "ip": 3,
               "h": 1,
+              "r": 0,
               "er": 0,
-              "so": 4,
               "bb": 5,
-              "w": 0,
+              "so": 4,
+              "w": 1,
               "sv": 0,
-              "bf": 0
-            }
+              "hbp": 2,
+              "pitches": 62,
+              "strikes": 30,
+              "bf": 15
+            },
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 8,
+          "ab": 27,
+          "h": 12,
+          "1b": 10,
+          "2b": 2,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 7,
+          "r": 6,
+          "bb": 1,
+          "so": 3,
+          "kl": 0,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 1,
+          "cs": 0,
+          "avg": ".444",
+          "roe": 2,
+          "fc": 1,
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 14.1,
+          "gp": 5,
+          "gs": 2,
+          "bf": 70,
+          "pitches": 244,
+          "w": 2,
+          "l": 0,
+          "sv": 0,
+          "h": 9,
+          "r": 5,
+          "er": 3,
+          "bb": 15,
+          "so": 16,
+          "kl": 6,
+          "hbp": 2,
+          "era": "1.465",
+          "whip": "1.674",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 13,
+          "a": 3,
+          "po": 9,
+          "fpct": ".923",
+          "e": 1,
+          "dp": 2,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Justin Costa": {
         "team": "Dobbs Ferry",
@@ -434,7 +545,61 @@
               "bf": 6
             }
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 4,
+          "ab": 6,
+          "h": 2,
+          "1b": 1,
+          "2b": 1,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 1,
+          "r": 1,
+          "bb": 1,
+          "so": 2,
+          "kl": 0,
+          "hbp": 0,
+          "sac": 1,
+          "sf": 0,
+          "sb": 3,
+          "cs": 0,
+          "avg": ".333",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 0.1,
+          "gp": 1,
+          "gs": 0,
+          "bf": 8,
+          "pitches": 36,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 4,
+          "r": 6,
+          "er": 5,
+          "bb": 1,
+          "so": 0,
+          "kl": 0,
+          "hbp": 1,
+          "era": "105.000",
+          "whip": "15.000",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 18,
+          "a": 3,
+          "po": 13,
+          "fpct": ".889",
+          "e": 2,
+          "dp": 1,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Donovan Dilore-Troy": {
         "team": "Dobbs Ferry",
@@ -555,19 +720,57 @@
             "date": "2026-04-18",
             "opp": "Haldane",
             "hitting": {
-              "ab": 3,
-              "h": 0,
+              "ab": 4,
+              "h": 1,
+              "1b": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 1,
-              "r": 0,
+              "r": 1,
               "bb": 0,
+              "so": 0,
+              "hbp": 1,
               "sb": 0
             },
-            "pitching": null
+            "pitching": null,
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 8,
+          "ab": 18,
+          "h": 7,
+          "1b": 6,
+          "2b": 1,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 2,
+          "r": 4,
+          "bb": 2,
+          "so": 5,
+          "kl": 3,
+          "hbp": 2,
+          "sac": 0,
+          "sf": 0,
+          "sb": 4,
+          "cs": 0,
+          "avg": ".389",
+          "roe": 1,
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "fielding": {
+          "tc": 23,
+          "a": 10,
+          "po": 10,
+          "fpct": ".870",
+          "e": 3,
+          "dp": 2,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Jake Evan": {
         "team": "Dobbs Ferry",
@@ -683,8 +886,61 @@
               "sb": 1
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 4,
+              "h": 2,
+              "1b": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 1,
+              "so": 1,
+              "hbp": 0,
+              "sb": 2
+            },
+            "pitching": null,
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 8,
+          "ab": 24,
+          "h": 9,
+          "1b": 9,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 3,
+          "r": 6,
+          "bb": 6,
+          "so": 4,
+          "kl": 1,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 8,
+          "cs": 0,
+          "avg": ".375",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "fielding": {
+          "tc": 19,
+          "a": 6,
+          "po": 7,
+          "fpct": ".684",
+          "e": 6,
+          "dp": 1,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Anthony Ficarrotta": {
         "team": "Dobbs Ferry",
@@ -825,17 +1081,76 @@
             "hitting": {
               "ab": 5,
               "h": 4,
+              "1b": 2,
               "2b": 2,
               "3b": 0,
               "hr": 0,
               "rbi": 2,
               "r": 4,
               "bb": 0,
-              "sb": 0
+              "so": 0,
+              "hbp": 0,
+              "sb": 1
             },
-            "pitching": null
+            "pitching": null,
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 8,
+          "ab": 28,
+          "h": 10,
+          "1b": 7,
+          "2b": 2,
+          "3b": 0,
+          "hr": 1,
+          "rbi": 5,
+          "r": 11,
+          "bb": 2,
+          "so": 5,
+          "kl": 1,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 8,
+          "cs": 1,
+          "avg": ".357",
+          "roe": 3,
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 12.1,
+          "gp": 4,
+          "gs": 3,
+          "bf": 58,
+          "pitches": 215,
+          "w": 2,
+          "l": 1,
+          "sv": 0,
+          "h": 9,
+          "r": 7,
+          "er": 3,
+          "bb": 2,
+          "so": 21,
+          "kl": 7,
+          "hbp": 3,
+          "era": "1.703",
+          "whip": "0.892",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 21,
+          "a": 2,
+          "po": 19,
+          "fpct": "1.000",
+          "e": 0,
+          "dp": 0,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "DJ Kollar": {
         "team": "Dobbs Ferry",
@@ -967,17 +1282,79 @@
             "hitting": {
               "ab": 2,
               "h": 1,
+              "1b": 0,
               "2b": 1,
               "3b": 0,
               "hr": 0,
               "rbi": 1,
               "r": 3,
-              "bb": 0,
-              "sb": 0
+              "bb": 1,
+              "so": 0,
+              "hbp": 2,
+              "sb": 2
             },
-            "pitching": null
+            "pitching": null,
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 8,
+          "pa": 31,
+          "ab": 23,
+          "h": 6,
+          "1b": 2,
+          "2b": 4,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 7,
+          "r": 6,
+          "bb": 6,
+          "so": 4,
+          "kl": 2,
+          "hbp": 2,
+          "sac": 0,
+          "sf": 0,
+          "sb": 4,
+          "cs": 0,
+          "avg": ".261",
+          "obp": ".452",
+          "ops": ".886",
+          "slg": ".435",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 1.2,
+          "gp": 1,
+          "gs": 0,
+          "bf": 10,
+          "pitches": 37,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 2,
+          "r": 4,
+          "er": 0,
+          "bb": 1,
+          "so": 3,
+          "kl": 2,
+          "hbp": 0,
+          "era": "0.000",
+          "whip": "1.800",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 39,
+          "a": 0,
+          "po": 38,
+          "fpct": ".974",
+          "e": 1,
+          "dp": 0,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Ian Hwangbo": {
         "team": "Dobbs Ferry",
@@ -1107,19 +1484,80 @@
             "date": "2026-04-18",
             "opp": "Haldane",
             "hitting": {
-              "ab": 3,
-              "h": 0,
+              "ab": 5,
+              "h": 2,
+              "1b": 2,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 2,
-              "r": 0,
+              "r": 1,
               "bb": 0,
-              "sb": 0
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "e": 1
             },
-            "pitching": null
+            "pitching": null,
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 8,
+          "ab": 19,
+          "h": 7,
+          "1b": 5,
+          "2b": 2,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 4,
+          "r": 5,
+          "bb": 5,
+          "so": 5,
+          "kl": 3,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 1,
+          "cs": 1,
+          "avg": ".368",
+          "roe": 1,
+          "fc": 2,
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 5,
+          "gp": 2,
+          "gs": 0,
+          "bf": 26,
+          "pitches": 88,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 3,
+          "r": 5,
+          "er": 2,
+          "bb": 7,
+          "so": 5,
+          "kl": 2,
+          "hbp": 0,
+          "era": "2.800",
+          "whip": "2.000",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 15,
+          "a": 8,
+          "po": 3,
+          "fpct": ".733",
+          "e": 4,
+          "dp": 0,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Brendan Marron": {
         "team": "Dobbs Ferry",
@@ -1242,17 +1680,58 @@
             "hitting": {
               "ab": 3,
               "h": 2,
+              "1b": 2,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 1,
               "r": 1,
               "bb": 1,
-              "sb": 0
+              "so": 1,
+              "hbp": 1,
+              "sb": 1
             },
-            "pitching": null
+            "pitching": null,
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 8,
+          "pa": 30,
+          "ab": 25,
+          "h": 6,
+          "1b": 5,
+          "2b": 1,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 4,
+          "r": 5,
+          "bb": 3,
+          "so": 9,
+          "kl": 6,
+          "hbp": 2,
+          "sac": 0,
+          "sf": 0,
+          "sb": 2,
+          "cs": 2,
+          "avg": ".240",
+          "obp": ".367",
+          "ops": ".647",
+          "slg": ".280",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "fielding": {
+          "tc": 44,
+          "a": 6,
+          "po": 35,
+          "fpct": ".932",
+          "e": 3,
+          "dp": 0,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Drew Kimerling": {
         "team": "Dobbs Ferry",
@@ -1350,19 +1829,81 @@
             "date": "2026-04-18",
             "opp": "Haldane",
             "hitting": {
-              "ab": 3,
-              "h": 0,
+              "ab": 5,
+              "h": 1,
+              "1b": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 2,
               "r": 0,
               "bb": 0,
+              "so": 0,
+              "hbp": 0,
               "sb": 0
             },
-            "pitching": null
+            "pitching": null,
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 6,
+          "pa": 22,
+          "ab": 20,
+          "h": 4,
+          "1b": 4,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 4,
+          "r": 2,
+          "bb": 1,
+          "so": 3,
+          "kl": 1,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 3,
+          "cs": 0,
+          "avg": ".200",
+          "obp": ".273",
+          "ops": ".473",
+          "slg": ".200",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 2.2,
+          "gp": 2,
+          "gs": 0,
+          "bf": 15,
+          "pitches": 41,
+          "w": 0,
+          "l": 0,
+          "sv": 1,
+          "h": 4,
+          "r": 3,
+          "er": 2,
+          "bb": 0,
+          "so": 3,
+          "kl": 1,
+          "hbp": 3,
+          "era": "5.250",
+          "whip": "1.500",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 6,
+          "a": 0,
+          "po": 4,
+          "fpct": ".667",
+          "e": 2,
+          "dp": 0,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Rodger Frisch": {
         "team": "Dobbs Ferry",
@@ -1456,7 +1997,65 @@
             },
             "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 5,
+          "pa": 12,
+          "ab": 9,
+          "h": 0,
+          "1b": 0,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 2,
+          "r": 2,
+          "bb": 2,
+          "so": 4,
+          "kl": 3,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 1,
+          "sb": 0,
+          "cs": 0,
+          "avg": ".000",
+          "obp": ".167",
+          "ops": ".167",
+          "slg": ".000",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 0.1,
+          "gp": 1,
+          "gs": 0,
+          "bf": 2,
+          "pitches": 7,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 0,
+          "r": 0,
+          "er": 0,
+          "bb": 1,
+          "so": 0,
+          "kl": 0,
+          "hbp": 0,
+          "era": "0.000",
+          "whip": "3.000",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 12,
+          "a": 2,
+          "po": 10,
+          "fpct": "1.000",
+          "e": 0,
+          "dp": 2,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Brendan Molina": {
         "team": "Dobbs Ferry",
@@ -1517,8 +2116,83 @@
               "sv": 0,
               "bf": 44
             }
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": null,
+            "pitching": {
+              "ip": 1,
+              "h": 1,
+              "r": 2,
+              "er": 1,
+              "bb": 1,
+              "so": 1,
+              "w": 0,
+              "sv": 0,
+              "hbp": 1,
+              "pitches": 29,
+              "strikes": 15,
+              "bf": 6
+            },
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 3,
+          "pa": 4,
+          "ab": 4,
+          "h": 0,
+          "1b": 0,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 0,
+          "r": 0,
+          "bb": 0,
+          "so": 2,
+          "kl": 0,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "avg": ".000",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 10.1,
+          "gp": 5,
+          "gs": 1,
+          "bf": 54,
+          "pitches": 193,
+          "w": 1,
+          "l": 1,
+          "sv": 0,
+          "h": 13,
+          "r": 12,
+          "er": 8,
+          "bb": 5,
+          "so": 9,
+          "kl": 2,
+          "hbp": 4,
+          "era": "5.419",
+          "whip": "1.742",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 3,
+          "a": 1,
+          "po": 1,
+          "fpct": ".667",
+          "e": 1,
+          "dp": 0,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Harrison Brewer": {
         "team": "Dobbs Ferry",
@@ -1570,8 +2244,65 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "1b": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 2,
+              "bb": 0,
+              "so": 0,
+              "hbp": 2,
+              "sb": 1
+            },
+            "pitching": null,
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 4,
+          "pa": 8,
+          "ab": 6,
+          "h": 0,
+          "1b": 0,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 0,
+          "r": 2,
+          "bb": 0,
+          "so": 4,
+          "kl": 0,
+          "hbp": 2,
+          "sac": 0,
+          "sf": 0,
+          "sb": 2,
+          "cs": 0,
+          "avg": ".000",
+          "obp": ".250",
+          "ops": ".250",
+          "slg": ".000",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "fielding": {
+          "tc": 7,
+          "a": 1,
+          "po": 4,
+          "fpct": ".714",
+          "e": 2,
+          "dp": 0,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Ethan Gallagher": {
         "team": "Dobbs Ferry",
@@ -1601,7 +2332,52 @@
               "bf": 9
             }
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 1,
+          "pa": 1,
+          "ab": 1,
+          "h": 0,
+          "1b": 0,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 0,
+          "r": 0,
+          "bb": 0,
+          "so": 1,
+          "kl": 1,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "avg": ".000",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 1.2,
+          "gp": 1,
+          "gs": 0,
+          "bf": 9,
+          "pitches": 44,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 2,
+          "r": 1,
+          "er": 1,
+          "bb": 2,
+          "so": 1,
+          "kl": 0,
+          "hbp": 1,
+          "era": "4.200",
+          "whip": "2.400",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       },
       "Ian Foley": {
         "team": "Dobbs Ferry",
@@ -1626,17 +2402,78 @@
             "opp": "Haldane",
             "hitting": null,
             "pitching": {
-              "ip": 4,
+              "ip": 3,
               "h": 1,
+              "r": 0,
               "er": 0,
-              "so": 6,
               "bb": 1,
-              "w": 1,
+              "so": 6,
+              "w": 0,
               "sv": 0,
-              "bf": 0
-            }
+              "hbp": 0,
+              "pitches": 56,
+              "strikes": 31,
+              "bf": 11
+            },
+            "source": "GameChanger box score"
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 3,
+          "pa": 0,
+          "ab": 0,
+          "h": 0,
+          "1b": 0,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 0,
+          "r": 0,
+          "bb": 0,
+          "so": 0,
+          "kl": 0,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "avg": ".000",
+          "note": "Pitcher only, no plate appearances",
+          "source": "GameChanger",
+          "asOf": "2026-04-18",
+          "gamesPlayed": 8
+        },
+        "seasonPitching": {
+          "ip": 4.2,
+          "gp": 3,
+          "gs": 2,
+          "bf": 25,
+          "pitches": 113,
+          "w": 0,
+          "l": 1,
+          "sv": 0,
+          "h": 4,
+          "r": 4,
+          "er": 3,
+          "bb": 6,
+          "so": 8,
+          "kl": 4,
+          "hbp": 0,
+          "era": "4.500",
+          "whip": "2.143",
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        },
+        "fielding": {
+          "tc": 1,
+          "a": 0,
+          "po": 0,
+          "fpct": ".000",
+          "e": 1,
+          "dp": 0,
+          "source": "GameChanger",
+          "asOf": "2026-04-18"
+        }
       }
     },
     "opponents": {
@@ -4500,6 +5337,33 @@
           "method": "403 + Chrome error page"
         }
       ]
+    },
+    {
+      "date": "2026-04-19",
+      "type": "gc-season-stats-load",
+      "text": "Loaded full GameChanger season stats (batting, pitching, fielding) for all 15 DF varsity players through 8 games (5-3). Source: GC box score screenshots + season stats pages provided by coach. Corrected Haldane Apr 18 game entries with official box score data. Team batting .304/.416/.800, pitching 3.28 ERA, fielding .883.",
+      "sourcesChecked": [
+        {
+          "source": "GameChanger box score (Haldane Apr 18)",
+          "status": "loaded",
+          "method": "user-provided screenshots"
+        },
+        {
+          "source": "GameChanger season batting stats",
+          "status": "loaded",
+          "method": "user-provided screenshots"
+        },
+        {
+          "source": "GameChanger season pitching stats",
+          "status": "loaded",
+          "method": "user-provided screenshots"
+        },
+        {
+          "source": "GameChanger season fielding stats",
+          "status": "loaded",
+          "method": "user-provided screenshots"
+        }
+      ]
     }
   ],
   "opponentResults": [
@@ -5714,6 +6578,61 @@
       ],
       "lastDeepSweep": "2026-04-17",
       "lastUpdated": "2026-04-19"
+    }
+  },
+  "teamSeasonStats": {
+    "source": "GameChanger",
+    "asOf": "2026-04-18",
+    "gp": 8,
+    "record": "5-3",
+    "batting": {
+      "pa": 258,
+      "ab": 214,
+      "avg": ".304",
+      "obp": ".416",
+      "ops": ".800",
+      "slg": ".383",
+      "h": 65,
+      "1b": 50,
+      "2b": 14,
+      "3b": 0,
+      "hr": 1,
+      "rbi": 41,
+      "r": 52,
+      "bb": 30,
+      "so": 52,
+      "kl": 22,
+      "hbp": 12,
+      "sac": 1,
+      "sf": 1,
+      "sb": 36,
+      "cs": 4,
+      "sbPct": "90.00"
+    },
+    "pitching": {
+      "ip": 53.1,
+      "era": "3.281",
+      "whip": "1.688",
+      "h": 50,
+      "r": 48,
+      "er": 25,
+      "bb": 40,
+      "so": 66,
+      "kl": 24,
+      "hbp": 14,
+      "pitches": 1018,
+      "bf": 277,
+      "w": 5,
+      "l": 3,
+      "sv": 1
+    },
+    "fielding": {
+      "tc": 231,
+      "a": 44,
+      "po": 160,
+      "fpct": ".883",
+      "e": 27,
+      "dp": 3
     }
   }
 }
