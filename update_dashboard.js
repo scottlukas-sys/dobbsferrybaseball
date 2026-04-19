@@ -198,6 +198,7 @@ const jvSchedule = [
     { date: '2026-04-18', display: 'Apr 18', day: 'Sat', time: '2:30 PM', opponent: 'Irvington JV', location: 'Away', venue: 'Memorial Park', address: '11 Dows Ln, Irvington, NY 10533' },
     { date: '2026-04-20', display: 'Apr 20', day: 'Mon', time: '4:30 PM', opponent: 'Blind Brook JV', location: 'Away', venue: 'Blind Brook HS', address: '840 King St, Rye Brook, NY 10573' },
     { date: '2026-04-22', display: 'Apr 22', day: 'Wed', time: '4:30 PM', opponent: 'Blind Brook JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    { date: '2026-04-24', display: 'Apr 24', day: 'Fri', time: '4:30 PM', opponent: 'Pearl River JV', location: 'Away', venue: 'Pearl River HS', address: '275 E Central Ave, Pearl River, NY 10965' },
     { date: '2026-04-28', display: 'Apr 28', day: 'Tue', time: '4:30 PM', opponent: 'Hastings JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Away', venue: 'Rye Neck HS', address: '310 Palmer Rd, Mamaroneck, NY 10543' },

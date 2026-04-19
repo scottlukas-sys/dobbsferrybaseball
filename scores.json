@@ -5392,6 +5392,11 @@
           "method": "user-provided screenshots"
         }
       ]
+    },
+    {
+      "date": "2026-04-19",
+      "type": "schedule-update",
+      "text": "Added JV game: Apr 24 @ Pearl River HS, 4:30 PM. Pearl River JV added to JV schedule in updater."
     }
   ],
   "opponentResults": [
