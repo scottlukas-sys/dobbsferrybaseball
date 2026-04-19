@@ -3570,8 +3570,9 @@
               "w": 0,
               "sv": 0,
               "r": 4,
-              "bf": 17,
-              "pitches": 49
+              "bf": 11,
+              "pitches": 49,
+              "strikes": 22
             }
           },
           {
@@ -3618,7 +3619,7 @@
               "so": 2,
               "pitches": 51,
               "strikes": 32,
-              "bf": 10
+              "bf": 16
             }
           }
         ]
@@ -3733,6 +3734,16 @@
         "team": "Dobbs Ferry JV",
         "games": [
           {
+            "date": "2026-04-07",
+            "opp": "Edgemont JV",
+            "hitting": null,
+            "pitching": {
+              "pitches": 41,
+              "strikes": 21,
+              "bf": 10
+            }
+          },
+          {
             "date": "2026-04-08",
             "opp": "Sleepy Hollow JV",
             "hitting": {
@@ -3782,7 +3793,8 @@
               "sv": 0,
               "r": 4,
               "bf": 10,
-              "pitches": 54
+              "pitches": 40,
+              "strikes": 21
             }
           }
         ]
@@ -3962,7 +3974,8 @@
               "w": 0,
               "sv": 0,
               "bf": 21,
-              "pitches": 70
+              "pitches": 70,
+              "strikes": 44
             }
           },
           {
@@ -4063,7 +4076,7 @@
               "sv": 0,
               "pitches": 53,
               "strikes": 25,
-              "bf": 12,
+              "bf": 13,
               "r": 5,
               "hbp": 1
             }
@@ -4098,8 +4111,9 @@
               "so": 0,
               "w": 0,
               "sv": 0,
-              "bf": 6,
-              "pitches": 17
+              "bf": 5,
+              "pitches": 17,
+              "strikes": 9
             }
           },
           {
@@ -4193,7 +4207,8 @@
               "sv": 0,
               "r": 2,
               "bf": 10,
-              "pitches": 36
+              "pitches": 36,
+              "strikes": 19
             }
           }
         ]
@@ -5895,7 +5910,11 @@
       "teamScore": 3,
       "oppScore": 5,
       "result": "L",
-      "source": "Briarcliff DS"
+      "source": "Briarcliff DS",
+      "winner": "Pleasantville",
+      "winnerRuns": 5,
+      "loser": "Briarcliff",
+      "loserRuns": 3
     },
     {
       "date": "2026-03-31",
@@ -5904,7 +5923,11 @@
       "teamScore": 14,
       "oppScore": 0,
       "result": "W",
-      "source": "Briarcliff DS"
+      "source": "Briarcliff DS",
+      "winner": "Briarcliff",
+      "winnerRuns": 14,
+      "loser": "Sleepy Hollow",
+      "loserRuns": 0
     },
     {
       "date": "2026-04-06",
@@ -5913,7 +5936,11 @@
       "teamScore": 5,
       "oppScore": 6,
       "result": "L",
-      "source": "Briarcliff DS"
+      "source": "Briarcliff DS",
+      "winner": "Croton-Harmon",
+      "winnerRuns": 6,
+      "loser": "Briarcliff",
+      "loserRuns": 5
     },
     {
       "date": "2026-04-09",
@@ -5922,7 +5949,11 @@
       "teamScore": 2,
       "oppScore": 0,
       "result": "W",
-      "source": "Briarcliff DS (tournament)"
+      "source": "Briarcliff DS (tournament)",
+      "winner": "Briarcliff",
+      "winnerRuns": 2,
+      "loser": "Hendrick Hudson",
+      "loserRuns": 0
     },
     {
       "date": "2026-04-13",
@@ -5931,7 +5962,11 @@
       "teamScore": 5,
       "oppScore": 5,
       "result": "T",
-      "source": "Briarcliff DS"
+      "source": "Briarcliff DS",
+      "winner": "Briarcliff",
+      "winnerRuns": 5,
+      "loser": "Brewster",
+      "loserRuns": 5
     },
     {
       "date": "2026-04-14",
@@ -5940,7 +5975,11 @@
       "teamScore": 8,
       "oppScore": 5,
       "result": "W",
-      "source": "Briarcliff DS"
+      "source": "Briarcliff DS",
+      "winner": "Briarcliff",
+      "winnerRuns": 8,
+      "loser": "Tuckahoe",
+      "loserRuns": 5
     },
     {
       "date": "2026-03-30",
@@ -5949,7 +5988,11 @@
       "teamScore": 0,
       "oppScore": 2,
       "result": "L",
-      "source": "Hastings DS"
+      "source": "Hastings DS",
+      "winner": "Pelham",
+      "winnerRuns": 2,
+      "loser": "Hastings",
+      "loserRuns": 0
     },
     {
       "date": "2026-03-31",
@@ -5958,7 +6001,11 @@
       "teamScore": 2,
       "oppScore": 11,
       "result": "L",
-      "source": "Hastings DS"
+      "source": "Hastings DS",
+      "winner": "Westlake",
+      "winnerRuns": 11,
+      "loser": "Hastings",
+      "loserRuns": 2
     },
     {
       "date": "2026-04-04",
@@ -5967,7 +6014,11 @@
       "teamScore": 0,
       "oppScore": 1,
       "result": "L",
-      "source": "Hastings DS"
+      "source": "Hastings DS",
+      "winner": "Eastchester",
+      "winnerRuns": 1,
+      "loser": "Hastings",
+      "loserRuns": 0
     },
     {
       "date": "2026-04-10",
@@ -5976,7 +6027,11 @@
       "teamScore": 8,
       "oppScore": 12,
       "result": "L",
-      "source": "Hastings DS"
+      "source": "Hastings DS",
+      "winner": "Putnam Valley",
+      "winnerRuns": 12,
+      "loser": "Hastings",
+      "loserRuns": 8
     },
     {
       "date": "2026-04-11",
@@ -5985,7 +6040,11 @@
       "teamScore": 5,
       "oppScore": 8,
       "result": "L",
-      "source": "Hastings DS"
+      "source": "Hastings DS",
+      "winner": "Scarsdale",
+      "winnerRuns": 8,
+      "loser": "Hastings",
+      "loserRuns": 5
     },
     {
       "date": "2026-04-13",
@@ -5994,7 +6053,11 @@
       "teamScore": 4,
       "oppScore": 3,
       "result": "W",
-      "source": "Hastings DS"
+      "source": "Hastings DS",
+      "winner": "Hastings",
+      "winnerRuns": 4,
+      "loser": "Ardsley",
+      "loserRuns": 3
     },
     {
       "date": "2026-04-16",
@@ -6003,7 +6066,11 @@
       "teamScore": 3,
       "oppScore": 14,
       "result": "L",
-      "source": "Rye Neck DS (L3 streak)"
+      "source": "Rye Neck DS (L3 streak)",
+      "winner": "Valhalla",
+      "winnerRuns": 14,
+      "loser": "Rye Neck",
+      "loserRuns": 3
     },
     {
       "date": "2026-04-11",
@@ -6012,7 +6079,11 @@
       "teamScore": 6,
       "oppScore": 9,
       "result": "L",
-      "source": "Edgemont DS"
+      "source": "Edgemont DS",
+      "winner": "Valhalla",
+      "winnerRuns": 9,
+      "loser": "Edgemont",
+      "loserRuns": 6
     },
     {
       "date": "2026-04-14",
@@ -6021,7 +6092,11 @@
       "teamScore": 6,
       "oppScore": 0,
       "result": "W",
-      "source": "Edgemont DS"
+      "source": "Edgemont DS",
+      "winner": "Edgemont",
+      "winnerRuns": 6,
+      "loser": "Haldane",
+      "loserRuns": 0
     },
     {
       "date": "2026-04-16",
@@ -6030,7 +6105,11 @@
       "teamScore": 1,
       "oppScore": 5,
       "result": "L",
-      "source": "Edgemont DS"
+      "source": "Edgemont DS",
+      "winner": "Leffell",
+      "winnerRuns": 5,
+      "loser": "Edgemont",
+      "loserRuns": 1
     },
     {
       "date": "2026-04-10",
@@ -6039,7 +6118,11 @@
       "teamScore": 2,
       "oppScore": 8,
       "result": "L",
-      "source": "Haldane DS"
+      "source": "Haldane DS",
+      "winner": "Blind Brook",
+      "winnerRuns": 8,
+      "loser": "Haldane",
+      "loserRuns": 2
     },
     {
       "date": "2026-04-14",
@@ -6048,7 +6131,11 @@
       "teamScore": 10,
       "oppScore": 1,
       "result": "W",
-      "source": "Pearl River DS / Ardsley DS cross-ref"
+      "source": "Pearl River DS / Ardsley DS cross-ref",
+      "winner": "Pearl River",
+      "winnerRuns": 10,
+      "loser": "Ardsley",
+      "loserRuns": 1
     },
     {
       "date": "2026-04-13",
@@ -6057,7 +6144,11 @@
       "teamScore": 14,
       "oppScore": 0,
       "result": "W",
-      "source": "Saunders DS / WebSearch"
+      "source": "Saunders DS / WebSearch",
+      "winner": "Saunders",
+      "winnerRuns": 14,
+      "loser": "Poughkeepsie",
+      "loserRuns": 0
     },
     {
       "date": "2026-04-15",
@@ -6066,7 +6157,11 @@
       "teamScore": 22,
       "oppScore": 1,
       "result": "W",
-      "source": "Saunders DS / WebSearch"
+      "source": "Saunders DS / WebSearch",
+      "winner": "Saunders",
+      "winnerRuns": 22,
+      "loser": "Poughkeepsie",
+      "loserRuns": 1
     },
     {
       "date": "2026-04-14",
@@ -6075,7 +6170,11 @@
       "teamScore": 5,
       "oppScore": 8,
       "result": "L",
-      "source": "Tuckahoe DS"
+      "source": "Tuckahoe DS",
+      "winner": "Briarcliff",
+      "winnerRuns": 8,
+      "loser": "Tuckahoe",
+      "loserRuns": 5
     },
     {
       "date": "2026-04-17",
@@ -6084,7 +6183,11 @@
       "teamScore": 11,
       "oppScore": 2,
       "result": "W",
-      "source": "Hastings DS social share (Apr 17)"
+      "source": "Hastings DS social share (Apr 17)",
+      "winner": "Westlake",
+      "winnerRuns": 11,
+      "loser": "Hastings",
+      "loserRuns": 2
     },
     {
       "date": "2026-04-08",
@@ -6093,7 +6196,11 @@
       "teamScore": 3,
       "oppScore": 2,
       "result": "W",
-      "source": "Blind Brook DS"
+      "source": "Blind Brook DS",
+      "winner": "Blind Brook",
+      "winnerRuns": 3,
+      "loser": "Valhalla",
+      "loserRuns": 2
     },
     {
       "date": "2026-04-11",
@@ -6102,7 +6209,11 @@
       "teamScore": 12,
       "oppScore": 8,
       "result": "W",
-      "source": "Blind Brook DS"
+      "source": "Blind Brook DS",
+      "winner": "Blind Brook",
+      "winnerRuns": 12,
+      "loser": "Irvington",
+      "loserRuns": 8
     },
     {
       "date": "2026-04-14",
@@ -6111,7 +6222,11 @@
       "teamScore": 2,
       "oppScore": 1,
       "result": "W",
-      "source": "Blind Brook DS"
+      "source": "Blind Brook DS",
+      "winner": "Blind Brook",
+      "winnerRuns": 2,
+      "loser": "North Salem",
+      "loserRuns": 1
     },
     {
       "date": "2026-04-10",
@@ -6120,7 +6235,11 @@
       "teamScore": 12,
       "oppScore": 8,
       "result": "W",
-      "source": "Putnam Valley DS"
+      "source": "Putnam Valley DS",
+      "winner": "Putnam Valley",
+      "winnerRuns": 12,
+      "loser": "Hastings",
+      "loserRuns": 8
     },
     {
       "date": "2026-04-13",
@@ -6129,7 +6248,11 @@
       "teamScore": 3,
       "oppScore": 4,
       "result": "L",
-      "source": "Ardsley DS"
+      "source": "Ardsley DS",
+      "winner": "Hastings",
+      "winnerRuns": 4,
+      "loser": "Ardsley",
+      "loserRuns": 3
     },
     {
       "date": "2026-04-14",
@@ -6138,7 +6261,11 @@
       "teamScore": 1,
       "oppScore": 10,
       "result": "L",
-      "source": "Ardsley DS"
+      "source": "Ardsley DS",
+      "winner": "Pearl River",
+      "winnerRuns": 10,
+      "loser": "Ardsley",
+      "loserRuns": 1
     },
     {
       "date": "2026-03-23",
@@ -6147,7 +6274,11 @@
       "teamScore": 15,
       "oppScore": 5,
       "result": "W",
-      "source": "Pawling DS / Blind Brook DS cross-ref"
+      "source": "Pawling DS / Blind Brook DS cross-ref",
+      "winner": "Pawling",
+      "winnerRuns": 15,
+      "loser": "Blind Brook",
+      "loserRuns": 5
     },
     {
       "date": "2026-04-17",
@@ -6156,7 +6287,11 @@
       "teamScore": 6,
       "oppScore": 11,
       "result": "L",
-      "source": "Blind Brook MaxPreps schedule"
+      "source": "Blind Brook MaxPreps schedule",
+      "winner": "Westlake",
+      "winnerRuns": 11,
+      "loser": "Blind Brook",
+      "loserRuns": 6
     },
     {
       "date": "2026-04-18",
@@ -6165,7 +6300,11 @@
       "teamScore": 5,
       "oppScore": 1,
       "result": "W",
-      "source": "Blind Brook MaxPreps schedule (League)"
+      "source": "Blind Brook MaxPreps schedule (League)",
+      "winner": "Blind Brook",
+      "winnerRuns": 5,
+      "loser": "Briarcliff",
+      "loserRuns": 1
     },
     {
       "date": "2026-04-14",
@@ -6174,7 +6313,11 @@
       "teamScore": 2,
       "oppScore": 12,
       "result": "L",
-      "source": "Rye Neck MaxPreps schedule"
+      "source": "Rye Neck MaxPreps schedule",
+      "winner": "Byram Hills",
+      "winnerRuns": 12,
+      "loser": "Rye Neck",
+      "loserRuns": 2
     },
     {
       "date": "2026-04-18",
@@ -6183,7 +6326,11 @@
       "teamScore": 1,
       "oppScore": 6,
       "result": "L",
-      "source": "Rye Neck MaxPreps schedule"
+      "source": "Rye Neck MaxPreps schedule",
+      "winner": "Pleasantville",
+      "winnerRuns": 6,
+      "loser": "Rye Neck",
+      "loserRuns": 1
     },
     {
       "date": "2026-04-10",
@@ -6192,7 +6339,11 @@
       "teamScore": 2,
       "oppScore": 11,
       "result": "L",
-      "source": "Tuckahoe MaxPreps schedule (previously missed)"
+      "source": "Tuckahoe MaxPreps schedule (previously missed)",
+      "winner": "New Rochelle",
+      "winnerRuns": 11,
+      "loser": "Tuckahoe",
+      "loserRuns": 2
     },
     {
       "date": "2026-04-17",
@@ -6201,7 +6352,11 @@
       "teamScore": 4,
       "oppScore": 12,
       "result": "L",
-      "source": "Tuckahoe MaxPreps schedule"
+      "source": "Tuckahoe MaxPreps schedule",
+      "winner": "Yorktown",
+      "winnerRuns": 12,
+      "loser": "Tuckahoe",
+      "loserRuns": 4
     },
     {
       "date": "2026-04-15",
@@ -6210,7 +6365,11 @@
       "teamScore": 6,
       "oppScore": 5,
       "result": "W",
-      "source": "Hastings MaxPreps schedule"
+      "source": "Hastings MaxPreps schedule",
+      "winner": "Hastings",
+      "winnerRuns": 6,
+      "loser": "Albertus Magnus",
+      "loserRuns": 5
     },
     {
       "date": "2026-04-18",
@@ -6219,7 +6378,11 @@
       "teamScore": 2,
       "oppScore": 16,
       "result": "L",
-      "source": "Haldane MaxPreps schedule"
+      "source": "Haldane MaxPreps schedule",
+      "winner": "Dobbs Ferry",
+      "winnerRuns": 16,
+      "loser": "Haldane",
+      "loserRuns": 2
     },
     {
       "date": "2026-04-18",
@@ -6228,7 +6391,11 @@
       "teamScore": 1,
       "oppScore": 5,
       "result": "L",
-      "source": "Blind Brook MaxPreps schedule (League)"
+      "source": "Blind Brook MaxPreps schedule (League)",
+      "winner": "Blind Brook",
+      "winnerRuns": 5,
+      "loser": "Briarcliff",
+      "loserRuns": 1
     },
     {
       "date": "2026-04-18",
@@ -6237,7 +6404,11 @@
       "teamScore": 16,
       "oppScore": 6,
       "result": "W",
-      "source": "Edgemont MaxPreps schedule"
+      "source": "Edgemont MaxPreps schedule",
+      "winner": "Edgemont",
+      "winnerRuns": 16,
+      "loser": "North Salem",
+      "loserRuns": 6
     },
     {
       "date": "2026-04-18",
@@ -6246,7 +6417,11 @@
       "teamScore": 10,
       "oppScore": 11,
       "result": "L",
-      "source": "Sleepy Hollow MaxPreps schedule"
+      "source": "Sleepy Hollow MaxPreps schedule",
+      "winner": "Woodlands",
+      "winnerRuns": 11,
+      "loser": "Sleepy Hollow",
+      "loserRuns": 10
     }
   ],
   "teamIntel": {

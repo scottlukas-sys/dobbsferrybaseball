@@ -929,7 +929,7 @@ function buildElsewhere() {
                 <div class="team-card"${borderStyle}>
                     <div class="team-name">${team}</div>
                     ${badgeHtml}
-                    <div class="team-intel">${t.intel}</div>
+                    <div class="team-intel">${t.intel || t.blurb || 'No intel available.'}</div>
                     <div class="team-next">Next vs DF: ${nextVsDFText}</div>
                 </div>`;
     }
@@ -1618,7 +1618,7 @@ function buildJVPlayersToWatch(pisData) {
         .map(p => Object.assign({}, p, { role: 'pitcher' }))
         .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
         .slice(0, 6);
-    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters and pitchers are scored on separate leaderboards.</p>`;
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters ranked by: H + XBH bonus + RBI(1.5) + R + BB(0.5) + multi-hit bonus. Pitchers ranked by: W(3) + SV(2) + IP + SO − ER(1.5). Hitters and pitchers are scored on separate leaderboards so volume-rich roles don't crowd out position players.</p>`;
     if (jvHitters.length === 0 && jvPitchers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
     }
@@ -2196,6 +2196,89 @@ html = html.replace(
     /[A-Z][a-z]+ \d{1,2}, \d{4} \(Updated [^)]*\)/,
     `${longDate} (Updated ${timeStr})`
 );
+
+// ============================================================
+// UPDATE DATA SOURCE STATUS
+// ============================================================
+function buildDataSourceStatus() {
+    // Get the latest daily-sweep newsLog entries
+    const sweeps = (scores.newsLog || [])
+        .filter(e => e.type === 'daily-sweep' || e.type === 'gc-season-stats-load')
+        .sort((a, b) => b.date.localeCompare(a.date));
+    const latestSweep = sweeps.find(s => s.sourcesChecked);
+    const latestDate = sweeps[0] ? sweeps[0].date : todayStr;
+
+    // Build status items from latest sweep sourcesChecked
+    const sources = [];
+    if (latestSweep && latestSweep.sourcesChecked) {
+        const checks = Array.isArray(latestSweep.sourcesChecked) ? latestSweep.sourcesChecked : Object.entries(latestSweep.sourcesChecked).map(([k,v]) => ({source: k, status: v}));
+        for (const c of checks) {
+            const name = c.source || c.name || 'Unknown';
+            const status = c.status || 'unknown';
+            const method = c.method || '';
+            let dotClass = 'live';
+            if (status.includes('broken') || status.includes('down') || status.includes('error') || status.includes('blocked') || status.includes('timeout')) dotClass = 'stale';
+            else if (status.includes('limited') || status.includes('partial') || status.includes('empty')) dotClass = 'caution';
+            sources.push({ name, status, method, dotClass });
+        }
+    }
+
+    // Add GC season stats status
+    const gcLoad = sweeps.find(s => s.type === 'gc-season-stats-load');
+    if (gcLoad) {
+        sources.push({ name: 'GameChanger Season Stats (Batting/Pitching/Fielding)', status: 'loaded', method: 'User-provided screenshots', dotClass: 'live' });
+    }
+
+    // Check if we have GC data on players
+    const dfPlayers = scores.playerStats && scores.playerStats.df ? Object.keys(scores.playerStats.df) : [];
+    const playersWithGC = dfPlayers.filter(n => {
+        const p = scores.playerStats.df[n];
+        return p.seasonStats && p.seasonStats.source && p.seasonStats.source.includes('GameChanger');
+    });
+    if (playersWithGC.length > 0) {
+        sources.push({ name: `GameChanger Varsity (${playersWithGC.length}/${dfPlayers.length} players with season stats)`, status: 'loaded', method: 'Verified', dotClass: 'live' });
+    }
+
+    let html = '';
+    const checked = sources.filter(s => s.dotClass === 'live');
+    const caution = sources.filter(s => s.dotClass === 'caution');
+    const stale = sources.filter(s => s.dotClass === 'stale');
+
+    if (checked.length > 0) {
+        html += `<h3 style="margin-bottom: 15px;">CHECKED</h3><div class="status-grid">`;
+        for (const s of checked) {
+            html += `<div class="status-item"><div class="status-dot live"></div><div class="status-label">${s.name}${s.method ? ' — ' + s.method : ''}</div></div>`;
+        }
+        html += `</div>`;
+    }
+    if (caution.length > 0) {
+        html += `<h3 style="margin: 20px 0 15px;">LIMITED</h3><div class="status-grid">`;
+        for (const s of caution) {
+            html += `<div class="status-item"><div class="status-dot stale"></div><div class="status-label">${s.name}${s.method ? ' — ' + s.method : ''}</div></div>`;
+        }
+        html += `</div>`;
+    }
+    if (stale.length > 0) {
+        html += `<h3 style="margin: 20px 0 15px;">UNREACHABLE</h3><div class="status-grid">`;
+        for (const s of stale) {
+            html += `<div class="status-item"><div class="status-dot stale"></div><div class="status-label">${s.name}${s.method ? ' — ' + s.method : ''}</div></div>`;
+        }
+        html += `</div>`;
+    }
+
+    html += `<p style="font-size: 11px; color: #555; margin-top: 15px;">Last sweep: ${latestDate}</p>`;
+    return html;
+}
+
+// Replace Data Source Status content in both varsity and JV tabs
+const dsStatusRegex = /<div class="collapsible-content collapsed">\s*<div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #1a1a1a;">\s*<h3 style="margin-bottom: 15px;">CHECKED[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*(?=\s*<\/div>\s*(?:<\/div>|$|\s*<!--))/g;
+const newDSContent = `<div class="collapsible-content collapsed">
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #1a1a1a;">
+                        ${buildDataSourceStatus()}
+                    </div>
+                </div>
+            </div>`;
+html = html.replace(dsStatusRegex, newDSContent);
 
 // ============================================================
 // ANALYTICS (GoatCounter — free, privacy-friendly, no cookies)
