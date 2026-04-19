@@ -330,6 +330,31 @@
               "sv": 0,
               "bf": 9
             }
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 5,
+              "h": 3,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 3,
+              "r": 3,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 3,
+              "h": 1,
+              "er": 0,
+              "so": 4,
+              "bb": 5,
+              "w": 0,
+              "sv": 0,
+              "bf": 0
+            }
           }
         ]
       },
@@ -523,6 +548,22 @@
               "r": 1,
               "bb": 0,
               "sb": 1
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
             },
             "pitching": null
           }
@@ -777,6 +818,22 @@
               "sv": 0,
               "bf": 21
             }
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 5,
+              "h": 4,
+              "2b": 2,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 2,
+              "r": 4,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -899,6 +956,22 @@
               "hr": 0,
               "rbi": 0,
               "r": 1,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 3,
               "bb": 0,
               "sb": 0
             },
@@ -1029,6 +1102,22 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 2,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -1146,6 +1235,22 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 3,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 1,
+              "bb": 1,
+              "sb": 0
+            },
+            "pitching": null
           }
         ]
       },
@@ -1235,6 +1340,22 @@
               "3b": 0,
               "hr": 0,
               "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 2,
               "r": 0,
               "bb": 0,
               "sb": 0
@@ -1498,6 +1619,21 @@
               "w": 0,
               "sv": 0,
               "bf": 13
+            }
+          },
+          {
+            "date": "2026-04-18",
+            "opp": "Haldane",
+            "hitting": null,
+            "pitching": {
+              "ip": 4,
+              "h": 1,
+              "er": 0,
+              "so": 6,
+              "bb": 1,
+              "w": 1,
+              "sv": 0,
+              "bf": 0
             }
           }
         ]
@@ -1817,7 +1953,27 @@
               "bf": 15
             }
           }
-        ]
+        ],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-19",
+          "gp": 7,
+          "batting": {
+            "ab": 0,
+            "h": 7,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 3,
+            "r": 0,
+            "bb": 0,
+            "sb": 5,
+            "avg": 0.35
+          },
+          "pitching": {
+            "era": 4.94
+          }
+        }
       },
       "Theo Swan (Haldane)": {
         "team": "Haldane",
@@ -1844,7 +2000,25 @@
             },
             "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-19",
+          "gp": 7,
+          "batting": {
+            "ab": 0,
+            "h": 6,
+            "2b": 3,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 8,
+            "r": 5,
+            "bb": 0,
+            "avg": 0.353,
+            "slg": 0.529
+          },
+          "pitching": null
+        }
       },
       "Oliver Herman (Haldane)": {
         "team": "Haldane",
@@ -1853,7 +2027,16 @@
           "Pitcher"
         ],
         "note": "Relief appearance in 2026 opener vs Peekskill. Part of young pitching staff.",
-        "games": []
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-19",
+          "gp": 7,
+          "batting": null,
+          "pitching": {
+            "era": 3.18
+          }
+        }
       },
       "Lincoln McCarthy (Haldane)": {
         "team": "Haldane",
@@ -2153,6 +2336,86 @@
           "pitching": {
             "era": 3
           }
+        }
+      },
+      "Alain Swan (Haldane)": {
+        "team": "Haldane",
+        "tags": [
+          "Key Bat"
+        ],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-19",
+          "gp": 7,
+          "batting": {
+            "ab": 0,
+            "h": 9,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 0,
+            "r": 5,
+            "bb": 0,
+            "avg": 0.375
+          },
+          "pitching": null
+        }
+      },
+      "W. Terrasi (Edgemont)": {
+        "team": "Edgemont",
+        "tags": [
+          "Jr",
+          "SS/P",
+          "Two-Way"
+        ],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-19",
+          "gp": 9,
+          "batting": {
+            "ab": 0,
+            "h": 11,
+            "2b": 2,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 6,
+            "r": 12,
+            "bb": 0,
+            "avg": 0.407,
+            "obp": 0.514,
+            "slg": 0.481
+          },
+          "pitching": {
+            "era": 3.11
+          }
+        }
+      },
+      "D. Scovotti (Edgemont)": {
+        "team": "Edgemont",
+        "tags": [
+          "Fr",
+          "C/P",
+          "Power"
+        ],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-19",
+          "gp": 9,
+          "batting": {
+            "ab": 0,
+            "h": 0,
+            "2b": 0,
+            "3b": 0,
+            "hr": 1,
+            "rbi": 4,
+            "r": 0,
+            "bb": 0,
+            "slg": 0.556
+          },
+          "pitching": null
         }
       }
     },
@@ -3356,6 +3619,32 @@
     }
   },
   "newsLog": [
+    {
+      "date": "2026-04-19",
+      "type": "daily-sweep",
+      "text": "Full sweep with Chrome MCP + WebFetch. DF DS: 4-3 on DS (actual 5-3, Ardsley W still not entered). IG @dfeaglesbaseball: Apr 18 Haldane box scores captured (Ficarrotta 4-5 2 2B 4R 2RBI, Zendel 3-5 3R 3RBI + 3IP 4K, Foley ~4IP 6K). Blind Brook DS: 6-3, 6-2 conf, W1 after 5-1 at Briarcliff (league). Comes to DF tomorrow. NEW opponent results: Edgemont W 16-6 at North Salem (Apr 18), Sleepy Hollow L 10-11 at Woodlands (Apr 18). MaxPreps stats: Haldane (3 players), Edgemont (Terrasi .407/3.11 ERA), Valhalla (no data). No schedule changes. League play begins tomorrow.",
+      "sourcesChecked": {
+        "digitalsports:df": "✅ 4-3 on DS (actual 5-3, Ardsley Apr 14 still not entered)",
+        "digitalsports:blind_brook": "✅ 6-3, 6-2 conf, W1",
+        "digitalsports:hastings": "⚠️ WebFetch returned empty (AJAX)",
+        "ig:@dfeaglesbaseball": "✅ Apr 18 Haldane box scores (latest post)",
+        "maxpreps:df_schedule": "✅ 2-1 on MP (very lagged)",
+        "maxpreps:edgemont_schedule": "✅ 2-7, new W 16-6 at North Salem Apr 18",
+        "maxpreps:edgemont_stats": "✅ Terrasi .407, Desai .357, Roy .333",
+        "maxpreps:sleepy_hollow_schedule": "✅ 4-5, new L 10-11 at Woodlands Apr 18",
+        "maxpreps:irvington_schedule": "✅ 2-1 on MP (very lagged)",
+        "maxpreps:haldane_stats": "✅ A. Swan .375, T. Swan .353, McIlwaine .350, Herman 3.18 ERA",
+        "maxpreps:valhalla_stats": "✅ no data entered",
+        "maxpreps:blind_brook_stats": "⚠️ leaderboard-only",
+        "maxpreps:hastings_stats": "⚠️ leaderboard-only",
+        "maxpreps:rye_neck_stats": "⚠️ leaderboard-only",
+        "maxpreps_opponents": "✅ ok — Haldane + Edgemont had data (2 of 13)",
+        "gmail": "✅ no schedule changes (checked via MCP)",
+        "section1athletics": "⚠️ not checked (DNS issues persist)",
+        "dfsd_athletics": "⚠️ not checked this run",
+        "gamedayone": "⚠️ not checked (expected to have content starting Apr 20)"
+      }
+    },
     {
       "date": "2026-04-18",
       "type": "daily-sweep",
@@ -5043,6 +5332,24 @@
       "oppScore": 5,
       "result": "L",
       "source": "Blind Brook MaxPreps schedule (League)"
+    },
+    {
+      "date": "2026-04-18",
+      "team": "Edgemont",
+      "opponent": "North Salem",
+      "teamScore": 16,
+      "oppScore": 6,
+      "result": "W",
+      "source": "Edgemont MaxPreps schedule"
+    },
+    {
+      "date": "2026-04-18",
+      "team": "Sleepy Hollow",
+      "opponent": "Woodlands",
+      "teamScore": 10,
+      "oppScore": 11,
+      "result": "L",
+      "source": "Sleepy Hollow MaxPreps schedule"
     }
   ],
   "teamIntel": {
@@ -5066,12 +5373,12 @@
         "Pearl River/Hastings DS cross-ref"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Blind Brook": {
       "record": "6-3",
       "dsRecord": "6-3",
-      "confRecord": "6-3",
+      "confRecord": "6-2",
       "streak": "W1",
       "recentResults": [
         "W 8-2 at Haldane (Apr 10)",
@@ -5082,36 +5389,39 @@
       ],
       "blurb": "5-game win streak. DS 5-2 confirmed by MaxPreps. Strong offense (40 RF). Plays Westlake today (Apr 17), at Briarcliff Sat, then at DF Mon (league opener). Key threat.",
       "sources": [
-        "Blind Brook MaxPreps schedule",
-        "digitalsports:blind_brook (prior sweeps)"
+        "Blind Brook DigitalSports (54075)",
+        "Blind Brook MaxPreps schedule"
       ],
-      "lastDeepSweep": "2026-04-18",
-      "intel": "6-3 overall. Lost W5 streak to Westlake 6-11 on Apr 17, then bounced back with league-opening 5-1 W at Briarcliff today. Comes to DF Monday Apr 20 (league). Key test for DF. Up next: at Dobbs Ferry Apr 20 (League, 4:30 PM).",
-      "lastUpdated": "2026-04-18"
+      "lastDeepSweep": "2026-04-19",
+      "intel": "6-3 overall, 6-2 conf per DS. Bounced back from Westlake L (6-11) with league-opening 5-1 W at Briarcliff. Strong offense. Visits DF tomorrow for league opener (Apr 20 4:30 PM). Key test for DF. Up next: at Dobbs Ferry Apr 20 (League, 4:30 PM).",
+      "lastUpdated": "2026-04-19"
     },
     "Edgemont": {
-      "record": "1-7",
-      "dsRecord": "1-7",
+      "record": "2-7",
+      "dsRecord": "2-7",
       "confRecord": "1-7",
-      "streak": "L1",
+      "streak": "W1",
       "recentResults": [
-        "L 7-8 vs Blind Brook (Mar 26)",
-        "L 1-11 vs John Jay CR (Mar 31)",
-        "L 1-5 (early Apr)",
-        "L 6-9 vs Valhalla (Apr 11)",
         "W 6-0 vs Haldane (Apr 14)",
-        "L 1-5 vs Leffell (Apr 16)"
+        "L 1-5 vs Leffell (Apr 16)",
+        "W 16-6 at North Salem (Apr 18)"
       ],
       "blurb": "Struggling badly at 1-7. Only win vs Haldane. Lost to Leffell 1-5 on Apr 16. DF already beat them 5-1. Not a threat.",
       "sources": [
-        "Edgemont DigitalSports (73139)",
-        "WebSearch cross-ref"
+        "Edgemont MaxPreps schedule",
+        "digitalsports:edgemont (prior sweeps)"
       ],
-      "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastDeepSweep": "2026-04-19",
+      "lastUpdated": "2026-04-19",
+      "intel": "2-7 overall. Won 16-6 at North Salem on Apr 18, snapping a losing skid. Prior win was 6-0 vs Haldane. DF already beat them 5-1. Not a threat. Up next: vs Irvington Apr 20.",
+      "stars": [
+        "Will Terrasi (Jr SS/P): .407 AVG, 11H, 12R, 3.11 ERA",
+        "Leander Desai (So SS/3B): .357 AVG",
+        "Jacob Roy (Jr OF/P): .333 AVG, .630 OBP, 4 SB"
+      ]
     },
     "Haldane": {
-      "record": "1-6",
+      "record": "1-7",
       "dsRecord": "1-6",
       "confRecord": "1-6",
       "streak": "L6",
@@ -5122,12 +5432,18 @@
       ],
       "blurb": "1-5 with 5-game losing streak. DF plays at Haldane tomorrow (Apr 18, 11am). Should be a favorable matchup. Only win was 10-0 early season.",
       "sources": [
-        "Haldane MaxPreps schedule",
-        "digitalsports:haldane (prior sweeps)"
+        "Haldane MaxPreps stats/schedule",
+        "digitalsports:haldane (prior sweeps)",
+        "ig:@dfeaglesbaseball"
       ],
-      "lastDeepSweep": "2026-04-18",
-      "intel": "1-6 with 6-game losing streak. DF dominated 16-2 today (Apr 18). Only win was 10-0 vs Peekskill in opener. Allowing 68 runs in 7 games. Up next: vs Valhalla Apr 22.",
-      "lastUpdated": "2026-04-18"
+      "lastDeepSweep": "2026-04-19",
+      "intel": "1-7 with 7-game losing streak. DF dominated 16-2 (Apr 18). Only win was 10-0 vs Peekskill in opener. Allowing 78+ runs in 8 games. Young team with freshmen starters. Up next: vs Valhalla Apr 22.",
+      "lastUpdated": "2026-04-19",
+      "stars": [
+        "Alain Swan: .375 AVG, 9H, 5R",
+        "Theo Swan (Fr): .353 AVG, 8 RBI, 3 2B, .529 SLG",
+        "Lughan McIlwaine (Fr P): .350 AVG, 5 SB, 4.94 ERA"
+      ]
     },
     "Hastings": {
       "record": "3-6",
@@ -5147,7 +5463,7 @@
       ],
       "lastDeepSweep": "2026-04-18",
       "intel": "3-6 overall but 2-2 in league (beat Blind Brook 6-2, Ardsley 4-3; lost to Westlake 11-2 twice). Getting outscored across their 6 losses. Tuckahoe visits Apr 20 (league). Up next: vs Tuckahoe Apr 20 (League, 4:30 PM).",
-      "lastUpdated": "2026-04-18",
+      "lastUpdated": "2026-04-19",
       "stars": [
         "Sbrega (Sr CF): .321 AVG, 9H, 5 SB",
         "Suniewick (Jr C): .320 AVG, 4 2B, 2 3B, HR, .640 SLG",
@@ -5169,7 +5485,7 @@
         "@dfeaglesbaseball Instagram"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Leffell School": {
       "record": "2-0",
@@ -5186,7 +5502,7 @@
         "Edgemont DS cross-ref"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Pearl River": {
       "record": "4-1",
@@ -5206,7 +5522,7 @@
         "DF DS cross-ref"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Rye Neck": {
       "record": "3-5",
@@ -5226,7 +5542,7 @@
       ],
       "lastDeepSweep": "2026-04-18",
       "intel": "In freefall at 3-5 with 5-game losing skid. Being outscored badly in losses. Started 3-0 and collapsed. League opener at Leffell Apr 20. Up next: at Leffell School Apr 20 (League).",
-      "lastUpdated": "2026-04-18",
+      "lastUpdated": "2026-04-19",
       "stars": [
         "Sutter: .429 AVG",
         "Strzalkowski: .400 AVG, .640 OBP",
@@ -5253,30 +5569,27 @@
         "WebSearch cross-ref (Poughkeepsie games)"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Sleepy Hollow": {
-      "record": "5-4",
-      "dsRecord": "5-4",
+      "record": "4-5",
+      "dsRecord": "4-5",
       "confRecord": "4-4",
-      "streak": "W1",
+      "streak": "L1",
       "recentResults": [
-        "W 5-4 (close win)",
-        "L 8-9 (close loss)",
-        "L 0-14 vs Briarcliff (Mar 31)",
-        "W 12-10 vs Haldane (Apr 7)",
-        "W 18-1 vs DF (Apr 8)",
-        "W 10-4 (recent)",
-        "L 9-10 (close loss)",
-        "W 15-1 (blowout)"
+        "W 10-4 vs YMA (Apr 10)",
+        "L 9-10 vs YMA (Apr 14)",
+        "W 15-1 vs Woodlands (Apr 16)",
+        "L 10-11 at Woodlands (Apr 18)"
       ],
       "blurb": "5-4, strong. Beat DF 18-1. Lots of close games. Non-league opponent.",
       "sources": [
-        "Sleepy Hollow DigitalSports (68463)",
-        "DF DS cross-ref"
+        "Sleepy Hollow MaxPreps schedule",
+        "digitalsports:sleepy_hollow (prior sweeps)"
       ],
-      "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastDeepSweep": "2026-04-19",
+      "lastUpdated": "2026-04-19",
+      "intel": "4-5 overall. Lost close one 10-11 at Woodlands on Apr 18. Beat DF 18-1 earlier but inconsistent since. Non-league opponent. Up next: at BOSSJ Apr 20."
     },
     "Tuckahoe": {
       "record": "2-5",
@@ -5295,7 +5608,7 @@
       ],
       "lastDeepSweep": "2026-04-18",
       "intel": "2-5 with inconsistent results. Big 18-1 win over North Salem sandwiched between losses. League opener at Hastings Apr 20. Up next: at Hastings Apr 20 (League, 4:30 PM).",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Valhalla": {
       "record": "unknown (DS empty)",
@@ -5315,7 +5628,7 @@
         "WebSearch opponent results"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Westlake": {
       "record": "5-3",
@@ -5337,7 +5650,7 @@
         "Hastings DS cross-ref"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Briarcliff": {
       "record": "4-3-1",
@@ -5356,7 +5669,7 @@
       ],
       "lastDeepSweep": "2026-04-18",
       "intel": "4-3-1 after league-opening L 1-5 to Blind Brook at home today. BB won comfortably. Class B league play now underway. Up next: at Putnam Valley (League).",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Pawling": {
       "record": "4-3",
@@ -5378,7 +5691,7 @@
         "Blind Brook DS cross-ref"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     },
     "Putnam Valley": {
       "record": "4-3",
@@ -5400,7 +5713,7 @@
         "WebSearch cross-ref"
       ],
       "lastDeepSweep": "2026-04-17",
-      "lastUpdated": "2026-04-18"
+      "lastUpdated": "2026-04-19"
     }
   }
 }
