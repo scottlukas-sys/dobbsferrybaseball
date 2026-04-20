@@ -1290,6 +1290,28 @@ function computePIS(playerStats) {
             // Role classification: pitcher if pitching points dominate, else hitter.
             // Two-way players go where their larger contribution is.
             const role = pitTotal > hitTotal ? 'pitcher' : 'hitter';
+            // Compute PA for qualification threshold
+            let seasonPA = 0;
+            let seasonIPTotal = 0;
+            if (useSeasonStats && ss) {
+                seasonPA = ss.pa || ((ss.ab || 0) + (ss.bb || 0) + (ss.hbp || 0) + (ss.sac || 0) + (ss.sf || 0));
+                if (sp) seasonIPTotal = ipToInnings(sp.ip || 0);
+            } else if (ss && ss.batting) {
+                const b = ss.batting;
+                seasonPA = b.pa || ((b.ab || 0) + (b.bb || 0) + (b.hbp || 0) + (b.sac || 0) + (b.sf || 0));
+                if (ss.pitching) seasonIPTotal = ipToInnings(ss.pitching.ip || 0);
+            } else {
+                for (const game of games) {
+                    if (game.hitting) {
+                        const gh = game.hitting;
+                        seasonPA += (gh.ab || 0) + (gh.bb || 0) + (gh.hbp || 0) + (gh.sac || 0) + (gh.sf || 0);
+                    }
+                    if (game.pitching && game.pitching.ip > 0) {
+                        seasonIPTotal += ipToInnings(game.pitching.ip);
+                    }
+                }
+            }
+
             // Accumulate season totals for subtitle display
             let sH = 0, s2b = 0, s3b = 0, sHR = 0, sRBI = 0, sR = 0, sBB = 0, sGP = 0;
             let sIP = 0, sSO = 0, sER = 0, sW = 0, sSV = 0, sPitGP = 0;
@@ -1369,7 +1391,9 @@ function computePIS(playerStats) {
                 tags,
                 note: data.note || null,
                 seasonHitLine,
-                seasonPitLine
+                seasonPitLine,
+                seasonPA,
+                seasonIPTotal
             });
         }
     }
@@ -1397,12 +1421,12 @@ function buildPlayersToWatch(pisData) {
     // have any hitting points, and for pitchers if they have any pitching points.
     // Force a role override on the rendered copy so the tile badge matches the panel.
     const dfHitters = dfPlayers
-        .filter(p => (p.hitPts || 0) > 0)
+        .filter(p => (p.hitPts || 0) > 0 && (p.seasonPA || 0) >= varsityMinPA)
         .map(p => Object.assign({}, p, { role: 'hitter' }))
         .sort((a, b) => (b.hitPts || 0) - (a.hitPts || 0))
         .slice(0, 6);
     const dfPitchers = dfPlayers
-        .filter(p => (p.pitPts || 0) > 0)
+        .filter(p => (p.pitPts || 0) > 0 && (p.seasonIPTotal || 0) >= varsityMinIP)
         .map(p => Object.assign({}, p, { role: 'pitcher' }))
         .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
         .slice(0, 6);
@@ -1600,7 +1624,18 @@ function buildOpponentScoutingReport(pisData) {
 // Compute PIS and rebuild Players to Watch
 const pisData = computePIS(scores.playerStats || {});
 
-const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters ranked by: H + XBH bonus + RBI(1.5) + R + BB(0.5) + multi-hit bonus. Pitchers ranked by: W(3) + SV(2) + IP + SO − ER(1.5). Hitters and pitchers are scored on separate leaderboards so volume-rich roles don't crowd out position players.</p>`;
+// Qualification thresholds: 2.0 PA per team game for hitters, 1.0 IP per team game for pitchers
+const varsityTeamGames = Object.keys(scores.varsity || {}).length;
+const jvTeamGames = Object.keys(scores.jv || {}).length;
+const PA_PER_GAME_THRESHOLD = 2.0;
+const IP_PER_GAME_THRESHOLD = 1.0;
+const varsityMinPA = Math.floor(varsityTeamGames * PA_PER_GAME_THRESHOLD);
+const jvMinPA = Math.floor(jvTeamGames * PA_PER_GAME_THRESHOLD);
+const varsityMinIP = Math.floor(varsityTeamGames * IP_PER_GAME_THRESHOLD);
+const jvMinIP = Math.floor(jvTeamGames * IP_PER_GAME_THRESHOLD);
+console.log(`\nQualification thresholds — Varsity (${varsityTeamGames}G): ${varsityMinPA} PA / ${varsityMinIP} IP | JV (${jvTeamGames}G): ${jvMinPA} PA / ${jvMinIP} IP`);
+
+const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters ranked by: H + XBH bonus + RBI(1.5) + R + BB(0.5) + multi-hit bonus. Pitchers ranked by: W(3) + SV(2) + IP + SO − ER(1.5). Hitters and pitchers are scored on separate leaderboards so volume-rich roles don't crowd out position players. Minimum 2.0 PA per team game to qualify for hitter rankings; 1.0 IP per team game for pitcher rankings.</p>`;
 
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
 html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n${buildOpponentScoutingReport(pisData)}\n            </div>\n\n            `);
@@ -1609,16 +1644,16 @@ html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildP
 function buildJVPlayersToWatch(pisData) {
     const jvAll = pisData.filter(p => p.pool === 'jv' && p.gamesWithStats > 0);
     const jvHitters = jvAll
-        .filter(p => (p.hitPts || 0) > 0)
+        .filter(p => (p.hitPts || 0) > 0 && (p.seasonPA || 0) >= jvMinPA)
         .map(p => Object.assign({}, p, { role: 'hitter' }))
         .sort((a, b) => (b.hitPts || 0) - (a.hitPts || 0))
         .slice(0, 6);
     const jvPitchers = jvAll
-        .filter(p => (p.pitPts || 0) > 0)
+        .filter(p => (p.pitPts || 0) > 0 && (p.seasonIPTotal || 0) >= jvMinIP)
         .map(p => Object.assign({}, p, { role: 'pitcher' }))
         .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
         .slice(0, 6);
-    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters ranked by: H + XBH bonus + RBI(1.5) + R + BB(0.5) + multi-hit bonus. Pitchers ranked by: W(3) + SV(2) + IP + SO − ER(1.5). Hitters and pitchers are scored on separate leaderboards so volume-rich roles don't crowd out position players.</p>`;
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters ranked by: H + XBH bonus + RBI(1.5) + R + BB(0.5) + multi-hit bonus. Pitchers ranked by: W(3) + SV(2) + IP + SO − ER(1.5). Hitters and pitchers are scored on separate leaderboards so volume-rich roles don't crowd out position players. Minimum 2.0 PA per team game to qualify for hitter rankings; 1.0 IP per team game for pitcher rankings.</p>`;
     if (jvHitters.length === 0 && jvPitchers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
     }
@@ -1910,9 +1945,12 @@ function generateJVStatsHTML(playerStats, gameResults) {
         wins: '—', era: '—'
     };
 
-    // AVG = H/AB (min 1 AB)
+    // Qualification threshold for rate stats: 2.0 PA per team game
+    const LEADER_MIN_PA = jvMinPA;
+
+    // AVG = H/AB (min PA threshold)
     if (teamStats.ab > 0) {
-        const byAvg = players.filter(p => p.batting.ab >= 1).sort((a, b) => (b.batting.h / b.batting.ab) - (a.batting.h / a.batting.ab));
+        const byAvg = players.filter(p => p.batting.pa >= LEADER_MIN_PA && p.batting.ab >= 1).sort((a, b) => (b.batting.h / b.batting.ab) - (a.batting.h / a.batting.ab));
         if (byAvg.length > 0) {
             const topAvg = (byAvg[0].batting.h / byAvg[0].batting.ab);
             const tied = byAvg.filter(p => Math.abs((p.batting.h / p.batting.ab) - topAvg) < 0.0001);
@@ -1921,9 +1959,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     }
 
     // OBP = (H+BB+HBP)/(AB+BB+HBP+SF), or (H+BB)/(AB+BB) if HBP/SF not tracked
-    // Minimum 5 PA to qualify so a single walk by a pitcher doesn't lead the board
-    const MIN_PA = 5;
-    const byOBP = players.filter(p => (p.batting.ab + p.batting.bb) >= MIN_PA).sort((a, b) => {
+    const byOBP = players.filter(p => p.batting.pa >= LEADER_MIN_PA).sort((a, b) => {
         const obpA = (a.batting.h + a.batting.bb) / (a.batting.ab + a.batting.bb);
         const obpB = (b.batting.h + b.batting.bb) / (b.batting.ab + b.batting.bb);
         return obpB - obpA;
@@ -1938,7 +1974,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     }
 
     // OPS = OBP + SLG. SLG = TB/AB where TB = 1B + 2*2B + 3*3B + 4*HR. If only H tracked, SLG = H/AB
-    const byOPS = players.filter(p => p.batting.ab > 0 && (p.batting.ab + p.batting.bb) >= MIN_PA).sort((a, b) => {
+    const byOPS = players.filter(p => p.batting.ab > 0 && p.batting.pa >= LEADER_MIN_PA).sort((a, b) => {
         // Calculate TB (total bases)
         const tbA = (a.batting.h || 0) + (a.batting['2b'] || 0) + 2 * (a.batting['3b'] || 0) + 3 * (a.batting.hr || 0);
         const tbB = (b.batting.h || 0) + (b.batting['2b'] || 0) + 2 * (b.batting['3b'] || 0) + 3 * (b.batting.hr || 0);
@@ -1992,8 +2028,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
         leaders.wins = tied.map(p => p.name).join(', ');
     }
 
-    // ERA = min ERA among pitchers with IP > 0, formula (ER*7)/IP (using actual innings)
-    const byERA = players.filter(p => p.pitching.ip > 0).sort((a, b) => {
+    // ERA = min ERA among pitchers meeting IP threshold, formula (ER*7)/IP (using actual innings)
+    const byERA = players.filter(p => ipToInnings(p.pitching.ip) >= jvMinIP).sort((a, b) => {
         const eraA = (a.pitching.er * 7) / ipToInnings(a.pitching.ip);
         const eraB = (b.pitching.er * 7) / ipToInnings(b.pitching.ip);
         return eraA - eraB;
@@ -2075,7 +2111,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
 
     // Team Leaders
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
-    html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Team Leaders</h3>';
+    html += '<h3 style="margin-top: 0; margin-bottom: 4px; color: #D4A017;">Team Leaders</h3>';
+    html += `<p style="font-size: 11px; color: #666; margin: 0 0 12px 0;">Min. ${LEADER_MIN_PA} PA (2.0/team game) to qualify for rate stats. Min. ${jvMinIP} IP (1.0/team game) for ERA.</p>`;
     html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">';
     html += `<div><strong>AVG:</strong> ${leaders.avg}</div>`;
     html += `<div><strong>OBP:</strong> ${leaders.obp}</div>`;
