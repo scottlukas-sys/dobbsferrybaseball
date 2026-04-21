@@ -1842,7 +1842,53 @@ function generateJVStatsHTML(playerStats, gameResults) {
             }
         }
 
-        return { name, batting, pitching };
+        // Override with seasonStats if available (GameChanger season totals are authoritative)
+        const ss = data.seasonStats;
+        if (ss && ss.source && ss.source.includes('GameChanger')) {
+            batting.ab = ss.ab || 0;
+            batting.h = ss.h || 0;
+            batting.r = ss.r || 0;
+            batting.rbi = ss.rbi || 0;
+            batting.bb = ss.bb || 0;
+            batting.so = ss.so || 0;
+            batting.sac = ss.sac || 0;
+            batting.sb = ss.sb || 0;
+            batting.hbp = ss.hbp || 0;
+            batting['2b'] = ss['2b'] || 0;
+            batting['3b'] = ss['3b'] || 0;
+            batting.hr = ss.hr || 0;
+            batting.pa = ss.pa || ((ss.ab || 0) + (ss.bb || 0) + (ss.sac || 0) + (ss.hbp || 0));
+        }
+        const sp = data.seasonPitching;
+        if (sp && sp.source && sp.source.includes('GameChanger')) {
+            pitching.gp = sp.gp || 0;
+            pitching.gs = sp.gs || 0;
+            pitching.w = sp.w || 0;
+            pitching.l = sp.l || 0;
+            pitching.sv = sp.sv || 0;
+            pitching.ip = sp.ip || 0;
+            pitching.h = sp.h || 0;
+            pitching.r = sp.r || 0;
+            pitching.er = sp.er || 0;
+            pitching.bb = sp.bb || 0;
+            pitching.so = sp.so || 0;
+            pitching.pitches = sp.pitches || 0;
+            pitching.strikes = sp.strikes || 0;
+            pitching.bf = sp.bf || 0;
+        }
+
+        // Attach fielding data
+        const fielding = data.fielding || {};
+        const fld = {
+            tc: parseInt(fielding.tc) || 0,
+            a: parseInt(fielding.a) || 0,
+            po: parseInt(fielding.po) || 0,
+            e: parseInt(fielding.e) || 0,
+            dp: parseInt(fielding.dp) || 0,
+            fpct: fielding.tc > 0 ? ((parseInt(fielding.tc) - parseInt(fielding.e || 0)) / parseInt(fielding.tc)) : 0
+        };
+
+        return { name, batting, pitching, fielding: fld };
     });
 
     // Team stats
@@ -1857,7 +1903,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
         pitches: 0, strikes: 0, bf: 0, pitchBFGames: 0, strikeGames: 0, totalPitchingGP: 0,
         cleanInnings: 0, defInningsLogged: 0, cleanTracked: false,
         games: Object.keys(jvGames).length,
-        mercied: 0
+        mercied: 0,
+        fldTC: 0, fldPO: 0, fldA: 0, fldE: 0
     };
 
     for (const [date, game] of Object.entries(jvGames)) {
@@ -1896,6 +1943,11 @@ function generateJVStatsHTML(playerStats, gameResults) {
         teamStats.pitchBFGames += player.pitching.pitchBFGames || 0;
         teamStats.strikeGames += player.pitching.strikeGames || 0;
         teamStats.totalPitchingGP += player.pitching.gp || 0;
+        // Accumulate fielding totals from individual players
+        teamStats.fldTC += player.fielding.tc || 0;
+        teamStats.fldPO += player.fielding.po || 0;
+        teamStats.fldA += player.fielding.a || 0;
+        teamStats.fldE += player.fielding.e || 0;
     }
 
     const teamAvg = teamStats.ab > 0 ? fmtAvg(teamStats.hits / teamStats.ab) : '.000';
@@ -1923,6 +1975,9 @@ function generateJVStatsHTML(playerStats, gameResults) {
     const totalInningsPlayed = totalInningsBatted > 0 ? totalInningsBatted : 0;
     const errorsPerInning = totalInningsPlayed > 0 ? (teamStats.errors / totalInningsPlayed).toFixed(2) : '—';
 
+    // Team FPCT from individual fielding data
+    const teamFPCT = teamStats.fldTC > 0 ? ((teamStats.fldTC - teamStats.fldE) / teamStats.fldTC).toFixed(3) : '—';
+
     // Team Leaders - Helper to format leader output
     function formatLeaderValue(players, filter, sort) {
         const filtered = players.filter(filter).sort(sort);
@@ -1942,7 +1997,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
 
     const leaders = {
         avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—',
-        wins: '—', era: '—'
+        wins: '—', era: '—', hbp: '—'
     };
 
     // Qualification threshold for rate stats: 2.0 PA per team game
@@ -2043,6 +2098,14 @@ function generateJVStatsHTML(playerStats, gameResults) {
         leaders.era = tied.map(p => p.name).join(', ');
     }
 
+    // HBP = max HBP (shows who isn't afraid to crowd the plate)
+    const byHBP = players.filter(p => (p.batting.hbp || 0) > 0).sort((a, b) => (b.batting.hbp || 0) - (a.batting.hbp || 0));
+    if (byHBP.length > 0) {
+        const topHBP = byHBP[0].batting.hbp;
+        const tied = byHBP.filter(p => p.batting.hbp === topHBP);
+        leaders.hbp = tied.map(p => p.name).join(', ');
+    }
+
     // Build HTML
     let html = '';
 
@@ -2082,7 +2145,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Record:</strong> ${teamStats.w}-${teamStats.l}</div>`;
     html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Hitting:</strong> AVG ${teamAvg} &nbsp;|&nbsp; OBP ${teamOBP} &nbsp;|&nbsp; ${teamStats.xbh} XBH &nbsp;|&nbsp; ${rPG} Runs/Game &nbsp;|&nbsp; ${bbPG} Walks/Game &nbsp;|&nbsp; ${kRate} K rate</div>`;
     html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Pitching:</strong> ERA ${teamERA} &nbsp;|&nbsp; WHIP ${whip} &nbsp;|&nbsp; Strike% ${strikePct} &nbsp;|&nbsp; ${pitchesPerBF} Pitches/BF &nbsp;|&nbsp; K/7 ${k7} &nbsp;|&nbsp; K/BB ${kbb} &nbsp;|&nbsp; ${raPG} Runs Allowed/Game &nbsp;|&nbsp; ${bbAllowedPG} Walks Allowed/Game</div>`;
-    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Defense:</strong> ${ePG} Errors/Game &nbsp;|&nbsp; ${fbPG} Free Bases Allowed/Game &nbsp;|&nbsp; Clean Innings ${cleanPct}</div>`;
+    html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Defense:</strong> FPCT ${teamFPCT} &nbsp;|&nbsp; ${ePG} Errors/Game &nbsp;|&nbsp; ${fbPG} Free Bases Allowed/Game &nbsp;|&nbsp; Clean Innings ${cleanPct}</div>`;
     html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Run Diff/Game:</strong> <span style="color:${runDiffColor}; font-weight:700;">${runDiffPGStr}</span></div>`;
     html += '</div>';
     // Glossary
@@ -2102,9 +2165,13 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += '<strong>K/BB:</strong> strikeouts per walk issued. Higher = better command.<br>';
     html += '<strong>Runs Allowed/Game:</strong> average runs the other team scores against us per game.<br>';
     html += '<strong>Walks Allowed/Game:</strong> average walks our pitchers issue per game.<br>';
+    html += '<strong>FPCT (Fielding Percentage):</strong> (total chances − errors) ÷ total chances. How often we make the play. .950+ is solid, under .900 is a problem.<br>';
     html += '<strong>Errors/Game:</strong> average fielding errors per game.<br>';
     html += '<strong>Free Bases Allowed/Game:</strong> walks issued + errors, per game. How often we hand the other team 90 feet for free.<br>';
     html += '<strong>Clean Innings:</strong> share of defensive innings with 0 runs allowed and 0 errors. Requires per-inning logging; shows "—" until tracked.<br>';
+    html += '<strong>BB% (Walk Rate):</strong> walks ÷ plate appearances. How often a batter draws a walk. 10%+ shows plate discipline.<br>';
+    html += '<strong>HBP (Hit By Pitch):</strong> times hit by a pitch. Gets on base and shows willingness to crowd the plate.<br>';
+    html += '<strong>E (Errors):</strong> individual fielding errors on the season.<br>';
     html += '<strong>Run Diff/Game:</strong> (runs scored − runs allowed) ÷ games.';
     html += '</div>';
     html += '</div>';
@@ -2122,18 +2189,20 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += `<div><strong>SB:</strong> ${leaders.sb}</div>`;
     html += `<div><strong>WINS:</strong> ${leaders.wins}</div>`;
     html += `<div><strong>ERA:</strong> ${leaders.era}</div>`;
+    html += `<div><strong>HBP:</strong> ${leaders.hbp}</div>`;
     html += '</div>';
     html += '<div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #333; font-size: 11px; color: #999; line-height: 1.6;">';
     html += '<strong>AVG:</strong> batting average (hits ÷ at-bats). &nbsp; ';
     html += '<strong>OBP (On-Base %):</strong> how often a batter reaches base (hits + walks + HBP) ÷ (AB + BB + HBP + sac flies). .350+ is strong. &nbsp; ';
-    html += '<strong>OPS:</strong> On-Base % plus Slugging %. Single number combining getting on base and hitting for power. .800+ is excellent at any level.';
+    html += '<strong>OPS:</strong> On-Base % plus Slugging %. Single number combining getting on base and hitting for power. .800+ is excellent at any level. &nbsp; ';
+    html += '<strong>HBP:</strong> most hit-by-pitches on the season. Shows willingness to crowd the plate.';
     html += '</div></div>';
 
     // Batting Table
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
     html += '<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Batting</h3>';
     html += '<table style="width: 100%; font-size: 12px; border-collapse: collapse;">';
-    html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">PA</th><th style="text-align: center; padding: 8px;">AB</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">AVG</th><th style="text-align: center; padding: 8px;">OBP</th><th style="text-align: center; padding: 8px;">OPS</th><th style="text-align: center; padding: 8px;">XBH</th><th style="text-align: center; padding: 8px;">R</th><th style="text-align: center; padding: 8px;">RBI</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">SAC</th><th style="text-align: center; padding: 8px;">SB</th></tr></thead>';
+    html += '<thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 8px;">Player</th><th style="text-align: center; padding: 8px;">PA</th><th style="text-align: center; padding: 8px;">AB</th><th style="text-align: center; padding: 8px;">H</th><th style="text-align: center; padding: 8px;">AVG</th><th style="text-align: center; padding: 8px;">OBP</th><th style="text-align: center; padding: 8px;">OPS</th><th style="text-align: center; padding: 8px;">XBH</th><th style="text-align: center; padding: 8px;">R</th><th style="text-align: center; padding: 8px;">RBI</th><th style="text-align: center; padding: 8px;">BB</th><th style="text-align: center; padding: 8px;">BB%</th><th style="text-align: center; padding: 8px;">SO</th><th style="text-align: center; padding: 8px;">HBP</th><th style="text-align: center; padding: 8px;">SB</th><th style="text-align: center; padding: 8px;">E</th></tr></thead>';
     html += '<tbody>';
     for (const player of players.filter(p => p.batting.pa > 0)) {
         const b = player.batting;
@@ -2156,9 +2225,12 @@ function generateJVStatsHTML(playerStats, gameResults) {
         html += `<td style="text-align: center; padding: 8px;">${player.batting.r}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.rbi}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.bb}</td>`;
+        const bbPct = b.pa > 0 ? Math.round((b.bb / b.pa) * 100) + '%' : '—';
+        html += `<td style="text-align: center; padding: 8px;">${bbPct}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.so}</td>`;
-        html += `<td style="text-align: center; padding: 8px;">${player.batting.sac}</td>`;
-        html += `<td style="text-align: center; padding: 8px;">${player.batting.sb}</td></tr>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.hbp || 0}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.batting.sb}</td>`;
+        html += `<td style="text-align: center; padding: 8px;">${player.fielding.e || 0}</td></tr>`;
     }
     html += '</tbody></table></div>';
 

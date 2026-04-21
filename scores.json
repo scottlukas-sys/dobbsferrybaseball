@@ -155,6 +155,37 @@
           0
         ]
       }
+    },
+    "2026-04-20": {
+      "opponent": "Blind Brook JV",
+      "df": 7,
+      "opp": 8,
+      "location": "Away",
+      "source": "GameChanger",
+      "errors": 2,
+      "innings": 7,
+      "cleanInnings": 3,
+      "defInnings": 7,
+      "lineScore": {
+        "df": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ],
+        "opp": [
+          2,
+          0,
+          2,
+          3,
+          0,
+          0,
+          1
+        ]
+      }
     }
   },
   "divisionB": [
@@ -3376,8 +3407,62 @@
               "e": 1
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 2,
+              "r": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 1,
+              "sb": 0
+            },
+            "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 6,
+          "pa": 21,
+          "ab": 13,
+          "h": 1,
+          "1b": 0,
+          "2b": 1,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 2,
+          "r": 5,
+          "bb": 7,
+          "so": 7,
+          "kl": 3,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 2,
+          "cs": 0,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".077",
+          "obp": ".429",
+          "ops": ".582",
+          "slg": ".154",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 17,
+          "a": 4,
+          "po": 11,
+          "fpct": 0.882,
+          "e": 2,
+          "dp": 0
+        }
       },
       "Sam Keltz": {
         "team": "Dobbs Ferry JV",
@@ -3494,8 +3579,83 @@
               "hbp": 1,
               "bf": 16
             }
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 4,
+              "r": 2,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 2
+            },
+            "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 6,
+          "pa": 22,
+          "ab": 19,
+          "h": 6,
+          "1b": 6,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 3,
+          "r": 7,
+          "bb": 2,
+          "so": 4,
+          "kl": 3,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 4,
+          "cs": 1,
+          "roe": 0,
+          "fc": 1,
+          "avg": ".316",
+          "obp": ".409",
+          "ops": ".725",
+          "slg": ".316",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "seasonPitching": {
+          "ip": 4.2,
+          "gp": 2,
+          "gs": 1,
+          "bf": 26,
+          "pitches": 101,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 5,
+          "r": 3,
+          "er": 2,
+          "bb": 4,
+          "so": 4,
+          "kl": 0,
+          "hbp": 1,
+          "era": "3.000",
+          "whip": "1.929",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 23,
+          "a": 6,
+          "po": 9,
+          "fpct": 0.652,
+          "e": 8,
+          "dp": 0
+        }
       },
       "Jack Rizzo": {
         "team": "Dobbs Ferry JV",
@@ -3621,8 +3781,83 @@
               "strikes": 32,
               "bf": 16
             }
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 4,
+              "r": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 2
+            },
+            "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 6,
+          "pa": 17,
+          "ab": 16,
+          "h": 3,
+          "1b": 1,
+          "2b": 1,
+          "3b": 1,
+          "hr": 0,
+          "rbi": 4,
+          "r": 2,
+          "bb": 1,
+          "so": 4,
+          "kl": 1,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 3,
+          "cs": 0,
+          "roe": 2,
+          "fc": 0,
+          "avg": ".188",
+          "obp": ".235",
+          "ops": ".610",
+          "slg": ".375",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "seasonPitching": {
+          "ip": 6.2,
+          "gp": 3,
+          "gs": 2,
+          "bf": 48,
+          "pitches": 169,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 10,
+          "r": 14,
+          "er": 3,
+          "bb": 9,
+          "so": 7,
+          "kl": 3,
+          "hbp": 0,
+          "era": "3.150",
+          "whip": "2.850",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 5,
+          "a": 0,
+          "po": 4,
+          "fpct": 0.8,
+          "e": 1,
+          "dp": 0
+        }
       },
       "Matthew Moon": {
         "team": "Dobbs Ferry JV",
@@ -3728,7 +3963,64 @@
             },
             "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 5,
+          "pa": 9,
+          "ab": 9,
+          "h": 1,
+          "1b": 1,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 1,
+          "r": 1,
+          "bb": 0,
+          "so": 4,
+          "kl": 0,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "roe": 1,
+          "fc": 1,
+          "avg": ".111",
+          "obp": ".111",
+          "ops": ".222",
+          "slg": ".111",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "seasonPitching": {
+          "ip": 0.1,
+          "gp": 1,
+          "gs": 0,
+          "bf": 8,
+          "pitches": 29,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 2,
+          "r": 5,
+          "er": 2,
+          "bb": 2,
+          "so": 0,
+          "kl": 0,
+          "hbp": 1,
+          "era": "42.000",
+          "whip": "12.000",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 2,
+          "a": 1,
+          "po": 1,
+          "fpct": 1.0,
+          "e": 0,
+          "dp": 0
+        }
       },
       "Jude Zonana": {
         "team": "Dobbs Ferry JV",
@@ -3796,8 +4088,95 @@
               "pitches": 40,
               "strikes": 21
             }
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 2.1,
+              "h": 4,
+              "r": 1,
+              "er": 1,
+              "bb": 0,
+              "so": 4,
+              "w": 0,
+              "sv": 0,
+              "pitches": 39,
+              "strikes": 26,
+              "bf": 11
+            }
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 3,
+          "pa": 8,
+          "ab": 6,
+          "h": 1,
+          "1b": 1,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 0,
+          "r": 2,
+          "bb": 2,
+          "so": 3,
+          "kl": 0,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 1,
+          "cs": 0,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".167",
+          "obp": ".375",
+          "ops": ".542",
+          "slg": ".167",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "seasonPitching": {
+          "ip": 5.1,
+          "gp": 3,
+          "gs": 0,
+          "bf": 31,
+          "pitches": 120,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 10,
+          "r": 9,
+          "er": 2,
+          "bb": 4,
+          "so": 8,
+          "kl": 3,
+          "hbp": 0,
+          "era": "2.625",
+          "whip": "2.625",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 1,
+          "a": 0,
+          "po": 1,
+          "fpct": 1.0,
+          "e": 0,
+          "dp": 0
+        }
       },
       "Vaughn Lukas": {
         "team": "Dobbs Ferry JV",
@@ -3890,8 +4269,62 @@
               "e": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 3,
+              "r": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 2,
+              "hbp": 1,
+              "sb": 1
+            },
+            "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 6,
+          "pa": 22,
+          "ab": 18,
+          "h": 5,
+          "1b": 5,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 1,
+          "r": 2,
+          "bb": 2,
+          "so": 4,
+          "kl": 3,
+          "hbp": 2,
+          "sac": 0,
+          "sf": 0,
+          "sb": 1,
+          "cs": 1,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".278",
+          "obp": ".409",
+          "ops": ".687",
+          "slg": ".278",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 39,
+          "a": 1,
+          "po": 37,
+          "fpct": 0.974,
+          "e": 1,
+          "dp": 0
+        }
       },
       "Winston Burgess": {
         "team": "Dobbs Ferry JV",
@@ -3997,7 +4430,64 @@
             },
             "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 4,
+          "pa": 12,
+          "ab": 11,
+          "h": 1,
+          "1b": 1,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 1,
+          "r": 0,
+          "bb": 1,
+          "so": 6,
+          "kl": 2,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".091",
+          "obp": ".167",
+          "ops": ".258",
+          "slg": ".091",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "seasonPitching": {
+          "ip": 9.1,
+          "gp": 3,
+          "gs": 2,
+          "bf": 41,
+          "pitches": 132,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 6,
+          "r": 7,
+          "er": 3,
+          "bb": 4,
+          "so": 10,
+          "kl": 5,
+          "hbp": 0,
+          "era": "2.250",
+          "whip": "1.071",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 12,
+          "a": 2,
+          "po": 8,
+          "fpct": 0.833,
+          "e": 2,
+          "dp": 0
+        }
       },
       "Eli Gallagher": {
         "team": "Dobbs Ferry JV",
@@ -4046,7 +4536,64 @@
               "r": 1
             }
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 2,
+          "pa": 2,
+          "ab": 2,
+          "h": 0,
+          "1b": 0,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 0,
+          "r": 0,
+          "bb": 0,
+          "so": 2,
+          "kl": 2,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".000",
+          "obp": ".000",
+          "ops": ".000",
+          "slg": ".000",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "seasonPitching": {
+          "ip": 1.2,
+          "gp": 1,
+          "gs": 0,
+          "bf": 7,
+          "pitches": 35,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 0,
+          "r": 1,
+          "er": 1,
+          "bb": 2,
+          "so": 4,
+          "kl": 2,
+          "hbp": 0,
+          "era": "4.200",
+          "whip": "1.200",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 0,
+          "a": 0,
+          "po": 0,
+          "fpct": 0,
+          "e": 0,
+          "dp": 0
+        }
       },
       "Michael Kingston": {
         "team": "Dobbs Ferry JV",
@@ -4144,8 +4691,95 @@
               "strikes": 11,
               "bf": 6
             }
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 2,
+              "r": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "bb": 0,
+              "so": 2,
+              "hbp": 1,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 1.0,
+              "h": 1,
+              "r": 3,
+              "er": 2,
+              "bb": 3,
+              "so": 1,
+              "w": 0,
+              "sv": 0,
+              "pitches": 28,
+              "strikes": 10,
+              "bf": 8
+            }
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 4,
+          "pa": 11,
+          "ab": 8,
+          "h": 1,
+          "1b": 0,
+          "2b": 1,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 2,
+          "r": 1,
+          "bb": 2,
+          "so": 6,
+          "kl": 5,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".125",
+          "obp": ".364",
+          "ops": ".614",
+          "slg": ".250",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "seasonPitching": {
+          "ip": 5.1,
+          "gp": 4,
+          "gs": 1,
+          "bf": 32,
+          "pitches": 116,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 8,
+          "r": 9,
+          "er": 8,
+          "bb": 8,
+          "so": 5,
+          "kl": 0,
+          "hbp": 1,
+          "era": "10.500",
+          "whip": "3.000",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 4,
+          "a": 0,
+          "po": 3,
+          "fpct": 0.75,
+          "e": 1,
+          "dp": 0
+        }
       },
       "Mina Hwangbo": {
         "team": "Dobbs Ferry JV",
@@ -4210,8 +4844,83 @@
               "pitches": 36,
               "strikes": 19
             }
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 4,
+          "pa": 11,
+          "ab": 6,
+          "h": 0,
+          "1b": 0,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 1,
+          "r": 0,
+          "bb": 4,
+          "so": 2,
+          "kl": 0,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 1,
+          "cs": 1,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".000",
+          "obp": ".455",
+          "ops": ".455",
+          "slg": ".000",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "seasonPitching": {
+          "ip": 2.0,
+          "gp": 1,
+          "gs": 0,
+          "bf": 10,
+          "pitches": 36,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 2,
+          "r": 2,
+          "er": 2,
+          "bb": 2,
+          "so": 0,
+          "kl": 0,
+          "hbp": 0,
+          "era": "7.000",
+          "whip": "2.000",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 14,
+          "a": 3,
+          "po": 8,
+          "fpct": 0.786,
+          "e": 3,
+          "dp": 0
+        }
       },
       "Declan Cho": {
         "team": "Dobbs Ferry JV",
@@ -4300,8 +5009,62 @@
               "e": 1
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 6,
+          "pa": 11,
+          "ab": 8,
+          "h": 2,
+          "1b": 2,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 2,
+          "r": 3,
+          "bb": 2,
+          "so": 3,
+          "kl": 2,
+          "hbp": 1,
+          "sac": 0,
+          "sf": 0,
+          "sb": 2,
+          "cs": 0,
+          "roe": 1,
+          "fc": 0,
+          "avg": ".250",
+          "obp": ".455",
+          "ops": ".705",
+          "slg": ".250",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 3,
+          "a": 0,
+          "po": 2,
+          "fpct": 0.667,
+          "e": 1,
+          "dp": 0
+        }
       },
       "Julian Graf": {
         "team": "Dobbs Ferry JV",
@@ -4370,8 +5133,62 @@
               "e": 2
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 2,
+              "r": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "bb": 1,
+              "so": 1,
+              "hbp": 0,
+              "sb": 1
+            },
+            "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 5,
+          "pa": 12,
+          "ab": 10,
+          "h": 1,
+          "1b": 1,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 1,
+          "r": 2,
+          "bb": 2,
+          "so": 2,
+          "kl": 1,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 1,
+          "cs": 0,
+          "roe": 1,
+          "fc": 1,
+          "avg": ".100",
+          "obp": ".250",
+          "ops": ".350",
+          "slg": ".100",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 15,
+          "a": 3,
+          "po": 8,
+          "fpct": 0.733,
+          "e": 4,
+          "dp": 0
+        }
       },
       "James Gotcsik Karpinos": {
         "team": "Dobbs Ferry JV",
@@ -4440,8 +5257,62 @@
               "e": 1
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": {
+              "ab": 4,
+              "r": 0,
+              "h": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 2,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 5,
+          "pa": 15,
+          "ab": 11,
+          "h": 3,
+          "1b": 2,
+          "2b": 1,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 3,
+          "r": 2,
+          "bb": 4,
+          "so": 4,
+          "kl": 2,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 0,
+          "cs": 0,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".273",
+          "obp": ".467",
+          "ops": ".830",
+          "slg": ".364",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 13,
+          "a": 3,
+          "po": 8,
+          "fpct": 0.846,
+          "e": 2,
+          "dp": 0
+        }
       },
       "Gianfranco Mangone": {
         "team": "Dobbs Ferry JV",
@@ -4494,7 +5365,43 @@
             },
             "pitching": null
           }
-        ]
+        ],
+        "seasonStats": {
+          "gp": 3,
+          "pa": 6,
+          "ab": 5,
+          "h": 0,
+          "1b": 0,
+          "2b": 0,
+          "3b": 0,
+          "hr": 0,
+          "rbi": 0,
+          "r": 0,
+          "bb": 1,
+          "so": 5,
+          "kl": 4,
+          "hbp": 0,
+          "sac": 0,
+          "sf": 0,
+          "sb": 1,
+          "cs": 0,
+          "roe": 0,
+          "fc": 0,
+          "avg": ".000",
+          "obp": ".167",
+          "ops": ".167",
+          "slg": ".000",
+          "source": "GameChanger",
+          "asOf": "2026-04-20"
+        },
+        "fielding": {
+          "tc": 7,
+          "a": 0,
+          "po": 6,
+          "fpct": 0.857,
+          "e": 1,
+          "dp": 0
+        }
       }
     }
   },
@@ -5438,6 +6345,11 @@
         "gamechanger": "\u26a0\ufe0f no new DF games since Apr 18",
         "gamedayone": "\u26a0\ufe0f pre-league-empty (league play starts today Apr 20)"
       }
+    },
+    {
+      "date": "2026-04-21",
+      "type": "jv-update",
+      "text": "JV game added: Apr 20 L 7-8 vs Blind Brook JV. Full GameChanger season stats (batting/pitching/fielding) loaded for all 14 JV players through 6 GP. New dashboard features: BB%, HBP, E columns on JV batting table; team FPCT in JV team stats."
     }
   ],
   "opponentResults": [
