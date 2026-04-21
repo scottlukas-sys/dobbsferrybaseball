@@ -91,7 +91,7 @@
       "df": 2,
       "opp": 5,
       "location": "Home",
-      "source": "GameChanger",
+      "source": "GameChanger + DF DigitalSports + @dfeaglesbaseball Instagram",
       "league": true,
       "errors": null,
       "innings": 7
@@ -5897,6 +5897,17 @@
   "newsLog": [
     {
       "date": "2026-04-21",
+      "type": "supplemental-sweep",
+      "text": "Supplemental Chrome sweep. DF DS confirmed 5-4 overall, 3-4 conf, L1. BB DS confirmed 7-3, 7-2 conf, W2. Hastings DS confirmed 5-5, 2-1 conf, W4 streak. IG @dfeaglesbaseball Apr 20 post: BB 5 DF 2 \u2014 Foley 2-3 2B, Evan 1-4 2B R, Ficarrotta 1-4 RBI + 6.2IP 4H 8K. Schedule confirmed: Apr 22 at BB, Apr 24 vs Hastings (both league), Apr 27 at Valhalla (league). All DS games cross-referenced with MaxPreps \u2014 no discrepancies in scores.",
+      "sourcesChecked": {
+        "digitalsports:df_varsity": "\u2705 5-4, 3-4 conf, L1, Home 4-1, Away 1-3",
+        "digitalsports:blind_brook": "\u2705 7-3, 7-2 conf, W2, Home 3-1, Away 4-2",
+        "digitalsports:hastings": "\u2705 5-5, 2-1 conf, W4, Home 4-3, Away 1-2",
+        "ig:@dfeaglesbaseball": "\u2705 Apr 20 BB box score: Foley 2-3 2B, Evan 1-4 2B R, Ficarrotta 6.2IP 4H 8K"
+      }
+    },
+    {
+      "date": "2026-04-21",
       "type": "daily-sweep",
       "text": "Daily sweep PARTIAL. Chrome MCP not connected after 5 retries. WebFetch used for all MaxPreps schedules (16 teams) and stats pages (13 teams). Gmail checked \u2014 no schedule changes. NEW opponent results: Hastings W 6-4 vs Tuckahoe (league), Pawling W 9-3 at Haldane (league), Edgemont W 14-4 vs Irvington, Rye Neck W 11-5 at Leffell (league), Sleepy Hollow W 13-0 at BOSSJ. Records updated: BB 7-3, Hastings 5-5, Haldane 1-7, Irvington 2-2, Rye Neck 4-5, SH 5-5, Edgemont 3-7, Tuckahoe 2-6, Ardsley 0-3, Valhalla 2-4, Westlake 6-4, Briarcliff 4-4-1, Pawling 5-1, PV 6-3. All 17 teamIntel cards enriched with MaxPreps data. 7 new divisionB league games added. MaxPreps opponent stats updated for BB, Hastings, Haldane, Edgemont, Rye Neck, Tuckahoe (6 teams with data). DF next: at Blind Brook Wed Apr 22 4:30 PM, vs Hastings Fri Apr 24 4:30 PM.",
       "sourcesChecked": {
@@ -8313,11 +8324,12 @@
       ],
       "blurb": "5-game win streak. DS 5-2 confirmed by MaxPreps. Strong offense (40 RF). Plays Westlake today (Apr 17), at Briarcliff Sat, then at DF Mon (league opener). Key threat.",
       "sources": [
+        "maxpreps:blind_brook_stats",
         "maxpreps:blind_brook",
-        "maxpreps:blind_brook_stats"
+        "digitalsports:blind_brook"
       ],
       "lastDeepSweep": "2026-04-21",
-      "intel": "Blind Brook is 7-3, 2-0 in league play after beating DF 5-2 and Briarcliff 5-1 in back-to-back league wins. Jack Pastor hitting .387 with 10 SB. Beat Westlake 11-6 on Apr 17. Lost to Pawling 15-5 in opener but has won 7 of last 9. Up next: vs Dobbs Ferry (Apr 22), vs Leffell (Apr 23).",
+      "intel": "Blind Brook is 7-3, 7-2 conf per DS (2-0 league per MaxPreps). W2 streak after beating DF 5-2 and Briarcliff 5-1 in back-to-back league wins. Jack Pastor hitting .387 with 10 SB. Home 3-1, Away 4-2. Up next: vs Dobbs Ferry (Apr 22), vs Leffell (Apr 23).",
       "lastUpdated": "2026-04-21",
       "stars": [
         "J. Pastor .387/10 SB",
@@ -8385,11 +8397,12 @@
       ],
       "blurb": "3-5 overall but 2-1 in league (beat Blind Brook, lost to Westlake). Social share suggests L 2-11 to Westlake today (Apr 17). Plays at Valhalla Sat, then Tuckahoe (league) Mon.",
       "sources": [
+        "digitalsports:hastings",
         "maxpreps:hastings",
         "maxpreps:hastings_stats"
       ],
       "lastDeepSweep": "2026-04-21",
-      "intel": "Hastings is 5-5 overall but 2-0 in league after beating Valhalla 11-2 and Tuckahoe 6-4. Five losses all to quality opponents (Pelham, Westlake, Eastchester 1-0 in 8 inn, Putnam Valley, Scarsdale). Ciszewski hitting .389 with 2.10 ERA. Sbrega leads with 9 SB. Up next: at Tuckahoe (Apr 22), at Dobbs Ferry (Apr 24).",
+      "intel": "Hastings is 5-5, 2-1 conf per DS, on a W4 streak. Losses all to quality opponents (Pelham 0-2, Westlake 2-11, Eastchester 0-1 in extras, Putnam Valley 8-12, Scarsdale 5-8). Ciszewski .389/2.10 ERA. Sbrega leads with 9 SB. Home 4-3, Away 1-2. Up next: at Tuckahoe (Apr 22), at Dobbs Ferry (Apr 24).",
       "lastUpdated": "2026-04-21",
       "stars": [
         "A. Ciszewski .389/2.10 ERA",
