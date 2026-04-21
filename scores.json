@@ -206,6 +206,62 @@
       "homeRuns": 2,
       "awayRuns": 6,
       "source": "Hastings HS DigitalSports"
+    },
+    {
+      "date": "2026-04-20",
+      "home": "Dobbs Ferry",
+      "away": "Blind Brook",
+      "homeRuns": 2,
+      "awayRuns": 5,
+      "source": "MaxPreps + GameChanger"
+    },
+    {
+      "date": "2026-04-20",
+      "home": "Hastings",
+      "away": "Tuckahoe",
+      "homeRuns": 6,
+      "awayRuns": 4,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-18",
+      "home": "Valhalla",
+      "away": "Hastings",
+      "homeRuns": 2,
+      "awayRuns": 11,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-18",
+      "home": "Briarcliff",
+      "away": "Blind Brook",
+      "homeRuns": 1,
+      "awayRuns": 5,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-20",
+      "home": "Leffell School",
+      "away": "Rye Neck",
+      "homeRuns": 5,
+      "awayRuns": 11,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-20",
+      "home": "Haldane",
+      "away": "Pawling",
+      "homeRuns": 3,
+      "awayRuns": 9,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-16",
+      "home": "Putnam Valley",
+      "away": "Leffell School",
+      "homeRuns": 5,
+      "awayRuns": 3,
+      "source": "MaxPreps"
     }
   ],
   "playerStats": {
@@ -2924,7 +2980,7 @@
           "Pitcher",
           "Key Arm"
         ],
-        "note": "4.1 IP, 0 R, 2 H, 6 K in 2026 opener vs Peekskill (W 10-0). Also pitched in relief. Freshman starter — rare for Class B.",
+        "note": "4.1 IP, 0 R, 2 H, 6 K in 2026 opener vs Peekskill (W 10-0). Also pitched in relief. Freshman starter \u2014 rare for Class B.",
         "games": [
           {
             "date": "2026-03-30",
@@ -3122,20 +3178,20 @@
         "games": [],
         "seasonStats": {
           "source": "maxpreps",
-          "asOf": "2026-04-18",
-          "gp": 8,
+          "asOf": "2026-04-21",
+          "gp": 10,
           "batting": {
-            "ab": 28,
-            "h": 9,
+            "ab": 0,
+            "h": 0,
             "2b": 0,
             "3b": 0,
             "hr": 0,
-            "rbi": 5,
-            "r": 6,
+            "rbi": 0,
+            "r": 0,
             "bb": 0,
-            "sb": 5
+            "sb": 9
           },
-          "pitching": null
+          "pitching": {}
         }
       },
       "T. Suniewick (Hastings)": {
@@ -3198,11 +3254,21 @@
         "games": [],
         "seasonStats": {
           "source": "maxpreps",
-          "asOf": "2026-04-18",
-          "gp": 8,
-          "batting": null,
+          "asOf": "2026-04-21",
+          "gp": 10,
+          "batting": {
+            "ab": 0,
+            "h": 0,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 0,
+            "r": 0,
+            "bb": 0,
+            "avg": 0.389
+          },
           "pitching": {
-            "era": 1.84
+            "era": 2.1
           }
         }
       },
@@ -3214,8 +3280,7 @@
         "games": [],
         "seasonStats": {
           "source": "maxpreps",
-          "asOf": "2026-04-18",
-          "gp": 8,
+          "asOf": "2026-04-21",
           "batting": {
             "ab": 0,
             "h": 0,
@@ -3225,9 +3290,9 @@
             "rbi": 0,
             "r": 0,
             "bb": 0,
-            "avg": 0.429
+            "avg": 0.5
           },
-          "pitching": null
+          "pitching": {}
         }
       },
       "Z. Strzalkowski (Rye Neck)": {
@@ -3239,21 +3304,19 @@
         "games": [],
         "seasonStats": {
           "source": "maxpreps",
-          "asOf": "2026-04-18",
-          "gp": 8,
+          "asOf": "2026-04-21",
           "batting": {
-            "ab": 0,
-            "h": 0,
-            "2b": 0,
+            "ab": 20,
+            "h": 8,
+            "2b": 2,
             "3b": 0,
             "hr": 0,
             "rbi": 0,
             "r": 0,
             "bb": 0,
-            "avg": 0.4,
-            "obp": 0.64
+            "avg": 0.4
           },
-          "pitching": null
+          "pitching": {}
         }
       },
       "I. Hoffman (Rye Neck)": {
@@ -3265,20 +3328,18 @@
         "games": [],
         "seasonStats": {
           "source": "maxpreps",
-          "asOf": "2026-04-18",
-          "gp": 8,
+          "asOf": "2026-04-21",
           "batting": {
             "ab": 0,
-            "h": 7,
-            "2b": 2,
+            "h": 0,
+            "2b": 0,
             "3b": 0,
             "hr": 0,
-            "rbi": 9,
+            "rbi": 10,
             "r": 0,
-            "bb": 0,
-            "avg": 0.318
+            "bb": 0
           },
-          "pitching": null
+          "pitching": {}
         }
       },
       "D. Ryan (Rye Neck)": {
@@ -3290,8 +3351,7 @@
         "games": [],
         "seasonStats": {
           "source": "maxpreps",
-          "asOf": "2026-04-18",
-          "gp": 8,
+          "asOf": "2026-04-21",
           "batting": {
             "ab": 0,
             "h": 0,
@@ -3299,14 +3359,12 @@
             "3b": 0,
             "hr": 0,
             "rbi": 0,
-            "r": 8,
+            "r": 10,
             "bb": 0,
-            "obp": 0.536,
-            "slg": 0.421,
             "sb": 3
           },
           "pitching": {
-            "era": 4.28
+            "era": 3.35
           }
         }
       },
@@ -3318,11 +3376,10 @@
         "games": [],
         "seasonStats": {
           "source": "maxpreps",
-          "asOf": "2026-04-18",
-          "gp": 8,
-          "batting": null,
+          "asOf": "2026-04-21",
+          "batting": {},
           "pitching": {
-            "era": 3
+            "era": 3.0
           }
         }
       },
@@ -3360,20 +3417,19 @@
         "games": [],
         "seasonStats": {
           "source": "maxpreps",
-          "asOf": "2026-04-19",
-          "gp": 9,
+          "asOf": "2026-04-21",
+          "gp": 10,
           "batting": {
-            "ab": 0,
+            "ab": 28,
             "h": 11,
             "2b": 2,
             "3b": 0,
             "hr": 0,
-            "rbi": 6,
-            "r": 12,
+            "rbi": 7,
+            "r": 15,
             "bb": 0,
-            "avg": 0.407,
-            "obp": 0.514,
-            "slg": 0.481
+            "sb": 8,
+            "avg": 0.393
           },
           "pitching": {
             "era": 3.11
@@ -3404,6 +3460,347 @@
             "slg": 0.556
           },
           "pitching": null
+        }
+      },
+      "J. Pastor (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "gp": 10,
+          "batting": {
+            "ab": 31,
+            "h": 12,
+            "2b": 2,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 0,
+            "r": 8,
+            "bb": 0,
+            "sb": 10
+          },
+          "pitching": {}
+        }
+      },
+      "M. Ebenstein (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "gp": 10,
+          "batting": {
+            "ab": 31,
+            "h": 11,
+            "2b": 2,
+            "3b": 1,
+            "hr": 0,
+            "rbi": 8,
+            "r": 7,
+            "bb": 0,
+            "sb": 6
+          },
+          "pitching": {}
+        }
+      },
+      "B. Cuesta (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "gp": 10,
+          "batting": {
+            "ab": 0,
+            "h": 0,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 6,
+            "r": 0,
+            "bb": 0
+          },
+          "pitching": {}
+        }
+      },
+      "A. Toll (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {},
+          "pitching": {
+            "ip": 0,
+            "h": 0,
+            "er": 0,
+            "so": 0,
+            "bb": 0,
+            "w": 0,
+            "sv": 0,
+            "era": 0.0
+          }
+        }
+      },
+      "K. Pessin (Blind Brook)": {
+        "team": "Blind Brook",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {},
+          "pitching": {
+            "ip": 0,
+            "h": 0,
+            "er": 0,
+            "so": 0,
+            "bb": 0,
+            "w": 0,
+            "sv": 0,
+            "era": 2.47
+          }
+        }
+      },
+      "A. Swan (Haldane)": {
+        "team": "Haldane",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "gp": 8,
+          "batting": {
+            "ab": 27,
+            "h": 10,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 0,
+            "r": 7,
+            "bb": 0,
+            "avg": 0.37
+          },
+          "pitching": {}
+        }
+      },
+      "L. McIlwaine (Haldane)": {
+        "team": "Haldane",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "gp": 8,
+          "batting": {
+            "ab": 24,
+            "h": 8,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 0,
+            "r": 0,
+            "bb": 0,
+            "sb": 5,
+            "avg": 0.333
+          },
+          "pitching": {
+            "era": 4.94
+          }
+        }
+      },
+      "T. Swan (Haldane)": {
+        "team": "Haldane",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "gp": 8,
+          "batting": {
+            "ab": 21,
+            "h": 7,
+            "2b": 3,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 9,
+            "r": 0,
+            "bb": 0,
+            "avg": 0.333
+          },
+          "pitching": {}
+        }
+      },
+      "O. Herman (Haldane)": {
+        "team": "Haldane",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {},
+          "pitching": {
+            "era": 3.18
+          }
+        }
+      },
+      "S. Vargas (Edgemont)": {
+        "team": "Edgemont",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {
+            "ab": 12,
+            "h": 6,
+            "2b": 1,
+            "3b": 0,
+            "hr": 1,
+            "rbi": 7,
+            "r": 0,
+            "bb": 0,
+            "avg": 0.5
+          },
+          "pitching": {}
+        }
+      },
+      "L. Desai (Edgemont)": {
+        "team": "Edgemont",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {
+            "ab": 0,
+            "h": 0,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 0,
+            "r": 0,
+            "bb": 0,
+            "avg": 0.357
+          },
+          "pitching": {}
+        }
+      },
+      "M. Kusinitz (Edgemont)": {
+        "team": "Edgemont",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {},
+          "pitching": {
+            "era": 2.45
+          }
+        }
+      },
+      "B. Gellman (Rye Neck)": {
+        "team": "Rye Neck",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {
+            "ab": 30,
+            "h": 10,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 8,
+            "r": 7,
+            "bb": 0,
+            "sb": 5,
+            "avg": 0.333
+          },
+          "pitching": {}
+        }
+      },
+      "J. Romeo (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {
+            "ab": 27,
+            "h": 9,
+            "2b": 0,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 7,
+            "r": 0,
+            "bb": 0,
+            "avg": 0.333
+          },
+          "pitching": {}
+        }
+      },
+      "C. Brice (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {
+            "ab": 23,
+            "h": 7,
+            "2b": 0,
+            "3b": 1,
+            "hr": 0,
+            "rbi": 0,
+            "r": 7,
+            "bb": 0,
+            "avg": 0.304
+          },
+          "pitching": {
+            "era": 5.25
+          }
+        }
+      },
+      "R. Briante (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {
+            "ab": 0,
+            "h": 8,
+            "2b": 1,
+            "3b": 0,
+            "hr": 0,
+            "rbi": 5,
+            "r": 5,
+            "bb": 0
+          },
+          "pitching": {}
+        }
+      },
+      "K. Carney (Tuckahoe)": {
+        "team": "Tuckahoe",
+        "tags": [],
+        "games": [],
+        "seasonStats": {
+          "source": "maxpreps",
+          "asOf": "2026-04-21",
+          "batting": {},
+          "pitching": {
+            "era": 3.41
+          }
         }
       }
     },
@@ -5500,6 +5897,48 @@
   "newsLog": [
     {
       "date": "2026-04-21",
+      "type": "daily-sweep",
+      "text": "Daily sweep PARTIAL. Chrome MCP not connected after 5 retries. WebFetch used for all MaxPreps schedules (16 teams) and stats pages (13 teams). Gmail checked \u2014 no schedule changes. NEW opponent results: Hastings W 6-4 vs Tuckahoe (league), Pawling W 9-3 at Haldane (league), Edgemont W 14-4 vs Irvington, Rye Neck W 11-5 at Leffell (league), Sleepy Hollow W 13-0 at BOSSJ. Records updated: BB 7-3, Hastings 5-5, Haldane 1-7, Irvington 2-2, Rye Neck 4-5, SH 5-5, Edgemont 3-7, Tuckahoe 2-6, Ardsley 0-3, Valhalla 2-4, Westlake 6-4, Briarcliff 4-4-1, Pawling 5-1, PV 6-3. All 17 teamIntel cards enriched with MaxPreps data. 7 new divisionB league games added. MaxPreps opponent stats updated for BB, Hastings, Haldane, Edgemont, Rye Neck, Tuckahoe (6 teams with data). DF next: at Blind Brook Wed Apr 22 4:30 PM, vs Hastings Fri Apr 24 4:30 PM.",
+      "sourcesChecked": {
+        "digitalsports_all": "\u26a0\ufe0f AJAX-rendered, empty via WebFetch (Chrome required)",
+        "maxpreps:df_schedule": "\u2705 2-2 on MP (lags behind actual 5-4; missing 5 non-league games)",
+        "maxpreps:blind_brook_schedule": "\u2705 7-3, 2-0 league, W2",
+        "maxpreps:hastings_schedule": "\u2705 5-5, 2-0 league",
+        "maxpreps:haldane_schedule": "\u2705 1-7, 0-1 league, L7",
+        "maxpreps:irvington_schedule": "\u2705 2-2, 1-0 league",
+        "maxpreps:rye_neck_schedule": "\u2705 4-5, 1-0 league",
+        "maxpreps:sleepy_hollow_schedule": "\u2705 5-5, 3-3 league",
+        "maxpreps:edgemont_schedule": "\u2705 3-7, W2",
+        "maxpreps:tuckahoe_schedule": "\u2705 2-6, 0-1 league",
+        "maxpreps:ardsley_schedule": "\u2705 0-3",
+        "maxpreps:valhalla_schedule": "\u2705 2-4",
+        "maxpreps:westlake_schedule": "\u2705 6-4",
+        "maxpreps:pearl_river_schedule": "\u2705 1-1 on MP (very lagged)",
+        "maxpreps:briarcliff_schedule": "\u2705 4-4-1, 0-1 league",
+        "maxpreps:pawling_schedule": "\u2705 5-1, 1-0 league, W4",
+        "maxpreps:putnam_valley_schedule": "\u2705 6-3",
+        "maxpreps:blind_brook_stats": "\u2705 leaderboard \u2014 Pastor .387, Ebenstein .355, Toll 0.00 ERA",
+        "maxpreps:hastings_stats": "\u2705 leaderboard \u2014 Ciszewski .389/2.10 ERA, Sbrega 9 SB",
+        "maxpreps:haldane_stats": "\u2705 leaderboard \u2014 A. Swan .370, T. Swan .333, Herman 3.18 ERA",
+        "maxpreps:edgemont_stats": "\u2705 leaderboard \u2014 Terrasi .393, Vargas .500, Kusinitz 2.45 ERA",
+        "maxpreps:rye_neck_stats": "\u2705 leaderboard \u2014 Sutter .500, Strzalkowski .400, Gellman .333",
+        "maxpreps:tuckahoe_stats": "\u2705 leaderboard \u2014 Romeo .333, Brice .304, Carney 3.41 ERA",
+        "maxpreps:ardsley_stats": "\u2705 limited \u2014 J. Jaeger .500, Goldberg 0.00 ERA (small sample)",
+        "maxpreps:irvington_stats": "\u2705 no data entered",
+        "maxpreps:sleepy_hollow_stats": "\u2705 no data entered",
+        "maxpreps:valhalla_stats": "\u2705 no data entered",
+        "maxpreps:westlake_stats": "\u2705 no data entered",
+        "maxpreps:pearl_river_stats": "\u2705 no data entered",
+        "maxpreps_opponents": "\u2705 ok \u2014 7 of 13 teams had leaderboard data (BB, Hastings, Haldane, Edgemont, Rye Neck, Tuckahoe, Ardsley)",
+        "ig_all": "\u26a0\ufe0f Chrome MCP not connected after 5 retries",
+        "section1athletics": "\u26a0\ufe0f Chrome required (DNS issues persist)",
+        "dfsd_athletics": "\u26a0\ufe0f Chrome required",
+        "gamedayone": "\u26a0\ufe0f Chrome required (content expected post-Apr 20)",
+        "gmail": "\u2705 no schedule changes (fundraising emails only)"
+      }
+    },
+    {
+      "date": "2026-04-21",
       "text": "Varsity game added: Apr 20 L 2-5 vs Blind Brook (first league game). Ficarrotta 6.2IP took the loss. Full GameChanger season stats (batting/pitching/fielding) updated for all 15 varsity players through 9 GP (5-4). Record: W streak snapped, now 5-4."
     },
     {
@@ -5507,56 +5946,56 @@
       "type": "daily-sweep",
       "text": "Full sweep with Chrome MCP + WebFetch. DF DS: 4-3 on DS (actual 5-3, Ardsley W still not entered). IG @dfeaglesbaseball: Apr 18 Haldane box scores captured (Ficarrotta 4-5 2 2B 4R 2RBI, Zendel 3-5 3R 3RBI + 3IP 4K, Foley ~4IP 6K). Blind Brook DS: 6-3, 6-2 conf, W1 after 5-1 at Briarcliff (league). Comes to DF tomorrow. NEW opponent results: Edgemont W 16-6 at North Salem (Apr 18), Sleepy Hollow L 10-11 at Woodlands (Apr 18). MaxPreps stats: Haldane (3 players), Edgemont (Terrasi .407/3.11 ERA), Valhalla (no data). No schedule changes. League play begins tomorrow.",
       "sourcesChecked": {
-        "digitalsports:df": "✅ 4-3 on DS (actual 5-3, Ardsley Apr 14 still not entered)",
-        "digitalsports:blind_brook": "✅ 6-3, 6-2 conf, W1",
-        "digitalsports:hastings": "⚠️ WebFetch returned empty (AJAX)",
-        "ig:@dfeaglesbaseball": "✅ Apr 18 Haldane box scores (latest post)",
-        "maxpreps:df_schedule": "✅ 2-1 on MP (very lagged)",
-        "maxpreps:edgemont_schedule": "✅ 2-7, new W 16-6 at North Salem Apr 18",
-        "maxpreps:edgemont_stats": "✅ Terrasi .407, Desai .357, Roy .333",
-        "maxpreps:sleepy_hollow_schedule": "✅ 4-5, new L 10-11 at Woodlands Apr 18",
-        "maxpreps:irvington_schedule": "✅ 2-1 on MP (very lagged)",
-        "maxpreps:haldane_stats": "✅ A. Swan .375, T. Swan .353, McIlwaine .350, Herman 3.18 ERA",
-        "maxpreps:valhalla_stats": "✅ no data entered",
-        "maxpreps:blind_brook_stats": "⚠️ leaderboard-only",
-        "maxpreps:hastings_stats": "⚠️ leaderboard-only",
-        "maxpreps:rye_neck_stats": "⚠️ leaderboard-only",
-        "maxpreps_opponents": "✅ ok — Haldane + Edgemont had data (2 of 13)",
-        "gmail": "✅ no schedule changes (checked via MCP)",
-        "section1athletics": "⚠️ not checked (DNS issues persist)",
-        "dfsd_athletics": "⚠️ not checked this run",
-        "gamedayone": "⚠️ not checked (expected to have content starting Apr 20)"
+        "digitalsports:df": "\u2705 4-3 on DS (actual 5-3, Ardsley Apr 14 still not entered)",
+        "digitalsports:blind_brook": "\u2705 6-3, 6-2 conf, W1",
+        "digitalsports:hastings": "\u26a0\ufe0f WebFetch returned empty (AJAX)",
+        "ig:@dfeaglesbaseball": "\u2705 Apr 18 Haldane box scores (latest post)",
+        "maxpreps:df_schedule": "\u2705 2-1 on MP (very lagged)",
+        "maxpreps:edgemont_schedule": "\u2705 2-7, new W 16-6 at North Salem Apr 18",
+        "maxpreps:edgemont_stats": "\u2705 Terrasi .407, Desai .357, Roy .333",
+        "maxpreps:sleepy_hollow_schedule": "\u2705 4-5, new L 10-11 at Woodlands Apr 18",
+        "maxpreps:irvington_schedule": "\u2705 2-1 on MP (very lagged)",
+        "maxpreps:haldane_stats": "\u2705 A. Swan .375, T. Swan .353, McIlwaine .350, Herman 3.18 ERA",
+        "maxpreps:valhalla_stats": "\u2705 no data entered",
+        "maxpreps:blind_brook_stats": "\u26a0\ufe0f leaderboard-only",
+        "maxpreps:hastings_stats": "\u26a0\ufe0f leaderboard-only",
+        "maxpreps:rye_neck_stats": "\u26a0\ufe0f leaderboard-only",
+        "maxpreps_opponents": "\u2705 ok \u2014 Haldane + Edgemont had data (2 of 13)",
+        "gmail": "\u2705 no schedule changes (checked via MCP)",
+        "section1athletics": "\u26a0\ufe0f not checked (DNS issues persist)",
+        "dfsd_athletics": "\u26a0\ufe0f not checked this run",
+        "gamedayone": "\u26a0\ufe0f not checked (expected to have content starting Apr 20)"
       }
     },
     {
       "date": "2026-04-18",
       "type": "daily-sweep",
-      "text": "Daily sweep PARTIAL. Chrome MCP not connected after 5 retries. WebFetch used for MaxPreps schedules (DF, Haldane, Blind Brook, Hastings, Rye Neck, Tuckahoe, Sleepy Hollow). DigitalSports unreachable via WebFetch (AJAX content). Gmail clean — no schedule changes. NEW: DF W 16-2 at Haldane (Apr 18). DF now 5-3. KEY: Blind Brook lost to Westlake 6-11 (Apr 17) then beat Briarcliff 5-1 (Apr 18 league). BB comes to DF Monday. Rye Neck in freefall (L5, now 3-5). Tuckahoe 2-5 after Yorktown L. Hastings 3-6. MaxPreps opponent stats updated for Hastings and Rye Neck.",
+      "text": "Daily sweep PARTIAL. Chrome MCP not connected after 5 retries. WebFetch used for MaxPreps schedules (DF, Haldane, Blind Brook, Hastings, Rye Neck, Tuckahoe, Sleepy Hollow). DigitalSports unreachable via WebFetch (AJAX content). Gmail clean \u2014 no schedule changes. NEW: DF W 16-2 at Haldane (Apr 18). DF now 5-3. KEY: Blind Brook lost to Westlake 6-11 (Apr 17) then beat Briarcliff 5-1 (Apr 18 league). BB comes to DF Monday. Rye Neck in freefall (L5, now 3-5). Tuckahoe 2-5 after Yorktown L. Hastings 3-6. MaxPreps opponent stats updated for Hastings and Rye Neck.",
       "sourcesChecked": {
-        "maxpreps:df_schedule": "✅ ok — 2-1 on MP (lags); Apr 18 W 16-2 confirmed",
-        "maxpreps:haldane_schedule": "✅ ok — 1-6, confirms L 2-16 vs DF today",
-        "maxpreps:blind_brook_schedule": "✅ ok — 6-3, L 6-11 Westlake (Apr 17) + W 5-1 Briarcliff (Apr 18)",
-        "maxpreps:hastings_schedule": "✅ ok — 3-5 on MP (Apr 17 Westlake L not yet on MP), actual 3-6",
-        "maxpreps:hastings_stats": "✅ ok — Sbrega .321, Suniewick .320, Ciszewski 1.84 ERA",
-        "maxpreps:rye_neck_schedule": "✅ ok — 3-5, L5 streak",
-        "maxpreps:rye_neck_stats": "✅ ok — Sutter .429, Strzalkowski .400, Hoffman .318",
-        "maxpreps:tuckahoe_schedule": "✅ ok — 2-5, L 4-12 Yorktown (Apr 17)",
-        "maxpreps:sleepy_hollow_schedule": "✅ ok — 4-4 per MP (reconcile with DS 5-4 from prior sweep)",
-        "maxpreps:ardsley_stats": "⚠️ limited — only leaderboard data, 2 games on MP",
-        "maxpreps:edgemont_stats": "⚠️ leaderboard-only",
-        "maxpreps:irvington_stats": "✅ no data entered",
-        "maxpreps:valhalla_stats": "✅ no data entered",
-        "maxpreps:westlake_stats": "✅ no data entered",
-        "maxpreps:pearl_river_stats": "✅ no data entered",
-        "maxpreps:saunders_stats": "⚠️ 404 (page not found)",
-        "maxpreps:tuckahoe_stats": "⚠️ leaderboard-only",
-        "maxpreps_opponents": "✅ ok — Hastings + Rye Neck had data (2 of 13)",
-        "digitalsports_all": "⚠️ unreachable via WebFetch (AJAX, requires Chrome)",
-        "ig_all": "⚠️ unreachable (Chrome MCP not connected)",
-        "section1athletics": "⚠️ not checked (DNS issues persist)",
-        "gmail": "✅ no schedule changes",
-        "dfsd_athletics": "⚠️ not checked (Chrome required)",
-        "gamedayone": "⚠️ not checked"
+        "maxpreps:df_schedule": "\u2705 ok \u2014 2-1 on MP (lags); Apr 18 W 16-2 confirmed",
+        "maxpreps:haldane_schedule": "\u2705 ok \u2014 1-6, confirms L 2-16 vs DF today",
+        "maxpreps:blind_brook_schedule": "\u2705 ok \u2014 6-3, L 6-11 Westlake (Apr 17) + W 5-1 Briarcliff (Apr 18)",
+        "maxpreps:hastings_schedule": "\u2705 ok \u2014 3-5 on MP (Apr 17 Westlake L not yet on MP), actual 3-6",
+        "maxpreps:hastings_stats": "\u2705 ok \u2014 Sbrega .321, Suniewick .320, Ciszewski 1.84 ERA",
+        "maxpreps:rye_neck_schedule": "\u2705 ok \u2014 3-5, L5 streak",
+        "maxpreps:rye_neck_stats": "\u2705 ok \u2014 Sutter .429, Strzalkowski .400, Hoffman .318",
+        "maxpreps:tuckahoe_schedule": "\u2705 ok \u2014 2-5, L 4-12 Yorktown (Apr 17)",
+        "maxpreps:sleepy_hollow_schedule": "\u2705 ok \u2014 4-4 per MP (reconcile with DS 5-4 from prior sweep)",
+        "maxpreps:ardsley_stats": "\u26a0\ufe0f limited \u2014 only leaderboard data, 2 games on MP",
+        "maxpreps:edgemont_stats": "\u26a0\ufe0f leaderboard-only",
+        "maxpreps:irvington_stats": "\u2705 no data entered",
+        "maxpreps:valhalla_stats": "\u2705 no data entered",
+        "maxpreps:westlake_stats": "\u2705 no data entered",
+        "maxpreps:pearl_river_stats": "\u2705 no data entered",
+        "maxpreps:saunders_stats": "\u26a0\ufe0f 404 (page not found)",
+        "maxpreps:tuckahoe_stats": "\u26a0\ufe0f leaderboard-only",
+        "maxpreps_opponents": "\u2705 ok \u2014 Hastings + Rye Neck had data (2 of 13)",
+        "digitalsports_all": "\u26a0\ufe0f unreachable via WebFetch (AJAX, requires Chrome)",
+        "ig_all": "\u26a0\ufe0f unreachable (Chrome MCP not connected)",
+        "section1athletics": "\u26a0\ufe0f not checked (DNS issues persist)",
+        "gmail": "\u2705 no schedule changes",
+        "dfsd_athletics": "\u26a0\ufe0f not checked (Chrome required)",
+        "gamedayone": "\u26a0\ufe0f not checked"
       }
     },
     {
@@ -5576,45 +6015,45 @@
     {
       "date": "2026-04-13",
       "type": "correction",
-      "text": "RE-CORRECTION: Irvington vs Sleepy Hollow Mar 26 — IRVINGTON won 9-8 (not SH as previously corrected). Both Irvington DS (W 9-8) and Sleepy Hollow DS (L 8-9) now agree. Previous correction on Mar 30 was based on ambiguous data that has since been clarified.",
+      "text": "RE-CORRECTION: Irvington vs Sleepy Hollow Mar 26 \u2014 IRVINGTON won 9-8 (not SH as previously corrected). Both Irvington DS (W 9-8) and Sleepy Hollow DS (L 8-9) now agree. Previous correction on Mar 30 was based on ambiguous data that has since been clarified.",
       "source": "Irvington HS DigitalSports, Sleepy Hollow HS DigitalSports (Apr 13 re-check)"
     },
     {
       "date": "2026-04-13",
       "type": "daily-sweep",
       "sourcesChecked": {
-        "section_one_varsity": "⚠️ not-checked-this-run",
-        "section_one_jv": "⚠️ not-checked-this-run",
+        "section_one_varsity": "\u26a0\ufe0f not-checked-this-run",
+        "section_one_jv": "\u26a0\ufe0f not-checked-this-run",
         "gamedayone": "pre-league-empty",
-        "digitalsports_df_varsity": "✅ ok — 3-1 on DS (missing Apr 11 Pearl River L per IG)",
-        "digitalsports_df_jv": "⚠️ not-checked-this-run",
-        "digitalsports_blindbrook": "✅ ok — 4-2, W4, 3 new games since Apr 10",
-        "digitalsports_hastings": "✅ ok — 1-5, L5, 2 new losses since Apr 10",
-        "digitalsports_ryeneck": "✅ ok — 3-2, L2, 1 new loss",
-        "digitalsports_irvington": "✅ ok — 3-2, 2 new games (W 20-6 Woodlands, L 8-12 BB)",
-        "digitalsports_sleepyhollow": "✅ ok — 4-3, W3, new W 10-4 vs Yonkers Montessori",
-        "digitalsports_tuckahoe": "✅ ok — 1-1, no new results on DS",
-        "digitalsports_valhalla": "✅ ok — 0-0, still not populated",
-        "digitalsports_westlake": "✅ ok — 0-0, still not populated",
-        "digitalsports_ardsley": "✅ ok — 0-4, new L 6-16 at Byram Hills",
-        "digitalsports_edgemont": "✅ ok — 0-6, 2 new losses",
-        "digitalsports_haldane": "✅ ok — 1-4, new L 2-8 vs Blind Brook",
-        "digitalsports_pearlriver": "✅ ok — 1-1 on DS",
-        "digitalsports_saunders": "✅ ok — 0-0, not populated",
-        "digitalsports_leffell": "✅ ok — 0-0, not populated",
-        "ig_dfeaglesbaseball": "✅ ok — CRITICAL: Apr 12 post confirms DF L 10-11 vs Pearl River with box scores",
-        "ig_dfvarsity_baseball": "✅ ok — no new posts since Apr 8",
-        "ig_dobbsferryjvboys": "⚠️ not-checked-this-run",
-        "ig_df_diamond_club": "⚠️ not-checked-this-run",
-        "ig_hastingsbase": "✅ ok — gameday posts Apr 10-13, confirms opponents",
-        "ig_tuckahoevarsitybaseball": "✅ ok — Apr 10 lineup at New Rochelle, no result posted",
-        "ig_westlakewildcatsbaseball": "⚠️ unreachable:blocked-cookie",
-        "ig_other_opponents": "⚠️ not-checked-this-run",
-        "gmail_schedule": "✅ empty — no schedule changes since Apr 9",
-        "dfsd_athletics": "⚠️ not-checked-this-run"
+        "digitalsports_df_varsity": "\u2705 ok \u2014 3-1 on DS (missing Apr 11 Pearl River L per IG)",
+        "digitalsports_df_jv": "\u26a0\ufe0f not-checked-this-run",
+        "digitalsports_blindbrook": "\u2705 ok \u2014 4-2, W4, 3 new games since Apr 10",
+        "digitalsports_hastings": "\u2705 ok \u2014 1-5, L5, 2 new losses since Apr 10",
+        "digitalsports_ryeneck": "\u2705 ok \u2014 3-2, L2, 1 new loss",
+        "digitalsports_irvington": "\u2705 ok \u2014 3-2, 2 new games (W 20-6 Woodlands, L 8-12 BB)",
+        "digitalsports_sleepyhollow": "\u2705 ok \u2014 4-3, W3, new W 10-4 vs Yonkers Montessori",
+        "digitalsports_tuckahoe": "\u2705 ok \u2014 1-1, no new results on DS",
+        "digitalsports_valhalla": "\u2705 ok \u2014 0-0, still not populated",
+        "digitalsports_westlake": "\u2705 ok \u2014 0-0, still not populated",
+        "digitalsports_ardsley": "\u2705 ok \u2014 0-4, new L 6-16 at Byram Hills",
+        "digitalsports_edgemont": "\u2705 ok \u2014 0-6, 2 new losses",
+        "digitalsports_haldane": "\u2705 ok \u2014 1-4, new L 2-8 vs Blind Brook",
+        "digitalsports_pearlriver": "\u2705 ok \u2014 1-1 on DS",
+        "digitalsports_saunders": "\u2705 ok \u2014 0-0, not populated",
+        "digitalsports_leffell": "\u2705 ok \u2014 0-0, not populated",
+        "ig_dfeaglesbaseball": "\u2705 ok \u2014 CRITICAL: Apr 12 post confirms DF L 10-11 vs Pearl River with box scores",
+        "ig_dfvarsity_baseball": "\u2705 ok \u2014 no new posts since Apr 8",
+        "ig_dobbsferryjvboys": "\u26a0\ufe0f not-checked-this-run",
+        "ig_df_diamond_club": "\u26a0\ufe0f not-checked-this-run",
+        "ig_hastingsbase": "\u2705 ok \u2014 gameday posts Apr 10-13, confirms opponents",
+        "ig_tuckahoevarsitybaseball": "\u2705 ok \u2014 Apr 10 lineup at New Rochelle, no result posted",
+        "ig_westlakewildcatsbaseball": "\u26a0\ufe0f unreachable:blocked-cookie",
+        "ig_other_opponents": "\u26a0\ufe0f not-checked-this-run",
+        "gmail_schedule": "\u2705 empty \u2014 no schedule changes since Apr 9",
+        "dfsd_athletics": "\u26a0\ufe0f not-checked-this-run"
       },
       "partial": true,
-      "text": "Daily sweep PARTIAL. CRITICAL: @dfeaglesbaseball confirms DF L 10-11 vs Pearl River (Apr 11) — DF now 3-2. DS not showing this game yet. All 15 DS teams swept. RE-CORRECTION: Irvington-SH Mar 26 game confirmed as Irvington W 9-8 (both DS pages agree, reversing earlier correction). New opponent results: BB 4-2 (3 new Ws), Hastings 1-5 (2 new Ls), Irvington 3-2 (2 new games), SH 4-3 (new W), Ardsley 0-4 (new L), Edgemont 0-6 (2 new Ls), Haldane 1-4 (new L). Box scores added for Pearl River game (Kollar 2-4 3RBI, Eusebio 2-2 2RBI). Skipped: Section One, DFSD, IG JV/Diamond Club, some opponent IG handles."
+      "text": "Daily sweep PARTIAL. CRITICAL: @dfeaglesbaseball confirms DF L 10-11 vs Pearl River (Apr 11) \u2014 DF now 3-2. DS not showing this game yet. All 15 DS teams swept. RE-CORRECTION: Irvington-SH Mar 26 game confirmed as Irvington W 9-8 (both DS pages agree, reversing earlier correction). New opponent results: BB 4-2 (3 new Ws), Hastings 1-5 (2 new Ls), Irvington 3-2 (2 new games), SH 4-3 (new W), Ardsley 0-4 (new L), Edgemont 0-6 (2 new Ls), Haldane 1-4 (new L). Box scores added for Pearl River game (Kollar 2-4 3RBI, Eusebio 2-2 2RBI). Skipped: Section One, DFSD, IG JV/Diamond Club, some opponent IG handles."
     },
     {
       "date": "2026-04-07",
@@ -5625,7 +6064,7 @@
     {
       "date": "2026-04-07",
       "type": "schedule",
-      "text": "Apr 11 (Sat) Pearl River games POSTPONED — both Varsity (away at Pearl River HS) and JV (home vs Pearl River JV) removed from DFSD athletic calendar. No makeup date posted yet.",
+      "text": "Apr 11 (Sat) Pearl River games POSTPONED \u2014 both Varsity (away at Pearl River HS) and JV (home vs Pearl River JV) removed from DFSD athletic calendar. No makeup date posted yet.",
       "source": "DFSD athletic calendar (dfsd.org)"
     },
     {
@@ -5667,7 +6106,7 @@
     {
       "date": "2026-04-01",
       "type": "score",
-      "text": "Westlake 11, Hastings 2. Non-league game at Disney Wide World of Sports (originally mislabeled as Division B league — Westlake is not in Division B).",
+      "text": "Westlake 11, Hastings 2. Non-league game at Disney Wide World of Sports (originally mislabeled as Division B league \u2014 Westlake is not in Division B).",
       "source": "GameDay One"
     },
     {
@@ -5885,7 +6324,7 @@
     {
       "date": "2026-03-23",
       "type": "source",
-      "text": "DFSD DigitalSports: Full varsity schedule published — 21 games.",
+      "text": "DFSD DigitalSports: Full varsity schedule published \u2014 21 games.",
       "source": "DigitalSports"
     },
     {
@@ -5897,7 +6336,7 @@
     {
       "date": "2026-03-23",
       "type": "source",
-      "text": "Instagram @dfvarsity_baseball: Game-day hype post — 'Tip plays baseball today. Game location tbd.' 36 likes.",
+      "text": "Instagram @dfvarsity_baseball: Game-day hype post \u2014 'Tip plays baseball today. Game location tbd.' 36 likes.",
       "source": "@dfvarsity_baseball"
     },
     {
@@ -5909,7 +6348,7 @@
     {
       "date": "2026-03-18",
       "type": "source",
-      "text": "Instagram @dfvarsity_baseball: Scrimmage post — Jack Rizzo and team vs Ardsley, first scrim of the year. 39 likes.",
+      "text": "Instagram @dfvarsity_baseball: Scrimmage post \u2014 Jack Rizzo and team vs Ardsley, first scrim of the year. 39 likes.",
       "source": "@dfvarsity_baseball"
     },
     {
@@ -5945,7 +6384,7 @@
         "dfsd_athletics": "unreachable:not-queried-time-budget"
       },
       "partial": true,
-      "text": "Daily sweep PARTIAL. DF DigitalSports (V+JV) and IG @dfeaglesbaseball/@dfvarsity_baseball confirmed no new data since 4/7 Edgemont W 5-1. Sleepy Hollow game scheduled today 4/8 4:30 PM at Gould Park — not yet played. No schedule changes in Gmail. Opponent and Section One sweep deferred."
+      "text": "Daily sweep PARTIAL. DF DigitalSports (V+JV) and IG @dfeaglesbaseball/@dfvarsity_baseball confirmed no new data since 4/7 Edgemont W 5-1. Sleepy Hollow game scheduled today 4/8 4:30 PM at Gould Park \u2014 not yet played. No schedule changes in Gmail. Opponent and Section One sweep deferred."
     },
     {
       "date": "2026-04-08",
@@ -5968,7 +6407,7 @@
         "dfsd_athletics": "unreachable:not_checked"
       },
       "partial": true,
-      "text": "Daily sweep partial — Instagram required login, Section One Athletics scores portal not located, remaining DigitalSports opponents not reached due to run constraints. No new scores found from reachable sources; MaxPreps confirms DF Varsity 1-0 but lags scores.json entries for Irvington and Saunders. Coach Turenchalk noted upcoming extra JV game with Irvington (date TBD)."
+      "text": "Daily sweep partial \u2014 Instagram required login, Section One Athletics scores portal not located, remaining DigitalSports opponents not reached due to run constraints. No new scores found from reachable sources; MaxPreps confirms DF Varsity 1-0 but lags scores.json entries for Irvington and Saunders. Coach Turenchalk noted upcoming extra JV game with Irvington (date TBD)."
     },
     {
       "date": "2026-04-08",
@@ -5992,41 +6431,41 @@
         "maxpreps_df": "ok"
       },
       "partial": true,
-      "text": "Daily sweep PARTIAL — Chrome MCP not connected; MaxPreps + Gmail reached. MaxPreps confirms 4/7 Edgemont W 5-1 (already recorded). No new scores, no schedule changes found. Next game 4/8 vs Sleepy Hollow 4:30."
+      "text": "Daily sweep PARTIAL \u2014 Chrome MCP not connected; MaxPreps + Gmail reached. MaxPreps confirms 4/7 Edgemont W 5-1 (already recorded). No new scores, no schedule changes found. Next game 4/8 vs Sleepy Hollow 4:30."
     },
     {
       "date": "2026-04-09",
       "type": "daily-sweep",
       "sourcesChecked": {
-        "section_one_varsity": "⚠️ not-checked-this-run",
-        "section_one_jv": "⚠️ not-checked-this-run",
+        "section_one_varsity": "\u26a0\ufe0f not-checked-this-run",
+        "section_one_jv": "\u26a0\ufe0f not-checked-this-run",
         "gamedayone": "pre-league-empty",
-        "digitalsports_df": "✅ ok — 3-1 record confirmed, 4/8 L 1-18 vs Sleepy Hollow added",
-        "digitalsports_blindbrook": "✅ ok — 1-2, 3 games extracted",
-        "digitalsports_hastings": "✅ ok — 1-3, 4 games extracted",
-        "digitalsports_ryeneck": "✅ ok — 3-1, 4 games extracted",
-        "digitalsports_valhalla": "✅ ok — 0-0, no events on page",
-        "digitalsports_sleepyhollow": "✅ ok — 3-3, 6 games extracted, confirms 18-1",
-        "digitalsports_ardsley": "✅ ok — 0-0, no games posted",
-        "digitalsports_edgemont": "✅ ok — 0-0, no games posted",
-        "digitalsports_haldane": "✅ ok — L 0-13 vs Irvington found",
-        "digitalsports_irvington": "✅ ok — W 9-8 vs SH, W 13-0 vs Haldane",
-        "digitalsports_leffell": "✅ ok — 0-0, no schedule",
-        "digitalsports_saunders": "✅ ok — 0-0, no events",
-        "digitalsports_tuckahoe": "✅ ok — 1-0, W 6-5 vs Somers",
-        "digitalsports_westlake": "✅ ok — 3-0, 3 games extracted",
-        "digitalsports_pearlriver": "✅ ok — 0-1, L 7-8 vs Nyack",
-        "ig_dfeaglesbaseball": "✅ ok — 4/8 score 19-1 (using DS 18-1), Marron 1-3 RBI, Hwangbo 1-2 2B BB R",
-        "ig_dfvarsity_baseball": "✅ ok — 3/27 box scores (Saunders game), 4/8 game day post",
-        "ig_dobbsferryjvboys": "⚠️ not-checked-this-run",
-        "ig_df_diamond_club": "⚠️ not-checked-this-run",
-        "ig_opponent_next3": "⚠️ not-checked-this-run",
-        "gmail_schedule": "✅ empty — no schedule changes, postponements, or rainouts found",
-        "gmail_diamond_club": "✅ ok — gear orders, no schedule impact",
-        "dfsd_athletics": "⚠️ not-checked-this-run"
+        "digitalsports_df": "\u2705 ok \u2014 3-1 record confirmed, 4/8 L 1-18 vs Sleepy Hollow added",
+        "digitalsports_blindbrook": "\u2705 ok \u2014 1-2, 3 games extracted",
+        "digitalsports_hastings": "\u2705 ok \u2014 1-3, 4 games extracted",
+        "digitalsports_ryeneck": "\u2705 ok \u2014 3-1, 4 games extracted",
+        "digitalsports_valhalla": "\u2705 ok \u2014 0-0, no events on page",
+        "digitalsports_sleepyhollow": "\u2705 ok \u2014 3-3, 6 games extracted, confirms 18-1",
+        "digitalsports_ardsley": "\u2705 ok \u2014 0-0, no games posted",
+        "digitalsports_edgemont": "\u2705 ok \u2014 0-0, no games posted",
+        "digitalsports_haldane": "\u2705 ok \u2014 L 0-13 vs Irvington found",
+        "digitalsports_irvington": "\u2705 ok \u2014 W 9-8 vs SH, W 13-0 vs Haldane",
+        "digitalsports_leffell": "\u2705 ok \u2014 0-0, no schedule",
+        "digitalsports_saunders": "\u2705 ok \u2014 0-0, no events",
+        "digitalsports_tuckahoe": "\u2705 ok \u2014 1-0, W 6-5 vs Somers",
+        "digitalsports_westlake": "\u2705 ok \u2014 3-0, 3 games extracted",
+        "digitalsports_pearlriver": "\u2705 ok \u2014 0-1, L 7-8 vs Nyack",
+        "ig_dfeaglesbaseball": "\u2705 ok \u2014 4/8 score 19-1 (using DS 18-1), Marron 1-3 RBI, Hwangbo 1-2 2B BB R",
+        "ig_dfvarsity_baseball": "\u2705 ok \u2014 3/27 box scores (Saunders game), 4/8 game day post",
+        "ig_dobbsferryjvboys": "\u26a0\ufe0f not-checked-this-run",
+        "ig_df_diamond_club": "\u26a0\ufe0f not-checked-this-run",
+        "ig_opponent_next3": "\u26a0\ufe0f not-checked-this-run",
+        "gmail_schedule": "\u2705 empty \u2014 no schedule changes, postponements, or rainouts found",
+        "gmail_diamond_club": "\u2705 ok \u2014 gear orders, no schedule impact",
+        "dfsd_athletics": "\u26a0\ufe0f not-checked-this-run"
       },
       "partial": true,
-      "text": "Daily sweep PARTIAL — DigitalSports all 15 teams swept, Instagram DF primary + varsity checked, Gmail clean. NEW: Varsity 4/8 L 1-18 vs Sleepy Hollow added (was missing). Player stats added for Marron/Hwangbo. All 14 teamIntel cards enriched with sources, recentResults, and lastDeepSweep. Skipped: Section One Athletics, DFSD Athletics, IG JV/Diamond Club/opponent handles."
+      "text": "Daily sweep PARTIAL \u2014 DigitalSports all 15 teams swept, Instagram DF primary + varsity checked, Gmail clean. NEW: Varsity 4/8 L 1-18 vs Sleepy Hollow added (was missing). Player stats added for Marron/Hwangbo. All 14 teamIntel cards enriched with sources, recentResults, and lastDeepSweep. Skipped: Section One Athletics, DFSD Athletics, IG JV/Diamond Club/opponent handles."
     },
     {
       "date": "2026-04-09",
@@ -6038,27 +6477,27 @@
       "date": "2026-04-09",
       "type": "daily-sweep",
       "sourcesChecked": {
-        "section_one_varsity": "⚠️ unreachable:site-error-page",
-        "section_one_jv": "⚠️ unreachable:site-error-page",
+        "section_one_varsity": "\u26a0\ufe0f unreachable:site-error-page",
+        "section_one_jv": "\u26a0\ufe0f unreachable:site-error-page",
         "gamedayone": "pre-league-empty",
-        "digitalsports_df_varsity": "✅ ok — 3-1, no new games since 4/8",
-        "digitalsports_df_jv": "✅ ok — confirmed via Gmail: 4/18 @Irvington JV cancelled",
-        "digitalsports_hastings": "✅ ok — 1-3, no new games since 4/4",
-        "digitalsports_tuckahoe": "✅ ok — 1-0, game today 4/9 at Mt Vernon not yet posted",
-        "digitalsports_westlake": "✅ ok — 3-0, game today 4/9 at Tappan Zee not yet posted",
-        "ig_dfeaglesbaseball": "✅ ok — no new posts since 4/8",
-        "ig_dfvarsity_baseball": "✅ ok — no new posts since 4/8",
-        "ig_dobbsferryjvboys": "✅ ok — no baseball content (basketball only)",
-        "ig_df_diamond_club": "✅ ok — Zendel Player of Week vote (4/6), no schedule changes",
-        "ig_hastingsbase": "✅ ok — game day posts through 4/3, confirms Stampfl 100th win",
-        "ig_irvingtonbulldogs": "✅ ok — no baseball content (general athletics)",
-        "ig_opponent_remaining": "⚠️ not-checked-this-run",
-        "gmail_schedule": "✅ ok — JV @ Irvington 4/18 CANCELLED (DS Alert)",
-        "gmail_diamond_club": "✅ ok — budget tracker, no schedule impact",
-        "dfsd_athletics": "⚠️ unreachable:site-error-page"
+        "digitalsports_df_varsity": "\u2705 ok \u2014 3-1, no new games since 4/8",
+        "digitalsports_df_jv": "\u2705 ok \u2014 confirmed via Gmail: 4/18 @Irvington JV cancelled",
+        "digitalsports_hastings": "\u2705 ok \u2014 1-3, no new games since 4/4",
+        "digitalsports_tuckahoe": "\u2705 ok \u2014 1-0, game today 4/9 at Mt Vernon not yet posted",
+        "digitalsports_westlake": "\u2705 ok \u2014 3-0, game today 4/9 at Tappan Zee not yet posted",
+        "ig_dfeaglesbaseball": "\u2705 ok \u2014 no new posts since 4/8",
+        "ig_dfvarsity_baseball": "\u2705 ok \u2014 no new posts since 4/8",
+        "ig_dobbsferryjvboys": "\u2705 ok \u2014 no baseball content (basketball only)",
+        "ig_df_diamond_club": "\u2705 ok \u2014 Zendel Player of Week vote (4/6), no schedule changes",
+        "ig_hastingsbase": "\u2705 ok \u2014 game day posts through 4/3, confirms Stampfl 100th win",
+        "ig_irvingtonbulldogs": "\u2705 ok \u2014 no baseball content (general athletics)",
+        "ig_opponent_remaining": "\u26a0\ufe0f not-checked-this-run",
+        "gmail_schedule": "\u2705 ok \u2014 JV @ Irvington 4/18 CANCELLED (DS Alert)",
+        "gmail_diamond_club": "\u2705 ok \u2014 budget tracker, no schedule impact",
+        "dfsd_athletics": "\u26a0\ufe0f unreachable:site-error-page"
       },
       "partial": true,
-      "text": "Daily sweep PARTIAL — No new game results since last sweep. KEY FINDING: JV game 4/12 CANCELLED (not 4/18 as previously logged) per Gmail DS alert. DigitalSports confirmed: DF 3-1 V, Hastings 1-3, Tuckahoe 1-0, Westlake 3-0. Instagram DF accounts + Hastings + Irvington swept, no new data. Section One Athletics and DFSD Athletics unreachable (error pages). Tuckahoe and Westlake have games today (4/9) — results pending."
+      "text": "Daily sweep PARTIAL \u2014 No new game results since last sweep. KEY FINDING: JV game 4/12 CANCELLED (not 4/18 as previously logged) per Gmail DS alert. DigitalSports confirmed: DF 3-1 V, Hastings 1-3, Tuckahoe 1-0, Westlake 3-0. Instagram DF accounts + Hastings + Irvington swept, no new data. Section One Athletics and DFSD Athletics unreachable (error pages). Tuckahoe and Westlake have games today (4/9) \u2014 results pending."
     },
     {
       "date": "2026-04-09",
@@ -6070,37 +6509,37 @@
       "date": "2026-04-10",
       "type": "daily-sweep",
       "sourcesChecked": {
-        "section_one_varsity": "⚠️ unreachable:site-error-page",
-        "section_one_jv": "⚠️ unreachable:site-error-page",
+        "section_one_varsity": "\u26a0\ufe0f unreachable:site-error-page",
+        "section_one_jv": "\u26a0\ufe0f unreachable:site-error-page",
         "gamedayone": "pre-league-empty",
-        "digitalsports_df_varsity": "✅ ok — 3-1, no new games since Apr 8",
-        "digitalsports_df_jv": "✅ ok — checked, no new games since Apr 8",
-        "digitalsports_blindbrook": "✅ ok — 1-2, W1",
-        "digitalsports_hastings": "✅ ok — 1-3, L3",
-        "digitalsports_ryeneck": "✅ ok — 3-1, L1",
-        "digitalsports_valhalla": "⚠️ ds-not-populated (0-0, no events added)",
-        "digitalsports_ardsley": "✅ ok — 0-3, L3",
-        "digitalsports_edgemont": "✅ ok — 0-4, L4",
-        "digitalsports_irvington": "✅ ok — 2-1, W2",
-        "digitalsports_haldane": "✅ ok — 1-3, L3",
-        "digitalsports_saunders": "⚠️ ds-not-populated (0-0, no events)",
-        "digitalsports_sleepyhollow": "✅ ok — 3-3, W2",
-        "digitalsports_tuckahoe": "✅ ok — 1-1, L1",
-        "digitalsports_westlake": "✅ ok — 3-0 (DS undercount; IG shows 4-1)",
-        "digitalsports_leffell": "✅ ok — 0-0, no results posted",
-        "digitalsports_pearlriver": "✅ ok — 1-1, W1",
-        "ig_dfeaglesbaseball": "✅ ok — no new posts since Apr 9 (SH 19-1 recap)",
+        "digitalsports_df_varsity": "\u2705 ok \u2014 3-1, no new games since Apr 8",
+        "digitalsports_df_jv": "\u2705 ok \u2014 checked, no new games since Apr 8",
+        "digitalsports_blindbrook": "\u2705 ok \u2014 1-2, W1",
+        "digitalsports_hastings": "\u2705 ok \u2014 1-3, L3",
+        "digitalsports_ryeneck": "\u2705 ok \u2014 3-1, L1",
+        "digitalsports_valhalla": "\u26a0\ufe0f ds-not-populated (0-0, no events added)",
+        "digitalsports_ardsley": "\u2705 ok \u2014 0-3, L3",
+        "digitalsports_edgemont": "\u2705 ok \u2014 0-4, L4",
+        "digitalsports_irvington": "\u2705 ok \u2014 2-1, W2",
+        "digitalsports_haldane": "\u2705 ok \u2014 1-3, L3",
+        "digitalsports_saunders": "\u26a0\ufe0f ds-not-populated (0-0, no events)",
+        "digitalsports_sleepyhollow": "\u2705 ok \u2014 3-3, W2",
+        "digitalsports_tuckahoe": "\u2705 ok \u2014 1-1, L1",
+        "digitalsports_westlake": "\u2705 ok \u2014 3-0 (DS undercount; IG shows 4-1)",
+        "digitalsports_leffell": "\u2705 ok \u2014 0-0, no results posted",
+        "digitalsports_pearlriver": "\u2705 ok \u2014 1-1, W1",
+        "ig_dfeaglesbaseball": "\u2705 ok \u2014 no new posts since Apr 9 (SH 19-1 recap)",
         "ig_dfvarsity_baseball": "not checked this run",
         "ig_dobbsferryjvboys": "not checked this run",
         "ig_df_diamond_club": "not checked this run",
-        "ig_hastingsbase": "✅ ok — gameday post Apr 10 vs Putnam Valley",
-        "ig_westlakewildcatsbaseball": "✅ ok — Apr 9 gameday at Tappan Zee; rich box score data",
-        "ig_irvingtonbulldogs": "✅ ok — general athletics, no baseball-specific posts",
-        "ig_ardsleybaseball": "✅ ok — inactive/minimal content",
-        "gmail_schedule_changes": "✅ ok — no schedule changes found since Apr 8",
+        "ig_hastingsbase": "\u2705 ok \u2014 gameday post Apr 10 vs Putnam Valley",
+        "ig_westlakewildcatsbaseball": "\u2705 ok \u2014 Apr 9 gameday at Tappan Zee; rich box score data",
+        "ig_irvingtonbulldogs": "\u2705 ok \u2014 general athletics, no baseball-specific posts",
+        "ig_ardsleybaseball": "\u2705 ok \u2014 inactive/minimal content",
+        "gmail_schedule_changes": "\u2705 ok \u2014 no schedule changes found since Apr 8",
         "dfsd_athletics": "not checked via Chrome this run",
-        "ig_tuckahoevarsitybaseball": "✅ ok — gameday Apr 10 at New Rochelle; lineups, box scores",
-        "ig_ryeneckschools": "✅ ok — general school IG, no baseball content"
+        "ig_tuckahoevarsitybaseball": "\u2705 ok \u2014 gameday Apr 10 at New Rochelle; lineups, box scores",
+        "ig_ryeneckschools": "\u2705 ok \u2014 general school IG, no baseball content"
       },
       "newGamesAdded": 0,
       "newOpponentResults": 7,
@@ -6111,18 +6550,18 @@
       "date": "2026-04-13",
       "type": "daily-sweep",
       "sourcesChecked": {
-        "section_one_varsity": "⚠️ not-checked-this-run",
-        "section_one_jv": "⚠️ not-checked-this-run",
+        "section_one_varsity": "\u26a0\ufe0f not-checked-this-run",
+        "section_one_jv": "\u26a0\ufe0f not-checked-this-run",
         "gamedayone": "pre-league-empty",
-        "digitalsports_df_varsity": "✅ ok — DS shows 3-1 (Pearl River 4/11 loss not yet posted to DS; our 3-2 is correct via IG)",
-        "digitalsports_df_jv": "⚠️ not-rechecked-this-run (no new games since 4/8)",
-        "instagram_dfeaglesbaseball": "✅ ok — latest post 4/12 (Pearl River final)",
-        "instagram_dfvarsity_baseball": "✅ ok — no new posts since 4/8",
-        "instagram_dobbsferryjvboys": "⚠️ basketball-account-no-baseball-content",
-        "gmail_schedule_changes": "✅ ok — no rainout/reschedule emails after 4/10",
-        "dfsd_athletics": "⚠️ not-checked-this-run"
+        "digitalsports_df_varsity": "\u2705 ok \u2014 DS shows 3-1 (Pearl River 4/11 loss not yet posted to DS; our 3-2 is correct via IG)",
+        "digitalsports_df_jv": "\u26a0\ufe0f not-rechecked-this-run (no new games since 4/8)",
+        "instagram_dfeaglesbaseball": "\u2705 ok \u2014 latest post 4/12 (Pearl River final)",
+        "instagram_dfvarsity_baseball": "\u2705 ok \u2014 no new posts since 4/8",
+        "instagram_dobbsferryjvboys": "\u26a0\ufe0f basketball-account-no-baseball-content",
+        "gmail_schedule_changes": "\u2705 ok \u2014 no rainout/reschedule emails after 4/10",
+        "dfsd_athletics": "\u26a0\ufe0f not-checked-this-run"
       },
-      "text": "Re-run sweep on 2026-04-13. No new games since Apr 11 Pearl River L. Added DJ Kollar and Brendan Molina pitching lines for 4/11 Pearl River from @dfeaglesbaseball IG. Next game: Apr 13 (today) vs Irvington (home). Section One Athletics, DFSD weekly calendar, and deep opponent sweep not re-run — prior run today already completed those."
+      "text": "Re-run sweep on 2026-04-13. No new games since Apr 11 Pearl River L. Added DJ Kollar and Brendan Molina pitching lines for 4/11 Pearl River from @dfeaglesbaseball IG. Next game: Apr 13 (today) vs Irvington (home). Section One Athletics, DFSD weekly calendar, and deep opponent sweep not re-run \u2014 prior run today already completed those."
     },
     {
       "date": "2026-04-13",
@@ -6136,64 +6575,64 @@
       "text": "Full DS sweep all 15 teams. New Varsity game added: Apr 13 L 1-7 vs Irvington (confirmed across DF DS, Irvington DS, @dfeaglesbaseball IG). DF record now 3-3. Ficarrotta 2-3, R, SB; RBI: Frisch. All teamIntel updated with current DS records. Section One Athletics and DFSD pages had connectivity issues.",
       "source": "digitalsports:all15, ig:@dfeaglesbaseball, ig:@dfvarsity_baseball, ig:@hastingsbase, ig:@haldanebaseball, ig:@ardsleybaseball, ig:@blindbrookhs, gmail",
       "sourcesChecked": {
-        "digitalsports:df": "✅ 3-3 overall, new game Apr 13 L 1-7 vs Irvington",
-        "digitalsports:blindbrook": "✅ 4-2, W4 streak",
-        "digitalsports:hastings": "✅ 2-5, Apr 11 W 4-3 vs Ardsley",
-        "digitalsports:ryeneck": "✅ 3-2, no new games since Apr 8",
-        "digitalsports:valhalla": "✅ 0-0 on DS (no events posted)",
-        "digitalsports:ardsley": "✅ 0-7, L7 streak",
-        "digitalsports:edgemont": "✅ 1-6, Apr 9 L 6-9 vs Valhalla confirms Val has wins",
-        "digitalsports:haldane": "✅ 1-5, L5 streak",
-        "digitalsports:irvington": "✅ 4-2, confirms DF Apr 13 game W 7-1",
-        "digitalsports:pearlriver": "✅ 3-1, W3 streak",
-        "digitalsports:saunders": "✅ 0-0 on DS (no events posted)",
-        "digitalsports:sleepyhollow": "✅ 4-3, W3 streak",
-        "digitalsports:tuckahoe": "✅ 1-2, L2 streak",
-        "digitalsports:westlake": "✅ 4-2, L2 streak",
-        "digitalsports:leffell": "✅ 0-0 on DS (no events posted)",
-        "ig:@dfeaglesbaseball": "✅ Apr 13 scoreboard: Irvington 7 DF 1; Ficarrotta 2-3 R SB; RBI: Frisch",
-        "ig:@dfvarsity_baseball": "✅ Game day graphic for Ardsley Apr 14; Saunders box score 8-3",
-        "ig:@dobbsferryjvboys": "✅ Basketball account, no baseball data",
-        "ig:@hastingsbase": "✅ Game day posts only, no scoreboards",
-        "ig:@ardsleybaseball": "✅ Minimal data, 1 post visible",
-        "ig:@haldanebaseball": "✅ Game day posts for Apr 10 (BB) and Apr 13 (Edgemont)",
-        "ig:@blindbrookhs": "✅ School account, no baseball scoreboards",
-        "gmail": "✅ No schedule-change emails since Apr 12",
-        "section1athletics": "⚠️ Page failed to load (connection error)",
-        "dfsd-athletics": "⚠️ Page failed to navigate (redirect issue)",
+        "digitalsports:df": "\u2705 3-3 overall, new game Apr 13 L 1-7 vs Irvington",
+        "digitalsports:blindbrook": "\u2705 4-2, W4 streak",
+        "digitalsports:hastings": "\u2705 2-5, Apr 11 W 4-3 vs Ardsley",
+        "digitalsports:ryeneck": "\u2705 3-2, no new games since Apr 8",
+        "digitalsports:valhalla": "\u2705 0-0 on DS (no events posted)",
+        "digitalsports:ardsley": "\u2705 0-7, L7 streak",
+        "digitalsports:edgemont": "\u2705 1-6, Apr 9 L 6-9 vs Valhalla confirms Val has wins",
+        "digitalsports:haldane": "\u2705 1-5, L5 streak",
+        "digitalsports:irvington": "\u2705 4-2, confirms DF Apr 13 game W 7-1",
+        "digitalsports:pearlriver": "\u2705 3-1, W3 streak",
+        "digitalsports:saunders": "\u2705 0-0 on DS (no events posted)",
+        "digitalsports:sleepyhollow": "\u2705 4-3, W3 streak",
+        "digitalsports:tuckahoe": "\u2705 1-2, L2 streak",
+        "digitalsports:westlake": "\u2705 4-2, L2 streak",
+        "digitalsports:leffell": "\u2705 0-0 on DS (no events posted)",
+        "ig:@dfeaglesbaseball": "\u2705 Apr 13 scoreboard: Irvington 7 DF 1; Ficarrotta 2-3 R SB; RBI: Frisch",
+        "ig:@dfvarsity_baseball": "\u2705 Game day graphic for Ardsley Apr 14; Saunders box score 8-3",
+        "ig:@dobbsferryjvboys": "\u2705 Basketball account, no baseball data",
+        "ig:@hastingsbase": "\u2705 Game day posts only, no scoreboards",
+        "ig:@ardsleybaseball": "\u2705 Minimal data, 1 post visible",
+        "ig:@haldanebaseball": "\u2705 Game day posts for Apr 10 (BB) and Apr 13 (Edgemont)",
+        "ig:@blindbrookhs": "\u2705 School account, no baseball scoreboards",
+        "gmail": "\u2705 No schedule-change emails since Apr 12",
+        "section1athletics": "\u26a0\ufe0f Page failed to load (connection error)",
+        "dfsd-athletics": "\u26a0\ufe0f Page failed to navigate (redirect issue)",
         "gamedayone": "pre-league-empty (before Apr 20)"
       }
     },
     {
       "date": "2026-04-15",
       "type": "daily-sweep",
-      "text": "Full DS sweep all 15 teams. 3 new opponent results from Apr 14: Irvington W 10-0 Woodlands, Sleepy Hollow L 9-10 Yonkers Montessori, Westlake W 13-3 Valhalla. DF record 4-3 (V), 1-2 (JV). No schedule changes in Gmail. IG @dfeaglesbaseball confirms Apr 14 W 6-3 vs Ardsley with box scores (minor stat discrepancies vs GC noted). All teamIntel updated with current DS records and Up Next lines. CORRECTION: Section One Athletics checked — site is down (DNS/empty response across all URL variants). DFSD Athletics checked — calendar confirms Apr 14 Ardsley, Apr 16 JV at Hastings, Apr 18 V at Haldane. No schedule changes.",
+      "text": "Full DS sweep all 15 teams. 3 new opponent results from Apr 14: Irvington W 10-0 Woodlands, Sleepy Hollow L 9-10 Yonkers Montessori, Westlake W 13-3 Valhalla. DF record 4-3 (V), 1-2 (JV). No schedule changes in Gmail. IG @dfeaglesbaseball confirms Apr 14 W 6-3 vs Ardsley with box scores (minor stat discrepancies vs GC noted). All teamIntel updated with current DS records and Up Next lines. CORRECTION: Section One Athletics checked \u2014 site is down (DNS/empty response across all URL variants). DFSD Athletics checked \u2014 calendar confirms Apr 14 Ardsley, Apr 16 JV at Hastings, Apr 18 V at Haldane. No schedule changes.",
       "sourcesChecked": {
-        "digitalsports_df_varsity": "✅ ok — DS shows 3-3 (Apr 14 W not yet posted on DS)",
-        "digitalsports_df_jv": "✅ ok — DS shows Apr 8 W 11-7, Apr 14 not yet posted",
-        "digitalsports_blind_brook": "✅ ok — 4-2, last result Apr 11 W 12-8 vs Irvington",
-        "digitalsports_hastings": "✅ ok — 2-5, last result Apr 13 W 4-3",
-        "digitalsports_rye_neck": "✅ ok — 3-2, Apr 14 at Byram Hills pending",
-        "digitalsports_valhalla": "✅ no events posted (confirmed empty)",
-        "digitalsports_ardsley": "✅ ok — 0-7+, Apr 14 result not yet posted",
-        "digitalsports_edgemont": "✅ ok — ~2-4, last result Apr 13 W 6-0 vs Haldane",
-        "digitalsports_haldane": "✅ ok — 1-5, last result Apr 13 L 0-6 vs Edgemont",
-        "digitalsports_irvington": "✅ ok — 5-2, Apr 14 W 10-0 vs Woodlands (NEW)",
-        "digitalsports_leffell": "✅ ok — 1-0 (W 21-1 vs Hamilton), limited data",
-        "digitalsports_pearl_river": "✅ ok — ~3-1",
-        "digitalsports_saunders": "✅ no events posted (confirmed empty)",
-        "digitalsports_sleepy_hollow": "✅ ok — 4-3, Apr 14 L 9-10 vs Yonkers Montessori (NEW)",
-        "digitalsports_tuckahoe": "✅ ok — 1-3, Apr 14 vs Briarcliff pending",
-        "digitalsports_westlake": "✅ ok — 5-3, Apr 14 W 13-3 vs Valhalla (NEW)",
-        "instagram_dfeaglesbaseball": "✅ ok — Apr 14 post confirms W 6-3 vs Ardsley with box scores",
-        "instagram_haldanebaseball": "✅ ok — Apr 14 post confirms L 0-6 vs Edgemont",
-        "instagram_blindbrookhs": "✅ checked — school account, no baseball scores",
-        "instagram_ardsleybaseball": "✅ checked — no posts visible",
-        "section_one_varsity": "✅ site-down — section1athletics.com/.org returns DNS_PROBE_FINISHED_NXDOMAIN and ERR_EMPTY_RESPONSE across all URL variants (attempted 5 times: .com, .org, http, https, /cgi-bin/G5genie)",
-        "section_one_jv": "✅ site-down — same as varsity, section1athletics unresponsive",
-        "gamedayone": "✅ pre-league-empty (league starts Apr 20)",
-        "dfsd_athletics": "✅ checked — dfsd.org/departments/athletics/athletic-calendar shows Apr 14 Varsity Home vs Ardsley 4:30 PM, Apr 16 JV at Hastings (Bus 3:30 PM), Apr 18 Varsity at Haldane (Bus 9:00 AM) 11:00 AM. No cancellations or changes. All matches scores.json.",
-        "gmail": "✅ checked — JV scheduling thread (Zonana), no rainouts or changes"
+        "digitalsports_df_varsity": "\u2705 ok \u2014 DS shows 3-3 (Apr 14 W not yet posted on DS)",
+        "digitalsports_df_jv": "\u2705 ok \u2014 DS shows Apr 8 W 11-7, Apr 14 not yet posted",
+        "digitalsports_blind_brook": "\u2705 ok \u2014 4-2, last result Apr 11 W 12-8 vs Irvington",
+        "digitalsports_hastings": "\u2705 ok \u2014 2-5, last result Apr 13 W 4-3",
+        "digitalsports_rye_neck": "\u2705 ok \u2014 3-2, Apr 14 at Byram Hills pending",
+        "digitalsports_valhalla": "\u2705 no events posted (confirmed empty)",
+        "digitalsports_ardsley": "\u2705 ok \u2014 0-7+, Apr 14 result not yet posted",
+        "digitalsports_edgemont": "\u2705 ok \u2014 ~2-4, last result Apr 13 W 6-0 vs Haldane",
+        "digitalsports_haldane": "\u2705 ok \u2014 1-5, last result Apr 13 L 0-6 vs Edgemont",
+        "digitalsports_irvington": "\u2705 ok \u2014 5-2, Apr 14 W 10-0 vs Woodlands (NEW)",
+        "digitalsports_leffell": "\u2705 ok \u2014 1-0 (W 21-1 vs Hamilton), limited data",
+        "digitalsports_pearl_river": "\u2705 ok \u2014 ~3-1",
+        "digitalsports_saunders": "\u2705 no events posted (confirmed empty)",
+        "digitalsports_sleepy_hollow": "\u2705 ok \u2014 4-3, Apr 14 L 9-10 vs Yonkers Montessori (NEW)",
+        "digitalsports_tuckahoe": "\u2705 ok \u2014 1-3, Apr 14 vs Briarcliff pending",
+        "digitalsports_westlake": "\u2705 ok \u2014 5-3, Apr 14 W 13-3 vs Valhalla (NEW)",
+        "instagram_dfeaglesbaseball": "\u2705 ok \u2014 Apr 14 post confirms W 6-3 vs Ardsley with box scores",
+        "instagram_haldanebaseball": "\u2705 ok \u2014 Apr 14 post confirms L 0-6 vs Edgemont",
+        "instagram_blindbrookhs": "\u2705 checked \u2014 school account, no baseball scores",
+        "instagram_ardsleybaseball": "\u2705 checked \u2014 no posts visible",
+        "section_one_varsity": "\u2705 site-down \u2014 section1athletics.com/.org returns DNS_PROBE_FINISHED_NXDOMAIN and ERR_EMPTY_RESPONSE across all URL variants (attempted 5 times: .com, .org, http, https, /cgi-bin/G5genie)",
+        "section_one_jv": "\u2705 site-down \u2014 same as varsity, section1athletics unresponsive",
+        "gamedayone": "\u2705 pre-league-empty (league starts Apr 20)",
+        "dfsd_athletics": "\u2705 checked \u2014 dfsd.org/departments/athletics/athletic-calendar shows Apr 14 Varsity Home vs Ardsley 4:30 PM, Apr 16 JV at Hastings (Bus 3:30 PM), Apr 18 Varsity at Haldane (Bus 9:00 AM) 11:00 AM. No cancellations or changes. All matches scores.json.",
+        "gmail": "\u2705 checked \u2014 JV scheduling thread (Zonana), no rainouts or changes"
       }
     },
     {
@@ -6201,26 +6640,26 @@
       "type": "daily-sweep",
       "text": "Full DS sweep all 15 teams. 1 new opponent result: Leffell W 5-1 vs Edgemont (Apr 15). Edgemont corrected to 1-7 (was misreported as ~2-4 due to misdated opponentResults entries). Sleepy Hollow corrected to 4-4 (was 4-3). Hastings won comeback walkoff Apr 15 per IG @hastingsbase (now 3-5). DF record unchanged at 4-3 (V), 1-2 (JV). No DF games Apr 15-16. No schedule changes in Gmail. Section One Athletics unreachable (SSL error). IG @dfeaglesbaseball last post Apr 14 (Ardsley W 6-3 box scores).",
       "sourcesChecked": {
-        "digitalsports:df": "✅ 3-3 on DS (Apr 14 Ardsley not entered), actual 4-3",
-        "digitalsports:blind_brook": "✅ 4-2, no new results",
-        "digitalsports:hastings": "✅ 2-5 on DS (Apr 15 win not entered yet), actual 3-5 per IG",
-        "digitalsports:irvington": "✅ 5-2, no new results",
-        "digitalsports:rye_neck": "✅ 3-2, no new results",
-        "digitalsports:ardsley": "✅ 0-7 on DS (Apr 14 DF loss not entered), actual 0-8",
-        "digitalsports:edgemont": "✅ 1-7, new L 1-5 Apr 15 (Leffell)",
-        "digitalsports:haldane": "✅ 1-5, no new results",
-        "digitalsports:leffell": "✅ 2-0, new W 5-1 Apr 15 (Edgemont)",
-        "digitalsports:pearl_river": "✅ 3-1, no new results",
-        "digitalsports:saunders": "✅ empty, no events",
-        "digitalsports:sleepy_hollow": "✅ 4-4 (corrected from 4-3)",
-        "digitalsports:tuckahoe": "✅ 1-3, no new results",
-        "digitalsports:valhalla": "✅ empty, no events",
-        "digitalsports:westlake": "✅ 5-3, no new results",
-        "ig:@dfeaglesbaseball": "✅ last post Apr 14 Ardsley box scores",
-        "ig:@hastingsbase": "✅ Apr 15 walkoff win post",
-        "ig:@irvingtonbulldogs": "✅ no new baseball scores",
-        "section1athletics": "⚠️ unreachable (SSL/privacy error)",
-        "gmail": "✅ no schedule changes (only Bulldogs Academy summer tournaments)",
+        "digitalsports:df": "\u2705 3-3 on DS (Apr 14 Ardsley not entered), actual 4-3",
+        "digitalsports:blind_brook": "\u2705 4-2, no new results",
+        "digitalsports:hastings": "\u2705 2-5 on DS (Apr 15 win not entered yet), actual 3-5 per IG",
+        "digitalsports:irvington": "\u2705 5-2, no new results",
+        "digitalsports:rye_neck": "\u2705 3-2, no new results",
+        "digitalsports:ardsley": "\u2705 0-7 on DS (Apr 14 DF loss not entered), actual 0-8",
+        "digitalsports:edgemont": "\u2705 1-7, new L 1-5 Apr 15 (Leffell)",
+        "digitalsports:haldane": "\u2705 1-5, no new results",
+        "digitalsports:leffell": "\u2705 2-0, new W 5-1 Apr 15 (Edgemont)",
+        "digitalsports:pearl_river": "\u2705 3-1, no new results",
+        "digitalsports:saunders": "\u2705 empty, no events",
+        "digitalsports:sleepy_hollow": "\u2705 4-4 (corrected from 4-3)",
+        "digitalsports:tuckahoe": "\u2705 1-3, no new results",
+        "digitalsports:valhalla": "\u2705 empty, no events",
+        "digitalsports:westlake": "\u2705 5-3, no new results",
+        "ig:@dfeaglesbaseball": "\u2705 last post Apr 14 Ardsley box scores",
+        "ig:@hastingsbase": "\u2705 Apr 15 walkoff win post",
+        "ig:@irvingtonbulldogs": "\u2705 no new baseball scores",
+        "section1athletics": "\u26a0\ufe0f unreachable (SSL/privacy error)",
+        "gmail": "\u2705 no schedule changes (only Bulldogs Academy summer tournaments)",
         "gamechanger": "not queried this run (no new DF games)"
       }
     },
@@ -6229,31 +6668,31 @@
       "type": "daily-sweep",
       "text": "Full DS sweep all 15 teams. 5 new opponent results: Blind Brook W 2-1 North Salem (Apr 14), Tuckahoe L 5-8 Briarcliff (Apr 14), Sleepy Hollow W 15-1 Woodlands (Apr 16), Valhalla W 14-3 Rye Neck (Apr 16), Tuckahoe W 18-1 North Salem (Apr 16). Notable: Valhalla scored biggest win of their season. Blind Brook on 5-game win streak ahead of Apr 20 League game vs DF. Rye Neck on 3-game skid. No new DF games (V 4-3, JV 1-3). Gmail MCP unavailable (tool upgrade). MaxPreps returned leaderboard only, no detailed stats. Section One Athletics not checked (DNS issues persist).",
       "sourcesChecked": {
-        "digitalsports:df": "✅ 3-3 on DS (actual 4-3, Apr 14 Ardsley still not entered)",
-        "digitalsports:blind_brook": "✅ 5-2, W5 — NEW W 2-1 vs North Salem Apr 14",
-        "digitalsports:hastings": "✅ 3-5, W2, Conf 2-1",
-        "digitalsports:irvington": "✅ 5-2, W2, no new results",
-        "digitalsports:rye_neck": "✅ 3-3, L3 — NEW L 3-14 vs Valhalla Apr 16",
-        "digitalsports:valhalla": "✅ empty (no events posted), but W 14-3 confirmed via Rye Neck DS",
-        "digitalsports:ardsley": "✅ 0-7, L7 (Apr 14 DF L still not entered)",
-        "digitalsports:sleepy_hollow": "✅ 5-4, W1 — NEW W 15-1 vs Woodlands Apr 16",
-        "digitalsports:tuckahoe": "✅ ~2-4 — NEW L 5-8 Briarcliff Apr 14 + W 18-1 North Salem Apr 16",
-        "digitalsports:westlake": "✅ 5-3, W1, no new results",
-        "digitalsports:edgemont": "⚠️ not-rechecked-this-run (last checked Apr 16)",
-        "digitalsports:haldane": "⚠️ not-rechecked-this-run (last checked Apr 16)",
-        "digitalsports:pearl_river": "⚠️ not-rechecked-this-run (last checked Apr 16)",
-        "digitalsports:leffell": "⚠️ not-rechecked-this-run (last checked Apr 16)",
-        "digitalsports:saunders": "⚠️ not-rechecked-this-run (last checked Apr 16)",
-        "ig:@dfeaglesbaseball": "✅ last post Apr 14 (Ardsley W 6-3 box scores)",
-        "ig:@dfvarsity_baseball": "✅ last post Apr 14 (Ardsley recap: 4-3, next @Haldane)",
-        "ig:@dobbsferryjvboys": "⚠️ not-checked-this-run",
-        "ig:@df_diamond_club": "⚠️ not-checked-this-run",
-        "ig_opponents": "⚠️ not-checked-this-run",
-        "gmail": "⚠️ mcp-unavailable (tool upgrade)",
-        "section1athletics": "⚠️ not-checked (DNS issues persist from prior runs)",
-        "dfsd_athletics": "⚠️ not-checked-this-run",
-        "gamedayone": "✅ pre-league-empty (before Apr 20)",
-        "maxpreps_opponents": "⚠️ leaderboard-only (no detailed stat tables via WebFetch)"
+        "digitalsports:df": "\u2705 3-3 on DS (actual 4-3, Apr 14 Ardsley still not entered)",
+        "digitalsports:blind_brook": "\u2705 5-2, W5 \u2014 NEW W 2-1 vs North Salem Apr 14",
+        "digitalsports:hastings": "\u2705 3-5, W2, Conf 2-1",
+        "digitalsports:irvington": "\u2705 5-2, W2, no new results",
+        "digitalsports:rye_neck": "\u2705 3-3, L3 \u2014 NEW L 3-14 vs Valhalla Apr 16",
+        "digitalsports:valhalla": "\u2705 empty (no events posted), but W 14-3 confirmed via Rye Neck DS",
+        "digitalsports:ardsley": "\u2705 0-7, L7 (Apr 14 DF L still not entered)",
+        "digitalsports:sleepy_hollow": "\u2705 5-4, W1 \u2014 NEW W 15-1 vs Woodlands Apr 16",
+        "digitalsports:tuckahoe": "\u2705 ~2-4 \u2014 NEW L 5-8 Briarcliff Apr 14 + W 18-1 North Salem Apr 16",
+        "digitalsports:westlake": "\u2705 5-3, W1, no new results",
+        "digitalsports:edgemont": "\u26a0\ufe0f not-rechecked-this-run (last checked Apr 16)",
+        "digitalsports:haldane": "\u26a0\ufe0f not-rechecked-this-run (last checked Apr 16)",
+        "digitalsports:pearl_river": "\u26a0\ufe0f not-rechecked-this-run (last checked Apr 16)",
+        "digitalsports:leffell": "\u26a0\ufe0f not-rechecked-this-run (last checked Apr 16)",
+        "digitalsports:saunders": "\u26a0\ufe0f not-rechecked-this-run (last checked Apr 16)",
+        "ig:@dfeaglesbaseball": "\u2705 last post Apr 14 (Ardsley W 6-3 box scores)",
+        "ig:@dfvarsity_baseball": "\u2705 last post Apr 14 (Ardsley recap: 4-3, next @Haldane)",
+        "ig:@dobbsferryjvboys": "\u26a0\ufe0f not-checked-this-run",
+        "ig:@df_diamond_club": "\u26a0\ufe0f not-checked-this-run",
+        "ig_opponents": "\u26a0\ufe0f not-checked-this-run",
+        "gmail": "\u26a0\ufe0f mcp-unavailable (tool upgrade)",
+        "section1athletics": "\u26a0\ufe0f not-checked (DNS issues persist from prior runs)",
+        "dfsd_athletics": "\u26a0\ufe0f not-checked-this-run",
+        "gamedayone": "\u2705 pre-league-empty (before Apr 20)",
+        "maxpreps_opponents": "\u26a0\ufe0f leaderboard-only (no detailed stat tables via WebFetch)"
       }
     },
     {
@@ -6421,25 +6860,25 @@
       "type": "daily-sweep",
       "text": "Daily dashboard sweep completed. DF confirmed 5-3 (W2 streak). Today: vs Blind Brook at Gould Park 4:30 PM (first Class B league game). No new DF game results since Apr 18 Haldane W 16-2.",
       "sourcesChecked": {
-        "digitalsports_df": "✅ ok — 5-3 overall, schedule confirmed, today vs Blind Brook 4:30 PM",
-        "digitalsports_blindbrook": "✅ ok — 6-3 overall via Chrome, full schedule extracted",
-        "digitalsports_hastings": "✅ ok — 4-5 overall via Chrome, full schedule extracted",
-        "instagram_dfeaglesbaseball": "✅ ok — last post Apr 18 (Haldane W 16-2), no new games",
-        "maxpreps_hastings": "✅ ok — 4-5 record, 9 games confirmed",
-        "maxpreps_valhalla": "✅ ok — 2-4 record, 6 games",
-        "maxpreps_irvington": "✅ ok — 2-1 on MP (incomplete, cross-ref shows 3-2+)",
-        "maxpreps_ardsley": "✅ ok — 0-3 on MP (incomplete, missing DF game)",
-        "maxpreps_edgemont": "✅ ok — 2-7 record, 9 games",
-        "maxpreps_haldane": "✅ ok — 1-6 record, 7 games",
-        "maxpreps_sleepyhollow": "✅ ok — 4-5 record, 9 games",
-        "maxpreps_ryeneck": "✅ ok — 3-5 record, 8 games",
-        "maxpreps_pearlriver": "✅ ok — 1-1 on MP (incomplete, cross-ref shows 2-2+)",
-        "maxpreps_tuckahoe": "✅ ok — 2-5 record, 7 games",
-        "maxpreps_westlake": "✅ ok — 6-4 record, 10 games",
-        "maxpreps_opponents": "✅ ok — schedule pages used for results (stat pages show leaderboards only, not full tables)",
-        "section1athletics": "⚠️ not checked this run — Chrome prioritized for DS and IG sweeps",
-        "gamechanger": "⚠️ no new DF games since Apr 18",
-        "gamedayone": "⚠️ pre-league-empty (league play starts today Apr 20)"
+        "digitalsports_df": "\u2705 ok \u2014 5-3 overall, schedule confirmed, today vs Blind Brook 4:30 PM",
+        "digitalsports_blindbrook": "\u2705 ok \u2014 6-3 overall via Chrome, full schedule extracted",
+        "digitalsports_hastings": "\u2705 ok \u2014 4-5 overall via Chrome, full schedule extracted",
+        "instagram_dfeaglesbaseball": "\u2705 ok \u2014 last post Apr 18 (Haldane W 16-2), no new games",
+        "maxpreps_hastings": "\u2705 ok \u2014 4-5 record, 9 games confirmed",
+        "maxpreps_valhalla": "\u2705 ok \u2014 2-4 record, 6 games",
+        "maxpreps_irvington": "\u2705 ok \u2014 2-1 on MP (incomplete, cross-ref shows 3-2+)",
+        "maxpreps_ardsley": "\u2705 ok \u2014 0-3 on MP (incomplete, missing DF game)",
+        "maxpreps_edgemont": "\u2705 ok \u2014 2-7 record, 9 games",
+        "maxpreps_haldane": "\u2705 ok \u2014 1-6 record, 7 games",
+        "maxpreps_sleepyhollow": "\u2705 ok \u2014 4-5 record, 9 games",
+        "maxpreps_ryeneck": "\u2705 ok \u2014 3-5 record, 8 games",
+        "maxpreps_pearlriver": "\u2705 ok \u2014 1-1 on MP (incomplete, cross-ref shows 2-2+)",
+        "maxpreps_tuckahoe": "\u2705 ok \u2014 2-5 record, 7 games",
+        "maxpreps_westlake": "\u2705 ok \u2014 6-4 record, 10 games",
+        "maxpreps_opponents": "\u2705 ok \u2014 schedule pages used for results (stat pages show leaderboards only, not full tables)",
+        "section1athletics": "\u26a0\ufe0f not checked this run \u2014 Chrome prioritized for DS and IG sweeps",
+        "gamechanger": "\u26a0\ufe0f no new DF games since Apr 18",
+        "gamedayone": "\u26a0\ufe0f pre-league-empty (league play starts today Apr 20)"
       }
     },
     {
@@ -7713,389 +8152,501 @@
       "loserRuns": 2,
       "source": "GameChanger",
       "league": true
+    },
+    {
+      "date": "2026-04-20",
+      "winner": "Hastings",
+      "winnerRuns": 6,
+      "loser": "Tuckahoe",
+      "loserRuns": 4,
+      "source": "MaxPreps",
+      "league": true
+    },
+    {
+      "date": "2026-04-20",
+      "winner": "Pawling",
+      "winnerRuns": 9,
+      "loser": "Haldane",
+      "loserRuns": 3,
+      "source": "MaxPreps",
+      "league": true
+    },
+    {
+      "date": "2026-04-20",
+      "winner": "Edgemont",
+      "winnerRuns": 14,
+      "loser": "Irvington",
+      "loserRuns": 4,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-20",
+      "winner": "Rye Neck",
+      "winnerRuns": 11,
+      "loser": "Leffell School",
+      "loserRuns": 5,
+      "source": "MaxPreps",
+      "league": true
+    },
+    {
+      "date": "2026-04-20",
+      "winner": "Sleepy Hollow",
+      "winnerRuns": 13,
+      "loser": "BOSSJ",
+      "loserRuns": 0,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-11",
+      "winner": "Briarcliff",
+      "winnerRuns": 7,
+      "loser": "Yorktown",
+      "loserRuns": 6,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-10",
+      "winner": "Greeley",
+      "winnerRuns": 5,
+      "loser": "Briarcliff",
+      "loserRuns": 2,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-17",
+      "winner": "Pawling",
+      "winnerRuns": 6,
+      "loser": "Dover",
+      "loserRuns": 1,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-16",
+      "winner": "Putnam Valley",
+      "winnerRuns": 5,
+      "loser": "Leffell School",
+      "loserRuns": 3,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-14",
+      "winner": "Croton-Harmon",
+      "winnerRuns": 12,
+      "loser": "Putnam Valley",
+      "loserRuns": 2,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-08",
+      "winner": "Putnam Valley",
+      "winnerRuns": 3,
+      "loser": "Carmel",
+      "loserRuns": 1,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-06",
+      "winner": "Brewster",
+      "winnerRuns": 9,
+      "loser": "Putnam Valley",
+      "loserRuns": 2,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-01",
+      "winner": "Putnam Valley",
+      "winnerRuns": 6,
+      "loser": "Walter Panas",
+      "loserRuns": 4,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-03-30",
+      "winner": "Mahopac",
+      "winnerRuns": 8,
+      "loser": "Putnam Valley",
+      "loserRuns": 0,
+      "source": "MaxPreps"
+    },
+    {
+      "date": "2026-03-27",
+      "winner": "Putnam Valley",
+      "winnerRuns": 3,
+      "loser": "Greeley",
+      "loserRuns": 2,
+      "source": "MaxPreps"
     }
   ],
   "teamIntel": {
     "Ardsley": {
-      "record": "0-7",
+      "record": "0-3",
       "dsRecord": "0-7",
       "confRecord": "0-6",
       "streak": "L7",
       "recentResults": [
-        "L 7-11 @ Putnam Valley (Apr 18)",
-        "L 3-6 vs Dobbs Ferry (Apr 14)",
-        "L 3-4 vs Hastings (Apr 13)"
+        "L 7-11 at Putnam Valley (Apr 18)",
+        "L 3-4 at Hastings (Apr 13)",
+        "L 1-5 at Hendrick Hudson (Mar 28)"
       ],
       "blurb": "Winless at 0-7. DF beat them 6-3 (Apr 14). Worst team on the schedule. Not a threat to anyone.",
       "sources": [
         "maxpreps:ardsley",
-        "digitalsports:ardsley"
+        "maxpreps:ardsley_stats"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Ardsley 0-4. Lost to Hendrick Hudson (1-5), Hastings (3-4), Dobbs Ferry (3-6), Putnam Valley (7-11). Struggling start. Up next: Apr 21 vs Tuckahoe, Apr 22 vs Albertus Magnus, Apr 23 @ Edgemont.",
-      "stars": []
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Ardsley is 0-3 with losses to Hendrick Hudson 1-5, Hastings 3-4, and Putnam Valley 7-11. Only 3 games played. Limited stats on MaxPreps: J. Jaeger .500 in small sample. Goldberg and Kleinman both 0.00 ERA in limited innings. Up next: vs Tuckahoe (today Apr 21), vs Albertus Magnus (Apr 22).",
+      "stars": [
+        "J. Jaeger .500 (limited AB)",
+        "J. Goldberg 0.00 ERA (limited IP)"
+      ]
     },
     "Blind Brook": {
-      "record": "7-3",
+      "record": "7-3 (2-0 league)",
       "dsRecord": "6-3",
       "confRecord": "6-2",
       "streak": "W2",
       "recentResults": [
-        "W 5-2 vs Dobbs Ferry (Apr 20, league)",
-        "W 5-1 vs Briarcliff (Apr 18)",
-        "L 6-11 vs Westlake (Apr 17)",
-        "W 2-1 vs North Salem (Apr 14)"
+        "W 5-2 at Dobbs Ferry (Apr 20, league)",
+        "W 5-1 at Briarcliff (Apr 18, league)",
+        "W 11-6 vs Westlake (Apr 17)"
       ],
       "blurb": "5-game win streak. DS 5-2 confirmed by MaxPreps. Strong offense (40 RF). Plays Westlake today (Apr 17), at Briarcliff Sat, then at DF Mon (league opener). Key threat.",
       "sources": [
-        "digitalsports:blindbrook",
-        "maxpreps:blindbrook",
-        "ig:@blindbrookhs"
+        "maxpreps:blind_brook",
+        "maxpreps:blind_brook_stats"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "intel": "Blind Brook is 6-3 overall with wins over Edgemont (8-7), Valhalla (3-2), Haldane (8-2), Irvington (12-8), North Salem (2-1), and Briarcliff (5-1). Lost to Pawling (5-15), Westlake (6-11). On a 1-game win streak. Up next: Apr 20 @ Dobbs Ferry (League), Apr 22 vs Dobbs Ferry (League), Apr 23 vs Leffell (League).",
-      "lastUpdated": "2026-04-20",
+      "lastDeepSweep": "2026-04-21",
+      "intel": "Blind Brook is 7-3, 2-0 in league play after beating DF 5-2 and Briarcliff 5-1 in back-to-back league wins. Jack Pastor hitting .387 with 10 SB. Beat Westlake 11-6 on Apr 17. Lost to Pawling 15-5 in opener but has won 7 of last 9. Up next: vs Dobbs Ferry (Apr 22), vs Leffell (Apr 23).",
+      "lastUpdated": "2026-04-21",
       "stars": [
-        "12-8 W over Irvington shows offensive firepower",
-        "8-2 W at Haldane"
+        "J. Pastor .387/10 SB",
+        "M. Ebenstein .355/8 RBI/6 SB",
+        "A. Toll 0.00 ERA"
       ]
     },
     "Edgemont": {
-      "record": "2-7",
+      "record": "3-7",
       "dsRecord": "2-7",
       "confRecord": "1-7",
       "streak": "W1",
       "recentResults": [
-        "W 16-6 @ North Salem (Apr 18)",
-        "L 1-5 @ Leffell (Apr 15)",
-        "W 6-0 vs Haldane (Apr 13)"
+        "W 14-4 vs Irvington (Apr 20)",
+        "W 16-6 at North Salem (Apr 18)",
+        "L 1-5 at Leffell (Apr 15)"
       ],
       "blurb": "Struggling badly at 1-7. Only win vs Haldane. Lost to Leffell 1-5 on Apr 16. DF already beat them 5-1. Not a threat.",
       "sources": [
         "maxpreps:edgemont",
-        "digitalsports:edgemont"
+        "maxpreps:edgemont_stats"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Edgemont is 2-7. Only wins: 6-0 vs Haldane and 16-6 @ North Salem. Lost to BB (7-8), John Jay (1-11), DF (1-5), Pearl River (0-10), Valhalla (6-9), Albertus Magnus (6-12), Leffell (1-5). Up next: Apr 20 vs Irvington, Apr 23 vs Ardsley.",
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Edgemont is 3-7 but on a 2-game win streak after beating North Salem 16-6 and Irvington 14-4. Lost 7 of first 8. Terrasi hitting .393 with 8 SB. Vargas .500 in limited ABs with 1 HR. Kusinitz 2.45 ERA. Up next: vs Ardsley (Apr 23), at Eastchester (Apr 25).",
       "stars": [
-        "16-6 offensive explosion vs North Salem"
+        "W. Terrasi .393/11H/15R/8SB",
+        "S. Vargas .500/1 HR/7 RBI",
+        "M. Kusinitz 2.45 ERA"
       ]
     },
     "Haldane": {
-      "record": "1-7",
+      "record": "1-7 (0-1 league)",
       "dsRecord": "1-6",
       "confRecord": "1-6",
       "streak": "L6",
       "recentResults": [
+        "L 3-9 vs Pawling (Apr 20, league)",
         "L 2-16 vs Dobbs Ferry (Apr 18)",
-        "L 0-6 @ Edgemont (Apr 13)",
-        "L 2-8 vs Blind Brook (Apr 10)"
+        "L 0-6 at Edgemont (Apr 13)"
       ],
       "blurb": "1-5 with 5-game losing streak. DF plays at Haldane tomorrow (Apr 18, 11am). Should be a favorable matchup. Only win was 10-0 early season.",
       "sources": [
         "maxpreps:haldane",
-        "digitalsports:haldane",
-        "ig:@haldanebaseball"
+        "maxpreps:haldane_stats"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "intel": "Haldane is 1-6. Only win: 11-0 vs Peekskill. Lost to Rye Neck (1-13), Sleepy Hollow (10-12), Irvington (0-13), Blind Brook (2-8), Edgemont (0-6), Dobbs Ferry (2-16). Up next: league schedule.",
-      "lastUpdated": "2026-04-20",
+      "lastDeepSweep": "2026-04-21",
+      "intel": "Haldane is 1-7 after losing 6 straight since their opening day W 11-0 vs Peekskill. Lost to Pawling 9-3 (league) and DF 16-2. Only competitive game was 12-10 loss to Sleepy Hollow. A. Swan hitting .370, Theo Swan .333 with 9 RBI. Herman 3.18 ERA. Up next: at Pawling (Apr 22), vs Putnam Valley (Apr 24).",
+      "lastUpdated": "2026-04-21",
       "stars": [
-        "11-0 shutout of Peekskill only bright spot"
+        "A. Swan .370/10 H/7 R",
+        "T. Swan .333/9 RBI/3 2B",
+        "O. Herman 3.18 ERA"
       ]
     },
     "Hastings": {
-      "record": "3-6",
+      "record": "5-5 (2-0 league)",
       "dsRecord": "3-6",
       "confRecord": "2-2",
       "streak": "L1",
       "recentResults": [
-        "W 11-2 @ Valhalla (Apr 18)",
-        "W 6-5 vs Albertus Magnus (Apr 15)",
-        "W 4-3 @ Ardsley (Apr 13)"
+        "W 6-4 vs Tuckahoe (Apr 20, league)",
+        "W 11-2 at Valhalla (Apr 18)",
+        "W 6-5 vs Albertus Magnus (Apr 15)"
       ],
       "blurb": "3-5 overall but 2-1 in league (beat Blind Brook, lost to Westlake). Social share suggests L 2-11 to Westlake today (Apr 17). Plays at Valhalla Sat, then Tuckahoe (league) Mon.",
       "sources": [
-        "digitalsports:hastings",
         "maxpreps:hastings",
-        "ig:@hastingsbase"
+        "maxpreps:hastings_stats"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "intel": "Hastings is 4-5 overall, on a 3-game win streak. Beat Ardsley 4-3, Albertus Magnus 6-5, and crushed Valhalla 11-2. Early losses to Pelham (0-2), Westlake (2-11), Eastchester (0-1 in 8 inn), Putnam Valley (8-12), Scarsdale (5-8). Up next: Apr 20 vs Tuckahoe (League), Apr 22 @ Tuckahoe (League), Apr 24 @ Dobbs Ferry (League).",
-      "lastUpdated": "2026-04-20",
+      "lastDeepSweep": "2026-04-21",
+      "intel": "Hastings is 5-5 overall but 2-0 in league after beating Valhalla 11-2 and Tuckahoe 6-4. Five losses all to quality opponents (Pelham, Westlake, Eastchester 1-0 in 8 inn, Putnam Valley, Scarsdale). Ciszewski hitting .389 with 2.10 ERA. Sbrega leads with 9 SB. Up next: at Tuckahoe (Apr 22), at Dobbs Ferry (Apr 24).",
+      "lastUpdated": "2026-04-21",
       "stars": [
-        "3-game win streak entering league play",
-        "11-2 rout of Valhalla"
+        "A. Ciszewski .389/2.10 ERA",
+        "J. Sbrega 9 SB",
+        "A. Rothstein 1 HR"
       ]
     },
     "Irvington": {
-      "record": "N/A from DS this sweep",
+      "record": "2-2",
       "dsRecord": "N/A",
       "confRecord": "N/A",
       "streak": "N/A",
       "recentResults": [
-        "W 7-1 vs Dobbs Ferry (Apr 13)",
-        "L 8-12 @ Blind Brook (Apr 11)",
-        "W 13-0 @ Haldane (Apr 8)"
+        "L 4-14 at Edgemont (Apr 20)",
+        "L 8-12 at Blind Brook (Apr 11)",
+        "W 13-0 at Haldane (Apr 8)"
       ],
       "blurb": "Split with DF this season (lost 2-6, won 7-1). Non-league. DS page not checked this run (not in 15-team priority list).",
       "sources": [
         "maxpreps:irvington",
-        "digitalsports:irvington",
-        "ig:@irvingtonbulldogs"
+        "opponentResults_crossref"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Irvington 3-2+ per cross-ref. Beat Sleepy Hollow (9-8), Haldane (13-0), Dobbs Ferry (7-1). Lost to Dobbs Ferry (2-6) and Blind Brook (8-12). MaxPreps incomplete. Up next: Apr 20 @ Edgemont, May 4 @ Sleepy Hollow.",
-      "stars": [
-        "13-0 shutout of Haldane",
-        "Split 1-1 with DF"
-      ]
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Irvington is 2-2 with wins over Sleepy Hollow (9-8) and Haldane (13-0) but losses to Blind Brook (8-12) and Edgemont (4-14). Got blown out by Edgemont on Apr 20. Long gap in schedule with next game not until May 4. No player stats entered on MaxPreps. Up next: at Sleepy Hollow (May 4).",
+      "stars": [],
+      "singleSource": false
     },
     "Leffell School": {
-      "record": "2-0",
+      "record": "unknown",
       "dsRecord": "2-0",
       "confRecord": "2-0",
       "streak": "W2",
       "recentResults": [
+        "L 5-11 vs Rye Neck (Apr 20, league)",
+        "L 3-5 at Putnam Valley (Apr 16)",
         "W 5-1 vs Edgemont (Apr 15)"
       ],
       "blurb": "Undefeated at 2-0 but tiny sample. Beat Edgemont 5-1 and had a 21-1 blowout. League play starts Apr 20 vs Rye Neck. Could surprise.",
       "sources": [
-        "maxpreps:edgemont-crossref",
-        "digitalsports:leffell"
+        "maxpreps:leffell_not_on_maxpreps",
+        "opponentResults_crossref"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Leffell beat Edgemont 5-1 on Apr 15. Not on MaxPreps. Up next: Apr 23 @ Blind Brook (League), Apr 28 vs Blind Brook (League).",
-      "stars": []
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Leffell School not on MaxPreps. Lost to Rye Neck 5-11 (Apr 20, league), lost to Putnam Valley 3-5 (Apr 16), beat Edgemont 5-1 (Apr 15). Up next: at Rye Neck (Apr 22, league).",
+      "stars": [],
+      "singleSource": false
     },
     "Pearl River": {
-      "record": "4-1",
+      "record": "1-1",
       "dsRecord": "4-1",
       "confRecord": "4-1",
       "streak": "W4",
       "recentResults": [
-        "W 11-10 vs Dobbs Ferry (Apr 11)",
-        "W 10-0 @ Edgemont (Apr 9)",
-        "L 7-8 @ Nyack (Mar 23)"
+        "W 10-0 at Edgemont (Apr 9)",
+        "L 7-8 at Nyack (Mar 23)"
       ],
       "blurb": "Hot at 4-1 with 4-game win streak. Beat DF 11-10 in a close one. Beat Ardsley 10-1. Strong offense. Non-league but quality test opponent.",
       "sources": [
-        "maxpreps:pearlriver",
-        "digitalsports:pearlriver"
+        "maxpreps:pearl_river"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Pearl River 2-2+ per cross-ref (MaxPreps shows only 2 games). Beat Edgemont (10-0) and DF (11-10). Lost to Nyack (7-8). Up next: Apr 23 vs Albertus Magnus, May 2 vs Hendrick Hudson.",
-      "stars": [
-        "10-0 shutout of Edgemont",
-        "11-10 comeback vs DF"
-      ]
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Pearl River is 1-1 per MaxPreps (likely more games not entered). Beat Edgemont 10-0 but lost to Nyack 7-8. DF beat PR 11-10 on Apr 11 but that game not showing on PR's MaxPreps page. Very limited data available. No player stats entered. Up next: vs Albertus Magnus (Apr 23).",
+      "stars": [],
+      "singleSource": true
     },
     "Rye Neck": {
-      "record": "3-5",
+      "record": "4-5 (1-0 league)",
       "dsRecord": "3-5",
       "confRecord": "3-5",
       "streak": "L5",
       "recentResults": [
-        "L 1-6 @ Pleasantville (Apr 18)",
-        "L 3-14 vs Valhalla (Apr 16)",
-        "L 2-12 @ Byram Hills (Apr 14)"
+        "W 11-5 at Leffell (Apr 20, league)",
+        "L 1-6 at Pleasantville (Apr 18)",
+        "L 3-14 vs Valhalla (Apr 16)"
       ],
       "blurb": "Started 3-0, now on 3-game losing skid (3-3). Getting shut out in 2 of last 3 losses. League play at Leffell Apr 20. Concerning slide.",
       "sources": [
-        "maxpreps:ryeneck",
-        "digitalsports:ryeneck"
+        "maxpreps:rye_neck",
+        "maxpreps:rye_neck_stats"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "intel": "Rye Neck is 3-5. Won 8-2 vs Pawling, 13-1 vs Haldane, 16-5 @ Sleepy Hollow. Then 5 straight losses: Pawling (0-6), Bronxville (0-8), Byram Hills (2-12), Valhalla (3-14), Pleasantville (1-6). Up next: league schedule late April.",
-      "lastUpdated": "2026-04-20",
+      "lastDeepSweep": "2026-04-21",
+      "intel": "Rye Neck is 4-5 after beating Leffell 11-5 (league) snapping a 5-game losing streak. Started 3-0 but dropped 5 straight to Pawling, Bronxville, Byram Hills, Valhalla, Pleasantville. R. Sutter .500 AVG, Strzalkowski .400, Gellman .333 with 10H/8RBI. Mandell 3.00 ERA. Up next: vs Leffell (Apr 22), vs Tuckahoe (Apr 24).",
+      "lastUpdated": "2026-04-21",
       "stars": [
-        "13-1 win over Haldane",
-        "5-game losing streak entering league play"
+        "R. Sutter .500 AVG",
+        "Z. Strzalkowski .400/8H/2 2B",
+        "B. Gellman .333/10H/8RBI"
       ]
     },
     "Saunders": {
-      "record": "4-2-1",
+      "record": "0-0 per MaxPreps",
       "dsRecord": "4-2-1",
       "confRecord": "3-2-1",
       "streak": "W3",
-      "recentResults": [
-        "L 3-7 vs Dobbs Ferry (Mar 27)"
-      ],
+      "recentResults": [],
       "blurb": "Surging at 4-2-1 with 3-game win streak. Destroying Poughkeepsie (14-0, 22-1). DF beat them 7-3 early. Much improved since then. Non-league opponent.",
       "sources": [
-        "digitalsports:saunders",
-        "maxpreps:saunders"
+        "maxpreps:saunders_404"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Saunders lost to Dobbs Ferry 3-7 on Mar 27. No other 2026 results found. Up next: schedule TBD.",
-      "stars": []
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Saunders has no MaxPreps page or data available. DF beat Saunders 7-3 on Mar 27. No recent intel. Up next: unknown.",
+      "stars": [],
+      "singleSource": true
     },
     "Sleepy Hollow": {
-      "record": "4-5",
+      "record": "5-5 (3-3 league)",
       "dsRecord": "4-5",
       "confRecord": "4-4",
       "streak": "L1",
       "recentResults": [
-        "L 10-11 @ Woodlands (Apr 18)",
-        "W 15-1 vs Woodlands (Apr 16)",
-        "L 9-10 vs YMA (Apr 14)"
+        "W 13-0 at BOSSJ (Apr 20)",
+        "L 10-11 at Woodlands (Apr 18)",
+        "W 15-1 vs Woodlands (Apr 16)"
       ],
       "blurb": "5-4, strong. Beat DF 18-1. Lots of close games. Non-league opponent.",
       "sources": [
-        "maxpreps:sleepyhollow",
-        "digitalsports:sleepyhollow"
+        "maxpreps:sleepy_hollow",
+        "opponentResults_crossref"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Sleepy Hollow is 4-5. Beat Haldane (12-10), DF (18-1), YMA (10-4), Woodlands (15-1). Lost to Irvington (8-9), Briarcliff (0-14), Rye Neck (5-16), YMA (9-10), Woodlands (10-11). Up next: Apr 20 vs Barack Obama School.",
-      "stars": [
-        "18-1 blowout of Dobbs Ferry (Apr 8)",
-        "15-1 rout of Woodlands"
-      ]
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Sleepy Hollow is 5-5, 3-3 in their league. Beat BOSSJ 13-0 on Apr 20 but lost a close one 10-11 to Woodlands. Won big 18-1 at DF. Alternating wins and losses. No player stats on MaxPreps. Up next: vs BOSSJ (Apr 22), vs Roosevelt (Apr 25).",
+      "stars": [],
+      "singleSource": false
     },
     "Tuckahoe": {
-      "record": "2-5",
+      "record": "2-6 (0-1 league)",
       "dsRecord": "2-5",
       "confRecord": "2-5",
       "streak": "L1",
       "recentResults": [
-        "L 4-12 @ Yorktown (Apr 17)",
-        "W 18-1 @ North Salem (Apr 16)",
-        "L 5-8 vs Briarcliff (Apr 14)"
+        "L 4-6 at Hastings (Apr 20, league)",
+        "L 4-12 vs Yorktown (Apr 17)",
+        "W 18-1 at North Salem (Apr 16)"
       ],
       "blurb": "2-4 but coming off 18-1 win. Lost to Briarcliff 5-8. League play at Hastings Apr 20. Inconsistent - big wins and big losses. Beatable but dangerous.",
       "sources": [
         "maxpreps:tuckahoe",
-        "digitalsports:tuckahoe"
+        "maxpreps:tuckahoe_stats"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "intel": "Tuckahoe is 2-5. Wins: 6-5 @ Somers, 18-1 @ North Salem. Losses to Mount Vernon (6-7), New Rochelle (2-11), Pawling (5-13), Briarcliff (5-8), Yorktown (4-12). Outscored 57-46 overall. Up next: Apr 20 @ Hastings (League), Apr 22 vs Hastings (League).",
-      "lastUpdated": "2026-04-20",
+      "lastDeepSweep": "2026-04-21",
+      "intel": "Tuckahoe is 2-6, 0-1 in league after losing to Hastings 4-6. Only wins: Somers 6-5 and North Salem 18-1. Romeo .333 with 9H/7RBI. Brice .304 with 1 3B. Carney 3.41 ERA leads staff. Up next: at Ardsley (today Apr 21), vs Hastings (Apr 22).",
+      "lastUpdated": "2026-04-21",
       "stars": [
-        "18-1 blowout of North Salem"
+        "J. Romeo .333/9H/7RBI",
+        "C. Brice .304/7H/1 3B",
+        "K. Carney 3.41 ERA"
       ]
     },
     "Valhalla": {
-      "record": "unknown (DS empty)",
+      "record": "2-4",
       "dsRecord": "0-0 (page empty)",
       "confRecord": "N/A",
       "streak": "N/A",
       "recentResults": [
         "L 2-11 vs Hastings (Apr 18)",
-        "W 14-3 @ Rye Neck (Apr 16)",
-        "L 3-13 @ Westlake (Apr 14)"
+        "W 14-3 at Rye Neck (Apr 16)",
+        "L 3-13 at Westlake (Apr 14)"
       ],
       "blurb": "DS page completely empty. Cross-referencing opponents: lost to Blind Brook 2-3, beat Edgemont 9-6, blew out Rye Neck 14-3. Active and competitive despite empty DS. League at Briarcliff Apr 24.",
       "sources": [
         "maxpreps:valhalla",
-        "digitalsports:valhalla",
-        "ig:@thedawgsofvalhalla"
+        "opponentResults_crossref"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Valhalla is 2-4 overall. Beat Edgemont (9-6) and Rye Neck (14-3) but lost to Westlake twice (5-17, 3-13), Blind Brook (2-3), and Hastings (2-11). Offense inconsistent. Up next: Apr 27 vs Dobbs Ferry (League).",
-      "stars": [
-        "14-3 blowout of Rye Neck shows ceiling",
-        "Two losses to Westlake by combined 8-30"
-      ]
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Valhalla is 2-4 with wins over Edgemont (9-6) and Rye Neck (14-3). Got hammered by Westlake twice (5-17, 3-13) and lost to Hastings 2-11. No player stats on MaxPreps. League play starts Apr 24 vs Briarcliff. Up next: vs Briarcliff (Apr 24, league).",
+      "stars": [],
+      "singleSource": false
     },
     "Westlake": {
-      "record": "5-3",
+      "record": "6-4",
       "dsRecord": "5-3",
       "confRecord": "4-3",
       "streak": "W1",
       "recentResults": [
-        "W 11-6 @ Blind Brook (Apr 17)",
-        "L 1-2 @ Briarcliff (Apr 16)",
+        "W 11-6 at Blind Brook (Apr 17)",
+        "L 1-2 at Briarcliff (Apr 16)",
         "W 13-3 vs Valhalla (Apr 14)"
       ],
       "blurb": "5-3 with strong offense. Beat Hastings 11-2. Capable of big wins (17-5, 14-12, 13-3) but also gets blown out. Hastings social share suggests Westlake won 11-2 today too. Non-league opponent for DF.",
       "sources": [
         "maxpreps:westlake",
-        "digitalsports:westlake",
-        "ig:@westlakewildcatsbaseball"
+        "opponentResults_crossref"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Westlake is 6-4 and the strongest non-league opponent DF faces (May 11). Beat Bronxville (4-3), Valhalla twice (17-5, 13-3), Hastings (11-2), John Jay (14-12), Blind Brook (11-6). Lost to Walter Panas (1-4), Tappan Zee (1-12), Pelham (3-8), Briarcliff (1-2). 76 runs scored in 10 games. Up next: May 11 vs Dobbs Ferry.",
-      "stars": [
-        "76 runs scored in 10 games",
-        "17-5 and 13-3 wins over Valhalla"
-      ]
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Westlake is 6-4 with quality wins over Hastings (11-2), Valhalla (17-5 and 13-3), and John Jay (14-12). Lost to Tappan Zee 12-1 and Pelham 8-3. Beat Blind Brook 11-6 but lost to Briarcliff 2-1. No player stats on MaxPreps. DF plays Westlake May 11. Up next: at Croton-Harmon (Apr 22).",
+      "stars": [],
+      "singleSource": false
     },
     "Briarcliff": {
-      "record": "4-3-1",
+      "record": "4-4-1 (0-1 league)",
       "dsRecord": "4-3-1",
       "confRecord": "3-3-1",
       "streak": "L1",
       "recentResults": [
-        "L 1-5 vs Blind Brook (Apr 18)",
+        "L 1-5 vs Blind Brook (Apr 18, league)",
         "W 2-1 vs Westlake (Apr 16)",
-        "W 8-5 @ Tuckahoe (Apr 14)"
+        "W 8-5 at Tuckahoe (Apr 14)"
       ],
       "blurb": "Solid 4-2-1. Tied Brewster. Beat Tuckahoe 8-5 in road win. League starts Apr 20 at Putnam Valley. Has a tie on record. Hosts Blind Brook Sat.",
       "sources": [
         "maxpreps:briarcliff",
-        "digitalsports:blindbrook-crossref"
+        "opponentResults_crossref"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "intel": "Briarcliff 3-1+ from cross-refs. Beat Sleepy Hollow 14-0, Tuckahoe 8-5, Westlake 2-1. Lost to Blind Brook 1-5. Strong defensive team. Up next: league schedule.",
-      "lastUpdated": "2026-04-20",
-      "stars": [
-        "14-0 shutout of Sleepy Hollow",
-        "2-1 win over 6-4 Westlake"
-      ]
+      "lastDeepSweep": "2026-04-21",
+      "intel": "Briarcliff is 4-4-1 after losing league opener 1-5 to Blind Brook. Beat Westlake 2-1 and Tuckahoe 8-5 but lost to Greeley 2-5 and Pleasantville 3-5. Tied Brewster 5-5. Up next: at Putnam Valley (today Apr 21, league), vs Putnam Valley (Apr 22, league).",
+      "lastUpdated": "2026-04-21",
+      "stars": [],
+      "singleSource": false
     },
     "Pawling": {
-      "record": "4-3",
+      "record": "5-1 (1-0 league)",
       "dsRecord": "4-3",
       "confRecord": "3-3",
       "streak": "W1",
       "recentResults": [
-        "W 13-5 @ Tuckahoe (Apr 13)",
-        "W 6-0 vs Rye Neck (Apr 8)",
-        "L 2-8 @ Rye Neck (Mar 25)"
+        "W 9-3 at Haldane (Apr 20, league)",
+        "W 6-1 vs Dover (Apr 17)",
+        "W 13-5 at Tuckahoe (Apr 13)"
       ],
       "blurb": "4-3 and competitive. Beat Blind Brook 15-5 early (BB's worst loss). In Briarcliff's league division. Middle of pack.",
       "sources": [
-        "maxpreps:ryeneck-crossref",
-        "digitalsports:blindbrook-crossref"
+        "maxpreps:pawling",
+        "opponentResults_crossref"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Pawling 3-1+ from cross-refs. Beat Blind Brook 15-5, Rye Neck 6-0, Tuckahoe 13-5. Lost to Rye Neck 2-8. Strong against Class B opponents. Up next: league schedule.",
-      "stars": [
-        "15-5 win over Blind Brook",
-        "13-5 win over Tuckahoe"
-      ]
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Pawling is 5-1 on a 4-game win streak. Won league opener 9-3 at Haldane. Beat Dover 6-1, Tuckahoe 13-5, and shut out Rye Neck 6-0. Only loss was 2-8 at Rye Neck in game 2. Outscoring opponents 51-22. Up next: vs Haldane (Apr 22, league).",
+      "stars": [],
+      "singleSource": false
     },
     "Putnam Valley": {
-      "record": "4-3",
+      "record": "6-3",
       "dsRecord": "4-3",
       "confRecord": "3-2",
       "streak": "L1",
       "recentResults": [
         "W 11-7 vs Ardsley (Apr 18)",
-        "W 12-8 @ Hastings (Apr 10)"
+        "W 5-3 vs Leffell (Apr 16, league)",
+        "L 2-12 at Croton-Harmon (Apr 14)"
       ],
       "blurb": "4-3 overall. Beat Hastings 12-8 but lost 2-12 recently. In Briarcliff's league division. Briarcliff opens league at PV on Apr 20.",
       "sources": [
-        "maxpreps:ardsley-crossref",
-        "maxpreps:hastings-crossref"
+        "maxpreps:putnam_valley",
+        "opponentResults_crossref"
       ],
-      "lastDeepSweep": "2026-04-20",
-      "lastUpdated": "2026-04-20",
-      "intel": "Putnam Valley 2-0+ from cross-refs. Beat Hastings 12-8 and Ardsley 11-7. Strong offense in limited data. Up next: league schedule.",
-      "stars": [
-        "12-8 win at Hastings",
-        "11-7 win over Ardsley"
-      ]
+      "lastDeepSweep": "2026-04-21",
+      "lastUpdated": "2026-04-21",
+      "intel": "Putnam Valley is 6-3 with wins over Hastings (12-8), Ardsley (11-7), and Leffell (5-3 league). Lost to Mahopac, Brewster, and Croton-Harmon. Strong pitching depth. No player stats on MaxPreps. Up next: vs Briarcliff (today Apr 21, league).",
+      "stars": [],
+      "singleSource": false
     }
   },
   "teamSeasonStats": {
