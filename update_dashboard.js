@@ -587,51 +587,159 @@ html = html.replace(jvFullSchedRegex, `$1Full JV Schedule (${jvSchedule.length} 
                     $4`);
 
 // ============================================================
-// 6a3. UPDATE KEY DATES SECTIONS WITH COMPLETED SCORES
+// 6a3. DYNAMICALLY REBUILD KEY DATES FROM FULL SCHEDULE
 // ============================================================
-// Key Dates tables have 5 columns: Date, Opponent, Time, Location, Notes
-// For completed games, replace the Notes cell with the score badge and add "completed" class
+// Parses the full schedule table, filters for League + Rival games,
+// and rebuilds Key Dates tbody with the next 5 upcoming such games.
+// Completed games get score badges; upcoming games show "League" or "Rival".
 
-function updateKeyDatesSection(htmlStr, scoresMap, sectionComment) {
-    // Build a lookup: "Mon DD" → { df, opp, opponent }
-    const dateLookup = {};
+// Rivals = all schedule opponents EXCEPT one-off non-rival teams
+const NON_RIVAL_TEAMS = ['saunders', 'pearl river'];
+
+function isRivalOrLeague(opponent, typeText) {
+    if (typeText.toLowerCase().includes('league')) return 'League';
+    if (typeText.toLowerCase().includes('scrimmage')) return false;
+    const oppLower = opponent.toLowerCase().replace(/ jv$/i, '');
+    if (NON_RIVAL_TEAMS.some(nr => oppLower.includes(nr))) return false;
+    return 'Rival';
+}
+
+function parseDateFromShort(dateStr, year) {
+    // Parse "Apr 22" or "May 1" into a Date
+    const months = { jan:0, feb:1, mar:2, apr:3, may:4, jun:5, jul:6, aug:7, sep:8, oct:9, nov:10, dec:11 };
+    const parts = dateStr.trim().split(/\s+/);
+    if (parts.length < 2) return null;
+    const mon = months[parts[0].toLowerCase()];
+    const day = parseInt(parts[1]);
+    if (mon === undefined || isNaN(day)) return null;
+    return new Date(year, mon, day);
+}
+
+function rebuildKeyDatesSection(htmlStr, scoresMap, keyDatesComment, scheduleComment) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const year = today.getFullYear();
+
+    // Build score lookup: "Mon DD" → { df, opp, opponent }
+    const scoreLookup = {};
     for (const [dateStr, score] of Object.entries(scoresMap)) {
         const d = new Date(dateStr + 'T12:00:00');
         const shortMonth = formatShortMonth(d);
         const dayNum = d.getDate();
-        const key = `${shortMonth} ${dayNum}`;
-        dateLookup[key] = score;
+        scoreLookup[`${shortMonth} ${dayNum}`] = score;
     }
 
-    // Find all rows in the Key Dates section
-    // Pattern: rows with 5 <td> cells inside the section between the comment and the closing </table>
-    const sectionPattern = new RegExp(
-        `(${sectionComment}[\\s\\S]*?<tbody>)([\\s\\S]*?)(</tbody>)`,
+    // Parse the full schedule table to extract all games
+    // Schedule tables have 7 cols (varsity): Date, Day, Time, Opponent, Location, Venue, Type
+    // or 6 cols (JV): Date, Day, Time, Opponent, Location, Type
+    const schedPattern = new RegExp(
+        `${scheduleComment}[\\s\\S]*?<tbody>([\\s\\S]*?)</tbody>`,
+        ''
+    );
+    const schedMatch = htmlStr.match(schedPattern);
+    if (!schedMatch) {
+        console.log(`  WARNING: Could not find schedule section for ${scheduleComment}`);
+        return htmlStr;
+    }
+
+    const schedTbody = schedMatch[1];
+    const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/g;
+    const allGames = [];
+    let rm;
+    while ((rm = rowRegex.exec(schedTbody)) !== null) {
+        const cells = [];
+        const cellRegex = /<td>([\s\S]*?)<\/td>/g;
+        let cm;
+        while ((cm = cellRegex.exec(rm[1])) !== null) {
+            cells.push(cm[1].trim());
+        }
+        if (cells.length < 6) continue;
+
+        const dateCell = cells[0]; // e.g. "Apr 22"
+        const isVarsity = cells.length >= 7;
+        const opponent = cells[3];
+        const location = isVarsity ? cells[4] : cells[4];
+        const venue = isVarsity ? cells[5] : '';
+        const typeRaw = isVarsity ? cells[6] : cells[5];
+        const typeText = typeRaw.replace(/<[^>]+>/g, '').trim();
+
+        const tag = isRivalOrLeague(opponent, typeText);
+        if (!tag) continue;
+
+        const gameDate = parseDateFromShort(dateCell, year);
+        if (!gameDate) continue;
+
+        // Check if this game has a score (completed)
+        const scoreKey = dateCell;
+        const score = scoreLookup[scoreKey];
+
+        // Determine display location for Key Dates
+        const locDisplay = location === 'Home' ? `Gould Park (H)` :
+                           location === 'Away' && venue ? `${venue} (A)` :
+                           location === 'Away' ? `Away` : location;
+
+        // Determine opponent display (vs/at prefix)
+        const oppDisplay = location === 'Away' ? `at ${opponent}` : `vs ${opponent}`;
+
+        allGames.push({
+            dateCell,
+            gameDate,
+            opponent: oppDisplay,
+            time: cells[2],
+            location: locDisplay,
+            tag, // 'League' or 'Rival'
+            score,
+            typeText
+        });
+    }
+
+    // Sort by date
+    allGames.sort((a, b) => a.gameDate - b.gameDate);
+
+    // Find games: prefer next 5 upcoming (on or after today).
+    // If a game was completed in the last 3 days, include it at the top.
+    const threeDaysAgo = new Date(today);
+    threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
+
+    const recentCompleted = allGames.filter(g => g.score && g.gameDate >= threeDaysAgo && g.gameDate < today);
+    const upcoming = allGames.filter(g => g.gameDate >= today);
+
+    // Take recent completed (max 2) + upcoming to fill 5 total
+    const recentSlice = recentCompleted.slice(-2);
+    const upcomingSlice = upcoming.slice(0, 5 - recentSlice.length);
+    const display = [...recentSlice, ...upcomingSlice].slice(0, 5);
+
+    if (display.length === 0) {
+        console.log(`  WARNING: No upcoming League/Rival games found for ${keyDatesComment}`);
+        return htmlStr;
+    }
+
+    // Build new tbody rows
+    const newRows = display.map(g => {
+        if (g.score) {
+            const won = g.score.df > g.score.opp;
+            const resultText = won ? `W ${g.score.df}-${g.score.opp}` : `L ${g.score.df}-${g.score.opp}`;
+            const resultColor = won ? '#D4A017' : '#888';
+            return `                        <tr class="completed"><td>${g.dateCell}</td><td>${g.opponent}</td><td>${g.time}</td><td>${g.location}</td><td><span class="game-badge" style="background-color:${resultColor};">${resultText}</span></td></tr>`;
+        } else {
+            const highlight = g.gameDate.getTime() === today.getTime() ? ' highlight' : '';
+            return `                        <tr class="${highlight}"><td>${g.dateCell}</td><td>${g.opponent}</td><td>${g.time}</td><td>${g.location}</td><td>${g.tag}</td></tr>`;
+        }
+    }).join('\n');
+
+    // Replace the Key Dates tbody
+    const keyPattern = new RegExp(
+        `(${keyDatesComment}[\\s\\S]*?<tbody>)([\\s\\S]*?)(</tbody>)`,
         ''
     );
 
-    return htmlStr.replace(sectionPattern, (match, before, tbody, after) => {
-        // Process each <tr> in the tbody
-        const updatedTbody = tbody.replace(
-            /<tr([^>]*)>(\s*<td>([^<]*)<\/td>\s*<td>([^<]*)<\/td>\s*<td>([^<]*)<\/td>\s*<td>([^<]*)<\/td>\s*<td>)([\s\S]*?)(<\/td>\s*<\/tr>)/g,
-            (rowMatch, trAttrs, prefix, dateCell, oppCell, timeCell, locCell, notesContent, suffix) => {
-                const score = dateLookup[dateCell.trim()];
-                if (score) {
-                    const won = score.df > score.opp;
-                    const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-                    const resultColor = won ? '#D4A017' : '#888';
-                    const completedClass = trAttrs.includes('completed') ? trAttrs : (trAttrs.includes('class=') ? trAttrs.replace(/class="([^"]*)"/, 'class="completed $1"') : ` class="completed"`);
-                    return `<tr${completedClass}>${prefix}<span class="game-badge" style="background-color:${resultColor};">${resultText}</span>${suffix}`;
-                }
-                return rowMatch;
-            }
-        );
-        return before + updatedTbody + after;
+    return htmlStr.replace(keyPattern, (match, before, tbody, after) => {
+        return before + '\n' + newRows + '\n                    ' + after;
     });
 }
 
-html = updateKeyDatesSection(html, scores.varsity || {}, '<!-- Key Varsity Dates -->');
-html = updateKeyDatesSection(html, scores.jv || {}, '<!-- Key JV Dates -->');
+html = rebuildKeyDatesSection(html, scores.varsity || {}, '<!-- Key Varsity Dates -->', '<!-- Varsity Schedule -->');
+html = rebuildKeyDatesSection(html, scores.jv || {}, '<!-- Key JV Dates -->', '<!-- Full JV Schedule -->');
 
 // ============================================================
 // 6b. UPDATE DIVISION B STANDINGS
