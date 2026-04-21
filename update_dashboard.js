@@ -1861,20 +1861,23 @@ function generateJVStatsHTML(playerStats, gameResults) {
         }
         const sp = data.seasonPitching;
         if (sp && sp.source && sp.source.includes('GameChanger')) {
+            // Override counting stats from GC season totals (authoritative for IP/H/ER/BB/SO)
             pitching.gp = sp.gp || 0;
             pitching.gs = sp.gs || 0;
-            pitching.w = sp.w || 0;
-            pitching.l = sp.l || 0;
-            pitching.sv = sp.sv || 0;
             pitching.ip = sp.ip || 0;
             pitching.h = sp.h || 0;
             pitching.r = sp.r || 0;
             pitching.er = sp.er || 0;
             pitching.bb = sp.bb || 0;
             pitching.so = sp.so || 0;
-            pitching.pitches = sp.pitches || 0;
-            pitching.strikes = sp.strikes || 0;
-            pitching.bf = sp.bf || 0;
+            // W/L/SV: use seasonPitching ONLY if nonzero, else keep game-level accumulation
+            // (GC season summary often reports 0 wins even when game data has them)
+            if (sp.w > 0) pitching.w = sp.w;
+            if (sp.l > 0) pitching.l = sp.l;
+            if (sp.sv > 0) pitching.sv = sp.sv;
+            // pitches, strikes, bf: keep from game-level accumulation so Strike% and P/BF
+            // ratios are internally consistent (GC seasonPitching doesn't track strikes,
+            // and pitches/bf may cover different game sets than our game entries)
         }
 
         // Attach fielding data
@@ -2130,10 +2133,9 @@ function generateJVStatsHTML(playerStats, gameResults) {
     // OBP = (H + BB + HBP) / (AB + BB + HBP + SAC)
     const obpDen = teamStats.ab + teamStats.bbDrawn + teamStats.batHBP + teamStats.batSAC;
     const teamOBP = obpDen > 0 ? fmtAvg((teamStats.hits + teamStats.bbDrawn + teamStats.batHBP) / obpDen) : '—';
-    const teamHasAllPitchBF = teamStats.pitchBFGames > 0 && teamStats.pitchBFGames === teamStats.totalPitchingGP;
-    const teamHasAllStrikes = teamStats.strikeGames > 0 && teamStats.strikeGames === teamStats.totalPitchingGP;
-    const strikePct = teamHasAllStrikes && teamStats.pitches > 0 ? Math.round((teamStats.strikes / teamStats.pitches) * 100) + '%' : '—';
-    const pitchesPerBF = teamHasAllPitchBF && teamStats.bf > 0 ? (teamStats.pitches / teamStats.bf).toFixed(1) : '—';
+    // Strike% and P/BF: show if we have the underlying data, regardless of source
+    const strikePct = (teamStats.strikes > 0 && teamStats.pitches > 0) ? Math.round((teamStats.strikes / teamStats.pitches) * 100) + '%' : '—';
+    const pitchesPerBF = (teamStats.pitches > 0 && teamStats.bf > 0) ? (teamStats.pitches / teamStats.bf).toFixed(1) : '—';
     const cleanPct = teamStats.cleanTracked && teamStats.defInningsLogged > 0
         ? Math.round((teamStats.cleanInnings / teamStats.defInningsLogged) * 100) + '%'
         : '—';
@@ -2254,10 +2256,10 @@ function generateJVStatsHTML(playerStats, gameResults) {
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.er}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.bb}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.so}</td>`;
-        const hasAllPitchBF = player.pitching.pitchBFGames > 0 && player.pitching.pitchBFGames === player.pitching.gp;
-        const hasAllStrikes = player.pitching.strikeGames > 0 && player.pitching.strikeGames === player.pitching.gp;
-        const sPct = hasAllStrikes && player.pitching.pitches > 0 ? Math.round((player.pitching.strikes / player.pitching.pitches) * 100) + '%' : '—';
-        const pbf = hasAllPitchBF && player.pitching.bf > 0 ? (player.pitching.pitches / player.pitching.bf).toFixed(1) : '—';
+        // Strike% and P/BF: show if we have the underlying data (pitches, strikes, bf)
+        // regardless of whether it came from seasonPitching or game accumulation
+        const sPct = (player.pitching.strikes > 0 && player.pitching.pitches > 0) ? Math.round((player.pitching.strikes / player.pitching.pitches) * 100) + '%' : '—';
+        const pbf = (player.pitching.pitches > 0 && player.pitching.bf > 0) ? (player.pitching.pitches / player.pitching.bf).toFixed(1) : '—';
         html += `<td style="text-align: center; padding: 8px;">${era}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${whip}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${sPct}</td>`;
