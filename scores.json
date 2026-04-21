@@ -5500,7 +5500,7 @@
   "newsLog": [
     {
       "date": "2026-04-21",
-      "text": "Varsity game added: Apr 20 L 2-6 vs Blind Brook (first league game). Ficarrotta 6.2IP took the loss. Full GameChanger season stats (batting/pitching/fielding) updated for all 15 varsity players through 9 GP (5-4). Record: W streak snapped, now 5-4."
+      "text": "Varsity game added: Apr 20 L 2-5 vs Blind Brook (first league game). Ficarrotta 6.2IP took the loss. Full GameChanger season stats (batting/pitching/fielding) updated for all 15 varsity players through 9 GP (5-4). Record: W streak snapped, now 5-4."
     },
     {
       "date": "2026-04-19",
@@ -7704,6 +7704,15 @@
       "loser": "Ardsley",
       "loserRuns": 7,
       "source": "Ardsley MaxPreps"
+    },
+    {
+      "date": "2026-04-20",
+      "winner": "Blind Brook",
+      "winnerRuns": 5,
+      "loser": "Dobbs Ferry",
+      "loserRuns": 2,
+      "source": "GameChanger",
+      "league": true
     }
   ],
   "teamIntel": {
@@ -7728,11 +7737,12 @@
       "stars": []
     },
     "Blind Brook": {
-      "record": "6-3",
+      "record": "7-3",
       "dsRecord": "6-3",
       "confRecord": "6-2",
-      "streak": "W1",
+      "streak": "W2",
       "recentResults": [
+        "W 5-2 vs Dobbs Ferry (Apr 20, league)",
         "W 5-1 vs Briarcliff (Apr 18)",
         "L 6-11 vs Westlake (Apr 17)",
         "W 2-1 vs North Salem (Apr 14)"
@@ -8090,56 +8100,66 @@
   },
   "teamSeasonStats": {
     "source": "GameChanger",
-    "asOf": "2026-04-18",
-    "gp": 8,
-    "record": "5-3",
+    "asOf": "2026-04-20",
+    "gp": 9,
+    "record": "5-4",
     "batting": {
-      "pa": 258,
-      "ab": 214,
-      "avg": ".304",
-      "obp": ".416",
-      "ops": ".800",
-      "slg": ".383",
-      "h": 65,
-      "1b": 50,
-      "2b": 14,
+      "pa": 291,
+      "ab": 240,
+      "avg": ".296",
+      "obp": ".408",
+      "ops": ".783",
+      "slg": ".375",
+      "h": 71,
+      "1b": 54,
+      "2b": 16,
       "3b": 0,
       "hr": 1,
-      "rbi": 41,
-      "r": 52,
-      "bb": 30,
-      "so": 52,
-      "kl": 22,
+      "rbi": 43,
+      "r": 54,
+      "bb": 35,
+      "so": 63,
+      "kl": 28,
       "hbp": 12,
-      "sac": 1,
-      "sf": 1,
-      "sb": 36,
-      "cs": 4,
-      "sbPct": "90.00"
+      "sac": 2,
+      "sf": 2,
+      "sb": 40,
+      "cs": 5,
+      "sbPct": "88.89",
+      "roe": 10,
+      "fc": 10
     },
     "pitching": {
-      "ip": 53.1,
-      "era": "3.281",
-      "whip": "1.688",
-      "h": 50,
-      "r": 48,
-      "er": 25,
-      "bb": 40,
-      "so": 66,
-      "kl": 24,
-      "hbp": 14,
-      "pitches": 1018,
-      "bf": 277,
+      "ip": 60.1,
+      "gp": 9,
+      "gs": 9,
+      "bf": 306,
+      "pitches": 1123,
       "w": 5,
-      "l": 3,
-      "sv": 1
+      "l": 4,
+      "sv": 1,
+      "h": 55,
+      "r": 53,
+      "er": 29,
+      "bb": 43,
+      "so": 74,
+      "kl": 26,
+      "hbp": 14,
+      "era": "3.365",
+      "whip": "1.624",
+      "lob": 71,
+      "bk": 1,
+      "wp": 1,
+      "baa": ".223",
+      "sbAllowed": 32,
+      "sbPct": "94.12"
     },
     "fielding": {
-      "tc": 231,
-      "a": 44,
-      "po": 160,
-      "fpct": ".883",
-      "e": 27,
+      "tc": 260,
+      "a": 50,
+      "po": 181,
+      "e": 29,
+      "fpct": ".888",
       "dp": 3
     }
   }
