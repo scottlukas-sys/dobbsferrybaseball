@@ -458,10 +458,15 @@ function buildWeeklyScores() {
         }
     }
 
-    // Opponent results this week
+    // Opponent results this week (exclude DF games — already listed above)
     const oppResults = scores.opponentResults || [];
+    const dfNames = ['dobbs ferry', 'dobbs', 'df'];
     for (const g of oppResults) {
         if (g.date >= week.monStr && g.date <= week.sunStr) {
+            // Skip if this game involves Dobbs Ferry (already shown as a DF game)
+            const wLower = (g.winner || '').toLowerCase();
+            const lLower = (g.loser || '').toLowerCase();
+            if (dfNames.some(n => wLower.includes(n) || lLower.includes(n))) continue;
             const d = new Date(g.date + 'T12:00:00');
             const hasScore = g.winnerRuns > 0 || g.loserRuns > 0;
             const scoreLine = hasScore
@@ -1204,10 +1209,14 @@ function buildJvWeeklyScores() {
         }
     }
 
-    // JV opponent scores this week
+    // JV opponent scores this week (exclude DF JV games — already listed above)
     const jvOppResults = scores.jvOpponentScores || [];
+    const dfJvNames = ['dobbs ferry', 'dobbs', 'df'];
     for (const g of jvOppResults) {
         if (g.date >= week.monStr && g.date <= week.sunStr) {
+            const wLower = (g.winner || '').toLowerCase();
+            const lLower = (g.loser || '').toLowerCase();
+            if (dfJvNames.some(n => wLower.includes(n) || lLower.includes(n))) continue;
             const d = new Date(g.date + 'T12:00:00');
             const hasScore = g.winnerRuns > 0 || g.loserRuns > 0;
             const scoreLine = hasScore
