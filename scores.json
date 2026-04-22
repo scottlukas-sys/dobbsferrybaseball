@@ -8812,5 +8812,253 @@
       "fpct": ".888",
       "dp": 3
     }
+  },
+  "jvOpponentScores": [
+    {
+      "date": "2026-03-26",
+      "winner": "Bronxville JV",
+      "winnerRuns": 12,
+      "loser": "Hastings JV",
+      "loserRuns": 2,
+      "source": "digitalsports:hastings_jv"
+    },
+    {
+      "date": "2026-03-27",
+      "winner": "Edgemont JV",
+      "winnerRuns": 17,
+      "loser": "Hastings JV",
+      "loserRuns": 1,
+      "source": "digitalsports:hastings_jv"
+    },
+    {
+      "date": "2026-04-06",
+      "winner": "Rye Neck JV",
+      "winnerRuns": 11,
+      "loser": "Hastings JV",
+      "loserRuns": 1,
+      "source": "digitalsports:hastings_jv"
+    },
+    {
+      "date": "2026-04-08",
+      "winner": "Hastings JV",
+      "winnerRuns": 6,
+      "loser": "Putnam Valley JV",
+      "loserRuns": 3,
+      "source": "digitalsports:hastings_jv"
+    },
+    {
+      "date": "2026-04-10",
+      "winner": "Scarsdale JV",
+      "winnerRuns": 17,
+      "loser": "Hastings JV",
+      "loserRuns": 6,
+      "source": "digitalsports:hastings_jv"
+    },
+    {
+      "date": "2026-04-06",
+      "winner": "Rye Neck JV",
+      "winnerRuns": 9,
+      "loser": "Blind Brook JV",
+      "loserRuns": 8,
+      "source": "digitalsports:ryeneck_jv"
+    },
+    {
+      "date": "2026-04-08",
+      "winner": "Rye Neck JV",
+      "winnerRuns": 11,
+      "loser": "Hastings JV",
+      "loserRuns": 1,
+      "source": "digitalsports:ryeneck_jv"
+    },
+    {
+      "date": "2026-04-11",
+      "winner": "Bronxville JV",
+      "winnerRuns": 11,
+      "loser": "Rye Neck JV",
+      "loserRuns": 2,
+      "source": "digitalsports:ryeneck_jv"
+    },
+    {
+      "date": "2026-04-14",
+      "winner": "Byram Hills JV",
+      "winnerRuns": 12,
+      "loser": "Rye Neck JV",
+      "loserRuns": 2,
+      "source": "digitalsports:ryeneck_jv"
+    },
+    {
+      "date": "2026-04-16",
+      "winner": "Rye Neck JV",
+      "winnerRuns": 18,
+      "loser": "Valhalla JV",
+      "loserRuns": 8,
+      "source": "digitalsports:ryeneck_jv"
+    },
+    {
+      "date": "2026-04-17",
+      "winner": "Pleasantville JV",
+      "winnerRuns": 10,
+      "loser": "Rye Neck JV",
+      "loserRuns": 0,
+      "source": "digitalsports:ryeneck_jv"
+    },
+    {
+      "date": "2026-03-25",
+      "winner": "Irvington JV",
+      "winnerRuns": 18,
+      "loser": "Saunders JV",
+      "loserRuns": 1,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
+      "date": "2026-03-27",
+      "winner": "Irvington JV",
+      "winnerRuns": 13,
+      "loser": "Lincoln JV",
+      "loserRuns": 7,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
+      "date": "2026-04-10",
+      "winner": "Briarcliff JV",
+      "winnerRuns": 13,
+      "loser": "Irvington JV",
+      "loserRuns": 3,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
+      "date": "2026-04-13",
+      "winner": "Irvington JV",
+      "winnerRuns": 17,
+      "loser": "Leffell JV",
+      "loserRuns": 3,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
+      "date": "2026-04-13",
+      "winner": "Irvington JV",
+      "winnerRuns": 7,
+      "loser": "Dobbs Ferry JV",
+      "loserRuns": 3,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
+      "date": "2026-04-18",
+      "winner": "Irvington JV",
+      "winnerRuns": 24,
+      "loser": "Lincoln JV",
+      "loserRuns": 4,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
+      "date": "2026-03-26",
+      "winner": "Leffell JV",
+      "winnerRuns": 13,
+      "loser": "Sleepy Hollow JV",
+      "loserRuns": 5,
+      "source": "digitalsports:sleepyhollow_jv"
+    },
+    {
+      "date": "2026-04-08",
+      "winner": "Dobbs Ferry JV",
+      "winnerRuns": 11,
+      "loser": "Sleepy Hollow JV",
+      "loserRuns": 7,
+      "source": "digitalsports:sleepyhollow_jv"
+    },
+    {
+      "date": "2026-04-10",
+      "winner": "Sleepy Hollow JV",
+      "winnerRuns": 14,
+      "loser": "Saunders JV",
+      "loserRuns": 1,
+      "source": "digitalsports:sleepyhollow_jv"
+    },
+    {
+      "date": "2026-04-14",
+      "winner": "Sleepy Hollow JV",
+      "winnerRuns": 10,
+      "loser": "Saunders JV",
+      "loserRuns": 1,
+      "source": "digitalsports:sleepyhollow_jv"
+    }
+  ],
+  "jvSweepConfig": {
+    "trackedSchools": {
+      "Hastings": {
+        "dsId": "66384",
+        "jvLevelId": "1090757",
+        "dsHost": "66384.digitalsports.com"
+      },
+      "Rye Neck": {
+        "dsId": "69557",
+        "jvLevelId": "990105",
+        "dsHost": "69557.digitalsports.com"
+      },
+      "Irvington": {
+        "dsId": "63518",
+        "jvLevelId": "2069019",
+        "dsHost": "63518.digitalsports.com"
+      },
+      "Sleepy Hollow": {
+        "dsId": "68463",
+        "jvLevelId": "1763834",
+        "dsHost": "68463.digitalsports.com"
+      }
+    },
+    "allSchoolJvIds": {
+      "Dobbs Ferry": {
+        "dsHost": "72456.digitalsports.com",
+        "jvLevelId": "1049607"
+      },
+      "Blind Brook": {
+        "dsHost": "54075.digitalsports.com",
+        "jvLevelId": "1576270"
+      },
+      "Hastings": {
+        "dsHost": "66384.digitalsports.com",
+        "jvLevelId": "1090757"
+      },
+      "Valhalla": {
+        "dsHost": "59152.digitalsports.com",
+        "jvLevelId": "514627"
+      },
+      "Tuckahoe": {
+        "dsHost": "59612.digitalsports.com",
+        "jvLevelId": "2082440"
+      },
+      "Edgemont": {
+        "dsHost": "73139.digitalsports.com",
+        "jvLevelId": "2082435"
+      },
+      "Irvington": {
+        "dsHost": "63518.digitalsports.com",
+        "jvLevelId": "2069019"
+      },
+      "Sleepy Hollow": {
+        "dsHost": "68463.digitalsports.com",
+        "jvLevelId": "1763834"
+      },
+      "Westlake": {
+        "dsHost": "53309.digitalsports.com",
+        "jvLevelId": "1091717"
+      },
+      "Ardsley": {
+        "dsHost": "ardsley.digitalsports.com",
+        "jvLevelId": "2063258"
+      },
+      "Leffell": {
+        "dsHost": "leffellathletics.digitalsports.com",
+        "jvLevelId": "2082436"
+      },
+      "Haldane": {
+        "dsHost": "haldaneathleticsschedule.digitalsports.com",
+        "jvLevelId": "1244829"
+      },
+      "Rye Neck": {
+        "dsHost": "69557.digitalsports.com",
+        "jvLevelId": "990105"
+      }
+    }
   }
 }

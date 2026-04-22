@@ -1181,38 +1181,84 @@ html = html.replace(jvNextFourRegex, `$1
 
             $2`);
 
-// Update JV Scores section
-function buildJvScores() {
-    const sortedDates = Object.keys(scores.jv).sort().reverse();
-    if (sortedDates.length === 0) {
-        return '<div class="empty-state">\n                    <p>No JV games played yet. Season opens Apr 7.</p>\n                </div>';
+// Update JV Scores This Week section (mirrors Varsity buildWeeklyScores)
+function buildJvWeeklyScores() {
+    const week = getWeekBounds(today);
+    let allGames = [];
+
+    // DF JV games this week
+    for (const [date, g] of Object.entries(scores.jv)) {
+        if (date >= week.monStr && date <= week.sunStr) {
+            const d = new Date(date + 'T12:00:00');
+            const won = g.df > g.opp;
+            allGames.push({
+                date,
+                sortDate: date,
+                dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
+                line: `<span class="df-name">Dobbs Ferry JV ${g.df}</span>, ${g.opponent} ${g.opp}`,
+                isDF: true,
+                badge: won ? 'W' : 'L',
+                badgeColor: won ? '#D4A017' : '#888',
+                source: g.source || 'Reported'
+            });
+        }
     }
 
-    let html = '';
-    for (const date of sortedDates) {
-        const g = scores.jv[date];
-        const d = new Date(date + 'T12:00:00');
-        const shortMonth = formatShortMonth(d);
-        const won = g.df > g.opp;
-        const dfColor = won ? '#D4A017' : '#888';
-        const badgeColor = won ? '#D4A017' : '#888';
-        const badgeText = won ? 'W' : 'L';
-
-        html += `
-                <div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <div style="font-size: 12px; color: #888; margin-bottom: 4px;">${shortMonth} ${d.getDate()}</div>
-                        <div style="font-size: 16px; font-weight: 700;"><span style="color: ${dfColor};">Dobbs Ferry ${g.df}</span>, ${g.opponent} ${g.opp}</div>
-                        <div style="font-size: 12px; color: #888; margin-top: 4px;">Source: ${g.source || 'Reported'}</div>
-                    </div>
-                    <span class="game-badge" style="background-color: ${badgeColor};">${badgeText}</span>
-                </div>`;
+    // JV opponent scores this week
+    const jvOppResults = scores.jvOpponentScores || [];
+    for (const g of jvOppResults) {
+        if (g.date >= week.monStr && g.date <= week.sunStr) {
+            const d = new Date(g.date + 'T12:00:00');
+            const hasScore = g.winnerRuns > 0 || g.loserRuns > 0;
+            const scoreLine = hasScore
+                ? `${g.winner} ${g.winnerRuns}, ${g.loser} ${g.loserRuns}`
+                : `${g.winner} def. ${g.loser}`;
+            allGames.push({
+                date: g.date,
+                sortDate: g.date,
+                dateDisplay: `${formatShortMonth(d)} ${d.getDate()}`,
+                line: scoreLine,
+                isDF: false,
+                badge: null,
+                badgeColor: null,
+                source: g.source || 'DigitalSports'
+            });
+        }
     }
-    return html;
+
+    // Sort by date
+    allGames.sort((a, b) => a.sortDate.localeCompare(b.sortDate));
+
+    if (allGames.length === 0) {
+        return `<p style="color: #888; font-size: 14px;">No JV scores reported this week (${week.monDisplay}\u2013${week.sunDisplay}).</p>`;
+    }
+
+    // Chunk into columns of 4
+    const chunks = [];
+    for (let i = 0; i < allGames.length; i += 4) {
+        chunks.push(allGames.slice(i, i + 4));
+    }
+
+    let out = '                <div class="scores-columns">\n';
+    for (const chunk of chunks) {
+        out += '                    <div class="scores-col"><table class="scores-table"><tbody>\n';
+        for (const g of chunk) {
+            const rowClass = g.isDF ? ' class="df-row"' : '';
+            const badgeHtml = g.badge
+                ? `<span class="badge-${g.badge.toLowerCase()}">${g.badge}</span>`
+                : '';
+            out += `                        <tr${rowClass}><td class="score-date">${g.dateDisplay}</td><td class="score-matchup">${g.line}</td><td class="score-result">${badgeHtml}</td></tr>\n`;
+        }
+        out += '                    </tbody></table></div>\n';
+    }
+    out += '                </div>';
+    return out;
 }
 
-const jvScoresRegex = /(<!-- JV Scores -->\s*<div class="card">\s*<h2>JV Scores<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- Key JV Dates))/;
-html = html.replace(jvScoresRegex, `$1\n                ${buildJvScores()}\n            </div>\n\n            `);
+const jvWeekBounds = getWeekBounds(today);
+const jvWeekRangeText = `${jvWeekBounds.monDisplay}\u2013${jvWeekBounds.sunDisplay}`;
+const jvScoresRegex = /(<!-- JV Scores -->\s*<div class="card">\s*)<h2>(?:JV Scores|Scores This Week)<\/h2>([\s\S]*?)(<\/div>\s*(?=\s*<!-- Key JV Dates))/;
+html = html.replace(jvScoresRegex, `$1<h2>Scores This Week</h2>\n                <p style="font-size: 12px; color: #888; margin-bottom: 12px;">${jvWeekRangeText} \u2014 DF JV games and league opponents</p>\n${buildJvWeeklyScores()}\n            </div>\n\n            `);
 
 // ============================================================
 // 8. PLAYERS TO WATCH — AUTO-GENERATED BY PIS (Player Impact Score)
