@@ -1272,7 +1272,11 @@ html = html.replace(jvScoresRegex, `$1<h2>Scores This Week</h2>\n               
 //   Varsity Hitting (cumulative):
 //     H(1) + 2B(+0.75) + 3B(+1.25) + HR(+2) + RBI(0.75) + R(0.5)
 //     + BB(0.75) + HBP(0.75) + SB(0.5) + multi-hit(+1.5) - SO(0.25) - E(0.5)
-//   Pitching (per appearance): W(3) + SV(2) + IP(1) + SO(1) - ER(1.5)
+//   JV Pitching (per pitching appearance):
+//     IP(1.5) + SO(1.0) - ER(1.25) - BB(0.5) - H(0.25)
+//     W and SV dropped (team stats / irrelevant at JV)
+//     Denominator = pitching appearances only (not total games)
+//   Varsity Pitching (cumulative): W(3) + SV(2) + IP(1) + SO(1) - ER(1.5)
 //   Threshold: min 2 games with stats for "confirmed"; 1 game = "emerging"
 
 function latestLineForRole(gameLines, role) {
@@ -1325,11 +1329,22 @@ function computePIS(playerStats) {
         }
 
         if (p) {
-            pitPts += (p.w || 0) * 3;
-            pitPts += (p.sv || 0) * 2;
-            pitPts += ipToInnings(p.ip || 0) * 1;
-            pitPts += (p.so || 0) * 1;
-            pitPts -= (p.er || 0) * 1.5;
+            if (isJV) {
+                // JV v2 pitching: value innings, Ks, penalize walks/hits/earned runs
+                // W and SV dropped (team stats / irrelevant at JV level)
+                pitPts += ipToInnings(p.ip || 0) * 1.5;   // depth = coach confidence
+                pitPts += (p.so || 0) * 1.0;               // clean outs, bypass defense
+                pitPts -= (p.er || 0) * 1.25;              // run prevention (reduced: BB now also penalized)
+                pitPts -= (p.bb || 0) * 0.5;               // free bases, 100% pitcher's fault
+                pitPts -= (p.h || 0) * 0.25;               // contact allowed (lighter: partly batter skill)
+            } else {
+                // Varsity/opponents: original formula
+                pitPts += (p.w || 0) * 3;
+                pitPts += (p.sv || 0) * 2;
+                pitPts += ipToInnings(p.ip || 0) * 1;
+                pitPts += (p.so || 0) * 1;
+                pitPts -= (p.er || 0) * 1.5;
+            }
         }
 
         return { total: hitPts + pitPts, hit: hitPts, pit: pitPts };
@@ -1381,6 +1396,7 @@ function computePIS(playerStats) {
             let hitTotal = 0;
             let pitTotal = 0;
             let gamesWithStats = 0;
+            let pitchingApps = 0;  // separate counter for pitching appearances
             const gameLines = [];
 
             // --- GC / MaxPreps season totals support ---
@@ -1407,7 +1423,7 @@ function computePIS(playerStats) {
                 } : null;
                 const fakePitching = sp ? {
                     ip: sp.ip || 0, so: sp.so || 0, er: sp.er || 0,
-                    w: sp.w || 0, sv: sp.sv || 0
+                    w: sp.w || 0, sv: sp.sv || 0, bb: sp.bb || 0, h: sp.h || 0
                 } : null;
                 if (fakeHitting || fakePitching) {
                     const fakeGame = { hitting: fakeHitting, pitching: fakePitching };
@@ -1416,6 +1432,7 @@ function computePIS(playerStats) {
                     hitTotal += pts.hit;
                     pitTotal += pts.pit;
                     gamesWithStats = ss.gp || 1;
+                    if (fakePitching) pitchingApps = sp.gp || sp.app || 1;
                     useSeasonStats = true;
                 }
             } else if (ss && (ss.batting || ss.pitching)) {
@@ -1426,6 +1443,7 @@ function computePIS(playerStats) {
                 hitTotal += pts.hit;
                 pitTotal += pts.pit;
                 gamesWithStats = ss.gp || ss.batting?.gp || ss.pitching?.app || 1;
+                if (ss.pitching) pitchingApps = ss.pitching.app || ss.pitching.gp || 1;
                 useSeasonStats = true;
             }
 
@@ -1447,6 +1465,7 @@ function computePIS(playerStats) {
                 // but still build display lines for the game log
                 if (!useSeasonStats) {
                     gamesWithStats++;
+                    if (hasPitching) pitchingApps++;
                     const gamePts = scoreGame(game, poolLabel);
                     totalWeighted += gamePts.total;
                     hitTotal += gamePts.hit;
@@ -1457,13 +1476,14 @@ function computePIS(playerStats) {
                 if (gl) gameLines.push(gl);
             }
 
-            // JV: PIS per game played (normalizes for missed games / playing time)
+            // JV: PIS per game (hitting uses total games, pitching uses pitching appearances)
             // Varsity/opponents: cumulative season total
             const isJVPool = poolLabel === 'jv';
             const pisRaw = totalWeighted;
-            const pis = (isJVPool && gamesWithStats > 0) ? Math.round((pisRaw / gamesWithStats) * 10) / 10 : Math.round(pisRaw * 10) / 10;
             const hitPtsPerGame = (isJVPool && gamesWithStats > 0) ? Math.round((hitTotal / gamesWithStats) * 10) / 10 : Math.round(hitTotal * 10) / 10;
-            const pitPtsPerGame = (isJVPool && gamesWithStats > 0) ? Math.round((pitTotal / gamesWithStats) * 10) / 10 : Math.round(pitTotal * 10) / 10;
+            const pitPtsPerGame = (isJVPool && pitchingApps > 0) ? Math.round((pitTotal / pitchingApps) * 10) / 10 : Math.round(pitTotal * 10) / 10;
+            // Combined PIS: for JV, use role-appropriate denominator
+            const pis = (isJVPool) ? (pitTotal > hitTotal ? pitPtsPerGame : hitPtsPerGame) : Math.round(pisRaw * 10) / 10;
             const tier = gamesWithStats >= 3 ? 'confirmed' : gamesWithStats >= 2 ? 'trending' : gamesWithStats >= 1 ? 'emerging' : 'roster';
 
             // Include player if they have stats OR tags/notes (roster intel)
@@ -1577,6 +1597,7 @@ function computePIS(playerStats) {
                 pitPts: pitPtsPerGame,
                 role,
                 gamesWithStats,
+                pitchingApps,
                 tier,
                 gameLines,
                 tags,
@@ -1844,7 +1865,7 @@ function buildJVPlayersToWatch(pisData) {
         .map(p => Object.assign({}, p, { role: 'pitcher' }))
         .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
         .slice(0, 6);
-    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score per game played. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35) − E(.5). Runs scored excluded (lineup-dependent). Pitching: W(3) + SV(2) + IP + SO − ER(1.5). Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35) − E(.5). R excluded (lineup-dependent). Pitching: IP(1.5) + SO − ER(1.25) − BB(.5) − H(.25). W/SV dropped. Hitting avg'd over games played; pitching avg'd over pitching appearances. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
     if (jvHitters.length === 0 && jvPitchers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
     }
@@ -1852,7 +1873,7 @@ function buildJVPlayersToWatch(pisData) {
         const tierColors = { confirmed: '#D4A017', trending: '#D4A017', emerging: '#888', roster: '#555' };
         const tierColor = tierColors[p.tier] || '#888';
         const badgeVal = p.role === 'pitcher' ? (p.pitPts || p.pis) : (p.hitPts || p.pis);
-        const badgeLabel = p.role === 'pitcher' ? 'PIS/gm' : 'PIS/gm';
+        const badgeLabel = 'PIS Per Game';
         let t = `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
         t += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
         t += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
