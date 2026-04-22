@@ -1480,8 +1480,8 @@ function computePIS(playerStats) {
             // Varsity/opponents: cumulative season total
             const isJVPool = poolLabel === 'jv';
             const pisRaw = totalWeighted;
-            const hitPtsPerGame = (isJVPool && gamesWithStats > 0) ? Math.round((hitTotal / gamesWithStats) * 10) / 10 : Math.round(hitTotal * 10) / 10;
-            const pitPtsPerGame = (isJVPool && pitchingApps > 0) ? Math.round((pitTotal / pitchingApps) * 10) / 10 : Math.round(pitTotal * 10) / 10;
+            const hitPtsPerGame = (isJVPool && gamesWithStats > 0) ? Math.round((hitTotal / gamesWithStats) * 100) / 100 : Math.round(hitTotal * 10) / 10;
+            const pitPtsPerGame = (isJVPool && pitchingApps > 0) ? Math.round((pitTotal / pitchingApps) * 100) / 100 : Math.round(pitTotal * 10) / 10;
             // Combined PIS: for JV, use role-appropriate denominator
             const pis = (isJVPool) ? (pitTotal > hitTotal ? pitPtsPerGame : hitPtsPerGame) : Math.round(pisRaw * 10) / 10;
             const tier = gamesWithStats >= 3 ? 'confirmed' : gamesWithStats >= 2 ? 'trending' : gamesWithStats >= 1 ? 'emerging' : 'roster';
@@ -1873,12 +1873,13 @@ function buildJVPlayersToWatch(pisData) {
     function tile(p) {
         const tierColors = { confirmed: '#D4A017', trending: '#D4A017', emerging: '#888', roster: '#555' };
         const tierColor = tierColors[p.tier] || '#888';
-        const badgeVal = p.role === 'pitcher' ? (p.pitPts || p.pis) : (p.hitPts || p.pis);
+        const badgeValRaw = p.role === 'pitcher' ? (p.pitPts || p.pis) : (p.hitPts || p.pis);
+        const badgeVal = (typeof badgeValRaw === 'number') ? badgeValRaw.toFixed(2) : badgeValRaw;
         const badgeLabel = 'PIS Per Game';
         let t = `<div style="background-color: #222; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #2B5DAA;">`;
         t += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
         t += `<strong style="color: #fff; font-size: 13px;">${p.name}</strong>`;
-        if (badgeVal > 0) {
+        if (badgeValRaw > 0) {
             t += `<span style="background: ${tierColor}22; color: ${tierColor}; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${badgeLabel} ${badgeVal}</span>`;
         }
         t += `</div>`;
