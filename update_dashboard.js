@@ -1692,16 +1692,6 @@ function buildPlayersToWatch(pisData) {
             for (const p of dfPitchers) sectionHtml += renderDFTile(p);
             sectionHtml += `</div>`;
         }
-        // DF record summary
-        const vRec = computeRecord(scores.varsity);
-        const scoreDates = Object.keys(scores.varsity).sort();
-        const gameSummaries = scoreDates.map(d => {
-            const g = scores.varsity[d];
-            const dt = new Date(d + 'T12:00:00');
-            const won = g.df > g.opp;
-            return `${won ? 'W' : 'L'} ${g.df}-${g.opp} vs ${g.opponent} ${formatShortMonth(dt)} ${dt.getDate()}`;
-        }).join(', ');
-        sectionHtml += `<p style="color: #888; font-size: 11px; margin-top: 8px; margin-bottom: 0;">Record: ${vRec.record} (${gameSummaries})</p>`;
     }
     sectionHtml += `</div>`;
 
