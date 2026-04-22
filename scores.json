@@ -1008,6 +1008,22 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 4,
+              "h": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ],
         "seasonStats": {
@@ -1202,6 +1218,32 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 4,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 6.2,
+              "h": 4,
+              "r": 5,
+              "er": 5,
+              "so": 8,
+              "bb": 3,
+              "w": 0,
+              "sv": 0
+            },
+            "source": "@dfeaglesbaseball Instagram (Apr 20)"
           }
         ],
         "seasonStats": {
@@ -1411,6 +1453,23 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null,
+            "source": "@dfeaglesbaseball Instagram (RBI only, no full hitting line)"
           }
         ],
         "seasonStats": {
@@ -2584,6 +2643,22 @@
               "bf": 11
             },
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "h": 2,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0
+            },
+            "pitching": null
           }
         ],
         "seasonStats": {
@@ -6870,6 +6945,22 @@
       "date": "2026-04-21",
       "type": "jv-update",
       "text": "JV game added: Apr 20 L 7-8 vs Blind Brook JV. Full GameChanger season stats (batting/pitching/fielding) loaded for all 14 JV players through 6 GP. New dashboard features: BB%, HBP, E columns on JV batting table; team FPCT in JV team stats."
+    },
+    {
+      "date": "2026-04-22",
+      "type": "daily-sweep",
+      "headline": "Daily sweep Apr 22",
+      "text": "Added Apr 20 Blind Brook game player stats from Instagram (Foley 2-3 2B, Evan 1-4 2B R, Ficarrotta 1-4 RBI + 6.2IP 4H 5R 3BB 8K, Kollar RBI). Updated Blind Brook intel to 7-3 (1-0 league). Updated Hastings intel to 5-5 (2-1 league, W4 streak). DF plays at Blind Brook today Apr 22 4:30 PM. No new opponent results since Apr 20.",
+      "sourcesChecked": {
+        "digitalsports_df": "\u2705 ok \u2014 5-4, conf 3-4, schedule confirmed",
+        "digitalsports_blindbrook": "\u2705 ok \u2014 7-3, conf 7-2, full schedule confirmed",
+        "digitalsports_hastings": "\u2705 ok \u2014 5-5, conf 2-1, W4 streak confirmed",
+        "instagram_dfeaglesbaseball": "\u2705 ok \u2014 latest post Apr 20 (BB 5-2 box score captured)",
+        "maxpreps_opponents": "\u26a0\ufe0f stats-pages-return-leaderboards-only \u2014 Hastings, Blind Brook, Edgemont, Haldane, Rye Neck show leaderboards not full tables; Valhalla and Irvington show no data entered",
+        "section1athletics": "\u26a0\ufe0f not-checked-this-run \u2014 no Chrome navigation completed",
+        "gamechanger": "\u26a0\ufe0f not-checked-this-run \u2014 no new DF games since Apr 20",
+        "digitalsports_other_opponents": "\u26a0\ufe0f webfetch-returns-ajax-shell \u2014 DS pages require Chrome; checked BB and Hastings via Chrome only"
+      }
     }
   ],
   "opponentResults": [
@@ -8279,7 +8370,7 @@
         "maxpreps:ardsley_stats"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Ardsley is 0-3 with losses to Hendrick Hudson 1-5, Hastings 3-4, and Putnam Valley 7-11. Only 3 games played. Limited stats on MaxPreps: J. Jaeger .500 in small sample. Goldberg and Kleinman both 0.00 ERA in limited innings. Up next: vs Tuckahoe (today Apr 21), vs Albertus Magnus (Apr 22).",
       "stars": [
         "J. Jaeger .500 (limited AB)",
@@ -8288,24 +8379,24 @@
       "leagueStatus": "Conference 2-D League (NOT in DF's league)"
     },
     "Blind Brook": {
-      "record": "7-3 (2-0 league)",
-      "dsRecord": "6-3",
-      "confRecord": "6-2",
+      "record": "7-3 (1-0 league)",
+      "dsRecord": "7-3",
+      "confRecord": "7-2",
       "streak": "W2",
       "recentResults": [
         "W 5-2 at Dobbs Ferry (Apr 20, league)",
-        "W 5-1 at Briarcliff (Apr 18, league)",
-        "W 11-6 vs Westlake (Apr 17)"
+        "W 5-1 at Briarcliff (Apr 18)",
+        "L 6-11 vs Westlake (Apr 17)"
       ],
       "blurb": "5-game win streak. DS 5-2 confirmed by MaxPreps. Strong offense (40 RF). Plays Westlake today (Apr 17), at Briarcliff Sat, then at DF Mon (league opener). Key threat.",
       "sources": [
-        "maxpreps:blind_brook_stats",
-        "maxpreps:blind_brook",
-        "digitalsports:blind_brook"
+        "digitalsports:blindbrook",
+        "ig:@dfeaglesbaseball",
+        "maxpreps:blind_brook"
       ],
-      "lastDeepSweep": "2026-04-21",
-      "intel": "Blind Brook is 7-3, 7-2 conf per DS (2-0 league per MaxPreps). W2 streak after beating DF 5-2 and Briarcliff 5-1 in back-to-back league wins. Jack Pastor hitting .387 with 10 SB. Home 3-1, Away 4-2. Up next: vs Dobbs Ferry (Apr 22), vs Leffell (Apr 23).",
-      "lastUpdated": "2026-04-21",
+      "lastDeepSweep": "2026-04-22",
+      "intel": "Blind Brook is 7-3 overall, 1-0 in Class B league play after beating DF 5-2 on Apr 20. On a 2-game win streak. Strong offense across the board. Hosts Dobbs Ferry today (Apr 22) and Leffell (Apr 23). Up next: vs Dobbs Ferry Apr 22 4:30 PM (league).",
+      "lastUpdated": "2026-04-22",
       "stars": [
         "J. Pastor .387/10 SB",
         "M. Ebenstein .355/8 RBI/6 SB",
@@ -8329,7 +8420,7 @@
         "maxpreps:edgemont_stats"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Edgemont is 3-7 but on a 2-game win streak after beating North Salem 16-6 and Irvington 14-4. Lost 7 of first 8. Terrasi hitting .393 with 8 SB. Vargas .500 in limited ABs with 1 HR. Kusinitz 2.45 ERA. Up next: vs Ardsley (Apr 23), at Eastchester (Apr 25).",
       "stars": [
         "W. Terrasi .393/11H/15R/8SB",
@@ -8355,7 +8446,7 @@
       ],
       "lastDeepSweep": "2026-04-21",
       "intel": "Haldane is 1-7 after losing 6 straight since their opening day W 11-0 vs Peekskill. Lost to Pawling 9-3 (league) and DF 16-2. Only competitive game was 12-10 loss to Sleepy Hollow. A. Swan hitting .370, Theo Swan .333 with 9 RBI. Herman 3.18 ERA. Up next: at Pawling (Apr 22), vs Putnam Valley (Apr 24).",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "stars": [
         "A. Swan .370/10 H/7 R",
         "T. Swan .333/9 RBI/3 2B",
@@ -8364,10 +8455,10 @@
       "leagueStatus": "Conference 3-E League (NOT in DF's league)"
     },
     "Hastings": {
-      "record": "5-5 (2-0 league)",
-      "dsRecord": "3-6",
-      "confRecord": "2-2",
-      "streak": "L1",
+      "record": "5-5 (2-1 league)",
+      "dsRecord": "5-5",
+      "confRecord": "2-1",
+      "streak": "W4",
       "recentResults": [
         "W 6-4 vs Tuckahoe (Apr 20, league)",
         "W 11-2 at Valhalla (Apr 18)",
@@ -8377,11 +8468,11 @@
       "sources": [
         "digitalsports:hastings",
         "maxpreps:hastings",
-        "maxpreps:hastings_stats"
+        "ig:@hastingsbase"
       ],
-      "lastDeepSweep": "2026-04-21",
-      "intel": "Hastings is 5-5, 2-1 conf per DS, on a W4 streak. Losses all to quality opponents (Pelham 0-2, Westlake 2-11, Eastchester 0-1 in extras, Putnam Valley 8-12, Scarsdale 5-8). Ciszewski .389/2.10 ERA. Sbrega leads with 9 SB. Home 4-3, Away 1-2. Up next: at Tuckahoe (Apr 22), at Dobbs Ferry (Apr 24).",
-      "lastUpdated": "2026-04-21",
+      "lastDeepSweep": "2026-04-22",
+      "intel": "Hastings is 5-5 overall, 2-1 in Class B league play (W at Blind Brook, L at Westlake, W vs Tuckahoe). On a 4-game win streak after rough early season. Plays at Tuckahoe today (Apr 22, league), then at Dobbs Ferry Fri (Apr 24, league). Up next: at Tuckahoe Apr 22 4:30 PM (league).",
+      "lastUpdated": "2026-04-22",
       "stars": [
         "A. Ciszewski .389/2.10 ERA",
         "J. Sbrega 9 SB",
@@ -8405,7 +8496,7 @@
         "opponentResults_crossref"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Irvington is 2-2 with wins over Sleepy Hollow (9-8) and Haldane (13-0) but losses to Blind Brook (8-12) and Edgemont (4-14). Got blown out by Edgemont on Apr 20. Long gap in schedule with next game not until May 4. No player stats entered on MaxPreps. Up next: at Sleepy Hollow (May 4).",
       "stars": [],
       "singleSource": false,
@@ -8427,7 +8518,7 @@
         "opponentResults_crossref"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Leffell School not on MaxPreps. Lost to Rye Neck 5-11 (Apr 20, league), lost to Putnam Valley 3-5 (Apr 16), beat Edgemont 5-1 (Apr 15). Up next: at Rye Neck (Apr 22, league).",
       "stars": [],
       "singleSource": false,
@@ -8444,10 +8535,11 @@
       ],
       "blurb": "Hot at 4-1 with 4-game win streak. Beat DF 11-10 in a close one. Beat Ardsley 10-1. Strong offense. Non-league but quality test opponent.",
       "sources": [
-        "maxpreps:pearl_river"
+        "maxpreps:pearl_river",
+        "digitalsports:df_schedule_confirms_game"
       ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastDeepSweep": "2026-04-22",
+      "lastUpdated": "2026-04-22",
       "intel": "Pearl River is 1-1 per MaxPreps (likely more games not entered). Beat Edgemont 10-0 but lost to Nyack 7-8. DF beat PR 11-10 on Apr 11 but that game not showing on PR's MaxPreps page. Very limited data available. No player stats entered. Up next: vs Albertus Magnus (Apr 23).",
       "stars": [],
       "singleSource": true,
@@ -8470,7 +8562,7 @@
       ],
       "lastDeepSweep": "2026-04-21",
       "intel": "Rye Neck is 4-5 after beating Leffell 11-5 (league) snapping a 5-game losing streak. Started 3-0 but dropped 5 straight to Pawling, Bronxville, Byram Hills, Valhalla, Pleasantville. R. Sutter .500 AVG, Strzalkowski .400, Gellman .333 with 10H/8RBI. Mandell 3.00 ERA. Up next: vs Leffell (Apr 22), vs Tuckahoe (Apr 24).",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "stars": [
         "R. Sutter .500 AVG",
         "Z. Strzalkowski .400/8H/2 2B",
@@ -8483,13 +8575,16 @@
       "dsRecord": "4-2-1",
       "confRecord": "3-2-1",
       "streak": "W3",
-      "recentResults": [],
+      "recentResults": [
+        "L 3-7 at Dobbs Ferry (Mar 27)"
+      ],
       "blurb": "Surging at 4-2-1 with 3-game win streak. Destroying Poughkeepsie (14-0, 22-1). DF beat them 7-3 early. Much improved since then. Non-league opponent.",
       "sources": [
-        "maxpreps:saunders_404"
+        "maxpreps:saunders_404",
+        "digitalsports:saunders"
       ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastDeepSweep": "2026-04-22",
+      "lastUpdated": "2026-04-22",
       "intel": "Saunders has no MaxPreps page or data available. DF beat Saunders 7-3 on Mar 27. No recent intel. Up next: unknown.",
       "stars": [],
       "singleSource": true,
@@ -8511,7 +8606,7 @@
         "opponentResults_crossref"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Sleepy Hollow is 5-5, 3-3 in their league. Beat BOSSJ 13-0 on Apr 20 but lost a close one 10-11 to Woodlands. Won big 18-1 at DF. Alternating wins and losses. No player stats on MaxPreps. Up next: vs BOSSJ (Apr 22), vs Roosevelt (Apr 25).",
       "stars": [],
       "singleSource": false,
@@ -8534,7 +8629,7 @@
       ],
       "lastDeepSweep": "2026-04-21",
       "intel": "Tuckahoe is 2-6, 0-1 in league after losing to Hastings 4-6. Only wins: Somers 6-5 and North Salem 18-1. Romeo .333 with 9H/7RBI. Brice .304 with 1 3B. Carney 3.41 ERA leads staff. Up next: at Ardsley (today Apr 21), vs Hastings (Apr 22).",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "stars": [
         "J. Romeo .333/9H/7RBI",
         "C. Brice .304/7H/1 3B",
@@ -8558,7 +8653,7 @@
         "opponentResults_crossref"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Valhalla is 2-4 with wins over Edgemont (9-6) and Rye Neck (14-3). Got hammered by Westlake twice (5-17, 3-13) and lost to Hastings 2-11. No player stats on MaxPreps. League play starts Apr 24 vs Briarcliff. Up next: vs Briarcliff (Apr 24, league).",
       "stars": [],
       "singleSource": false,
@@ -8580,7 +8675,7 @@
         "opponentResults_crossref"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Westlake is 6-4 with quality wins over Hastings (11-2), Valhalla (17-5 and 13-3), and John Jay (14-12). Lost to Tappan Zee 12-1 and Pelham 8-3. Beat Blind Brook 11-6 but lost to Briarcliff 2-1. No player stats on MaxPreps. DF plays Westlake May 11. Up next: at Croton-Harmon (Apr 22).",
       "stars": [],
       "singleSource": false,
@@ -8603,7 +8698,7 @@
       ],
       "lastDeepSweep": "2026-04-21",
       "intel": "Briarcliff is 4-4-1 after losing league opener 1-5 to Blind Brook. Beat Westlake 2-1 and Tuckahoe 8-5 but lost to Greeley 2-5 and Pleasantville 3-5. Tied Brewster 5-5. Up next: at Putnam Valley (today Apr 21, league), vs Putnam Valley (Apr 22, league).",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "stars": [],
       "singleSource": false,
       "leagueStatus": "No Conference 3-D games; likely Conference 3-E"
@@ -8624,7 +8719,7 @@
         "opponentResults_crossref"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Pawling is 5-1 on a 4-game win streak. Won league opener 9-3 at Haldane. Beat Dover 6-1, Tuckahoe 13-5, and shut out Rye Neck 6-0. Only loss was 2-8 at Rye Neck in game 2. Outscoring opponents 51-22. Up next: vs Haldane (Apr 22, league).",
       "stars": [],
       "singleSource": false,
@@ -8646,7 +8741,7 @@
         "opponentResults_crossref"
       ],
       "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-21",
+      "lastUpdated": "2026-04-22",
       "intel": "Putnam Valley is 6-3 with wins over Hastings (12-8), Ardsley (11-7), and Leffell (5-3 league). Lost to Mahopac, Brewster, and Croton-Harmon. Strong pitching depth. No player stats on MaxPreps. Up next: vs Briarcliff (today Apr 21, league).",
       "stars": [],
       "singleSource": false,
