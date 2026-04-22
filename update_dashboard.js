@@ -1372,8 +1372,15 @@ function computePIS(playerStats) {
             const sp = data.seasonPitching;
             let useSeasonStats = false;
 
-            if (ss && ss.source && ss.source.includes('GameChanger')) {
-                // GameChanger flat format — seasonStats has batting fields directly
+            // Per-game data coverage check: if we have per-game data for all
+            // (or nearly all) GC games, use per-game accumulation for accurate
+            // multi-hit bonuses. Only fall back to GC aggregates when per-game
+            // data is incomplete (e.g. opponents with only season totals).
+            const gcGP = ss ? (ss.gp || 0) : 0;
+            const hasFullGameLog = games.length > 0 && games.length >= gcGP;
+
+            if (ss && ss.source && ss.source.includes('GameChanger') && !hasFullGameLog) {
+                // GameChanger flat format — use aggregate when per-game data is incomplete
                 const fakeHitting = (ss.h > 0 || ss.bb > 0 || ss.r > 0 || ss.rbi > 0) ? {
                     h: ss.h || 0, '2b': ss['2b'] || 0, '3b': ss['3b'] || 0,
                     hr: ss.hr || 0, rbi: ss.rbi || 0, r: ss.r || 0, bb: ss.bb || 0, ab: ss.ab || 0
@@ -1383,12 +1390,8 @@ function computePIS(playerStats) {
                     w: sp.w || 0, sv: sp.sv || 0
                 } : null;
                 if (fakeHitting || fakePitching) {
-                    // For multi-hit bonus: compute based on per-game average
-                    // A hitter averaging 2+ H/G gets the bonus applied proportionally
                     const fakeGame = { hitting: fakeHitting, pitching: fakePitching };
                     const pts = scoreGame(fakeGame);
-                    // Remove the per-game multi-hit bonus (applied once in scoreGame)
-                    // and re-apply based on actual multi-hit games if we know them
                     totalWeighted += pts.total;
                     hitTotal += pts.hit;
                     pitTotal += pts.pit;

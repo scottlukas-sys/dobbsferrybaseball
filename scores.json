@@ -4889,7 +4889,7 @@
               "er": 0,
               "so": 4,
               "bb": 0,
-              "w": 1,
+              "w": 0,
               "sv": 0,
               "pitches": 18,
               "strikes": 13,
@@ -4961,6 +4961,24 @@
               "e": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook JV",
+            "hitting": null,
+            "pitching": {
+              "ip": 3.0,
+              "h": 3,
+              "r": 4,
+              "er": 2,
+              "bb": 2,
+              "so": 1,
+              "w": 0,
+              "sv": 0,
+              "pitches": 44,
+              "strikes": 26,
+              "bf": 15
+            }
           }
         ],
         "seasonStats": {
