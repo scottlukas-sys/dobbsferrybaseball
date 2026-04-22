@@ -1841,10 +1841,11 @@ const varsityTeamGames = Object.keys(scores.varsity || {}).length;
 const jvTeamGames = Object.keys(scores.jv || {}).length;
 const PA_PER_GAME_THRESHOLD = 2.0;
 const IP_PER_GAME_THRESHOLD = 1.0;
+const JV_IP_PER_GAME_THRESHOLD = 0.83;  // ~5 IP over 6 games (lower bar: smaller staff, more rotation)
 const varsityMinPA = Math.floor(varsityTeamGames * PA_PER_GAME_THRESHOLD);
 const jvMinPA = Math.floor(jvTeamGames * PA_PER_GAME_THRESHOLD);
 const varsityMinIP = Math.floor(varsityTeamGames * IP_PER_GAME_THRESHOLD);
-const jvMinIP = Math.floor(jvTeamGames * IP_PER_GAME_THRESHOLD);
+const jvMinIP = Math.floor(jvTeamGames * JV_IP_PER_GAME_THRESHOLD);
 console.log(`\nQualification thresholds — Varsity (${varsityTeamGames}G): ${varsityMinPA} PA / ${varsityMinIP} IP | JV (${jvTeamGames}G): ${jvMinPA} PA / ${jvMinIP} IP`);
 
 const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Cumulative Player Impact Score, season to date. Hitters: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.75) + R(.5) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.25) − E(.5). Pitchers: W(3) + SV(2) + IP + SO − ER(1.5). Separate leaderboards for hitters and pitchers. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
