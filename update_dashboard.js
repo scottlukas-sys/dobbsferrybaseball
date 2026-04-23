@@ -1423,7 +1423,7 @@ function computePIS(playerStats) {
                 const fakeHitting = (ss.h > 0 || ss.bb > 0 || ss.r > 0 || ss.rbi > 0 || (ss.ab || 0) > 0) ? {
                     h: ss.h || 0, '2b': ss['2b'] || 0, '3b': ss['3b'] || 0,
                     hr: ss.hr || 0, rbi: ss.rbi || 0, r: ss.r || 0, bb: ss.bb || 0, ab: ss.ab || 0,
-                    hbp: ss.hbp || 0, sb: ss.sb || 0, so: ss.so || 0, e: ss.e || 0
+                    hbp: ss.hbp || 0, sb: ss.sb || 0, so: ss.so || 0, e: (data.fielding && data.fielding.e) || ss.e || 0
                 } : null;
                 const fakePitching = sp ? {
                     ip: sp.ip || 0, so: sp.so || 0, er: sp.er || 0,
