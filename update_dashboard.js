@@ -2014,8 +2014,9 @@ function buildVarsityTeamLeaders() {
         leaders.wins = byWins.filter(p => p.pitching.w === topW).map(p => p.name).join(', ');
     }
 
-    // ERA (min varsityMinIP)
-    const byERA = players.filter(p => ipToInnings(p.pitching.ip) >= varsityMinIP).sort((a, b) => {
+    // ERA (min 8 IP — hardcoded lower bar while roster is still building innings)
+    const VARSITY_ERA_MIN_IP = 8;
+    const byERA = players.filter(p => ipToInnings(p.pitching.ip) >= VARSITY_ERA_MIN_IP).sort((a, b) => {
         const eraA = (a.pitching.er * 7) / ipToInnings(a.pitching.ip);
         const eraB = (b.pitching.er * 7) / ipToInnings(b.pitching.ip);
         return eraA - eraB;
@@ -2048,7 +2049,7 @@ function buildVarsityTeamLeaders() {
     html += `<div style="border-top: 1px solid #333; margin: 8px 0 15px 0;"></div>`;
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
     html += '<h3 style="margin-top: 0; margin-bottom: 4px; color: #D4A017;">Team Leaders</h3>';
-    html += `<p style="font-size: 11px; color: #666; margin: 0 0 12px 0;">Min. ${varsityMinPA} PA (2.0/team game) to qualify for rate stats. Min. ${varsityMinIP} IP (1.0/team game) for ERA.</p>`;
+    html += `<p style="font-size: 11px; color: #666; margin: 0 0 12px 0;">Min. ${varsityMinPA} PA (2.0/team game) to qualify for rate stats. Min. ${VARSITY_ERA_MIN_IP} IP for ERA.</p>`;
     html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">';
     html += `<div><strong>AVG:</strong> ${leaders.avg}</div>`;
     html += `<div><strong>OBP:</strong> ${leaders.obp}</div>`;
