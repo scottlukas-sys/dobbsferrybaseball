@@ -95,6 +95,16 @@
       "league": true,
       "errors": null,
       "innings": 7
+    },
+    "2026-04-22": {
+      "opponent": "Blind Brook",
+      "df": 1,
+      "opp": 3,
+      "location": "Away",
+      "source": "GameChanger",
+      "league": true,
+      "errors": 1,
+      "innings": 7
     }
   },
   "jv": {
@@ -236,6 +246,14 @@
       "homeRuns": 5,
       "awayRuns": 11,
       "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-22",
+      "home": "Blind Brook",
+      "away": "Dobbs Ferry",
+      "homeRuns": 3,
+      "awayRuns": 1,
+      "source": "GameChanger"
     }
   ],
   "playerStats": {
@@ -296,6 +314,10 @@
           "gp": 3,
           "pa": 5,
           "ab": 3,
+          "avg": ".667",
+          "obp": ".800",
+          "ops": "1.800",
+          "slg": "1.000",
           "h": 2,
           "1b": 1,
           "2b": 1,
@@ -313,23 +335,16 @@
           "cs": 0,
           "roe": 0,
           "fc": 0,
-          "avg": "0.667",
-          "obp": "0.800",
-          "slg": "1.000",
-          "ops": "1.800",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 0,
           "a": 0,
           "po": 0,
+          "fpct": 0,
           "e": 0,
-          "dp": 0,
-          "fpct": ".000",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 0
         }
       },
       "Andrew Zendel": {
@@ -497,12 +512,34 @@
               "bf": 15
             },
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 1,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "seasonStats": {
-          "gp": 9,
-          "pa": 33,
-          "ab": 31,
+          "gp": 10,
+          "pa": 36,
+          "ab": 33,
+          "avg": ".364",
+          "obp": ".417",
+          "ops": ".841",
+          "slg": ".424",
           "h": 12,
           "1b": 10,
           "2b": 2,
@@ -513,20 +550,15 @@
           "bb": 1,
           "so": 6,
           "kl": 0,
-          "hbp": 1,
+          "hbp": 2,
           "sac": 0,
           "sf": 0,
           "sb": 1,
           "cs": 0,
           "roe": 3,
           "fc": 1,
-          "avg": "0.387",
-          "obp": "0.424",
-          "slg": "0.452",
-          "ops": "0.876",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
           "ip": 14.1,
@@ -544,23 +576,18 @@
           "so": 16,
           "kl": 6,
           "hbp": 2,
-          "lob": 22,
-          "bk": 0,
-          "wp": 0,
           "era": "1.465",
           "whip": "1.674",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
-          "tc": 21,
-          "a": 3,
-          "po": 17,
+          "tc": 28,
+          "a": 5,
+          "po": 22,
+          "fpct": 0.964,
           "e": 1,
-          "dp": 2,
-          "fpct": "0.952",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 2
         }
       },
       "Justin Costa": {
@@ -644,6 +671,10 @@
           "gp": 4,
           "pa": 7,
           "ab": 5,
+          "avg": ".400",
+          "obp": ".500",
+          "ops": "1.100",
+          "slg": ".600",
           "h": 2,
           "1b": 1,
           "2b": 1,
@@ -661,13 +692,8 @@
           "cs": 0,
           "roe": 0,
           "fc": 0,
-          "avg": "0.400",
-          "obp": "0.500",
-          "slg": "0.600",
-          "ops": "1.100",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
           "ip": 0.1,
@@ -685,23 +711,18 @@
           "so": 0,
           "kl": 0,
           "hbp": 1,
-          "lob": 0,
-          "bk": 0,
-          "wp": 0,
           "era": "105.000",
           "whip": "15.000",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 18,
           "a": 3,
           "po": 13,
+          "fpct": 0.889,
           "e": 2,
-          "dp": 1,
-          "fpct": "0.889",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 1
         }
       },
       "Donovan Dilore-Troy": {
@@ -838,12 +859,34 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "seasonStats": {
-          "gp": 9,
-          "pa": 25,
-          "ab": 20,
+          "gp": 10,
+          "pa": 28,
+          "ab": 23,
+          "avg": ".348",
+          "obp": ".464",
+          "ops": ".856",
+          "slg": ".391",
           "h": 8,
           "1b": 7,
           "2b": 1,
@@ -860,24 +903,17 @@
           "sb": 4,
           "cs": 0,
           "roe": 1,
-          "fc": 1,
-          "avg": "0.400",
-          "obp": "0.520",
-          "slg": "0.450",
-          "ops": "0.970",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "fc": 2,
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "fielding": {
-          "tc": 23,
-          "a": 10,
-          "po": 10,
+          "tc": 26,
+          "a": 12,
+          "po": 11,
+          "fpct": 0.885,
           "e": 3,
-          "dp": 2,
-          "fpct": "0.870",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 2
         }
       },
       "Jake Evan": {
@@ -1030,14 +1066,36 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 4,
+              "r": 0,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "seasonStats": {
-          "gp": 9,
-          "pa": 35,
-          "ab": 28,
-          "h": 10,
-          "1b": 9,
+          "gp": 10,
+          "pa": 39,
+          "ab": 32,
+          "avg": ".375",
+          "obp": ".487",
+          "ops": ".893",
+          "slg": ".406",
+          "h": 12,
+          "1b": 11,
           "2b": 1,
           "3b": 0,
           "hr": 0,
@@ -1053,23 +1111,16 @@
           "cs": 0,
           "roe": 0,
           "fc": 0,
-          "avg": "0.357",
-          "obp": "0.486",
-          "slg": "0.393",
-          "ops": "0.879",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "fielding": {
-          "tc": 22,
-          "a": 7,
-          "po": 8,
+          "tc": 27,
+          "a": 10,
+          "po": 10,
+          "fpct": 0.741,
           "e": 7,
-          "dp": 1,
-          "fpct": "0.682",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 1
         }
       },
       "Anthony Ficarrotta": {
@@ -1250,22 +1301,44 @@
               "sv": 0
             },
             "source": "@dfeaglesbaseball Instagram (Apr 20)"
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "e": 1
+            }
           }
         ],
         "seasonStats": {
-          "gp": 9,
-          "pa": 34,
-          "ab": 32,
-          "h": 11,
-          "1b": 8,
+          "gp": 10,
+          "pa": 37,
+          "ab": 35,
+          "avg": ".371",
+          "obp": ".405",
+          "ops": ".920",
+          "slg": ".514",
+          "h": 13,
+          "1b": 10,
           "2b": 2,
           "3b": 0,
           "hr": 1,
           "rbi": 6,
           "r": 11,
           "bb": 2,
-          "so": 6,
-          "kl": 2,
+          "so": 7,
+          "kl": 3,
           "hbp": 0,
           "sac": 0,
           "sf": 0,
@@ -1273,13 +1346,8 @@
           "cs": 1,
           "roe": 1,
           "fc": 3,
-          "avg": "0.344",
-          "obp": "0.382",
-          "slg": "0.500",
-          "ops": "0.882",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
           "ip": 19,
@@ -1297,23 +1365,18 @@
           "so": 29,
           "kl": 9,
           "hbp": 3,
-          "lob": 12,
-          "bk": 1,
-          "wp": 0,
           "era": "2.579",
-          "whip": "0.947",
+          "whip": ".947",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
-          "tc": 23,
+          "tc": 28,
           "a": 4,
-          "po": 19,
-          "e": 0,
-          "dp": 0,
-          "fpct": "1.000",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "po": 23,
+          "fpct": 0.964,
+          "e": 1,
+          "dp": 0
         }
       },
       "DJ Kollar": {
@@ -1476,12 +1539,34 @@
             },
             "pitching": null,
             "source": "@dfeaglesbaseball Instagram (RBI only, no full hitting line)"
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "seasonStats": {
-          "gp": 9,
-          "pa": 35,
-          "ab": 25,
+          "gp": 10,
+          "pa": 38,
+          "ab": 28,
+          "avg": ".214",
+          "obp": ".395",
+          "ops": ".752",
+          "slg": ".357",
           "h": 6,
           "1b": 2,
           "2b": 4,
@@ -1499,13 +1584,8 @@
           "cs": 0,
           "roe": 1,
           "fc": 2,
-          "avg": "0.240",
-          "obp": "0.429",
-          "slg": "0.400",
-          "ops": "0.829",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
           "ip": 1.2,
@@ -1523,23 +1603,18 @@
           "so": 3,
           "kl": 2,
           "hbp": 0,
-          "lob": 1,
-          "bk": 0,
-          "wp": 0,
-          "era": "0.000",
+          "era": ".000",
           "whip": "1.800",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
-          "tc": 40,
-          "a": 0,
-          "po": 39,
+          "tc": 46,
+          "a": 1,
+          "po": 44,
+          "fpct": 0.978,
           "e": 1,
-          "dp": 0,
-          "fpct": "0.975",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 0
         }
       },
       "Ian Hwangbo": {
@@ -1686,19 +1761,55 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 3,
+              "h": 2,
+              "r": 3,
+              "er": 3,
+              "bb": 4,
+              "so": 1,
+              "w": 0,
+              "sv": 0,
+              "hbp": 1,
+              "bf": 14,
+              "pitches": 51,
+              "strikes": 24
+            }
           }
         ],
         "seasonStats": {
-          "gp": 9,
-          "pa": 30,
-          "ab": 24,
-          "h": 8,
-          "1b": 6,
+          "gp": 10,
+          "pa": 33,
+          "ab": 27,
+          "avg": ".333",
+          "obp": ".455",
+          "ops": ".862",
+          "slg": ".407",
+          "h": 9,
+          "1b": 7,
           "2b": 2,
           "3b": 0,
           "hr": 0,
           "rbi": 4,
-          "r": 5,
+          "r": 6,
           "bb": 6,
           "so": 7,
           "kl": 5,
@@ -1709,47 +1820,37 @@
           "cs": 1,
           "roe": 1,
           "fc": 2,
-          "avg": "0.333",
-          "obp": "0.467",
-          "slg": "0.417",
-          "ops": "0.884",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
-          "ip": 5,
-          "gp": 2,
-          "gs": 0,
-          "bf": 26,
-          "pitches": 88,
+          "ip": 8,
+          "gp": 3,
+          "gs": 1,
+          "bf": 40,
+          "pitches": 139,
           "w": 0,
-          "l": 0,
+          "l": 1,
           "sv": 0,
-          "h": 3,
-          "r": 5,
-          "er": 2,
-          "bb": 7,
-          "so": 5,
+          "h": 5,
+          "r": 8,
+          "er": 5,
+          "bb": 11,
+          "so": 6,
           "kl": 2,
-          "hbp": 0,
-          "lob": 7,
-          "bk": 0,
-          "wp": 0,
-          "era": "2.800",
+          "hbp": 1,
+          "era": "4.375",
           "whip": "2.000",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 21,
           "a": 11,
           "po": 5,
+          "fpct": 0.762,
           "e": 5,
-          "dp": 0,
-          "fpct": "0.762",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 0
         }
       },
       "Brendan Marron": {
@@ -1886,14 +1987,50 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 1,
+              "h": 0,
+              "r": 0,
+              "er": 0,
+              "bb": 0,
+              "so": 1,
+              "w": 0,
+              "sv": 0,
+              "hbp": 0,
+              "bf": 3,
+              "pitches": 8,
+              "strikes": 7
+            }
           }
         ],
         "seasonStats": {
-          "gp": 9,
-          "pa": 34,
-          "ab": 27,
-          "h": 6,
-          "1b": 5,
+          "gp": 10,
+          "pa": 37,
+          "ab": 30,
+          "avg": ".233",
+          "obp": ".378",
+          "ops": ".645",
+          "slg": ".267",
+          "h": 7,
+          "1b": 6,
           "2b": 1,
           "3b": 0,
           "hr": 0,
@@ -1909,23 +2046,37 @@
           "cs": 2,
           "roe": 1,
           "fc": 0,
-          "avg": "0.222",
-          "obp": "0.382",
-          "slg": "0.259",
-          "ops": "0.641",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "fielding": {
-          "tc": 52,
-          "a": 6,
-          "po": 43,
+          "tc": 54,
+          "a": 7,
+          "po": 44,
+          "fpct": 0.944,
           "e": 3,
-          "dp": 0,
-          "fpct": "0.942",
+          "dp": 0
+        },
+        "seasonPitching": {
+          "ip": 1,
+          "gp": 1,
+          "gs": 0,
+          "bf": 3,
+          "pitches": 8,
+          "w": 0,
+          "l": 0,
+          "sv": 0,
+          "h": 0,
+          "r": 0,
+          "er": 0,
+          "bb": 0,
+          "so": 1,
+          "kl": 1,
+          "hbp": 0,
+          "era": ".000",
+          "whip": ".000",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         }
       },
       "Drew Kimerling": {
@@ -2039,70 +2190,96 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 2,
+              "h": 2,
+              "r": 0,
+              "er": 0,
+              "bb": 1,
+              "so": 2,
+              "w": 0,
+              "sv": 0,
+              "hbp": 2,
+              "bf": 11,
+              "pitches": 38,
+              "strikes": 17
+            }
           }
         ],
         "seasonStats": {
-          "gp": 7,
-          "pa": 25,
-          "ab": 22,
-          "h": 4,
-          "1b": 4,
+          "gp": 8,
+          "pa": 28,
+          "ab": 25,
+          "avg": ".240",
+          "obp": ".296",
+          "ops": ".536",
+          "slg": ".240",
+          "h": 6,
+          "1b": 6,
           "2b": 0,
           "3b": 0,
           "hr": 0,
           "rbi": 4,
           "r": 2,
           "bb": 1,
-          "so": 4,
+          "so": 5,
           "kl": 1,
           "hbp": 1,
           "sac": 1,
           "sf": 0,
           "sb": 3,
-          "cs": 0,
+          "cs": 1,
           "roe": 2,
           "fc": 1,
-          "avg": "0.182",
-          "obp": "0.250",
-          "slg": "0.182",
-          "ops": "0.432",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
-          "ip": 2.2,
-          "gp": 2,
+          "ip": 4.2,
+          "gp": 3,
           "gs": 0,
-          "bf": 15,
-          "pitches": 41,
+          "bf": 26,
+          "pitches": 79,
           "w": 0,
           "l": 0,
           "sv": 1,
-          "h": 4,
+          "h": 6,
           "r": 3,
           "er": 2,
-          "bb": 0,
-          "so": 3,
+          "bb": 1,
+          "so": 5,
           "kl": 1,
-          "hbp": 3,
-          "lob": 4,
-          "bk": 0,
-          "wp": 0,
-          "era": "5.250",
+          "hbp": 5,
+          "era": "3.000",
           "whip": "1.500",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 7,
           "a": 0,
           "po": 5,
+          "fpct": 0.714,
           "e": 2,
-          "dp": 0,
-          "fpct": "0.714",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 0
         }
       },
       "Rodger Frisch": {
@@ -2202,6 +2379,10 @@
           "gp": 5,
           "pa": 12,
           "ab": 9,
+          "avg": ".000",
+          "obp": ".167",
+          "ops": ".167",
+          "slg": ".000",
           "h": 0,
           "1b": 0,
           "2b": 0,
@@ -2219,13 +2400,8 @@
           "cs": 0,
           "roe": 0,
           "fc": 0,
-          "avg": "0.000",
-          "obp": "0.167",
-          "slg": "0.000",
-          "ops": "0.167",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
           "ip": 0.1,
@@ -2243,23 +2419,18 @@
           "so": 0,
           "kl": 0,
           "hbp": 0,
-          "lob": 2,
-          "bk": 0,
-          "wp": 0,
-          "era": "0.000",
+          "era": ".000",
           "whip": "3.000",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 12,
           "a": 2,
           "po": 10,
+          "fpct": 1,
           "e": 0,
-          "dp": 2,
-          "fpct": "1.000",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 2
         }
       },
       "Brendan Molina": {
@@ -2347,6 +2518,10 @@
           "gp": 3,
           "pa": 4,
           "ab": 4,
+          "avg": ".000",
+          "obp": ".000",
+          "ops": ".000",
+          "slg": ".000",
           "h": 0,
           "1b": 0,
           "2b": 0,
@@ -2364,13 +2539,8 @@
           "cs": 0,
           "roe": 0,
           "fc": 0,
-          "avg": "0.000",
-          "obp": "0.000",
-          "slg": "0.000",
-          "ops": "0.000",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
           "ip": 10.2,
@@ -2388,23 +2558,18 @@
           "so": 9,
           "kl": 2,
           "hbp": 4,
-          "lob": 16,
-          "bk": 0,
-          "wp": 1,
           "era": "5.250",
           "whip": "1.781",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 3,
           "a": 1,
           "po": 1,
+          "fpct": 0.667,
           "e": 1,
-          "dp": 0,
-          "fpct": "0.667",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 0
         }
       },
       "Harrison Brewer": {
@@ -2480,9 +2645,13 @@
           }
         ],
         "seasonStats": {
-          "gp": 4,
+          "gp": 5,
           "pa": 8,
           "ab": 6,
+          "avg": ".000",
+          "obp": ".250",
+          "ops": ".250",
+          "slg": ".000",
           "h": 0,
           "1b": 0,
           "2b": 0,
@@ -2500,23 +2669,16 @@
           "cs": 0,
           "roe": 0,
           "fc": 0,
-          "avg": ".000",
-          "obp": "0.250",
-          "slg": ".000",
-          "ops": "0.250",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 7,
           "a": 1,
           "po": 4,
+          "fpct": 0.714,
           "e": 2,
-          "dp": 0,
-          "fpct": "0.714",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 0
         }
       },
       "Ethan Gallagher": {
@@ -2552,6 +2714,10 @@
           "gp": 1,
           "pa": 1,
           "ab": 1,
+          "avg": ".000",
+          "obp": ".000",
+          "ops": ".000",
+          "slg": ".000",
           "h": 0,
           "1b": 0,
           "2b": 0,
@@ -2569,13 +2735,8 @@
           "cs": 0,
           "roe": 0,
           "fc": 0,
-          "avg": "0.000",
-          "obp": "0.000",
-          "slg": "0.000",
-          "ops": "0.000",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
           "ip": 1.2,
@@ -2593,23 +2754,18 @@
           "so": 1,
           "kl": 0,
           "hbp": 1,
-          "lob": 2,
-          "bk": 0,
-          "wp": 0,
           "era": "4.200",
           "whip": "2.400",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 0,
           "a": 0,
           "po": 0,
+          "fpct": 0,
           "e": 0,
-          "dp": 0,
-          "fpct": ".000",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 0
         }
       },
       "Ian Foley": {
@@ -2665,21 +2821,43 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-22",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "seasonStats": {
-          "gp": 1,
-          "pa": 3,
-          "ab": 3,
+          "gp": 2,
+          "pa": 6,
+          "ab": 6,
+          "avg": ".333",
+          "obp": ".333",
+          "ops": ".833",
+          "slg": ".500",
           "h": 2,
           "1b": 1,
           "2b": 1,
           "3b": 0,
           "hr": 0,
-          "rbi": 0,
+          "rbi": 1,
           "r": 0,
           "bb": 0,
-          "so": 1,
+          "so": 2,
           "kl": 1,
           "hbp": 0,
           "sac": 0,
@@ -2687,14 +2865,9 @@
           "sb": 0,
           "cs": 1,
           "roe": 0,
-          "fc": 0,
-          "avg": "0.667",
-          "obp": "0.667",
-          "slg": "1.000",
-          "ops": "1.667",
-          "source": "GameChanger (verified)",
-          "asOf": "2026-04-20",
-          "gamesPlayed": 9
+          "fc": 1,
+          "source": "GameChanger",
+          "asOf": "2026-04-22"
         },
         "seasonPitching": {
           "ip": 4.2,
@@ -2712,23 +2885,18 @@
           "so": 8,
           "kl": 4,
           "hbp": 0,
-          "lob": 5,
-          "bk": 0,
-          "wp": 0,
           "era": "4.500",
           "whip": "2.143",
           "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "asOf": "2026-04-22"
         },
         "fielding": {
           "tc": 1,
           "a": 0,
           "po": 0,
+          "fpct": 0,
           "e": 1,
-          "dp": 0,
-          "fpct": "0.000",
-          "source": "GameChanger",
-          "asOf": "2026-04-20"
+          "dp": 0
         }
       }
     },
