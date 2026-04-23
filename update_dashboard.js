@@ -1841,7 +1841,7 @@ const varsityMinIP = Math.floor(varsityTeamGames * IP_PER_GAME_THRESHOLD);
 const jvMinIP = Math.floor(jvTeamGames * JV_IP_PER_GAME_THRESHOLD);
 console.log(`\nQualification thresholds — Varsity (${varsityTeamGames}G): ${varsityMinPA} PA / ${varsityMinIP} IP | JV (${jvTeamGames}G): ${jvMinPA} PA / ${jvMinIP} IP`);
 
-const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.5) + R(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35) − E(.5). Pitching: W(2) + SV(2) + IP(1.5) + SO − ER(1.25) − BB(.5) − H(.25). Hitting avg'd over games played; pitching avg'd over pitching appearances. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
+const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.5) + R(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35) − E(.5). Pitching: W(2) + SV(2) + IP(1.5) + SO(1) − ER(1.25) − BB(.5) − H(.25). Hitting avg'd over games played; pitching avg'd over pitching appearances. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
 
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
 html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n${buildOpponentScoutingReport(pisData)}\n            </div>\n\n            `);
@@ -1859,7 +1859,7 @@ function buildJVPlayersToWatch(pisData) {
         .map(p => Object.assign({}, p, { role: 'pitcher' }))
         .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
         .slice(0, 6);
-    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35) − E(.5). R excluded (lineup-dependent). Pitching: IP(1.5) + SO − ER(1.25) − BB(.5) − H(.25). W/SV dropped. Hitting avg'd over games played; pitching avg'd over pitching appearances. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35) − E(.5). R excluded (lineup-dependent). Pitching: IP(1.5) + SO(1) − ER(1.25) − BB(.5) − H(.25). W/SV dropped. Hitting avg'd over games played; pitching avg'd over pitching appearances. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
     if (jvHitters.length === 0 && jvPitchers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
     }
