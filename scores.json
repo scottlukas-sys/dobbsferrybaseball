@@ -514,6 +514,24 @@
             "source": "GameChanger box score"
           },
           {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 4,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 3,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-22",
             "opp": "Blind Brook",
             "hitting": {
@@ -861,6 +879,24 @@
             "source": "GameChanger box score"
           },
           {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 2,
+              "r": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-22",
             "opp": "Blind Brook",
             "hitting": {
@@ -1066,6 +1102,24 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 4,
+              "r": 1,
+              "h": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 1
+            }
           },
           {
             "date": "2026-04-22",
@@ -1301,6 +1355,38 @@
               "sv": 0
             },
             "source": "@dfeaglesbaseball Instagram (Apr 20)"
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 4,
+              "r": 0,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 3,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 6.2,
+              "h": 4,
+              "r": 5,
+              "er": 4,
+              "bb": 3,
+              "so": 8,
+              "w": 0,
+              "sv": 0,
+              "hbp": 0,
+              "bf": 26,
+              "pitches": 94,
+              "strikes": 62
+            }
           },
           {
             "date": "2026-04-22",
@@ -1541,6 +1627,24 @@
             "source": "@dfeaglesbaseball Instagram (RBI only, no full hitting line)"
           },
           {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "bb": 1,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-22",
             "opp": "Blind Brook",
             "hitting": {
@@ -1761,6 +1865,24 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 2,
+              "hbp": 0,
+              "sb": 0,
+              "e": 1
+            }
           },
           {
             "date": "2026-04-22",
@@ -1989,6 +2111,24 @@
             "source": "GameChanger box score"
           },
           {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 2,
+              "so": 2,
+              "hbp": 0,
+              "sb": 1,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-22",
             "opp": "Blind Brook",
             "hitting": {
@@ -2190,6 +2330,24 @@
             },
             "pitching": null,
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           },
           {
             "date": "2026-04-22",
@@ -2512,6 +2670,24 @@
               "bf": 6
             },
             "source": "GameChanger box score"
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "pitching": {
+              "ip": 0.1,
+              "h": 1,
+              "r": 0,
+              "er": 0,
+              "bb": 0,
+              "so": 0,
+              "w": 0,
+              "sv": 0,
+              "hbp": 0,
+              "bf": 3,
+              "pitches": 11,
+              "strikes": 7
+            }
           }
         ],
         "seasonStats": {
@@ -2821,6 +2997,24 @@
               "sb": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-04-20",
+            "opp": "Blind Brook",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 2,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           },
           {
             "date": "2026-04-22",
