@@ -1274,7 +1274,8 @@ html = html.replace(jvScoresRegex, `$1<h2>Scores This Week</h2>\n               
 // ============================================================
 // PIS Formula (all per-game, 2 decimal precision):
 //   Hitting (shared base): H(1) + 2B(+0.75) + 3B(+1.25) + HR(+2) + BB(0.75)
-//     + HBP(0.75) + SB(0.5) + multi-hit(+1.5) - SO(0.35) - E(0.5)
+//     + HBP(0.75) + SB(0.5) + multi-hit(+1.5) - SO(0.35)
+//     Errors removed from PIS (positional bias). Errors surfaced in Team Leaders.
 //     JV:      RBI(0.25), R dropped
 //     Varsity: RBI(0.5), R(0.25)
 //     Denominator: games with stats
@@ -1327,7 +1328,8 @@ function computePIS(playerStats) {
             hitPts += (h.hbp || 0) * 0.75;       // toughness + on-base
             hitPts += (h.sb || 0) * 0.5;          // speed/aggression
             hitPts -= (h.so || 0) * 0.35;         // nothing happens with a K — same penalty all levels
-            hitPts -= (h.e || 0) * 0.5;           // defensive liability penalty
+            // Errors removed from PIS — positional bias (SS gets 8x more chances than LF).
+            // Errors are surfaced in Team Leaders instead.
             if (hits >= 2) hitPts += 1.5;          // multi-hit game bonus
         }
 
@@ -1841,7 +1843,7 @@ const varsityMinIP = Math.floor(varsityTeamGames * IP_PER_GAME_THRESHOLD);
 const jvMinIP = Math.floor(jvTeamGames * JV_IP_PER_GAME_THRESHOLD);
 console.log(`\nQualification thresholds — Varsity (${varsityTeamGames}G): ${varsityMinPA} PA / ${varsityMinIP} IP | JV (${jvTeamGames}G): ${jvMinPA} PA / ${jvMinIP} IP`);
 
-const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.5) + R(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35) − E(.5). Pitching: W(2) + SV(2) + IP(1.5) + SO(1) − ER(1.25) − BB(.5) − H(.25). Hitting avg'd over games played; pitching avg'd over pitching appearances. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
+const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.5) + R(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35). Pitching: W(2) + SV(2) + IP(1.5) + SO(1) − ER(1.25) − BB(.5) − H(.25). Hitting avg'd over games played; pitching avg'd over pitching appearances. Errors tracked separately in Team Leaders. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
 
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
 html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n${buildOpponentScoutingReport(pisData)}\n            </div>\n\n            `);
@@ -1859,7 +1861,7 @@ function buildJVPlayersToWatch(pisData) {
         .map(p => Object.assign({}, p, { role: 'pitcher' }))
         .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
         .slice(0, 6);
-    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35) − E(.5). R excluded (lineup-dependent). Pitching: IP(1.5) + SO(1) − ER(1.25) − BB(.5) − H(.25). W/SV dropped. Hitting avg'd over games played; pitching avg'd over pitching appearances. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35). R excluded (lineup-dependent). Pitching: IP(1.5) + SO(1) − ER(1.25) − BB(.5) − H(.25). W/SV dropped. Hitting avg'd over games played; pitching avg'd over pitching appearances. Errors tracked separately in Team Leaders. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
     if (jvHitters.length === 0 && jvPitchers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
     }
@@ -2207,7 +2209,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
 
     const leaders = {
         avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—',
-        wins: '—', era: '—', hbp: '—'
+        wins: '—', era: '—', hbp: '—', errors: '—'
     };
 
     // Qualification threshold for rate stats: 2.0 PA per team game
@@ -2316,6 +2318,14 @@ function generateJVStatsHTML(playerStats, gameResults) {
         leaders.hbp = tied.map(p => p.name).join(', ');
     }
 
+    // ERRORS = most errors (fielding)
+    const byErrors = players.filter(p => (p.fielding.e || 0) > 0).sort((a, b) => (b.fielding.e || 0) - (a.fielding.e || 0));
+    if (byErrors.length > 0) {
+        const topE = byErrors[0].fielding.e;
+        const tied = byErrors.filter(p => p.fielding.e === topE);
+        leaders.errors = tied.map(p => p.name).join(', ');
+    }
+
     // Build HTML
     let html = '';
 
@@ -2399,6 +2409,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += `<div><strong>WINS:</strong> ${leaders.wins}</div>`;
     html += `<div><strong>ERA:</strong> ${leaders.era}</div>`;
     html += `<div><strong>HBP:</strong> ${leaders.hbp}</div>`;
+    html += `<div><strong>ERRORS:</strong> ${leaders.errors}</div>`;
     html += '</div>';
     html += '<div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #333; font-size: 11px; color: #999; line-height: 1.6;">';
     html += '<strong>AVG:</strong> batting average (hits ÷ at-bats). &nbsp; ';
