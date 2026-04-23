@@ -1845,8 +1845,234 @@ console.log(`\nQualification thresholds — Varsity (${varsityTeamGames}G): ${va
 
 const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.5) + R(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) − SO(.35). Pitching: W(2) + SV(2) + IP(1.5) + SO(1) − ER(1.25) − BB(.5) − H(.25). Hitting avg'd over games played; pitching avg'd over pitching appearances. Errors tracked separately in Team Leaders. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
 
+// ============================================================
+// VARSITY TEAM LEADERS — mirrors JV Team Leaders section
+// ============================================================
+function buildVarsityTeamLeaders() {
+    const dfPool = scores.playerStats && scores.playerStats.df ? scores.playerStats.df : {};
+    const players = Object.entries(dfPool).map(([name, data]) => {
+        const games = data.games || [];
+        let batting = { h: 0, ab: 0, r: 0, rbi: 0, bb: 0, so: 0, sb: 0, hbp: 0, sac: 0, '2b': 0, '3b': 0, hr: 0, pa: 0 };
+        let pitching = { gp: 0, gs: 0, w: 0, l: 0, sv: 0, ip: 0, h: 0, r: 0, er: 0, bb: 0, so: 0 };
+
+        // Accumulate from per-game data
+        for (const game of games) {
+            if (game.hitting) {
+                const h = game.hitting;
+                batting.h += h.h || 0;
+                batting.ab += h.ab || 0;
+                batting.r += h.r || 0;
+                batting.rbi += h.rbi || 0;
+                batting.bb += h.bb || 0;
+                batting.so += h.so || 0;
+                batting.sb += h.sb || 0;
+                batting.hbp += h.hbp || 0;
+                batting.sac += h.sac || 0;
+                batting['2b'] += h['2b'] || 0;
+                batting['3b'] += h['3b'] || 0;
+                batting.hr += h.hr || 0;
+                batting.pa += (h.ab || 0) + (h.bb || 0) + (h.sac || 0) + (h.hbp || 0);
+            }
+            if (game.pitching) {
+                const p = game.pitching;
+                if (p.ip > 0 || p.w || p.sv) pitching.gp++;
+                if (p.ip > 0) pitching.gs++;
+                pitching.w += p.w || 0;
+                pitching.l += p.l || 0;
+                pitching.sv += p.sv || 0;
+                pitching.ip = outsToIp(ipToOuts(pitching.ip) + ipToOuts(p.ip || 0));
+                pitching.h += p.h || 0;
+                pitching.r += p.r || 0;
+                pitching.er += p.er || 0;
+                pitching.bb += p.bb || 0;
+                pitching.so += p.so || 0;
+            }
+        }
+
+        // Override with GC season totals if available
+        const ss = data.seasonStats;
+        if (ss && ss.source && ss.source.includes('GameChanger')) {
+            batting.ab = ss.ab || 0;
+            batting.h = ss.h || 0;
+            batting.r = ss.r || 0;
+            batting.rbi = ss.rbi || 0;
+            batting.bb = ss.bb || 0;
+            batting.so = ss.so || 0;
+            batting.sac = ss.sac || 0;
+            batting.sb = ss.sb || 0;
+            batting.hbp = ss.hbp || 0;
+            batting['2b'] = ss['2b'] || 0;
+            batting['3b'] = ss['3b'] || 0;
+            batting.hr = ss.hr || 0;
+            batting.pa = ss.pa || ((ss.ab || 0) + (ss.bb || 0) + (ss.sac || 0) + (ss.hbp || 0));
+        }
+        const sp = data.seasonPitching;
+        if (sp && sp.source && sp.source.includes('GameChanger')) {
+            pitching.gp = sp.gp || 0;
+            pitching.gs = sp.gs || 0;
+            pitching.ip = sp.ip || 0;
+            pitching.h = sp.h || 0;
+            pitching.r = sp.r || 0;
+            pitching.er = sp.er || 0;
+            pitching.bb = sp.bb || 0;
+            pitching.so = sp.so || 0;
+            if (sp.w > 0) pitching.w = sp.w;
+            if (sp.l > 0) pitching.l = sp.l;
+            if (sp.sv > 0) pitching.sv = sp.sv;
+        }
+
+        const fielding = data.fielding || {};
+        const fld = {
+            tc: parseInt(fielding.tc) || 0,
+            e: parseInt(fielding.e) || 0
+        };
+
+        return { name, batting, pitching, fielding: fld };
+    });
+
+    const leaders = {
+        avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—',
+        wins: '—', era: '—', hbp: '—', errors: '—'
+    };
+
+    // AVG
+    const byAvg = players.filter(p => p.batting.pa >= varsityMinPA && p.batting.ab >= 1).sort((a, b) => (b.batting.h / b.batting.ab) - (a.batting.h / a.batting.ab));
+    if (byAvg.length > 0) {
+        const topAvg = byAvg[0].batting.h / byAvg[0].batting.ab;
+        const tied = byAvg.filter(p => Math.abs((p.batting.h / p.batting.ab) - topAvg) < 0.0001);
+        leaders.avg = tied.map(p => p.name).join(', ');
+    }
+
+    // OBP
+    const byOBP = players.filter(p => p.batting.pa >= varsityMinPA).sort((a, b) => {
+        const denA = a.batting.ab + a.batting.bb + (a.batting.hbp || 0) + (a.batting.sac || 0);
+        const denB = b.batting.ab + b.batting.bb + (b.batting.hbp || 0) + (b.batting.sac || 0);
+        const obpA = denA > 0 ? (a.batting.h + a.batting.bb + (a.batting.hbp || 0)) / denA : 0;
+        const obpB = denB > 0 ? (b.batting.h + b.batting.bb + (b.batting.hbp || 0)) / denB : 0;
+        return obpB - obpA;
+    });
+    if (byOBP.length > 0) {
+        const den0 = byOBP[0].batting.ab + byOBP[0].batting.bb + (byOBP[0].batting.hbp || 0) + (byOBP[0].batting.sac || 0);
+        const topOBP = den0 > 0 ? (byOBP[0].batting.h + byOBP[0].batting.bb + (byOBP[0].batting.hbp || 0)) / den0 : 0;
+        const tied = byOBP.filter(p => {
+            const den = p.batting.ab + p.batting.bb + (p.batting.hbp || 0) + (p.batting.sac || 0);
+            const obp = den > 0 ? (p.batting.h + p.batting.bb + (p.batting.hbp || 0)) / den : 0;
+            return Math.abs(obp - topOBP) < 0.0001;
+        });
+        leaders.obp = tied.map(p => p.name).join(', ');
+    }
+
+    // OPS
+    const byOPS = players.filter(p => p.batting.ab > 0 && p.batting.pa >= varsityMinPA).sort((a, b) => {
+        const tbA = (a.batting.h || 0) + (a.batting['2b'] || 0) + 2 * (a.batting['3b'] || 0) + 3 * (a.batting.hr || 0);
+        const tbB = (b.batting.h || 0) + (b.batting['2b'] || 0) + 2 * (b.batting['3b'] || 0) + 3 * (b.batting.hr || 0);
+        const denA = a.batting.ab + a.batting.bb + (a.batting.hbp || 0) + (a.batting.sac || 0);
+        const denB = b.batting.ab + b.batting.bb + (b.batting.hbp || 0) + (b.batting.sac || 0);
+        const obpA = denA > 0 ? (a.batting.h + a.batting.bb + (a.batting.hbp || 0)) / denA : 0;
+        const obpB = denB > 0 ? (b.batting.h + b.batting.bb + (b.batting.hbp || 0)) / denB : 0;
+        return (obpB + tbB / b.batting.ab) - (obpA + tbA / a.batting.ab);
+    });
+    if (byOPS.length > 0) {
+        const p0 = byOPS[0];
+        const tb0 = (p0.batting.h || 0) + (p0.batting['2b'] || 0) + 2 * (p0.batting['3b'] || 0) + 3 * (p0.batting.hr || 0);
+        const den0 = p0.batting.ab + p0.batting.bb + (p0.batting.hbp || 0) + (p0.batting.sac || 0);
+        const topOPS = (den0 > 0 ? (p0.batting.h + p0.batting.bb + (p0.batting.hbp || 0)) / den0 : 0) + tb0 / p0.batting.ab;
+        const tied = byOPS.filter(p => {
+            const tb = (p.batting.h || 0) + (p.batting['2b'] || 0) + 2 * (p.batting['3b'] || 0) + 3 * (p.batting.hr || 0);
+            const den = p.batting.ab + p.batting.bb + (p.batting.hbp || 0) + (p.batting.sac || 0);
+            const ops = (den > 0 ? (p.batting.h + p.batting.bb + (p.batting.hbp || 0)) / den : 0) + tb / p.batting.ab;
+            return Math.abs(ops - topOPS) < 0.0001;
+        });
+        leaders.ops = tied.map(p => p.name).join(', ');
+    }
+
+    // HITS
+    const byHits = players.filter(p => p.batting.h > 0).sort((a, b) => b.batting.h - a.batting.h);
+    if (byHits.length > 0) {
+        const topH = byHits[0].batting.h;
+        leaders.hits = byHits.filter(p => p.batting.h === topH).map(p => p.name).join(', ');
+    }
+
+    // RBI
+    const byRBI = players.filter(p => p.batting.rbi > 0).sort((a, b) => b.batting.rbi - a.batting.rbi);
+    if (byRBI.length > 0) {
+        const topRBI = byRBI[0].batting.rbi;
+        leaders.rbi = byRBI.filter(p => p.batting.rbi === topRBI).map(p => p.name).join(', ');
+    }
+
+    // SB
+    const bySB = players.filter(p => p.batting.sb > 0).sort((a, b) => b.batting.sb - a.batting.sb);
+    if (bySB.length > 0) {
+        const topSB = bySB[0].batting.sb;
+        leaders.sb = bySB.filter(p => p.batting.sb === topSB).map(p => p.name).join(', ');
+    }
+
+    // WINS
+    const byWins = players.filter(p => (p.pitching.w || 0) > 0).sort((a, b) => (b.pitching.w || 0) - (a.pitching.w || 0));
+    if (byWins.length > 0) {
+        const topW = byWins[0].pitching.w;
+        leaders.wins = byWins.filter(p => p.pitching.w === topW).map(p => p.name).join(', ');
+    }
+
+    // ERA (min varsityMinIP)
+    const byERA = players.filter(p => ipToInnings(p.pitching.ip) >= varsityMinIP).sort((a, b) => {
+        const eraA = (a.pitching.er * 7) / ipToInnings(a.pitching.ip);
+        const eraB = (b.pitching.er * 7) / ipToInnings(b.pitching.ip);
+        return eraA - eraB;
+    });
+    if (byERA.length > 0) {
+        const topERA = (byERA[0].pitching.er * 7) / ipToInnings(byERA[0].pitching.ip);
+        const tied = byERA.filter(p => {
+            const era = (p.pitching.er * 7) / ipToInnings(p.pitching.ip);
+            return Math.abs(era - topERA) < 0.0001;
+        });
+        leaders.era = tied.map(p => p.name).join(', ');
+    }
+
+    // HBP
+    const byHBP = players.filter(p => (p.batting.hbp || 0) > 0).sort((a, b) => (b.batting.hbp || 0) - (a.batting.hbp || 0));
+    if (byHBP.length > 0) {
+        const topHBP = byHBP[0].batting.hbp;
+        leaders.hbp = byHBP.filter(p => p.batting.hbp === topHBP).map(p => p.name).join(', ');
+    }
+
+    // ERRORS
+    const byErrors = players.filter(p => (p.fielding.e || 0) > 0).sort((a, b) => (b.fielding.e || 0) - (a.fielding.e || 0));
+    if (byErrors.length > 0) {
+        const topE = byErrors[0].fielding.e;
+        leaders.errors = byErrors.filter(p => p.fielding.e === topE).map(p => p.name).join(', ');
+    }
+
+    // Build HTML
+    let html = '';
+    html += `<div style="border-top: 1px solid #333; margin: 8px 0 15px 0;"></div>`;
+    html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
+    html += '<h3 style="margin-top: 0; margin-bottom: 4px; color: #D4A017;">Team Leaders</h3>';
+    html += `<p style="font-size: 11px; color: #666; margin: 0 0 12px 0;">Min. ${varsityMinPA} PA (2.0/team game) to qualify for rate stats. Min. ${varsityMinIP} IP (1.0/team game) for ERA.</p>`;
+    html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">';
+    html += `<div><strong>AVG:</strong> ${leaders.avg}</div>`;
+    html += `<div><strong>OBP:</strong> ${leaders.obp}</div>`;
+    html += `<div><strong>OPS:</strong> ${leaders.ops}</div>`;
+    html += `<div><strong>HITS:</strong> ${leaders.hits}</div>`;
+    html += `<div><strong>RBI:</strong> ${leaders.rbi}</div>`;
+    html += `<div><strong>SB:</strong> ${leaders.sb}</div>`;
+    html += `<div><strong>WINS:</strong> ${leaders.wins}</div>`;
+    html += `<div><strong>ERA:</strong> ${leaders.era}</div>`;
+    html += `<div><strong>HBP:</strong> ${leaders.hbp}</div>`;
+    html += `<div><strong>ERRORS:</strong> ${leaders.errors}</div>`;
+    html += '</div>';
+    html += '<div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #333; font-size: 11px; color: #999; line-height: 1.6;">';
+    html += '<strong>AVG:</strong> batting average (hits ÷ at-bats). &nbsp; ';
+    html += '<strong>OBP (On-Base %):</strong> how often a batter reaches base (hits + walks + HBP) ÷ (AB + BB + HBP + sac flies). .350+ is strong. &nbsp; ';
+    html += '<strong>OPS:</strong> On-Base % plus Slugging %. Single number combining getting on base and hitting for power. .800+ is excellent at any level. &nbsp; ';
+    html += '<strong>HBP:</strong> most hit-by-pitches on the season. Shows willingness to crowd the plate.';
+    html += '</div></div>';
+
+    return html;
+}
+
 const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
-html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n${buildOpponentScoutingReport(pisData)}\n            </div>\n\n            `);
+html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n${buildVarsityTeamLeaders()}\n            </div>\n\n            `);
 
 // JV Players to Watch (top 6 by PIS)
 function buildJVPlayersToWatch(pisData) {
