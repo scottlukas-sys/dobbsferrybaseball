@@ -1411,14 +1411,13 @@ function computePIS(playerStats) {
             const sp = data.seasonPitching;
             let useSeasonStats = false;
 
-            // Per-game data coverage check: if we have per-game data for all
-            // (or nearly all) GC games, use per-game accumulation for accurate
-            // multi-hit bonuses. Only fall back to GC aggregates when per-game
-            // data is incomplete (e.g. opponents with only season totals).
-            const gcGP = ss ? (ss.gp || 0) : 0;
-            const hasFullGameLog = games.length > 0 && games.length >= gcGP;
+            // Per-game data coverage: for DF/JV players, per-game data IS the
+            // complete record — if a player isn't in a game, they didn't play.
+            // Only fall back to GC aggregates for opponents (no per-game data)
+            // or players with zero game entries.
+            const hasPerGameData = games.length > 0;
 
-            if (ss && ss.source && ss.source.includes('GameChanger') && !hasFullGameLog) {
+            if (ss && ss.source && ss.source.includes('GameChanger') && !hasPerGameData) {
                 // GameChanger flat format — use aggregate when per-game data is incomplete
                 const fakeHitting = (ss.h > 0 || ss.bb > 0 || ss.r > 0 || ss.rbi > 0 || (ss.ab || 0) > 0) ? {
                     h: ss.h || 0, '2b': ss['2b'] || 0, '3b': ss['3b'] || 0,
