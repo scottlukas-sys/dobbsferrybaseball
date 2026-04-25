@@ -293,18 +293,40 @@
         "team": "Dobbs Ferry",
         "games": [
           {
+            "date": "2026-03-27",
+            "opponent": "Saunders",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "sf": 0,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-08",
             "opp": "Sleepy Hollow",
             "hitting": {
-              "ab": 1,
-              "h": 1,
-              "2b": 1,
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0,
+              "so": 0,
+              "hbp": 1,
+              "e": 0
             },
             "pitching": null
           },
@@ -312,15 +334,18 @@
             "date": "2026-04-11",
             "opp": "Pearl River",
             "hitting": {
-              "ab": 1,
-              "h": 1,
-              "2b": 0,
+              "ab": 2,
+              "h": 2,
+              "2b": 1,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
-              "bb": 0,
-              "sb": 0
+              "rbi": 2,
+              "r": 2,
+              "bb": 1,
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -342,13 +367,13 @@
           }
         ],
         "seasonStats": {
-          "gp": 3,
-          "pa": 5,
-          "ab": 3,
-          "avg": ".667",
-          "obp": ".800",
-          "ops": "1.800",
-          "slg": "1.000",
+          "gp": 4,
+          "pa": 6,
+          "ab": 4,
+          "avg": ".500",
+          "obp": ".667",
+          "ops": "1.417",
+          "slg": ".750",
           "h": 2,
           "1b": 1,
           "2b": 1,
@@ -386,14 +411,17 @@
             "opp": "Irvington",
             "hitting": {
               "ab": 4,
-              "h": 2,
+              "h": 4,
               "2b": 1,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
+              "rbi": 2,
+              "r": 2,
+              "bb": 0,
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -401,15 +429,18 @@
             "date": "2026-03-27",
             "opp": "Saunders",
             "hitting": {
-              "ab": 3,
-              "h": 2,
-              "2b": 1,
+              "ab": 2,
+              "h": 1,
+              "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
+              "rbi": 0,
+              "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 1,
+              "e": 0
             },
             "pitching": null
           },
@@ -418,14 +449,17 @@
             "opp": "Edgemont",
             "hitting": {
               "ab": 3,
-              "h": 2,
+              "h": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 1,
-              "r": 1,
-              "bb": 0,
-              "sb": 0
+              "r": 0,
+              "bb": 1,
+              "sb": 1,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -438,10 +472,13 @@
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
+              "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -449,15 +486,18 @@
             "date": "2026-04-11",
             "opp": "Pearl River",
             "hitting": {
-              "ab": 3,
+              "ab": 4,
               "h": 1,
-              "2b": 0,
+              "2b": 1,
               "3b": 0,
               "hr": 0,
-              "rbi": 0,
-              "r": 0,
+              "rbi": 1,
+              "r": 1,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -473,7 +513,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 9.1,
@@ -498,7 +541,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 2,
@@ -526,7 +572,8 @@
               "bb": 0,
               "so": 0,
               "hbp": 0,
-              "sb": 0
+              "sb": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 3,
@@ -643,6 +690,44 @@
         "team": "Dobbs Ferry",
         "games": [
           {
+            "date": "2026-03-24",
+            "opponent": "Irvington",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 1,
+              "bb": 0,
+              "so": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 1,
+              "sf": 0,
+              "e": 1
+            }
+          },
+          {
+            "date": "2026-03-27",
+            "opponent": "Saunders",
+            "hitting": {
+              "ab": 3,
+              "r": 1,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "sf": 0,
+              "e": 1
+            }
+          },
+          {
             "date": "2026-04-07",
             "opp": "Edgemont",
             "hitting": {
@@ -662,15 +747,18 @@
             "date": "2026-04-08",
             "opp": "Sleepy Hollow",
             "hitting": {
-              "ab": 1,
-              "h": 1,
+              "ab": 0,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
               "r": 0,
-              "bb": 0,
-              "sb": 0
+              "bb": 1,
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -717,27 +805,27 @@
           }
         ],
         "seasonStats": {
-          "gp": 4,
-          "pa": 7,
-          "ab": 5,
-          "avg": ".400",
-          "obp": ".500",
-          "ops": "1.100",
-          "slg": ".600",
-          "h": 2,
+          "gp": 6,
+          "pa": 12,
+          "ab": 9,
+          "avg": ".333",
+          "obp": ".455",
+          "ops": "1.011",
+          "slg": ".556",
+          "h": 3,
           "1b": 1,
-          "2b": 1,
+          "2b": 2,
           "3b": 0,
           "hr": 0,
-          "rbi": 1,
-          "r": 1,
-          "bb": 1,
+          "rbi": 2,
+          "r": 2,
+          "bb": 2,
           "so": 2,
           "kl": 0,
           "hbp": 0,
           "sac": 1,
           "sf": 0,
-          "sb": 3,
+          "sb": 1,
           "cs": 0,
           "roe": 0,
           "fc": 0,
@@ -782,54 +870,6 @@
             "opp": "Irvington",
             "hitting": {
               "ab": 2,
-              "h": 1,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 1,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
-            },
-            "pitching": null
-          },
-          {
-            "date": "2026-03-27",
-            "opp": "Saunders",
-            "hitting": {
-              "ab": 2,
-              "h": 1,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
-            },
-            "pitching": null
-          },
-          {
-            "date": "2026-04-07",
-            "opp": "Edgemont",
-            "hitting": {
-              "ab": 2,
-              "h": 1,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
-            },
-            "pitching": null
-          },
-          {
-            "date": "2026-04-08",
-            "opp": "Sleepy Hollow",
-            "hitting": {
-              "ab": 2,
               "h": 0,
               "2b": 0,
               "3b": 0,
@@ -837,7 +877,67 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 2,
+              "hbp": 1,
+              "e": 0
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-03-27",
+            "opp": "Saunders",
+            "hitting": {
+              "ab": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 2,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-04-07",
+            "opp": "Edgemont",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-04-08",
+            "opp": "Sleepy Hollow",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -846,14 +946,17 @@
             "opp": "Pearl River",
             "hitting": {
               "ab": 2,
-              "h": 0,
+              "h": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
+              "rbi": 1,
+              "r": 2,
+              "bb": 1,
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -861,7 +964,7 @@
             "date": "2026-04-13",
             "opp": "Irvington",
             "hitting": {
-              "ab": 1,
+              "ab": 3,
               "h": 0,
               "2b": 0,
               "3b": 0,
@@ -869,7 +972,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 2
             },
             "pitching": null
           },
@@ -878,14 +984,17 @@
             "opp": "Ardsley",
             "hitting": {
               "ab": 3,
-              "h": 2,
+              "h": 3,
               "2b": 1,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
               "r": 1,
               "bb": 0,
-              "sb": 1
+              "sb": 1,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -904,7 +1013,8 @@
               "bb": 0,
               "so": 0,
               "hbp": 1,
-              "sb": 0
+              "sb": 0,
+              "e": 0
             },
             "pitching": null,
             "source": "GameChanger box score"
@@ -952,7 +1062,7 @@
           "ab": 23,
           "avg": ".348",
           "obp": ".464",
-          "ops": ".856",
+          "ops": ".855",
           "slg": ".391",
           "h": 8,
           "1b": 7,
@@ -990,15 +1100,18 @@
             "date": "2026-03-24",
             "opp": "Irvington",
             "hitting": {
-              "ab": 3,
+              "ab": 4,
               "h": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
+              "rbi": 0,
               "r": 1,
-              "bb": 1,
-              "sb": 0
+              "bb": 0,
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1007,14 +1120,17 @@
             "opp": "Saunders",
             "hitting": {
               "ab": 3,
-              "h": 1,
+              "h": 2,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
+              "rbi": 2,
+              "r": 2,
               "bb": 1,
-              "sb": 0
+              "sb": 2,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1022,15 +1138,18 @@
             "date": "2026-04-07",
             "opp": "Edgemont",
             "hitting": {
-              "ab": 3,
-              "h": 1,
+              "ab": 2,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
               "r": 1,
-              "bb": 1,
-              "sb": 0
+              "bb": 2,
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -1038,15 +1157,18 @@
             "date": "2026-04-08",
             "opp": "Sleepy Hollow",
             "hitting": {
-              "ab": 3,
+              "ab": 2,
               "h": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 1,
+              "r": 0,
               "bb": 1,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 2
             },
             "pitching": null
           },
@@ -1054,23 +1176,7 @@
             "date": "2026-04-11",
             "opp": "Pearl River",
             "hitting": {
-              "ab": 2,
-              "h": 0,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 1,
-              "sb": 0
-            },
-            "pitching": null
-          },
-          {
-            "date": "2026-04-13",
-            "opp": "Irvington",
-            "hitting": {
-              "ab": 2,
+              "ab": 4,
               "h": 0,
               "2b": 0,
               "3b": 0,
@@ -1078,7 +1184,29 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 2
+            },
+            "pitching": null
+          },
+          {
+            "date": "2026-04-13",
+            "opp": "Irvington",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 1,
+              "sb": 1,
+              "so": 0,
+              "hbp": 1,
+              "e": 0
             },
             "pitching": null
           },
@@ -1094,7 +1222,10 @@
               "rbi": 1,
               "r": 1,
               "bb": 0,
-              "sb": 1
+              "sb": 1,
+              "so": 0,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -1113,26 +1244,11 @@
               "bb": 1,
               "so": 1,
               "hbp": 0,
-              "sb": 2
+              "sb": 2,
+              "e": 0
             },
             "pitching": null,
             "source": "GameChanger box score"
-          },
-          {
-            "date": "2026-04-20",
-            "opp": "Blind Brook",
-            "hitting": {
-              "ab": 4,
-              "h": 1,
-              "2b": 1,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 1,
-              "bb": 0,
-              "sb": 0
-            },
-            "pitching": null
           },
           {
             "date": "2026-04-20",
@@ -1215,15 +1331,18 @@
             "date": "2026-03-24",
             "opp": "Irvington",
             "hitting": {
-              "ab": 4,
-              "h": 1,
+              "ab": 3,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
+              "rbi": 0,
               "r": 1,
               "bb": 1,
-              "sb": 0
+              "sb": 0,
+              "so": 2,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1231,15 +1350,18 @@
             "date": "2026-03-27",
             "opp": "Saunders",
             "hitting": {
-              "ab": 4,
-              "h": 1,
+              "ab": 3,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 1,
               "r": 1,
               "bb": 1,
-              "sb": 0
+              "sb": 2,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1247,15 +1369,18 @@
             "date": "2026-04-07",
             "opp": "Edgemont",
             "hitting": {
-              "ab": 3,
+              "ab": 4,
               "h": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 1,
+              "r": 2,
               "bb": 0,
-              "sb": 0
+              "sb": 2,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1279,15 +1404,18 @@
             "date": "2026-04-11",
             "opp": "Pearl River",
             "hitting": {
-              "ab": 3,
-              "h": 1,
+              "ab": 4,
+              "h": 2,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 0,
+              "rbi": 1,
               "r": 1,
               "bb": 0,
-              "sb": 0
+              "sb": 2,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1296,14 +1424,17 @@
             "opp": "Irvington",
             "hitting": {
               "ab": 3,
-              "h": 0,
+              "h": 2,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
               "r": 1,
               "bb": 0,
-              "sb": 0
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 7.1,
@@ -1328,7 +1459,10 @@
               "rbi": 1,
               "r": 1,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 5,
@@ -1356,36 +1490,11 @@
               "bb": 0,
               "so": 0,
               "hbp": 0,
-              "sb": 1
+              "sb": 1,
+              "e": 0
             },
             "pitching": null,
             "source": "GameChanger box score"
-          },
-          {
-            "date": "2026-04-20",
-            "opp": "Blind Brook",
-            "hitting": {
-              "ab": 4,
-              "h": 1,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 1,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
-            },
-            "pitching": {
-              "ip": 6.2,
-              "h": 4,
-              "r": 5,
-              "er": 5,
-              "so": 8,
-              "bb": 3,
-              "w": 0,
-              "sv": 0
-            },
-            "source": "@dfeaglesbaseball Instagram (Apr 20)"
           },
           {
             "date": "2026-04-20",
@@ -1442,19 +1551,19 @@
           "gp": 10,
           "pa": 37,
           "ab": 35,
-          "avg": ".371",
-          "obp": ".405",
-          "ops": ".920",
-          "slg": ".514",
-          "h": 13,
-          "1b": 10,
+          "avg": ".400",
+          "obp": ".432",
+          "ops": ".975",
+          "slg": ".543",
+          "h": 14,
+          "1b": 11,
           "2b": 2,
           "3b": 0,
           "hr": 1,
           "rbi": 6,
-          "r": 11,
+          "r": 12,
           "bb": 2,
-          "so": 7,
+          "so": 6,
           "kl": 3,
           "hbp": 0,
           "sac": 0,
@@ -1503,15 +1612,18 @@
             "date": "2026-03-24",
             "opp": "Irvington",
             "hitting": {
-              "ab": 3,
-              "h": 1,
-              "2b": 1,
+              "ab": 4,
+              "h": 0,
+              "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0,
+              "so": 2,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -1525,9 +1637,12 @@
               "3b": 0,
               "hr": 0,
               "rbi": 1,
-              "r": 1,
+              "r": 0,
               "bb": 1,
-              "sb": 0
+              "sb": 1,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1535,15 +1650,18 @@
             "date": "2026-04-07",
             "opp": "Edgemont",
             "hitting": {
-              "ab": 3,
+              "ab": 2,
               "h": 1,
               "2b": 1,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 0,
-              "bb": 1,
-              "sb": 0
+              "rbi": 2,
+              "r": 1,
+              "bb": 2,
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1551,15 +1669,18 @@
             "date": "2026-04-08",
             "opp": "Sleepy Hollow",
             "hitting": {
-              "ab": 3,
-              "h": 1,
+              "ab": 1,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
+              "rbi": 0,
               "r": 0,
-              "bb": 1,
-              "sb": 0
+              "bb": 2,
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1567,15 +1688,18 @@
             "date": "2026-04-11",
             "opp": "Pearl River",
             "hitting": {
-              "ab": 3,
-              "h": 0,
-              "2b": 0,
+              "ab": 4,
+              "h": 2,
+              "2b": 1,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 0,
-              "bb": 1,
-              "sb": 0
+              "rbi": 3,
+              "r": 1,
+              "bb": 0,
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1583,15 +1707,18 @@
             "date": "2026-04-13",
             "opp": "Irvington",
             "hitting": {
-              "ab": 2,
+              "ab": 3,
               "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
+              "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 1.2,
@@ -1609,14 +1736,17 @@
             "opp": "Ardsley",
             "hitting": {
               "ab": 4,
-              "h": 0,
+              "h": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
               "r": 1,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1635,27 +1765,11 @@
               "bb": 1,
               "so": 0,
               "hbp": 2,
-              "sb": 2
+              "sb": 2,
+              "e": 0
             },
             "pitching": null,
             "source": "GameChanger box score"
-          },
-          {
-            "date": "2026-04-20",
-            "opp": "Blind Brook",
-            "hitting": {
-              "ab": 0,
-              "h": 0,
-              "2b": 0,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 1,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
-            },
-            "pitching": null,
-            "source": "@dfeaglesbaseball Instagram (RBI only, no full hitting line)"
           },
           {
             "date": "2026-04-20",
@@ -1672,7 +1786,8 @@
               "so": 1,
               "hbp": 0,
               "sb": 0,
-              "e": 0
+              "e": 0,
+              "sf": 1
             }
           },
           {
@@ -1761,13 +1876,16 @@
             "hitting": {
               "ab": 3,
               "h": 1,
-              "2b": 1,
+              "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
+              "rbi": 2,
+              "r": 0,
+              "bb": 0,
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1780,10 +1898,13 @@
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
+              "rbi": 0,
               "r": 1,
-              "bb": 1,
-              "sb": 0
+              "bb": 0,
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1791,15 +1912,18 @@
             "date": "2026-04-07",
             "opp": "Edgemont",
             "hitting": {
-              "ab": 2,
-              "h": 1,
+              "ab": 3,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 1,
+              "r": 0,
               "bb": 1,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -1808,14 +1932,17 @@
             "opp": "Sleepy Hollow",
             "hitting": {
               "ab": 2,
-              "h": 0,
-              "2b": 0,
+              "h": 1,
+              "2b": 1,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 0,
+              "r": 1,
               "bb": 1,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -1829,9 +1956,12 @@
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 0,
-              "bb": 1,
-              "sb": 0
+              "r": 1,
+              "bb": 2,
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 2
             },
             "pitching": null
           },
@@ -1839,15 +1969,18 @@
             "date": "2026-04-13",
             "opp": "Irvington",
             "hitting": {
-              "ab": 2,
+              "ab": 1,
               "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 0,
               "r": 0,
-              "bb": 0,
-              "sb": 0
+              "bb": 1,
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 5,
@@ -1872,7 +2005,10 @@
               "rbi": 0,
               "r": 1,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -2014,14 +2150,17 @@
             "opp": "Irvington",
             "hitting": {
               "ab": 4,
-              "h": 1,
-              "2b": 1,
+              "h": 0,
+              "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0,
+              "so": 2,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -2030,14 +2169,17 @@
             "opp": "Saunders",
             "hitting": {
               "ab": 4,
-              "h": 1,
-              "2b": 0,
+              "h": 2,
+              "2b": 1,
               "3b": 0,
               "hr": 0,
               "rbi": 1,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
+              "r": 2,
+              "bb": 0,
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -2046,14 +2188,17 @@
             "opp": "Edgemont",
             "hitting": {
               "ab": 3,
-              "h": 1,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
+              "rbi": 0,
               "r": 1,
-              "bb": 0,
-              "sb": 0
+              "bb": 1,
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -2066,10 +2211,13 @@
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 0,
-              "r": 1,
+              "rbi": 1,
+              "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -2078,14 +2226,17 @@
             "opp": "Pearl River",
             "hitting": {
               "ab": 3,
-              "h": 0,
+              "h": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
+              "rbi": 1,
+              "r": 1,
+              "bb": 1,
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -2101,7 +2252,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 2,
+              "hbp": 0,
+              "e": 2
             },
             "pitching": null
           },
@@ -2117,7 +2271,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 1,
+              "e": 0
             },
             "pitching": null
           },
@@ -2136,7 +2293,8 @@
               "bb": 1,
               "so": 1,
               "hbp": 1,
-              "sb": 1
+              "sb": 1,
+              "e": 0
             },
             "pitching": null,
             "source": "GameChanger box score"
@@ -2254,18 +2412,59 @@
         "team": "Dobbs Ferry",
         "games": [
           {
+            "date": "2026-03-24",
+            "opponent": "Irvington",
+            "hitting": {
+              "ab": 3,
+              "r": 2,
+              "h": 1,
+              "rbi": 1,
+              "bb": 1,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 1,
+              "sf": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-03-27",
+            "opponent": "Saunders",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 1,
+              "sb": 0,
+              "sf": 0,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-07",
             "opp": "Edgemont",
             "hitting": {
-              "ab": 3,
-              "h": 1,
+              "ab": 4,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
               "rbi": 1,
-              "r": 1,
-              "bb": 1,
-              "sb": 0
+              "r": 0,
+              "bb": 0,
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -2278,10 +2477,13 @@
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 1,
-              "r": 1,
+              "rbi": 0,
+              "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 1,
+              "so": 1,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -2338,7 +2540,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -2357,7 +2562,8 @@
               "bb": 0,
               "so": 0,
               "hbp": 0,
-              "sb": 0
+              "sb": 0,
+              "e": 0
             },
             "pitching": null,
             "source": "GameChanger box score"
@@ -2414,13 +2620,13 @@
           }
         ],
         "seasonStats": {
-          "gp": 8,
-          "pa": 28,
-          "ab": 25,
-          "avg": ".240",
-          "obp": ".296",
-          "ops": ".536",
-          "slg": ".240",
+          "gp": 10,
+          "pa": 34,
+          "ab": 31,
+          "avg": ".194",
+          "obp": ".242",
+          "ops": ".436",
+          "slg": ".194",
           "h": 6,
           "1b": 6,
           "2b": 0,
@@ -2515,10 +2721,13 @@
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
+              "rbi": 1,
+              "r": 1,
+              "bb": 1,
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -2526,15 +2735,19 @@
             "date": "2026-04-13",
             "opp": "Irvington",
             "hitting": {
-              "ab": 1,
+              "ab": 2,
               "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
-              "rbi": 0,
+              "rbi": 1,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0,
+              "sf": 1
             },
             "pitching": {
               "ip": 0.1,
@@ -2559,28 +2772,31 @@
               "rbi": 0,
               "r": 1,
               "bb": 1,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           }
         ],
         "seasonStats": {
           "gp": 5,
-          "pa": 12,
-          "ab": 9,
+          "pa": 14,
+          "ab": 10,
           "avg": ".000",
-          "obp": ".167",
-          "ops": ".167",
+          "obp": ".214",
+          "ops": ".214",
           "slg": ".000",
           "h": 0,
           "1b": 0,
           "2b": 0,
           "3b": 0,
           "hr": 0,
-          "rbi": 2,
-          "r": 2,
-          "bb": 2,
-          "so": 4,
+          "rbi": 4,
+          "r": 3,
+          "bb": 3,
+          "so": 3,
           "kl": 3,
           "hbp": 0,
           "sac": 0,
@@ -2629,7 +2845,7 @@
             "date": "2026-04-08",
             "opp": "Sleepy Hollow",
             "hitting": {
-              "ab": 2,
+              "ab": 0,
               "h": 0,
               "2b": 0,
               "3b": 0,
@@ -2637,7 +2853,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -2653,7 +2872,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 0,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": null
           },
@@ -2661,7 +2883,7 @@
             "date": "2026-04-13",
             "opp": "Irvington",
             "hitting": {
-              "ab": 1,
+              "ab": 3,
               "h": 0,
               "2b": 0,
               "3b": 0,
@@ -2669,7 +2891,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 2,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 9.1,
@@ -2783,6 +3008,25 @@
         "team": "Dobbs Ferry",
         "games": [
           {
+            "date": "2026-04-07",
+            "opponent": "Edgemont",
+            "hitting": {
+              "ab": 4,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 4,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "sf": 0,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-08",
             "opp": "Sleepy Hollow",
             "hitting": {
@@ -2845,7 +3089,8 @@
               "bb": 0,
               "so": 0,
               "hbp": 2,
-              "sb": 1
+              "sb": 1,
+              "e": 0
             },
             "pitching": null,
             "source": "GameChanger box score"
@@ -2853,11 +3098,11 @@
         ],
         "seasonStats": {
           "gp": 5,
-          "pa": 8,
-          "ab": 6,
+          "pa": 12,
+          "ab": 10,
           "avg": ".000",
-          "obp": ".250",
-          "ops": ".250",
+          "obp": ".167",
+          "ops": ".167",
           "slg": ".000",
           "h": 0,
           "1b": 0,
@@ -2872,7 +3117,7 @@
           "hbp": 2,
           "sac": 0,
           "sf": 0,
-          "sb": 2,
+          "sb": 1,
           "cs": 0,
           "roe": 0,
           "fc": 0,
@@ -2903,7 +3148,10 @@
               "rbi": 0,
               "r": 0,
               "bb": 0,
-              "sb": 0
+              "sb": 0,
+              "so": 1,
+              "hbp": 0,
+              "e": 0
             },
             "pitching": {
               "ip": 1.2,
@@ -2994,6 +3242,25 @@
             }
           },
           {
+            "date": "2026-04-14",
+            "opponent": "Ardsley",
+            "hitting": {
+              "ab": 0,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "sf": 0,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-18",
             "opp": "Haldane",
             "hitting": null,
@@ -3012,22 +3279,6 @@
               "bf": 11
             },
             "source": "GameChanger box score"
-          },
-          {
-            "date": "2026-04-20",
-            "opp": "Blind Brook",
-            "hitting": {
-              "ab": 3,
-              "h": 2,
-              "2b": 1,
-              "3b": 0,
-              "hr": 0,
-              "rbi": 0,
-              "r": 0,
-              "bb": 0,
-              "sb": 0
-            },
-            "pitching": null
           },
           {
             "date": "2026-04-20",
@@ -3067,7 +3318,7 @@
           }
         ],
         "seasonStats": {
-          "gp": 2,
+          "gp": 3,
           "pa": 6,
           "ab": 6,
           "avg": ".333",
@@ -6789,6 +7040,11 @@
     }
   },
   "newsLog": [
+    {
+      "date": "2026-04-24",
+      "type": "correction",
+      "message": "Varsity stats corrected: updated game-level hitting data from GameChanger box scores (SO, SB, HBP, E), added missing game entries for Drew Kimerling, Justin Costa, Harrison Brewer, Rommel Eusebio, Ian Foley, removed duplicate Apr 20 game entries. All season stats and PIS recalculated."
+    },
     {
       "date": "2026-04-24",
       "type": "correction",
