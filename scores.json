@@ -4606,7 +4606,7 @@
             "opp": "Pearl River JV",
             "hitting": {
               "ab": 3,
-              "r": 1,
+              "r": 0,
               "h": 1,
               "2b": 0,
               "3b": 0,
@@ -4633,7 +4633,7 @@
           "3b": 0,
           "hr": 0,
           "rbi": 3,
-          "r": 8,
+          "r": 7,
           "bb": 4,
           "so": 5,
           "hbp": 1,
@@ -5363,7 +5363,7 @@
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 0,
+              "r": 1,
               "bb": 0,
               "sb": 1
             },
@@ -5429,7 +5429,7 @@
             "opp": "Pearl River JV",
             "hitting": {
               "ab": 1,
-              "r": 0,
+              "r": 1,
               "h": 1,
               "2b": 0,
               "3b": 0,
@@ -5456,7 +5456,7 @@
           "3b": 0,
           "hr": 0,
           "rbi": 2,
-          "r": 2,
+          "r": 4,
           "bb": 4,
           "so": 4,
           "hbp": 2,
@@ -6186,7 +6186,7 @@
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 1,
+              "r": 0,
               "bb": 0,
               "sb": 0
             },
@@ -6298,7 +6298,7 @@
           "3b": 0,
           "hr": 0,
           "rbi": 2,
-          "r": 4,
+          "r": 3,
           "bb": 2,
           "so": 4,
           "hbp": 2,
@@ -6789,6 +6789,11 @@
     }
   },
   "newsLog": [
+    {
+      "date": "2026-04-24",
+      "type": "correction",
+      "note": "Runs correction: courtesy runner runs reassigned to Vaughn Lukas. Apr 14: 1 R from Declan Cho (courtesy runner via Gotcsik Karpinos). Apr 24: 1 R from Sam Keltz (courtesy runner). Verified via GameChanger play-by-play."
+    },
     {
       "date": "2026-04-24",
       "type": "correction",
