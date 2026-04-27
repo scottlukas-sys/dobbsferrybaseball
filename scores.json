@@ -7050,6 +7050,12 @@
   },
   "newsLog": [
     {
+      "date": "2026-04-27",
+      "type": "schedule",
+      "text": "Varsity @ Leffell School (May 7) time changed to 8:00 PM (was 4:30 PM)",
+      "source": "GameChanger"
+    },
+    {
       "date": "2026-04-24",
       "type": "correction",
       "message": "Varsity stats corrected: updated game-level hitting data from GameChanger box scores (SO, SB, HBP, E), added missing game entries for Drew Kimerling, Justin Costa, Harrison Brewer, Rommel Eusebio, Ian Foley, removed duplicate Apr 20 game entries. All season stats and PIS recalculated."
