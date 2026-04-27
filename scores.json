@@ -105,6 +105,15 @@
       "league": true,
       "errors": 1,
       "innings": 7
+    },
+    "2026-04-27": {
+      "opponent": "Hastings",
+      "df": 0,
+      "opp": 12,
+      "location": "Home",
+      "source": "Scott Lukas (manual)",
+      "league": true,
+      "innings": 7
     }
   },
   "jv": {
