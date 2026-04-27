@@ -30,9 +30,9 @@
     "2026-04-08": {
       "opponent": "Sleepy Hollow",
       "df": 1,
-      "opp": 18,
+      "opp": 19,
       "location": "Gould Park (Home)",
-      "source": "DF DigitalSports + Sleepy Hollow DigitalSports (IG @dfeaglesbaseball reported 19-1; using 18-1 per both DS sources)"
+      "source": "GameChanger (L 1-19). Previously 18-1 per DS; GC is authoritative."
     },
     "2026-04-11": {
       "opponent": "Pearl River",
@@ -106,12 +106,12 @@
       "errors": 1,
       "innings": 7
     },
-    "2026-04-27": {
+    "2026-04-24": {
       "opponent": "Hastings",
       "df": 0,
       "opp": 12,
       "location": "Home",
-      "source": "Scott Lukas (manual)",
+      "source": "Scott Lukas (manual) + DFSD athletic calendar confirms date",
       "league": true,
       "innings": 7
     }
