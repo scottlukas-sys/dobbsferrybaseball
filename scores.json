@@ -7050,12 +7050,6 @@
   },
   "newsLog": [
     {
-      "date": "2026-04-27",
-      "type": "schedule",
-      "text": "Varsity @ Leffell School (May 7) time changed to 8:00 PM (was 4:30 PM)",
-      "source": "GameChanger"
-    },
-    {
       "date": "2026-04-24",
       "type": "correction",
       "message": "Varsity stats corrected: updated game-level hitting data from GameChanger box scores (SO, SB, HBP, E), added missing game entries for Drew Kimerling, Justin Costa, Harrison Brewer, Rommel Eusebio, Ian Foley, removed duplicate Apr 20 game entries. All season stats and PIS recalculated."
@@ -7078,12 +7072,6 @@
     },
     {
       "date": "2026-04-21",
-      "type": "correction",
-      "text": "MAJOR LEAGUE ALIGNMENT CORRECTION: DF's regular-season league is 'Section 1 Conference 3 - D League' \u2014 a 6-team division confirmed via MaxPreps standings pages for all teams. The 6 teams: Dobbs Ferry, Blind Brook, Hastings, Rye Neck, Tuckahoe, Leffell School. Previously assumed 8-team 'Class B league' including Briarcliff, Pawling, Putnam Valley, Valhalla \u2014 WRONG. Those teams are in separate leagues: Pawling/Haldane/Putnam Valley/North Salem are in Conference 3-E League. Westlake/Pleasantville/Byram Hills are in Conference 3-A League. Edgemont/Pelham/Bronxville are in Conference 2-D League. Valhalla/Briarcliff have no Conference 3-D games. Removed 5 non-Conference-3D games from divisionB array. Class B is the NYSPHSAA playoff enrollment class, NOT the regular-season league.",
-      "source": "MaxPreps standings pages (DF, BB, Hastings, Tuckahoe, Edgemont, Valhalla, Westlake, Pawling, Putnam Valley)"
-    },
-    {
-      "date": "2026-04-21",
       "type": "supplemental-sweep",
       "text": "Supplemental Chrome sweep. DF DS confirmed 5-4 overall, 3-4 conf, L1. BB DS confirmed 7-3, 7-2 conf, W2. Hastings DS confirmed 5-5, 2-1 conf, W4 streak. IG @dfeaglesbaseball Apr 20 post: BB 5 DF 2 \u2014 Foley 2-3 2B, Evan 1-4 2B R, Ficarrotta 1-4 RBI + 6.2IP 4H 8K. Schedule confirmed: Apr 22 at BB, Apr 24 vs Hastings (both league), Apr 27 at Valhalla (league). All DS games cross-referenced with MaxPreps \u2014 no discrepancies in scores.",
       "sourcesChecked": {
@@ -7091,48 +7079,6 @@
         "digitalsports:blind_brook": "\u2705 7-3, 7-2 conf, W2, Home 3-1, Away 4-2",
         "digitalsports:hastings": "\u2705 5-5, 2-1 conf, W4, Home 4-3, Away 1-2",
         "ig:@dfeaglesbaseball": "\u2705 Apr 20 BB box score: Foley 2-3 2B, Evan 1-4 2B R, Ficarrotta 6.2IP 4H 8K"
-      }
-    },
-    {
-      "date": "2026-04-21",
-      "type": "daily-sweep",
-      "text": "Daily sweep PARTIAL. Chrome MCP not connected after 5 retries. WebFetch used for all MaxPreps schedules (16 teams) and stats pages (13 teams). Gmail checked \u2014 no schedule changes. NEW opponent results: Hastings W 6-4 vs Tuckahoe (league), Pawling W 9-3 at Haldane (league), Edgemont W 14-4 vs Irvington, Rye Neck W 11-5 at Leffell (league), Sleepy Hollow W 13-0 at BOSSJ. Records updated: BB 7-3, Hastings 5-5, Haldane 1-7, Irvington 2-2, Rye Neck 4-5, SH 5-5, Edgemont 3-7, Tuckahoe 2-6, Ardsley 0-3, Valhalla 2-4, Westlake 6-4, Briarcliff 4-4-1, Pawling 5-1, PV 6-3. All 17 teamIntel cards enriched with MaxPreps data. 7 new divisionB league games added. MaxPreps opponent stats updated for BB, Hastings, Haldane, Edgemont, Rye Neck, Tuckahoe (6 teams with data). DF next: at Blind Brook Wed Apr 22 4:30 PM, vs Hastings Fri Apr 24 4:30 PM.",
-      "sourcesChecked": {
-        "digitalsports_all": "\u26a0\ufe0f AJAX-rendered, empty via WebFetch (Chrome required)",
-        "maxpreps:df_schedule": "\u2705 2-2 on MP (lags behind actual 5-4; missing 5 non-league games)",
-        "maxpreps:blind_brook_schedule": "\u2705 7-3, 2-0 league, W2",
-        "maxpreps:hastings_schedule": "\u2705 5-5, 2-0 league",
-        "maxpreps:haldane_schedule": "\u2705 1-7, 0-1 league, L7",
-        "maxpreps:irvington_schedule": "\u2705 2-2, 1-0 league",
-        "maxpreps:rye_neck_schedule": "\u2705 4-5, 1-0 league",
-        "maxpreps:sleepy_hollow_schedule": "\u2705 5-5, 3-3 league",
-        "maxpreps:edgemont_schedule": "\u2705 3-7, W2",
-        "maxpreps:tuckahoe_schedule": "\u2705 2-6, 0-1 league",
-        "maxpreps:ardsley_schedule": "\u2705 0-3",
-        "maxpreps:valhalla_schedule": "\u2705 2-4",
-        "maxpreps:westlake_schedule": "\u2705 6-4",
-        "maxpreps:pearl_river_schedule": "\u2705 1-1 on MP (very lagged)",
-        "maxpreps:briarcliff_schedule": "\u2705 4-4-1, 0-1 league",
-        "maxpreps:pawling_schedule": "\u2705 5-1, 1-0 league, W4",
-        "maxpreps:putnam_valley_schedule": "\u2705 6-3",
-        "maxpreps:blind_brook_stats": "\u2705 leaderboard \u2014 Pastor .387, Ebenstein .355, Toll 0.00 ERA",
-        "maxpreps:hastings_stats": "\u2705 leaderboard \u2014 Ciszewski .389/2.10 ERA, Sbrega 9 SB",
-        "maxpreps:haldane_stats": "\u2705 leaderboard \u2014 A. Swan .370, T. Swan .333, Herman 3.18 ERA",
-        "maxpreps:edgemont_stats": "\u2705 leaderboard \u2014 Terrasi .393, Vargas .500, Kusinitz 2.45 ERA",
-        "maxpreps:rye_neck_stats": "\u2705 leaderboard \u2014 Sutter .500, Strzalkowski .400, Gellman .333",
-        "maxpreps:tuckahoe_stats": "\u2705 leaderboard \u2014 Romeo .333, Brice .304, Carney 3.41 ERA",
-        "maxpreps:ardsley_stats": "\u2705 limited \u2014 J. Jaeger .500, Goldberg 0.00 ERA (small sample)",
-        "maxpreps:irvington_stats": "\u2705 no data entered",
-        "maxpreps:sleepy_hollow_stats": "\u2705 no data entered",
-        "maxpreps:valhalla_stats": "\u2705 no data entered",
-        "maxpreps:westlake_stats": "\u2705 no data entered",
-        "maxpreps:pearl_river_stats": "\u2705 no data entered",
-        "maxpreps_opponents": "\u2705 ok \u2014 7 of 13 teams had leaderboard data (BB, Hastings, Haldane, Edgemont, Rye Neck, Tuckahoe, Ardsley)",
-        "ig_all": "\u26a0\ufe0f Chrome MCP not connected after 5 retries",
-        "section1athletics": "\u26a0\ufe0f Chrome required (DNS issues persist)",
-        "dfsd_athletics": "\u26a0\ufe0f Chrome required",
-        "gamedayone": "\u26a0\ufe0f Chrome required (content expected post-Apr 20)",
-        "gmail": "\u2705 no schedule changes (fundraising emails only)"
       }
     },
     {
@@ -7270,18 +7216,6 @@
       "type": "schedule",
       "text": "Apr 13 Irvington game corrected: changed from Away at Memorial Field to Home at Gould Park per DigitalSports official schedule.",
       "source": "DigitalSports (72456.digitalsports.com)"
-    },
-    {
-      "date": "2026-04-06",
-      "type": "intel",
-      "text": "Second daily run. No new games since earlier update. All records confirmed: DF 2-0, Edgemont 0-2, Hastings 1-2, Sleepy Hollow 2-2, Haldane 1-1, Rye Neck 3-0, Ardsley 0-2+, Tuckahoe 0-0, Leffell 0-0. Game today: Sleepy Hollow vs Haldane at 4:30 PM (two DF opponents face off). DF next: Apr 7 at Edgemont 4:30 PM.",
-      "source": "DigitalSports multi-team check, Gmail, web search"
-    },
-    {
-      "date": "2026-04-06",
-      "type": "correction",
-      "text": "MAJOR CORRECTION: Division B league corrected to 6 teams per MaxPreps: Dobbs Ferry, Blind Brook, Hastings, Rye Neck, Leffell School, Tuckahoe. Removed Ardsley (their league is Edgemont/Pelham/Bronxville) and Valhalla (not in Division B). Removed Westlake-Hastings from divisionB array (Westlake not in Div B). Reclassified DF vs Valhalla Apr 27 as non-league.",
-      "source": "MaxPreps Division B standings, DF schedule analysis, Ardsley DigitalSports schedule"
     },
     {
       "date": "2026-04-06",
@@ -7834,34 +7768,6 @@
       }
     },
     {
-      "date": "2026-04-16",
-      "type": "daily-sweep",
-      "text": "Full DS sweep all 15 teams. 1 new opponent result: Leffell W 5-1 vs Edgemont (Apr 15). Edgemont corrected to 1-7 (was misreported as ~2-4 due to misdated opponentResults entries). Sleepy Hollow corrected to 4-4 (was 4-3). Hastings won comeback walkoff Apr 15 per IG @hastingsbase (now 3-5). DF record unchanged at 4-3 (V), 1-2 (JV). No DF games Apr 15-16. No schedule changes in Gmail. Section One Athletics unreachable (SSL error). IG @dfeaglesbaseball last post Apr 14 (Ardsley W 6-3 box scores).",
-      "sourcesChecked": {
-        "digitalsports:df": "\u2705 3-3 on DS (Apr 14 Ardsley not entered), actual 4-3",
-        "digitalsports:blind_brook": "\u2705 4-2, no new results",
-        "digitalsports:hastings": "\u2705 2-5 on DS (Apr 15 win not entered yet), actual 3-5 per IG",
-        "digitalsports:irvington": "\u2705 5-2, no new results",
-        "digitalsports:rye_neck": "\u2705 3-2, no new results",
-        "digitalsports:ardsley": "\u2705 0-7 on DS (Apr 14 DF loss not entered), actual 0-8",
-        "digitalsports:edgemont": "\u2705 1-7, new L 1-5 Apr 15 (Leffell)",
-        "digitalsports:haldane": "\u2705 1-5, no new results",
-        "digitalsports:leffell": "\u2705 2-0, new W 5-1 Apr 15 (Edgemont)",
-        "digitalsports:pearl_river": "\u2705 3-1, no new results",
-        "digitalsports:saunders": "\u2705 empty, no events",
-        "digitalsports:sleepy_hollow": "\u2705 4-4 (corrected from 4-3)",
-        "digitalsports:tuckahoe": "\u2705 1-3, no new results",
-        "digitalsports:valhalla": "\u2705 empty, no events",
-        "digitalsports:westlake": "\u2705 5-3, no new results",
-        "ig:@dfeaglesbaseball": "\u2705 last post Apr 14 Ardsley box scores",
-        "ig:@hastingsbase": "\u2705 Apr 15 walkoff win post",
-        "ig:@irvingtonbulldogs": "\u2705 no new baseball scores",
-        "section1athletics": "\u26a0\ufe0f unreachable (SSL/privacy error)",
-        "gmail": "\u2705 no schedule changes (only Bulldogs Academy summer tournaments)",
-        "gamechanger": "not queried this run (no new DF games)"
-      }
-    },
-    {
       "date": "2026-04-17",
       "type": "daily-sweep",
       "text": "Full DS sweep all 15 teams. 5 new opponent results: Blind Brook W 2-1 North Salem (Apr 14), Tuckahoe L 5-8 Briarcliff (Apr 14), Sleepy Hollow W 15-1 Woodlands (Apr 16), Valhalla W 14-3 Rye Neck (Apr 16), Tuckahoe W 18-1 North Salem (Apr 16). Notable: Valhalla scored biggest win of their season. Blind Brook on 5-game win streak ahead of Apr 20 League game vs DF. Rye Neck on 3-game skid. No new DF games (V 4-3, JV 1-3). Gmail MCP unavailable (tool upgrade). MaxPreps returned leaderboard only, no detailed stats. Section One Athletics not checked (DNS issues persist).",
@@ -8099,12 +8005,6 @@
         "gamechanger": "\u26a0\ufe0f not-checked-this-run \u2014 no new DF games since Apr 20",
         "digitalsports_other_opponents": "\u26a0\ufe0f webfetch-returns-ajax-shell \u2014 DS pages require Chrome; checked BB and Hastings via Chrome only"
       }
-    },
-    {
-      "date": "2026-04-24",
-      "type": "daily-sweep",
-      "text": "Daily sweep: No new DF games since Apr 22. Added Edgemont 13-Ardsley 7 (Apr 23) to opponent results. Today: Varsity vs Hastings at Gould Park 4:30pm (league). DF Varsity 5-5 (0-2 league). Exact scores not found for Apr 22 Hastings-Tuckahoe (league), Leffell-Rye Neck (league), Apr 23 Leffell-Blind Brook (league).",
-      "source": "lohud weekly scoreboard (updated Apr 24)"
     }
   ],
   "opponentResults": [
