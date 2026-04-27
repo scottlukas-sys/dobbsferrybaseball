@@ -9960,12 +9960,28 @@
   },
   "jvOpponentScores": [
     {
+      "date": "2026-03-25",
+      "winner": "Irvington JV",
+      "winnerRuns": 18,
+      "loser": "Saunders JV",
+      "loserRuns": 1,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
       "date": "2026-03-26",
       "winner": "Bronxville JV",
       "winnerRuns": 12,
       "loser": "Hastings JV",
       "loserRuns": 2,
       "source": "digitalsports:hastings_jv"
+    },
+    {
+      "date": "2026-03-26",
+      "winner": "Leffell JV",
+      "winnerRuns": 13,
+      "loser": "Sleepy Hollow JV",
+      "loserRuns": 5,
+      "source": "digitalsports:sleepyhollow_jv"
     },
     {
       "date": "2026-03-27",
@@ -9976,27 +9992,19 @@
       "source": "digitalsports:hastings_jv"
     },
     {
+      "date": "2026-03-27",
+      "winner": "Irvington JV",
+      "winnerRuns": 13,
+      "loser": "Lincoln JV",
+      "loserRuns": 7,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
       "date": "2026-04-06",
       "winner": "Rye Neck JV",
       "winnerRuns": 11,
       "loser": "Hastings JV",
       "loserRuns": 1,
-      "source": "digitalsports:hastings_jv"
-    },
-    {
-      "date": "2026-04-08",
-      "winner": "Hastings JV",
-      "winnerRuns": 6,
-      "loser": "Putnam Valley JV",
-      "loserRuns": 3,
-      "source": "digitalsports:hastings_jv"
-    },
-    {
-      "date": "2026-04-10",
-      "winner": "Scarsdale JV",
-      "winnerRuns": 17,
-      "loser": "Hastings JV",
-      "loserRuns": 6,
       "source": "digitalsports:hastings_jv"
     },
     {
@@ -10009,6 +10017,14 @@
     },
     {
       "date": "2026-04-08",
+      "winner": "Hastings JV",
+      "winnerRuns": 6,
+      "loser": "Putnam Valley JV",
+      "loserRuns": 3,
+      "source": "digitalsports:hastings_jv"
+    },
+    {
+      "date": "2026-04-08",
       "winner": "Rye Neck JV",
       "winnerRuns": 11,
       "loser": "Hastings JV",
@@ -10016,52 +10032,20 @@
       "source": "digitalsports:ryeneck_jv"
     },
     {
-      "date": "2026-04-11",
-      "winner": "Bronxville JV",
+      "date": "2026-04-08",
+      "winner": "Dobbs Ferry JV",
       "winnerRuns": 11,
-      "loser": "Rye Neck JV",
-      "loserRuns": 2,
-      "source": "digitalsports:ryeneck_jv"
-    },
-    {
-      "date": "2026-04-14",
-      "winner": "Byram Hills JV",
-      "winnerRuns": 12,
-      "loser": "Rye Neck JV",
-      "loserRuns": 2,
-      "source": "digitalsports:ryeneck_jv"
-    },
-    {
-      "date": "2026-04-16",
-      "winner": "Rye Neck JV",
-      "winnerRuns": 18,
-      "loser": "Valhalla JV",
-      "loserRuns": 8,
-      "source": "digitalsports:ryeneck_jv"
-    },
-    {
-      "date": "2026-04-17",
-      "winner": "Pleasantville JV",
-      "winnerRuns": 10,
-      "loser": "Rye Neck JV",
-      "loserRuns": 0,
-      "source": "digitalsports:ryeneck_jv"
-    },
-    {
-      "date": "2026-03-25",
-      "winner": "Irvington JV",
-      "winnerRuns": 18,
-      "loser": "Saunders JV",
-      "loserRuns": 1,
-      "source": "digitalsports:irvington_jv"
-    },
-    {
-      "date": "2026-03-27",
-      "winner": "Irvington JV",
-      "winnerRuns": 13,
-      "loser": "Lincoln JV",
+      "loser": "Sleepy Hollow JV",
       "loserRuns": 7,
-      "source": "digitalsports:irvington_jv"
+      "source": "digitalsports:sleepyhollow_jv"
+    },
+    {
+      "date": "2026-04-10",
+      "winner": "Scarsdale JV",
+      "winnerRuns": 17,
+      "loser": "Hastings JV",
+      "loserRuns": 6,
+      "source": "digitalsports:hastings_jv"
     },
     {
       "date": "2026-04-10",
@@ -10070,6 +10054,22 @@
       "loser": "Irvington JV",
       "loserRuns": 3,
       "source": "digitalsports:irvington_jv"
+    },
+    {
+      "date": "2026-04-10",
+      "winner": "Sleepy Hollow JV",
+      "winnerRuns": 14,
+      "loser": "Saunders JV",
+      "loserRuns": 1,
+      "source": "digitalsports:sleepyhollow_jv"
+    },
+    {
+      "date": "2026-04-11",
+      "winner": "Bronxville JV",
+      "winnerRuns": 11,
+      "loser": "Rye Neck JV",
+      "loserRuns": 2,
+      "source": "digitalsports:ryeneck_jv"
     },
     {
       "date": "2026-04-13",
@@ -10088,36 +10088,12 @@
       "source": "digitalsports:irvington_jv"
     },
     {
-      "date": "2026-04-18",
-      "winner": "Irvington JV",
-      "winnerRuns": 24,
-      "loser": "Lincoln JV",
-      "loserRuns": 4,
-      "source": "digitalsports:irvington_jv"
-    },
-    {
-      "date": "2026-03-26",
-      "winner": "Leffell JV",
-      "winnerRuns": 13,
-      "loser": "Sleepy Hollow JV",
-      "loserRuns": 5,
-      "source": "digitalsports:sleepyhollow_jv"
-    },
-    {
-      "date": "2026-04-08",
-      "winner": "Dobbs Ferry JV",
-      "winnerRuns": 11,
-      "loser": "Sleepy Hollow JV",
-      "loserRuns": 7,
-      "source": "digitalsports:sleepyhollow_jv"
-    },
-    {
-      "date": "2026-04-10",
-      "winner": "Sleepy Hollow JV",
-      "winnerRuns": 14,
-      "loser": "Saunders JV",
-      "loserRuns": 1,
-      "source": "digitalsports:sleepyhollow_jv"
+      "date": "2026-04-14",
+      "winner": "Byram Hills JV",
+      "winnerRuns": 12,
+      "loser": "Rye Neck JV",
+      "loserRuns": 2,
+      "source": "digitalsports:ryeneck_jv"
     },
     {
       "date": "2026-04-14",
@@ -10126,6 +10102,38 @@
       "loser": "Saunders JV",
       "loserRuns": 1,
       "source": "digitalsports:sleepyhollow_jv"
+    },
+    {
+      "date": "2026-04-16",
+      "winner": "Rye Neck JV",
+      "winnerRuns": 18,
+      "loser": "Valhalla JV",
+      "loserRuns": 8,
+      "source": "digitalsports:ryeneck_jv"
+    },
+    {
+      "date": "2026-04-17",
+      "winner": "Pleasantville JV",
+      "winnerRuns": 10,
+      "loser": "Rye Neck JV",
+      "loserRuns": 0,
+      "source": "digitalsports:ryeneck_jv"
+    },
+    {
+      "date": "2026-04-18",
+      "winner": "Irvington JV",
+      "winnerRuns": 24,
+      "loser": "Lincoln JV",
+      "loserRuns": 4,
+      "source": "digitalsports:irvington_jv"
+    },
+    {
+      "date": "2026-04-23",
+      "winner": "Ardsley JV",
+      "winnerRuns": 5,
+      "loser": "Irvington JV",
+      "loserRuns": 4,
+      "source": "digitalsports:irvington_jv"
     }
   ],
   "jvSweepConfig": {
