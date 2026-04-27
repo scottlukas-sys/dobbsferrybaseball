@@ -2435,7 +2435,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     }
 
     const leaders = {
-        avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—',
+        avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—', bb: '—',
         wins: '—', era: '—', hbp: '—', errors: '—'
     };
 
@@ -2514,6 +2514,14 @@ function generateJVStatsHTML(playerStats, gameResults) {
         leaders.sb = tied.map(p => p.name).join(', ');
     }
 
+
+    // BB = max BB (walks drawn — plate discipline)
+    const byBB = players.filter(p => (p.batting.bb || 0) > 0).sort((a, b) => b.batting.bb - a.batting.bb);
+    if (byBB.length > 0) {
+        const topBB = byBB[0].batting.bb;
+        const tied = byBB.filter(p => p.batting.bb === topBB);
+        leaders.bb = tied.map(p => p.name).join(', ');
+    }
     // WINS = max W among pitchers
     const byWins = players.filter(p => (p.pitching.w || 0) > 0).sort((a, b) => (b.pitching.w || 0) - (a.pitching.w || 0));
     if (byWins.length > 0) {
@@ -2633,6 +2641,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += `<div><strong>HITS:</strong> ${leaders.hits}</div>`;
     html += `<div><strong>RBI:</strong> ${leaders.rbi}</div>`;
     html += `<div><strong>SB:</strong> ${leaders.sb}</div>`;
+    html += `<div><strong>BB:</strong> ${leaders.bb}</div>`;
     html += `<div><strong>WINS:</strong> ${leaders.wins}</div>`;
     html += `<div><strong>ERA:</strong> ${leaders.era}</div>`;
     html += `<div><strong>HBP:</strong> ${leaders.hbp}</div>`;
