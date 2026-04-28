@@ -4891,7 +4891,8 @@
               "bb": 0,
               "so": 0,
               "hbp": 0,
-              "sb": 2
+              "sb": 2,
+              "e": 1
             },
             "pitching": null
           },
@@ -4931,7 +4932,7 @@
             "opp": "Pearl River JV",
             "hitting": {
               "ab": 3,
-              "r": 0,
+              "r": 1,
               "h": 1,
               "2b": 0,
               "3b": 0,
@@ -4939,7 +4940,7 @@
               "rbi": 0,
               "bb": 1,
               "so": 0,
-              "sb": 1,
+              "sb": 2,
               "cs": 0,
               "hbp": 0,
               "sf": 0,
@@ -5056,7 +5057,7 @@
               "pitches": 69,
               "strikes": 34,
               "bf": 21,
-              "r": 6
+              "r": 7
             }
           },
           {
@@ -5097,7 +5098,7 @@
               "bb": 3,
               "w": 0,
               "sv": 0,
-              "r": 4,
+              "r": 3,
               "bf": 11,
               "pitches": 49,
               "strikes": 22
@@ -5525,7 +5526,12 @@
             "pitching": {
               "pitches": 41,
               "strikes": 21,
-              "bf": 10
+              "bf": 10,
+              "ip": 1,
+              "h": 3,
+              "r": 6,
+              "bb": 3,
+              "so": 1
             }
           },
           {
@@ -5576,7 +5582,7 @@
               "bb": 1,
               "w": 0,
               "sv": 0,
-              "r": 4,
+              "r": 2,
               "bf": 10,
               "pitches": 40,
               "strikes": 21
@@ -5745,7 +5751,7 @@
             "opp": "Edgemont JV",
             "hitting": {
               "ab": 1,
-              "h": 0,
+              "h": 1,
               "2b": 0,
               "3b": 0,
               "hr": 0,
@@ -5786,9 +5792,9 @@
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 1,
+              "r": 0,
               "bb": 0,
-              "sb": 1
+              "sb": 0
             },
             "pitching": null
           },
@@ -5797,7 +5803,7 @@
             "opp": "Hastings JV",
             "hitting": {
               "ab": 2,
-              "h": 1,
+              "h": 0,
               "2b": 0,
               "3b": 0,
               "hr": 0,
@@ -5852,7 +5858,7 @@
             "opp": "Pearl River JV",
             "hitting": {
               "ab": 1,
-              "r": 1,
+              "r": 0,
               "h": 1,
               "2b": 0,
               "3b": 0,
@@ -5860,11 +5866,11 @@
               "rbi": 1,
               "bb": 2,
               "so": 0,
-              "sb": 1,
+              "sb": 0,
               "cs": 0,
               "hbp": 0,
               "sf": 1,
-              "e": 0
+              "e": 1
             },
             "pitching": null
           },
@@ -5956,7 +5962,7 @@
               "er": 0,
               "so": 4,
               "bb": 0,
-              "w": 1,
+              "w": 0,
               "sv": 0,
               "pitches": 18,
               "strikes": 13,
@@ -6164,6 +6170,24 @@
         "team": "Dobbs Ferry JV",
         "games": [
           {
+            "date": "2026-04-07",
+            "opponent": "Edgemont JV",
+            "hitting": {
+              "ab": 0,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "sb": 0,
+              "hbp": 0,
+              "e": 0
+            }
+          },
+          {
             "date": "2026-04-08",
             "opp": "Sleepy Hollow JV",
             "hitting": {
@@ -6197,7 +6221,7 @@
             "date": "2026-04-14",
             "opp": "Ardsley JV",
             "hitting": {
-              "ab": 1,
+              "ab": 2,
               "h": 0,
               "2b": 0,
               "3b": 0,
@@ -6205,7 +6229,7 @@
               "rbi": 0,
               "r": 0,
               "bb": 1,
-              "so": 0,
+              "so": 1,
               "sb": 0
             },
             "pitching": null
@@ -6536,7 +6560,7 @@
               "cs": 1,
               "hbp": 0,
               "sf": 0,
-              "e": 1
+              "e": 0
             },
             "pitching": {
               "ip": 2,
@@ -6676,9 +6700,9 @@
               "3b": 0,
               "hr": 0,
               "rbi": 0,
-              "r": 0,
+              "r": 1,
               "bb": 0,
-              "sb": 0
+              "sb": 1
             },
             "pitching": null
           },
@@ -6865,7 +6889,8 @@
               "rbi": 0,
               "r": 1,
               "bb": 0,
-              "so": 0
+              "so": 0,
+              "e": 1
             }
           },
           {
@@ -7044,7 +7069,8 @@
               "rbi": 0,
               "r": 0,
               "bb": 1,
-              "sb": 0
+              "sb": 0,
+              "e": 1
             },
             "pitching": null
           },
@@ -7347,6 +7373,59 @@
           "e": 0,
           "dp": 0
         }
+      },
+      "Elias Gallagher": {
+        "games": [
+          {
+            "date": "2026-04-07",
+            "opponent": "Edgemont JV",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "sb": 0,
+              "hbp": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-04-08",
+            "opponent": "Sleepy Hollow JV",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "sb": 0,
+              "hbp": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 1.2,
+              "h": 0,
+              "r": 1,
+              "er": 1,
+              "bb": 2,
+              "so": 4,
+              "w": 0,
+              "sv": 0,
+              "pitches": 35,
+              "strikes": 19,
+              "bf": 7
+            }
+          }
+        ]
       }
     }
   },
