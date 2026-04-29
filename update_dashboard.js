@@ -2130,7 +2130,7 @@ function buildJVPlayersToWatch(pisData) {
     html += `</div>`;
     return html;
 }
-const jvPlayersRegex = /(<!-- JV Players to Watch[\s\S]*?<div class="card">\s*<h2>JV PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- JV Stats))/;
+const jvPlayersRegex = /(<!-- JV Players to Watch[\s\S]*?<div class="card">\s*<h2>JV PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- Full JV Schedule))/;
 html = html.replace(jvPlayersRegex, `$1\n                ${buildJVPlayersToWatch(pisData)}\n            $3`);
 
 // Console output for PIS rankings
