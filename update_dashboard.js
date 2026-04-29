@@ -744,7 +744,7 @@ function rebuildKeyDatesSection(htmlStr, scoresMap, keyDatesComment, scheduleCom
 }
 
 html = rebuildKeyDatesSection(html, scores.varsity || {}, '<!-- Key Varsity Dates -->', '<!-- Varsity Schedule -->');
-html = rebuildKeyDatesSection(html, scores.jv || {}, '<!-- Key JV Dates -->', '<!-- Full JV Schedule -->');
+// Key JV Dates section removed
 
 // ============================================================
 // 6b. UPDATE DIVISION B STANDINGS
@@ -1266,7 +1266,7 @@ function buildJvWeeklyScores() {
 
 const jvWeekBounds = getWeekBounds(today);
 const jvWeekRangeText = `${jvWeekBounds.monDisplay}\u2013${jvWeekBounds.sunDisplay}`;
-const jvScoresRegex = /(<!-- JV Scores -->\s*<div class="card">\s*)<h2>(?:JV Scores|Scores This Week)<\/h2>([\s\S]*?)(<\/div>\s*(?=\s*<!-- Key JV Dates))/;
+const jvScoresRegex = /(<!-- JV Scores -->\s*<div class="card">\s*)<h2>(?:JV Scores|Scores This Week)<\/h2>([\s\S]*?)(<\/div>\s*(?=\s*<!-- JV Players to Watch))/;
 html = html.replace(jvScoresRegex, `$1<h2>Scores This Week</h2>\n                <p style="font-size: 12px; color: #888; margin-bottom: 12px;">${jvWeekRangeText} \u2014 DF JV games and league opponents</p>\n${buildJvWeeklyScores()}\n            </div>\n\n            `);
 
 // ============================================================
@@ -2130,7 +2130,7 @@ function buildJVPlayersToWatch(pisData) {
     html += `</div>`;
     return html;
 }
-const jvPlayersRegex = /(<!-- JV Players to Watch[\s\S]*?<div class="card">\s*<h2>JV PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- JV Intel))/;
+const jvPlayersRegex = /(<!-- JV Players to Watch[\s\S]*?<div class="card">\s*<h2>JV PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- JV Stats))/;
 html = html.replace(jvPlayersRegex, `$1\n                ${buildJVPlayersToWatch(pisData)}\n            $3`);
 
 // Console output for PIS rankings
@@ -2741,15 +2741,11 @@ function encryptJVStats(htmlString, password = 'baseball26eagles') {
     };
 }
 
-// Generate JV stats and encrypt
+// Generate JV stats and inject directly (no encryption)
 const jvStatsHtml = generateJVStatsHTML(scores.playerStats, scores);
-const encryptedPayload = encryptJVStats(jvStatsHtml);
-const jvStatsDataScript = JSON.stringify(encryptedPayload);
-
-// Replace encrypted payload in HTML
 html = html.replace(
-    /<script id="jv-stats-data" type="application\/json" data-encrypted="true">\{[\s\S]*?\}<\/script>/,
-    `<script id="jv-stats-data" type="application/json" data-encrypted="true">${jvStatsDataScript}</script>`
+    /<!-- JV_STATS_PLACEHOLDER -->/,
+    jvStatsHtml
 );
 
 // ============================================================
