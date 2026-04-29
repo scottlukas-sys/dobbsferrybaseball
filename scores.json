@@ -382,14 +382,6 @@
     },
     {
       "date": "2026-04-20",
-      "home": "Dobbs Ferry",
-      "away": "Blind Brook",
-      "homeRuns": 2,
-      "awayRuns": 5,
-      "source": "MaxPreps + GameChanger"
-    },
-    {
-      "date": "2026-04-20",
       "home": "Hastings",
       "away": "Tuckahoe",
       "homeRuns": 6,
@@ -403,14 +395,6 @@
       "homeRuns": 5,
       "awayRuns": 11,
       "source": "MaxPreps"
-    },
-    {
-      "date": "2026-04-22",
-      "home": "Blind Brook",
-      "away": "Dobbs Ferry",
-      "homeRuns": 3,
-      "awayRuns": 1,
-      "source": "GameChanger"
     }
   ],
   "playerStats": {
