@@ -9491,399 +9491,74 @@
   ],
   "teamIntel": {
     "Ardsley": {
-      "record": "0-3",
-      "dsRecord": "0-7",
-      "confRecord": "0-6",
-      "streak": "L7",
-      "recentResults": [
-        "L 7-11 at Putnam Valley (Apr 18)",
-        "L 3-4 at Hastings (Apr 13)",
-        "L 1-5 at Hendrick Hudson (Mar 28)"
-      ],
-      "blurb": "Winless at 0-7. DF beat them 6-3 (Apr 14). Worst team on the schedule. Not a threat to anyone.",
-      "sources": [
-        "maxpreps:ardsley",
-        "maxpreps:ardsley_stats"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-22",
-      "intel": "Ardsley is 0-3 with losses to Hendrick Hudson 1-5, Hastings 3-4, and Putnam Valley 7-11. Only 3 games played. Limited stats on MaxPreps: J. Jaeger .500 in small sample. Goldberg and Kleinman both 0.00 ERA in limited innings. Up next: vs Tuckahoe (today Apr 21), vs Albertus Magnus (Apr 22).",
-      "stars": [
-        "J. Jaeger .500 (limited AB)",
-        "J. Goldberg 0.00 ERA (limited IP)"
-      ],
-      "leagueStatus": "Conference 2-D League (NOT in DF's league)"
+      "intel": "Ardsley was 0-3 as of last check. Lost to Hendrick Hudson, Hastings, Putnam Valley. Very limited schedule. DF beat Ardsley 6-3 on Apr 14. Played at Eastchester Apr 27 (result unconfirmed).",
+      "lastUpdated": "2026-04-29"
     },
     "Blind Brook": {
-      "record": "7-3 (1-0 league)",
-      "dsRecord": "7-3",
-      "confRecord": "7-2",
-      "streak": "W2",
-      "recentResults": [
-        "W 5-2 at Dobbs Ferry (Apr 20, league)",
-        "W 5-1 at Briarcliff (Apr 18)",
-        "L 6-11 vs Westlake (Apr 17)"
-      ],
-      "blurb": "5-game win streak. DS 5-2 confirmed by MaxPreps. Strong offense (40 RF). Plays Westlake today (Apr 17), at Briarcliff Sat, then at DF Mon (league opener). Key threat.",
-      "sources": [
-        "digitalsports:blindbrook",
-        "ig:@dfeaglesbaseball",
-        "maxpreps:blind_brook"
-      ],
-      "lastDeepSweep": "2026-04-22",
-      "intel": "Blind Brook is 7-3 overall, 1-0 in Class B league play after beating DF 5-2 on Apr 20. On a 2-game win streak. Strong offense across the board. Hosts Dobbs Ferry today (Apr 22) and Leffell (Apr 23). Up next: vs Dobbs Ferry Apr 22 4:30 PM (league).",
-      "lastUpdated": "2026-04-22",
-      "stars": [
-        "J. Pastor .387/10 SB",
-        "M. Ebenstein .355/8 RBI/6 SB",
-        "A. Toll 0.00 ERA"
-      ],
-      "leagueStatus": "Conference 3-D (same league as DF)"
+      "intel": "Blind Brook is 2-1 in league (W 5-2 & W 3-1 vs DF, L to Hastings 2-6 on Mar 24). Beat Mount Vernon 11-1 on Apr 27. Strong across the board offensively. Plays at Hastings Apr 30 (league) and at Leffell Apr 28 (league, result unconfirmed).",
+      "lastUpdated": "2026-04-29",
+      "threat": "THREAT"
     },
     "Edgemont": {
-      "record": "3-7",
-      "dsRecord": "2-7",
-      "confRecord": "1-7",
-      "streak": "W1",
-      "recentResults": [
-        "W 14-4 vs Irvington (Apr 20)",
-        "W 16-6 at North Salem (Apr 18)",
-        "L 1-5 at Leffell (Apr 15)"
-      ],
-      "blurb": "Struggling badly at 1-7. Only win vs Haldane. Lost to Leffell 1-5 on Apr 16. DF already beat them 5-1. Not a threat.",
-      "sources": [
-        "maxpreps:edgemont",
-        "maxpreps:edgemont_stats"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-22",
-      "intel": "Edgemont is 3-7 but on a 2-game win streak after beating North Salem 16-6 and Irvington 14-4. Lost 7 of first 8. Terrasi hitting .393 with 8 SB. Vargas .500 in limited ABs with 1 HR. Kusinitz 2.45 ERA. Up next: vs Ardsley (Apr 23), at Eastchester (Apr 25).",
-      "stars": [
-        "W. Terrasi .393/11H/15R/8SB",
-        "S. Vargas .500/1 HR/7 RBI",
-        "M. Kusinitz 2.45 ERA"
-      ],
-      "leagueStatus": "Conference 2-D League (NOT in DF's league)"
+      "intel": "Edgemont is on a roll \u2014 beat Bronxville 7-4 on Apr 27 behind Kusinitz 6.2IP 8H 6K and Fenster HR. Was 3-7 but on a 3-game win streak (North Salem 16-6, Irvington 14-4, Bronxville 7-4). Terrasi .393, 8 SB. Not in DF's league.",
+      "lastUpdated": "2026-04-29"
     },
     "Haldane": {
-      "record": "1-7 (0-1 league)",
-      "dsRecord": "1-6",
-      "confRecord": "1-6",
-      "streak": "L6",
-      "recentResults": [
-        "L 3-9 vs Pawling (Apr 20, league)",
-        "L 2-16 vs Dobbs Ferry (Apr 18)",
-        "L 0-6 at Edgemont (Apr 13)"
-      ],
-      "blurb": "1-5 with 5-game losing streak. DF plays at Haldane tomorrow (Apr 18, 11am). Should be a favorable matchup. Only win was 10-0 early season.",
-      "sources": [
-        "maxpreps:haldane",
-        "maxpreps:haldane_stats"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "intel": "Haldane is 1-7 after losing 6 straight since their opening day W 11-0 vs Peekskill. Lost to Pawling 9-3 (league) and DF 16-2. Only competitive game was 12-10 loss to Sleepy Hollow. A. Swan hitting .370, Theo Swan .333 with 9 RBI. Herman 3.18 ERA. Up next: at Pawling (Apr 22), vs Putnam Valley (Apr 24).",
-      "lastUpdated": "2026-04-22",
-      "stars": [
-        "A. Swan .370/10 H/7 R",
-        "T. Swan .333/9 RBI/3 2B",
-        "O. Herman 3.18 ERA"
-      ],
-      "leagueStatus": "Conference 3-E League (NOT in DF's league)"
+      "intel": "Haldane lost to Pawling 2-15 on Apr 27 \u2014 Pawling's Chavarri 4IP 8K, Middlebrook 3-3 HR 4RBI. Haldane now 1-8+. A. Swan .370, Theo Swan .333 with 9 RBI. DF beat Haldane 16-2 on Apr 18.",
+      "lastUpdated": "2026-04-29"
     },
     "Hastings": {
-      "record": "8-5",
-      "dsRecord": "5-5",
-      "confRecord": "2-1",
-      "streak": "W4",
-      "recentResults": [
-        "W 6-4 vs Tuckahoe (Apr 20, league)",
-        "W 11-2 at Valhalla (Apr 18)",
-        "W 6-5 vs Albertus Magnus (Apr 15)"
-      ],
-      "blurb": "3-5 overall but 2-1 in league (beat Blind Brook, lost to Westlake). Social share suggests L 2-11 to Westlake today (Apr 17). Plays at Valhalla Sat, then Tuckahoe (league) Mon.",
-      "sources": [
-        "digitalsports:hastings",
-        "maxpreps:hastings",
-        "ig:@hastingsbase"
-      ],
-      "lastDeepSweep": "2026-04-28",
-      "intel": "Hastings is 5-5 overall, 2-1 in Class B league play (W at Blind Brook, L at Westlake, W vs Tuckahoe). On a 4-game win streak after rough early season. Plays at Tuckahoe today (Apr 22, league), then at Dobbs Ferry Fri (Apr 24, league). Up next: at Tuckahoe Apr 22 4:30 PM (league).",
-      "lastUpdated": "2026-04-22",
-      "stars": [
-        "A. Ciszewski .389/2.10 ERA",
-        "J. Sbrega 9 SB",
-        "A. Rothstein 1 HR"
-      ],
-      "leagueStatus": "Conference 3-D (same league as DF)",
-      "notes": "On a 7-game win streak. W 12-0 vs DF (Apr 24 league), W 4-1 vs Bronxville (Apr 26), W 4-1 vs Bronxville (Apr 28 per DS), W 10-0 vs Croton-Harmon (Apr 28). League: 2-0 (beat DF twice). Playing DF again today Apr 28."
+      "intel": "Hastings is 4-0 in Conference 3-D league play after beating DF twice (12-0 Apr 24, 11-3 Apr 28). Hosted Croton-Harmon Apr 27 (result unconfirmed). Dominant league run: 35 RF, 9 RA in 4 league games. Blind Brook visits Apr 30 (league). Previously 5-5 overall before league play surge.",
+      "lastUpdated": "2026-04-29",
+      "threat": "THREAT"
     },
     "Irvington": {
-      "record": "2-2",
-      "dsRecord": "N/A",
-      "confRecord": "N/A",
-      "streak": "N/A",
-      "recentResults": [
-        "L 4-14 at Edgemont (Apr 20)",
-        "L 8-12 at Blind Brook (Apr 11)",
-        "W 13-0 at Haldane (Apr 8)"
-      ],
-      "blurb": "Split with DF this season (lost 2-6, won 7-1). Non-league. DS page not checked this run (not in 15-team priority list).",
-      "sources": [
-        "maxpreps:irvington",
-        "opponentResults_crossref"
-      ],
-      "lastDeepSweep": "2026-04-28",
-      "lastUpdated": "2026-04-22",
-      "intel": "Irvington is 2-2 with wins over Sleepy Hollow (9-8) and Haldane (13-0) but losses to Blind Brook (8-12) and Edgemont (4-14). Got blown out by Edgemont on Apr 20. Long gap in schedule with next game not until May 4. No player stats entered on MaxPreps. Up next: at Sleepy Hollow (May 4).",
-      "stars": [],
-      "singleSource": false,
-      "leagueStatus": "Different league/conference"
+      "intel": "Irvington is 2-2 overall. Wins over Sleepy Hollow (9-8) and Haldane (13-0). Losses to Blind Brook (8-12) and Edgemont (4-14). Played at Hamilton Apr 28 (result unconfirmed). Long gap until May schedule. Beat by DF 2-6 on Mar 24, beat DF 7-1 on Apr 13.",
+      "lastUpdated": "2026-04-29"
     },
     "Leffell School": {
-      "record": "unknown",
-      "dsRecord": "2-0",
-      "confRecord": "2-0",
-      "streak": "W2",
-      "recentResults": [
-        "L 5-11 vs Rye Neck (Apr 20, league)",
-        "L 3-5 at Putnam Valley (Apr 16)",
-        "W 5-1 vs Edgemont (Apr 15)"
-      ],
-      "blurb": "Undefeated at 2-0 but tiny sample. Beat Edgemont 5-1 and had a 21-1 blowout. League play starts Apr 20 vs Rye Neck. Could surprise.",
-      "sources": [
-        "maxpreps:leffell_not_on_maxpreps",
-        "opponentResults_crossref"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-22",
-      "intel": "Leffell School not on MaxPreps. Lost to Rye Neck 5-11 (Apr 20, league), lost to Putnam Valley 3-5 (Apr 16), beat Edgemont 5-1 (Apr 15). Up next: at Rye Neck (Apr 22, league).",
-      "stars": [],
-      "singleSource": false,
-      "leagueStatus": "Conference 3-D (same league as DF)"
+      "intel": "Leffell is 1-5, on a 5-game losing streak after beating Edgemont 5-1 (Apr 15). Lost to Tuckahoe 9-10 on Apr 27. 0-1 in Conference 3-D league (L 5-11 Rye Neck). Hosted Blind Brook Apr 28 (league, result unconfirmed).",
+      "lastUpdated": "2026-04-29"
     },
     "Pearl River": {
-      "record": "1-1",
-      "dsRecord": "4-1",
-      "confRecord": "4-1",
-      "streak": "W4",
-      "recentResults": [
-        "W 10-0 at Edgemont (Apr 9)",
-        "L 7-8 at Nyack (Mar 23)"
-      ],
-      "blurb": "Hot at 4-1 with 4-game win streak. Beat DF 11-10 in a close one. Beat Ardsley 10-1. Strong offense. Non-league but quality test opponent.",
-      "sources": [
-        "maxpreps:pearl_river",
-        "digitalsports:df_schedule_confirms_game"
-      ],
-      "lastDeepSweep": "2026-04-22",
-      "lastUpdated": "2026-04-22",
-      "intel": "Pearl River is 1-1 per MaxPreps (likely more games not entered). Beat Edgemont 10-0 but lost to Nyack 7-8. DF beat PR 11-10 on Apr 11 but that game not showing on PR's MaxPreps page. Very limited data available. No player stats entered. Up next: vs Albertus Magnus (Apr 23).",
-      "stars": [],
-      "singleSource": true,
-      "leagueStatus": "Different league/conference"
+      "intel": "Pearl River data limited on MaxPreps. Beat Edgemont 10-0. DF beat Pearl River 11-10 on Apr 11 in a close one. Kollar had 2-4, 3 RBI for DF.",
+      "lastUpdated": "2026-04-29"
     },
     "Rye Neck": {
-      "record": "4-5 (1-0 league)",
-      "dsRecord": "3-5",
-      "confRecord": "3-5",
-      "streak": "L5",
-      "recentResults": [
-        "W 11-5 at Leffell (Apr 20, league)",
-        "L 1-6 at Pleasantville (Apr 18)",
-        "L 3-14 vs Valhalla (Apr 16)"
-      ],
-      "blurb": "Started 3-0, now on 3-game losing skid (3-3). Getting shut out in 2 of last 3 losses. League play at Leffell Apr 20. Concerning slide.",
-      "sources": [
-        "maxpreps:rye_neck",
-        "maxpreps:rye_neck_stats"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "intel": "Rye Neck is 4-5 after beating Leffell 11-5 (league) snapping a 5-game losing streak. Started 3-0 but dropped 5 straight to Pawling, Bronxville, Byram Hills, Valhalla, Pleasantville. R. Sutter .500 AVG, Strzalkowski .400, Gellman .333 with 10H/8RBI. Mandell 3.00 ERA. Up next: vs Leffell (Apr 22), vs Tuckahoe (Apr 24).",
-      "lastUpdated": "2026-04-22",
-      "stars": [
-        "R. Sutter .500 AVG",
-        "Z. Strzalkowski .400/8H/2 2B",
-        "B. Gellman .333/10H/8RBI"
-      ],
-      "leagueStatus": "Conference 3-D (same league as DF)"
+      "intel": "Rye Neck is 5-8 overall, 1-0 in league (W 11-5 vs Leffell Apr 20). Lost to Port Chester 3-5 on Apr 27 \u2014 fourth straight loss. Hosted Tuckahoe Apr 28 (league, result unconfirmed). DF plays at Rye Neck tomorrow (Apr 30, league). Sutter .500 AVG, Gellman .333 with 10H/8RBI.",
+      "lastUpdated": "2026-04-29"
     },
     "Saunders": {
-      "record": "0-0 per MaxPreps",
-      "dsRecord": "4-2-1",
-      "confRecord": "3-2-1",
-      "streak": "W3",
-      "recentResults": [
-        "L 3-7 at Dobbs Ferry (Mar 27)"
-      ],
-      "blurb": "Surging at 4-2-1 with 3-game win streak. Destroying Poughkeepsie (14-0, 22-1). DF beat them 7-3 early. Much improved since then. Non-league opponent.",
-      "sources": [
-        "maxpreps:saunders_404",
-        "digitalsports:saunders"
-      ],
-      "lastDeepSweep": "2026-04-22",
-      "lastUpdated": "2026-04-22",
-      "intel": "Saunders has no MaxPreps page or data available. DF beat Saunders 7-3 on Mar 27. No recent intel. Up next: unknown.",
-      "stars": [],
-      "singleSource": true,
-      "leagueStatus": "Different league/conference"
+      "intel": "No MaxPreps data available. DF beat Saunders 7-3 on Mar 27 in DF's second game of the season.",
+      "lastUpdated": "2026-04-29"
     },
     "Sleepy Hollow": {
-      "record": "5-5 (3-3 league)",
-      "dsRecord": "4-5",
-      "confRecord": "4-4",
-      "streak": "L1",
-      "recentResults": [
-        "W 13-0 at BOSSJ (Apr 20)",
-        "L 10-11 at Woodlands (Apr 18)",
-        "W 15-1 vs Woodlands (Apr 16)"
-      ],
-      "blurb": "5-4, strong. Beat DF 18-1. Lots of close games. Non-league opponent.",
-      "sources": [
-        "maxpreps:sleepy_hollow",
-        "opponentResults_crossref"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-22",
-      "intel": "Sleepy Hollow is 5-5, 3-3 in their league. Beat BOSSJ 13-0 on Apr 20 but lost a close one 10-11 to Woodlands. Won big 18-1 at DF. Alternating wins and losses. No player stats on MaxPreps. Up next: vs BOSSJ (Apr 22), vs Roosevelt (Apr 25).",
-      "stars": [],
-      "singleSource": false,
-      "leagueStatus": "Different league/conference"
+      "intel": "Sleepy Hollow is 5-5, 3-3 in their league (Conference 3-A). Beat BOSSJ 13-0, Hamilton, and DF 19-1. Hosted Pleasantville Apr 28 (result unconfirmed). Not in DF's Conference 3-D league but beat DF 19-1 on Apr 8.",
+      "lastUpdated": "2026-04-29"
     },
     "Tuckahoe": {
-      "record": "2-6 (0-1 league)",
-      "dsRecord": "2-5",
-      "confRecord": "2-5",
-      "streak": "L1",
-      "recentResults": [
-        "L 4-6 at Hastings (Apr 20, league)",
-        "L 4-12 vs Yorktown (Apr 17)",
-        "W 18-1 at North Salem (Apr 16)"
-      ],
-      "blurb": "2-4 but coming off 18-1 win. Lost to Briarcliff 5-8. League play at Hastings Apr 20. Inconsistent - big wins and big losses. Beatable but dangerous.",
-      "sources": [
-        "maxpreps:tuckahoe",
-        "maxpreps:tuckahoe_stats"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "intel": "Tuckahoe is 2-6, 0-1 in league after losing to Hastings 4-6. Only wins: Somers 6-5 and North Salem 18-1. Romeo .333 with 9H/7RBI. Brice .304 with 1 3B. Carney 3.41 ERA leads staff. Up next: at Ardsley (today Apr 21), vs Hastings (Apr 22).",
-      "lastUpdated": "2026-04-22",
-      "stars": [
-        "J. Romeo .333/9H/7RBI",
-        "C. Brice .304/7H/1 3B",
-        "K. Carney 3.41 ERA"
-      ],
-      "leagueStatus": "Conference 3-D (same league as DF)"
+      "intel": "Tuckahoe is 5-7 overall after 3-game win streak (W 10-0 Rye Neck, W 10-6 Roosevelt, W 10-9 Leffell). Was 0-1 in league (L 4-6 Hastings). Played at Rye Neck Apr 28 (league, result unconfirmed). Brice .304, Romeo .333 with 9H/7RBI. Carney 3.41 ERA.",
+      "lastUpdated": "2026-04-29"
     },
     "Valhalla": {
-      "record": "3-4",
-      "dsRecord": "0-0 (page empty)",
-      "confRecord": "N/A",
-      "streak": "N/A",
-      "recentResults": [
-        "L 2-11 vs Hastings (Apr 18)",
-        "W 14-3 at Rye Neck (Apr 16)",
-        "L 3-13 at Westlake (Apr 14)",
-        "W 12-0 vs Dobbs Ferry (Apr 27)"
-      ],
-      "blurb": "DS page completely empty. Cross-referencing opponents: lost to Blind Brook 2-3, beat Edgemont 9-6, blew out Rye Neck 14-3. Active and competitive despite empty DS. League at Briarcliff Apr 24.",
-      "sources": [
-        "maxpreps:valhalla",
-        "opponentResults_crossref"
-      ],
-      "lastDeepSweep": "2026-04-28",
-      "lastUpdated": "2026-04-22",
-      "intel": "Valhalla is 2-4 with wins over Edgemont (9-6) and Rye Neck (14-3). Got hammered by Westlake twice (5-17, 3-13) and lost to Hastings 2-11. No player stats on MaxPreps. League play starts Apr 24 vs Briarcliff. Up next: vs Briarcliff (Apr 24, league).",
-      "stars": [],
-      "singleSource": false,
-      "leagueStatus": "No Conference 3-D games; Class B playoff only"
+      "intel": "Valhalla is 2-5 after losing 12-5 to DF on Apr 27. Got hammered by Westlake twice (5-17, 3-13) and lost to Hastings 2-11. Wins over Edgemont (9-6) and Rye Neck (14-3). Plays at Briarcliff Apr 28 (result unconfirmed). Not in DF's Conference 3-D league.",
+      "lastUpdated": "2026-04-29"
     },
     "Westlake": {
-      "record": "6-4",
-      "dsRecord": "5-3",
-      "confRecord": "4-3",
-      "streak": "W1",
-      "recentResults": [
-        "W 11-6 at Blind Brook (Apr 17)",
-        "L 1-2 at Briarcliff (Apr 16)",
-        "W 13-3 vs Valhalla (Apr 14)"
-      ],
-      "blurb": "5-3 with strong offense. Beat Hastings 11-2. Capable of big wins (17-5, 14-12, 13-3) but also gets blown out. Hastings social share suggests Westlake won 11-2 today too. Non-league opponent for DF.",
-      "sources": [
-        "maxpreps:westlake",
-        "opponentResults_crossref"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-22",
-      "intel": "Westlake is 6-4 with quality wins over Hastings (11-2), Valhalla (17-5 and 13-3), and John Jay (14-12). Lost to Tappan Zee 12-1 and Pelham 8-3. Beat Blind Brook 11-6 but lost to Briarcliff 2-1. No player stats on MaxPreps. DF plays Westlake May 11. Up next: at Croton-Harmon (Apr 22).",
-      "stars": [],
-      "singleSource": false,
-      "leagueStatus": "Conference 3-A League (NOT in DF's league)"
+      "intel": "Westlake was 6-4 as of Apr 22. Quality wins over Hastings (11-2), Valhalla (17-5, 13-3), John Jay (14-12). Lost to Tappan Zee and Pelham. DF plays Westlake May 11 (non-league).",
+      "lastUpdated": "2026-04-29"
     },
     "Briarcliff": {
-      "record": "4-4-1 (0-1 league)",
-      "dsRecord": "4-3-1",
-      "confRecord": "3-3-1",
-      "streak": "L1",
-      "recentResults": [
-        "L 1-5 vs Blind Brook (Apr 18, league)",
-        "W 2-1 vs Westlake (Apr 16)",
-        "W 8-5 at Tuckahoe (Apr 14)"
-      ],
-      "blurb": "Solid 4-2-1. Tied Brewster. Beat Tuckahoe 8-5 in road win. League starts Apr 20 at Putnam Valley. Has a tie on record. Hosts Blind Brook Sat.",
-      "sources": [
-        "maxpreps:briarcliff",
-        "opponentResults_crossref"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "intel": "Briarcliff is 4-4-1 after losing league opener 1-5 to Blind Brook. Beat Westlake 2-1 and Tuckahoe 8-5 but lost to Greeley 2-5 and Pleasantville 3-5. Tied Brewster 5-5. Up next: at Putnam Valley (today Apr 21, league), vs Putnam Valley (Apr 22, league).",
-      "lastUpdated": "2026-04-22",
-      "stars": [],
-      "singleSource": false,
-      "leagueStatus": "No Conference 3-D games; likely Conference 3-E"
+      "intel": "Briarcliff was 4-4-1 as of last check. Beat Westlake 2-1 and Tuckahoe 8-5. Lost league opener 1-5 to Blind Brook. Hosted Valhalla Apr 28. Not in DF's Conference 3-D league.",
+      "lastUpdated": "2026-04-29"
     },
     "Pawling": {
-      "record": "5-1 (1-0 league)",
-      "dsRecord": "4-3",
-      "confRecord": "3-3",
-      "streak": "W1",
-      "recentResults": [
-        "W 9-3 at Haldane (Apr 20, league)",
-        "W 6-1 vs Dover (Apr 17)",
-        "W 13-5 at Tuckahoe (Apr 13)"
-      ],
-      "blurb": "4-3 and competitive. Beat Blind Brook 15-5 early (BB's worst loss). In Briarcliff's league division. Middle of pack.",
-      "sources": [
-        "maxpreps:pawling",
-        "opponentResults_crossref"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-22",
-      "intel": "Pawling is 5-1 on a 4-game win streak. Won league opener 9-3 at Haldane. Beat Dover 6-1, Tuckahoe 13-5, and shut out Rye Neck 6-0. Only loss was 2-8 at Rye Neck in game 2. Outscoring opponents 51-22. Up next: vs Haldane (Apr 22, league).",
-      "stars": [],
-      "singleSource": false,
-      "leagueStatus": "Conference 3-E League (NOT in DF's league)"
+      "intel": "Pawling crushed Haldane 15-2 on Apr 27 \u2014 Chavarri 8K, Middlebrook 3-3 HR 4RBI, Martucci 3-3 3R. Now 6-1 on a 5-game win streak. Dominant program in Conference 3-E. Not in DF's league.",
+      "lastUpdated": "2026-04-29"
     },
     "Putnam Valley": {
-      "record": "6-3",
-      "dsRecord": "4-3",
-      "confRecord": "3-2",
-      "streak": "L1",
-      "recentResults": [
-        "W 11-7 vs Ardsley (Apr 18)",
-        "W 5-3 vs Leffell (Apr 16, league)",
-        "L 2-12 at Croton-Harmon (Apr 14)"
-      ],
-      "blurb": "4-3 overall. Beat Hastings 12-8 but lost 2-12 recently. In Briarcliff's league division. Briarcliff opens league at PV on Apr 20.",
-      "sources": [
-        "maxpreps:putnam_valley",
-        "opponentResults_crossref"
-      ],
-      "lastDeepSweep": "2026-04-21",
-      "lastUpdated": "2026-04-22",
-      "intel": "Putnam Valley is 6-3 with wins over Hastings (12-8), Ardsley (11-7), and Leffell (5-3 league). Lost to Mahopac, Brewster, and Croton-Harmon. Strong pitching depth. No player stats on MaxPreps. Up next: vs Briarcliff (today Apr 21, league).",
-      "stars": [],
-      "singleSource": false,
-      "leagueStatus": "Conference 3-E League (NOT in DF's league)"
+      "intel": "Putnam Valley is 6-3. Wins over Hastings (12-8), Ardsley (11-7), Leffell (5-3 league). Strong pitching depth. In Conference 3-E, not DF's league.",
+      "lastUpdated": "2026-04-29"
     }
   },
   "teamSeasonStats": {
