@@ -743,7 +743,8 @@ function rebuildKeyDatesSection(htmlStr, scoresMap, keyDatesComment, scheduleCom
     });
 }
 
-html = rebuildKeyDatesSection(html, scores.varsity || {}, '<!-- Key Varsity Dates -->', '<!-- Varsity Schedule -->');
+// Key Varsity Dates section removed
+// html = rebuildKeyDatesSection(html, scores.varsity || {}, '<!-- Key Varsity Dates -->', '<!-- Varsity Schedule -->');
 // Key JV Dates section removed
 
 // ============================================================
@@ -2072,7 +2073,7 @@ function buildVarsityTeamLeaders() {
     return html;
 }
 
-const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- News))/;
+const playersRegex = /(<!-- Players to Watch[\s\S]*?<div class="card">\s*<h2>PLAYERS TO WATCH<\/h2>)([\s\S]*?)(<\/div>\s*(?=\s*<!-- Varsity Schedule))/;
 html = html.replace(playersRegex, `$1\n                ${pisExplainer}\n${buildPlayersToWatch(pisData)}\n${buildVarsityTeamLeaders()}\n            </div>\n\n            `);
 
 // JV Players to Watch (top 6 by PIS)
