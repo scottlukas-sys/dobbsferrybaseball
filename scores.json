@@ -192,6 +192,14 @@
         }
       ],
       "line": "0 0 1 0 1 0 1 \u2014 3 12 2 / 4 0 3 1 3 0 X \u2014 11 9 0"
+    },
+    "2026-04-30": {
+      "opponent": "Rye Neck",
+      "df": 2,
+      "opp": 6,
+      "location": "Gould Park",
+      "source": "GameChanger",
+      "league": true
     }
   },
   "jv": {
@@ -786,6 +794,33 @@
               "sf": 0,
               "e": 1
             }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 1,
+              "rbi": 1,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 3.1,
+              "h": 3,
+              "r": 3,
+              "er": 2,
+              "bb": 2,
+              "so": 1,
+              "w": 0,
+              "sv": 0
+            }
           }
         ],
         "fielding": {
@@ -1018,6 +1053,23 @@
               "sf": 0,
               "e": 0,
               "cs": 1
+            }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 3,
+              "r": 1,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 1,
+              "e": 3
             }
           }
         ],
@@ -1333,6 +1385,23 @@
               "sf": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -1593,6 +1662,23 @@
               "hbp": 0,
               "sb": 0,
               "sf": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 3,
+              "r": 1,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 1,
               "e": 0
             }
           }
@@ -2131,6 +2217,23 @@
               "sf": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -2277,6 +2380,23 @@
               "pitches": 15,
               "strikes": 9,
               "bf": 4
+            }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
             }
           }
         ],
@@ -2453,6 +2573,33 @@
               "strikes": 8,
               "bf": 5
             }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 2.2,
+              "h": 7,
+              "r": 3,
+              "er": 3,
+              "bb": 1,
+              "so": 0,
+              "w": 0,
+              "sv": 0
+            }
           }
         ],
         "fielding": {
@@ -2616,6 +2763,23 @@
               "so": 0,
               "w": 0,
               "sv": 0
+            }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
             }
           }
         ],
@@ -2866,6 +3030,23 @@
               "hbp": 0,
               "sb": 0,
               "sf": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
               "e": 0
             }
           }
@@ -3216,6 +3397,23 @@
               "pitches": 25,
               "strikes": 10,
               "bf": 7
+            }
+          },
+          {
+            "date": "2026-04-30",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
             }
           }
         ]
@@ -9428,74 +9626,72 @@
   ],
   "teamIntel": {
     "Ardsley": {
-      "intel": "Ardsley was 0-3 as of last check. Lost to Hendrick Hudson, Hastings, Putnam Valley. Very limited schedule. DF beat Ardsley 6-3 on Apr 14. Played at Eastchester Apr 27 (result unconfirmed).",
-      "lastUpdated": "2026-04-29"
+      "blurb": "1-4 overall, 0-1 league. Slow start \u2014 lost to DF 3-6 on Apr 14. Only 5 games played. Conference 3-C.",
+      "lastUpdated": "2026-05-01"
     },
     "Blind Brook": {
-      "intel": "Blind Brook is 2-1 in league (W 5-2 & W 3-1 vs DF, L to Hastings 2-6 on Mar 24). Beat Mount Vernon 11-1 on Apr 27. Strong across the board offensively. Plays at Hastings Apr 30 (league) and at Leffell Apr 28 (league, result unconfirmed).",
-      "lastUpdated": "2026-04-29",
-      "threat": "THREAT"
+      "blurb": "12-3 overall, 5-1 league (1st in Conf 3-D). Conference leaders. Beat DF twice (5-2 on Apr 20, 3-1 on Apr 22). Lost to Hastings 4-3 on Apr 29. Strong pitching staff led by A. Pena and A. Toll.",
+      "lastUpdated": "2026-05-01"
     },
     "Edgemont": {
-      "intel": "Edgemont is on a roll \u2014 beat Bronxville 7-4 on Apr 27 behind Kusinitz 6.2IP 8H 6K and Fenster HR. Was 3-7 but on a 3-game win streak (North Salem 16-6, Irvington 14-4, Bronxville 7-4). Terrasi .393, 8 SB. Not in DF's league.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "5-10 overall, 2-1 league (2nd in Conf 3-C). Beat Leffell 5-1 on Apr 16 and Irvington 14-4 on Apr 21. Lost to DF 1-5 on Apr 7. Inconsistent season.",
+      "lastUpdated": "2026-05-01"
     },
     "Haldane": {
-      "intel": "Haldane lost to Pawling 2-15 on Apr 27 \u2014 Pawling's Chavarri 4IP 8K, Middlebrook 3-3 HR 4RBI. Haldane now 1-8+. A. Swan .370, Theo Swan .333 with 9 RBI. DF beat Haldane 16-2 on Apr 18.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "1-10 overall, 0-3 league. Struggling. Lost to DF 2-16 on Apr 18. Beat Peekskill early but dropped 9 of last 10. Conference 3-E.",
+      "lastUpdated": "2026-05-01"
     },
     "Hastings": {
-      "intel": "Hastings is 4-0 in Conference 3-D league play after beating DF twice (12-0 Apr 24, 11-3 Apr 28). Hosted Croton-Harmon Apr 27 (result unconfirmed). Dominant league run: 35 RF, 9 RA in 4 league games. Blind Brook visits Apr 30 (league). Previously 5-5 overall before league play surge.",
-      "lastUpdated": "2026-04-29",
-      "threat": "THREAT"
+      "blurb": "9-7 overall, 4-2 league (3rd in Conf 3-D). Beat DF twice (12-0 on Apr 24, 11-3 on Apr 28). Lost to Blind Brook 3-4 on Apr 29. Won 4 of last 6 entering that BB loss. Strong late-season push.",
+      "lastUpdated": "2026-05-01"
     },
     "Irvington": {
-      "intel": "Irvington is 2-2 overall. Wins over Sleepy Hollow (9-8) and Haldane (13-0). Losses to Blind Brook (8-12) and Edgemont (4-14). Played at Hamilton Apr 28 (result unconfirmed). Long gap until May schedule. Beat by DF 2-6 on Mar 24, beat DF 7-1 on Apr 13.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "2-2 overall, 1-0 league (1st in Conf 3-C). Only 4 games reported on MaxPreps. Beat DF 7-1 on Apr 13. Lost to Edgemont 4-14 on Apr 21. Limited schedule data.",
+      "lastUpdated": "2026-05-01"
     },
     "Leffell School": {
-      "intel": "Leffell is 1-5, on a 5-game losing streak after beating Edgemont 5-1 (Apr 15). Lost to Tuckahoe 9-10 on Apr 27. 0-1 in Conference 3-D league (L 5-11 Rye Neck). Hosted Blind Brook Apr 28 (league, result unconfirmed).",
-      "lastUpdated": "2026-04-29"
+      "blurb": "1-6 overall, 0-5 league (6th in Conf 3-D). Last in conference. Lost to Rye Neck in divisionB play. Only win was early season.",
+      "lastUpdated": "2026-05-01"
     },
     "Pearl River": {
-      "intel": "Pearl River data limited on MaxPreps. Beat Edgemont 10-0. DF beat Pearl River 11-10 on Apr 11 in a close one. Kollar had 2-4, 3 RBI for DF.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "1-4 overall, 0-3 league (5th in Conf 3-B). Beat DF 11-10 on Apr 11 in a wild comeback. Conference 3-B, not 3-D.",
+      "lastUpdated": "2026-05-01"
     },
     "Rye Neck": {
-      "intel": "Rye Neck is 5-8 overall, 1-0 in league (W 11-5 vs Leffell Apr 20). Lost to Port Chester 3-5 on Apr 27 \u2014 fourth straight loss. Hosted Tuckahoe Apr 28 (league, result unconfirmed). DF plays at Rye Neck tomorrow (Apr 30, league). Sutter .500 AVG, Gellman .333 with 10H/8RBI.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "7-8 overall, 4-1 league (2nd in Conf 3-D). Beat DF 6-2 on Apr 30 behind Jake Mandell's complete game (7 IP, 4H, 0ER). Ben Gellman had 2 doubles. Solid conference record.",
+      "lastUpdated": "2026-05-01"
     },
     "Saunders": {
-      "intel": "No MaxPreps data available. DF beat Saunders 7-3 on Mar 27 in DF's second game of the season.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "2-0 overall, 2-0 league (1st in Conf 3-A). Only 2 games on MaxPreps \u2014 beat Poughkeepsie 14-0 and 22-1. Lost to DF 3-7 on Mar 27 (not yet on MP). Conference 3-A.",
+      "lastUpdated": "2026-05-01"
     },
     "Sleepy Hollow": {
-      "intel": "Sleepy Hollow is 5-5, 3-3 in their league (Conference 3-A). Beat BOSSJ 13-0, Hamilton, and DF 19-1. Hosted Pleasantville Apr 28 (result unconfirmed). Not in DF's Conference 3-D league but beat DF 19-1 on Apr 8.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "7-7 overall, 5-3 league. Beat DF 19-1 on Apr 8. Beat Haldane 12-10. Mixed results \u2014 competitive in most games. Conference 3-B.",
+      "lastUpdated": "2026-05-01"
     },
     "Tuckahoe": {
-      "intel": "Tuckahoe is 5-7 overall after 3-game win streak (W 10-0 Rye Neck, W 10-6 Roosevelt, W 10-9 Leffell). Was 0-1 in league (L 4-6 Hastings). Played at Rye Neck Apr 28 (league, result unconfirmed). Brice .304, Romeo .333 with 9H/7RBI. Carney 3.41 ERA.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "5-8 overall, 3-2 league (4th in Conf 3-D). Mid-pack in conference. Playing competitive ball against smaller schools.",
+      "lastUpdated": "2026-05-01"
     },
     "Valhalla": {
-      "intel": "Valhalla is 2-5 after losing 12-5 to DF on Apr 27. Got hammered by Westlake twice (5-17, 3-13) and lost to Hastings 2-11. Wins over Edgemont (9-6) and Rye Neck (14-3). Plays at Briarcliff Apr 28 (result unconfirmed). Not in DF's Conference 3-D league.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "2-6 overall, 0-2 league. Lost to DF 5-12 on Apr 27. Struggling in conference play. Conference 3-C.",
+      "lastUpdated": "2026-05-01"
     },
     "Westlake": {
-      "intel": "Westlake was 6-4 as of Apr 22. Quality wins over Hastings (11-2), Valhalla (17-5, 13-3), John Jay (14-12). Lost to Tappan Zee and Pelham. DF plays Westlake May 11 (non-league).",
-      "lastUpdated": "2026-04-29"
+      "blurb": "8-7 overall, 2-1 league (2nd in Conf 3-B). Solid season. Above .500 with competitive league record.",
+      "lastUpdated": "2026-05-01"
     },
     "Briarcliff": {
-      "intel": "Briarcliff was 4-4-1 as of last check. Beat Westlake 2-1 and Tuckahoe 8-5. Lost league opener 1-5 to Blind Brook. Hosted Valhalla Apr 28. Not in DF's Conference 3-D league.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "7-5-1 overall, 3-1 league. Strong season with a tie game on record. Beat Sleepy Hollow 14-0 on Apr 1. Conference 3-B.",
+      "lastUpdated": "2026-05-01"
     },
     "Pawling": {
-      "intel": "Pawling crushed Haldane 15-2 on Apr 27 \u2014 Chavarri 8K, Middlebrook 3-3 HR 4RBI, Martucci 3-3 3R. Now 6-1 on a 5-game win streak. Dominant program in Conference 3-E. Not in DF's league.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "6-2 overall, 2-0 league (1st in Conf 3-E). Best record among DF opponents. Beat Haldane in conference play. Strong start to season.",
+      "lastUpdated": "2026-05-01"
     },
     "Putnam Valley": {
-      "intel": "Putnam Valley is 6-3. Wins over Hastings (12-8), Ardsley (11-7), Leffell (5-3 league). Strong pitching depth. In Conference 3-E, not DF's league.",
-      "lastUpdated": "2026-04-29"
+      "blurb": "9-5 overall, 3-2 league (2nd in Conf 3-E). Beat Haldane 22-0 on Apr 28 and 15-4 on Apr 24. Lost to Briarcliff 2-13. Conference 3-E.",
+      "lastUpdated": "2026-05-01"
     }
   },
   "teamSeasonStats": {
