@@ -200,6 +200,14 @@
       "location": "Gould Park",
       "source": "GameChanger",
       "league": true
+    },
+    "2026-05-01": {
+      "opponent": "Rye Neck",
+      "df": 0,
+      "opp": 13,
+      "location": "Gould Park",
+      "source": "MaxPreps",
+      "league": true
     }
   },
   "jv": {
@@ -9658,8 +9666,8 @@
       "lastUpdated": "2026-05-01"
     },
     "Rye Neck": {
-      "blurb": "7-8 overall, 4-1 league (2nd in Conf 3-D). Beat DF 6-2 on Apr 30 behind Jake Mandell's complete game (7 IP, 4H, 0ER). Ben Gellman had 2 doubles. Solid conference record.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "8-8 overall. Beat DF 13-0 on May 1 behind Davey Ryan (5 IP, 0 ER, 1 H, 9 K; 3-for-4, 2B, 3 R, SB). Ben Gellman 3-for-4, 3 RBI, 2B. Ian Hoffman 3-for-4, 2 RBI, SB. Won 3 straight. Swept DF this season (6-2, 13-0).",
+      "lastUpdated": "2026-05-03"
     },
     "Saunders": {
       "blurb": "2-0 overall, 2-0 league (1st in Conf 3-A). Only 2 games on MaxPreps \u2014 beat Poughkeepsie 14-0 and 22-1. Lost to DF 3-7 on Mar 27 (not yet on MP). Conference 3-A.",
