@@ -450,6 +450,30 @@
       "homeRuns": 5,
       "awayRuns": 11,
       "source": "MaxPreps"
+    },
+    {
+      "date": "2026-04-27",
+      "home": "Leffell School",
+      "away": "Tuckahoe",
+      "homeRuns": 9,
+      "awayRuns": 10,
+      "source": "lohud scoreboard"
+    },
+    {
+      "date": "2026-04-28",
+      "home": "Leffell School",
+      "away": "Blind Brook",
+      "homeRuns": 3,
+      "awayRuns": 15,
+      "source": "lohud scoreboard"
+    },
+    {
+      "date": "2026-04-29",
+      "home": "Tuckahoe",
+      "away": "Hastings",
+      "homeRuns": 4,
+      "awayRuns": 6,
+      "source": "gamedayone.com scoreboard"
     }
   ],
   "playerStats": {
@@ -7558,6 +7582,10 @@
   },
   "newsLog": [
     {
+      "date": "2026-05-03",
+      "text": "Daily sweep 2026-05-03: No new DF games (next May 4 vs Tuckahoe V+JV, league). JV Apr 30 vs Rye Neck confirmed POSTPONED by user. 3 new divisionB games added: Tuckahoe 10 Leffell 9 (Apr 27), BB 15 Leffell 3 (Apr 28), Hastings 6 Tuckahoe 4 (Apr 29). All 17 teamIntel refreshed. Sources: lohud, gamedayone, MaxPreps, web search. GC pages JS-rendered (inaccessible via fetch). Valhalla score discrepancy noted: newsLog says L 0-12, scores.json has W 12-5 per prior GC audit \u2014 flagged for manual verification."
+    },
+    {
       "date": "2026-04-28",
       "text": "JV game added: Apr 28 W 12-11 vs Hastings JV. Comeback win trailing by 4. Line: DBBS 2-0-5-2-3-0-X (12R 10H 4E), HSTN 2-1-3-3-0-0-2 (11R 16H 3E). Pitching: Rizzo 3.0IP 9H 6R 4ER 1BB 3K 68P, Zonana 3.0IP 5H 3R 0ER 1BB 2K 52P, Kingston 1.0IP 2H 2R 2ER 0BB 1K 20P (W). Offense: Lukas 2-3 2B 3RBI 2SB BB, Sellitti 1-3 3RBI BB, Keltz 0-2 RBI 4R 2BB 3SB, Hwangbo 2-4 RBI R, Zonana 2-4 3R BB SB. 4 errors: Hwangbo 2E, Rizzo 1E, Lukas 1E. JV record: 2-7. [GameChanger box score]"
     },
@@ -9955,72 +9983,72 @@
   ],
   "teamIntel": {
     "Ardsley": {
-      "blurb": "1-4 overall, 0-1 league. Slow start \u2014 lost to DF 3-6 on Apr 14. Only 5 games played. Conference 3-C.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Rough season continues. Lost to Eastchester (Apr 27 per lohud schedule). Playing out of Conference 2-D (Edgemont/Pelham/Bronxville league). Non-factor in DF's league race.",
+      "lastUpdated": "2026-05-03"
     },
     "Blind Brook": {
-      "blurb": "12-3 overall, 5-1 league (1st in Conf 3-D). Conference leaders. Beat DF twice (5-2 on Apr 20, 3-1 on Apr 22). Lost to Hastings 4-3 on Apr 29. Strong pitching staff led by A. Pena and A. Toll.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "12-3 overall, 5-1 league. Dominant Conference 3-D contender. Beat Leffell 15-3 (Apr 28), Mount Vernon 11-1 (Apr 27). On 4W streak. Schneider anchors pitching staff. Pasto and Zelman lead offense. Next: vs Rye Neck May 4 (league), at Rye Neck May 6 (league).",
+      "lastUpdated": "2026-05-03"
     },
     "Edgemont": {
-      "blurb": "5-10 overall, 2-1 league (2nd in Conf 3-C). Beat Leffell 5-1 on Apr 16 and Irvington 14-4 on Apr 21. Lost to DF 1-5 on Apr 7. Inconsistent season.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Beat Bronxville 7-4 (Apr 27, Fenster HR + 2B, Kusinitz 6.2IP 6K), lost to Bronxville 1-7 (Apr 29). In Conference 2-D league. Terrasi and Fenster lead offense.",
+      "lastUpdated": "2026-05-03"
     },
     "Haldane": {
-      "blurb": "1-10 overall, 0-3 league. Struggling. Lost to DF 2-16 on Apr 18. Beat Peekskill early but dropped 9 of last 10. Conference 3-E.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Lost to Pawling 2-15 (Apr 27). In Conference 3-E (Pawling/PV/North Salem). Struggling against top competition.",
+      "lastUpdated": "2026-05-03"
     },
     "Hastings": {
-      "blurb": "9-7 overall, 4-2 league (3rd in Conf 3-D). Beat DF twice (12-0 on Apr 24, 11-3 on Apr 28). Lost to Blind Brook 3-4 on Apr 29. Won 4 of last 6 entering that BB loss. Strong late-season push.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "5-6 overall, 2-1 league. Beat Tuckahoe 6-4 (Apr 29), lost to Croton 10-0 (Apr 28 per lohud schedule). Acree key pitcher/hitter. McGrath providing power. Mixed results but competitive in league. Next: at Leffell (league).",
+      "lastUpdated": "2026-05-03"
     },
     "Irvington": {
-      "blurb": "2-2 overall, 1-0 league (1st in Conf 3-C). Only 4 games reported on MaxPreps. Beat DF 7-1 on Apr 13. Lost to Edgemont 4-14 on Apr 21. Limited schedule data.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Playing non-league schedule plus Hamilton matchups. Beat DF 7-1 earlier (Apr 13). Limited recent data.",
+      "lastUpdated": "2026-05-03"
     },
     "Leffell School": {
-      "blurb": "1-6 overall, 0-5 league (6th in Conf 3-D). Last in conference. Lost to Rye Neck in divisionB play. Only win was early season.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Struggling in league play. Lost to Tuckahoe 9-10 (Apr 27), Blind Brook 3-15 (Apr 28). Multiple blowout losses. Next: league games vs Hastings, Tuckahoe.",
+      "lastUpdated": "2026-05-03"
     },
     "Pearl River": {
-      "blurb": "1-4 overall, 0-3 league (5th in Conf 3-B). Beat DF 11-10 on Apr 11 in a wild comeback. Conference 3-B, not 3-D.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Lost to North Rockland 4-8 (Apr 28), Tappan Zee 1-2 in 8 inn (Apr 29), Nanuet 4-7 (Apr 29). Competitive but sliding. Beat DF 11-10 earlier.",
+      "lastUpdated": "2026-05-03"
     },
     "Rye Neck": {
-      "blurb": "8-8 overall. Beat DF 13-0 on May 1 behind Davey Ryan (5 IP, 0 ER, 1 H, 9 K; 3-for-4, 2B, 3 R, SB). Ben Gellman 3-for-4, 3 RBI, 2B. Ian Hoffman 3-for-4, 2 RBI, SB. Won 3 straight. Swept DF this season (6-2, 13-0).",
+      "blurb": "6-8 overall, 3-1 league. Beat DF twice: 6-2 (Apr 30) and 13-0 (May 1, Ryan 1H 9K shutout, Gellman 3-4 3RBI). Ryan emerging as ace. Hoffman steady bat. Next: vs Blind Brook May 4 (league), at Blind Brook May 6 (league).",
       "lastUpdated": "2026-05-03"
     },
     "Saunders": {
-      "blurb": "2-0 overall, 2-0 league (1st in Conf 3-A). Only 2 games on MaxPreps \u2014 beat Poughkeepsie 14-0 and 22-1. Lost to DF 3-7 on Mar 27 (not yet on MP). Conference 3-A.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Struggling program. Lost to DF 3-7 in season opener. Limited data available.",
+      "lastUpdated": "2026-05-03"
     },
     "Sleepy Hollow": {
-      "blurb": "7-7 overall, 5-3 league. Beat DF 19-1 on Apr 8. Beat Haldane 12-10. Mixed results \u2014 competitive in most games. Conference 3-B.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "7-7 overall (gamedayone Class A Dev leader). Competitive season. In Conference 3-A with Westlake/Pleasantville. Not in DF's league.",
+      "lastUpdated": "2026-05-03"
     },
     "Tuckahoe": {
-      "blurb": "5-8 overall, 3-2 league (4th in Conf 3-D). Mid-pack in conference. Playing competitive ball against smaller schools.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "7-3 overall (gamedayone Class C leader). Lost to Hastings 4-6 (Apr 29) but beat Leffell 10-9 (Apr 27). Brice and Romeo lead offense. Carney and McColgan on mound. Next: at DF May 4 (league), vs DF May 6 (league).",
+      "lastUpdated": "2026-05-03"
     },
     "Valhalla": {
-      "blurb": "2-6 overall, 0-2 league. Lost to DF 5-12 on Apr 27. Struggling in conference play. Conference 3-C.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "2-6+ overall. Lost to Briarcliff (Apr 28 per lohud schedule). Conference 3-C. Not in DF's league. Struggling season.",
+      "lastUpdated": "2026-05-03"
     },
     "Westlake": {
-      "blurb": "8-7 overall, 2-1 league (2nd in Conf 3-B). Solid season. Above .500 with competitive league record.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Lost to Panas 1-4 (Apr 29 per gamedayone). In Conference 3-A. Not in DF's league.",
+      "lastUpdated": "2026-05-03"
     },
     "Briarcliff": {
-      "blurb": "7-5-1 overall, 3-1 league. Strong season with a tie game on record. Beat Sleepy Hollow 14-0 on Apr 1. Conference 3-B.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Playing Valhalla (Apr 28) and North Salem. In separate conference. Non-factor for DF standings.",
+      "lastUpdated": "2026-05-03"
     },
     "Pawling": {
-      "blurb": "6-2 overall, 2-0 league (1st in Conf 3-E). Best record among DF opponents. Beat Haldane in conference play. Strong start to season.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "Strong season. Beat Haldane 15-2 (Apr 27), North Salem 19-1 (Apr 28). In Conference 3-E. Not in DF's league.",
+      "lastUpdated": "2026-05-03"
     },
     "Putnam Valley": {
-      "blurb": "9-5 overall, 3-2 league (2nd in Conf 3-E). Beat Haldane 22-0 on Apr 28 and 15-4 on Apr 24. Lost to Briarcliff 2-13. Conference 3-E.",
-      "lastUpdated": "2026-05-01"
+      "blurb": "9-1 overall (gamedayone Class B leader). Beat Bronxville 10-7 (Apr 29). Conference 3-E. Dominant season. Not in DF's league.",
+      "lastUpdated": "2026-05-03"
     }
   },
   "teamSeasonStats": {
