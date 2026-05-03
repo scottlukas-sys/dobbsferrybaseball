@@ -2743,9 +2743,14 @@ function encryptJVStats(htmlString, password = 'baseball26eagles') {
 }
 
 // Generate JV stats and inject directly (no encryption)
-const jvStatsHtml = generateJVStatsHTML(scores.playerStats, scores);
+const jvStatsHtml = '<!-- JV_STATS_START -->' + generateJVStatsHTML(scores.playerStats, scores) + '<!-- JV_STATS_END -->';
 html = html.replace(
     /<!-- JV_STATS_PLACEHOLDER -->/,
+    jvStatsHtml
+);
+// Also replace previously injected stats block (placeholder is consumed on first run)
+html = html.replace(
+    /<!-- JV_STATS_START -->[\s\S]*?<!-- JV_STATS_END -->/,
     jvStatsHtml
 );
 
