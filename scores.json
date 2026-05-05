@@ -424,6 +424,13 @@
           2
         ]
       }
+    },
+    "2026-05-04": {
+      "opponent": "Tuckahoe JV",
+      "df": 3,
+      "opp": 13,
+      "location": "Parkway Oval Playground",
+      "source": "GameChanger"
     }
   },
   "divisionB": [
@@ -5133,6 +5140,37 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 1,
+              "h": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "so": 0,
+              "e": 1,
+              "hbp": 0,
+              "sb": 1
+            },
+            "pitching": {
+              "ip": 2.1,
+              "h": 3,
+              "r": 3,
+              "er": 2,
+              "so": 3,
+              "bb": 1,
+              "w": 0,
+              "sv": 0,
+              "pitches": 41,
+              "strikes": 27,
+              "bf": 12
+            }
           }
         ],
         "fielding": {
@@ -5140,7 +5178,7 @@
           "a": 4,
           "po": 11,
           "fpct": 0.882,
-          "e": 2,
+          "e": 3,
           "dp": 0
         }
       },
@@ -5374,6 +5412,24 @@
               "bb": 6,
               "so": 1
             }
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "so": 1,
+              "e": 3,
+              "hbp": 0,
+              "sb": 1
+            }
           }
         ],
         "fielding": {
@@ -5381,7 +5437,7 @@
           "a": 6,
           "po": 9,
           "fpct": 0.652,
-          "e": 9,
+          "e": 12,
           "dp": 0
         }
       },
@@ -5633,6 +5689,24 @@
             "fielding": {
               "e": 1
             }
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 1,
+              "bb": 0,
+              "so": 1,
+              "e": 0,
+              "hbp": 0,
+              "sb": 0
+            }
           }
         ],
         "fielding": {
@@ -5805,6 +5879,24 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 0,
+              "e": 0,
+              "hbp": 0,
+              "sb": 0
+            }
           }
         ],
         "fielding": {
@@ -6001,6 +6093,24 @@
               "hbp": 1
             },
             "pitching": null
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 0,
+              "e": 0,
+              "hbp": 0,
+              "sb": 0
+            }
           }
         ],
         "fielding": {
@@ -6179,6 +6289,24 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 0,
+              "e": 0,
+              "hbp": 0,
+              "sb": 0
+            }
           }
         ],
         "fielding": {
@@ -6389,6 +6517,24 @@
               "er": 0,
               "bb": 3,
               "so": 1
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "so": 0,
+              "e": 0,
+              "hbp": 0,
+              "sb": 0
             }
           }
         ],
@@ -6808,6 +6954,37 @@
             "fielding": {
               "e": 1
             }
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 1,
+              "e": 0,
+              "hbp": 0,
+              "sb": 0
+            },
+            "pitching": {
+              "ip": 3.0,
+              "h": 7,
+              "r": 10,
+              "er": 1,
+              "so": 3,
+              "bb": 0,
+              "w": 0,
+              "sv": 0,
+              "pitches": 59,
+              "strikes": 39,
+              "bf": 23
+            }
           }
         ],
         "fielding": {
@@ -7001,6 +7178,24 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 1,
+              "e": 0,
+              "hbp": 1,
+              "sb": 0
+            }
           }
         ],
         "fielding": {
@@ -7175,6 +7370,24 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "so": 0,
+              "e": 0,
+              "hbp": 0,
+              "sb": 0
+            }
           }
         ],
         "fielding": {
@@ -7352,6 +7565,24 @@
             "fielding": {
               "e": 2
             }
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 3,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 1,
+              "e": 1,
+              "hbp": 0,
+              "sb": 0
+            }
           }
         ],
         "fielding": {
@@ -7359,7 +7590,7 @@
           "a": 3,
           "po": 8,
           "fpct": 0.846,
-          "e": 3,
+          "e": 4,
           "dp": 0
         }
       },
@@ -7575,8 +7806,34 @@
               "hbp": 0
             },
             "pitching": null
+          },
+          {
+            "date": "2026-05-04",
+            "opp": "Tuckahoe JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "so": 1,
+              "e": 3,
+              "hbp": 0,
+              "sb": 0
+            }
           }
-        ]
+        ],
+        "fielding": {
+          "tc": 0,
+          "a": 0,
+          "po": 0,
+          "fpct": 0,
+          "e": 3,
+          "dp": 0
+        }
       }
     }
   },
