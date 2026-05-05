@@ -459,6 +459,22 @@
       "source": "MaxPreps"
     },
     {
+      "date": "2026-04-22",
+      "home": "Tuckahoe",
+      "away": "Hastings",
+      "homeRuns": 2,
+      "awayRuns": 1,
+      "source": "MaxPreps (Tuckahoe schedule)"
+    },
+    {
+      "date": "2026-04-24",
+      "home": "Rye Neck",
+      "away": "Tuckahoe",
+      "homeRuns": 0,
+      "awayRuns": 10,
+      "source": "MaxPreps (Tuckahoe schedule)"
+    },
+    {
       "date": "2026-04-27",
       "home": "Leffell School",
       "away": "Tuckahoe",
@@ -475,12 +491,44 @@
       "source": "lohud scoreboard"
     },
     {
+      "date": "2026-04-28",
+      "home": "Rye Neck",
+      "away": "Tuckahoe",
+      "homeRuns": 11,
+      "awayRuns": 6,
+      "source": "MaxPreps (Rye Neck schedule)"
+    },
+    {
       "date": "2026-04-29",
       "home": "Tuckahoe",
       "away": "Hastings",
       "homeRuns": 4,
       "awayRuns": 6,
       "source": "gamedayone.com scoreboard"
+    },
+    {
+      "date": "2026-04-29",
+      "home": "Hastings",
+      "away": "Blind Brook",
+      "homeRuns": 3,
+      "awayRuns": 4,
+      "source": "MaxPreps (Blind Brook schedule)"
+    },
+    {
+      "date": "2026-05-04",
+      "home": "Blind Brook",
+      "away": "Rye Neck",
+      "homeRuns": 2,
+      "awayRuns": 4,
+      "source": "MaxPreps + GameDayOne scoreboard"
+    },
+    {
+      "date": "2026-05-04",
+      "home": "Leffell School",
+      "away": "Hastings",
+      "homeRuns": 5,
+      "awayRuns": 14,
+      "source": "MaxPreps (Hastings schedule)"
     }
   ],
   "playerStats": {
@@ -10235,51 +10283,51 @@
   ],
   "teamIntel": {
     "Ardsley": {
-      "blurb": "1-4 overall, 0-1 league per MaxPreps. Sparsely updated season. Lost to DF 3-6 (Apr 14). In Conference 3-D. Not competitive in league play this year.",
+      "blurb": "1-4 overall, 0-1 league per MaxPreps. Lost to DF 3-6 (Apr 14). Conference 3-D. Not competitive this year.",
       "lastUpdated": "2026-05-05"
     },
     "Blind Brook": {
-      "blurb": "12-3 overall, 5-1 league. Conference 3-D frontrunner. 7-game win streak. Beat Hastings 4-3 (Apr 29), Leffell 15-3 (Apr 28). Scheduled vs Rye Neck (May 4). Dominant in league play.",
+      "blurb": "12-4 overall, 5-2 league. 2nd in Conference 3-D. Lost to Rye Neck 2-4 (May 4). Beat Hastings 4-3 (Apr 29), Leffell 15-3 (Apr 28). Next: @ Rye Neck (May 6), @ Tuckahoe (May 8).",
       "lastUpdated": "2026-05-05"
     },
     "Edgemont": {
-      "blurb": "5-10 overall, 2-1 league per MaxPreps. Lost to Bronxville 1-7 (Apr 29), Somers 3-10 (Apr 28). Beat Bronxville 7-4 (Apr 27). Non-league struggles dragging overall record down.",
+      "blurb": "5-10 overall, 2-1 league per MaxPreps. Lost to Bronxville 1-7 (Apr 29), Somers 3-10 (Apr 28). Non-league struggles dragging record down.",
       "lastUpdated": "2026-05-05"
     },
     "Haldane": {
-      "blurb": "1-12 overall, 0-5 league per MaxPreps + Highlands Current. Lost to Valhalla 2-7 (May 2), Pawling 15-2 (Apr 29). In Conference 3-E basement. Non-factor.",
+      "blurb": "1-12 overall, 0-5 league per MaxPreps. Lost to Valhalla 2-7 (May 2). Conference 3-E basement. Non-factor.",
       "lastUpdated": "2026-05-05"
     },
     "Hastings": {
-      "blurb": "5-6 overall, 2-1 league per MaxPreps. Lost to Blind Brook 3-4 (Apr 29). Beat Croton 10-0 (Apr 27), Bronxville 4-1 (Apr 25). Beat DF twice (12-0, 11-3). Scheduled vs Leffell (May 4).",
+      "blurb": "10-7 overall, 5-2 league. 3rd in Conference 3-D. Beat Leffell 14-5 (May 4). Beat DF twice (12-0, 11-3). Lost to Blind Brook 3-4 (Apr 29). Next: vs Leffell (May 6), vs Rye Neck (May 8).",
       "lastUpdated": "2026-05-05"
     },
     "Irvington": {
-      "blurb": "2-2 overall, 1-0 league per MaxPreps. Beat Riverside 15-0 (May 2). Lost to Edgemont 4-14 (Apr 21). Beat DF 7-1 (Apr 13). In Conference 3-C. Not in DF's league bracket.",
+      "blurb": "2-2 overall, 1-0 league per MaxPreps. Beat Riverside 15-0 (May 2). Beat DF 7-1 (Apr 13). Conference 3-C. Not in DF's league bracket.",
       "lastUpdated": "2026-05-05"
     },
     "Leffell School": {
-      "blurb": "1-6 overall, 0-5 league per MaxPreps. Lost to Blind Brook 3-15 (Apr 28). In Conference 3-D basement. No May results yet.",
+      "blurb": "1-7+ overall, 0-6 league. Lost to Hastings 5-14 (May 4), Blind Brook 3-15 (Apr 28), Tuckahoe 9-10 (Apr 27). Conference 3-D basement. No wins in league.",
       "lastUpdated": "2026-05-05"
     },
     "Pearl River": {
-      "blurb": "2-5 overall, 0-4 league per MaxPreps. Lost to Tappan Zee 0-8 (May 1), beat Hendrick Hudson 4-3 (May 2). Conference 2-A. Not in DF's league.",
+      "blurb": "2-5 overall, 0-4 league per MaxPreps. Beat Hendrick Hudson 4-3 (May 2). Conference 2-A. Not in DF's league.",
       "lastUpdated": "2026-05-05"
     },
     "Rye Neck": {
-      "blurb": "8-8 overall, 5-1 league per MaxPreps. Beat DF 6-2 (Apr 30) and 13-0 (May 1). Conference 3-D contender. Tied with Blind Brook for league lead at 5-1. Scheduled @ Blind Brook (May 4).",
+      "blurb": "9-8 overall, 6-1 league. 1ST IN CONFERENCE 3-D. On 4-game win streak. Beat Blind Brook 4-2 (May 4), DF 13-0 (May 1), DF 6-2 (Apr 30), Tuckahoe 11-6 (Apr 28). Next: vs Blind Brook away (May 6), vs Hastings (May 8).",
       "lastUpdated": "2026-05-05"
     },
     "Saunders": {
-      "blurb": "2-0 per MaxPreps but only 2 games logged (both vs East Ramapo). Very limited schedule. Lost to DF 3-7 in season opener. MaxPreps last updated Apr 20.",
+      "blurb": "2-0 per MaxPreps but only 2 games logged. Lost to DF 3-7 in season opener. Very limited schedule.",
       "lastUpdated": "2026-05-05"
     },
     "Sleepy Hollow": {
-      "blurb": "8-7 overall, 6-3 league per MaxPreps. Won 13-3 vs Hamilton (May 2), 11-1 vs Hamilton (Apr 30). Competitive season. Scheduled vs Irvington (May 4).",
+      "blurb": "8-7 overall, 6-3 league per MaxPreps. Won 13-3 vs Hamilton (May 2). Competitive season in Conference 2-C.",
       "lastUpdated": "2026-05-05"
     },
     "Tuckahoe": {
-      "blurb": "5-8 overall, 3-2 league per MaxPreps. Conference 3-D mid-pack. Beat Leffell 10-9 (Apr 27), Rye Neck 10-0 (Apr 24). Scheduled @ DF (May 4) \u2014 tonight's opponent.",
+      "blurb": "6-8 overall per GameDayOne. League: beat Hastings 2-1 (Apr 22), Rye Neck 10-0 (Apr 24), Leffell 10-9 (Apr 27). Lost to Hastings 4-6 (Apr 20), Rye Neck 6-11 (Apr 28). NEXT OPPONENT: @ DF May 4 game status unclear, vs DF May 6.",
       "lastUpdated": "2026-05-05"
     },
     "Valhalla": {
@@ -10287,19 +10335,19 @@
       "lastUpdated": "2026-05-05"
     },
     "Westlake": {
-      "blurb": "8-7 overall, 2-1 league per MaxPreps. Solid season. In Conference 3-A. Not in DF's league bracket. Scheduled vs DF (May 11).",
+      "blurb": "8-7 overall, 2-1 league per MaxPreps. Conference 3-A. Scheduled vs DF (May 11).",
       "lastUpdated": "2026-05-05"
     },
     "Briarcliff": {
-      "blurb": "8-5-1 overall, 4-1 league per MaxPreps. On 3-game win streak (through May 3). Conference 3-C. Non-factor for DF's league race.",
+      "blurb": "8-5-1 overall, 4-1 league. Beat Haldane 8-2 (May 5 per GameDayOne). On win streak. Conference 3-C.",
       "lastUpdated": "2026-05-05"
     },
     "Pawling": {
-      "blurb": "6-3 overall, 2-1 league per MaxPreps. Lost to Putnam Valley 2-7 (May 2). Conference 3-E. Strong season but in different league.",
+      "blurb": "6-3 overall, 2-1 league per MaxPreps. Lost to Putnam Valley 2-7 (May 2). Conference 3-E.",
       "lastUpdated": "2026-05-05"
     },
     "Putnam Valley": {
-      "blurb": "10-5 overall, 4-2 league per MaxPreps. Beat Pawling 7-2 (May 2). Conference 3-E leader. Not in DF's league bracket.",
+      "blurb": "10-5 overall, 4-2 league per MaxPreps. Beat Pawling 7-2 (May 2). Conference 3-E leader.",
       "lastUpdated": "2026-05-05"
     }
   },
