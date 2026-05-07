@@ -439,6 +439,18 @@
       "opp": 13,
       "location": "Parkway Oval Playground",
       "source": "GameChanger"
+    },
+    "2026-05-07": {
+      "opponent": "Leffell Lions JV",
+      "df": 8,
+      "opp": 7,
+      "location": "Home",
+      "source": "GameChanger",
+      "league": true,
+      "errors": 4,
+      "innings": 7,
+      "cleanInnings": 0,
+      "defInnings": 7
     }
   },
   "divisionB": [
@@ -5235,6 +5247,25 @@
               "strikes": 27,
               "bf": 12
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 1,
+              "sb": 1,
+              "so": 0,
+              "e": 0,
+              "hbp": 0
+            },
+            "pitching": null
           }
         ],
         "fielding": {
@@ -5494,6 +5525,25 @@
               "hbp": 0,
               "sb": 1
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 4,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 1,
+              "bb": 0,
+              "sb": 0,
+              "so": 1,
+              "e": 1,
+              "hbp": 0
+            },
+            "pitching": null
           }
         ],
         "fielding": {
@@ -5501,7 +5551,7 @@
           "a": 6,
           "po": 9,
           "fpct": 0.652,
-          "e": 13,
+          "e": 14,
           "dp": 0
         }
       },
@@ -5771,6 +5821,37 @@
               "hbp": 0,
               "sb": 0
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 4,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 0,
+              "sb": 2,
+              "so": 2,
+              "e": 1,
+              "hbp": 0
+            },
+            "pitching": {
+              "ip": 2.2,
+              "h": 5,
+              "er": 2,
+              "so": 1,
+              "bb": 1,
+              "w": 0,
+              "sv": 0,
+              "r": 4,
+              "pitches": 42,
+              "strikes": 32,
+              "bf": 15
+            }
           }
         ],
         "fielding": {
@@ -5778,7 +5859,7 @@
           "a": 0,
           "po": 4,
           "fpct": 0.8,
-          "e": 3,
+          "e": 4,
           "dp": 0
         }
       },
@@ -6175,6 +6256,37 @@
               "hbp": 0,
               "sb": 0
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 1,
+              "bb": 1,
+              "sb": 0,
+              "so": 1,
+              "e": 1,
+              "hbp": 1
+            },
+            "pitching": {
+              "ip": 0.1,
+              "h": 0,
+              "er": 0,
+              "so": 1,
+              "bb": 0,
+              "w": 0,
+              "sv": 0,
+              "r": 0,
+              "pitches": 3,
+              "strikes": 3,
+              "bf": 1
+            }
           }
         ],
         "fielding": {
@@ -6182,7 +6294,7 @@
           "a": 0,
           "po": 1,
           "fpct": 1,
-          "e": 0,
+          "e": 1,
           "dp": 0
         }
       },
@@ -6371,6 +6483,25 @@
               "hbp": 0,
               "sb": 0
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 4,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0,
+              "so": 1,
+              "e": 1,
+              "hbp": 0
+            },
+            "pitching": null
           }
         ],
         "fielding": {
@@ -6378,7 +6509,7 @@
           "a": 1,
           "po": 37,
           "fpct": 0.974,
-          "e": 3,
+          "e": 4,
           "dp": 0
         }
       },
@@ -6599,6 +6730,37 @@
               "e": 0,
               "hbp": 0,
               "sb": 0
+            }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 2,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0,
+              "so": 1,
+              "e": 0,
+              "hbp": 0
+            },
+            "pitching": {
+              "ip": 4,
+              "h": 4,
+              "er": 0,
+              "so": 5,
+              "bb": 2,
+              "w": 1,
+              "sv": 0,
+              "r": 3,
+              "pitches": 73,
+              "strikes": 47,
+              "bf": 20
             }
           }
         ],
@@ -6863,6 +7025,25 @@
               "hbp": 0,
               "sb": 0
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 0,
+              "bb": 0,
+              "sb": 0,
+              "so": 0,
+              "e": 0,
+              "hbp": 0
+            },
+            "pitching": null
           }
         ],
         "fielding": {
@@ -7086,6 +7267,25 @@
               "strikes": 39,
               "bf": 23
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 1,
+              "r": 2,
+              "bb": 2,
+              "sb": 1,
+              "so": 1,
+              "e": 0,
+              "hbp": 0
+            },
+            "pitching": null
           }
         ],
         "fielding": {
@@ -7297,6 +7497,25 @@
               "hbp": 1,
               "sb": 0
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 2,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 2,
+              "bb": 1,
+              "sb": 1,
+              "so": 0,
+              "e": 0,
+              "hbp": 0
+            },
+            "pitching": null
           }
         ],
         "fielding": {
@@ -7489,6 +7708,25 @@
               "hbp": 0,
               "sb": 0
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 3,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 2,
+              "r": 0,
+              "bb": 0,
+              "sb": 0,
+              "so": 0,
+              "e": 0,
+              "hbp": 0
+            },
+            "pitching": null
           }
         ],
         "fielding": {
@@ -7684,6 +7922,25 @@
               "hbp": 0,
               "sb": 0
             }
+          },
+          {
+            "date": "2026-05-07",
+            "opp": "Leffell Lions JV",
+            "hitting": {
+              "ab": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "r": 0,
+              "bb": 0,
+              "sb": 0,
+              "so": 0,
+              "e": 0,
+              "hbp": 0
+            },
+            "pitching": null
           }
         ],
         "fielding": {
