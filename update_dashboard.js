@@ -203,7 +203,8 @@ const jvSchedule = [
     { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Away', venue: 'Rye Neck HS', address: '310 Palmer Rd, Mamaroneck, NY 10543' },
     { date: '2026-05-04', display: 'May 4', day: 'Mon', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Away', venue: 'Parkway Oval', address: '65 Elm St, Tuckahoe, NY 10707' },
-    { date: '2026-05-09', display: 'May 9', day: 'Sat', time: '12:00 PM', opponent: 'Tuckahoe JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    // RAINED OUT 5/6 — no makeup scheduled yet
+    // { date: '2026-05-06', display: 'May 6', day: 'Wed', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell JV', location: 'Away', venue: 'Leffell School', address: '40 Woods Rd, Hartsdale, NY 10530' },
 ];
