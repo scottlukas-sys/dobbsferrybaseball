@@ -182,7 +182,7 @@ const varsitySchedule = [
     { date: '2026-04-30', display: 'Apr 30', day: 'Thu', time: '4:30 PM', opponent: 'Rye Neck', location: 'Away', venue: 'Rye Neck HS', address: '310 Palmer Rd, Mamaroneck, NY 10543', type: 'League' },
     { date: '2026-05-01', display: 'May 1', day: 'Fri', time: '4:30 PM', opponent: 'Rye Neck', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
     { date: '2026-05-04', display: 'May 4', day: 'Mon', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
-    { date: '2026-05-09', display: 'May 9', day: 'Sat', time: '12:00 PM', opponent: 'Tuckahoe', location: 'Away', venue: 'Parkway Oval', address: '65 Elm St, Tuckahoe, NY 10707', type: 'League' },
+    { date: '2026-05-09', display: 'May 9', day: 'Sat', time: '4:30 PM', opponent: 'Tuckahoe', location: 'Away', venue: 'Parkway Oval', address: '65 Elm St, Tuckahoe, NY 10707', type: 'League' },
     { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell School', location: 'Away', venue: 'Leffell School', address: '40 Woods Rd, Hartsdale, NY 10530', type: 'League' },
     { date: '2026-05-11', display: 'May 11', day: 'Mon', time: '4:30 PM', opponent: 'Westlake', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
     { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell School', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
