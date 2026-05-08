@@ -1053,7 +1053,7 @@ function buildElsewhere() {
 }
 
 // Replace the What's Happening Elsewhere section
-const elsewhereRegex = /(<!-- What's Happening Elsewhere -->\s*<div class="card">\s*<h2>WHAT'S HAPPENING ELSEWHERE<\/h2>\s*<div class="team-grid">)([\s\S]*?)(<\/div>\s*<\/div>\s*(?=\s*<!-- Key Varsity))/;
+const elsewhereRegex = /(<!-- What's Happening Elsewhere -->\s*<div class="card">\s*<h2>WHAT'S HAPPENING ELSEWHERE<\/h2>\s*<div class="team-grid">)([\s\S]*?)(<\/div>\s*<\/div>\s*(?=\s*<!-- Players to Watch))/;
 html = html.replace(elsewhereRegex, `$1${buildElsewhere()}
                 $3`);
 
