@@ -635,6 +635,14 @@
       "homeRuns": 2,
       "awayRuns": 0,
       "source": "MaxPreps (Hastings schedule)"
+    },
+    {
+      "date": "2026-05-08",
+      "home": "Tuckahoe",
+      "away": "Blind Brook",
+      "homeRuns": 4,
+      "awayRuns": 7,
+      "source": "MaxPreps (Tuckahoe schedule)"
     }
   ],
   "playerStats": {
@@ -11148,72 +11156,72 @@
   ],
   "teamIntel": {
     "Ardsley": {
-      "blurb": "1-5 overall, 0-1 conference (Conf 2-B, 4th). Lone win: Tuckahoe 11-5 (4/21). Losses to Hendrick Hudson 5-1 (3/28), Pearl River 1-4 (4/2), Sleepy Hollow 9-13 (4/6), Hastings 3-4 (4/13). Short season with limited schedule.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "1-5 overall, 0-1 conference (Conf 2-B, 4th). Lone win: Tuckahoe 11-5 (4/21). Limited schedule \u2014 only 6 games through mid-May. Not a Conf 3-D team.",
+      "lastUpdated": "2026-05-11"
     },
     "Blind Brook": {
-      "blurb": "12-5 overall, 5-3 league (2nd/3rd in Conf 3-D). Lost to Rye Neck 2-4 (5/4) and 4-5 (5/6), ending a 7-game win streak. Beat Hastings 4-3 (4/29). Key league wins also include sweeps of Dobbs Ferry (5-2, 3-1) and Leffell (15-3). Strong season with 12 wins but recent slump vs Rye Neck.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "13-5 overall, 6-3 league (Conf 3-D, 3rd). Beat Tuckahoe 7-4 (5/8). Lost to Rye Neck 2-4 (5/4) and 4-5 (5/6). RF 105, RA 76. On 1-game win streak. Next: at Pawling (5/11).",
+      "lastUpdated": "2026-05-11"
     },
     "Edgemont": {
-      "blurb": "5-10 overall, 2-1 league (Conf 2-B, 2nd). On losing streak. Losses to Bronxville (1-7) and Somers (3-10). Lost to Mamaroneck (2-5, 4/10), Harrison (3-7, 4/3). Beat Sleepy Hollow 8-5 (4/11) and Dobbs Ferry 1-5 was actually DF win (4/7). Mixed results.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "5-10 overall, 2-1 league (Conf 2-B, 2nd). Lost to Leffell 1-5 (4/16). On losing streak. Not a Conf 3-D team.",
+      "lastUpdated": "2026-05-11"
     },
     "Haldane": {
-      "blurb": "1-12 overall, 0-5 league (Conf 3-E, last). On 12-game losing streak. Outscored badly \u2014 RF: 37, RA: 140+. Lost to Dobbs Ferry 2-16 (4/18). Only win: 7-6 over Peekskill (3/24). Firmly last in Conf 3-E.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "10-4 overall. Beat Yonkers Montessori 2-0 (5/2). Lost to Briarcliff 2-8 (5/5). Lost to Valhalla 0-7 (4/30) and 2-7 (5/2). Conf 3-E. Scheduled to visit Leffell (5/7) and host Sleepy Hollow (5/10).",
+      "lastUpdated": "2026-05-11"
     },
     "Hastings": {
-      "blurb": "12-8 overall, 7-3 league (Conf 3-D, 2nd). Beat Rye Neck 2-0 at home (5/8) before losing 0-2 at Rye Neck (5/9). Swept Leffell 14-5 (5/4) and 10-0 (5/5). Also swept Dobbs Ferry 12-0 (4/24) and 11-3 (4/28). Beat Croton 10-0 (4/27), Bronxville 4-1 (4/25). Strong pitching \u2014 115 RF, 67 RA. Key league losses to Tuckahoe (L 1-2 on 4/22) and Blind Brook (L 3-4 on 4/29).",
-      "lastUpdated": "2026-05-09"
+      "blurb": "12-8 overall, 7-3 league (Conf 3-D, 2nd). Beat Rye Neck 2-0 at home (5/8) before losing at Rye Neck 0-2 (5/9) \u2014 split the series. Beat Leffell 14-5 (5/4) and 10-0 (5/5). RF 115, RA 67. On 1-game losing streak. Home 6-4, Away 6-3.",
+      "lastUpdated": "2026-05-11"
     },
     "Irvington": {
-      "blurb": "3-2 overall, 2-0 conference (Conf 2-B, 1st). Beat Sleepy Hollow 9-8 (3/26, conf) and 9-3 (5/4, conf). Beat Haldane 13-0 (4/18). Lost to Briarcliff 3-14 (4/10) and Dobbs Ferry 2-6 (3/24). Limited schedule but unbeaten in conference.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "3-2 overall, 2-0 conference (Conf 2-B, 1st). Beat Sleepy Hollow 9-8 (3/26, conf). Beat Dobbs Ferry 7-1 (4/13). Won at Woodlands 20-6 (4/12). Limited schedule data available.",
+      "lastUpdated": "2026-05-11"
     },
     "Leffell School": {
-      "blurb": "1-10 overall, 0-9 league (Conf 3-D, last). On 10-game losing streak. Lost to Hastings 5-14 (5/4) and 0-10 (5/5), Dobbs Ferry 8-9 (5/7). Only win: 10-9 over Leffell on 3/27 (scrimmage/non-league). Outscored badly in league play.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "1-8 overall, 0-8 league (Conf 3-D, last). Lost to Hastings 5-14 (5/4) and 0-10 (5/5). Lost to Dobbs Ferry 8-9 (5/7). On extended losing streak. Next: at Tuckahoe (5/11), at Dobbs Ferry (5/12).",
+      "lastUpdated": "2026-05-11"
     },
     "Pearl River": {
-      "blurb": "3-5 overall, 0-4 league. Beat Hendrick Hudson 4-3 (5/2) to snap losing streak. Lost to Tappan Zee 0-8 (5/1), 1-6 (4/29), Clarkstown South 0-3 (4/25), Nanuet 2-7 (4/14). Beat Dobbs Ferry 11-10 (4/11). Struggling in league play.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "3-5 overall, 0-4 league. Beat Hendrick Hudson 4-3 (5/2) to snap losing streak. Lost to Tappan Zee 3-7 (4/28). Not a Conf 3-D team.",
+      "lastUpdated": "2026-05-11"
     },
     "Rye Neck": {
-      "blurb": "11-8 overall, 8-2 league (Conf 3-D, 1st). Swept Dobbs Ferry 6-2 (4/30) and 13-0 (5/1). Beat Blind Brook 4-2 (5/4) and 5-4 (5/6). Lost to Hastings 0-2 (5/8) before winning 2-0 at home (5/9). Tied Briarcliff 5-5 in season finale. Dominant in league play with only 2 conference losses.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "11-9 overall, 8-2 league (Conf 3-D, 1st). Beat Hastings 2-0 (5/9) to stay atop the conference. Also beat Blind Brook 4-2 (5/4) and 5-4 (5/6). Swept Dobbs Ferry 6-2 (4/30) and 13-0 (5/1). RF 102, RA 99. On 1-game win streak.",
+      "lastUpdated": "2026-05-11"
     },
     "Saunders": {
-      "blurb": "2-0 overall, 2-0 league per MaxPreps \u2014 but data stale (last updated 4/20). Beat ER CO-OP 10-0 (4/20). Lost to Dobbs Ferry 3-7 (3/27). Limited data available; MaxPreps schedule barely populated.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "2-0 overall, 2-0 league per MaxPreps \u2014 but data stale (last updated 4/20). Beat Gorton 7-4 (4/14) and 13-3 (4/18). Limited data available.",
+      "lastUpdated": "2026-05-11"
     },
     "Sleepy Hollow": {
-      "blurb": "8-8 overall, 6-4 league. Lost to Irvington 3-9 (5/4) after 2-game win streak (beat Hamilton 13-3, 11-1). Beat Dobbs Ferry 19-1 (4/8). High-scoring team (RF: 130+) but gives up runs too. Mid-pack in Conf 2-B.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "13-3 overall per local reporting (The Hudson Independent). Strong turnaround season \u2014 13 wins through first 16 games. Beat Haldane 12-10 (4/7). Lost to Briarcliff 0-14 (4/1). Lost to Irvington 8-9 (3/26). Conf 2-B.",
+      "lastUpdated": "2026-05-11"
     },
     "Tuckahoe": {
-      "blurb": "7-8 overall, 5-2 league (Conf 3-D, 3rd). Beat Dobbs Ferry 16-8 (5/9) and 13-0 (5/4) to sweep the season series. Beat Leffell 10-9 (4/27), Rye Neck 10-0 (4/24), Hastings 2-1 (4/22). Lost to Hastings 4-6 (4/20), Rye Neck 6-11 (4/28). Outscored DF 29-8 across two meetings. Capable of big offensive games but inconsistent.",
+      "blurb": "7-11 overall, 5-3 league (Conf 3-D, 4th). Beat Dobbs Ferry 13-0 (5/4) and 16-8 (5/9). Lost to Pelham Memorial 1-5 (5/5), Blind Brook 4-7 (5/8), and Bronxville 1-11 (5/9 doubleheader day). RF 118, RA 127. On 1-game win streak.",
       "lastUpdated": "2026-05-11"
     },
     "Valhalla": {
-      "blurb": "4-6 overall, 2-2 league (Conf 3-E). Beat Edgemont 9-6 (4/10), Rye Neck 14-3 (4/16), Haldane 7-0 (4/30) and 7-2 (5/2). Lost to Dobbs Ferry 5-12 (4/27), Briarcliff 0-7 (4/24), Putnam Valley 1-8 (4/22) and 6-5 (4/10). Competitive but inconsistent.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "4-6 overall, 2-2 league (Conf 3-E). Beat Haldane 7-0 (4/30) and 7-2 (5/2). Lost to Dobbs Ferry 5-12 (4/27). Beat Edgemont 9-6 (4/10), Rye Neck 14-3 (4/14). Conf 3-E team.",
+      "lastUpdated": "2026-05-11"
     },
     "Westlake": {
-      "blurb": "5-8 overall, 2-1 conference. On 4-game losing streak: Harrison 2-4 (4/26), Nanuet 2-3 (4/27), Byram Hills 2-14 (4/28), Clarkstown South 2-12 (5/1). Earlier: beat Croton 5-0 (4/8), Hastings 11-2 (3/31). Plays DF on 5/11.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "5-8 overall, 2-1 conference. On 4-game losing streak: Harrison 2-4 (4/26), Nanuet 2-8 (4/28), Pawling 3-4 (5/1), unknown (5/5). Plays Dobbs Ferry today (5/11). Non-league game at Gould Park.",
+      "lastUpdated": "2026-05-11"
     },
     "Briarcliff": {
-      "blurb": "10-5-1 overall, 6-1 conference (Conf 3-E, 1st). On 5-game win streak: North Salem 8-0 (5/2), Haldane 8-2 (5/4), Valhalla 3-1 (5/6). Tied Rye Neck 5-5. Lost to Nanuet 2-4 (4/18), Putnam Valley 2-3 (4/10). Conf 3-E leader.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "10-5-1 overall, 6-1 conference (Conf 3-E, 1st). Beat Haldane 8-2 (5/5). Beat Sleepy Hollow 14-0 (4/1). Conference leaders in 3-E. Strong pitching \u2014 low runs allowed.",
+      "lastUpdated": "2026-05-11"
     },
     "Pawling": {
-      "blurb": "6-3 overall, 2-1 conference (Conf 3-E, 2nd). Beat Blind Brook 15-5 (3/23), Rye Neck 6-0 (4/8), Tuckahoe 13-5 (4/13), Dover 5-2 (4/6), Haldane 5-0 (4/25). Lost to Valhalla 5-6 (4/10), Briarcliff 0-6 (4/17), Putnam Valley 3-10 (5/2).",
-      "lastUpdated": "2026-05-09"
+      "blurb": "6-4 overall, 2-1 conference (Conf 3-E, 2nd). Beat Blind Brook 15-5 (3/23), Rye Neck 3-2 (4/4). Beat Tuckahoe 13-5 (4/13). Next: hosts Blind Brook (5/11).",
+      "lastUpdated": "2026-05-11"
     },
     "Putnam Valley": {
-      "blurb": "11-6 overall, 5-2 conference (Conf 3-E, 1st/2nd). League leaders. Beat Haldane 22-0 (4/28) and 15-4 (4/24), Briarcliff 3-2 (4/10), Hastings 12-8 (4/10). Lost to Ardsley 7-3 (3/25), Byram Hills 7-12 (4/4). Strong pitching and offense.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "11-6 overall, 5-2 conference (Conf 3-E, 1st/2nd). League leaders. Beat Haldane 2x (15-4 on 4/24, earlier win too). Won at Briarcliff 3-2. Strong program contending for conference title.",
+      "lastUpdated": "2026-05-11"
     }
   },
   "teamSeasonStats": {
