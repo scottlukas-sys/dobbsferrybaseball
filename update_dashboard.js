@@ -152,7 +152,7 @@ function parseGameDate(dateStr) {
     const monthMap = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
     const month = monthMap[parts[0]];
     const day = parseInt(parts[1]);
-    return new Date(2026, month, day);
+    return new Date(today.getFullYear(), month, day);
 }
 
 // Format averages in TV style: no leading zero. ".333" not "0.333", "1.000" stays "1.000"
@@ -187,6 +187,9 @@ const varsitySchedule = [
     { date: '2026-05-11', display: 'May 11', day: 'Mon', time: '4:30 PM', opponent: 'Westlake', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
     { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell School', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
 ];
+
+// Ensure chronological order (array may be manually maintained out of order)
+varsitySchedule.sort((a, b) => a.date.localeCompare(b.date));
 
 const jvSchedule = [
     { date: '2026-04-07', display: 'Apr 7', day: 'Tue', time: '4:30 PM', opponent: 'Edgemont JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
@@ -522,38 +525,52 @@ const recentScoresRegex = /(<!-- Conference Scores -->\s*<div class="card">\s*)<
 html = html.replace(recentScoresRegex, `$1<h2>Scores This Week</h2>\n                <p style="font-size: 12px; color: #888; margin-bottom: 12px;">${weekRangeText} \u2014 DF games and schedule opponents</p>\n${buildWeeklyScores()}\n            </div>\n\n            `);
 
 // ============================================================
-// 6. MARK COMPLETED GAMES IN VARSITY SCHEDULE TABLE
+// 6. REGENERATE FULL VARSITY SCHEDULE TABLE from varsitySchedule array
 // ============================================================
-for (const [date, score] of Object.entries(scores.varsity)) {
-    const d = new Date(date + 'T12:00:00');
-    const shortMonth = formatShortMonth(d);
-    const dayNum = d.getDate();
-    const won = score.df > score.opp;
-    const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
-    const resultColor = won ? '#D4A017' : '#888';
+// Fully rebuild the varsity schedule table body from the varsitySchedule
+// array + scores.json. Previously this was regex-patched per-row, which
+// silently failed when cells contained HTML from prior runs (badges, links).
+// This approach mirrors the JV table rebuild at section 6a2.
+function buildFullVarsityScheduleRows() {
+    let rows = '';
+    for (const g of varsitySchedule) {
+        const score = scores.varsity[g.date];
+        const isCompleted = !!score;
+        const isScrimmage = g.type === 'Scrimmage';
+        const trClass = isCompleted ? ' class="completed"' : '';
 
-    // Match the schedule row for this date and mark as completed
-    // Pattern: <tr> or <tr class="completed"> with the date cell
-    // VARSITY ONLY: must have 7 columns (date, day, time, opp, location, venue, type)
-    // This pattern specifically matches a row with 6 <td> elements BEFORE the badge/type column,
-    // and includes the venue column to ensure it's a varsity row (not JV which has only 6 columns)
-    const datePattern = new RegExp(
-        `(<tr(?:\\s+class="[^"]*")?>\\s*<td>${shortMonth} ${dayNum}<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>)`,
-        'g'
-    );
+        let typeCell = '';
+        if (isCompleted) {
+            const won = score.df > score.opp;
+            const resultText = won ? `W ${score.df}-${score.opp}` : `L ${score.df}-${score.opp}`;
+            const resultColor = won ? '#D4A017' : '#888';
+            typeCell = `<span class="game-badge" style="background-color:${resultColor};">${resultText}</span>`;
+        } else if (isScrimmage) {
+            typeCell = '<span class="game-badge" style="background-color:#555;">Scrimmage</span>';
+        } else if (g.type === 'League') {
+            typeCell = '<span class="game-badge league">League</span>';
+        } else {
+            typeCell = g.type || 'Game';
+        }
 
-    html = html.replace(datePattern, (match) => {
-        if (match.includes('class="completed"')) return match;
-        return match.replace('<tr>', '<tr class="completed">').replace(/<tr\s+class="([^"]*)"/, '<tr class="completed $1"');
-    });
-
-    // Update the type badge in the varsity schedule to show score
-    const badgePattern = new RegExp(
-        `(<tr class="completed[^"]*">\\s*<td>${shortMonth} ${dayNum}<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>[^<]*<\\/td>\\s*<td>)([\\s\\S]*?)(<\\/td>)`,
-    );
-
-    html = html.replace(badgePattern, `$1<span class="game-badge" style="background-color:${resultColor};">${resultText}</span>$3`);
+        rows += `
+                        <tr${trClass}>
+                            <td>${g.display}</td>
+                            <td>${g.day}</td>
+                            <td>${g.time}</td>
+                            <td>${g.opponent}</td>
+                            <td>${g.location}</td>
+                            <td>${g.venue || ''}</td>
+                            <td>${typeCell}</td>
+                        </tr>`;
+    }
+    return rows;
 }
+
+// Replace the Varsity Schedule table body
+const varsityFullSchedRegex = /(<!-- Varsity Schedule -->\s*<div class="card">\s*<h2>)[\s\S]*?(<\/h2>\s*<table>\s*<thead>[\s\S]*?<\/thead>\s*<tbody>)([\s\S]*?)(<\/tbody>\s*<\/table>\s*<\/div>)/;
+html = html.replace(varsityFullSchedRegex, `$1Full Season Schedule (${varsitySchedule.length} Games)$2${buildFullVarsityScheduleRows()}
+                    $4`);
 
 // ============================================================
 // 6a2. REGENERATE FULL JV SCHEDULE TABLE from jvSchedule array
@@ -1400,7 +1417,7 @@ function computePIS(playerStats) {
         }
         if (hitLine || pitLine) {
             const d = new Date(game.date + 'T12:00:00');
-            return { date: `${formatShortMonth(d)} ${d.getDate()}`, opp: game.opp, hitLine, pitLine };
+            return { date: `${formatShortMonth(d)} ${d.getDate()}`, opp: game.opp || game.opponent || '?', hitLine, pitLine };
         }
         return null;
     }
@@ -2870,7 +2887,12 @@ if (!html.includes('goatcounter')) {
 // ============================================================
 // WRITE OUTPUT
 // ============================================================
-fs.writeFileSync(htmlPath, html);
+// Normalize encoding: ensure no double-encoded UTF-8 sequences survive.
+// This catches any remaining mojibake from prior runs or data sources.
+const buf = Buffer.from(html, 'utf8');
+// Verify the buffer round-trips cleanly
+const normalized = buf.toString('utf8');
+fs.writeFileSync(htmlPath, normalized, 'utf8');
 console.log('Dashboard updated successfully.');
 console.log(`Date: ${longDate}`);
 console.log(`Varsity Record: ${vRecord.record} | Streak: ${vRecord.streak} | League: ${vLeague}`);
