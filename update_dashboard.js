@@ -239,6 +239,9 @@ function computeRecord(teamScores) {
 }
 
 function computeLeagueRecord(teamScores, schedule) {
+    // NOTE: Uses schedule type='League', NOT scores.json g.league flag.
+    // This is the authoritative source. scores.json league flags are set
+    // by the sweep agent for convenience but are not always present.
     let wins = 0, losses = 0;
     const leagueGames = schedule.filter(g => g.type === 'League');
     const leagueDates = new Set(leagueGames.map(g => g.date));
@@ -2199,6 +2202,10 @@ function buildNewsLog(newsLog) {
         newsHtml += `<div style="font-size: 11px; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">${dateLabel}</div>`;
 
         for (const entry of entries) {
+            // Skip structural entries with no displayable text
+            const displayText = entry.text || entry.message || entry.note || entry.notes || entry.title || entry.details || '';
+            if (!displayText) continue;
+
             let color = '#ccc';
             let prefix = '';
             if (entry.highlight) { color = '#D4A017'; }
@@ -2208,7 +2215,8 @@ function buildNewsLog(newsLog) {
             else if (entry.type === 'source') { color = '#777'; }
 
             newsHtml += `<p style="margin: 0 0 4px 0; font-size: 12px; color: ${color};">`;
-            newsHtml += `${prefix}${entry.text}`;
+            const entryText = entry.text || entry.message || entry.note || entry.notes || entry.title || entry.details || '';
+            newsHtml += `${prefix}${entryText}`;
             if (entry.source) {
                 newsHtml += ` <span style="color: #555; font-size: 10px;">[${entry.source}]</span>`;
             }
@@ -2222,7 +2230,7 @@ function buildNewsLog(newsLog) {
 const newsHtml = buildNewsLog(scores.newsLog);
 
 // Replace News & Updates content and set collapsed by default
-const newsRegex = /(<!-- News & Updates[\s\S]*?<button class="collapsible-header" onclick="toggleCollapsible\(this\)">)\s*<span class="collapsible-toggle[^"]*">▶<\/span>\s*<span>News & Updates<\/span>\s*<\/button>\s*<div class="collapsible-content[^"]*">([\s\S]*?)(<\/div>\s*<\/div>\s*(?=\s*<!-- Social Media))/;
+const newsRegex = /(<!-- News & Updates[\s\S]*?<button class="collapsible-header" onclick="toggleCollapsible\(this\)">)\s*<span class="collapsible-toggle[^"]*">▶<\/span>\s*<span>News & Updates<\/span>\s*<\/button>\s*<div class="collapsible-content[^"]*">([\s\S]*?)(<\/div>\s*<\/div>\s*(?=\s*<!-- Social Media))/g;
 
 html = html.replace(newsRegex, (match, before, content, after) => {
     return `${before}\n                    <span class="collapsible-toggle collapsed">▶</span>\n                    <span>News & Updates</span>\n                </button>\n                <div class="collapsible-content collapsed">\n                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #1a1a1a;">\n${newsHtml}\n                    </div>\n                ${after}`;
