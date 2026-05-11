@@ -11136,6 +11136,14 @@
       "loser": "Alexander Hamilton",
       "loserRuns": 1,
       "source": "digitalsports:irvington"
+    },
+    {
+      "date": "2026-05-09",
+      "winner": "Tuckahoe",
+      "winnerRuns": 16,
+      "loser": "Dobbs Ferry",
+      "loserRuns": 8,
+      "source": "gamechanger"
     }
   ],
   "teamIntel": {
@@ -11184,8 +11192,8 @@
       "lastUpdated": "2026-05-09"
     },
     "Tuckahoe": {
-      "blurb": "6-8 overall, 4-2 league (Conf 3-D, 3rd). Beat Dobbs Ferry 13-0 (5/4). Plays DF again today (5/9) at Parkway Oval. Beat Leffell 10-9 (4/27), Rye Neck 10-0 (4/24), Hastings 2-1 (4/22). Lost to Hastings 4-6 (4/20), Rye Neck 6-11 (4/28). Capable of big wins but inconsistent.",
-      "lastUpdated": "2026-05-09"
+      "blurb": "7-8 overall, 5-2 league (Conf 3-D, 3rd). Beat Dobbs Ferry 16-8 (5/9) and 13-0 (5/4) to sweep the season series. Beat Leffell 10-9 (4/27), Rye Neck 10-0 (4/24), Hastings 2-1 (4/22). Lost to Hastings 4-6 (4/20), Rye Neck 6-11 (4/28). Outscored DF 29-8 across two meetings. Capable of big offensive games but inconsistent.",
+      "lastUpdated": "2026-05-11"
     },
     "Valhalla": {
       "blurb": "4-6 overall, 2-2 league (Conf 3-E). Beat Edgemont 9-6 (4/10), Rye Neck 14-3 (4/16), Haldane 7-0 (4/30) and 7-2 (5/2). Lost to Dobbs Ferry 5-12 (4/27), Briarcliff 0-7 (4/24), Putnam Valley 1-8 (4/22) and 6-5 (4/10). Competitive but inconsistent.",

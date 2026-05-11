@@ -20,35 +20,35 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // ============================================================
-// WEATHER â Open-Meteo forecast (no API key, 16-day window)
+// WEATHER — Open-Meteo forecast (no API key, 16-day window)
 // ============================================================
-// Dobbs Ferry, NY â used as the regional reference point for all games.
+// Dobbs Ferry, NY — used as the regional reference point for all games.
 // Most opponents are within 20 miles; forecast differences are negligible.
 const DFB_LAT = 41.0137;
 const DFB_LON = -73.8718;
 
-// WMO weather interpretation codes â short human text + emoji
+// WMO weather interpretation codes → short human text + emoji
 function wmoToText(code) {
     const map = {
-        0: ['Clear', 'âï¸'],
-        1: ['Mainly clear', 'ð¤ï¸'],
-        2: ['Partly cloudy', 'â'],
-        3: ['Overcast', 'âï¸'],
-        45: ['Fog', 'ð«ï¸'], 48: ['Fog', 'ð«ï¸'],
-        51: ['Light drizzle', 'ð¦ï¸'], 53: ['Drizzle', 'ð¦ï¸'], 55: ['Heavy drizzle', 'ð§ï¸'],
-        56: ['Freezing drizzle', 'ð§ï¸'], 57: ['Freezing drizzle', 'ð§ï¸'],
-        61: ['Light rain', 'ð¦ï¸'], 63: ['Rain', 'ð§ï¸'], 65: ['Heavy rain', 'ð§ï¸'],
-        66: ['Freezing rain', 'ð§ï¸'], 67: ['Freezing rain', 'ð§ï¸'],
-        71: ['Light snow', 'ð¨ï¸'], 73: ['Snow', 'ð¨ï¸'], 75: ['Heavy snow', 'âï¸'],
-        77: ['Snow grains', 'ð¨ï¸'],
-        80: ['Rain showers', 'ð¦ï¸'], 81: ['Rain showers', 'ð§ï¸'], 82: ['Heavy showers', 'âï¸'],
-        85: ['Snow showers', 'ð¨ï¸'], 86: ['Snow showers', 'âï¸'],
-        95: ['Thunderstorm', 'âï¸'], 96: ['Thunderstorm + hail', 'âï¸'], 99: ['Thunderstorm + hail', 'âï¸'],
+        0: ['Clear', '☀️'],
+        1: ['Mainly clear', '🌤️'],
+        2: ['Partly cloudy', '⛅'],
+        3: ['Overcast', '☁️'],
+        45: ['Fog', '🌫️'], 48: ['Fog', '🌫️'],
+        51: ['Light drizzle', '🌦️'], 53: ['Drizzle', '🌦️'], 55: ['Heavy drizzle', '🌧️'],
+        56: ['Freezing drizzle', '🌧️'], 57: ['Freezing drizzle', '🌧️'],
+        61: ['Light rain', '🌦️'], 63: ['Rain', '🌧️'], 65: ['Heavy rain', '🌧️'],
+        66: ['Freezing rain', '🌧️'], 67: ['Freezing rain', '🌧️'],
+        71: ['Light snow', '🌨️'], 73: ['Snow', '🌨️'], 75: ['Heavy snow', '❄️'],
+        77: ['Snow grains', '🌨️'],
+        80: ['Rain showers', '🌦️'], 81: ['Rain showers', '🌧️'], 82: ['Heavy showers', '⛈️'],
+        85: ['Snow showers', '🌨️'], 86: ['Snow showers', '❄️'],
+        95: ['Thunderstorm', '⛈️'], 96: ['Thunderstorm + hail', '⛈️'], 99: ['Thunderstorm + hail', '⛈️'],
     };
     return map[code] || ['', ''];
 }
 
-// Parse "4:30 PM" â 16 (24h hour)
+// Parse "4:30 PM" → 16 (24h hour)
 function parseTimeTo24h(timeStr) {
     if (!timeStr) return 16;
     const m = timeStr.match(/(\d+):?(\d+)?\s*(AM|PM)/i);
@@ -103,10 +103,10 @@ function fetchGameWeather(gameDate, gameTime) {
 
         const parts = [];
         if (desc) parts.push(`${emoji} ${desc}`);
-        parts.push(`${temp}Â°F`);
+        parts.push(`${temp}°F`);
         if (pop != null) parts.push(`${pop}% precip`);
         if (wind != null) parts.push(`${wind} mph wind`);
-        return parts.join(' â¢ ');
+        return parts.join(' • ');
     } catch (e) {
         return null;
     }
@@ -169,7 +169,7 @@ const varsitySchedule = [
     { date: '2026-03-27', display: 'Mar 27', day: 'Fri', time: '4:30 PM', opponent: 'Saunders', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
     { date: '2026-04-07', display: 'Apr 7', day: 'Tue', time: '4:30 PM', opponent: 'Edgemont', location: 'Away', venue: 'Edgemont HS', address: '300 White Oak Ln, Scarsdale, NY 10583', type: 'Game' },
     { date: '2026-04-08', display: 'Apr 8', day: 'Wed', time: '4:30 PM', opponent: 'Sleepy Hollow', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
-    // Apr 11 Pearl River game WAS played despite earlier postponement report â confirmed by @dfeaglesbaseball IG 4/12 post (DF L 10-11)
+    // Apr 11 Pearl River game WAS played despite earlier postponement report — confirmed by @dfeaglesbaseball IG 4/12 post (DF L 10-11)
     { date: '2026-04-11', display: 'Apr 11', day: 'Sat', time: '3:00 PM', opponent: 'Pearl River', location: 'Away', venue: 'Pearl River HS', address: '275 E Central Ave, Pearl River, NY 10965', type: 'Game' },
     { date: '2026-04-13', display: 'Apr 13', day: 'Mon', time: '4:30 PM', opponent: 'Irvington', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
     { date: '2026-04-14', display: 'Apr 14', day: 'Tue', time: '4:30 PM', opponent: 'Ardsley', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
@@ -191,7 +191,7 @@ const varsitySchedule = [
 const jvSchedule = [
     { date: '2026-04-07', display: 'Apr 7', day: 'Tue', time: '4:30 PM', opponent: 'Edgemont JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-04-08', display: 'Apr 8', day: 'Wed', time: '4:30 PM', opponent: 'Sleepy Hollow JV', location: 'Away', venue: 'Sleepy Hollow HS', address: '210 N Broadway, Sleepy Hollow, NY 10591' },
-    // POSTPONED â removed from DFSD athletic calendar as of 2026-04-07; no makeup date posted
+    // POSTPONED — removed from DFSD athletic calendar as of 2026-04-07; no makeup date posted
     // { date: '2026-04-11', display: 'Apr 11', day: 'Sat', time: '3:00 PM', opponent: 'Pearl River JV', location: 'Home' },
     { date: '2026-04-14', display: 'Apr 14', day: 'Tue', time: '4:30 PM', opponent: 'Ardsley JV', location: 'Away', venue: 'Ardsley HS', address: '300 Farm Rd, Ardsley, NY 10502' },
     { date: '2026-04-16', display: 'Apr 16', day: 'Thu', time: '4:30 PM', opponent: 'Hastings JV', location: 'Away', venue: 'Hastings HS', address: '27 Farragut Ave, Hastings-on-Hudson, NY 10706' },
@@ -254,8 +254,8 @@ function computeLeagueRecord(teamScores, schedule) {
 // 1. UPDATE TITLE DATE
 // ============================================================
 const longDate = formatLongDate(today);
-// Title tag is now static "The Dobbs Ferry Eagles Baseball Club" â do not overwrite
-// Subtitle is now static "Section 1 | Conference 3 | Division B" â do not overwrite
+// Title tag is now static "The Dobbs Ferry Eagles Baseball Club" — do not overwrite
+// Subtitle is now static "Section 1 | Conference 3 | Division B" — do not overwrite
 
 // ============================================================
 // 2. UPDATE VARSITY QUICK STATS
@@ -265,7 +265,7 @@ const vLeague = computeLeagueRecord(scores.varsity, varsitySchedule);
 
 // Find next varsity game (non-scrimmage, not yet played)
 const playedVarsityDates = new Set(Object.keys(scores.varsity));
-// Also mark scrimmages as "played" â they're always in the past
+// Also mark scrimmages as "played" — they're always in the past
 const nextVarsityGames = varsitySchedule.filter(g => {
     if (g.type === 'Scrimmage') return false;
     if (playedVarsityDates.has(g.date)) return false;
@@ -360,7 +360,7 @@ if (nextVarsityGame) {
     // Replace the entire varsity alert card
     const alertRegex = /(<div id="varsity"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- Quick Stats -->)/;
     html = html.replace(alertRegex, `$1<div class="card alert">
-                <div class="alert-title">NEXT GAME â ${daysText} (${shortMonth.toUpperCase()} ${nextDate.getDate()})</div>
+                <div class="alert-title">NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextDate.getDate()})</div>
                 <div class="alert-game">${shortMonth} ${nextDate.getDate()} (${dayOfWeek}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextVarsityGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextVarsityGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${venueName}</div>
                 <div class="alert-details">Non-league</div>${vAddressRow}${vWeatherRow}
             </div>$3`);
@@ -373,7 +373,7 @@ function buildNextFourVarsity() {
     // Get all non-scrimmage games
     const realGames = varsitySchedule.filter(g => g.type !== 'Scrimmage');
 
-    // Only show upcoming games â no completed games in this section
+    // Only show upcoming games — no completed games in this section
     const upcomingGames = realGames.filter(g => !playedVarsityDates.has(g.date) && g.date >= todayStr);
 
     const displayGames = upcomingGames.slice(0, 4);
@@ -458,7 +458,7 @@ function buildWeeklyScores() {
         }
     }
 
-    // Opponent results this week (exclude DF games â already listed above)
+    // Opponent results this week (exclude DF games — already listed above)
     const oppResults = scores.opponentResults || [];
     const dfNames = ['dobbs ferry', 'dobbs', 'df'];
     for (const g of oppResults) {
@@ -637,7 +637,7 @@ function rebuildKeyDatesSection(htmlStr, scoresMap, keyDatesComment, scheduleCom
     today.setHours(0, 0, 0, 0);
     const year = today.getFullYear();
 
-    // Build score lookup: "Mon DD" â { df, opp, opponent }
+    // Build score lookup: "Mon DD" → { df, opp, opponent }
     const scoreLookup = {};
     for (const [dateStr, score] of Object.entries(scoresMap)) {
         const d = new Date(dateStr + 'T12:00:00');
@@ -763,8 +763,8 @@ function rebuildKeyDatesSection(htmlStr, scoresMap, keyDatesComment, scheduleCom
 // 6b. UPDATE DIVISION B STANDINGS
 // ============================================================
 // ============================================================
-// CONFERENCE 3-D LEAGUE â LOCKED ROSTER (do not modify without authoritative source)
-// Dobbs Ferry's actual regular-season league is Section 1 Conference 3, Division D â
+// CONFERENCE 3-D LEAGUE — LOCKED ROSTER (do not modify without authoritative source)
+// Dobbs Ferry's actual regular-season league is Section 1 Conference 3, Division D —
 // a 6-team sub-division within the Class B playoff bracket. Confirmed via MaxPreps live
 // standings and individual game-page "conference" labels (2026-04-08).
 // Class B is the NYSPHSAA playoff enrollment class (multiple sub-divisions pooled for
@@ -944,10 +944,10 @@ function computeDivBStandings() {
         const s = standings[team];
         const total = s.w + s.l;
         const pct = total > 0 ? (s.w / total).toFixed(3).replace('0.', '.') : '.000';
-        let gb = 'â';
+        let gb = '—';
         if (leaderTotal > 0 && total > 0) {
             const gbVal = ((leader.w - s.w) + (s.l - leader.l)) / 2;
-            gb = gbVal === 0 ? 'â' : gbVal.toFixed(1).replace('.0', '');
+            gb = gbVal === 0 ? '—' : gbVal.toFixed(1).replace('.0', '');
         }
         const highlight = team === 'Dobbs Ferry Eagles' ? ' style="background-color: rgba(43, 93, 170, 0.15);"' : '';
         const prDisplay = s.powerRating.toFixed(3).replace('0.', '.');
@@ -1076,7 +1076,7 @@ const playedJvDates = new Set(Object.keys(scores.jv));
 const nextJvGames = jvSchedule.filter(g => !playedJvDates.has(g.date) && g.date >= todayStr);
 const nextJvGame = nextJvGames[0];
 
-// Update JV Status Alert â match varsity formatting
+// Update JV Status Alert — match varsity formatting
 if (nextJvGame) {
     const nextJvDate = new Date(nextJvGame.date + 'T12:00:00');
     const daysUntil = daysBetween(today, nextJvDate);
@@ -1112,7 +1112,7 @@ if (nextJvGame) {
     // Replace the entire JV alert card to match varsity style
     const jvAlertRegex = /(<div id="jv"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- JV Quick Stats -->)/;
     html = html.replace(jvAlertRegex, `$1<div class="card alert">
-                <div class="alert-title">JV NEXT GAME â ${daysText} (${shortMonth.toUpperCase()} ${nextJvDate.getDate()})</div>
+                <div class="alert-title">JV NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextJvDate.getDate()})</div>
                 <div class="alert-game">${shortMonth} ${nextJvDate.getDate()} (${dayName}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextJvGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${jvVenueName}</div>
                 <div class="alert-details">Non-league</div>${jvAddressRow}${jvWeatherRow}
             </div>$3`);
@@ -1154,7 +1154,7 @@ html = html.replace(
 
 // Update Next Four JV Games
 function buildNextFourJV() {
-    // Only show upcoming games â no completed games in this section
+    // Only show upcoming games — no completed games in this section
     const upcoming = jvSchedule.filter(g => !playedJvDates.has(g.date) && g.date >= todayStr);
     const displayGames = upcoming.slice(0, 4);
 
@@ -1222,7 +1222,7 @@ function buildJvWeeklyScores() {
         }
     }
 
-    // JV opponent scores this week (exclude DF JV games â already listed above)
+    // JV opponent scores this week (exclude DF JV games — already listed above)
     const jvOppResults = scores.jvOpponentScores || [];
     const dfJvNames = ['dobbs ferry', 'dobbs', 'df'];
     for (const g of jvOppResults) {
@@ -1283,7 +1283,7 @@ const jvScoresRegex = /(<!-- JV Scores -->\s*<div class="card">\s*)<h2>(?:JV Sco
 html = html.replace(jvScoresRegex, `$1<h2>Scores This Week</h2>\n                <p style="font-size: 12px; color: #888; margin-bottom: 12px;">${jvWeekRangeText} \u2014 DF JV games and league opponents</p>\n${buildJvWeeklyScores()}\n            </div>\n\n            `);
 
 // ============================================================
-// 8. PLAYERS TO WATCH â AUTO-GENERATED BY PIS (Player Impact Score)
+// 8. PLAYERS TO WATCH — AUTO-GENERATED BY PIS (Player Impact Score)
 // ============================================================
 // PIS Formula (all per-game, 2 decimal precision):
 //   Hitting (shared base): H(1) + 2B(+0.75) + 3B(+1.25) + HR(+2) + BB(0.75)
@@ -1332,7 +1332,7 @@ function computePIS(playerStats) {
             hitPts += (h.hr || 0) * 2.0;        // XBH bonus: HR
             if (isJV) {
                 hitPts += (h.rbi || 0) * 0.25;     // JV: tiny RBI weight (context-heavy at JV)
-                // R dropped entirely for JV â lineup too inconsistent
+                // R dropped entirely for JV — lineup too inconsistent
             } else {
                 hitPts += (h.rbi || 0) * 0.5;      // Varsity: reduced from 0.75 (opportunity-dependent)
                 hitPts += (h.r || 0) * 0.25;        // Varsity: reduced from 0.5 (partly who bats behind you)
@@ -1340,8 +1340,8 @@ function computePIS(playerStats) {
             hitPts += (h.bb || 0) * 0.75;        // plate discipline / on-base
             hitPts += (h.hbp || 0) * 0.75;       // toughness + on-base
             hitPts += (h.sb || 0) * 0.5;          // speed/aggression
-            hitPts -= (h.so || 0) * 0.35;         // nothing happens with a K â same penalty all levels
-            // Errors removed from PIS â positional bias (SS gets 8x more chances than LF).
+            hitPts -= (h.so || 0) * 0.35;         // nothing happens with a K — same penalty all levels
+            // Errors removed from PIS — positional bias (SS gets 8x more chances than LF).
             // Errors are surfaced in Team Leaders instead.
             if (hits >= 2) hitPts += 1.5;          // multi-hit game bonus
         }
@@ -1427,13 +1427,13 @@ function computePIS(playerStats) {
             let useSeasonStats = false;
 
             // Per-game data coverage: for DF/JV players, per-game data IS the
-            // complete record â if a player isn't in a game, they didn't play.
+            // complete record — if a player isn't in a game, they didn't play.
             // Only fall back to GC aggregates for opponents (no per-game data)
             // or players with zero game entries.
             const hasPerGameData = games.length > 0;
 
             if (ss && ss.source && ss.source.includes('GameChanger') && !hasPerGameData) {
-                // GameChanger flat format â use aggregate when per-game data is incomplete
+                // GameChanger flat format — use aggregate when per-game data is incomplete
                 const fakeHitting = (ss.h > 0 || ss.bb > 0 || ss.r > 0 || ss.rbi > 0 || (ss.ab || 0) > 0) ? {
                     h: ss.h || 0, '2b': ss['2b'] || 0, '3b': ss['3b'] || 0,
                     hr: ss.hr || 0, rbi: ss.rbi || 0, r: ss.r || 0, bb: ss.bb || 0, ab: ss.ab || 0,
@@ -1495,7 +1495,7 @@ function computePIS(playerStats) {
             }
 
             // Both JV and Varsity: PIS per game (hitting / total games, pitching / pitching apps)
-            // Opponents: cumulative (no per-game normalization â often only season totals)
+            // Opponents: cumulative (no per-game normalization — often only season totals)
             const isOpponent = poolLabel === 'opponents';
             const hitPtsPerGame = (!isOpponent && gamesWithStats > 0) ? Math.round((hitTotal / gamesWithStats) * 100) / 100 : Math.round(hitTotal * 10) / 10;
             const pitPtsPerGame = (!isOpponent && pitchingApps > 0) ? Math.round((pitTotal / pitchingApps) * 100) / 100 : Math.round(pitTotal * 10) / 10;
@@ -1697,7 +1697,7 @@ function buildPlayersToWatch(pisData) {
 
     let sectionHtml = '';
 
-    // DF Section â split into Top Hitters and Top Pitchers
+    // DF Section — split into Top Hitters and Top Pitchers
     sectionHtml += `<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px; border-left: 3px solid #2B5DAA;">`;
     sectionHtml += `<h3 style="margin-top: 0; margin-bottom: 10px; color: #2B5DAA;">Dobbs Ferry Eagles</h3>`;
     if (dfHitters.length === 0 && dfPitchers.length === 0) {
@@ -1722,7 +1722,7 @@ function buildPlayersToWatch(pisData) {
 }
 
 // ============================================================
-// OPPONENT SCOUTING REPORT â replaces old opponent Players to Watch
+// OPPONENT SCOUTING REPORT — replaces old opponent Players to Watch
 // ============================================================
 // Ranking logic:
 //   1. If box score data exists: PIS (hidden from display)
@@ -1854,12 +1854,12 @@ const varsityMinPA = Math.floor(varsityTeamGames * PA_PER_GAME_THRESHOLD);
 const jvMinPA = Math.floor(jvTeamGames * PA_PER_GAME_THRESHOLD);
 const varsityMinIP = Math.floor(varsityTeamGames * IP_PER_GAME_THRESHOLD);
 const jvMinIP = Math.floor(jvTeamGames * JV_IP_PER_GAME_THRESHOLD);
-console.log(`\nQualification thresholds â Varsity (${varsityTeamGames}G): ${varsityMinPA} PA / ${varsityMinIP} IP | JV (${jvTeamGames}G): ${jvMinPA} PA / ${jvMinIP} IP`);
+console.log(`\nQualification thresholds — Varsity (${varsityTeamGames}G): ${varsityMinPA} PA / ${varsityMinIP} IP | JV (${jvTeamGames}G): ${jvMinPA} PA / ${jvMinIP} IP`);
 
-const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.5) + R(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) â SO(.35). Pitching: W(2) + SV(2) + IP(1.5) + SO(1) â ER(1.25) â BB(.5) â H(.25). Hitting avg'd over games played; pitching avg'd over pitching appearances. Errors tracked separately in Team Leaders. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
+const pisExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.5) + R(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) &minus; SO(.35). Pitching: W(2) + SV(2) + IP(1.5) + SO(1) &minus; ER(1.25) &minus; BB(.5) &minus; H(.25). Hitting avg'd over games played; pitching avg'd over pitching appearances. Errors tracked separately in Team Leaders. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
 
 // ============================================================
-// VARSITY TEAM LEADERS â mirrors JV Team Leaders section
+// VARSITY TEAM LEADERS — mirrors JV Team Leaders section
 // ============================================================
 function buildVarsityTeamLeaders() {
     const dfPool = scores.playerStats && scores.playerStats.df ? scores.playerStats.df : {};
@@ -1944,8 +1944,8 @@ function buildVarsityTeamLeaders() {
     });
 
     const leaders = {
-        avg: 'â', obp: 'â', ops: 'â', hits: 'â', rbi: 'â', sb: 'â',
-        wins: 'â', era: 'â', hbp: 'â', errors: 'â'
+        avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—',
+        wins: '—', era: '—', hbp: '—', errors: '—'
     };
 
     // AVG
@@ -2027,7 +2027,7 @@ function buildVarsityTeamLeaders() {
         leaders.wins = byWins.filter(p => p.pitching.w === topW).map(p => p.name).join(', ');
     }
 
-    // ERA (min 8 IP â hardcoded lower bar while roster is still building innings)
+    // ERA (min 8 IP — hardcoded lower bar while roster is still building innings)
     const VARSITY_ERA_MIN_IP = 8;
     const byERA = players.filter(p => ipToInnings(p.pitching.ip) >= VARSITY_ERA_MIN_IP).sort((a, b) => {
         const eraA = (a.pitching.er * 7) / ipToInnings(a.pitching.ip);
@@ -2076,8 +2076,8 @@ function buildVarsityTeamLeaders() {
     html += `<div><strong>ERRORS:</strong> ${leaders.errors}</div>`;
     html += '</div>';
     html += '<div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #333; font-size: 11px; color: #999; line-height: 1.6;">';
-    html += '<strong>AVG:</strong> batting average (hits Ã· at-bats). &nbsp; ';
-    html += '<strong>OBP (On-Base %):</strong> how often a batter reaches base (hits + walks + HBP) Ã· (AB + BB + HBP + sac flies). .350+ is strong. &nbsp; ';
+    html += '<strong>AVG:</strong> batting average (hits &divide; at-bats). &nbsp; ';
+    html += '<strong>OBP (On-Base %):</strong> how often a batter reaches base (hits + walks + HBP) &divide; (AB + BB + HBP + sac flies). .350+ is strong. &nbsp; ';
     html += '<strong>OPS:</strong> On-Base % plus Slugging %. Single number combining getting on base and hitting for power. .800+ is excellent at any level. &nbsp; ';
     html += '<strong>HBP:</strong> most hit-by-pitches on the season. Shows willingness to crowd the plate.';
     html += '</div></div>';
@@ -2101,7 +2101,7 @@ function buildJVPlayersToWatch(pisData) {
         .map(p => Object.assign({}, p, { role: 'pitcher' }))
         .sort((a, b) => (b.pitPts || 0) - (a.pitPts || 0))
         .slice(0, 6);
-    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) â SO(.35). R excluded (lineup-dependent). Pitching: IP(1.5) + SO(1) â ER(1.25) â BB(.5) â H(.25). W/SV dropped. Hitting avg'd over games played; pitching avg'd over pitching appearances. Errors tracked separately in Team Leaders. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
+    const jvExplainer = `<p style="font-size: 12px; color: #888888; margin-bottom: 15px;">Player Impact Score Per Game. Hitting: H + 2B(+.75) + 3B(+1.25) + HR(+2) + RBI(.25) + BB(.75) + HBP(.75) + SB(.5) + multi-hit(+1.5) &minus; SO(.35). R excluded (lineup-dependent). Pitching: IP(1.5) + SO(1) &minus; ER(1.25) &minus; BB(.5) &minus; H(.25). W/SV dropped. Hitting avg'd over games played; pitching avg'd over pitching appearances. Errors tracked separately in Team Leaders. Min 2 PA/team game for hitters; 1 IP/team game for pitchers.</p>`;
     if (jvHitters.length === 0 && jvPitchers.length === 0) {
         return `${jvExplainer}<p style="color: #888; font-size: 13px;">No JV player stats recorded yet. Upload GameChanger data to populate.</p>`;
     }
@@ -2150,7 +2150,7 @@ html = html.replace(jvPlayersRegex, `$1\n                ${buildJVPlayersToWatch
 if (pisData.length > 0) {
     console.log('\n--- PIS Rankings (Top 10) ---');
     for (const p of pisData.slice(0, 10)) {
-        console.log(`  ${p.pis.toFixed(1).padStart(5)} | ${p.tier.padEnd(9)} | ${p.name} (${p.team}) â ${p.gamesWithStats} game(s)`);
+        console.log(`  ${p.pis.toFixed(1).padStart(5)} | ${p.tier.padEnd(9)} | ${p.name} (${p.team}) — ${p.gamesWithStats} game(s)`);
     }
 }
 
@@ -2185,7 +2185,7 @@ function buildNewsLog(newsLog) {
             let color = '#ccc';
             let prefix = '';
             if (entry.highlight) { color = '#D4A017'; }
-            else if (entry.type === 'score') { color = '#D4A017'; prefix = 'â¾ '; }
+            else if (entry.type === 'score') { color = '#D4A017'; prefix = '⚾ '; }
             else if (entry.type === 'venue') { color = '#D4A017'; }
             else if (entry.type === 'intel') { color = '#aaa'; }
             else if (entry.type === 'source') { color = '#777'; }
@@ -2205,10 +2205,10 @@ function buildNewsLog(newsLog) {
 const newsHtml = buildNewsLog(scores.newsLog);
 
 // Replace News & Updates content and set collapsed by default
-const newsRegex = /(<!-- News & Updates[\s\S]*?<button class="collapsible-header" onclick="toggleCollapsible\(this\)">)\s*<span class="collapsible-toggle[^"]*">â¶<\/span>\s*<span>News & Updates<\/span>\s*<\/button>\s*<div class="collapsible-content[^"]*">([\s\S]*?)(<\/div>\s*<\/div>\s*(?=\s*<!-- Social Media))/;
+const newsRegex = /(<!-- News & Updates[\s\S]*?<button class="collapsible-header" onclick="toggleCollapsible\(this\)">)\s*<span class="collapsible-toggle[^"]*">▶<\/span>\s*<span>News & Updates<\/span>\s*<\/button>\s*<div class="collapsible-content[^"]*">([\s\S]*?)(<\/div>\s*<\/div>\s*(?=\s*<!-- Social Media))/;
 
 html = html.replace(newsRegex, (match, before, content, after) => {
-    return `${before}\n                    <span class="collapsible-toggle collapsed">â¶</span>\n                    <span>News & Updates</span>\n                </button>\n                <div class="collapsible-content collapsed">\n                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #1a1a1a;">\n${newsHtml}\n                    </div>\n                ${after}`;
+    return `${before}\n                    <span class="collapsible-toggle collapsed">▶</span>\n                    <span>News & Updates</span>\n                </button>\n                <div class="collapsible-content collapsed">\n                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #1a1a1a;">\n${newsHtml}\n                    </div>\n                ${after}`;
 });
 
 // ============================================================
@@ -2403,7 +2403,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     }
 
     const teamAvg = teamStats.ab > 0 ? fmtAvg(teamStats.hits / teamStats.ab) : '.000';
-    const teamERA = teamStats.ip > 0 ? ((teamStats.er * 7) / ipToInnings(teamStats.ip)).toFixed(2) : 'â';
+    const teamERA = teamStats.ip > 0 ? ((teamStats.er * 7) / ipToInnings(teamStats.ip)).toFixed(2) : '—';
     const runDiff = teamStats.runsFor - teamStats.runsAgainst;
     const freeBasesAllowed = teamStats.pitchingBB + teamStats.errors;
 
@@ -2420,20 +2420,20 @@ function generateJVStatsHTML(playerStats, gameResults) {
         totalInningsPitched = teamStats.ip;
     }
 
-    const runsPerInningOff = totalInningsBatted > 0 ? (teamStats.runsFor / totalInningsBatted).toFixed(2) : 'â';
-    const runsPerInningDef = totalInningsPitched > 0 ? (teamStats.runsAgainst / totalInningsPitched).toFixed(2) : 'â';
+    const runsPerInningOff = totalInningsBatted > 0 ? (teamStats.runsFor / totalInningsBatted).toFixed(2) : '—';
+    const runsPerInningDef = totalInningsPitched > 0 ? (teamStats.runsAgainst / totalInningsPitched).toFixed(2) : '—';
 
     // Calculate Errors/Inning
     const totalInningsPlayed = totalInningsBatted > 0 ? totalInningsBatted : 0;
-    const errorsPerInning = totalInningsPlayed > 0 ? (teamStats.errors / totalInningsPlayed).toFixed(2) : 'â';
+    const errorsPerInning = totalInningsPlayed > 0 ? (teamStats.errors / totalInningsPlayed).toFixed(2) : '—';
 
     // Team FPCT from individual fielding data
-    const teamFPCT = teamStats.fldTC > 0 ? ((teamStats.fldTC - teamStats.fldE) / teamStats.fldTC).toFixed(3) : 'â';
+    const teamFPCT = teamStats.fldTC > 0 ? ((teamStats.fldTC - teamStats.fldE) / teamStats.fldTC).toFixed(3) : '—';
 
     // Team Leaders - Helper to format leader output
     function formatLeaderValue(players, filter, sort) {
         const filtered = players.filter(filter).sort(sort);
-        if (filtered.length === 0) return 'â';
+        if (filtered.length === 0) return '—';
         if (filtered.length === 1) return filtered[0].name;
         // Check for ties
         const firstVal = sort(filtered[0], filtered[1]) === 0 ? filter(filtered[0]) : null;
@@ -2448,8 +2448,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
     }
 
     const leaders = {
-        avg: 'â', obp: 'â', ops: 'â', hits: 'â', rbi: 'â', sb: 'â', bb: 'â',
-        wins: 'â', era: 'â', hbp: 'â', errors: 'â'
+        avg: '—', obp: '—', ops: '—', hits: '—', rbi: '—', sb: '—', bb: '—',
+        wins: '—', era: '—', hbp: '—', errors: '—'
     };
 
     // Qualification threshold for rate stats: 2.0 PA per team game
@@ -2528,7 +2528,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
     }
 
 
-    // BB = max BB (walks drawn â plate discipline)
+    // BB = max BB (walks drawn — plate discipline)
     const byBB = players.filter(p => (p.batting.bb || 0) > 0).sort((a, b) => b.batting.bb - a.batting.bb);
     if (byBB.length > 0) {
         const topBB = byBB[0].batting.bb;
@@ -2581,33 +2581,33 @@ function generateJVStatsHTML(playerStats, gameResults) {
     const G = teamStats.games || 0;
     const mercied = teamStats.mercied || 0;
     const fullG = G - mercied;
-    const per = (n) => G > 0 ? (n / G).toFixed(1) : 'â';
+    const per = (n) => G > 0 ? (n / G).toFixed(1) : '—';
     const rPG = per(teamStats.runsFor);
     const bbPG = per(teamStats.bbDrawn);
-    const kRate = teamStats.batPA > 0 ? Math.round((teamStats.batSO / teamStats.batPA) * 100) + '%' : 'â';
-    const whip = teamStats.ip > 0 ? ((teamStats.pitchingBB + teamStats.h) / ipToInnings(teamStats.ip)).toFixed(2) : 'â';
-    const k7 = teamStats.ip > 0 ? ((teamStats.so * 7) / ipToInnings(teamStats.ip)).toFixed(1) : 'â';
-    const kbb = teamStats.pitchingBB > 0 ? (teamStats.so / teamStats.pitchingBB).toFixed(1) : (teamStats.so > 0 ? 'â' : 'â');
+    const kRate = teamStats.batPA > 0 ? Math.round((teamStats.batSO / teamStats.batPA) * 100) + '%' : '—';
+    const whip = teamStats.ip > 0 ? ((teamStats.pitchingBB + teamStats.h) / ipToInnings(teamStats.ip)).toFixed(2) : '—';
+    const k7 = teamStats.ip > 0 ? ((teamStats.so * 7) / ipToInnings(teamStats.ip)).toFixed(1) : '—';
+    const kbb = teamStats.pitchingBB > 0 ? (teamStats.so / teamStats.pitchingBB).toFixed(1) : (teamStats.so > 0 ? '∞' : '—');
     const raPG = per(teamStats.runsAgainst);
     const bbAllowedPG = per(teamStats.pitchingBB);
     const ePG = per(teamStats.errors);
     const fbPG = per(freeBasesAllowed);
-    const runDiffPG = G > 0 ? (runDiff / G).toFixed(1) : 'â';
+    const runDiffPG = G > 0 ? (runDiff / G).toFixed(1) : '—';
     const runDiffPGStr = (runDiff >= 0 ? '+' : '') + runDiffPG;
     const runDiffColor = runDiff < 0 ? '#c44' : '#2B5DAA';
     // OBP = (H + BB + HBP) / (AB + BB + HBP + SAC)
     const obpDen = teamStats.ab + teamStats.bbDrawn + teamStats.batHBP + teamStats.batSAC;
-    const teamOBP = obpDen > 0 ? fmtAvg((teamStats.hits + teamStats.bbDrawn + teamStats.batHBP) / obpDen) : 'â';
+    const teamOBP = obpDen > 0 ? fmtAvg((teamStats.hits + teamStats.bbDrawn + teamStats.batHBP) / obpDen) : '—';
     // Strike% and P/BF: show if we have the underlying data, regardless of source
-    const strikePct = (teamStats.strikes > 0 && teamStats.pitches > 0) ? Math.round((teamStats.strikes / teamStats.pitches) * 100) + '%' : 'â';
-    const pitchesPerBF = (teamStats.pitches > 0 && teamStats.bf > 0) ? (teamStats.pitches / teamStats.bf).toFixed(1) : 'â';
+    const strikePct = (teamStats.strikes > 0 && teamStats.pitches > 0) ? Math.round((teamStats.strikes / teamStats.pitches) * 100) + '%' : '—';
+    const pitchesPerBF = (teamStats.pitches > 0 && teamStats.bf > 0) ? (teamStats.pitches / teamStats.bf).toFixed(1) : '—';
     const cleanPct = teamStats.cleanTracked && teamStats.defInningsLogged > 0
         ? Math.round((teamStats.cleanInnings / teamStats.defInningsLogged) * 100) + '%'
-        : 'â';
+        : '—';
 
     const totalInningsPlayedForHeader = Math.round(totalInningsBatted * 10) / 10;
     html += '<div style="background-color: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 15px;">';
-    html += `<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Team Stats â Through ${G} game${G===1?'':'s'} (${totalInningsPlayedForHeader} inning${totalInningsPlayedForHeader===1?'':'s'} played)</h3>`;
+    html += `<h3 style="margin-top: 0; margin-bottom: 12px; color: #D4A017;">Team Stats — Through ${G} game${G===1?'':'s'} (${totalInningsPlayedForHeader} inning${totalInningsPlayedForHeader===1?'':'s'} played)</h3>`;
     html += '<div style="font-size: 13px; line-height: 1.9; color: #ddd;">';
     html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Record:</strong> ${teamStats.w}-${teamStats.l}</div>`;
     html += `<div><strong style="color:#D4A017; display:inline-block; width:130px;">Hitting:</strong> AVG ${teamAvg} &nbsp;|&nbsp; OBP ${teamOBP} &nbsp;|&nbsp; ${teamStats.xbh} XBH &nbsp;|&nbsp; ${rPG} Runs/Game &nbsp;|&nbsp; ${bbPG} Walks/Game &nbsp;|&nbsp; ${kRate} K rate</div>`;
@@ -2618,28 +2618,28 @@ function generateJVStatsHTML(playerStats, gameResults) {
     // Glossary
     html += '<div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #333; font-size: 11px; color: #999; line-height: 1.6;">';
     html += '<strong style="color:#bbb;">What the stats mean:</strong><br>';
-    html += '<strong>AVG (batting average):</strong> hits Ã· at-bats.<br>';
-    html += '<strong>OBP (On-Base Percentage):</strong> how often a batter reaches base. (Hits + Walks + Hit-by-pitch) Ã· (At-bats + Walks + HBP + Sacrifices). More complete than AVG because it rewards walks. .350+ is strong.<br>';
+    html += '<strong>AVG (batting average):</strong> hits &divide; at-bats.<br>';
+    html += '<strong>OBP (On-Base Percentage):</strong> how often a batter reaches base. (Hits + Walks + Hit-by-pitch) &divide; (At-bats + Walks + HBP + Sacrifices). More complete than AVG because it rewards walks. .350+ is strong.<br>';
     html += '<strong>XBH (Extra-Base Hits):</strong> total doubles + triples + home runs. Power indicator.<br>';
     html += '<strong>Runs/Game:</strong> average runs we score per game.<br>';
     html += '<strong>Walks/Game:</strong> average walks we draw per game.<br>';
     html += '<strong>K rate:</strong> share of our plate appearances that end in a strikeout.<br>';
     html += '<strong>ERA:</strong> earned runs allowed per 7 innings pitched.<br>';
     html += '<strong>WHIP:</strong> Walks + Hits allowed, divided by innings pitched. How many baserunners our pitchers give up each inning. Under 1.30 is good, over 1.50 is trouble.<br>';
-    html += '<strong>Strike%:</strong> share of total pitches that are strikes (called, swinging, foul, or put in play â any batted ball counts as a strike). 60%+ = throwing strikes, 65%+ = dealing. Best single measure of pitching command.<br>';
+    html += '<strong>Strike%:</strong> share of total pitches that are strikes (called, swinging, foul, or put in play — any batted ball counts as a strike). 60%+ = throwing strikes, 65%+ = dealing. Best single measure of pitching command.<br>';
     html += '<strong>Pitches/BF:</strong> pitches thrown per batter faced. Under 3.8 = efficient, over 4.3 = laboring.<br>';
     html += '<strong>K/7:</strong> strikeouts per 7 innings pitched.<br>';
     html += '<strong>K/BB:</strong> strikeouts per walk issued. Higher = better command.<br>';
     html += '<strong>Runs Allowed/Game:</strong> average runs the other team scores against us per game.<br>';
     html += '<strong>Walks Allowed/Game:</strong> average walks our pitchers issue per game.<br>';
-    html += '<strong>FPCT (Fielding Percentage):</strong> (total chances â errors) Ã· total chances. How often we make the play. .950+ is solid, under .900 is a problem.<br>';
+    html += '<strong>FPCT (Fielding Percentage):</strong> (total chances &minus; errors) &divide; total chances. How often we make the play. .950+ is solid, under .900 is a problem.<br>';
     html += '<strong>Errors/Game:</strong> average fielding errors per game.<br>';
     html += '<strong>Free Bases Allowed/Game:</strong> walks issued + errors, per game. How often we hand the other team 90 feet for free.<br>';
-    html += '<strong>Clean Innings:</strong> share of defensive innings with 0 runs allowed and 0 errors. Requires per-inning logging; shows "â" until tracked.<br>';
-    html += '<strong>BB% (Walk Rate):</strong> walks Ã· plate appearances. How often a batter draws a walk. 10%+ shows plate discipline.<br>';
+    html += '<strong>Clean Innings:</strong> share of defensive innings with 0 runs allowed and 0 errors. Requires per-inning logging; shows "—" until tracked.<br>';
+    html += '<strong>BB% (Walk Rate):</strong> walks &divide; plate appearances. How often a batter draws a walk. 10%+ shows plate discipline.<br>';
     html += '<strong>HBP (Hit By Pitch):</strong> times hit by a pitch. Gets on base and shows willingness to crowd the plate.<br>';
     html += '<strong>E (Errors):</strong> individual fielding errors on the season.<br>';
-    html += '<strong>Run Diff/Game:</strong> (runs scored â runs allowed) Ã· games.';
+    html += '<strong>Run Diff/Game:</strong> (runs scored &minus; runs allowed) &divide; games.';
     html += '</div>';
     html += '</div>';
 
@@ -2661,8 +2661,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
     html += `<div><strong>ERRORS:</strong> ${leaders.errors}</div>`;
     html += '</div>';
     html += '<div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #333; font-size: 11px; color: #999; line-height: 1.6;">';
-    html += '<strong>AVG:</strong> batting average (hits Ã· at-bats). &nbsp; ';
-    html += '<strong>OBP (On-Base %):</strong> how often a batter reaches base (hits + walks + HBP) Ã· (AB + BB + HBP + sac flies). .350+ is strong. &nbsp; ';
+    html += '<strong>AVG:</strong> batting average (hits &divide; at-bats). &nbsp; ';
+    html += '<strong>OBP (On-Base %):</strong> how often a batter reaches base (hits + walks + HBP) &divide; (AB + BB + HBP + sac flies). .350+ is strong. &nbsp; ';
     html += '<strong>OPS:</strong> On-Base % plus Slugging %. Single number combining getting on base and hitting for power. .800+ is excellent at any level. &nbsp; ';
     html += '<strong>HBP:</strong> most hit-by-pitches on the season. Shows willingness to crowd the plate.';
     html += '</div></div>';
@@ -2680,12 +2680,12 @@ function generateJVStatsHTML(playerStats, gameResults) {
         const obpVal = obpDen > 0 ? (b.h + b.bb + (b.hbp || 0)) / obpDen : 0;
         const tb = (b.tb != null) ? b.tb : (b.h || 0) + (b['2b'] || 0) + 2 * (b['3b'] || 0) + 3 * (b.hr || 0);
         const slgVal = b.ab > 0 ? tb / b.ab : 0;
-        const opsStr = b.ab > 0 ? fmtAvg(obpVal + slgVal) : 'â';
+        const opsStr = b.ab > 0 ? fmtAvg(obpVal + slgVal) : '—';
         html += `<tr style="border-bottom: 1px solid #222;"><td style="padding: 8px;">${player.name}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${b.pa}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${b.ab}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${b.h}</td>`;
-        const obpStr = obpDen > 0 ? fmtAvg(obpVal) : 'â';
+        const obpStr = obpDen > 0 ? fmtAvg(obpVal) : '—';
         const xbhVal = (b['2b'] || 0) + (b['3b'] || 0) + (b.hr || 0);
         html += `<td style="text-align: center; padding: 8px;">${avg}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${obpStr}</td>`;
@@ -2694,7 +2694,7 @@ function generateJVStatsHTML(playerStats, gameResults) {
         html += `<td style="text-align: center; padding: 8px;">${player.batting.r}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.rbi}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.bb}</td>`;
-        const bbPct = b.pa > 0 ? Math.round((b.bb / b.pa) * 100) + '%' : 'â';
+        const bbPct = b.pa > 0 ? Math.round((b.bb / b.pa) * 100) + '%' : '—';
         html += `<td style="text-align: center; padding: 8px;">${bbPct}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.so}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${player.batting.hbp || 0}</td>`;
@@ -2725,8 +2725,8 @@ function generateJVStatsHTML(playerStats, gameResults) {
         html += `<td style="text-align: center; padding: 8px;">${player.pitching.so}</td>`;
         // Strike% and P/BF: show if we have the underlying data (pitches, strikes, bf)
         // regardless of whether it came from seasonPitching or game accumulation
-        const sPct = (player.pitching.strikes > 0 && player.pitching.pitches > 0) ? Math.round((player.pitching.strikes / player.pitching.pitches) * 100) + '%' : 'â';
-        const pbf = (player.pitching.pitches > 0 && player.pitching.bf > 0) ? (player.pitching.pitches / player.pitching.bf).toFixed(1) : 'â';
+        const sPct = (player.pitching.strikes > 0 && player.pitching.pitches > 0) ? Math.round((player.pitching.strikes / player.pitching.pitches) * 100) + '%' : '—';
+        const pbf = (player.pitching.pitches > 0 && player.pitching.bf > 0) ? (player.pitching.pitches / player.pitching.bf).toFixed(1) : '—';
         html += `<td style="text-align: center; padding: 8px;">${era}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${whip}</td>`;
         html += `<td style="text-align: center; padding: 8px;">${sPct}</td>`;
@@ -2826,21 +2826,21 @@ function buildDataSourceStatus() {
     if (checked.length > 0) {
         html += `<h3 style="margin-bottom: 15px;">CHECKED</h3><div class="status-grid">`;
         for (const s of checked) {
-            html += `<div class="status-item"><div class="status-dot live"></div><div class="status-label">${s.name}${s.method ? ' â ' + s.method : ''}</div></div>`;
+            html += `<div class="status-item"><div class="status-dot live"></div><div class="status-label">${s.name}${s.method ? ' — ' + s.method : ''}</div></div>`;
         }
         html += `</div>`;
     }
     if (caution.length > 0) {
         html += `<h3 style="margin: 20px 0 15px;">LIMITED</h3><div class="status-grid">`;
         for (const s of caution) {
-            html += `<div class="status-item"><div class="status-dot stale"></div><div class="status-label">${s.name}${s.method ? ' â ' + s.method : ''}</div></div>`;
+            html += `<div class="status-item"><div class="status-dot stale"></div><div class="status-label">${s.name}${s.method ? ' — ' + s.method : ''}</div></div>`;
         }
         html += `</div>`;
     }
     if (stale.length > 0) {
         html += `<h3 style="margin: 20px 0 15px;">UNREACHABLE</h3><div class="status-grid">`;
         for (const s of stale) {
-            html += `<div class="status-item"><div class="status-dot stale"></div><div class="status-label">${s.name}${s.method ? ' â ' + s.method : ''}</div></div>`;
+            html += `<div class="status-item"><div class="status-dot stale"></div><div class="status-label">${s.name}${s.method ? ' — ' + s.method : ''}</div></div>`;
         }
         html += `</div>`;
     }
@@ -2860,7 +2860,7 @@ const newDSContent = `<div class="collapsible-content collapsed">
 html = html.replace(dsStatusRegex, newDSContent);
 
 // ============================================================
-// ANALYTICS (GoatCounter â free, privacy-friendly, no cookies)
+// ANALYTICS (GoatCounter — free, privacy-friendly, no cookies)
 // ============================================================
 const goatScript = `<script data-goatcounter="https://dobbsferrybaseball.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`;
 if (!html.includes('goatcounter')) {
