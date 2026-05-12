@@ -207,7 +207,23 @@
       "opp": 13,
       "location": "Gould Park",
       "source": "MaxPreps",
-      "league": true
+      "league": true,
+      "lineScore": {
+        "df": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opp": [
+          2,
+          4,
+          0,
+          1,
+          6
+        ]
+      }
     },
     "2026-05-04": {
       "opponent": "Tuckahoe",
@@ -215,7 +231,23 @@
       "opp": 13,
       "location": "Home",
       "source": "MaxPreps",
-      "league": true
+      "league": true,
+      "lineScore": {
+        "df": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opp": [
+          0,
+          2,
+          2,
+          4,
+          5
+        ]
+      }
     },
     "2026-05-07": {
       "opponent": "Leffell School",
@@ -1156,6 +1188,42 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -1459,6 +1527,42 @@
               "hbp": 0,
               "sb": 0,
               "e": 0
+            }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 1
             }
           }
         ],
@@ -1858,6 +1962,56 @@
               "sb": 1,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 1.2,
+              "h": 6,
+              "r": 6,
+              "er": 4,
+              "bb": 1,
+              "so": 3,
+              "w": 0,
+              "l": 1,
+              "sv": 0,
+              "pitches": 39,
+              "strikes": 27,
+              "bf": 13
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -2192,6 +2346,42 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 1,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -2517,6 +2707,56 @@
               "hbp": 0,
               "sb": 0,
               "e": 0
+            }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 1.0,
+              "h": 1,
+              "r": 0,
+              "er": 0,
+              "bb": 0,
+              "so": 1,
+              "w": 0,
+              "l": 0,
+              "sv": 0,
+              "pitches": 17,
+              "strikes": 12,
+              "bf": 4
             }
           }
         ],
@@ -2845,6 +3085,56 @@
               "sb": 0,
               "e": 2
             }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 2
+            },
+            "pitching": {
+              "ip": 1.1,
+              "h": 5,
+              "r": 6,
+              "er": 1,
+              "bb": 1,
+              "so": 1,
+              "w": 0,
+              "l": 0,
+              "sv": 0,
+              "pitches": 50,
+              "strikes": 32,
+              "bf": 13
+            }
           }
         ],
         "fielding": {
@@ -3068,6 +3358,56 @@
               "so": 1,
               "pitches": 37,
               "strikes": 26
+            }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 1.0,
+              "h": 3,
+              "r": 4,
+              "er": 4,
+              "bb": 3,
+              "so": 1,
+              "w": 0,
+              "l": 0,
+              "sv": 0,
+              "pitches": 33,
+              "strikes": 17,
+              "bf": 9
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 0,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
             }
           }
         ],
@@ -3314,6 +3654,24 @@
               "strikes": 33,
               "decision": "L"
             }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 0,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -3550,6 +3908,56 @@
               "ab": 2,
               "r": 0,
               "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 2.1,
+              "h": 4,
+              "r": 3,
+              "er": 3,
+              "bb": 2,
+              "so": 3,
+              "w": 0,
+              "l": 0,
+              "sv": 0,
+              "pitches": 54,
+              "strikes": 33,
+              "bf": 15
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
               "rbi": 0,
               "bb": 0,
               "so": 0,
@@ -3882,6 +4290,42 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 2
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 1
+            }
           }
         ]
       },
@@ -3990,6 +4434,24 @@
               "so": 3,
               "pitches": 42,
               "strikes": 24
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "pitching": {
+              "ip": 2.0,
+              "h": 1,
+              "r": 2,
+              "er": 2,
+              "bb": 3,
+              "so": 1,
+              "w": 0,
+              "l": 1,
+              "sv": 0,
+              "pitches": 41,
+              "strikes": 23,
+              "bf": 9
             }
           }
         ]
@@ -4212,6 +4674,24 @@
               "sb": 0,
               "e": 1
             }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 1
+            }
           }
         ]
       },
@@ -4379,6 +4859,24 @@
               "pitches": 42,
               "strikes": 21,
               "bf": 12
+            }
+          },
+          {
+            "date": "2026-05-01",
+            "opponent": "Rye Neck",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
             }
           }
         ]
@@ -4724,6 +5222,38 @@
               "so": 2,
               "wp": 1,
               "hbp": 3
+            }
+          },
+          {
+            "date": "2026-05-04",
+            "opponent": "Tuckahoe",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 0.2,
+              "h": 5,
+              "r": 5,
+              "er": 5,
+              "bb": 1,
+              "so": 1,
+              "w": 0,
+              "l": 0,
+              "sv": 0,
+              "pitches": 25,
+              "strikes": 15,
+              "bf": 9
             }
           }
         ]
@@ -10016,6 +10546,12 @@
     {
       "date": "2026-05-06",
       "text": "May 6 games RAINED OUT: Varsity at Tuckahoe and JV home vs Tuckahoe both postponed due to rain. Makeup dates TBD. Next scheduled: May 7 \u2014 Varsity at Leffell School (4:30pm), JV home vs Leffell School (4:30pm). May 11 \u2014 Varsity vs Westlake (4:30pm, final regular season game)."
+    },
+    {
+      "date": "2026-05-12",
+      "type": "data",
+      "text": "Added player stats for 5/1 Rye Neck (0-13) and 5/4 Tuckahoe (0-13) from GameChanger box scores. All 19 varsity games now have complete player stats.",
+      "source": "GameChanger"
     }
   ],
   "opponentResults": [
