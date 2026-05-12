@@ -270,6 +270,34 @@
           5
         ]
       }
+    },
+    "2026-05-11": {
+      "opponent": "Westlake",
+      "df": 5,
+      "opp": 10,
+      "location": "Home",
+      "league": false,
+      "source": "GameChanger",
+      "lineScore": {
+        "df": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        "opp": [
+          0,
+          1,
+          6,
+          0,
+          3,
+          0,
+          0
+        ]
+      }
     }
   },
   "jv": {
@@ -1110,6 +1138,24 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 4,
+              "r": 1,
+              "h": 1,
+              "rbi": 1,
+              "bb": 0,
+              "so": 3,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -1388,6 +1434,24 @@
               "h": 0,
               "rbi": 0,
               "bb": 1,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 4,
+              "r": 1,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
               "so": 0,
               "2b": 0,
               "3b": 0,
@@ -1776,6 +1840,24 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 4,
+              "r": 1,
+              "h": 2,
+              "rbi": 2,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 1,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -2092,6 +2174,24 @@
               "e": 0,
               "sf": 1
             }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 4,
+              "r": 0,
+              "h": 0,
+              "rbi": 1,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -2399,6 +2499,24 @@
               "so": 1,
               "wp": 1,
               "hbp": 0
+            }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 1,
+              "bb": 0,
+              "so": 1,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
             }
           }
         ],
@@ -2709,6 +2827,24 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 2,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 2
+            }
           }
         ],
         "fielding": {
@@ -2918,6 +3054,20 @@
               "so": 0,
               "wp": 2,
               "hbp": 0
+            }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "pitching": {
+              "ip": 2.2,
+              "h": 3,
+              "r": 2,
+              "er": 2,
+              "bb": 0,
+              "so": 1,
+              "pitches": 37,
+              "strikes": 26
             }
           }
         ],
@@ -3149,6 +3299,21 @@
               "wp": 0,
               "hbp": 0
             }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "pitching": {
+              "ip": 2.1,
+              "h": 5,
+              "r": 4,
+              "er": 3,
+              "bb": 4,
+              "so": 1,
+              "pitches": 64,
+              "strikes": 33,
+              "decision": "L"
+            }
           }
         ],
         "fielding": {
@@ -3376,6 +3541,24 @@
               "wp": 3,
               "hbp": 0,
               "decision": "L"
+            }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
             }
           }
         ],
@@ -3681,6 +3864,24 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 2,
+              "r": 1,
+              "h": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
           }
         ]
       },
@@ -3775,6 +3976,20 @@
               "so": 1,
               "wp": 2,
               "hbp": 0
+            }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "pitching": {
+              "ip": 2.0,
+              "h": 4,
+              "r": 4,
+              "er": 4,
+              "bb": 3,
+              "so": 3,
+              "pitches": 42,
+              "strikes": 24
             }
           }
         ]
@@ -3978,6 +4193,24 @@
               "hbp": 0,
               "sb": 0,
               "e": 0
+            }
+          },
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 3,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 1
             }
           }
         ]
@@ -4491,6 +4724,75 @@
               "so": 2,
               "wp": 1,
               "hbp": 3
+            }
+          }
+        ]
+      },
+      "Jack Rizzo": {
+        "team": "Dobbs Ferry",
+        "games": [
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          }
+        ]
+      },
+      "Sammy Keltz": {
+        "team": "Dobbs Ferry",
+        "games": [
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 1,
+              "r": 1,
+              "h": 1,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
+            }
+          }
+        ]
+      },
+      "Vaughn Lukas": {
+        "team": "Dobbs Ferry",
+        "games": [
+          {
+            "date": "2026-05-11",
+            "opponent": "Westlake",
+            "hitting": {
+              "ab": 1,
+              "r": 0,
+              "h": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "hbp": 0,
+              "sb": 0,
+              "e": 0
             }
           }
         ]
@@ -11208,7 +11510,7 @@
       "lastUpdated": "2026-05-12"
     },
     "Westlake": {
-      "blurb": "8-9 overall, 2-2 league (Conf 3-A Div B, 3rd). On 5-game losing streak. Lost to Carmel 2-12 (5/4), Pleasantville 8-3 (5/8). Scheduled at Dobbs Ferry 5/11 \u2014 no result reported yet. Non-league opponent.",
+      "blurb": "8-10 overall, 2-2 league (Conf 3-A Div B, 3rd). Beat Dobbs Ferry 10-5 on 5/11 to snap 5-game losing streak. Non-league opponent.",
       "lastUpdated": "2026-05-12"
     },
     "Briarcliff": {
