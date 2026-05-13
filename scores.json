@@ -330,6 +330,34 @@
           0
         ]
       }
+    },
+    "2026-05-12": {
+      "opponent": "Leffell School",
+      "df": 3,
+      "opp": 2,
+      "location": "Leffell School (Hartsdale)",
+      "league": true,
+      "source": "GameChanger",
+      "lineScore": {
+        "df": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "opp": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      }
     }
   },
   "jv": {
@@ -1236,6 +1264,39 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 4,
+              "r": 0,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 2.0,
+              "h": 3,
+              "r": 1,
+              "er": 1,
+              "bb": 1,
+              "so": 2,
+              "w": 0,
+              "l": 0,
+              "sv": 0,
+              "pitches": 31,
+              "strikes": 18,
+              "bf": 10
+            }
           }
         ],
         "fielding": {
@@ -1575,6 +1636,25 @@
               "hbp": 0,
               "sb": 0,
               "e": 1
+            }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 4,
+              "r": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 1,
+              "rbi": 1,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
             }
           }
         ],
@@ -2024,6 +2104,39 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 3,
+              "r": 1,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 1,
+              "hbp": 0,
+              "sb": 2,
+              "cs": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 4.0,
+              "h": 2,
+              "r": 1,
+              "er": 1,
+              "bb": 2,
+              "so": 4,
+              "w": 0,
+              "l": 0,
+              "sv": 0,
+              "pitches": 64,
+              "strikes": 40,
+              "bf": 16
+            }
           }
         ],
         "fielding": {
@@ -2392,6 +2505,25 @@
               "hr": 0,
               "hbp": 0,
               "sb": 1,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
               "e": 0
             }
           }
@@ -2770,14 +2902,33 @@
               "strikes": 12,
               "bf": 4
             }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 1
+            }
           }
         ],
         "fielding": {
-          "tc": 21,
+          "tc": 22,
           "a": 11,
           "po": 5,
-          "fpct": 0.762,
-          "e": 5,
+          "fpct": 0.727,
+          "e": 6,
           "dp": 0
         }
       },
@@ -3146,6 +3297,39 @@
               "pitches": 50,
               "strikes": 32,
               "bf": 13
+            }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 1,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 1.0,
+              "h": 1,
+              "r": 0,
+              "er": 0,
+              "bb": 0,
+              "so": 0,
+              "w": 1,
+              "l": 0,
+              "sv": 0,
+              "pitches": 17,
+              "strikes": 11,
+              "bf": 5
             }
           }
         ],
@@ -3980,6 +4164,25 @@
               "sb": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 2,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -4704,6 +4907,25 @@
               "sb": 0,
               "e": 1
             }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
+            }
           }
         ]
       },
@@ -5266,6 +5488,25 @@
               "pitches": 25,
               "strikes": 15,
               "bf": 9
+            }
+          },
+          {
+            "date": "2026-05-12",
+            "opponent": "Leffell School",
+            "hitting": {
+              "ab": 2,
+              "r": 1,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 1,
+              "so": 0,
+              "hbp": 0,
+              "sb": 1,
+              "cs": 0,
+              "e": 0
             }
           }
         ]
