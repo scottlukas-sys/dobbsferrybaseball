@@ -186,6 +186,7 @@ const varsitySchedule = [
     { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell School', location: 'Away', venue: 'Leffell School', address: '40 Woods Rd, Hartsdale, NY 10530', type: 'League' },
     { date: '2026-05-11', display: 'May 11', day: 'Mon', time: '4:30 PM', opponent: 'Westlake', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
     { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell School', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
+    { date: '2026-05-19', display: 'May 19', day: 'Tue', time: '4:15 PM', opponent: 'Putnam Valley', location: 'Away', venue: 'Putnam Valley High School', address: '146 Peekskill Hollow Rd, Putnam Valley, NY 10579', type: 'Game' },
 ];
 
 // Ensure chronological order (array may be manually maintained out of order)
@@ -209,6 +210,7 @@ const jvSchedule = [
     { date: '2026-05-06', display: 'May 6', day: 'Wed', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', status: 'TBR' },
     { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell JV', location: 'Away', venue: 'Leffell School', address: '40 Woods Rd, Hartsdale, NY 10530' },
+    { date: '2026-05-15', display: 'May 15', day: 'Thu', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Away', venue: 'Parkway Oval Playground', address: '32 Bronx St, Tuckahoe, NY 10707' },
 ];
 
 // ============================================================
