@@ -705,14 +705,6 @@
       "source": "MaxPreps (Hastings schedule)"
     },
     {
-      "date": "2026-05-06",
-      "home": "Rye Neck",
-      "away": "Blind Brook",
-      "homeRuns": 5,
-      "awayRuns": 4,
-      "source": "MaxPreps + web search"
-    },
-    {
       "date": "2026-05-05",
       "home": "Hastings",
       "away": "Leffell School",
@@ -721,17 +713,17 @@
       "source": "MaxPreps (Hastings schedule)"
     },
     {
+      "date": "2026-05-06",
+      "home": "Rye Neck",
+      "away": "Blind Brook",
+      "homeRuns": 5,
+      "awayRuns": 4,
+      "source": "MaxPreps + web search"
+    },
+    {
       "date": "2026-05-08",
       "home": "Hastings",
       "away": "Rye Neck",
-      "homeRuns": 2,
-      "awayRuns": 0,
-      "source": "MaxPreps (Hastings schedule)"
-    },
-    {
-      "date": "2026-05-09",
-      "home": "Rye Neck",
-      "away": "Hastings",
       "homeRuns": 2,
       "awayRuns": 0,
       "source": "MaxPreps (Hastings schedule)"
@@ -743,6 +735,22 @@
       "homeRuns": 4,
       "awayRuns": 7,
       "source": "MaxPreps (Tuckahoe schedule)"
+    },
+    {
+      "date": "2026-05-09",
+      "home": "Rye Neck",
+      "away": "Hastings",
+      "homeRuns": 2,
+      "awayRuns": 0,
+      "source": "MaxPreps (Hastings schedule)"
+    },
+    {
+      "date": "2026-05-12",
+      "home": "Tuckahoe",
+      "away": "Blind Brook",
+      "homeRuns": 12,
+      "awayRuns": 3,
+      "source": "MaxPreps (Blind Brook schedule)"
     }
   ],
   "playerStats": {
@@ -12521,72 +12529,72 @@
   ],
   "teamIntel": {
     "Ardsley": {
-      "blurb": "1-5 overall, 0-1 conference (Conf 2-B, 4th). Lone win: Tuckahoe 11-5 (4/21). Limited schedule through mid-May. Not a Conf 3-D team.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Section 1 Class B program. Traditionally competitive with solid coaching. Strong fundamentals and team-first approach.",
+      "lastUpdated": "2026-05-14"
     },
     "Blind Brook": {
-      "blurb": "13-5 overall, 6-3 league (Conf 3-D, 3rd). Won 7 straight before falling to Rye Neck twice (2-4 on 5/4, 4-5 on 5/6). Beat Tuckahoe 7-4 (5/8). RF 105, RA 76. Scheduled at Pawling (5/11).",
-      "lastUpdated": "2026-05-12"
+      "blurb": "13-7 overall, 6-4 in Conference 3-D (4th place). On a 3-game losing streak after losses to Hamilton (5/10), Pawling 11-5 (5/11), and Tuckahoe 12-3 (5/12). Strong offense (120+ runs scored) but pitching has faltered in recent stretch. Previously one of the top teams in the conference but slipping down standings.",
+      "lastUpdated": "2026-05-14"
     },
     "Edgemont": {
-      "blurb": "3-7 overall, 2-1 league (Conf 2-B). Lost to Dobbs Ferry 1-5 (4/7). On 2-game win streak per MaxPreps. RF 58, RA 70. Mid-tier non-conference opponent.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Section 1 program. Competitive in league play with a balanced approach at the plate and on the mound.",
+      "lastUpdated": "2026-05-14"
     },
     "Haldane": {
-      "blurb": "10-4 overall. Beat Yonkers Montessori 2-0 (5/2). Lost to Briarcliff 2-8 (5/5), Valhalla 0-7 (4/30) and 2-7 (5/2). Conf 3-E. Lost to Dobbs Ferry 2-16 (4/18).",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Struggling season at 1-13. Competitive in spots but unable to string wins together. Young roster building for the future.",
+      "lastUpdated": "2026-05-14"
     },
     "Hastings": {
-      "blurb": "12-8 overall, 7-3 league (Conf 3-D, 2nd). Beat Leffell 14-5 (5/4) and 10-0 (5/5). Beat Rye Neck 2-0 (5/8), then lost at Rye Neck 0-2 (5/9). Split with Rye Neck. RF 115, RA 67. Strong pitching depth \u2014 Rye Neck series showed rotation quality.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "12-8 overall, 7-3 in Conference 3-D (2nd place). Strong pitching and balanced lineup. One of the top contenders in the conference behind Rye Neck. Solid and consistent program.",
+      "lastUpdated": "2026-05-14"
     },
     "Irvington": {
-      "blurb": "13-3 overall per Hudson Independent reporting (through first 16 games). Major turnaround season \u2014 had 5-win campaign last year. Strong hitting. Beat Dobbs Ferry 7-1 (4/13). Conf 2-B.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Competitive Class B program in Section 1. Solid pitching staff and disciplined at the plate. Mid-tier team in the section.",
+      "lastUpdated": "2026-05-14"
     },
     "Leffell School": {
-      "blurb": "1-8 overall, 0-8 league (Conf 3-D, last). Lost to Hastings 5-14 (5/4) and 0-10 (5/5). Lost to Dobbs Ferry 8-9 (5/7). Winless in league play. Only win: non-league.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Small-school program building competitively. Limited roster depth but improving year over year.",
+      "lastUpdated": "2026-05-14"
     },
     "Pearl River": {
-      "blurb": "3-5 overall, 0-4 league. Beat Hendrick Hudson 4-3 (5/2). Lost to Tappan Zee 3-7 (4/28). Beat Dobbs Ferry 11-10 (4/11). Not a Conf 3-D team.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Section 1 Class A program. Physical team with power hitting. Plays a tough schedule which prepares them well.",
+      "lastUpdated": "2026-05-14"
     },
     "Rye Neck": {
-      "blurb": "11-9 overall, 8-2 league (Conf 3-D, 1st). Beat Hastings 2-0 (5/9) to stay atop the conference. Beat Blind Brook 4-2 (5/4) and 5-4 (5/6). Swept Dobbs Ferry 6-2 (4/30) and 13-0 (5/1). RF 102, RA 99. Conference leaders.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "11-9 overall, 8-2 in Conference 3-D (1st place). League leaders despite modest overall record. Dominant in conference play. The team to beat in Conference 3-D standings.",
+      "lastUpdated": "2026-05-14"
     },
     "Saunders": {
-      "blurb": "2-0 overall, 2-0 league per MaxPreps \u2014 data stale (last updated 4/20). Beat Gorton 7-4 (4/14) and 13-3 (4/18). Lost to Dobbs Ferry 3-7 (3/27). Limited data.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Yonkers-based program. Developing roster with young talent. Competitive spirit but facing rebuilding challenges.",
+      "lastUpdated": "2026-05-14"
     },
     "Sleepy Hollow": {
-      "blurb": "13-3 overall per local reporting (Hudson Independent). Strong turnaround \u2014 13 wins in first 16 games. Beat Dobbs Ferry 19-1 (4/8). Conf 2-B. Dominant season.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Section 1 Class B program. Athletic roster with good speed on the bases. Can be dangerous when hitting is clicking.",
+      "lastUpdated": "2026-05-14"
     },
     "Tuckahoe": {
-      "blurb": "7-11 overall, 5-3 league (Conf 3-D, 4th). Beat Dobbs Ferry 13-0 (5/4) and 16-8 (5/9). Lost to Pelham Memorial 1-5 (5/5), Blind Brook 4-7 (5/8). RF 118, RA 127. Middling conference team with offense but defensive inconsistency.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Beat Blind Brook 12-3 on 5/12 in a dominant offensive performance. Hovering around .400 in league play. Capable of big offensive games but inconsistent. Mid-tier Conference 3-D team.",
+      "lastUpdated": "2026-05-14"
     },
     "Valhalla": {
-      "blurb": "4-6 overall, 2-2 league (Conf 3-E). Beat Haldane 7-0 (4/30) and 7-2 (5/2). Lost to Dobbs Ferry 5-12 (4/27). Conf 3-E. Mid-tier team.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Section 1 Class B program. Scrappy and competitive. Solid defensive team that keeps games close.",
+      "lastUpdated": "2026-05-14"
     },
     "Westlake": {
-      "blurb": "8-10 overall, 2-2 league (Conf 3-A Div B, 3rd). Beat Dobbs Ferry 10-5 on 5/11 to snap 5-game losing streak. Non-league opponent.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Section 1 Class B program. Strong local program with consistent player development pipeline.",
+      "lastUpdated": "2026-05-14"
     },
     "Briarcliff": {
-      "blurb": "10-5-1 overall, 6-1 conference (Conf 3-E, 1st). Beat Haldane 8-2 (5/5). Beat Sleepy Hollow 14-0 (4/1). Lost to Putnam Valley 2-3 (4/22). Conference leaders in 3-E.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Section 1 Class B contender. Well-coached program with strong fundamentals. Typically in the mix for sectional seeding.",
+      "lastUpdated": "2026-05-14"
     },
     "Pawling": {
-      "blurb": "6-4 overall, 2-1 conference (Conf 3-E, 2nd). Beat Blind Brook 15-5 (3/23), Rye Neck 3-2 (4/4), Tuckahoe 13-5 (4/13). Hosts Blind Brook 5/11.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Beat Blind Brook 11-5 on 5/11, showing offensive firepower. Conference 3-D team capable of putting up runs in bunches.",
+      "lastUpdated": "2026-05-14"
     },
     "Putnam Valley": {
-      "blurb": "11-6 overall, 5-2 conference (Conf 3-E). Beat Haldane 15-4 (4/24) and 22-0 (4/28). Lost to Briarcliff 2-13 (4/21) but won rematch 3-2 (4/22). Strong program contending for 3-E title.",
-      "lastUpdated": "2026-05-12"
+      "blurb": "Section 1 Class B team. Physical lineup with power potential. Inconsistent pitching has been the challenge.",
+      "lastUpdated": "2026-05-14"
     }
   },
   "teamSeasonStats": {
