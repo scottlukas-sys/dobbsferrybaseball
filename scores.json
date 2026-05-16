@@ -605,6 +605,170 @@
       "innings": 4,
       "cleanInnings": 2,
       "defInnings": 4
+    },
+    "2026-05-15": {
+      "date": "2026-05-15",
+      "opponent": "Tuckahoe JV",
+      "df": 0,
+      "opp": 10,
+      "innings": 5,
+      "location": "Away",
+      "source": "GameChanger box score",
+      "dfHits": 3,
+      "dfErrors": 5,
+      "oppHits": 13,
+      "oppErrors": 1,
+      "linescore": {
+        "df": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opp": [
+          3,
+          1,
+          1,
+          2,
+          3
+        ]
+      },
+      "batterStats": {
+        "James Gotcsik Karpinos": {
+          "pos": "3B, RF",
+          "ab": 3,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 2
+        },
+        "Mina Hwangbo": {
+          "pos": "C",
+          "ab": 1,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 0
+        },
+        "Gianfranco Mangone": {
+          "pos": "1B, RF",
+          "ab": 1,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 1
+        },
+        "Mike Kingston": {
+          "pos": "CF",
+          "ab": 1,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 1
+        },
+        "Sam Keltz": {
+          "pos": "SS",
+          "ab": 2,
+          "r": 0,
+          "h": 2,
+          "rbi": 0,
+          "bb": 0,
+          "so": 0
+        },
+        "Aaron Sellitti": {
+          "pos": "1B, C",
+          "ab": 2,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 0
+        },
+        "Jack Rizzo": {
+          "pos": "LF, 2B",
+          "ab": 2,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 0
+        },
+        "Declan Cho": {
+          "pos": "CF, 3B",
+          "ab": 2,
+          "r": 0,
+          "h": 1,
+          "rbi": 0,
+          "bb": 0,
+          "so": 0
+        },
+        "Winston Burgess": {
+          "pos": "P, 1B",
+          "ab": 2,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 1
+        },
+        "Julian Graf": {
+          "pos": "2B",
+          "ab": 0,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 1,
+          "so": 0
+        },
+        "Jude Zonana": {
+          "pos": "P",
+          "ab": 1,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 1
+        },
+        "Matthew Moon": {
+          "pos": "RF, LF",
+          "ab": 2,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "bb": 0,
+          "so": 1
+        }
+      },
+      "pitcherStats": {
+        "Winston Burgess": {
+          "ip": 3.0,
+          "h": 5,
+          "r": 5,
+          "er": 3,
+          "bb": 2,
+          "so": 1,
+          "pitches": 51,
+          "strikes": 30,
+          "bf": 19
+        },
+        "Jude Zonana": {
+          "ip": 1.2,
+          "h": 8,
+          "r": 5,
+          "er": 4,
+          "bb": 1,
+          "so": 2,
+          "pitches": 39,
+          "strikes": 27,
+          "bf": 12
+        }
+      },
+      "notes": "Mercy rule (5 inn). Keltz 2-2. 5 DF errors. SB: Gotcsik Karpinos, Keltz. 2B: Keltz 2, Cho 1. HBP: Burgess."
     }
   },
   "divisionB": [
