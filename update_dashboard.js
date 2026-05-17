@@ -186,7 +186,7 @@ const varsitySchedule = [
     { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell School', location: 'Away', venue: 'Leffell School', address: '40 Woods Rd, Hartsdale, NY 10530', type: 'League' },
     { date: '2026-05-11', display: 'May 11', day: 'Mon', time: '4:30 PM', opponent: 'Westlake', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'Game' },
     { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell School', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522', type: 'League' },
-    { date: '2026-05-19', display: 'May 19', day: 'Tue', time: '4:15 PM', opponent: 'Putnam Valley', location: 'Away', venue: 'Putnam Valley High School', address: '146 Peekskill Hollow Rd, Putnam Valley, NY 10579', type: 'Game' },
+    { date: '2026-05-19', display: 'May 19', day: 'Tue', time: '4:15 PM', opponent: 'Putnam Valley', location: 'Away', venue: 'Putnam Valley High School', address: '146 Peekskill Hollow Rd, Putnam Valley, NY 10579', type: 'Playoff' },
 ];
 
 // Ensure chronological order (array may be manually maintained out of order)
@@ -367,10 +367,19 @@ if (nextVarsityGame) {
 
     // Replace the entire varsity alert card
     const alertRegex = /(<div id="varsity"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- Quick Stats -->)/;
-    html = html.replace(alertRegex, `$1<div class="card alert">
+    // Determine game context label
+    const isPlayoff = nextVarsityGame.type === 'Playoff';
+    const isLeague = nextVarsityGame.type === 'League';
+    const gameContext = isPlayoff ? 'Section 1 Class B Playoff' : isLeague ? 'League game' : 'Non-league';
+
+    // Build playoff banner if applicable
+    const playoffBanner = isPlayoff ? `
+                <div style="background:linear-gradient(135deg,#D4A017,#b8860b);color:#000;text-align:center;padding:10px 16px;border-radius:6px;margin-bottom:12px;font-weight:800;font-size:18px;letter-spacing:1px;text-transform:uppercase;">&#9888; SECTION 1 CLASS B PLAYOFF GAME &#9888;</div>` : '';
+
+    html = html.replace(alertRegex, `$1<div class="card alert">${playoffBanner}
                 <div class="alert-title">NEXT GAME — ${daysText} (${shortMonth.toUpperCase()} ${nextDate.getDate()})</div>
                 <div class="alert-game">${shortMonth} ${nextDate.getDate()} (${dayOfWeek}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextVarsityGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextVarsityGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${venueName}</div>
-                <div class="alert-details">Non-league</div>${vAddressRow}${vWeatherRow}
+                <div class="alert-details">${gameContext}</div>${vAddressRow}${vWeatherRow}
             </div>$3`);
 }
 
@@ -396,8 +405,8 @@ function buildNextFourVarsity() {
         const homeAway = g.location === 'Home' ? 'vs' : g.location === 'Away' ? 'at' : '@';
         const venueLine = g.location === 'Home' ? `Home (${g.venue || 'Gould Park'})` : `Away (${g.venue})`;
 
-        const badge = '';
-        const borderStyle = '';
+        const badge = g.type === 'Playoff' ? '<div style="background:#D4A017;color:#000;font-weight:700;font-size:11px;padding:3px 8px;border-radius:4px;margin-top:6px;text-align:center;">PLAYOFF</div>' : '';
+        const borderStyle = g.type === 'Playoff' ? ' style="border-left: 3px solid #D4A017;"' : '';
 
         cardsHtml += `
                     <div class="game-card"${borderStyle}>
@@ -1016,7 +1025,7 @@ html = html.replace(standingsRegex, `$1
                     </thead>
                     <tbody>${computeDivBStandings()}
                     </tbody>
-                </table>
+                </table>${buildPlayoffSection()}
             </div>
 
             `);
@@ -1024,6 +1033,67 @@ html = html.replace(standingsRegex, `$1
 // ============================================================
 // 6c. UPDATE WHAT'S HAPPENING ELSEWHERE
 // ============================================================
+
+// ============================================================
+// PLAYOFF BRACKET SECTION
+// ============================================================
+function buildPlayoffSection() {
+    const bracket = scores.playoffBracket;
+    if (!bracket) return '';
+    
+    let html = '';
+    
+    // Header
+    html += `<div style="margin-top:20px;padding:16px;background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid #D4A017;border-radius:8px;">`;
+    html += `<h3 style="color:#D4A017;margin:0 0 12px 0;font-size:16px;text-transform:uppercase;letter-spacing:1px;">&#9888; Section ${bracket.section} Class ${bracket.class} Playoff Bracket</h3>`;
+    
+    // Format info
+    html += `<div style="color:#aaa;font-size:12px;margin-bottom:12px;">${bracket.format} | First Round: ${bracket.firstRound}</div>`;
+    
+    // DF matchup highlight
+    if (bracket.matchups && bracket.matchups.length > 0) {
+        const dfGame = bracket.matchups.find(m => m.team2 === 'Dobbs Ferry' || m.team1 === 'Dobbs Ferry');
+        if (dfGame) {
+            html += `<div style="background:#0d1b2a;border:1px solid #D4A017;border-radius:6px;padding:12px;margin-bottom:10px;">`;
+            html += `<div style="color:#D4A017;font-weight:700;font-size:13px;margin-bottom:6px;">EAGLES MATCHUP — FIRST ROUND</div>`;
+            html += `<div style="color:#fff;font-size:15px;font-weight:600;">#${dfGame.seed1} ${dfGame.team1} (${dfGame.record1}) vs #${dfGame.seed2} ${dfGame.team2} (${dfGame.record2})</div>`;
+            html += `<div style="color:#aaa;font-size:12px;margin-top:4px;">${dfGame.date} @ ${dfGame.time} — ${dfGame.location}</div>`;
+            html += `</div>`;
+        }
+    }
+    
+    // Other class results
+    if (bracket.otherClassResults) {
+        html += `<div style="margin-top:12px;">`;
+        html += `<div style="color:#ccc;font-weight:600;font-size:13px;margin-bottom:6px;">Other Classes — First Round Results (May 16)</div>`;
+        
+        const classes = [
+            { key: 'classA_firstRound_May16', label: 'Class A' },
+            { key: 'classAA_firstRound_May16', label: 'Class AA' },
+            { key: 'classAAA_firstRound_May16', label: 'Class AAA' }
+        ];
+        
+        for (const cls of classes) {
+            const results = bracket.otherClassResults[cls.key];
+            if (results && results.length > 0) {
+                html += `<div style="color:#888;font-size:11px;font-weight:600;margin-top:8px;text-transform:uppercase;">${cls.label}</div>`;
+                html += `<div style="color:#aaa;font-size:12px;line-height:1.6;">`;
+                html += results.join(' | ');
+                html += `</div>`;
+            }
+        }
+        html += `</div>`;
+    }
+    
+    // Bracket timeline
+    html += `<div style="margin-top:12px;color:#888;font-size:11px;border-top:1px solid #333;padding-top:8px;">`;
+    html += `Quarterfinals: ${bracket.quarterfinals} | Semifinals: ${bracket.semifinals} | Final: ${bracket.final}`;
+    html += `</div>`;
+    
+    html += `</div>`;
+    return html;
+}
+
 function buildElsewhere() {
     const teamIntel = scores.teamIntel || {};
     const teams = Object.keys(teamIntel);

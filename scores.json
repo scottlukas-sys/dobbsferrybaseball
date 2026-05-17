@@ -12997,8 +12997,10 @@
       "lastUpdated": "2026-05-14"
     },
     "Putnam Valley": {
-      "blurb": "Section 1 Class B team. Physical lineup with power potential. Inconsistent pitching has been the challenge.",
-      "lastUpdated": "2026-05-14"
+      "blurb": "#1 seed in Section 1 Class B playoffs. 14-6 overall, 8-2 league. Physical lineup with power potential. Hosts DF in first round (5/19). 3-game win streak entering playoffs.",
+      "intel": "#1 seed, Section 1 Class B. 14-6 overall, 8-2 league. Hosting first-round playoff game vs DF on 5/19. Physical lineup with power. 3-game win streak. Made 2025 NYSPHSAA Class B championship game.",
+      "threat": "THREAT",
+      "lastUpdated": "2026-05-17"
     }
   },
   "teamSeasonStats": {
@@ -13320,6 +13322,54 @@
         "dsHost": "69557.digitalsports.com",
         "jvLevelId": "990105"
       }
+    }
+  },
+  "playoffBracket": {
+    "class": "B",
+    "section": 1,
+    "season": "2026",
+    "format": "Single elimination, higher seed hosts",
+    "firstRound": "May 19, 2026",
+    "quarterfinals": "May 21, 2026 (TBD)",
+    "semifinals": "May 23, 2026 (TBD)",
+    "final": "May 28, 2026 (TBD)",
+    "notes": "Section 1 Classes AAA, AA, and A played first round on May 16. Class B first round is May 19.",
+    "matchups": [
+      {
+        "seed1": 1,
+        "team1": "Putnam Valley",
+        "record1": "14-6",
+        "seed2": 8,
+        "team2": "Dobbs Ferry",
+        "record2": "8-12",
+        "date": "2026-05-19",
+        "time": "4:15 PM",
+        "location": "Putnam Valley HS"
+      }
+    ],
+    "otherClassResults": {
+      "classA_firstRound_May16": [
+        "Tappan Zee 19, Irvington 0",
+        "Pleasantville 4, Bronxville 1",
+        "Pearl River 10, John Jay-CR 3",
+        "Nanuet 6, Hen Hud 5",
+        "Byram Hills 5, Croton 4",
+        "Westlake 7, Somers 6 (9inn)",
+        "Pelham 11, Edgemont 3",
+        "Panas 8, Albertus Magnus 2"
+      ],
+      "classAA_firstRound_May16": [
+        "Eastchester 5, Brewster 2",
+        "Horace Greeley 6, Harrison 5",
+        "Carmel 5, Clarkstown North 2",
+        "Nyack 11, Lakeland 2",
+        "Yorktown 10, Roosevelt 0",
+        "Fox Lane 6, Suffern 1"
+      ],
+      "classAAA_firstRound_May16": [
+        "New Rochelle 15, White Plains 5",
+        "Scarsdale 13, Port Chester 3"
+      ]
     }
   }
 }
