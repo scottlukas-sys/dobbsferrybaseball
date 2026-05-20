@@ -382,6 +382,30 @@ if (nextVarsityGame) {
                 <div class="alert-game">${shortMonth} ${nextDate.getDate()} (${dayOfWeek}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextVarsityGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextVarsityGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${venueName}</div>
                 <div class="alert-details">${gameContext}</div>${vAddressRow}${vWeatherRow}
             </div>$3`);
+} else {
+    // SEASON COMPLETE - no more varsity games
+    const alertRegexEnd = /(<div id="varsity"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- Quick Stats -->)/;
+    const sortedScoreDates2 = Object.keys(scores.varsity).sort().reverse();
+    let lastGameText = '';
+    if (sortedScoreDates2.length > 0) {
+        const lastDate = sortedScoreDates2[0];
+        const lastScore = scores.varsity[lastDate];
+        const won = lastScore.df > lastScore.opp;
+        const ld = new Date(lastDate + 'T12:00:00');
+        const lm = formatShortMonth(ld);
+        lastGameText = `Last game: ${won ? 'W' : 'L'} ${lastScore.df}-${lastScore.opp} vs ${lastScore.opponent} (${lm} ${ld.getDate()})`;
+    }
+    // vRecord already defined above at line 272
+    const vRepl = `$1<div class="card alert">
+                <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);text-align:center;padding:14px 16px;border-radius:6px;margin-bottom:12px;">
+                    <div style="font-size:22px;font-weight:800;color:#e94560;letter-spacing:2px;text-transform:uppercase;">SEASON COMPLETE</div>
+                </div>
+                <div class="alert-title">FINAL RECORD: ${vRecord.record}</div>
+                <div class="alert-details">${lastGameText}</div>
+                <div style="color:#888;font-size:13px;margin-top:8px;">Thank you Eagles! See you next season.</div>
+            </div>$3`;
+    html = html.replace(alertRegexEnd, vRepl);
+    html = html.replace(alertRegexEnd, vRepl);
 }
 
 // ============================================================
@@ -1209,6 +1233,18 @@ if (nextJvGame) {
                 <div class="alert-game">${shortMonth} ${nextJvDate.getDate()} (${dayName}) <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${nextJvGame.time} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${homeAway} ${nextJvGame.opponent} <span style="color:#555;font-weight:400;margin:0 6px;">&#x2022;</span> ${jvVenueName}</div>
                 <div class="alert-details">Non-league</div>${jvAddressRow}${jvWeatherRow}
             </div>$3`);
+} else {
+    // SEASON COMPLETE - no more JV games
+    const jvAlertRegexEnd = /(<div id="jv"[\s\S]*?)(<div class="card alert"[\s\S]*?<\/div>\s*<\/div>)([\s\S]*?<!-- JV Quick Stats -->)/;
+    const jvRepl = `$1<div class="card alert">
+                <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);text-align:center;padding:14px 16px;border-radius:6px;margin-bottom:12px;">
+                    <div style="font-size:22px;font-weight:800;color:#e94560;letter-spacing:2px;text-transform:uppercase;">SEASON COMPLETE</div>
+                </div>
+                <div class="alert-title">JV FINAL RECORD: ${jvRecord.record}</div>
+                <div style="color:#888;font-size:13px;margin-top:8px;">Thank you Eagles! See you next season.</div>
+            </div>$3`;
+    html = html.replace(jvAlertRegexEnd, jvRepl);
+    html = html.replace(jvAlertRegexEnd, jvRepl);
 }
 
 // Update JV Quick Stats - Record
