@@ -358,6 +358,36 @@
           0
         ]
       }
+    },
+    "2026-05-19": {
+      "opponent": "Putnam Valley",
+      "df": 0,
+      "opp": 6,
+      "location": "Putnam Valley High School",
+      "league": false,
+      "source": "GameChanger",
+      "playoff": true,
+      "playoffRound": "Class B First Round",
+      "lineScore": {
+        "df": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "opp": [
+          0,
+          0,
+          0,
+          3,
+          0,
+          3,
+          "X"
+        ]
+      }
     }
   },
   "jv": {
@@ -1469,6 +1499,39 @@
               "strikes": 18,
               "bf": 10
             }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 2.0,
+              "h": 1,
+              "r": 3,
+              "er": 1,
+              "bb": 3,
+              "so": 2,
+              "w": 0,
+              "l": 0,
+              "sv": 0,
+              "pitches": 47,
+              "strikes": 23,
+              "bf": 11
+            }
           }
         ],
         "fielding": {
@@ -1821,6 +1884,25 @@
               "3b": 0,
               "hr": 1,
               "rbi": 1,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 2,
+              "2b": 1,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
               "bb": 0,
               "so": 1,
               "hbp": 0,
@@ -2309,6 +2391,39 @@
               "strikes": 40,
               "bf": 16
             }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 1,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
+            },
+            "pitching": {
+              "ip": 4.0,
+              "h": 4,
+              "r": 3,
+              "er": 1,
+              "bb": 3,
+              "so": 6,
+              "w": 0,
+              "l": 1,
+              "sv": 0,
+              "pitches": 82,
+              "strikes": 49,
+              "bf": 20
+            }
           }
         ],
         "fielding": {
@@ -2695,6 +2810,25 @@
               "so": 0,
               "hbp": 0,
               "sb": 0,
+              "cs": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 1,
               "cs": 0,
               "e": 0
             }
@@ -3092,6 +3226,25 @@
               "sb": 0,
               "cs": 0,
               "e": 1
+            }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
             }
           }
         ],
@@ -3502,6 +3655,25 @@
               "pitches": 17,
               "strikes": 11,
               "bf": 5
+            }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 2,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
             }
           }
         ],
@@ -4355,6 +4527,25 @@
               "cs": 0,
               "e": 0
             }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 3,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 0
+            }
           }
         ],
         "fielding": {
@@ -4712,6 +4903,25 @@
               "hbp": 0,
               "sb": 0,
               "e": 1
+            }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 0,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 3
             }
           }
         ]
@@ -5096,6 +5306,25 @@
               "hbp": 0,
               "sb": 0,
               "cs": 0,
+              "e": 0
+            }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 1,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 0,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 1,
               "e": 0
             }
           }
@@ -5679,6 +5908,25 @@
               "sb": 1,
               "cs": 0,
               "e": 0
+            }
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "Putnam Valley",
+            "hitting": {
+              "ab": 2,
+              "r": 0,
+              "h": 0,
+              "2b": 0,
+              "3b": 0,
+              "hr": 0,
+              "rbi": 0,
+              "bb": 0,
+              "so": 2,
+              "hbp": 0,
+              "sb": 0,
+              "cs": 0,
+              "e": 1
             }
           }
         ]
@@ -12933,72 +13181,72 @@
   ],
   "teamIntel": {
     "Ardsley": {
-      "intel": "Season complete. 5-15 overall, 3-11 Conference 3-D. Missed Class A playoffs. Struggled offensively all season.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 5-15 overall, 3-11 Conference 3-D. Missed playoffs.",
+      "lastUpdated": "2026-05-20"
     },
     "Blind Brook": {
-      "intel": "Season complete. 13-7 overall, 10-4 Conference 3-D. Strong season, earned Class B playoff berth as #4 seed. Lost first-round playoff game.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 13-7 overall, 10-4 Conference 3-D. #4 seed Class B.",
+      "lastUpdated": "2026-05-20"
     },
     "Briarcliff": {
-      "intel": "#2 seed in Class B. 13-6-1 overall per GameDay One. Hosting first-round playoff game. One of the stronger teams in the bracket alongside Putnam Valley and Blind Brook.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. #2 seed Class B. 13-6-1 overall.",
+      "lastUpdated": "2026-05-20"
     },
     "Edgemont": {
-      "intel": "Season complete. 8-12 overall, 6-8 Conference 3-D. Eliminated in Class B first round. Middle-of-pack team this season.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 8-12 overall, 6-8 Conference 3-D.",
+      "lastUpdated": "2026-05-20"
     },
     "Haldane": {
-      "intel": "Season complete. 5-13 overall. Class C team, not in DF's bracket. Below .500 season.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 5-13 overall. Class C.",
+      "lastUpdated": "2026-05-20"
     },
     "Hastings": {
-      "intel": "Season complete. 8-12 overall, 6-8 Conference 3-D. Similar record to DF. Did not qualify for Class B playoffs or lost early.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 8-12 overall, 6-8 Conference 3-D.",
+      "lastUpdated": "2026-05-20"
     },
     "Irvington": {
-      "intel": "Season complete. 10-10 overall, 7-7 Conference 3-D. .500 season. Eliminated in Class B playoffs.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 10-10 overall, 7-7 Conference 3-D.",
+      "lastUpdated": "2026-05-20"
     },
     "Leffell School": {
-      "intel": "Season complete. 2-14 overall, 1-11 Conference 3-D. Struggled throughout the season. Bottom of the conference.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 2-14 overall, 1-11 Conference 3-D.",
+      "lastUpdated": "2026-05-20"
     },
     "Pawling": {
-      "intel": "Season complete. Non-conference opponent. Limited data available on final record.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. Non-conference opponent.",
+      "lastUpdated": "2026-05-20"
     },
     "Pearl River": {
-      "intel": "Advancing in Class A playoffs. 14-6 overall. Not in DF's Class B bracket but strong Section 1 program.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 14-6 overall. Class A playoff team.",
+      "lastUpdated": "2026-05-20"
     },
     "Putnam Valley": {
-      "intel": "#1 seed, Section 1 Class B. 14-6 overall per GameDay One. Defending Class B champs. Hosting first-round playoff game vs DF on 5/19. Top seed and favorite to repeat.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. #1 seed Class B. 14-6 overall. Defending champs. Beat DF 6-0 in first round 5/19.",
+      "lastUpdated": "2026-05-20"
     },
     "Rye Neck": {
-      "intel": "Season complete. 4-16 overall, 3-11 Conference 3-D. Tough season. DF went 2-0 against Rye Neck this year.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 4-16 overall, 3-11 Conference 3-D.",
+      "lastUpdated": "2026-05-20"
     },
     "Saunders": {
-      "intel": "Season complete. 1-17 overall, 0-12 Conference 3-D. Winless in league play. DF swept the season series.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 1-17 overall, 0-12 Conference 3-D.",
+      "lastUpdated": "2026-05-20"
     },
     "Sleepy Hollow": {
-      "intel": "Season complete. 3-17 overall, 2-12 Conference 3-D. Near the bottom of the conference standings.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 3-17 overall, 2-12 Conference 3-D.",
+      "lastUpdated": "2026-05-20"
     },
     "Tuckahoe": {
-      "intel": "Season complete. 10-10 overall, 8-6 Conference 3-D. Solid league record, above .500 in conference. Class C team.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 10-10 overall, 8-6 Conference 3-D. Class C.",
+      "lastUpdated": "2026-05-20"
     },
     "Valhalla": {
-      "intel": "Season complete. 11-9 overall, 8-6 Conference 3-D. Above .500, competitive season. Class B playoff participant.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. 11-9 overall, 8-6 Conference 3-D. Class B.",
+      "lastUpdated": "2026-05-20"
     },
     "Westlake": {
-      "intel": "Advancing in Class A playoffs. Strong season. Not in DF's Class B bracket but competitive Section 1 program.",
-      "lastUpdated": "2026-05-18"
+      "intel": "Season complete. Class A playoff team.",
+      "lastUpdated": "2026-05-20"
     }
   },
   "teamSeasonStats": {
@@ -13369,5 +13617,13 @@
         "Scarsdale 13, Port Chester 3"
       ]
     }
+  },
+  "seasonFinal": {
+    "varsity": true,
+    "jv": true,
+    "date": "2026-05-20",
+    "varsityRecord": "8-13",
+    "jvRecord": "4-10",
+    "note": "Varsity eliminated in Section 1 Class B first round (L 0-6 at #1 Putnam Valley). JV final game (5/20 vs Rye Neck) canceled."
   }
 }

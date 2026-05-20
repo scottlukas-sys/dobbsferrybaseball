@@ -211,7 +211,7 @@ const jvSchedule = [
     { date: '2026-05-07', display: 'May 7', day: 'Thu', time: '4:30 PM', opponent: 'Leffell JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
     { date: '2026-05-12', display: 'May 12', day: 'Tue', time: '4:30 PM', opponent: 'Leffell JV', location: 'Away', venue: 'Leffell School', address: '40 Woods Rd, Hartsdale, NY 10530' },
     { date: '2026-05-15', display: 'May 15', day: 'Thu', time: '4:30 PM', opponent: 'Tuckahoe JV', location: 'Away', venue: 'Parkway Oval Playground', address: '32 Bronx St, Tuckahoe, NY 10707' },
-    { date: '2026-05-20', display: 'May 20', day: 'Wed', time: '4:30 PM', opponent: 'Rye Neck JV', location: 'Home', venue: 'Gould Park', address: '33 Ashford Ave, Dobbs Ferry, NY 10522' },
+    // 5/20 vs Rye Neck JV - CANCELED (season over)
 ];
 
 // ============================================================
